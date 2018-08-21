@@ -1,7 +1,9 @@
 {
   "name": "ztopia-ui",
-  "version": "1.0.0",
   "description": "It's not just another UI library. It's an entire world.",
+  "version": "1.0.0",
+  "author": "Zico Deng",
+  "homepage": "https://github.com/zicodeng/ztopia-ui#readme",
   "keywords": [
     "react",
     "react-component",
@@ -11,17 +13,47 @@
     "library"
   ],
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zicodeng/ztopia-ui.git"
   },
-  "author": "Zico Deng",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/zicodeng/ztopia-ui/issues"
   },
-  "homepage": "https://github.com/zicodeng/ztopia-ui#readme"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "./node_modules/.bin/prettier --write \"**/*.{js,jsx,ts,tsx,md}\"",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,md}": [
+      "prettier --write",
+      "tslint --fix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-rc.2",
+    "@babel/preset-env": "^7.0.0-rc.2",
+    "@babel/preset-react": "^7.0.0-rc.2",
+    "@types/react": "^16.4.11",
+    "@types/react-dom": "^16.0.7",
+    "babel-loader": "^7.1.5",
+    "emotion": "^9.2.6",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.2",
+    "lodash": "^4.17.10",
+    "prettier": "^1.14.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.1",
+    "webpack": "^4.17.0",
+    "webpack-cli": "^3.1.0"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
 }
