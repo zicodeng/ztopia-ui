@@ -20,6 +20,18 @@ It's not just another UI library. It's an entire world.
 -   Always **capitalize** the first letter in your commit message.
 -   Use **JSDoc** for module and function comments.
 
+### Contributing
+
+Install dependencies.
+
+    yarn install
+
+Start Docz development server.
+
+    yarn docz:dev
+
+Open your browser and navigate to the URL prompted in the terminal.
+
 ## Contributors
 
 -   Zico Deng: https://github.com/zicodeng
