@@ -12,9 +12,10 @@ const colors = {
 
 // https://www.docz.site/documentation/project-configuration
 export default {
-    src: './',
-    dest: '.docz/dist',
-    files: '**/*.mdx',
+    src: 'src',
+    dest: 'docs/',
+    base: '/',
+    files: 'src/**/*.mdx',
     title: 'Ztopia UI',
     description: "It's not just another UI library. It's an entire world.",
     typescript: true,
