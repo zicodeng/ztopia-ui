@@ -10,16 +10,17 @@ lerna-debug.log*
 coverage
 
 # Compiled output
-/build
-/dist
-/tmp
+build
+dist
+tmp
 
 # Dependency directories
-node_modules/
-/bower_components
+node_modules
+bower_components
 
 # Cache
 .cache-loader
 
 # Misc
 .DS_Store
+.docz
