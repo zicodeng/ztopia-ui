@@ -14,7 +14,7 @@ const colors = {
 export default {
     src: 'src',
     dest: 'docs/',
-    base: '/',
+    base: '/ztopia-ui/',
     files: 'src/**/*.mdx',
     title: 'Ztopia UI',
     description: "It's not just another UI library. It's an entire world.",
