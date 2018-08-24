@@ -1,0 +1,31 @@
+---
+name: Button
+menu: Components
+route: /components/button
+---
+
+import { Playground, PropsTable } from 'docz'
+
+import { playgroundStyle } from './button-doc-style.ts'
+import Button from './Button'
+
+# Button
+
+### API
+<PropsTable of={Button} />
+
+### Basic Button
+<Playground className={playgroundStyle}>
+  <Button>Basic Button</Button>
+  <Button loading>Loading</Button>
+  <Button ghost>Basic Ghost Button</Button>
+  <Button ghost loading>Loading</Button>
+</Playground>
+
+### Space Button
+<Playground className={playgroundStyle}>
+  <Button ztopiaTheme="Space">Space Button</Button>
+  <Button ztopiaTheme="Space" loading>Loading</Button>
+  <Button ztopiaTheme="Space" ghost>Space Ghost Button</Button>
+  <Button ztopiaTheme="Space" ghost loading>Loading</Button>
+</Playground>
