@@ -1,9 +1,10 @@
 {
-  "vendors.js": "/ztopia-ui/static/js/vendors.0b1bf333.js",
-  "app.js": "/ztopia-ui/static/js/app.57b9b7e9.js",
+  "vendors.js": "/ztopia-ui/static/js/vendors.3605b16c.js",
+  "app.js": "/ztopia-ui/static/js/app.59103214.js",
   "docs-getting-started.js": "/ztopia-ui/static/js/docs-getting-started.c74e0d57.js",
   "docs-introduction.js": "/ztopia-ui/static/js/docs-introduction.3f78570a.js",
-  "components-button-doc.js": "/ztopia-ui/static/js/components-button-doc.5fd12202.js",
-  "runtime~app.js": "/ztopia-ui/static/js/runtime~app.e21ef4d536b06bd6c3e1.js",
+  "components-button-button-doc.js": "/ztopia-ui/static/js/components-button-button-doc.7da5bcef.js",
+  "components-loader-loader-doc.js": "/ztopia-ui/static/js/components-loader-loader-doc.2cec0473.js",
+  "runtime~app.js": "/ztopia-ui/static/js/runtime~app.d09bf18ec3be591c8acf.js",
   "index.html": "/ztopia-ui/index.html"
 }
