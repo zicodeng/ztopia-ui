@@ -23,11 +23,11 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prettier": "./node_modules/.bin/prettier --write \"**/*.{js,jsx,ts,tsx,md}\"",
-    "precommit": "lint-staged",
+    "start": "docz dev",
     "build": "webpack --color --progress --mode production",
-    "docz:dev": "docz dev",
-    "docz:build": "docz build"
+    "build-docs": "docz build",
+    "precommit": "lint-staged",
+    "prettier": "./node_modules/.bin/prettier --write \"**/*.{js,jsx,ts,tsx,md}\""
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,md}": [

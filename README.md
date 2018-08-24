@@ -41,7 +41,7 @@ Install dependencies.
 
 Start Docz development server.
 
-    yarn docz:dev
+    yarn start
 
 Open your browser and navigate to the URL prompted in the terminal.
 
