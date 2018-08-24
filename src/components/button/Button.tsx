@@ -30,6 +30,9 @@ const ZtopiaButton = styled.button(
         boxShadow: 'none',
         appearance: 'none',
         outline: 'none',
+        '&.ghost': {
+            backgroundColor: 'transparent',
+        },
         '&.loading, &.ghost.loading': {
             // Hide text
             color: 'transparent',

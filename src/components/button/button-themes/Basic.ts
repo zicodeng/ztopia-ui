@@ -13,7 +13,6 @@ const Basic = {
     },
     '&.ghost': {
         color: ZtopiaThemes.Basic.Color.DARK,
-        backgroundColor: ZtopiaThemes.Basic.Color.LIGHT,
         '&:not([disabled]):hover': {
             color: ZtopiaThemes.Basic.Color.LIGHT,
             backgroundColor: ZtopiaThemes.Basic.Color.DARK,

@@ -17,7 +17,6 @@ const Space = {
     },
     '&.ghost': {
         color: ZtopiaThemes.Space.Color.PRIMARY,
-        backgroundColor: ZtopiaThemes.Space.Color.LIGHT,
         borderColor: ZtopiaThemes.Space.Color.PRIMARY,
         '&:not([disabled]):hover': {
             color: ZtopiaThemes.Space.Color.PRIMARY,
