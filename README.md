@@ -2,7 +2,9 @@
 
 [![Join the chat at https://gitter.im/ztopia-ui/Lobby](https://img.shields.io/gitter/room/badges/shields.svg)](https://gitter.im/ztopia-ui/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-It's not just another UI library. It's an entire world.
+> It's not just another UI library. It's an entire world.
+
+Getting tired of viewing your website with just one basic theme across pages? Well, you are not alone. Most UI libraries on the market do not support multiple themes. It has always been time-consuming and challenging for companies to build multi-themed websites. This is why we are creating Ztopia UI. **Ztopia UI is a React UI library built with multi-theming in mind**. We aim to deliver UI components with easy-to-use API so that you can enjoy different lookings of your awesome websites without any overhead.
 
 ## Documentation
 
@@ -10,7 +12,14 @@ https://zicodeng.github.io/ztopia-ui/
 
 ## Design
 
-### Design Language
+Since this is a community-driven and open-source project, we would like you to enlighten us on Ztopia UI design and help us define next theme. You can view our high-fidelity design via **Figma**: https://www.figma.com/file/0nakOv1e6YoVDypM2hkl11iA/Ztopia-UI-Design?node-id=52%3A0
+
+### Currently Available Themes
+
+-   Basic
+-   Space
+
+Learn more about Ztopia UI design languages and details on our documentation page.
 
 ## Development
 
