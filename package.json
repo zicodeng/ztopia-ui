@@ -49,6 +49,7 @@
     "@types/react-dom": "^16.0.7",
     "babel-loader": "^8.0.0-beta",
     "babel-plugin-emotion": "^9.2.6",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "docz": "^0.10.3",
     "emotion": "^9.2.6",
     "emotion-theming": "^9.2.6",
