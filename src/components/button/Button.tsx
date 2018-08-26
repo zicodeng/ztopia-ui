@@ -15,6 +15,7 @@ interface ButtonProps {
     loading?: boolean;
     /** Set button disabled state. */
     disabled?: boolean;
+    className?: string;
 }
 
 const ZtopiaButton = styled.button(
@@ -63,6 +64,7 @@ const Button: React.SFC<ButtonProps> = props => {
         ghost,
         loading,
         disabled,
+        className,
         children,
         ...restProps
     } = props;
@@ -70,6 +72,7 @@ const Button: React.SFC<ButtonProps> = props => {
         'ztopia-button',
         ghost && 'ghost',
         loading && 'loading',
+        className,
     );
     return (
         <ThemeProvider theme={ButtonThemes}>

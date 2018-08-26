@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { cx } from 'react-emotion';
 
 import LoaderThemes from 'components/loader/loader-themes';
 import { isThemeValid } from 'components/ztopia-themes';
@@ -6,15 +7,17 @@ import { isThemeValid } from 'components/ztopia-themes';
 interface LoaderProps {
     /** All Ztopia themes can be found in Introduction section. */
     ztopiaTheme?: string;
+    className?: string;
 }
 
 const Loader: React.SFC<LoaderProps> = props => {
-    const { ztopiaTheme, ...restProps } = props;
+    const { ztopiaTheme, className, ...restProps } = props;
     if (!ztopiaTheme || !isThemeValid(ztopiaTheme)) {
         return null;
     }
     const ZtopiaLoader = LoaderThemes[ztopiaTheme];
-    return <ZtopiaLoader {...restProps} className="ztopia-loader" />;
+    const classNames = cx('ztopia-loader', className);
+    return <ZtopiaLoader {...restProps} className={classNames} />;
 };
 
 Loader.defaultProps = {
