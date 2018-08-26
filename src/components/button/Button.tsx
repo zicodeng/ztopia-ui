@@ -44,6 +44,9 @@ const ZtopiaButton = styled.button(
                 display: 'block',
             },
         },
+        '&[disabled]': {
+            cursor: 'not-allowed',
+        },
         '> .ztopia-loader': {
             display: 'none',
             position: 'absolute',
