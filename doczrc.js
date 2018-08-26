@@ -1,13 +1,10 @@
-const colors = {
-    white: '#FFFFFF',
-    grayExtraLight: '#EEF1F5',
-    grayLight: '#CED4DE',
-    gray: '#7D899C',
-    grayDark: '#2D3747',
-    grayExtraDark: '#1D2330',
-    dark: '#13161F',
-    blue: '#0B5FFF',
-    skyBlue: '#1FB6FF',
+const Color = {
+    PRIMARY: '#2F80ED',
+    ACCENT: '#EB5757',
+    LIGHT: '#FFFFFF',
+    LIGHT_DARK: '#F5F7FA',
+    DARK: '#333333',
+    DARK_LIGHT: '#CCD1D9',
 };
 
 // https://www.docz.site/documentation/project-configuration
@@ -37,22 +34,17 @@ export default {
          * Colors (depends on select mode)
          */
         colors: {
-            primary: colors.blue,
-            text: colors.dark,
-            link: colors.blue,
-            footerText: colors.grayDark,
-            sidebarBg: colors.grayExtraLight,
-            sidebarText: colors.dark,
-            background: colors.white,
-            border: colors.grayLight,
-            theadColor: colors.gray,
-            theadBg: colors.grayExtraLight,
-            tableColor: colors.dark,
-            tooltipBg: colors.dark,
-            tooltipColor: colors.grayExtraLight,
-            codeBg: colors.grayExtraLight,
-            codeColor: colors.gray,
-            preBg: colors.grayExtraLight,
+            primary: Color.PRIMARY,
+            text: Color.DARK,
+            link: Color.PRIMARY,
+            footerText: Color.PRIMARY,
+            sidebarBg: Color.LIGHT_DARK,
+            sidebarText: Color.DARK,
+            background: Color.LIGHT,
+            border: Color.DARK_LIGHT,
+            theadColor: Color.DARK,
+            theadBg: Color.LIGHT_DARK,
+            tableColor: Color.DARK,
         },
         /**
          * Styles
@@ -70,14 +62,14 @@ export default {
             h1: {
                 margin: ['40px 0 20px', '60px 0 20px', '40px 0'],
                 fontSize: [36, 42, 48],
-                fontWeight: 100,
+                fontWeight: 400,
                 letterSpacing: '-0.02em',
             },
             h2: {
                 margin: ['20px 0 20px', '35px 0 20px'],
                 lineHeight: ['1.2em', '1.5em'],
                 fontSize: 28,
-                fontWeight: 600,
+                fontWeight: 400,
                 letterSpacing: '-0.02em',
             },
             h3: {
