@@ -1,0 +1,58 @@
+---
+name: Accordion
+menu: Components
+route: /components/accordion
+---
+
+import { Playground, PropsTable } from 'docz'
+
+import Accordion from './Accordion'
+import Panel from './Panel'
+
+# Accordion
+
+## API
+
+### Accordion
+<PropsTable of={Accordion} />
+
+### Panel
+<PropsTable of={Panel} />
+
+## Basic Accordion
+<Playground>
+    <Accordion multiOpen>
+        <Panel header="Header 1" panelKey="header-1" open>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure rerum magni eius aliquam est aut, hic id, labore odit
+                odio nostrum voluptatibus unde eos, ea libero corporis minima explicabo voluptatum.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure rerum magni eius aliquam est aut, hic id, labore odit
+                odio nostrum voluptatibus unde eos, ea libero corporis minima explicabo voluptatum.
+            </p>
+        </Panel>
+        <Panel header="Header 2" panelKey="header-2">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure rerum magni eius aliquam est aut, hic id, labore odit
+                odio nostrum voluptatibus unde eos, ea libero corporis minima explicabo voluptatum.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure rerum magni eius aliquam est aut, hic id, labore odit
+                odio nostrum voluptatibus unde eos, ea libero corporis minima explicabo voluptatum.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure rerum magni eius aliquam est aut, hic id, labore odit
+                odio nostrum voluptatibus unde eos, ea libero corporis minima explicabo voluptatum.
+            </p>
+             <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure rerum magni eius aliquam est aut, hic id, labore odit
+                odio nostrum voluptatibus unde eos, ea libero corporis minima explicabo voluptatum.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure rerum magni eius aliquam est aut, hic id, labore odit
+                odio nostrum voluptatibus unde eos, ea libero corporis minima explicabo voluptatum.
+            </p>
+        </Panel>
+    </Accordion>
+</Playground>
