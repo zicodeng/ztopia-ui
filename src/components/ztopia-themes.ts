@@ -24,7 +24,7 @@ const ZtopiaThemes: IZtopiaThemes = {
             PRIMARY: '',
             PRIMARY_LIGHT: '',
             PRIMARY_DARK: '',
-            ACCENT: '',
+            ACCENT: 'red',
             ACCENT_LIGHT: '',
             ACCENT_DARK: '',
             LIGHT: '#FFFFFF',
