@@ -13,6 +13,7 @@ export default {
     dest: 'docs/',
     base: '/ztopia-ui/',
     hashRouter: true,
+    protocol: 'http',
     files: 'src/**/*.mdx',
     title: 'Ztopia UI',
     description: "It's not just another UI library. It's an entire world.",
