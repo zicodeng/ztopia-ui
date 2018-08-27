@@ -1,13 +1,19 @@
 import * as React from 'react';
+import { cx } from 'react-emotion';
 
-const ChevronLeft: React.SFC<{}> = _ => {
+const ChevronLeft: React.SFC<{
+    className?: string;
+}> = props => {
+    const { className, ...restProps } = props;
+    const classNames = cx('chevron-left', className);
     return (
         <svg
             aria-hidden="true"
-            className="chevron-left"
+            className={classNames}
             role="img"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 320 512"
+            {...restProps}
         >
             <path
                 fill="currentColor"
