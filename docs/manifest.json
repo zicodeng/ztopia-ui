@@ -1,13 +1,15 @@
 {
-  "vendors.js": "/ztopia-ui/static/js/vendors.50425bec.js",
-  "app.js": "/ztopia-ui/static/js/app.b9fcfdcd.js",
-  "docs-development.js": "/ztopia-ui/static/js/docs-development.3cdebf7e.js",
-  "docs-design.js": "/ztopia-ui/static/js/docs-design.e319b934.js",
+  "vendors.js": "/ztopia-ui/static/js/vendors.0e0e8459.js",
+  "app.js": "/ztopia-ui/static/js/app.de5c9529.js",
+  "docs-design.js": "/ztopia-ui/static/js/docs-design.920dcc64.js",
+  "docs-development.js": "/ztopia-ui/static/js/docs-development.b741d9ac.js",
   "docs-getting-started.js": "/ztopia-ui/static/js/docs-getting-started.752d192f.js",
   "docs-introduction.js": "/ztopia-ui/static/js/docs-introduction.04405b0c.js",
-  "components-accordion-accordion-doc.js": "/ztopia-ui/static/js/components-accordion-accordion-doc.1a772479.js",
-  "components-loader-loader-doc.js": "/ztopia-ui/static/js/components-loader-loader-doc.e6abecb8.js",
-  "components-button-button-doc.js": "/ztopia-ui/static/js/components-button-button-doc.f399651f.js",
-  "runtime~app.js": "/ztopia-ui/static/js/runtime~app.6e6f26b3e57dbbaa6055.js",
+  "icons-icons-doc.js": "/ztopia-ui/static/js/icons-icons-doc.2ed6ac00.js",
+  "components-button-button-doc.js": "/ztopia-ui/static/js/components-button-button-doc.0d7311f8.js",
+  "components-accordion-accordion-doc.js": "/ztopia-ui/static/js/components-accordion-accordion-doc.ad56f90c.js",
+  "components-input-input-doc.js": "/ztopia-ui/static/js/components-input-input-doc.7c3a6eb5.js",
+  "components-loader-loader-doc.js": "/ztopia-ui/static/js/components-loader-loader-doc.4049201c.js",
+  "runtime~app.js": "/ztopia-ui/static/js/runtime~app.3d119f98396e1887d1d2.js",
   "index.html": "/ztopia-ui/index.html"
 }
