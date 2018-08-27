@@ -30,7 +30,8 @@ const ZtopiaInput = styled.div(
         position: 'relative',
         '> .ztopia-input-inner-container': {
             width: '100%',
-            height: '35px',
+            height: '40px',
+            border: '2px solid',
             backgroundColor: 'transparent',
             display: 'flex',
             alignItems: 'center',
@@ -50,7 +51,7 @@ const ZtopiaInput = styled.div(
                 width: '100%',
                 height: '100%',
                 padding: '0 10px',
-                border: '2px solid',
+                border: 'none',
                 boxShadow: 'none',
                 appearance: 'none',
                 outline: 'none',
@@ -82,7 +83,11 @@ const Input: React.SFC<InputProps> = props => {
         ...restProps
     } = props;
 
-    const classNames = cx('ztopia-input-outer-container', className);
+    const classNames = cx(
+        'ztopia-input-outer-container',
+        errorMessage && 'error',
+        className,
+    );
 
     const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (onPressEnter && e.key === 'Enter') {
