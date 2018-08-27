@@ -12,6 +12,7 @@ export default {
     src: 'src',
     dest: 'docs/',
     base: '/ztopia-ui/',
+    hashRouter: true,
     files: 'src/**/*.mdx',
     title: 'Ztopia UI',
     description: "It's not just another UI library. It's an entire world.",
