@@ -12,7 +12,7 @@ interface InputProps {
     prefixIcon?: React.ReactElement<any>;
     /** The label text displayed before (on the left side of) the input field. */
     prefixLabel?: string;
-    /** The icon text displayed after (on the right side of) the input field. */
+    /** The icon displayed after (on the right side of) the input field. */
     suffixIcon?: React.ReactElement<any>;
     /** The label text displayed after (on the right side of) the input field. */
     suffixLabel?: string;
