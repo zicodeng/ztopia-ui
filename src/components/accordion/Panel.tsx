@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { cx } from 'react-emotion';
 
-import ChevronLeft from 'icons/ChevronLeft';
+import IconChevronLeft from 'icons/IconChevronLeft';
 
 export interface PanelProps {
     /** Title of the panel. */
@@ -56,7 +56,7 @@ class Panel extends React.Component<PanelProps, PanelState> {
                     onClick={togglePanel && (e => togglePanel(e, panelKey))}
                 >
                     {header}
-                    <ChevronLeft />
+                    <IconChevronLeft />
                 </header>
                 <div
                     className="ztopia-panel-content"

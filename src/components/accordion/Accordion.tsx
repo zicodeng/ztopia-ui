@@ -42,7 +42,7 @@ const ZtopiaAccordion = styled.ul(
             '&:not(:last-child)': {
                 marginBottom: '2px',
             },
-            '&.active > .ztopia-panel-header > .chevron-left': {
+            '&.active > .ztopia-panel-header > .ztopia-icon-chevron-left': {
                 transform: 'rotate(-90deg)',
             },
             '> .ztopia-panel-header': {
@@ -51,7 +51,7 @@ const ZtopiaAccordion = styled.ul(
                 position: 'relative',
                 display: 'flex',
                 alignItems: 'center',
-                '> .chevron-left': {
+                '> .ztopia-icon-chevron-left': {
                     width: '10px',
                     position: 'absolute',
                     right: '10px',
