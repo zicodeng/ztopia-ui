@@ -16,6 +16,8 @@ interface CheckboxProps {
     label?: string;
     /** Default the checkbox state to checked. */
     defaultChecked?: boolean;
+    /** Set checkbox state to disabled. */
+    disabled?: boolean;
     /** A callback function triggered when the checkbox checked state changes. */
     onCheck?: (value: string, checked: boolean) => void;
     className?: string;
@@ -30,6 +32,11 @@ const ZtopiaCheckboxContainer = styled.div(
         display: 'flex',
         alignItems: 'center',
         position: 'relative',
+        '&.disabled': {
+            '> .ztopia-checkbox': {
+                cursor: 'not-allowed',
+            },
+        },
         // Hide browser default checkbox style
         '> .ztopia-checkbox': {
             width: '16px',
@@ -75,11 +82,19 @@ class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
     }
 
     public render(): JSX.Element {
-        const { ztopiaTheme, name, label, value, className } = this.props;
+        const {
+            ztopiaTheme,
+            name,
+            label,
+            value,
+            disabled,
+            className,
+        } = this.props;
         const { checked } = this.state;
         const classNames = cx(
             'ztopia-checkbox-container',
             checked && 'checked',
+            disabled && 'disabled',
             className,
         );
         return (
@@ -94,6 +109,7 @@ class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
                         name={name}
                         value={value}
                         checked={checked}
+                        disabled={disabled}
                         onChange={this.handleChangeCheckbox}
                     />
                     <span className="ztopia-checkbox-custom" />
