@@ -3,7 +3,6 @@ import ZtopiaThemes from 'components/ztopia-themes';
 const Basic = {
     '&.checked': {
         '> .ztopia-checkbox-custom': {
-            borderColor: ZtopiaThemes.Basic.Color.DARK_LIGHT,
             '&::after': {
                 display: 'block',
             },
@@ -11,6 +10,7 @@ const Basic = {
     },
     '&.disabled': {
         '> .ztopia-checkbox-custom': {
+            borderColor: ZtopiaThemes.Basic.Color.DARK_LIGHT,
             '&::after': {
                 backgroundColor: ZtopiaThemes.Basic.Color.DARK_LIGHT,
             },
