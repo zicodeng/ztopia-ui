@@ -6,15 +6,15 @@ import CheckboxThemes from 'components/checkbox/checkbox-themes';
 import { isThemeValid } from 'components/ztopia-themes';
 
 interface CheckboxProps {
-    /** All Ztopia themes can be found in Design section. */
+    /** All Ztopia themes can be found in the Design section. */
     ztopiaTheme?: string;
-    /** Label to be displayed. */
+    /** Checkbox label to be displayed. */
     label?: string;
-    /** Set checkbox value. */
+    /** Set the checkbox value. */
     value?: string;
-    /** Default checked state. */
+    /** Default the checkbox state to checked. */
     defaultChecked?: boolean;
-    /** A callback function triggered when the checked state is changing. */
+    /** A callback function triggered when the checkbox checked state changes. */
     onCheck?: (value: string, checked: boolean) => void;
     className?: string;
 }

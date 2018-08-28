@@ -15,8 +15,9 @@ interface SwitchProps {
     activeText?: string;
     /** Text to be shown when the switch state is inactive. */
     inactiveText?: string;
-    /** Set the switch to loading state. */
+    /** Set the switch state to loading. */
     loading?: boolean;
+    /** Set the switch state to disabled. */
     disabled?: boolean;
     /** A callback function triggered when the switch active state changes. */
     onSwitch?: (isActive: boolean) => void;

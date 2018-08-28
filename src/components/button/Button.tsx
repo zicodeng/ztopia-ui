@@ -7,13 +7,13 @@ import Loader from 'components/loader/Loader';
 import { isThemeValid } from 'components/ztopia-themes';
 
 interface ButtonProps {
-    /** All Ztopia themes can be found in Design section. */
+    /** All Ztopia themes can be found in the Design section. */
     ztopiaTheme?: string;
-    /** Make background transparent and invert text and border colors. */
+    /** Make the button background transparent and invert text and border colors. */
     ghost?: boolean;
-    /** Set button loading state. */
+    /** Set the button state to loading. */
     loading?: boolean;
-    /** Set button disabled state. */
+    /** Set the button state to disabled. */
     disabled?: boolean;
     className?: string;
 }

@@ -7,7 +7,7 @@ import { isThemeValid } from 'components/ztopia-themes';
 import Panel, { PanelProps } from './Panel';
 
 interface AccordionProps {
-    /** All Ztopia themes can be found in Design section. */
+    /** All Ztopia themes can be found in the Design section. */
     ztopiaTheme?: string;
     /** Allow multiple panels to be opened simultaneously. */
     multiOpen?: boolean;

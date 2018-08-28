@@ -6,7 +6,7 @@ import InputThemes from 'components/input/input-themes';
 import { isThemeValid } from 'components/ztopia-themes';
 
 interface InputProps {
-    /** All Ztopia themes can be found in Design section. */
+    /** All Ztopia themes can be found in the Design section. */
     ztopiaTheme?: string;
     /** The icon displayed before (on the left side of) the input field. */
     prefixIcon?: React.ReactElement<any>;
@@ -16,11 +16,11 @@ interface InputProps {
     suffixIcon?: React.ReactElement<any>;
     /** The label text displayed after (on the right side of) the input field. */
     suffixLabel?: string;
-    /** Set input disabled state. */
+    /** Set the input state to disabled. */
     disabled?: boolean;
-    /** Display a given error message. */
+    /** Input error message to be displayed. */
     errorMessage?: string;
-    /** The callback function that is triggered when Enter key is pressed. */
+    /** A callback function triggered when the Enter key is pressed. */
     onPressEnter?: Function;
     className?: string;
 }

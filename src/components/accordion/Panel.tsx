@@ -10,7 +10,7 @@ export interface PanelProps {
     panelKey: string;
     /** A function that toggles panel active state and is triggered when accordion panel header is clicked. */
     togglePanel?: (e: React.MouseEvent<HTMLElement>, panelKey: string) => void;
-    /** Setting to true will open this panel. */
+    /** Set the panel state to open. */
     open?: boolean;
     className?: string;
 }
