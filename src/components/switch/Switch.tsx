@@ -7,24 +7,24 @@ import SwitchThemes from 'components/switch/switch-themes';
 import { isThemeValid } from 'components/ztopia-themes';
 
 interface SwitchProps {
-    /** All Ztopia themes can be found in Design section. */
+    /** All Ztopia themes can be found in the Design section. */
     ztopiaTheme?: string;
-    /** Default checked state. */
-    defaultChecked?: boolean;
-    /** Text to be shown when the state is checked. */
-    checkedText?: string;
-    /** Text to be shown when the state is unchecked. */
-    uncheckedText?: string;
-    /** Set switch loading state. */
+    /** Default the switch state to active. */
+    defaultActive?: boolean;
+    /** Text to be shown when the switch state is active. */
+    activeText?: string;
+    /** Text to be shown when the switch state is inactive. */
+    inactiveText?: string;
+    /** Set the switch to loading state. */
     loading?: boolean;
     disabled?: boolean;
-    /** A callback function triggered when the checked state is switching. */
-    onSwitch?: (checked: boolean) => void;
+    /** A callback function triggered when the switch active state changes. */
+    onSwitch?: (isActive: boolean) => void;
     className?: string;
 }
 
 interface SwitchState {
-    checked: boolean;
+    isActive: boolean;
 }
 
 const ZtopiaSwitch = styled.div(
@@ -37,8 +37,8 @@ const ZtopiaSwitch = styled.div(
         justifyContent: 'center',
         cursor: 'pointer',
         position: 'relative',
-        '&.checked': {
-            '> .ztopia-switch-checked-text': {
+        '&.active': {
+            '> .ztopia-switch-active-text': {
                 opacity: 1,
             },
             '> .ztopia-switch-button': {
@@ -46,13 +46,13 @@ const ZtopiaSwitch = styled.div(
                 // The subtracted 2px is the border width
                 transform: 'translateX(calc(-100% - 2px))',
             },
-            '> .ztopia-switch-unchecked-text': {
+            '> .ztopia-switch-inactive-text': {
                 opacity: 0,
             },
         },
         '&.loading': {
             cursor: 'not-allowed',
-            '> .ztopia-switch-checked-text, > .ztopia-switch-button, > .ztopia-switch-unchecked-text': {
+            '> .ztopia-switch-active-text, > .ztopia-switch-button, > .ztopia-switch-inactive-text': {
                 display: 'none',
             },
             '> .ztopia-loader': {
@@ -63,7 +63,7 @@ const ZtopiaSwitch = styled.div(
         '&[disabled]': {
             cursor: 'not-allowed',
         },
-        '> .ztopia-switch-checked-text': {
+        '> .ztopia-switch-active-text': {
             position: 'absolute',
             left: '4px',
             opacity: 0,
@@ -74,7 +74,7 @@ const ZtopiaSwitch = styled.div(
             left: '2px',
             position: 'absolute',
         },
-        '> .ztopia-switch-unchecked-text': {
+        '> .ztopia-switch-inactive-text': {
             position: 'absolute',
             right: '4px',
             opacity: 1,
@@ -91,32 +91,32 @@ const ZtopiaSwitch = styled.div(
 class Switch extends React.Component<SwitchProps, SwitchState> {
     static defaultProps = {
         ztopiaTheme: 'Basic',
-        defaultChecked: false,
+        defaultActive: false,
         loading: false,
         disabled: false,
     };
 
     constructor(props: SwitchProps) {
         super(props);
-        const { defaultChecked } = props;
+        const { defaultActive } = props;
         this.state = {
-            checked: defaultChecked || false,
+            isActive: defaultActive || false,
         };
     }
 
     render() {
         const {
             ztopiaTheme,
-            checkedText,
-            uncheckedText,
+            activeText,
+            inactiveText,
             loading,
             disabled,
             className,
         } = this.props;
-        const { checked } = this.state;
+        const { isActive } = this.state;
         const classNames = cx(
             'ztopia-switch',
-            checked && 'checked',
+            isActive && 'active',
             loading && 'loading',
             className,
         );
@@ -128,16 +128,16 @@ class Switch extends React.Component<SwitchProps, SwitchState> {
                     disabled={disabled}
                     onClick={this.handleClickSwitch}
                 >
-                    {checkedText && (
-                        <span className="ztopia-switch-checked-text">
-                            {checkedText}
+                    {activeText && (
+                        <span className="ztopia-switch-active-text">
+                            {activeText}
                         </span>
                     )}
                     {loading && <Loader />}
                     <div className="ztopia-switch-button" />
-                    {uncheckedText && (
-                        <span className="ztopia-switch-unchecked-text">
-                            {uncheckedText}
+                    {inactiveText && (
+                        <span className="ztopia-switch-inactive-text">
+                            {inactiveText}
                         </span>
                     )}
                 </ZtopiaSwitch>
@@ -147,16 +147,16 @@ class Switch extends React.Component<SwitchProps, SwitchState> {
 
     private handleClickSwitch = (): void => {
         const { loading, disabled, onSwitch } = this.props;
-        const { checked } = this.state;
+        const { isActive } = this.state;
         if (disabled || loading) {
             return;
         }
-        const newChecked = !checked;
+        const newActiveState = !isActive;
         this.setState({
-            checked: newChecked,
+            isActive: newActiveState,
         });
         if (onSwitch) {
-            onSwitch(newChecked);
+            onSwitch(newActiveState);
         }
     };
 }

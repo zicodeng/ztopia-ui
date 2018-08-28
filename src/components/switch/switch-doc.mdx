@@ -16,9 +16,9 @@ import Switch from './Switch'
 
 ## Basic Switch
 <Playground className={playgroundStyle}>
-    <Switch defaultChecked />
-    <Switch checkedText="On" uncheckedText="Off" />
+    <Switch defaultActive />
+    <Switch activeText="On" inactiveText="Off" />
     <Switch loading />
     <Switch disabled />
-    <Switch onSwitch={(checked) => {console.log("Switch to", checked)}} />
+    <Switch onSwitch={(isActive) => {console.log("Switch to", isActive)}} />
 </Playground>

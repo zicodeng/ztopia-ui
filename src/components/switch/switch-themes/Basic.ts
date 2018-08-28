@@ -5,10 +5,10 @@ const Basic = {
     backgroundColor: 'transparent',
     borderColor: ZtopiaThemes.Basic.Color.DARK_LIGHT,
     transition: ZtopiaThemes.Basic.Animation.TRANSITION,
-    '&.checked': {
+    '&.active': {
         backgroundColor: ZtopiaThemes.Basic.Color.LIGHT,
         borderColor: ZtopiaThemes.Basic.Color.DARK,
-        '> .ztopia-switch-checked-text': {
+        '> .ztopia-switch-active-text': {
             color: ZtopiaThemes.Basic.Color.DARK,
         },
         '> .ztopia-switch-button': {
@@ -27,14 +27,14 @@ const Basic = {
             borderColor: ZtopiaThemes.Basic.Color.DARK_LIGHT,
         },
     },
-    '> .ztopia-switch-checked-text': {
+    '> .ztopia-switch-active-text': {
         transition: ZtopiaThemes.Basic.Animation.TRANSITION,
     },
     '> .ztopia-switch-button': {
         backgroundColor: ZtopiaThemes.Basic.Color.DARK_LIGHT,
         transition: ZtopiaThemes.Basic.Animation.TRANSITION,
     },
-    '> .ztopia-switch-unchecked-text': {
+    '> .ztopia-switch-inactive-text': {
         transition: ZtopiaThemes.Basic.Animation.TRANSITION,
     },
 };
