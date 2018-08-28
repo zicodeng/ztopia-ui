@@ -31,11 +31,11 @@ const ZtopiaThemes: IZtopiaThemes = {
             LIGHT_LIGHT: '',
             LIGHT_DARK: '',
             DARK: '#000000',
-            DARK_LIGHT: '',
+            DARK_LIGHT: '#A5A5A5',
             DARK_DARK: '',
         },
         Animation: {
-            TRANSITION: '',
+            TRANSITION: 'all 0.5s ease',
         },
     },
     Space: {

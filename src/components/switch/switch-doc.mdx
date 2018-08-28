@@ -1,0 +1,24 @@
+---
+name: Switch
+menu: Components
+route: /components/switch
+---
+
+import { Playground, PropsTable } from 'docz'
+
+import { playgroundStyle } from './switch-doc-style.ts'
+import Switch from './Switch'
+
+# Switch
+
+## API
+<PropsTable of={Switch} />
+
+## Basic Switch
+<Playground className={playgroundStyle}>
+    <Switch defaultChecked />
+    <Switch checkedText="On" uncheckedText="Off" />
+    <Switch loading />
+    <Switch disabled />
+    <Switch onSwitch={(checked) => {console.log("Switch to", checked)}} />
+</Playground>
