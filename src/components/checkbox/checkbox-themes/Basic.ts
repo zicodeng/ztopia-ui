@@ -2,14 +2,14 @@ import ZtopiaThemes from 'components/ztopia-themes';
 
 const Basic = {
     '&.checked': {
-        '> .ztopia-checkbox': {
+        '> .ztopia-checkbox-custom': {
             '&::after': {
                 display: 'block',
             },
         },
     },
-    '> .ztopia-checkbox': {
-        borderColor: ZtopiaThemes.Basic.Color.DARK,
+    '> .ztopia-checkbox': {},
+    '> .ztopia-checkbox-custom': {
         '&::after': {
             content: '""',
             width: '10px',

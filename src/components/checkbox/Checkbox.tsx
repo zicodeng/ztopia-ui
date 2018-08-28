@@ -8,10 +8,12 @@ import { isThemeValid } from 'components/ztopia-themes';
 interface CheckboxProps {
     /** All Ztopia themes can be found in the Design section. */
     ztopiaTheme?: string;
+    /** Checkbox name. */
+    name?: string;
+    /** Checkbox value. */
+    value?: string;
     /** Checkbox label to be displayed. */
     label?: string;
-    /** Set the checkbox value. */
-    value?: string;
     /** Default the checkbox state to checked. */
     defaultChecked?: boolean;
     /** A callback function triggered when the checkbox checked state changes. */
@@ -21,24 +23,30 @@ interface CheckboxProps {
 
 interface CheckboxState {
     checked: boolean;
-    value: string;
 }
 
 const ZtopiaCheckboxContainer = styled.div(
     {
         display: 'flex',
         alignItems: 'center',
-        '&.checked': {
-            '> .ztopia-checkbox': {},
-        },
+        position: 'relative',
+        // Hide browser default checkbox style
         '> .ztopia-checkbox': {
             width: '16px',
             height: '16px',
-            border: '1px solid',
+            opacity: 0,
+            zIndex: 1,
             cursor: 'pointer',
+        },
+        '> .ztopia-checkbox-custom': {
+            width: '16px',
+            height: '16px',
+            border: '1px solid',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            position: 'absolute',
+            left: '0',
         },
         '> .ztopia-checkbox-label': {
             marginLeft: '10px',
@@ -60,15 +68,14 @@ class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
 
     constructor(props: CheckboxProps) {
         super(props);
-        const { defaultChecked, value } = props;
+        const { defaultChecked } = props;
         this.state = {
             checked: defaultChecked || false,
-            value: value || '',
         };
     }
 
     public render(): JSX.Element {
-        const { ztopiaTheme, label, className } = this.props;
+        const { ztopiaTheme, name, label, value, className } = this.props;
         const { checked } = this.state;
         const classNames = cx(
             'ztopia-checkbox-container',
@@ -81,10 +88,15 @@ class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
                     ztopiaTheme={ztopiaTheme}
                     className={classNames}
                 >
-                    <div
+                    <input
+                        type="checkbox"
                         className="ztopia-checkbox"
-                        onClick={this.handleClickCheckbox}
+                        name={name}
+                        value={value}
+                        checked={checked}
+                        onChange={this.handleChangeCheckbox}
                     />
+                    <span className="ztopia-checkbox-custom" />
                     {label && (
                         <label className="ztopia-checkbox-label">{label}</label>
                     )}
@@ -93,15 +105,15 @@ class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
         );
     }
 
-    private handleClickCheckbox = (): void => {
+    private handleChangeCheckbox = (): void => {
         const { value, onCheck } = this.props;
         const { checked } = this.state;
-        const newChecked = !checked;
+        const newCheckedState = !checked;
         this.setState({
-            checked: newChecked,
+            checked: newCheckedState,
         });
         if (onCheck) {
-            onCheck(value || '', newChecked);
+            onCheck(value || '', newCheckedState);
         }
     };
 }
