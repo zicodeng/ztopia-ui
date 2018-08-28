@@ -25,7 +25,7 @@ interface InputProps {
     className?: string;
 }
 
-const ZtopiaInput = styled.div(
+const ZtopiaInputOuterContainer = styled.div(
     {
         position: 'relative',
         '> .ztopia-input-inner-container': {
@@ -97,7 +97,10 @@ const Input: React.SFC<InputProps> = props => {
 
     return (
         <ThemeProvider theme={InputThemes}>
-            <ZtopiaInput ztopiaTheme={ztopiaTheme} className={classNames}>
+            <ZtopiaInputOuterContainer
+                ztopiaTheme={ztopiaTheme}
+                className={classNames}
+            >
                 <div className="ztopia-input-inner-container">
                     {prefixIcon && (
                         <span className="ztopia-prefix-icon">{prefixIcon}</span>
@@ -125,7 +128,7 @@ const Input: React.SFC<InputProps> = props => {
                 {errorMessage && (
                     <p className="ztopia-input-error-message">{errorMessage}</p>
                 )}
-            </ZtopiaInput>
+            </ZtopiaInputOuterContainer>
         </ThemeProvider>
     );
 };
