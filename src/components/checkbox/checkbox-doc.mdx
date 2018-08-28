@@ -1,0 +1,22 @@
+---
+name: Checkbox
+menu: Components
+route: /components/checkbox
+---
+
+import { Playground, PropsTable } from 'docz'
+
+import { playgroundStyle } from './checkbox-doc-style.ts'
+import Checkbox from './Checkbox'
+
+# Checkbox
+
+## API
+<PropsTable of={Checkbox} />
+
+## Basic Checkbox
+<Playground className={playgroundStyle}>
+    <Checkbox label="Orange" value="orange" defaultChecked  />
+    <Checkbox label="Apple" value="apple" onCheck={(value, checked) => console.log(value, checked)} />
+</Playground>
+
