@@ -65,7 +65,7 @@ const ZtopiaSwitch = styled.div(
         },
         '> .ztopia-switch-checked-text': {
             position: 'absolute',
-            left: '5px',
+            left: '4px',
             opacity: 0,
         },
         '> .ztopia-switch-button': {
@@ -76,7 +76,7 @@ const ZtopiaSwitch = styled.div(
         },
         '> .ztopia-switch-unchecked-text': {
             position: 'absolute',
-            right: '5px',
+            right: '4px',
             opacity: 1,
         },
     },
