@@ -5,7 +5,7 @@ import LoaderThemes from 'components/loader/loader-themes';
 import { isThemeValid } from 'components/ztopia-themes';
 
 interface LoaderProps {
-    /** All Ztopia themes can be found in Introduction section. */
+    /** All Ztopia themes can be found in Design section. */
     ztopiaTheme?: string;
     className?: string;
 }

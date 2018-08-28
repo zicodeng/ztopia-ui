@@ -7,7 +7,7 @@ import Loader from 'components/loader/Loader';
 import { isThemeValid } from 'components/ztopia-themes';
 
 interface ButtonProps {
-    /** All Ztopia themes can be found in Introduction section. */
+    /** All Ztopia themes can be found in Design section. */
     ztopiaTheme?: string;
     /** Make background transparent and invert text and border colors. */
     ghost?: boolean;
