@@ -11,7 +11,8 @@ export { Accordion, Panel, Button, Checkbox, Input, Loader, Switch };
 
 // Icons
 import IconChevronLeft from 'icons/IconChevronLeft';
+import IconCrossMark from 'icons/IconCrossMark';
 import IconPartyParrot from 'icons/IconPartyParrot';
 import IconUser from 'icons/IconUser';
 
-export { IconChevronLeft, IconPartyParrot, IconUser };
+export { IconChevronLeft, IconPartyParrot, IconUser, IconCrossMark };
