@@ -5,9 +5,10 @@ import Button from 'components/button/Button';
 import Checkbox from 'components/checkbox/Checkbox';
 import Input from 'components/input/Input';
 import Loader from 'components/loader/Loader';
+import Select from 'components/select/Select';
 import Switch from 'components/switch/Switch';
 
-export { Accordion, Panel, Button, Checkbox, Input, Loader, Switch };
+export { Accordion, Panel, Button, Checkbox, Input, Loader, Select, Switch };
 
 // Icons
 import IconChevronLeft from 'icons/IconChevronLeft';

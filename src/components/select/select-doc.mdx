@@ -1,0 +1,156 @@
+---
+name: Select
+menu: Components
+route: /components/select
+---
+
+import { Playground, PropsTable } from 'docz'
+
+import { playgroundStyle } from './select-doc-style.ts'
+import Select from './Select'
+
+# Select
+
+## API
+<PropsTable of={Select} />
+
+```javascript
+interface Option {
+    key: string;
+    label: string;
+    value: string;
+}
+```
+
+## Override Style
+```css
+.ztopia-select__container {
+    &[disabled] {
+        ...
+    }
+    &.loading {
+        ...
+    }
+    &.show-options {
+        ....
+    }
+    &.multiple {
+        ...
+    }
+    &.search {
+        ...
+    }
+    .ztopia-select__selected-options-container {}
+    .ztopia-select__placeholder {}
+    .ztopia-select__selected-options {}
+    .ztopia-select__selected-option {}
+    .ztopia-select__icon-cross-mark {}
+    .ztopia-select__search-box {}
+    .ztopia-select__icon-chevron-left {}
+    .ztopia-select__options {}
+    .ztopia-select__option {
+        &:hover {}
+        &:selected {}
+    }
+    .ztopia-select__loader {}
+}
+```
+
+## Basic Select
+
+### Select Mode - Single Selection
+<Playground className={playgroundStyle}>
+    <Select
+        placeholder="What Is Your Favorite Fruit?"
+        options={[
+            {
+                key: 'apple',
+                label: 'Apple',
+                value: 'apple'
+            },
+            {
+                key: 'banana',
+                label: 'Banana',
+                value: 'banana'
+            },
+            {
+                key: 'orange',
+                label: 'Orange',
+                value: 'orange'
+            },
+            {
+                key: 'avocado',
+                label: 'Avocado',
+                value: 'avocado'
+            },
+            {
+                key: 'pineapple',
+                label: 'Pineapple',
+                value: 'pineapple'
+            },
+            {
+                key: 'mango',
+                label: 'Mango',
+                value: 'mango'
+            },
+                        {
+                key: 'watermelon',
+                label: 'Watermelon',
+                value: 'watermelon'
+            },
+        ]}
+        onSelect={(selectedOption) => console.log('SELECTED OPTION:', selectedOption)}
+        onDeselect={(deselectedOption) => console.log('DESELECTED OPTION:', deselectedOption)}
+        onSelectionChange={(data) => console.log('CURRENTLY SELECTED:', data)}
+    />
+</Playground>
+
+### Select Mode - Multi-Selection + Search-Selection
+<Playground className={playgroundStyle}>
+    <Select
+        multiple
+        search
+        placeholder="What Is Your Favorite Fruit?"
+        defaultValue={['apple', 'banana']}
+        options={[
+            {
+                key: 'apple',
+                label: 'Apple',
+                value: 'apple'
+            },
+            {
+                key: 'banana',
+                label: 'Banana',
+                value: 'banana'
+            },
+            {
+                key: 'orange',
+                label: 'Orange',
+                value: 'orange'
+            },
+            {
+                key: 'avocado',
+                label: 'Avocado',
+                value: 'avocado'
+            },
+            {
+                key: 'pineapple',
+                label: 'Pineapple',
+                value: 'pineapple'
+            },
+            {
+                key: 'mango',
+                label: 'Mango',
+                value: 'mango'
+            },
+                        {
+                key: 'watermelon',
+                label: 'Watermelon',
+                value: 'watermelon'
+            },
+        ]}
+        onSelect={(selectedOption) => console.log('SELECTED OPTION:', selectedOption)}
+        onDeselect={(deselectedOption) => console.log('DESELECTED OPTION:', deselectedOption)}
+        onSelectionChange={(data) => console.log('CURRENTLY SELECTED:', data)}
+    />
+</Playground>
