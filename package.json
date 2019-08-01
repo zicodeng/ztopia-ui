@@ -23,9 +23,10 @@
   "scripts": {
     "start": "docz dev",
     "build:dev": "NODE_ENV=development rollup -c --watch",
-    "build:prod": "NODE_ENV=production rollup -c",
+    "build:prod": "NODE_ENV=production rollup -c && yarn post-build",
     "build-docs": "docz build && yarn create-200",
-    "release": "bump --commit && yarn build && cd ./dist && yarn publish --non-interactive && cd ..",
+    "post-build": "cp -a ./styles ./dist/styles && cp ./package.json ./dist/package.json && cp ./README.md ./dist/README.md",
+    "release": "bump --commit && yarn build:prod && cd ./dist && yarn publish --non-interactive && cd ..",
     "deploy": "yarn build-docs && surge --domain ztopia-ui.zicodeng.me ./.docz/dist",
     "create-200": "cp ./.docz/dist/index.html ./.docz/dist/200.html"
   },
