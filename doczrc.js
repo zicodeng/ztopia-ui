@@ -22,10 +22,9 @@ export default {
   },
   /** Control menu order */
   menu: [
-    { name: 'Docs', menu: ['Introduction', 'Getting Started'] },
+    { name: 'Docs', menu: ['Introduction', 'Getting Started', 'Contributing'] },
     { name: 'Components', menu: ['Button'] },
   ],
-  ignore: ['README.md'],
   filterComponents: files =>
     files.filter(file => /([^d]\.(t|j)sx?)$/.test(file)),
   modifyBundlerConfig: (config, isDev) => ({
