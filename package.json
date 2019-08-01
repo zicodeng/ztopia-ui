@@ -96,5 +96,8 @@
     "version-bump-prompt": "^5.0.4",
     "webpack-filter-warnings-plugin": "^1.2.1"
   },
-  "peerDependencies": {}
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
 }

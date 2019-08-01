@@ -1,0 +1,18 @@
+.ztopia-button {
+  cursor: pointer;
+  background-color: transparent;
+  border-color: $black-dark;
+  outline: none;
+
+  &--small {
+    padding: $spacing-xs $spacing-s;
+  }
+
+  &--medium {
+    padding: $spacing-s $spacing-m;
+  }
+
+  &--large {
+    padding: $spacing-m $spacing-xl;
+  }
+}
