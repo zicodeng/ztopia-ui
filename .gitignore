@@ -13,6 +13,7 @@ coverage
 build
 dist
 tmp
+.docz
 
 # Dependency directories
 node_modules
@@ -20,7 +21,9 @@ bower_components
 
 # Cache
 .cache-loader
+.rpt2_cache
 
 # Misc
 .DS_Store
-.docz
+credentials.sh
+.env

@@ -1,120 +1,113 @@
-const Color = {
-    PRIMARY: '#2F80ED',
-    ACCENT: '#EB5757',
-    LIGHT: '#FFFFFF',
-    LIGHT_DARK: '#F5F7FA',
-    DARK: '#333333',
-    DARK_LIGHT: '#CCD1D9',
-};
+import path from 'path';
 
-// https://www.docz.site/documentation/project-configuration
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import TerserJSPlugin from 'terser-webpack-plugin';
+import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+import FilterWarningsPlugin from 'webpack-filter-warnings-plugin';
+
+import pkg from './package.json';
+
 export default {
-    src: 'src',
-    dest: 'docs/',
-    base: '/ztopia-ui/',
-    hashRouter: true,
-    protocol: 'http',
-    files: 'src/**/*.mdx',
-    title: 'Ztopia UI',
-    description: "It's not just another UI library. It's an entire world.",
-    typescript: true,
-    ordering: 'ascending',
-    themeConfig: {
-        /**
-         * Customize codemirror theme
-         * Available themes: https://codemirror.net/theme/
-         */
-        codemirrorTheme: 'docz-dark',
-        /**
-         * Logo
-         */
-        logo: {
-            src: null,
-            width: null,
-        },
-        /**
-         * Colors (depends on select mode)
-         */
-        colors: {
-            primary: Color.PRIMARY,
-            text: Color.DARK,
-            link: Color.PRIMARY,
-            footerText: Color.PRIMARY,
-            sidebarBg: Color.LIGHT_DARK,
-            sidebarText: Color.DARK,
-            background: Color.LIGHT,
-            border: Color.DARK_LIGHT,
-            theadColor: Color.DARK,
-            theadBg: Color.LIGHT_DARK,
-            tableColor: Color.DARK,
-        },
-        /**
-         * Styles
-         */
-        styles: {
-            body: {
-                fontFamily: "'Source Sans Pro', Helvetica, sans-serif",
-                fontSize: 16,
-                lineHeight: 1.6,
-            },
-            container: {
-                width: 920,
-                padding: ['20px 30px', '0 40px 40px'],
-            },
-            h1: {
-                margin: ['40px 0 20px', '60px 0 20px', '40px 0'],
-                fontSize: [36, 42, 48],
-                fontWeight: 400,
-                letterSpacing: '-0.02em',
-            },
-            h2: {
-                margin: ['20px 0 20px', '35px 0 20px'],
-                lineHeight: ['1.2em', '1.5em'],
-                fontSize: 28,
-                fontWeight: 400,
-                letterSpacing: '-0.02em',
-            },
-            h3: {
-                margin: '25px 0 10px',
-                fontSize: [22, 24],
-                fontWeight: 400,
-            },
-            h4: {
-                fontSize: 20,
-                fontWeight: 400,
-            },
-            h5: {
-                fontSize: 18,
-                fontWeight: 400,
-            },
-            h6: {
-                fontSize: 16,
-                fontWeight: 400,
-            },
-            list: {
-                padding: 0,
-                margin: '10px 0 10px 20px',
-            },
-            playground: {
-                padding: ['1.5em', '2em'],
-            },
-            code: {
-                margin: '0 3px',
-                padding: '4px 6px',
-                borderRadius: '3px',
-                fontFamily: '"Source Code Pro", monospace',
-                fontSize: 14,
-            },
-            pre: {
-                fontFamily: '"Source Code Pro", monospace',
-                fontSize: 14,
-                lineHeight: 1.8,
-            },
-            table: {
-                marginBottom: [20, 40],
-                fontFamily: '"Source Code Pro", monospace',
-                fontSize: 14,
-            },
-        },
+  src: './',
+  public: './public',
+  title: 'Ztopia UI',
+  description: pkg.description,
+  theme: 'docz-theme-ztopia',
+  notUseSpecifiers: true,
+  typescript: true,
+  htmlContext: {
+    head: {
+      links: [],
     },
+  },
+  /** Control menu order */
+  menu: [
+    { name: 'Docs', menu: ['Introduction', 'Getting Started'] },
+    { name: 'Components', menu: ['Button'] },
+  ],
+  ignore: ['README.md'],
+  filterComponents: files =>
+    files.filter(file => /([^d]\.(t|j)sx?)$/.test(file)),
+  modifyBundlerConfig: (config, isDev) => ({
+    ...config,
+    module: {
+      ...config.module,
+      rules: [
+        ...config.module.rules,
+        // For loading user styles
+        {
+          test: /\.css$/,
+          include: [path.resolve(__dirname, './components')],
+          use: [
+            isDev
+              ? {
+                  loader: 'style-loader',
+                  options: {
+                    sourceMap: true,
+                  },
+                }
+              : {
+                  loader: MiniCssExtractPlugin.loader,
+                },
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 1,
+                sourceMap: isDev,
+              },
+            },
+            {
+              loader: 'postcss-loader',
+            },
+          ],
+        },
+        // For loading vendor styles
+        {
+          test: /\.css$/,
+          include: [],
+          use: [
+            {
+              loader: 'style-loader',
+              options: {
+                sourceMap: false,
+              },
+            },
+            {
+              loader: 'css-loader',
+            },
+          ],
+        },
+      ],
+    },
+    optimization: {
+      ...config.optimization,
+      minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+      splitChunks: {
+        ...config.optimization.splitChunks,
+        cacheGroups: {
+          ...config.optimization.splitChunks.cacheGroups,
+          styles: {
+            chunks: 'all',
+            name: 'styles',
+            test: module => /(\.module)?\.css$/.test(module.type),
+            enforce: true,
+          },
+        },
+      },
+    },
+    plugins: [
+      ...config.plugins,
+      new MiniCssExtractPlugin({
+        filename: 'static/css/[name].[hash].css',
+      }),
+      new FilterWarningsPlugin({
+        exclude: /mini-css-extract-plugin[^]*Conflicting order between:/,
+      }),
+    ],
+  }),
+  themeConfig: {
+    logo: {
+      src: '/public/images/logo.png',
+    },
+  },
 };

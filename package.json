@@ -1,18 +1,17 @@
 {
   "name": "ztopia-ui",
-  "description": "It's not just another UI library. It's an entire world.",
-  "version": "0.5.0",
+  "description": "A lightweight and multivariant UI library built with customization in mind",
+  "version": "1.0.0",
   "author": "Zico Deng",
   "homepage": "https://github.com/zicodeng/ztopia-ui#readme",
   "keywords": [
     "react",
     "react-component",
-    "design",
     "front-end",
     "ui",
-    "library"
+    "ui-component",
+    "ui-library"
   ],
-  "main": "dist/ztopia-ui.min.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zicodeng/ztopia-ui.git"
@@ -22,55 +21,81 @@
     "url": "https://github.com/zicodeng/ztopia-ui/issues"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "docz dev",
-    "build": "webpack --color --progress --mode production",
-    "build-docs": "docz build",
-    "precommit": "lint-staged",
-    "prettier": "./node_modules/.bin/prettier --write \"**/*.{js,jsx,ts,tsx,md}\""
+    "build:dev": "NODE_ENV=development rollup -c --watch",
+    "build:prod": "NODE_ENV=production rollup -c",
+    "build-docs": "docz build && yarn create-200",
+    "release": "bump --commit && yarn build && cd ./dist && yarn publish --non-interactive && cd ..",
+    "deploy": "yarn build-docs && surge --domain ztopia-ui.zicodeng.me ./.docz/dist",
+    "create-200": "cp ./.docz/dist/index.html ./.docz/dist/200.html"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx,md}": [
+    "*.css": [
       "prettier --write",
+      "stylelint --fix",
       "git add"
     ],
-    "**/*.{ts,tsx}": [
+    "*.{ts,tsx}": [
       "prettier --write",
       "tslint --fix",
+      "git add"
+    ],
+    "*.{md,json,js,jsx}": [
+      "prettier --write",
       "git add"
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-rc.2",
-    "@babel/plugin-transform-runtime": "^7.0.0-rc.2",
-    "@babel/preset-env": "^7.0.0-rc.2",
-    "@babel/preset-react": "^7.0.0-rc.2",
-    "@types/lodash": "^4.14.116",
-    "@types/react": "^16.4.11",
-    "@types/react-dom": "^16.0.7",
-    "babel-loader": "^8.0.0-beta",
-    "babel-plugin-emotion": "^9.2.6",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "docz": "^0.10.3",
-    "emotion": "^9.2.6",
-    "emotion-theming": "^9.2.6",
-    "fork-ts-checker-webpack-plugin": "^0.4.9",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.2.2",
-    "lodash": "^4.17.10",
-    "prettier": "^1.14.2",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-emotion": "^9.2.6",
-    "thread-loader": "^1.2.0",
-    "ts-loader": "^4.5.0",
-    "tslint": "^5.11.0",
-    "typescript": "^3.0.1",
-    "webpack": "^4.17.0",
-    "webpack-cli": "^3.1.0"
+    "@types/react": "^16.8.24",
+    "autoprefixer": "^9.6.1",
+    "chalk": "^2.4.2",
+    "css-loader": "^3.1.0",
+    "cssnano": "^4.1.10",
+    "docz": "^1.2.0",
+    "docz-theme-ztopia": "^0.0.15",
+    "fs-extra": "^8.1.0",
+    "husky": "^3.0.2",
+    "lint-staged": "^9.2.1",
+    "mini-css-extract-plugin": "^0.8.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-custom-media": "^7.0.8",
+    "postcss-extend-rule": "^3.0.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-nested": "^4.1.2",
+    "postcss-simple-vars": "^5.0.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "rollup": "^1.17.0",
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-progress": "^1.1.1",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-terser": "^5.1.1",
+    "rollup-plugin-tslint": "^0.2.2",
+    "rollup-plugin-typescript2": "^0.22.1",
+    "rollup-plugin-url": "^2.2.2",
+    "style-loader": "^0.23.1",
+    "stylelint": "^10.1.0",
+    "stylelint-config-prettier": "^5.2.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-order": "^3.0.1",
+    "surge": "^0.21.3",
+    "terser-webpack-plugin": "^1.4.1",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3",
+    "version-bump-prompt": "^5.0.4",
+    "webpack-filter-warnings-plugin": "^1.2.1"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
-  }
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "dependencies": {}
 }
