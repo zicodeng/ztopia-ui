@@ -1,0 +1,45 @@
+---
+name: Checkbox
+menu: Components
+route: /components/checkbox
+---
+
+import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+
+import { Checkbox } from './';
+import { CheckboxDemo } from './CheckboxDemo.jsx';
+
+# Checkbox
+
+## Demo
+
+### Label & Id
+
+<Playground>
+  <Container>
+    <CheckboxDemo>
+      {({ checked, onChange }) => (
+        <Checkbox
+          label="Click checkbox"
+          checked={checked}
+          onChange={onChange}
+        />
+      )}
+    </CheckboxDemo>
+    <CheckboxDemo>
+      {({ checked, onChange }) => (
+        <Checkbox
+          label="Click my label or checkbox"
+          id="with-id"
+          checked={checked}
+          onChange={onChange}
+        />
+      )}
+    </CheckboxDemo>
+  </Container>
+</Playground>
+
+## API
+
+<Props of={Checkbox} />
