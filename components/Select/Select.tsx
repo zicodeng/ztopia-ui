@@ -11,7 +11,16 @@ export interface SelectOption {
 }
 
 export interface SelectProps {
+  /**
+   * <@default=`false`>
+   *
+   * Enable multi selection
+   */
   multi?: boolean;
+  /**
+   * <@default=`false`>
+   *
+   */
   searchable?: boolean;
   maxMenuHeight?: number;
   label?: string;
