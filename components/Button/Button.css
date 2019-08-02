@@ -1,18 +1,74 @@
+%shaped-button {
+  color: $white-light;
+  background-color: $black-dark;
+  border-color: $black-dark;
+
+  &:hover {
+    background-color: $black-light;
+    border-color: $black-light;
+  }
+
+  &.ghost {
+    color: $black-dark;
+    background-color: transparent;
+
+    &:hover {
+      color: $white-light;
+      background-color: $black-dark;
+    }
+  }
+}
+
+%unshaped-button {
+  padding: 0;
+  border: 0;
+  color: $black-dark;
+
+  &:hover {
+    color: $black-light;
+  }
+}
+
 .ztopia-button {
   cursor: pointer;
-  background-color: transparent;
-  border-color: $black-dark;
   outline: none;
+  transition: $transition-fast;
 
   &--small {
     padding: $spacing-xs $spacing-s;
   }
 
   &--medium {
-    padding: $spacing-s $spacing-m;
+    padding: $spacing-s $spacing-l;
   }
 
   &--large {
-    padding: $spacing-m $spacing-xl;
+    padding: $spacing-m 30px;
+  }
+
+  &--rect {
+    @extend %shaped-button;
+
+    border-radius: 0;
+  }
+
+  &--circle {
+    @extend %shaped-button;
+
+    border-radius: 100%;
+  }
+
+  &--pill {
+    @extend %shaped-button;
+
+    border-radius: 100px;
+  }
+
+  &--text {
+    @extend %unshaped-button;
+  }
+
+  &--icon {
+    @extend %unshaped-button;
   }
 }

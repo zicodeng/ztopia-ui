@@ -17,7 +17,9 @@ export default {
   typescript: true,
   htmlContext: {
     head: {
-      links: [],
+      raw: [
+        '<script src="https://kit.fontawesome.com/fe2f496166.js"></script>',
+      ],
     },
   },
   /** Control menu order */
@@ -36,7 +38,10 @@ export default {
         // For loading user styles
         {
           test: /\.css$/,
-          include: [path.resolve(__dirname, './components')],
+          include: [
+            path.resolve(__dirname, './components'),
+            path.resolve(__dirname, './helpers'),
+          ],
           use: [
             isDev
               ? {

@@ -3,7 +3,7 @@ const colorPalette = {
   white: '#e5e8ec',
   'white-dark': '#cbd0d8',
 
-  'black-light': '#646c77',
+  'black-light': '#464b53',
   black: '#272b31',
   'black-dark': '#131518',
 

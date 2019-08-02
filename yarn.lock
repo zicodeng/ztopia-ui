@@ -3640,10 +3640,10 @@ docz-core@^1.2.0:
     ws "^7.0.0"
     yargs "^13.2.2"
 
-docz-theme-ztopia@^0.0.15:
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/docz-theme-ztopia/-/docz-theme-ztopia-0.0.15.tgz#5d81e3b83287a887e7900b017f29a7198ee9274b"
-  integrity sha512-SktLyzlAC5DG5XgtG4Vt+xyK41p6fdM63nMDSWwRSttctV0CqaG6dcdHJQKn09OTzgczJujRCU8ziVzJbyItVw==
+docz-theme-ztopia@^0.0.19:
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/docz-theme-ztopia/-/docz-theme-ztopia-0.0.19.tgz#11cb1e0e170ca5799c0b1f2c260e2648dc17bc4b"
+  integrity sha512-amw1W+vdwhHFb4NdPZp5h0YOLanSb/AhU6giGxR4iMHdeit8Qph5De+g+TEn2LxJ5740GiPt+tl46cRoKV+Qjw==
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^1.2.19"
     "@fortawesome/free-regular-svg-icons" "^5.9.0"
@@ -3658,9 +3658,7 @@ docz-theme-ztopia@^0.0.15:
     prettier "^1.17.1"
     prop-types "^15.7.2"
     re-resizable "^5.0.0"
-    react "^16.8.6"
     react-codemirror2 "^6.0.0"
-    react-dom "^16.8.6"
     react-frame-component "^4.1.0"
     react-live "^2.1.2"
 

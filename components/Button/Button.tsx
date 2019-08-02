@@ -14,7 +14,7 @@ export interface ButtonProps {
   /**
    * <@default=`'rect'`>
    */
-  variant?: 'rect' | 'pill';
+  variant?: 'rect' | 'circle' | 'pill' | 'text';
   /**
    * <@default=`'medium'`>
    */
@@ -22,7 +22,7 @@ export interface ButtonProps {
 }
 
 export const Button: FC<ButtonProps> = memo(
-  ({ ghost, variant, size, children }) => (
+  ({ ghost, variant, size, children, ...restProps }) => (
     <button
       className={classNames(
         'ztopia-button',
@@ -30,8 +30,10 @@ export const Button: FC<ButtonProps> = memo(
         `ztopia-button--${size}`,
         {
           'ztopia-button--ghost': ghost,
+          ghost,
         },
       )}
+      {...restProps}
     >
       {children}
     </button>

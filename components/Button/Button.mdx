@@ -5,21 +5,54 @@ route: /components/button
 ---
 
 import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
 
 import { Button } from './';
 
 # Button
 
-## API
-
-<Props of={Button} />
-
 ## Demo
+
+### Variant
+
+<Playground>
+  <Container>
+    <Button variant="rect">Rect (default)</Button>
+    <Button variant="circle">Circle</Button>
+    <Button variant="pill">Pill</Button>
+    <Button variant="text">Text</Button>
+    <Button variant="icon">
+      <i class="fas fa-heart" />
+    </Button>
+  </Container>
+</Playground>
+
+### Ghost
+
+<Playground>
+  <Container>
+    <Button ghost variant="rect">
+      Rect (default)
+    </Button>
+    <Button ghost variant="circle">
+      Circle
+    </Button>
+    <Button ghost variant="pill">
+      Pill
+    </Button>
+  </Container>
+</Playground>
 
 ### Size
 
-<Playground wrapper="Hello">
-  <Button size="small">Small</Button>
-  <Button size="medium">Medium (default)</Button>
-  <Button size="large">Large</Button>
+<Playground>
+  <Container>
+    <Button size="small">Small</Button>
+    <Button size="medium">Medium (default)</Button>
+    <Button size="large">Large</Button>
+  </Container>
 </Playground>
+
+## API
+
+<Props of={Button} />
