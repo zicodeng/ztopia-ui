@@ -17,6 +17,7 @@
         border-bottom: 1px solid $white-dark;
         border-radius: 0;
         box-shadow: none;
+        transition: $transition-fast;
 
         &:hover {
           border-color: $black-light;
