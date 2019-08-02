@@ -8,8 +8,6 @@
   }
 
   &__container {
-    font-size: $font-size-xs;
-
     .select {
       &__control {
         border: 0;
@@ -114,7 +112,7 @@
 
       &__multi-value__label {
         color: $white-light;
-        font-size: $font-size-xs;
+        font-size: $font-size-s;
       }
 
       &__multi-value__remove {
