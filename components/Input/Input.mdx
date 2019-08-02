@@ -1,0 +1,53 @@
+---
+name: Input
+menu: Components
+route: /components/input
+---
+
+import { Props, Playground } from 'docz';
+
+import { Input } from './';
+import { InputDemo } from './InputDemo';
+
+# Input
+
+## Demo
+
+### Label & Placeholder
+
+<Playground>
+  <InputDemo>
+    {({ value, onChange }) => (
+      <Input label="Username" value={value} onChange={onChange} />
+    )}
+  </InputDemo>
+  <InputDemo>
+    {({ value, onChange }) => (
+      <Input
+        label="Username"
+        placeholder="jonsnow"
+        value={value}
+        onChange={onChange}
+      />
+    )}
+  </InputDemo>
+</Playground>
+
+### Error
+
+<Playground>
+  <InputDemo>
+    {({ value, onChange }) => (
+      <Input
+        label="Email"
+        error="Invalid email"
+        value={value}
+        onChange={onChange}
+      />
+    )}
+  </InputDemo>
+</Playground>
+
+## API
+
+<Props of={Input} />

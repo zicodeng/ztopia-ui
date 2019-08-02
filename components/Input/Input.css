@@ -1,0 +1,66 @@
+.ztopia-input {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  margin-bottom: $spacing-l;
+  padding-top: $spacing-s;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $white-dark;
+    content: '';
+  }
+
+  &__label {
+    position: absolute;
+    top: 36%;
+    transition: $transition-fast;
+
+    &--active {
+      top: 0;
+      font-size: $font-size-xs;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: 30px;
+    padding: 0;
+    border: 0;
+    font-size: $font-size-m;
+    outline: 0;
+  }
+
+  &__bar {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $black-dark;
+    content: '';
+    transform: scale(0);
+    transition: transform 150ms cubic-bezier(0.5, 0.5, 1, 1);
+
+    &--active {
+      transform: scale(1);
+    }
+
+    &--invalid {
+      background-color: $color-danger;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: $color-danger;
+    transform: translateY(100%);
+  }
+}
