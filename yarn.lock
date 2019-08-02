@@ -1360,6 +1360,13 @@
     "@types/react-dom" "*"
     "@types/react-transition-group" "*"
 
+"@types/react-toggle@^4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@types/react-toggle/-/react-toggle-4.0.2.tgz#46ffa5af1a55de5f25d0aa78ef0b557b5c8bf276"
+  integrity sha512-sHqfoKFnL0YU2+OC4meNEC8Ptx9FE8/+nFeFvNcdBa6ANA8KpAzj3R9JN8GtrvlLgjKDoYgI7iILgXYcTPo2IA==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-transition-group@*":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@types/react-transition-group/-/react-transition-group-4.2.0.tgz#86ddb509ce3de27341c7cb7797abb99b1c4676bf"
@@ -3770,10 +3777,10 @@ docz-core@^1.2.0:
     ws "^7.0.0"
     yargs "^13.2.2"
 
-docz-theme-ztopia@^0.0.19:
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/docz-theme-ztopia/-/docz-theme-ztopia-0.0.19.tgz#11cb1e0e170ca5799c0b1f2c260e2648dc17bc4b"
-  integrity sha512-amw1W+vdwhHFb4NdPZp5h0YOLanSb/AhU6giGxR4iMHdeit8Qph5De+g+TEn2LxJ5740GiPt+tl46cRoKV+Qjw==
+docz-theme-ztopia@^0.0.20:
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/docz-theme-ztopia/-/docz-theme-ztopia-0.0.20.tgz#81df7985ee2825d8366de25daf368dd083694c64"
+  integrity sha512-z4K0NF2GBT6xNciuD5wdEnqfRpNKS74uwYml9hApWPkrW0/H2ZLIkyYsSf6whmhn9Xlr7T8Otrh3PSNRJuroHQ==
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^1.2.19"
     "@fortawesome/free-regular-svg-icons" "^5.9.0"
@@ -8778,6 +8785,13 @@ react-simple-code-editor@^0.9.0:
   version "0.9.14"
   resolved "https://registry.yarnpkg.com/react-simple-code-editor/-/react-simple-code-editor-0.9.14.tgz#5b8fdc36a975cbf02fdafa2597398d8e212afebc"
   integrity sha512-doNaIIt4w7QIiB6ysWHMtYL4M3xOGPvZJH8vGq3W/hGk43pn25RDA27IS8GkbfhA1eLX72CWDhuC7KmDKax13g==
+
+react-toggle@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/react-toggle/-/react-toggle-4.0.2.tgz#77f487860efb87fafd197672a2db8c885be1440f"
+  integrity sha512-EPTWnN7gQHgEAUEmjheanZXNzY5TPnQeyyHfEs3YshaiWZf5WNjfYDrglO5F1Hl/dNveX18i4l0grTEsYH2Ccw==
+  dependencies:
+    classnames "^2.2.5"
 
 react-transition-group@^2.2.1:
   version "2.9.0"

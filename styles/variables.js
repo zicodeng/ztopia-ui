@@ -1,5 +1,5 @@
 const colorPalette = {
-  'white-light': '#f8f9fb',
+  'white-light': '#fcfdfd',
   white: '#e5e8ec',
   'white-dark': '#cbd0d8',
 

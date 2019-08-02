@@ -1,0 +1,137 @@
+.ztopia-toggle {
+  .react-toggle {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    background-color: transparent;
+    touch-action: pan-x;
+    user-select: none;
+  }
+
+  .react-toggle-thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    box-sizing: border-box;
+    background-color: $white-light;
+    border-radius: 50%;
+    transition: $transition-fast;
+  }
+
+  .react-toggle-track {
+    display: flex;
+    padding: 0;
+    align-items: center;
+    background-color: $white-dark;
+    transition: $transition-fast;
+  }
+
+  .react-toggle-track-check {
+    position: absolute;
+    left: 0;
+    display: flex;
+    color: $white-light;
+    align-items: center;
+    transform: translate($spacing-xs);
+  }
+
+  .react-toggle-track-x {
+    position: absolute;
+    right: 0;
+    display: flex;
+    color: $black-dark;
+    align-items: center;
+    transform: translate(-$spacing-xs);
+  }
+
+  .react-toggle-screenreader-only {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+  }
+
+  &--small {
+    .react-toggle-thumb {
+      width: 20px;
+      height: 20px;
+    }
+
+    .react-toggle-track {
+      width: 40px;
+      height: 24px;
+      border-radius: 24px;
+    }
+  }
+
+  &--medium {
+    .react-toggle-thumb {
+      width: 22px;
+      height: 22px;
+    }
+
+    .react-toggle-track {
+      width: 46px;
+      height: 26px;
+      border-radius: 26px;
+    }
+  }
+
+  &--large {
+    .react-toggle-thumb {
+      width: 24px;
+      height: 24px;
+    }
+
+    .react-toggle-track {
+      width: 52px;
+      height: 28px;
+      border-radius: 28px;
+    }
+  }
+
+  &--checked {
+    .react-toggle-track {
+      background-color: $black-dark;
+    }
+
+    .react-toggle-track-x {
+      opacity: 0;
+    }
+
+    .react-toggle-track-check {
+      opacity: 1;
+    }
+
+    &.ztopia-toggle--small {
+      .react-toggle-thumb {
+        left: 18px;
+      }
+    }
+
+    &.ztopia-toggle--medium {
+      .react-toggle-thumb {
+        left: 22px;
+      }
+    }
+
+    &.ztopia-toggle--large {
+      .react-toggle-thumb {
+        left: 26px;
+      }
+    }
+  }
+
+  &--disabled {
+    .react-toggle {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+}

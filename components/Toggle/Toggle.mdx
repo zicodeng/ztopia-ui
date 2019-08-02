@@ -1,0 +1,70 @@
+---
+name: Toggle
+menu: Components
+route: /components/toggle
+---
+
+import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+
+import { Toggle } from './';
+import { ToggleDemo } from './ToggleDemo.jsx';
+
+# Toggle
+
+Based on [react-toggle](https://github.com/aaronshaf/react-toggle)
+
+## Demo
+
+### Size
+
+<Playground>
+  <Container>
+    <ToggleDemo>
+      {({ checked, onChange }) => (
+        <Toggle size="small" checked={checked} onChange={onChange} />
+      )}
+    </ToggleDemo>
+    <ToggleDemo>
+      {({ checked, onChange }) => (
+        <Toggle size="medium" checked={checked} onChange={onChange} />
+      )}
+    </ToggleDemo>
+    <ToggleDemo>
+      {({ checked, onChange }) => (
+        <Toggle size="large" checked={checked} onChange={onChange} />
+      )}
+    </ToggleDemo>
+  </Container>
+</Playground>
+
+## Disabled
+
+<Playground>
+  <ToggleDemo>
+    {({ checked, onChange }) => (
+      <Toggle disabled checked={checked} onChange={onChange} />
+    )}
+  </ToggleDemo>
+</Playground>
+
+## Icons
+
+<Playground>
+  <ToggleDemo>
+    {({ checked, onChange }) => (
+      <Toggle
+        checked={checked}
+        onChange={onChange}
+        icons={{
+          checked: <i className="fas fa-heart" />,
+          unchecked: <i className="fas fa-heart-broken" />,
+        }}
+      />
+    )}
+  </ToggleDemo>
+</Playground>
+
+## API
+
+<Props of={Toggle} />
