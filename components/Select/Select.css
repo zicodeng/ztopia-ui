@@ -1,0 +1,131 @@
+.ztopia-select {
+  height: 50px;
+
+  &__label {
+    display: block;
+    color: $black-dark;
+    font-size: $font-size-xs;
+  }
+
+  &__container {
+    font-size: $font-size-xs;
+
+    .select {
+      &__control {
+        border: 0;
+        background-color: transparent;
+        border-bottom: 1px solid $white-dark;
+        border-radius: 0;
+        box-shadow: none;
+
+        &:hover {
+          border-color: $black-light;
+        }
+
+        &--is-focused {
+          border-color: $black-dark;
+
+          &:hover {
+            border-color: $black-dark;
+          }
+        }
+      }
+
+      &__value-container {
+        padding: 2px 0;
+
+        > div {
+          margin: 0;
+        }
+
+        &--has-value {
+          > div {
+            margin: 2px;
+          }
+        }
+      }
+
+      &__indicator-separator {
+        background-color: $white-dark;
+      }
+
+      &__indicator {
+        color: $white-dark;
+        cursor: pointer;
+      }
+
+      &__dropdown-indicator {
+        &:hover {
+          color: $color-success;
+        }
+      }
+
+      &__clear-indicator {
+        &:hover {
+          color: $color-danger;
+        }
+      }
+
+      &__menu {
+        border: 1px solid $black-dark;
+        background-color: $white-light;
+        border-top: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        margin-top: 0;
+      }
+
+      &__menu-list {
+        padding: 0;
+      }
+
+      &__option {
+        cursor: pointer;
+
+        &:hover,
+        &--is-focused {
+          color: $white-light;
+          background-color: $black-dark;
+        }
+
+        &--is-selected {
+          background-color: $black-dark;
+        }
+      }
+
+      &__placeholder {
+        color: $white-dark;
+      }
+
+      &__input {
+        color: $black-dark;
+      }
+
+      &__single-value {
+        margin: 0;
+        color: $black-dark;
+      }
+
+      &__multi-value {
+        overflow: hidden;
+        background-color: $black-dark;
+      }
+
+      &__multi-value__label {
+        color: $white-light;
+        font-size: $font-size-xs;
+      }
+
+      &__multi-value__remove {
+        color: $white-light;
+        cursor: pointer;
+        border-radius: 0;
+
+        &:hover {
+          color: $color-danger;
+          background-color: $red-light;
+        }
+      }
+    }
+  }
+}

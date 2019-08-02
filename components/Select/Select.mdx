@@ -1,0 +1,65 @@
+---
+name: Select
+menu: Components
+route: /components/select
+---
+
+import { Props, Playground } from 'docz';
+
+import { Select } from './';
+import { options, SelectDemo } from './SelectDemo.jsx';
+
+# Select
+
+## Demo
+
+### Single Selection
+
+<Playground>
+  <SelectDemo>
+    {({ value, onChange }) => (
+      <Select
+        label="What is your favorite fruit?"
+        value={value}
+        options={options}
+        onChange={onChange}
+      />
+    )}
+  </SelectDemo>
+</Playground>
+
+### Multi Selection
+
+<Playground>
+  <SelectDemo>
+    {({ value, onChange }) => (
+      <Select
+        multi
+        label="What are your favorite fruits?"
+        value={value}
+        options={options}
+        onChange={onChange}
+      />
+    )}
+  </SelectDemo>
+</Playground>
+
+### Searchable
+
+<Playground>
+  <SelectDemo>
+    {({ value, onChange }) => (
+      <Select
+        searchable
+        label="What are your favorite fruits?"
+        value={value}
+        options={options}
+        onChange={onChange}
+      />
+    )}
+  </SelectDemo>
+</Playground>
+
+## API
+
+<Props of={Select} />
