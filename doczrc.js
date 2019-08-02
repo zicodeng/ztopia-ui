@@ -35,12 +35,12 @@ export default {
       ...config.module,
       rules: [
         ...config.module.rules,
-        // For loading user styles
         {
           test: /\.css$/,
           include: [
             path.resolve(__dirname, './components'),
             path.resolve(__dirname, './helpers'),
+            path.resolve(__dirname, './node_modules/react-toggle'),
           ],
           use: [
             isDev
@@ -62,22 +62,6 @@ export default {
             },
             {
               loader: 'postcss-loader',
-            },
-          ],
-        },
-        // For loading vendor styles
-        {
-          test: /\.css$/,
-          include: [],
-          use: [
-            {
-              loader: 'style-loader',
-              options: {
-                sourceMap: false,
-              },
-            },
-            {
-              loader: 'css-loader',
             },
           ],
         },
