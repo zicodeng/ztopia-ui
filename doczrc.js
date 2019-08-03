@@ -40,6 +40,7 @@ export default {
           include: [
             path.resolve(__dirname, './components'),
             path.resolve(__dirname, './helpers'),
+            path.resolve(__dirname, './node_modules/rc-tooltip'),
           ],
           use: [
             isDev

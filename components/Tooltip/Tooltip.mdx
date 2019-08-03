@@ -1,0 +1,99 @@
+---
+name: Tooltip
+menu: Components
+route: /components/tooltip
+---
+
+import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+
+import { Tooltip } from './';
+import { Box } from './TooltipDemo';
+
+# Tooltip
+
+Based on [rc-tooltip](https://github.com/react-component/tooltip)
+
+## Demo
+
+### Trigger
+
+<Playground>
+  <Container>
+    <Tooltip trigger={['hover']} overlay={<h1>Hello, World!</h1>}>
+      <Box>Hover (Default)</Box>
+    </Tooltip>
+    <Tooltip trigger={['click']} overlay={<h1>Hello, World!</h1>}>
+      <Box>Click</Box>
+    </Tooltip>
+    <Tooltip trigger={['focus']} overlay={<h1>Hello, World!</h1>}>
+      <input placeholder="Focus" />
+    </Tooltip>
+  </Container>
+</Playground>
+
+### Placement
+
+<Playground>
+  <Container>
+    <Tooltip placement="top" overlay={<h1>Hello, World!</h1>}>
+      <Box>Top (Default)</Box>
+    </Tooltip>
+    <Tooltip placement="topLeft" overlay={<h1>Hello, World!</h1>}>
+      <Box>Top Left</Box>
+    </Tooltip>
+    <Tooltip placement="topRight" overlay={<h1>Hello, World!</h1>}>
+      <Box>Top Right</Box>
+    </Tooltip>
+  </Container>
+  <Container>
+    <Tooltip placement="right" overlay={<h1>Hello, World!</h1>}>
+      <Box>Right</Box>
+    </Tooltip>
+    <Tooltip placement="rightTop" overlay={<h1>Hello, World!</h1>}>
+      <Box>Right Top</Box>
+    </Tooltip>
+    <Tooltip placement="rightBottom" overlay={<h1>Hello, World!</h1>}>
+      <Box>Right Bottom</Box>
+    </Tooltip>
+  </Container>
+  <Container>
+    <Tooltip placement="bottom" overlay={<h1>Hello, World!</h1>}>
+      <Box>Bottom</Box>
+    </Tooltip>
+    <Tooltip placement="bottomLeft" overlay={<h1>Hello, World!</h1>}>
+      <Box>Bottom Left</Box>
+    </Tooltip>
+    <Tooltip placement="bottomRight" overlay={<h1>Hello, World!</h1>}>
+      <Box>Bottom Right</Box>
+    </Tooltip>
+  </Container>
+  <Container>
+    <Tooltip placement="left" overlay={<h1>Hello, World!</h1>}>
+      <Box>Left</Box>
+    </Tooltip>
+    <Tooltip placement="leftTop" overlay={<h1>Hello, World!</h1>}>
+      <Box>Left Top</Box>
+    </Tooltip>
+    <Tooltip placement="leftBottom" overlay={<h1>Hello, World!</h1>}>
+      <Box>Left Bottom</Box>
+    </Tooltip>
+  </Container>
+</Playground>
+
+### Offset
+
+<Playground>
+  <Container>
+    <Tooltip placement="right" offsetX={20} overlay={<h1>Hello, World!</h1>}>
+      <Box>OffsetX</Box>
+    </Tooltip>
+    <Tooltip placement="top" offsetY={-20} overlay={<h1>Hello, World!</h1>}>
+      <Box>OffsetY</Box>
+    </Tooltip>
+  </Container>
+</Playground>
+
+## API
+
+<Props of={Tooltip} />
