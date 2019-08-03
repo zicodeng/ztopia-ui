@@ -38,7 +38,8 @@ export default components
     input: `./components/${c}/index.ts`,
     output: { file: `./dist/${c}/index.js`, sourceMap: true, format: 'esm' },
     external: id =>
-      !id.startsWith('.') && !id.startsWith('/') && !id.endsWith('css'),
+      id.startsWith('../') ||
+      (!id.startsWith('.') && !id.startsWith('/') && !id.endsWith('css')),
     onwarn,
     plugins: [
       replace({
