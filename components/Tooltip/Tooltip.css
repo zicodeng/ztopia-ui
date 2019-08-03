@@ -1,5 +1,6 @@
 .ztopia-tooltip {
   padding: 0;
+  line-height: inherit;
   background-color: $white-light;
 
   &--top .rc-tooltip-arrow,
@@ -27,8 +28,10 @@
   }
 
   .rc-tooltip-inner {
+    padding: $spacing-xs $spacing-s;
     color: $black-dark;
     background-color: transparent;
     border-color: $black-dark;
+    min-height: unset;
   }
 }

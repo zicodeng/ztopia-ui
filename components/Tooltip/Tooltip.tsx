@@ -6,6 +6,7 @@ import 'rc-tooltip/assets/bootstrap_white.css';
 import './Tooltip.css';
 
 export interface TooltipProps {
+  visible?: boolean;
   /**
    * <@default=`0`>
    */
@@ -14,6 +15,7 @@ export interface TooltipProps {
    * <@default=`0`>
    */
   offsetY?: number;
+  className?: string;
   /**
    * <@default=`'hover'`>
    */
@@ -47,7 +49,7 @@ export interface TooltipProps {
 const ARROW_SIZE = 4;
 
 export const Tooltip: FC<TooltipProps> = memo(
-  ({ offsetX, offsetY, placement, children, ...restProps }) => {
+  ({ offsetX, offsetY, className, placement, children, ...restProps }) => {
     offsetX = placement!.includes('left')
       ? offsetX! - ARROW_SIZE
       : offsetX! + ARROW_SIZE;
@@ -58,6 +60,7 @@ export const Tooltip: FC<TooltipProps> = memo(
       <BaseTooltip
         placement={placement}
         overlayClassName={classNames(
+          className,
           'ztopia-tooltip',
           `ztopia-tooltip--${placement}`,
         )}

@@ -1,0 +1,40 @@
+.ztopia-slider {
+  &--vertical {
+    height: 200px;
+  }
+
+  .rc-slider-rail {
+    background-color: $white-dark;
+  }
+
+  .rc-slider-track {
+    background-color: $black-dark;
+  }
+
+  .rc-slider-handle {
+    background-color: $white-light;
+    border-color: $black-dark;
+
+    &:active,
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .rc-slider-dot {
+    background-color: $white-light;
+    border-color: $white-dark;
+
+    &-active {
+      border-color: $black-dark;
+    }
+  }
+
+  .rc-slider-mark-text {
+    color: $white-dark;
+
+    &-active {
+      color: $black-dark;
+    }
+  }
+}
