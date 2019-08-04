@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { FC, memo } from 'react';
+import React, { FC, memo, ReactNode } from 'react';
 import LazyLoad from 'react-lazyload';
 import ProgressiveImage from 'react-progressive-image';
 
@@ -29,10 +29,11 @@ export interface ImageProps {
    * <@default=`'auto'`>
    */
   height?: number | string;
+  caption?: ReactNode;
 }
 
 export const Image: FC<ImageProps> = memo(
-  ({ background, width, height, delay, src, alt, className }) => {
+  ({ background, width, height, delay, src, alt, className, caption }) => {
     if (background && typeof height !== 'number') {
       throw new Error(
         'height must be a number with fixed value in background mode',
@@ -53,22 +54,40 @@ export const Image: FC<ImageProps> = memo(
                     height,
                     backgroundImage: `url(${src})`,
                   }}
-                  className={classNames(className, 'ztopia-image--background')}
-                />
+                  className={classNames(
+                    className,
+                    'ztopia-image',
+                    'ztopia-image--background',
+                  )}
+                >
+                  {caption && (
+                    <div className="ztopia-image__caption">{caption}</div>
+                  )}
+                </div>
               );
             }
             return (
-              <img
+              <figure
+                className={classNames(
+                  className,
+                  'ztopia-image',
+                  'ztopia-image--normal',
+                  {
+                    'ztopia-image--loading': loading,
+                  },
+                )}
                 style={{
                   width,
                   height,
                 }}
-                src={src}
-                alt={alt}
-                className={classNames(className, 'ztopia-image', {
-                  'ztopia-image--loading': loading,
-                })}
-              />
+              >
+                <img src={src} alt={alt} />
+                {caption && (
+                  <figcaption className="ztopia-image__caption">
+                    {caption}
+                  </figcaption>
+                )}
+              </figure>
             );
           }}
         </ProgressiveImage>

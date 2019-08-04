@@ -2,12 +2,14 @@ import classNames from 'classnames';
 import React, { FC, memo, ReactNode } from 'react';
 import { Carousel as BaseCarousel } from 'react-responsive-carousel';
 
+import { Image } from '../Image';
+
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './Carousel.css';
 
 export interface CarouselSlide {
-  imgSrc: string;
-  legend?: ReactNode;
+  src: string;
+  caption?: ReactNode;
 }
 
 export interface CarouselProps {
@@ -35,14 +37,15 @@ export const Carousel: FC<CarouselProps> = memo(
       className={classNames(className, 'ztopia-carousel')}
       {...restProps}
     >
-      {slides.map(({ imgSrc, legend }, i) => (
-        <div
+      {slides.map(({ src, caption }, i) => (
+        <Image
+          background
           key={i}
-          className="ztopia-carousel__slide"
-          style={{ height, backgroundImage: `url('${imgSrc}')` }}
-        >
-          {legend && <div className="ztopia-carousel__legend">{legend}</div>}
-        </div>
+          delay={500}
+          height={height}
+          src={src}
+          caption={caption}
+        />
       ))}
     </BaseCarousel>
   ),

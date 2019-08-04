@@ -1,10 +1,5 @@
 .ztopia-carousel {
-  &__slide {
-    background-position: center center;
-    background-size: cover;
-  }
-
-  &__legend {
+  .ztopia-image__caption {
     position: absolute;
     top: 50px;
     left: 50px;
@@ -15,8 +10,10 @@
   }
 
   .slide {
+    background: transparent;
+
     &.selected {
-      .ztopia-carousel__legend {
+      .ztopia-image__caption {
         opacity: 1;
         transform: translateY(0);
       }

@@ -13,8 +13,18 @@
 }
 
 .ztopia-image {
-  opacity: 1;
-  transition: $transition-slow;
+  position: relative;
+
+  &--normal {
+    margin: 0;
+    opacity: 1;
+    transition: $transition-slow;
+
+    > img {
+      width: 100%;
+      height: 100%;
+    }
+  }
 
   &--background {
     background-position: center center;
@@ -24,6 +34,12 @@
   &__placeholder {
     animation: fading 1.5s infinite;
     background-color: $black-dark;
+  }
+
+  &__caption {
+    position: absolute;
+    top: $spacing-l;
+    left: $spacing-l;
   }
 
   &--loading {
