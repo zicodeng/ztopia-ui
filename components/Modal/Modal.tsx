@@ -12,6 +12,7 @@ interface ModalProps {
   /**
    * <@default=`'medium'`>
    */
+  className: string;
   size?: 'small' | 'medium' | 'large';
   /**
    * Modal can be closed via pressing ESC key, clicking overlay or close icon
@@ -20,12 +21,12 @@ interface ModalProps {
 }
 
 export const Modal: FC<ModalProps> = memo(
-  ({ isOpen, size, onRequestClose, children }) => (
+  ({ isOpen, className, size, onRequestClose, children }) => (
     <ReactModal
       ariaHideApp={false}
       isOpen={isOpen}
       bodyOpenClassName="ztopia-modal__body--open"
-      portalClassName="ztopia-modal"
+      portalClassName={classNames(className, 'ztopia-modal')}
       className={classNames(
         'ztopia-modal__content',
         `ztopia-modal__content--${size}`,
