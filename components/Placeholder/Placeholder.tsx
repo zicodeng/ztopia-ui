@@ -5,6 +5,12 @@ import './Placeholder.css';
 
 export interface PlaceholderProps {
   /**
+   * <@default=`1`>
+   *
+   * Require `variant='text'`
+   */
+  rows?: number;
+  /**
    * <@default=`'grey'`>
    */
   color?: string;
@@ -13,26 +19,46 @@ export interface PlaceholderProps {
   /**
    * <@default=`'rect'`>
    */
-  variant?: 'rect' | 'circle';
+  shape: 'rect' | 'circle';
+  variant?: 'image' | 'text';
 }
 
 export const Placeholder: FC<PlaceholderProps> = memo(
-  ({ color, width, height, variant }) => (
-    <div
-      className={classNames(
-        'ztopia-placeholder',
-        `ztopia-placeholder--${variant}`,
-      )}
-      style={{
-        width,
-        height,
-        backgroundColor: color,
-      }}
-    />
-  ),
+  ({ rows, color, width, height, shape, variant }) =>
+    variant === 'text' ? (
+      <div
+        className={classNames('ztopia-placeholder', 'ztopia-placeholder--text')}
+        style={{ width }}
+      >
+        {Array.from({ length: rows! }).map((_, i) => (
+          <div
+            key={i}
+            style={{
+              height,
+              width: `${Math.random() * 100 + 50}%`,
+              backgroundColor: color,
+            }}
+          />
+        ))}
+      </div>
+    ) : (
+      <div
+        className={classNames(
+          'ztopia-placeholder',
+          `ztopia-placeholder--${shape}`,
+          `ztopia-placeholder--${variant}`,
+        )}
+        style={{
+          width,
+          height,
+          backgroundColor: color,
+        }}
+      ></div>
+    ),
 );
 
 Placeholder.defaultProps = {
+  rows: 1,
   color: 'grey',
-  variant: 'rect',
+  shape: 'rect',
 };

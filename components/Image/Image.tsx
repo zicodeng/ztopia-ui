@@ -45,7 +45,13 @@ export const Image: FC<ImageProps> = memo(
           {(src, loading) => {
             if (background) {
               if (loading) {
-                return <Placeholder width={width!} height={height!} />;
+                return (
+                  <Placeholder
+                    variant="image"
+                    width={width!}
+                    height={height!}
+                  />
+                );
               }
               return (
                 <div
