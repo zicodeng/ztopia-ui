@@ -1,0 +1,46 @@
+---
+name: Image
+menu: Components
+route: /components/image
+---
+
+import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+
+import { Image } from './';
+
+# Image
+
+Dependencies: [react-progressive-image](https://github.com/FormidableLabs/react-progressive-image) and [react-lazyload](https://github.com/twobin/react-lazyload)
+
+## Demo
+
+### Basic Usage
+
+<Playground>
+  <Image src="https://s28566.pcdn.co/wp-content/uploads/2018/08/home-hero.jpg" />
+</Playground>
+
+### Background Mode & Delay
+
+<Playground>
+  <Container>
+    <Image
+      background
+      width={400}
+      height={400}
+      src="https://s28566.pcdn.co/wp-content/uploads/2018/08/home-hero.jpg"
+    />
+    <Image
+      background
+      delay={5000}
+      width={400}
+      height={400}
+      src="https://s28566.pcdn.co/wp-content/uploads/2018/08/home-hero.jpg"
+    />
+  </Container>
+</Playground>
+
+## API
+
+<Props of={Image} />

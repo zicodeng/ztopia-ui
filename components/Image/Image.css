@@ -1,0 +1,33 @@
+@keyframes fading {
+  0% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 0.1;
+  }
+}
+
+.ztopia-image {
+  opacity: 1;
+  transition: $transition-slow;
+
+  &--background {
+    background-position: center center;
+    background-size: cover;
+  }
+
+  &__placeholder {
+    animation: fading 1.5s infinite;
+    background-color: $black-dark;
+  }
+
+  &--loading {
+    filter: blur(10px);
+    opacity: 0.5;
+  }
+}

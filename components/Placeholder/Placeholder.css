@@ -1,0 +1,21 @@
+@keyframes fading {
+  0% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 0.1;
+  }
+}
+
+.ztopia-placeholder {
+  animation: fading 1.4s infinite;
+
+  &--circle {
+    border-radius: 100%;
+  }
+}

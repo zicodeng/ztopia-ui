@@ -1,0 +1,37 @@
+---
+name: Placeholder
+menu: Components
+route: /components/placeholder
+---
+
+import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+
+import { Placeholder } from './';
+
+# Placeholder
+
+## Demo
+
+### Variant
+
+<Playground>
+  <Container>
+    <Placeholder variant="rect" width={200} height={200} />
+    <Placeholder variant="circle" width={200} height={200} />
+  </Container>
+</Playground>
+
+### Color
+
+<Playground>
+  <Container>
+    <Placeholder color="red" width={200} height={200} />
+    <Placeholder color="green" width={200} height={200} />
+    <Placeholder color="blue" width={200} height={200} />
+  </Container>
+</Playground>
+
+## API
+
+<Props of={Placeholder} />
