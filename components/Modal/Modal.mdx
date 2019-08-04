@@ -1,0 +1,62 @@
+---
+name: Modal
+menu: Components
+route: /components/modal
+---
+
+import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+import faker from 'faker';
+
+import { Modal } from './';
+import { ModalDemo, Trigger } from './ModalDemo.jsx';
+
+# Modal
+
+Based on [react-modal](https://github.com/reactjs/react-modal)
+
+## Demo
+
+### Sizes
+
+<Playground>
+  <Container>
+    <ModalDemo>
+      {({ isOpen, openModal, closeModal }) => (
+        <>
+          <Trigger onClick={openModal}>Small</Trigger>
+          <Modal size="small" isOpen={isOpen} onRequestClose={closeModal}>
+            <h1>Hello, World!</h1>
+            <p>{faker.lorem.paragraphs()}</p>
+          </Modal>
+        </>
+      )}
+    </ModalDemo>
+    <ModalDemo>
+      {({ isOpen, openModal, closeModal }) => (
+        <>
+          <Trigger onClick={openModal}>Medium (Default)</Trigger>
+          <Modal size="medium" isOpen={isOpen} onRequestClose={closeModal}>
+            <h1>Hello, World!</h1>
+            <p>{faker.lorem.paragraphs()}</p>
+          </Modal>
+        </>
+      )}
+    </ModalDemo>
+    <ModalDemo>
+      {({ isOpen, openModal, closeModal }) => (
+        <>
+          <Trigger onClick={openModal}>Large</Trigger>
+          <Modal size="large" isOpen={isOpen} onRequestClose={closeModal}>
+            <h1>Hello, World!</h1>
+            <p>{faker.lorem.paragraphs()}</p>
+          </Modal>
+        </>
+      )}
+    </ModalDemo>
+  </Container>
+</Playground>
+
+## API
+
+<Props of={Modal} />

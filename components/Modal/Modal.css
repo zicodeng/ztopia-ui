@@ -1,0 +1,62 @@
+.ztopia-modal {
+  &__overlay {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    opacity: 0;
+    transition: $transition-fast;
+  }
+
+  .ReactModal__Overlay--after-open {
+    opacity: 1;
+  }
+
+  &__content {
+    position: relative;
+    padding: 30px;
+    color: $black-dark;
+    background-color: $white-light;
+    opacity: 0;
+    outline: none;
+    transform: translateY(100px);
+    transition: $transition-fast;
+
+    &--small {
+      width: 400px;
+    }
+
+    &--medium {
+      width: 600px;
+    }
+
+    &--large {
+      width: 800px;
+    }
+  }
+
+  .ReactModal__Content--after-open {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &__close-icon {
+    position: absolute;
+    top: $spacing-xl;
+    right: $spacing-xl;
+    width: 14px;
+    color: $red;
+    font-size: x-large;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-danger;
+    }
+  }
+}
