@@ -1,0 +1,44 @@
+---
+name: Carousel
+menu: Components
+route: /components/carousel
+---
+
+import { Props, Playground } from 'docz';
+import faker from 'faker';
+
+import { Carousel } from './';
+
+# Carousel
+
+Based on [react-responsive-carousel](https://github.com/leandrowd/react-responsive-carousel)
+
+## Demo
+
+### Basic Usage
+
+<Playground>
+  <Carousel
+    slides={[
+      {
+        imgSrc:
+          'http://www.youandthemat.com/wp-content/uploads/nature-2-26-17.jpg',
+        legend: <h1 style={{ color: 'white' }}>Hello, World!</h1>,
+      },
+      {
+        imgSrc:
+          'https://therightsofnature.org/wp-content/uploads/2018/01/turkey-3048299_1920.jpg',
+        legend: <h1 style={{ color: 'white' }}>Hello, World!</h1>,
+      },
+      {
+        imgSrc:
+          'https://s3.amazonaws.com/tinycards/image/267c9f320470cae9a3778e8380196bf7',
+        legend: <h1 style={{ color: 'white' }}>Hello, World!</h1>,
+      },
+    ]}
+  />
+</Playground>
+
+## API
+
+<Props of={Carousel} />

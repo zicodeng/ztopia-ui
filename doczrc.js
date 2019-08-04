@@ -42,6 +42,7 @@ export default {
             path.resolve(__dirname, './helpers'),
             path.resolve(__dirname, './node_modules/rc-tooltip'),
             path.resolve(__dirname, './node_modules/rc-slider'),
+            path.resolve(__dirname, './node_modules/react-responsive-carousel'),
           ],
           use: [
             isDev
