@@ -9,10 +9,10 @@ interface ModalProps {
    * <@default=`false`>
    */
   isOpen: boolean;
+  className: string;
   /**
    * <@default=`'medium'`>
    */
-  className: string;
   size?: 'small' | 'medium' | 'large';
   /**
    * Modal can be closed via pressing ESC key, clicking overlay or close icon
