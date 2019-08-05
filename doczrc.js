@@ -43,6 +43,7 @@ export default {
             path.resolve(__dirname, './node_modules/rc-tooltip'),
             path.resolve(__dirname, './node_modules/rc-slider'),
             path.resolve(__dirname, './node_modules/react-responsive-carousel'),
+            path.resolve(__dirname, './node_modules/react-toastify'),
           ],
           use: [
             isDev

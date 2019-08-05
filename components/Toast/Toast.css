@@ -1,0 +1,38 @@
+.ztopia-toast {
+  &__close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 10px;
+    color: $red;
+
+    &:hover {
+      color: $color-danger;
+    }
+  }
+
+  .Toastify__toast {
+    padding: $spacing-s;
+    color: $black-dark;
+
+    &__default {
+      background-color: $white-light;
+    }
+
+    &--info {
+      background-color: $blue;
+    }
+
+    &--success {
+      background-color: $color-success;
+    }
+
+    &--warning {
+      background-color: $color-warning;
+    }
+
+    &--error {
+      background-color: $color-danger;
+    }
+  }
+}

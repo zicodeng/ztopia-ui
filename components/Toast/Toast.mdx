@@ -1,0 +1,236 @@
+---
+name: Toast
+menu: Components
+route: /components/toast
+---
+
+import { Playground, Props } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+
+import { Button } from '../Button';
+
+import { ToastContainer, makeToast, updateToast } from './';
+
+# Toast
+
+Dependency: [react-toastify](https://github.com/fkhadra/react-toastify)
+
+## Demo
+
+### Initialize Toast with `<ToastContainer>` Component
+
+<Playground>
+  <ToastContainer containerId="ToastContainer-demo" />
+  <Button
+    onClick={() =>
+      makeToast('Hello, World!', { containerId: 'ToastContainer-demo' })
+    }
+  >
+    Make Toast
+  </Button>
+</Playground>
+
+### Position
+
+<Playground>
+  <ToastContainer containerId="position-demo" />
+  <Container>
+    <Button
+      onClick={() =>
+        makeToast('Top Right (Default)', {
+          position: 'top-right',
+          containerId: 'position-demo',
+        })
+      }
+    >
+      Top Right (Default)
+    </Button>
+    <Button
+      onClick={() =>
+        makeToast('Top Center', {
+          position: 'top-center',
+          containerId: 'position-demo',
+        })
+      }
+    >
+      Top Center
+    </Button>
+    <Button
+      onClick={() =>
+        makeToast('Top Left', {
+          position: 'top-left',
+          containerId: 'position-demo',
+        })
+      }
+    >
+      Top Left
+    </Button>
+    <Button
+      onClick={() =>
+        makeToast('Bottom Right', {
+          position: 'bottom-right',
+          containerId: 'position-demo',
+        })
+      }
+    >
+      Bottom Right
+    </Button>
+    <Button
+      onClick={() =>
+        makeToast('Bottom Center', {
+          position: 'bottom-center',
+          containerId: 'position-demo',
+        })
+      }
+    >
+      Bottom Center
+    </Button>
+    <Button
+      onClick={() =>
+        makeToast('Bottom Left', {
+          position: 'bottom-left',
+          containerId: 'position-demo',
+        })
+      }
+    >
+      Bottom Left
+    </Button>
+  </Container>
+</Playground>
+
+### Type
+
+<Playground>
+  <ToastContainer containerId="type-demo" />
+  <Container>
+    <Button
+      onClick={() =>
+        makeToast('Default', {
+          type: 'default',
+          containerId: 'type-demo',
+        })
+      }
+    >
+      Default
+    </Button>
+    <Button
+      onClick={() =>
+        makeToast('Info', {
+          type: 'info',
+          containerId: 'type-demo',
+        })
+      }
+    >
+      Info
+    </Button>
+    <Button
+      onClick={() =>
+        makeToast('Success', {
+          type: 'success',
+          containerId: 'type-demo',
+        })
+      }
+    >
+      Success
+    </Button>
+    <Button
+      onClick={() =>
+        makeToast('Warning', {
+          type: 'warning',
+          containerId: 'type-demo',
+        })
+      }
+    >
+      Warning
+    </Button>
+    <Button
+      onClick={() =>
+        makeToast('Error', {
+          type: 'error',
+          containerId: 'type-demo',
+        })
+      }
+    >
+      Error
+    </Button>
+  </Container>
+</Playground>
+
+### Auto Close & Auto Close Delay
+
+<Playground>
+  <ToastContainer containerId="autoclose-demo" />
+  <Container>
+    <Button
+      onClick={() =>
+        makeToast('Close After 10 Seconds', {
+          containerId: 'autoclose-demo',
+          autoClose: 10000,
+        })
+      }
+    >
+      Make Toast (Close After 10 Seconds)
+    </Button>
+    <Button
+      onClick={() =>
+        makeToast('Auto Close Disabled', {
+          containerId: 'autoclose-demo',
+          autoClose: false,
+        })
+      }
+    >
+      Make Toast (Auto Close Disabled)
+    </Button>
+  </Container>
+</Playground>
+
+### Update Toast
+
+<Playground>
+  <ToastContainer containerId="update-demo" />
+  <Container>
+    <Button
+      onClick={() =>
+        makeToast('Hello!', {
+          toastId: 'update-demo-toast',
+          containerId: 'update-demo',
+          autoClose: false,
+        })
+      }
+    >
+      Make Toast
+    </Button>
+    <Button
+      onClick={() =>
+        updateToast('update-demo-toast', {
+          containerId: 'update-demo',
+          render: 'Hola!',
+          autoClose: 5000,
+          type: 'success',
+        })
+      }
+    >
+      Update Toast
+    </Button>
+  </Container>
+</Playground>
+
+## API
+
+### makeToast, updateToast, dismissToast & dismissAllToasts
+
+```ts
+type ToastId = number | string;
+
+const makeToast: (content: ReactNode, options: ToastOptions) => ToastId;
+
+const updateToast: (toastId: ToastId, options: ToastOptions) => void;
+
+const dismissToast: (toastId: ToastId) => void;
+
+const dismissAllToasts: () => void;
+```
+
+### ToastContainer & ToastOptions
+
+<Props of={ToastContainer} />
