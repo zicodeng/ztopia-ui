@@ -19,6 +19,7 @@ export interface ButtonProps {
    * <@default=`'medium'`>
    */
   size?: 'small' | 'medium' | 'large';
+  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 export const Button: FC<ButtonProps> = memo(
