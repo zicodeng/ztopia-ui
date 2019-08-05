@@ -12,7 +12,6 @@ import React, {
 } from 'react';
 
 import './Accordion.css';
-
 export interface AccordionProps {
   /**
    * <@default=`false`>
@@ -20,6 +19,7 @@ export interface AccordionProps {
   allowMultipleExpanded?: boolean;
   className?: string;
   defaultExpandedPanelIds?: string[];
+  children: AccordionPanel[];
 }
 
 export const Accordion: FC<AccordionProps> = memo(
@@ -81,6 +81,7 @@ export interface AccordionPanel {
     e: React.MouseEvent<HTMLElement, MouseEvent>,
     id: string,
   ) => void;
+  children: AccordionPanelHeader | AccordionPanelContent;
 }
 
 export const AccordionPanel: FC<AccordionPanel> = ({
@@ -96,18 +97,7 @@ export const AccordionPanel: FC<AccordionPanel> = ({
     );
   }
   const header = children[0];
-  if (header.type.displayName !== 'AccordionPanelHeader') {
-    throw new Error(
-      'the first child of AccordionPanel must be AccordionPanelHeader',
-    );
-  }
   const content = children[1];
-  if (header.type.displayName !== 'AccordionPanelHeader') {
-    throw new Error(
-      'the second child of AccordionPanel must be AccordionPanelContent',
-    );
-  }
-
   return (
     <article
       id={id}
@@ -201,7 +191,9 @@ export const AccordionPanelContent: FC<AccordionPanelContent> = ({
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const node = ref.current;
-    if (!node) { return; }
+    if (!node) {
+      return;
+    }
     setHeight(node.scrollHeight);
   }, [expanded]);
   return (
