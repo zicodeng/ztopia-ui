@@ -1,0 +1,39 @@
+.ztopia-accordion {
+  border: 1px solid $black-dark;
+
+  &__panel {
+    border-bottom: 1px solid $white-light;
+
+    &--expanded,
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  &__panel-header {
+    position: relative;
+    padding: $spacing-s $spacing-m;
+    color: $white-light;
+    cursor: pointer;
+    background-color: $black-dark;
+  }
+
+  &__panel-content {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    padding: 0 $spacing-m;
+    transition: $transition-fast;
+  }
+
+  &__panel-close-icon {
+    position: absolute;
+    right: 15px;
+    width: 10px;
+    transition: $transition-fast;
+
+    &--expanded {
+      transform: rotate(-90deg);
+    }
+  }
+}

@@ -1,0 +1,113 @@
+---
+name: Accordion
+menu: Components
+route: /components/accordion
+---
+
+import { Props, Playground } from 'docz';
+import faker from 'faker';
+
+import {
+  Accordion,
+  AccordionPanel,
+  AccordionPanelHeader,
+  AccordionPanelContent,
+} from './';
+
+# Accordion
+
+## Demo
+
+### Composition Pattern
+
+<Playground>
+  <Accordion>
+    <AccordionPanel id="panel-1">
+      <AccordionPanelHeader>Panel 1</AccordionPanelHeader>
+      <AccordionPanelContent>
+        <p>{faker.lorem.paragraph(5)}</p>
+        <p>{faker.lorem.paragraph(10)}</p>
+      </AccordionPanelContent>
+    </AccordionPanel>
+    <AccordionPanel id="panel-2">
+      <AccordionPanelHeader>Panel 2</AccordionPanelHeader>
+      <AccordionPanelContent>
+        <p>{faker.lorem.paragraph(5)}</p>
+        <p>{faker.lorem.paragraph(10)}</p>
+        <p>{faker.lorem.paragraph(20)}</p>
+      </AccordionPanelContent>
+    </AccordionPanel>
+    <AccordionPanel id="panel-3">
+      <AccordionPanelHeader>Panel 3</AccordionPanelHeader>
+      <AccordionPanelContent>
+        <p>{faker.lorem.paragraph(5)}</p>
+        <p>{faker.lorem.paragraph(20)}</p>
+        <p>{faker.lorem.paragraph(10)}</p>
+      </AccordionPanelContent>
+    </AccordionPanel>
+  </Accordion>
+</Playground>
+
+### Expanding Multiple Panels at Once
+
+<Playground>
+  <Accordion allowMultipleExpanded>
+    <AccordionPanel id="panel-1">
+      <AccordionPanelHeader>Panel 1</AccordionPanelHeader>
+      <AccordionPanelContent>
+        <p>{faker.lorem.paragraph(5)}</p>
+        <p>{faker.lorem.paragraph(10)}</p>
+      </AccordionPanelContent>
+    </AccordionPanel>
+    <AccordionPanel id="panel-2">
+      <AccordionPanelHeader>Panel 2</AccordionPanelHeader>
+      <AccordionPanelContent>
+        <p>{faker.lorem.paragraph(5)}</p>
+        <p>{faker.lorem.paragraph(10)}</p>
+        <p>{faker.lorem.paragraph(20)}</p>
+      </AccordionPanelContent>
+    </AccordionPanel>
+    <AccordionPanel id="panel-3">
+      <AccordionPanelHeader>Panel 3</AccordionPanelHeader>
+      <AccordionPanelContent>
+        <p>{faker.lorem.paragraph(5)}</p>
+        <p>{faker.lorem.paragraph(20)}</p>
+        <p>{faker.lorem.paragraph(10)}</p>
+      </AccordionPanelContent>
+    </AccordionPanel>
+  </Accordion>
+</Playground>
+
+### Default Expanded Panels
+
+<Playground>
+  <Accordion defaultExpandedPanelIds={['panel-1', 'panel-2']}>
+    <AccordionPanel id="panel-1">
+      <AccordionPanelHeader>Panel 1</AccordionPanelHeader>
+      <AccordionPanelContent>
+        <p>{faker.lorem.paragraph(5)}</p>
+        <p>{faker.lorem.paragraph(10)}</p>
+      </AccordionPanelContent>
+    </AccordionPanel>
+    <AccordionPanel id="panel-2">
+      <AccordionPanelHeader>Panel 2</AccordionPanelHeader>
+      <AccordionPanelContent>
+        <p>{faker.lorem.paragraph(5)}</p>
+        <p>{faker.lorem.paragraph(10)}</p>
+        <p>{faker.lorem.paragraph(20)}</p>
+      </AccordionPanelContent>
+    </AccordionPanel>
+    <AccordionPanel id="panel-3">
+      <AccordionPanelHeader>Panel 3</AccordionPanelHeader>
+      <AccordionPanelContent>
+        <p>{faker.lorem.paragraph(5)}</p>
+        <p>{faker.lorem.paragraph(20)}</p>
+        <p>{faker.lorem.paragraph(10)}</p>
+      </AccordionPanelContent>
+    </AccordionPanel>
+  </Accordion>
+</Playground>
+
+## API
+
+<Props of={Accordion} />
