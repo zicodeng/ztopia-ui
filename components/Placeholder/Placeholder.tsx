@@ -19,7 +19,7 @@ export interface PlaceholderProps {
   /**
    * <@default=`'rect'`>
    */
-  shape: 'rect' | 'circle';
+  shape?: 'rect' | 'circle';
   variant?: 'image' | 'text';
 }
 
