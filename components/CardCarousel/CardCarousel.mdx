@@ -1,0 +1,42 @@
+---
+name: CardCarousel
+menu: Components
+route: /components/card-carousel
+---
+
+import { Props, Playground } from 'docz';
+import faker from 'faker';
+
+import { CardCarousel } from './';
+
+# CardCarousel
+
+## Demo
+
+### Basic Usage
+
+<Playground>
+  <CardCarousel
+    cards={Array.from({ length: 10 }).map((_, i) => (
+      <div
+        key={i}
+        style={{
+          width: Math.random() * 200 + 200,
+          height: 350,
+          color: 'white',
+          backgroundColor: faker.internet.color(),
+          boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <h1>{i + 1}</h1>
+      </div>
+    ))}
+  />
+</Playground>
+
+## API
+
+<Props of={CardCarousel} />
