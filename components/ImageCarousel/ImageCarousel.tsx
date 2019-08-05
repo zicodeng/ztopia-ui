@@ -1,18 +1,18 @@
 import classNames from 'classnames';
 import React, { FC, memo, ReactNode } from 'react';
-import { Carousel as BaseCarousel } from 'react-responsive-carousel';
+import { Carousel } from 'react-responsive-carousel';
 
 import { Image } from '../Image';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import './Carousel.css';
+import './ImageCarousel.css';
 
-export interface CarouselSlide {
+export interface ImageCarouselSlide {
   src: string;
   caption?: ReactNode;
 }
 
-export interface CarouselProps {
+export interface ImageCarouselProps {
   /**
    * <@default=`true`>
    */
@@ -26,15 +26,15 @@ export interface CarouselProps {
    */
   height?: number;
   className?: string;
-  slides: CarouselSlide[];
+  slides: ImageCarouselSlide[];
 }
 
-export const Carousel: FC<CarouselProps> = memo(
+export const ImageCarousel: FC<ImageCarouselProps> = memo(
   ({ height, className, slides, ...restProps }) => (
-    <BaseCarousel
+    <Carousel
       showThumbs={false}
       showStatus={false}
-      className={classNames(className, 'ztopia-carousel')}
+      className={classNames(className, 'ztopia-image-carousel')}
       {...restProps}
     >
       {slides.map(({ src, caption }, i) => (
@@ -47,11 +47,11 @@ export const Carousel: FC<CarouselProps> = memo(
           caption={caption}
         />
       ))}
-    </BaseCarousel>
+    </Carousel>
   ),
 );
 
-Carousel.defaultProps = {
+ImageCarousel.defaultProps = {
   autoPlay: true,
   infiniteLoop: true,
   height: 500,
