@@ -1,0 +1,63 @@
+---
+name: Rating
+menu: Components
+route: /components/rating
+---
+
+import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+
+import { Rating } from './';
+import { RatingDemo } from './RatingDemo';
+
+# Rating
+
+Dependency: [react-rating](https://github.com/dreyescat/react-rating)
+
+## Demo
+
+### Variant
+
+<Playground>
+  <Container>
+    <RatingDemo>
+      {({ value, onChange }) => (
+        <Rating variant="star" value={value} onChange={onChange} />
+      )}
+    </RatingDemo>
+    <RatingDemo>
+      {({ value, onChange }) => (
+        <Rating
+          variant="heart"
+          color="#ec5564"
+          value={value}
+          onChange={onChange}
+        />
+      )}
+    </RatingDemo>
+  </Container>
+</Playground>
+
+### Fraction
+
+<Playground>
+  <RatingDemo>
+    {({ value, onChange }) => (
+      <Rating fraction={2} value={value} onChange={onChange} />
+    )}
+  </RatingDemo>
+</Playground>
+
+### Readonly
+
+<Playground>
+  <RatingDemo>
+    {({ value, onChange }) => (
+      <Rating readonly value={value} onChange={onChange} />
+    )}
+  </RatingDemo>
+</Playground>
+
+## API
+
+<Props of={Rating} />
