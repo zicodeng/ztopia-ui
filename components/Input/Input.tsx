@@ -11,60 +11,85 @@ import React, {
 import './Input.css';
 
 export interface InputProps {
+  /**
+   * <@default=`'text'`>
+   */
+  type?: string;
   value?: string;
   label?: string;
   placeholder?: string;
   error?: string;
+  /**
+   * <@default=`'rect'`>
+   */
+  variant?: 'material' | 'rect' | 'pill';
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const Input: FC<InputProps> = memo(
-  ({ value, label, placeholder, error, onChange }) => {
-    const [active, setActive] = useState(false);
+  ({ type, value, label, placeholder, error, variant, onChange }) => {
+    const [isActive, setIsActive] = useState(false);
 
     useEffect(() => {
       if (placeholder) {
-        setActive(true);
+        setIsActive(true);
       }
     }, [placeholder]);
 
     const handleFocusInput = useCallback(() => {
-      setActive(true);
+      setIsActive(true);
     }, []);
 
     const handleBlurInput = useCallback(() => {
       if (!value && !placeholder) {
-        setActive(false);
+        setIsActive(false);
       }
     }, [value]);
 
     return (
-      <div className="ztopia-input">
-        <label
-          className={classNames('ztopia-input__label', {
-            'ztopia-input__label--active': active,
-          })}
-        >
-          {label}
-        </label>
+      <div className={classNames('ztopia-input', `ztopia-input--${variant}`)}>
+        {label && (
+          <label
+            className={classNames(
+              'ztopia-input__label',
+              `ztopia-input__label--${variant}`,
+              {
+                'is-active': isActive,
+              },
+            )}
+          >
+            {label}
+          </label>
+        )}
         <input
+          type={type}
           value={value}
           placeholder={placeholder}
-          className={classNames('ztopia-input__input')}
+          className={classNames(
+            'ztopia-input__input',
+            `ztopia-input__input--${variant}`,
+            {
+              'has-error': Boolean(error),
+            },
+          )}
           onChange={onChange}
           onFocus={handleFocusInput}
           onBlur={handleBlurInput}
         />
-        <div
-          className={classNames('ztopia-input__bar', {
-            'ztopia-input__bar--active': active,
-            'ztopia-input__bar--invalid': Boolean(error),
-          })}
-        />
+        {variant === 'material' && (
+          <div
+            className={classNames('ztopia-input__bar', {
+              'is-active': isActive,
+              'has-error': Boolean(error),
+            })}
+          />
+        )}
         {error && <span className="ztopia-input__error">{error}</span>}
       </div>
     );
   },
 );
 
-Input.defaultProps = {};
+Input.defaultProps = {
+  variant: 'rect',
+};

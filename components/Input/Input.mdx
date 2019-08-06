@@ -5,6 +5,7 @@ route: /components/input
 ---
 
 import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
 
 import { Input } from './';
 import { InputDemo } from './InputDemo';
@@ -13,44 +14,74 @@ import { InputDemo } from './InputDemo';
 
 ## Demo
 
-### Label
+### Variant
 
 <Playground>
-  <InputDemo>
-    {({ value, onChange }) => (
-      <Input label="Username" value={value} onChange={onChange} />
-    )}
-  </InputDemo>
-</Playground>
-
-### Placeholder
-
-<Playground>
-  <InputDemo>
-    {({ value, onChange }) => (
-      <Input
-        label="Username"
-        placeholder="jonsnow"
-        value={value}
-        onChange={onChange}
-      />
-    )}
-  </InputDemo>
+  <Container>
+    <InputDemo>
+      {({ value, onChange }) => (
+        <Input label="Rect" variant="rect" value={value} onChange={onChange} />
+      )}
+    </InputDemo>
+    <InputDemo>
+      {({ value, onChange }) => (
+        <Input label="Pill" variant="pill" value={value} onChange={onChange} />
+      )}
+    </InputDemo>
+    <InputDemo>
+      {({ value, onChange }) => (
+        <Input
+          label="Material"
+          variant="material"
+          value={value}
+          onChange={onChange}
+        />
+      )}
+    </InputDemo>
+  </Container>
 </Playground>
 
 ### Error
 
 <Playground>
-  <InputDemo>
-    {({ value, onChange }) => (
-      <Input
-        label="Email"
-        error="Invalid email"
-        value={value}
-        onChange={onChange}
-      />
-    )}
-  </InputDemo>
+  <Container>
+    <InputDemo>
+      {({ value, onChange }) => (
+        <Input
+          type="email"
+          label="Email"
+          variant="rect"
+          error="Invalid email"
+          value={value}
+          onChange={onChange}
+        />
+      )}
+    </InputDemo>
+    <InputDemo>
+      {({ value, onChange }) => (
+        <Input
+          type="email"
+          label="Email"
+          variant="pill"
+          error="Invalid email"
+          value={value}
+          onChange={onChange}
+        />
+      )}
+    </InputDemo>
+    <InputDemo>
+      {({ value, onChange }) => (
+        <Input
+          type="email"
+          label="Email"
+          variant="material"
+          error="Invalid email"
+          value={value}
+          onChange={onChange}
+        />
+      )}
+    </InputDemo>
+  </Container>
 </Playground>
 
 ## API

@@ -1,28 +1,30 @@
 .ztopia-input {
   position: relative;
   width: 100%;
-  height: 40px;
   margin-bottom: $spacing-l;
-  padding-top: $spacing-s;
 
-  &::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: $white-dark;
-    content: '';
+  &--material {
+    height: 40px;
+    padding-top: $spacing-s;
   }
 
   &__label {
-    position: absolute;
-    top: 36%;
-    transition: $transition-fast;
+    display: block;
 
-    &--active {
-      top: 0;
-      font-size: $font-size-xs;
+    &--rect,
+    &--pill {
+      margin-bottom: 2px;
+    }
+
+    &--material {
+      position: absolute;
+      top: 36%;
+      transition: $transition-fast;
+
+      &.is-active {
+        top: 0;
+        font-size: $font-size-xs;
+      }
     }
   }
 
@@ -34,6 +36,29 @@
     font-size: $font-size-m;
     background-color: transparent;
     outline: 0;
+
+    &--rect {
+      padding: 0 $spacing-xs;
+      border: 1px solid $black-dark;
+
+      &.has-error {
+        border-color: $color-danger;
+      }
+    }
+
+    &--pill {
+      padding: 0 $spacing-s;
+      border: 1px solid $black-dark;
+      border-radius: 100px;
+
+      &.has-error {
+        border-color: $color-danger;
+      }
+    }
+
+    &--material {
+      border-bottom: 1px solid $white-dark;
+    }
   }
 
   &__bar {
@@ -48,18 +73,18 @@
     transform: scale(0);
     transition: transform 150ms cubic-bezier(0.5, 0.5, 1, 1);
 
-    &--active {
-      transform: scale(1);
+    &.has-error {
+      background-color: $color-danger;
     }
 
-    &--invalid {
-      background-color: $color-danger;
+    &.is-active {
+      transform: scale(1);
     }
   }
 
   &__error {
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     left: 0;
     color: $color-danger;
     transform: translateY(100%);
