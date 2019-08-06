@@ -17,15 +17,17 @@ import './Accordion.css';
 export interface AccordionProps {
   /**
    * <@default=`false`>
+   *
+   * If enabled, multiple panels can be expanded at once
    */
-  allowMultipleExpanded?: boolean;
+  isMulti?: boolean;
   className?: string;
   defaultExpandedPanelIds?: string[];
   children: AccordionPanel[];
 }
 
 export const Accordion: FC<AccordionProps> = memo(
-  ({ allowMultipleExpanded, className, defaultExpandedPanelIds, children }) => {
+  ({ isMulti, className, defaultExpandedPanelIds, children }) => {
     const [expandedPanelIds, setExpandedPanelIds] = useState<string[]>(
       defaultExpandedPanelIds || [],
     );
@@ -34,9 +36,7 @@ export const Accordion: FC<AccordionProps> = memo(
       (_e: React.MouseEvent<HTMLElement, MouseEvent>, id: string) => {
         const i = expandedPanelIds.indexOf(id);
         if (i === -1) {
-          setExpandedPanelIds(
-            allowMultipleExpanded ? [...expandedPanelIds, id] : [id],
-          );
+          setExpandedPanelIds(isMulti ? [...expandedPanelIds, id] : [id]);
         } else {
           const newExpandedPanelIds = [...expandedPanelIds];
           newExpandedPanelIds.splice(i, 1);
@@ -62,7 +62,7 @@ export const Accordion: FC<AccordionProps> = memo(
 );
 
 Accordion.defaultProps = {
-  allowMultipleExpanded: false,
+  isMulti: false,
 };
 
 export interface AccordionPanel {
