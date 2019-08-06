@@ -8,11 +8,11 @@ export interface ToggleProps {
   /**
    * <@default=`false`>
    */
-  checked: boolean;
+  isChecked: boolean;
   /**
    * <@default=`false`>
    */
-  disabled: boolean;
+  isDisabled: boolean;
   id: string;
   className: string;
   /**
@@ -27,21 +27,21 @@ export interface ToggleProps {
 }
 
 export const Toggle: FC<ToggleProps> = memo(
-  ({ checked, disabled, id, className, size, icons, onChange }) => (
+  ({ isChecked, isDisabled, id, className, size, icons, onChange }) => (
     <div
       className={classNames(
         className,
         'ztopia-toggle',
         `ztopia-toggle--${size}`,
         {
-          'ztopia-toggle--checked': checked,
-          'ztopia-toggle--disabled': disabled,
+          'is-checked': isChecked,
+          'is-disabled': isDisabled,
         },
       )}
     >
       <BaseToggle
-        checked={checked}
-        disabled={disabled}
+        checked={isChecked}
+        disabled={isDisabled}
         id={id}
         onChange={onChange}
         icons={icons}
@@ -51,8 +51,8 @@ export const Toggle: FC<ToggleProps> = memo(
 );
 
 Toggle.defaultProps = {
-  checked: false,
-  disabled: false,
+  isChecked: false,
+  isDisabled: false,
   size: 'medium',
   icons: false,
 };

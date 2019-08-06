@@ -16,11 +16,11 @@ export interface ImageCarouselProps {
   /**
    * <@default=`true`>
    */
-  autoPlay?: boolean;
+  isAutoPlay?: boolean;
   /**
    * <@default=`true`>
    */
-  infiniteLoop?: boolean;
+  isInfiniteLoop?: boolean;
   /**
    * <@default=`500`>
    */
@@ -30,19 +30,21 @@ export interface ImageCarouselProps {
 }
 
 export const ImageCarousel: FC<ImageCarouselProps> = memo(
-  ({ height, className, slides, ...restProps }) => (
+  ({ isAutoPlay, isInfiniteLoop, height, className, slides, ...restProps }) => (
     <Carousel
       showThumbs={false}
       showStatus={false}
+      autoPlay={isAutoPlay}
+      infiniteLoop={isInfiniteLoop}
       className={classNames(className, 'ztopia-image-carousel')}
       {...restProps}
     >
       {slides.map(({ src, caption }, i) => (
         <Image
-          background
           key={i}
           delay={500}
           height={height}
+          variant="background"
           src={src}
           caption={caption}
         />
@@ -52,7 +54,7 @@ export const ImageCarousel: FC<ImageCarouselProps> = memo(
 );
 
 ImageCarousel.defaultProps = {
-  autoPlay: true,
-  infiniteLoop: true,
+  isAutoPlay: true,
+  isInfiniteLoop: true,
   height: 500,
 };

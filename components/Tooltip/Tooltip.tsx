@@ -6,6 +6,9 @@ import 'rc-tooltip/assets/bootstrap_white.css';
 import './Tooltip.css';
 
 export interface TooltipProps {
+  /**
+   * <@internal>
+   */
   visible?: boolean;
   /**
    * <@default=`0`>

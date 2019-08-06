@@ -10,7 +10,7 @@ export interface ButtonProps {
    * while the internal section consists of plain text.
    * They most often appear as Call to Action (CTA) buttons and offer a clean look
    */
-  ghost?: boolean;
+  isGhost?: boolean;
   /**
    * <@default=`'rect'`>
    */
@@ -23,15 +23,14 @@ export interface ButtonProps {
 }
 
 export const Button: FC<ButtonProps> = memo(
-  ({ ghost, variant, size, children, ...restProps }) => (
+  ({ isGhost, variant, size, children, ...restProps }) => (
     <button
       className={classNames(
         'ztopia-button',
         `ztopia-button--${variant}`,
         `ztopia-button--${size}`,
         {
-          'ztopia-button--ghost': ghost,
-          ghost,
+          'is-ghost': isGhost,
         },
       )}
       {...restProps}
@@ -42,7 +41,7 @@ export const Button: FC<ButtonProps> = memo(
 );
 
 Button.defaultProps = {
-  ghost: false,
+  isGhost: false,
   variant: 'rect',
   size: 'medium',
 };

@@ -49,7 +49,7 @@ export const Accordion: FC<AccordionProps> = memo(
         {Children.map(children, child =>
           isValidElement(child)
             ? cloneElement(child, {
-                expanded: expandedPanelIds.indexOf(child.props.id) !== -1,
+                isExpanded: expandedPanelIds.indexOf(child.props.id) !== -1,
                 onClickPanelHeader: handleClickPanelHeader,
               })
             : child,
@@ -69,7 +69,7 @@ export interface AccordionPanel {
    *
    * Passed by Accordion
    */
-  expanded: boolean;
+  isExpanded: boolean;
   id: string;
   className?: string;
   /**
@@ -85,7 +85,7 @@ export interface AccordionPanel {
 }
 
 export const AccordionPanel: FC<AccordionPanel> = ({
-  expanded,
+  isExpanded,
   id,
   className,
   onClickPanelHeader,
@@ -102,16 +102,16 @@ export const AccordionPanel: FC<AccordionPanel> = ({
     <article
       id={id}
       className={classNames(className, 'ztopia-accordion__panel', {
-        'ztopia-accordion__panel--expanded': expanded,
+        'is-expanded': isExpanded,
       })}
     >
       {cloneElement(header, {
-        expanded,
+        isExpanded,
         id,
         onClickPanelHeader,
       })}
       {cloneElement(content, {
-        expanded,
+        isExpanded,
       })}
     </article>
   );
@@ -123,7 +123,7 @@ export interface AccordionPanelHeader {
    *
    * Passed by Accordion
    */
-  expanded: boolean;
+  isExpanded: boolean;
   /**
    * <@internal>
    *
@@ -143,7 +143,7 @@ export interface AccordionPanelHeader {
 }
 
 export const AccordionPanelHeader: FC<AccordionPanelHeader> = ({
-  expanded,
+  isExpanded,
   id,
   className,
   onClickPanelHeader,
@@ -151,7 +151,7 @@ export const AccordionPanelHeader: FC<AccordionPanelHeader> = ({
 }) => (
   <header
     className={classNames(className, 'ztopia-accordion__panel-header', {
-      'ztopia-accordion__panel-header--expanded': expanded,
+      'is-expanded': isExpanded,
     })}
     onClick={e => onClickPanelHeader(e, id)}
   >
@@ -161,7 +161,7 @@ export const AccordionPanelHeader: FC<AccordionPanelHeader> = ({
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 320 512"
       className={classNames('ztopia-accordion__panel-close-icon', {
-        'ztopia-accordion__panel-close-icon--expanded': expanded,
+        'is-expanded': isExpanded,
       })}
     >
       <path
@@ -178,12 +178,12 @@ export interface AccordionPanelContent {
    *
    * Passed by Accordion
    */
-  expanded: boolean;
+  isExpanded: boolean;
   className?: string;
 }
 
 export const AccordionPanelContent: FC<AccordionPanelContent> = ({
-  expanded,
+  isExpanded,
   className,
   ...restProps
 }) => {
@@ -195,16 +195,16 @@ export const AccordionPanelContent: FC<AccordionPanelContent> = ({
       return;
     }
     setHeight(node.scrollHeight);
-  }, [expanded]);
+  }, [isExpanded]);
   return (
     <div
       {...restProps}
       ref={ref}
       className={classNames(className, 'ztopia-accordion__panel-content', {
-        'ztopia-accordion__panel-content--expanded': expanded,
+        'is-expanded': isExpanded,
       })}
       style={{
-        height: expanded ? height : 0,
+        height: isExpanded ? height : 0,
       }}
     />
   );

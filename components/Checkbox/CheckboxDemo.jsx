@@ -1,7 +1,7 @@
 import { memo, useState } from 'react';
 
 export const CheckboxDemo = memo(({ children }) => {
-  const [checked, setChecked] = useState(false);
-  const onChange = () => setChecked(!checked);
-  return children({ checked, onChange });
+  const [isChecked, setIsChecked] = useState(false);
+  const onChange = () => setIsChecked(!isChecked);
+  return children({ isChecked, onChange });
 });

@@ -10,7 +10,7 @@ export interface ToastOptions {
   /**
    * <@default=`false`>
    */
-  hideProgressBar: boolean;
+  isProgressBarHidden: boolean;
   /**
    * For multiple container support. If enabled, `makeToast({containerId})` must match `<ToastContainer containerId>`
    */
@@ -63,13 +63,14 @@ const CloseButton: FC<CloseButtonProps> = memo(({ closeToast }) => (
 ));
 
 export const ToastContainer: FC<ToastOptions> = memo(
-  ({ containerId, ...restProps }) => (
+  ({ isProgressBarHidden, containerId, ...restProps }) => (
     <BaseToastContainer
       {...restProps}
       className="ztopia-toast"
       toastClassName="ztopia-toast__content"
       bodyClassName="ztopia-toast__body"
       progressClassName="ztopia-toast__progress"
+      hideProgressBar={isProgressBarHidden}
       containerId={containerId}
       enableMultiContainer={Boolean(containerId)}
       closeButton={<CloseButton />}
@@ -77,11 +78,23 @@ export const ToastContainer: FC<ToastOptions> = memo(
   ),
 );
 
-export const makeToast = (content: ReactNode, options: ToastOptions): ToastId =>
-  toast(content, options);
+export const makeToast = (
+  content: ReactNode,
+  { isProgressBarHidden, ...restOptions }: ToastOptions,
+): ToastId =>
+  toast(content, {
+    hideProgressBar: isProgressBarHidden,
+    ...restOptions,
+  });
 
-export const updateToast = (toastId: ToastId, options: ToastOptions) =>
-  toast.update(toastId, options);
+export const updateToast = (
+  toastId: ToastId,
+  { isProgressBarHidden, ...restOptions }: ToastOptions,
+) =>
+  toast.update(toastId, {
+    hideProgressBar: isProgressBarHidden,
+    ...restOptions,
+  });
 
 export const dismissToast = (toastId: ToastId) => toast.dismiss(toastId);
 

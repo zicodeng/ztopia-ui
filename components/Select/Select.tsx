@@ -14,14 +14,14 @@ export interface SelectProps {
   /**
    * <@default=`false`>
    *
-   * Enable multi selection
+   * Enable isMulti selection
    */
-  multi?: boolean;
+  isMulti?: boolean;
   /**
    * <@default=`false`>
    *
    */
-  searchable?: boolean;
+  isSearchable?: boolean;
   maxMenuHeight?: number;
   label?: string;
   className?: string;
@@ -32,20 +32,18 @@ export interface SelectProps {
 
 export const Select: FC<SelectProps> = memo(
   ({
-    multi,
-    searchable,
     maxMenuHeight,
     label,
     className,
     value,
     options,
     onChange,
+    ...restProps
   }) => (
     <div className={classNames(className, 'ztopia-select')}>
       {label && <label className="ztopia-select__label">{label}</label>}
       <ReactSelect
-        isMulti={multi}
-        isSearchable={searchable}
+        {...restProps}
         className="ztopia-select__container"
         classNamePrefix="select"
         value={value}
@@ -58,6 +56,6 @@ export const Select: FC<SelectProps> = memo(
 );
 
 Select.defaultProps = {
-  multi: false,
-  searchable: false,
+  isMulti: false,
+  isSearchable: false,
 };

@@ -9,12 +9,6 @@ import './Image.css';
 
 export interface ImageProps {
   /**
-   * <@default=`false`>
-   *
-   * Render as a background image with `<div>` tag
-   */
-  background?: boolean;
-  /**
    * <@default=`0`>
    */
   delay?: number;
@@ -29,12 +23,18 @@ export interface ImageProps {
    * <@default=`'auto'`>
    */
   height?: number | string;
+  /**
+   * Normal image will be rendered as `<img>` element; Background image will be rendered as `<div>` element
+   *
+   *  <@default=`'normal'`>
+   */
+  variant?: 'normal' | 'background';
   caption?: ReactNode;
 }
 
 export const Image: FC<ImageProps> = memo(
-  ({ background, width, height, delay, src, alt, className, caption }) => {
-    if (background && typeof height !== 'number') {
+  ({ width, height, delay, src, alt, className, variant, caption }) => {
+    if (variant === 'background' && typeof height !== 'number') {
       throw new Error(
         'height must be a number with fixed value in background mode',
       );
@@ -43,7 +43,7 @@ export const Image: FC<ImageProps> = memo(
       <LazyLoad>
         <ProgressiveImage delay={delay} src={src} placeholder="">
           {(src, loading) => {
-            if (background) {
+            if (variant === 'background') {
               if (loading) {
                 return (
                   <Placeholder
@@ -103,8 +103,8 @@ export const Image: FC<ImageProps> = memo(
 );
 
 Image.defaultProps = {
-  background: false,
   delay: 0,
   width: '100%',
   height: 'auto',
+  variant: 'normal',
 };

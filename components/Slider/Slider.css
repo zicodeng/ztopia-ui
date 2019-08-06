@@ -1,5 +1,5 @@
 .ztopia-slider {
-  &--vertical {
+  &.is-vertical {
     height: 200px;
   }
 

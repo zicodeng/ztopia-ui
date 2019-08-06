@@ -8,7 +8,7 @@
     border-color: $black-light;
   }
 
-  &.ghost {
+  &.is-ghost {
     color: $black-dark;
     background-color: transparent;
 

@@ -21,18 +21,18 @@ Dependency: [react-toggle](https://github.com/aaronshaf/react-toggle)
 <Playground>
   <Container>
     <ToggleDemo>
-      {({ checked, onChange }) => (
-        <Toggle size="small" checked={checked} onChange={onChange} />
+      {({ isChecked, onChange }) => (
+        <Toggle size="small" isChecked={isChecked} onChange={onChange} />
       )}
     </ToggleDemo>
     <ToggleDemo>
-      {({ checked, onChange }) => (
-        <Toggle size="medium" checked={checked} onChange={onChange} />
+      {({ isChecked, onChange }) => (
+        <Toggle size="medium" isChecked={isChecked} onChange={onChange} />
       )}
     </ToggleDemo>
     <ToggleDemo>
-      {({ checked, onChange }) => (
-        <Toggle size="large" checked={checked} onChange={onChange} />
+      {({ isChecked, onChange }) => (
+        <Toggle size="large" isChecked={isChecked} onChange={onChange} />
       )}
     </ToggleDemo>
   </Container>
@@ -42,8 +42,8 @@ Dependency: [react-toggle](https://github.com/aaronshaf/react-toggle)
 
 <Playground>
   <ToggleDemo>
-    {({ checked, onChange }) => (
-      <Toggle disabled checked={checked} onChange={onChange} />
+    {({ isChecked, onChange }) => (
+      <Toggle isDisabled isChecked={isChecked} onChange={onChange} />
     )}
   </ToggleDemo>
 </Playground>
@@ -52,9 +52,9 @@ Dependency: [react-toggle](https://github.com/aaronshaf/react-toggle)
 
 <Playground>
   <ToggleDemo>
-    {({ checked, onChange }) => (
+    {({ isChecked, onChange }) => (
       <Toggle
-        checked={checked}
+        isChecked={isChecked}
         onChange={onChange}
         icons={{
           checked: <i className="fas fa-heart" />,
@@ -68,3 +68,10 @@ Dependency: [react-toggle](https://github.com/aaronshaf/react-toggle)
 ## API
 
 <Props of={Toggle} />
+
+```ts
+interface ToggleIcons {
+  checked?: ReactNode;
+  unchecked?: ReactNode;
+}
+```

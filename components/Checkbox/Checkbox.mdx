@@ -19,20 +19,20 @@ import { CheckboxDemo } from './CheckboxDemo.jsx';
 <Playground>
   <Container>
     <CheckboxDemo>
-      {({ checked, onChange }) => (
+      {({ isChecked, onChange }) => (
         <Checkbox
           label="Click checkbox"
-          checked={checked}
+          isChecked={isChecked}
           onChange={onChange}
         />
       )}
     </CheckboxDemo>
     <CheckboxDemo>
-      {({ checked, onChange }) => (
+      {({ isChecked, onChange }) => (
         <Checkbox
           label="Click my label or checkbox"
           id="with-id"
-          checked={checked}
+          isChecked={isChecked}
           onChange={onChange}
         />
       )}

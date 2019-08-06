@@ -15,12 +15,19 @@ Dependencies: [react-progressive-image](https://github.com/FormidableLabs/react-
 
 ## Demo
 
-### Caption
+### Variant
 
 <Playground>
   <Image
+    variant="normal"
     src="https://s28566.pcdn.co/wp-content/uploads/2018/08/home-hero.jpg"
-    caption={<h1 style={{ color: 'white', margin: 0 }}>Earth Mother</h1>}
+    caption={<h1 style={{ color: 'white', margin: 0 }}>Normal</h1>}
+  />
+  <Image
+    variant="background"
+    height={400}
+    src="https://s28566.pcdn.co/wp-content/uploads/2018/08/home-hero.jpg"
+    caption={<h1 style={{ color: 'white', margin: 0 }}>Background</h1>}
   />
 </Playground>
 
@@ -29,13 +36,13 @@ Dependencies: [react-progressive-image](https://github.com/FormidableLabs/react-
 <Playground>
   <Container>
     <Image
-      background
+      variant="background"
       width={400}
       height={400}
       src="https://s28566.pcdn.co/wp-content/uploads/2018/08/home-hero.jpg"
     />
     <Image
-      background
+      variant="background"
       delay={5000}
       width={400}
       height={400}

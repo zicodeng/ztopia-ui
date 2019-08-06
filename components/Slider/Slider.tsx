@@ -11,7 +11,7 @@ export interface SliderProps {
   /**
    * <@default=`false`>
    */
-  vertical?: boolean;
+  isVertical?: boolean;
   /**
    * <@default=`0`>
    */
@@ -44,12 +44,12 @@ const handle = props => {
 };
 
 export const Slider: FC<SliderProps> = memo(
-  ({ vertical, className, ...restProps }) => {
+  ({ isVertical, className, ...restProps }) => {
     return (
       <BaseSlider
-        vertical={vertical}
+        vertical={isVertical}
         className={classNames(className, 'ztopia-slider', {
-          'ztopia-slider--vertical': vertical,
+          'is-vertical': isVertical,
         })}
         handle={handle}
         {...restProps}
@@ -59,7 +59,7 @@ export const Slider: FC<SliderProps> = memo(
 );
 
 Slider.defaultProps = {
-  vertical: false,
+  isVertical: false,
   min: 0,
   max: 100,
 };

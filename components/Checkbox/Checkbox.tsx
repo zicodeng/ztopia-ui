@@ -7,7 +7,7 @@ export interface CheckboxProps {
   /**
    * <@default=`false`>
    */
-  checked?: boolean;
+  isChecked?: boolean;
   label?: string;
   /**
    * If provided, clicking label will have the same effect as clicking checkbox
@@ -18,7 +18,7 @@ export interface CheckboxProps {
 }
 
 export const Checkbox: FC<CheckboxProps> = ({
-  checked,
+  isChecked,
   label,
   id,
   className,
@@ -30,11 +30,11 @@ export const Checkbox: FC<CheckboxProps> = ({
         <input
           type="checkbox"
           id={id}
-          checked={checked}
+          checked={isChecked}
           onChange={onChange}
           className="ztopia-checkbox__input"
         />
-        {checked && (
+        {isChecked && (
           <svg
             className="ztopia-checkbox__checkmark"
             role="img"
@@ -63,5 +63,5 @@ export const Checkbox: FC<CheckboxProps> = ({
 };
 
 Checkbox.defaultProps = {
-  checked: false,
+  isChecked: false,
 };

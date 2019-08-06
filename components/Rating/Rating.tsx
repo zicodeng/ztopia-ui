@@ -5,7 +5,7 @@ export interface RatingProps {
   /**
    * <@default=`false`>
    */
-  readonly?: boolean;
+  isReadonly?: boolean;
   /**
    * <@default=`1`>
    */
@@ -31,8 +31,9 @@ export interface RatingProps {
 }
 
 export const Rating: FC<RatingProps> = memo(
-  ({ fraction, width, value, color, variant, ...restProps }) => (
+  ({ isReadonly, fraction, width, value, color, variant, ...restProps }) => (
     <BaseRating
+      readonly={isReadonly}
       fractions={fraction}
       initialRating={value}
       className="ztopia-rating"
@@ -114,7 +115,7 @@ export const Rating: FC<RatingProps> = memo(
 );
 
 Rating.defaultProps = {
-  readonly: false,
+  isReadonly: false,
   fraction: 1,
   width: 30,
   color: '#ffec40',

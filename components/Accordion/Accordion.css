@@ -4,7 +4,7 @@
   &__panel {
     border-bottom: 1px solid $white-light;
 
-    &--expanded,
+    &.is-expanded,
     &:last-child {
       border-bottom: 0;
     }
@@ -32,7 +32,7 @@
     width: 10px;
     transition: $transition-fast;
 
-    &--expanded {
+    &.is-expanded {
       transform: rotate(-90deg);
     }
   }
