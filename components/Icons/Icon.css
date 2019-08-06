@@ -1,0 +1,13 @@
+.ztopia-icon {
+  &--small {
+    width: 10px;
+  }
+
+  &--medium {
+    width: 15px;
+  }
+
+  &--large {
+    width: 20px;
+  }
+}

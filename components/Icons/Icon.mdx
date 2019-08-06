@@ -1,0 +1,63 @@
+---
+name: Icon
+menu: Components
+route: /components/icon
+---
+
+import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+
+import {
+  Icon,
+  Checkmark,
+  ChevronLeft,
+  ChevronRight,
+  HeartRegular,
+  HeartSolid,
+  PartyParrot,
+  StarRegular,
+  StarSolid,
+  Times,
+} from './';
+
+# Icon
+
+## Demo
+
+### Size
+
+<Playground>
+  <Container>
+    <PartyParrot size="small" />
+    <PartyParrot size="medium" />
+    <PartyParrot size="large" />
+  </Container>
+</Playground>
+
+### Width & Height
+
+<Playground>
+  <Container>
+    <PartyParrot width={50} height={50} />
+  </Container>
+</Playground>
+
+## API
+
+<Props of={Icon} />
+
+# Gallery
+
+<Playground>
+  <Container>
+    <Checkmark />
+    <ChevronLeft />
+    <ChevronRight />
+    <HeartRegular />
+    <HeartSolid />
+    <PartyParrot />
+    <StarRegular />
+    <StarSolid />
+    <Times />
+  </Container>
+</Playground>

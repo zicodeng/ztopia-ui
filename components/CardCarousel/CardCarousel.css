@@ -27,10 +27,6 @@
     }
   }
 
-  &__controller-icon {
-    width: 10px;
-  }
-
   &__container {
     overflow: hidden;
     padding: $spacing-s 0;

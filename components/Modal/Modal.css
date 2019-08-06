@@ -46,11 +46,10 @@
     transform: translateY(0);
   }
 
-  &__close-icon {
+  &__close-indicator {
     position: absolute;
     top: $spacing-xl;
     right: $spacing-xl;
-    width: 14px;
     color: $red;
     font-size: x-large;
     cursor: pointer;

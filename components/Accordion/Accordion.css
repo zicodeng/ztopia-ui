@@ -26,10 +26,9 @@
     transition: $transition-fast;
   }
 
-  &__panel-close-icon {
+  &__panel-indicator {
     position: absolute;
     right: 15px;
-    width: 10px;
     transition: $transition-fast;
 
     &.is-expanded {

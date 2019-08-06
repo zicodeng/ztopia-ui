@@ -38,6 +38,28 @@ Dependency: [react-rating](https://github.com/dreyescat/react-rating)
   </Container>
 </Playground>
 
+### Size
+
+<Playground>
+  <Container>
+    <RatingDemo>
+      {({ value, onChange }) => (
+        <Rating size="small" value={value} onChange={onChange} />
+      )}
+    </RatingDemo>
+    <RatingDemo>
+      {({ value, onChange }) => (
+        <Rating size="medium" value={value} onChange={onChange} />
+      )}
+    </RatingDemo>
+    <RatingDemo>
+      {({ value, onChange }) => (
+        <Rating size="large" value={value} onChange={onChange} />
+      )}
+    </RatingDemo>
+  </Container>
+</Playground>
+
 ### Fraction
 
 <Playground>
