@@ -1,7 +1,7 @@
 {
   "name": "ztopia-ui",
   "description": "A lightweight and multivariant UI library built with customization in mind",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "author": "Zico Deng",
   "homepage": "https://github.com/zicodeng/ztopia-ui#readme",
   "keywords": [
@@ -22,8 +22,8 @@
   },
   "scripts": {
     "start": "docz dev",
-    "build:dev": "NODE_ENV=development rollup -c --watch",
-    "build:prod": "NODE_ENV=production rollup -c && yarn post-build",
+    "build:dev": "NODE_ENV=development NODE_OPTIONS=--max_old_space_size=8192 ./node_modules/.bin/rollup -c --watch",
+    "build:prod": "NODE_ENV=production NODE_OPTIONS=--max_old_space_size=8192 ./node_modules/.bin/rollup -c && yarn post-build",
     "build-docs": "docz build && yarn create-200",
     "post-build": "cp -a ./styles ./dist/styles && cp ./package.json ./dist/package.json && cp ./README.md ./dist/README.md",
     "release": "bump --commit && yarn build:prod && cd ./dist && yarn publish --non-interactive && cd ..",
