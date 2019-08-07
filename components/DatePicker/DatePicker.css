@@ -56,6 +56,7 @@
     height: 100%;
     border: 1px solid $black-dark;
     text-align: center;
+    background-color: $white-light;
     flex-direction: column;
     transform: translateX(-100%);
 
