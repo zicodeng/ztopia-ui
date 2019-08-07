@@ -121,5 +121,6 @@
     "selector-max-id": null,
     "selector-class-pattern": null,
     "property-no-vendor-prefix": null,
+    "comment-empty-line-before": null
   }
 }

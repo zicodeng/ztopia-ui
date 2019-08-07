@@ -3,7 +3,7 @@
     "align": [true, "parameters", "statements"],
     "class-name": true,
     "comment-format": [true, "check-space"],
-    "curly": true,
+    "curly": [true, "ignore-same-line"],
     "eofline": true,
     "indent": [true, "spaces"],
     "max-line-length": [false],

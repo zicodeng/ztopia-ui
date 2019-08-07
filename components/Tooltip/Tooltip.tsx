@@ -22,7 +22,7 @@ export interface TooltipProps {
   /**
    * <@default=`'hover'`>
    */
-  trigger?: ['hover' | 'click' | 'focus'];
+  trigger?: ('hover' | 'click' | 'focus')[];
   /**
    * <@default=`'top'`>
    */

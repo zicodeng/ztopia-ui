@@ -1,0 +1,117 @@
+---
+name: DatePicker
+menu: Components
+route: /components/date-picker
+---
+
+import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+import { addDays, subDays, setHours, setMinutes } from 'date-fns';
+
+import { Input } from '../Input';
+
+import { DatePicker } from './';
+import { DatePickerDemo } from './DatePickerDemo';
+
+# DatePicker
+
+Dependencies: [react-datepicker](https://github.com/Hacker0x01/react-datepicker) and [date-fns](https://github.com/date-fns/date-fns)
+
+## Demo
+
+### Custom Input
+
+<Playground>
+  <Container style={{ height: 400, display: 'block' }}>
+    <DatePickerDemo>
+      {({ value, onChange }) => (
+        <DatePicker
+          input={<Input label="Birthday" variant="material" />}
+          value={value}
+          onChange={onChange}
+        />
+      )}
+    </DatePickerDemo>
+  </Container>
+</Playground>
+
+### Enable Year And Time Select
+
+<Playground>
+  <Container style={{ height: 400, display: 'block' }}>
+    <DatePickerDemo>
+      {({ value, onChange }) => (
+        <DatePicker
+          isYearSelectEnabled
+          isTimeSelectEnabled
+          input={<Input label="Birthday" variant="material" />}
+          value={value}
+          onChange={onChange}
+        />
+      )}
+    </DatePickerDemo>
+  </Container>
+</Playground>
+
+### Today Button
+
+<Playground>
+  <Container style={{ height: 450, display: 'block' }}>
+    <DatePickerDemo>
+      {({ value, onChange }) => (
+        <DatePicker
+          isYearSelectEnabled
+          isTimeSelectEnabled
+          todayButton="Today"
+          input={<Input label="Birthday" variant="material" />}
+          value={value}
+          onChange={onChange}
+        />
+      )}
+    </DatePickerDemo>
+  </Container>
+</Playground>
+
+### Min Date, Max Date, Min Time & Max Time
+
+Date or time out of the range will be disabled
+
+<Playground>
+  <Container style={{ height: 400, display: 'block' }}>
+    <DatePickerDemo>
+      {({ value, onChange }) => (
+        <DatePicker
+          isTimeSelectEnabled
+          minTime={setHours(setMinutes(new Date(), 0), 10)}
+          maxTime={setHours(setMinutes(new Date(), 30), 20)}
+          minDate={subDays(new Date(), 5)}
+          maxDate={addDays(new Date(), 5)}
+          input={<Input label="Birthday" variant="material" />}
+          value={value}
+          onChange={onChange}
+        />
+      )}
+    </DatePickerDemo>
+  </Container>
+</Playground>
+
+### Highlight Dates
+
+<Playground>
+  <Container style={{ height: 400, display: 'block' }}>
+    <DatePickerDemo>
+      {({ value, onChange }) => (
+        <DatePicker
+          highlightDates={[subDays(new Date(), 7), addDays(new Date(), 7)]}
+          input={<Input label="Birthday" variant="material" />}
+          value={value}
+          onChange={onChange}
+        />
+      )}
+    </DatePickerDemo>
+  </Container>
+</Playground>
+
+## API
+
+<Props of={DatePicker} />

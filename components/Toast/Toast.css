@@ -1,4 +1,8 @@
 .ztopia-toast {
+  &__content {
+    box-shadow: $box-shadow-2;
+  }
+
   &__close-indicator {
     position: absolute;
     top: 10px;

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, {
   ChangeEvent,
-  FC,
+  forwardRef,
   memo,
   useCallback,
   useEffect,
@@ -26,70 +26,80 @@ export interface InputProps {
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const Input: FC<InputProps> = memo(
-  ({ type, value, label, placeholder, error, variant, onChange }) => {
-    const [isActive, setIsActive] = useState(false);
+export const Input = memo(
+  forwardRef<HTMLInputElement, InputProps>(
+    (
+      {
+        type,
+        value,
+        label,
+        placeholder,
+        error,
+        variant = 'rect',
+        onChange,
+        ...restProps
+      },
+      ref,
+    ) => {
+      const [isActive, setIsActive] = useState(false);
 
-    useEffect(() => {
-      if (placeholder) {
+      useEffect(() => {
+        if (placeholder || value) {
+          setIsActive(true);
+        }
+      }, [placeholder, value]);
+
+      const handleFocusInput = useCallback(() => {
         setIsActive(true);
-      }
-    }, [placeholder]);
+      }, []);
 
-    const handleFocusInput = useCallback(() => {
-      setIsActive(true);
-    }, []);
+      const handleBlurInput = useCallback(() => {
+        if (!value && !placeholder) setIsActive(false);
+      }, [value]);
 
-    const handleBlurInput = useCallback(() => {
-      if (!value && !placeholder) {
-        setIsActive(false);
-      }
-    }, [value]);
-
-    return (
-      <div className={classNames('ztopia-input', `ztopia-input--${variant}`)}>
-        {label && (
-          <label
+      return (
+        <div className={classNames('ztopia-input', `ztopia-input--${variant}`)}>
+          {label && (
+            <label
+              className={classNames(
+                'ztopia-input__label',
+                `ztopia-input__label--${variant}`,
+                {
+                  'is-active': isActive,
+                },
+              )}
+            >
+              {label}
+            </label>
+          )}
+          <input
+            {...restProps}
+            ref={ref}
+            type={type}
+            value={value}
+            placeholder={placeholder}
             className={classNames(
-              'ztopia-input__label',
-              `ztopia-input__label--${variant}`,
+              'ztopia-input__input',
+              `ztopia-input__input--${variant}`,
               {
-                'is-active': isActive,
+                'has-error': Boolean(error),
               },
             )}
-          >
-            {label}
-          </label>
-        )}
-        <input
-          type={type}
-          value={value}
-          placeholder={placeholder}
-          className={classNames(
-            'ztopia-input__input',
-            `ztopia-input__input--${variant}`,
-            {
-              'has-error': Boolean(error),
-            },
-          )}
-          onChange={onChange}
-          onFocus={handleFocusInput}
-          onBlur={handleBlurInput}
-        />
-        {variant === 'material' && (
-          <div
-            className={classNames('ztopia-input__bar', {
-              'is-active': isActive,
-              'has-error': Boolean(error),
-            })}
+            onChange={onChange}
+            onFocus={handleFocusInput}
+            onBlur={handleBlurInput}
           />
-        )}
-        {error && <span className="ztopia-input__error">{error}</span>}
-      </div>
-    );
-  },
+          {variant === 'material' && (
+            <div
+              className={classNames('ztopia-input__bar', {
+                'is-active': isActive,
+                'has-error': Boolean(error),
+              })}
+            />
+          )}
+          {error && <span className="ztopia-input__error">{error}</span>}
+        </div>
+      );
+    },
+  ),
 );
-
-Input.defaultProps = {
-  variant: 'rect',
-};
