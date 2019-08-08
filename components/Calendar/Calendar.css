@@ -116,7 +116,8 @@
   }
 
   .rbc-slot-selection {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(19, 21, 24, 0.6);
+    border-left: 2px solid $red-dark;
   }
 
   .rbc-time-slot {
@@ -136,16 +137,27 @@
   =            Agenda View            =
   ===================================*/
   .rbc-agenda-view {
-    table.rbc-agenda-table {
+    .rbc-agenda-table {
       border-color: $black-dark;
+
+      th {
+        padding: $spacing-xs $spacing-s;
+        border-color: $black-dark;
+      }
 
       tr,
       td {
+        padding: $spacing-xs $spacing-s;
         border-color: $black-dark;
       }
     }
-  }
 
+    .rbc-agenda-content {
+      .rbc-agenda-table {
+        border-top: 0;
+      }
+    }
+  }
   /*=====  End of Agenda View  ======*/
 
   /*===============================
