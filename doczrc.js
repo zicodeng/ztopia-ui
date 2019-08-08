@@ -45,6 +45,7 @@ export default {
             path.resolve(__dirname, './node_modules/react-responsive-carousel'),
             path.resolve(__dirname, './node_modules/react-toastify'),
             path.resolve(__dirname, './node_modules/react-datepicker'),
+            path.resolve(__dirname, './node_modules/react-big-calendar'),
           ],
           use: [
             isDev

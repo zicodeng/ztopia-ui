@@ -1,0 +1,121 @@
+---
+name: Calendar
+menu: Components
+route: /components/calendar
+---
+
+import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+import moment from 'moment';
+
+import { Calendar } from './';
+import { CalendarDemo } from './CalendarDemo';
+
+# Calendar
+
+## Demo
+
+### Select Event
+
+<Playground>
+  <CalendarDemo>
+    {({ onSelectEvent }) => (
+      <Calendar
+        onSelectEvent={onSelectEvent}
+        events={[
+          {
+            allDay: true,
+            title: 'Make the World Better Place',
+            start: moment()
+              .subtract(2, 'd')
+              .toDate(),
+            end: moment()
+              .add(2, 'd')
+              .toDate(),
+          },
+          {
+            allDay: true,
+            title: 'Camping',
+            start: moment()
+              .subtract(1, 'd')
+              .toDate(),
+            end: moment()
+              .add(1, 'd')
+              .toDate(),
+          },
+          {
+            allDay: false,
+            title: 'Study',
+            start: moment()
+              .set('year', moment().get('year'))
+              .add(1, 'd')
+              .set('hour', 6)
+              .toDate(),
+            end: moment()
+              .set('year', moment().get('year'))
+              .add(1, 'd')
+              .set('hour', 16)
+              .toDate(),
+          },
+          {
+            allDay: false,
+            title: 'Practice Guitar',
+            start: moment()
+              .set('year', moment().get('year'))
+              .set('hour', 9)
+              .toDate(),
+            end: moment()
+              .set('year', moment().get('year'))
+              .set('hour', 21)
+              .toDate(),
+          },
+          {
+            allDay: false,
+            title: 'Slack',
+            start: moment()
+              .set('year', moment().get('year'))
+              .set('hour', 6)
+              .toDate(),
+            end: moment()
+              .set('year', moment().get('year'))
+              .set('hour', 12)
+              .toDate(),
+          },
+        ]}
+      />
+    )}
+  </CalendarDemo>
+</Playground>
+
+## Create Event
+
+Click or drag to create a event
+
+<Playground>
+  <CalendarDemo>
+    {({ events, onSelectSlot }) => (
+      <Calendar isSelectable events={events} onSelectSlot={onSelectSlot} />
+    )}
+  </CalendarDemo>
+</Playground>
+
+## API
+
+<Props of={Calendar} />
+
+```ts
+interface Event {
+  allDay?: boolean;
+  title?: string;
+  start?: Date;
+  end?: Date;
+  resource?: any;
+}
+
+interface Slot {
+  start: string | Date;
+  end: string | Date;
+  slots: Date[] | string[];
+  action: 'select' | 'click' | 'doubleClick';
+}
+```

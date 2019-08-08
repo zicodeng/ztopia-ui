@@ -1,0 +1,180 @@
+.ztopia-calendar {
+  height: 800px;
+  font-size: $font-size-s;
+
+  * {
+    border-color: $black-dark;
+  }
+
+  .rbc-event {
+    padding: $spacing-xs;
+    background-color: rgba(75, 137, 218, 0.6);
+    border-color: $blue-dark;
+    border-radius: 0;
+    outline: none;
+  }
+
+  .rbc-row {
+    min-height: 30px;
+  }
+
+  .rbc-header {
+    padding: $spacing-xs;
+    align-items: center;
+    border-color: $black-dark;
+    justify-content: center;
+  }
+
+  .rbc-day-bg {
+    border-color: $black-dark;
+  }
+
+  .rbc-today {
+    background-color: rgba(70, 206, 173, 0.1);
+  }
+
+  /*==================================
+  =            Month View            =
+  ==================================*/
+  .rbc-month-view {
+    height: auto;
+
+    .rbc-header {
+      display: flex;
+    }
+
+    .rbc-event {
+      background-color: $blue;
+    }
+  }
+
+  .rbc-month-row {
+    border-color: $black-dark;
+  }
+
+  .rbc-off-range {
+    color: $black-dark;
+  }
+
+  .rbc-off-range-bg {
+    background-color: $white;
+  }
+
+  .rbc-selected-cell {
+    background-color: $blue-light;
+  }
+
+  .rbc-date-cell {
+    padding: $spacing-s;
+    font-weight: normal;
+
+    &.rbc-now,
+    &.rbc-current {
+      color: $green;
+    }
+  }
+
+  .rbc-show-more {
+    display: inline;
+    color: $red;
+    text-decoration: none;
+    transition: $transition-fast;
+
+    &:hover {
+      color: $red-dark;
+      text-decoration: underline;
+    }
+  }
+  /*=====  End of Month View  ======*/
+
+  /*=================================
+  =            Time View            =
+  =================================*/
+  .rbc-time-view {
+    .rbc-header {
+      display: flex;
+    }
+
+    .rbc-event {
+      border: 0;
+      background-color: rgba(75, 137, 218, 0.6);
+      border-left: 2px solid $blue-dark;
+    }
+  }
+
+  .rbc-time-header.rbc-overflowing {
+    border: 0;
+  }
+
+  .rbc-event-label {
+    font-size: $font-size-xs;
+    font-weight: bold;
+  }
+
+  .rbc-time-content {
+    border-width: 1px;
+  }
+
+  .rbc-slot-selection {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .rbc-time-slot {
+    display: flex;
+    align-items: center;
+    border-color: $white;
+    justify-content: center;
+  }
+
+  .rbc-current-time-indicator {
+    height: 2px;
+    background-color: $green;
+  }
+  /*=====  End of Time View  ======*/
+
+  /*===================================
+  =            Agenda View            =
+  ===================================*/
+  .rbc-agenda-view {
+    table.rbc-agenda-table {
+      border-color: $black-dark;
+
+      tr,
+      td {
+        border-color: $black-dark;
+      }
+    }
+  }
+
+  /*=====  End of Agenda View  ======*/
+
+  /*===============================
+  =            Toolbar            =
+  ===============================*/
+  .rbc-toolbar {
+    margin-bottom: $spacing-l;
+
+    button {
+      color: $black-dark;
+      cursor: pointer;
+      border-color: $black-dark;
+      outline: none;
+      transition: $transition-fast;
+
+      &:hover,
+      &:active,
+      &:focus,
+      &.rbc-active {
+        color: $white-light;
+        background-color: $black-dark;
+        border-color: $black-dark;
+        box-shadow: none;
+      }
+    }
+
+    .rbc-toolbar-label {
+      font-weight: bold;
+    }
+  }
+  /*=====  End of Toolbar  ======*/
+}
