@@ -1,0 +1,9 @@
+.ztopia-progress {
+  &--line {
+    width: 100%;
+  }
+
+  &--circle {
+    height: 300px;
+  }
+}

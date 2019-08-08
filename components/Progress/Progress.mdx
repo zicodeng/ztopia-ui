@@ -1,0 +1,58 @@
+---
+name: Progress
+menu: Components
+route: /components/progress
+---
+
+import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+
+import { Progress } from './';
+import { ProgressDemo } from './ProgressDemo';
+
+# Progress
+
+Dependency: [rc-progress](https://github.com/react-component/progress)
+
+## Demo
+
+### Variant
+
+<Playground>
+  <Container centered>
+    <ProgressDemo>
+      {({ value }) => <Progress variant="line" value={value} />}
+    </ProgressDemo>
+    <ProgressDemo>
+      {({ value }) => <Progress variant="circle" value={value} />}
+    </ProgressDemo>
+  </Container>
+</Playground>
+
+### Stroke & Trail Color
+
+<Playground>
+  <Container centered>
+    <ProgressDemo>
+      {({ value }) => (
+        <Progress strokeWidth={4} strokeColor="#4b89da" value={value} />
+      )}
+    </ProgressDemo>
+    <ProgressDemo>
+      {({ value }) => (
+        <Progress
+          variant="circle"
+          strokeWidth={4}
+          trailWidth={4}
+          strokeColor="#d94452"
+          trailColor="#f76d82"
+          value={value}
+        />
+      )}
+    </ProgressDemo>
+  </Container>
+</Playground>
+
+## API
+
+<Props of={Progress} />
