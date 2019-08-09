@@ -28,6 +28,12 @@
   overflow: hidden;
   width: 100%;
 
+  &__bar {
+    width: 100%;
+    height: 100%;
+    animation: bar-loader 1.8s ease-in-out infinite;
+  }
+
   &.ztopia-loader--small {
     height: 4px;
   }
@@ -38,11 +44,5 @@
 
   &.ztopia-loader--large {
     height: 8px;
-  }
-
-  &__bar {
-    width: 100%;
-    height: 100%;
-    animation: bar-loader 1.8s ease-in-out infinite;
   }
 }

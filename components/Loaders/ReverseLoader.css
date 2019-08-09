@@ -1,0 +1,82 @@
+@keyframes reverse-loader-spin-forward {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes reverse-loader-spin-backward {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-720deg);
+  }
+}
+
+.ztopia-loader--reverse {
+  position: relative;
+  animation: reverse-loader-spin-forward 1.5s linear infinite;
+  border-color: transparent;
+  border-left-color: currentColor;
+  border-radius: 50%;
+  border-style: solid;
+  border-top-color: currentColor;
+
+  &::before {
+    position: absolute;
+    animation: reverse-loader-spin-backward 1s linear infinite;
+    border-color: transparent;
+    border-left-color: currentColor;
+    border-radius: 50%;
+    border-style: solid;
+    border-top-color: currentColor;
+    content: '';
+  }
+
+  &.ztopia-loader--small {
+    width: 40px;
+    height: 40px;
+    border-width: 3px;
+
+    &::before {
+      top: 6px;
+      right: 6px;
+      bottom: 6px;
+      left: 6px;
+      border-width: 3px;
+    }
+  }
+
+  &.ztopia-loader--medium {
+    width: 60px;
+    height: 60px;
+    border-width: 4px;
+
+    &::before {
+      top: 8px;
+      right: 8px;
+      bottom: 8px;
+      left: 8px;
+      border-width: 4px;
+    }
+  }
+
+  &.ztopia-loader--large {
+    width: 80px;
+    height: 80px;
+    border-width: 5px;
+
+    &::before {
+      top: 10px;
+      right: 10px;
+      bottom: 10px;
+      left: 10px;
+      border-width: 5px;
+    }
+  }
+}

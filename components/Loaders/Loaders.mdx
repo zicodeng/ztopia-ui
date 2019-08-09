@@ -7,7 +7,13 @@ route: /components/loaders
 import { Props, Playground } from 'docz';
 import { Container } from 'docz-theme-ztopia/helpers';
 
-import { Loader, BarLoader, MusicLoader, TwinnerLoader } from './';
+import {
+  Loader,
+  BarLoader,
+  MusicLoader,
+  ReverseLoader,
+  TwinnerLoader,
+} from './';
 
 # Loaders
 
@@ -56,6 +62,16 @@ import { Loader, BarLoader, MusicLoader, TwinnerLoader } from './';
     <TwinnerLoader color="red" size="small" />
     <TwinnerLoader color="green" size="medium" />
     <TwinnerLoader color="blue" size="large" />
+  </Container>
+</Playground>
+
+### ReverseLoader
+
+<Playground>
+  <Container>
+    <ReverseLoader color="red" size="small" />
+    <ReverseLoader color="green" size="medium" />
+    <ReverseLoader color="blue" size="large" />
   </Container>
 </Playground>
 
