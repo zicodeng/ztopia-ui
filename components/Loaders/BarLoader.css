@@ -1,0 +1,48 @@
+@keyframes bar-loader {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  40% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  90% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.ztopia-loader--line {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+
+  &.ztopia-loader--small {
+    height: 4px;
+  }
+
+  &.ztopia-loader--medium {
+    height: 6px;
+  }
+
+  &.ztopia-loader--large {
+    height: 8px;
+  }
+
+  &__bar {
+    width: 100%;
+    height: 100%;
+    animation: bar-loader 1.8s ease-in-out infinite;
+  }
+}

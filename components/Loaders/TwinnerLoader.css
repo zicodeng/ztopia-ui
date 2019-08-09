@@ -1,0 +1,63 @@
+@keyframes twinner-loader {
+  from {
+    transform: rotate(360deg);
+  }
+}
+
+.ztopia-loader--twinner {
+  position: relative;
+
+  &.ztopia-loader--small {
+    width: 40px;
+    height: 40px;
+
+    &::before,
+    &::after {
+      border-width: 20px;
+    }
+  }
+
+  &.ztopia-loader--medium {
+    width: 60px;
+    height: 60px;
+
+    &::before,
+    &::after {
+      border-width: 30px;
+    }
+  }
+
+  &.ztopia-loader--large {
+    width: 80px;
+    height: 80px;
+
+    &::before,
+    &::after {
+      border-width: 40px;
+    }
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    display: block;
+    box-sizing: border-box;
+    animation: twinner-loader 1s infinite;
+    border-color: transparent;
+    border-radius: 100%;
+    border-style: double;
+    content: '';
+  }
+
+  &::before {
+    right: 0;
+    animation-delay: -0.25s;
+    border-right-color: currentColor;
+  }
+
+  &::after {
+    left: 0;
+    border-left-color: currentColor;
+  }
+}

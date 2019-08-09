@@ -1,0 +1,64 @@
+---
+name: Loaders
+menu: Components
+route: /components/loaders
+---
+
+import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+
+import { Loader, BarLoader, MusicLoader, TwinnerLoader } from './';
+
+# Loaders
+
+## Demo
+
+### BarLoader
+
+<Playground>
+  <Container
+    style={{
+      height: 50,
+    }}
+  >
+    <BarLoader color="red" size="small" />
+  </Container>
+  <Container
+    style={{
+      height: 50,
+    }}
+  >
+    <BarLoader color="green" size="medium" />
+  </Container>
+  <Container
+    style={{
+      height: 50,
+    }}
+  >
+    <BarLoader color="blue" size="large" />
+  </Container>
+</Playground>
+
+### MusicLoader
+
+<Playground>
+  <Container>
+    <MusicLoader color="red" size="small" />
+    <MusicLoader color="green" size="medium" />
+    <MusicLoader color="blue" size="large" />
+  </Container>
+</Playground>
+
+### TwinnerLoader
+
+<Playground>
+  <Container>
+    <TwinnerLoader color="red" size="small" />
+    <TwinnerLoader color="green" size="medium" />
+    <TwinnerLoader color="blue" size="large" />
+  </Container>
+</Playground>
+
+## API
+
+<Props of={Loader} />
