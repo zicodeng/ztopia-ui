@@ -50,10 +50,20 @@ export const Tab: FC<TabProps> = memo(
 
 export interface TabsProps {
   /**
+   * <@default=`false`>
+   */
+  isVertical?: boolean;
+  /**
    * Selected tab Id
    */
   value?: string;
   className?: string;
+  /**
+   * <@default=`'left or bottom'`>
+   *
+   * If `isVertical={true}`, the default indicator placement is `left`, otherwise, the default is `bottom`
+   */
+  indicatorPlacement?: 'left' | 'right' | 'top' | 'bottom';
   /**
    * Called when the tab changes
    */
@@ -63,8 +73,30 @@ export interface TabsProps {
   ) => void;
 }
 
+const MIN_TAB_SIZE = {
+  width: 2,
+  height: 2,
+};
+
 export const Tabs: FC<TabsProps> = memo(
-  ({ value, className, children, onChange }) => {
+  ({
+    isVertical = false,
+    value,
+    className,
+    indicatorPlacement,
+    children,
+    onChange,
+  }) => {
+    indicatorPlacement = indicatorPlacement || (isVertical ? 'left' : 'bottom');
+    let indicatorPosition: number | string = 0;
+    if (isVertical) {
+      if (indicatorPlacement === 'left') indicatorPosition = 0;
+      if (indicatorPlacement === 'right') indicatorPosition = '100%';
+    } else {
+      if (indicatorPlacement === 'top') indicatorPosition = 0;
+      if (indicatorPlacement === 'bottom') indicatorPosition = '100%';
+    }
+
     const [tabSizes, setTabSizes] = useState<{
       [id: string]: ComponentSize | null;
     }>({});
@@ -78,39 +110,44 @@ export const Tabs: FC<TabsProps> = memo(
     );
 
     const indicatorStyle = useMemo(() => {
-      // Default to the first tab
+      // Default to the first tab if there is no value
       if (!value) {
         const firstTabId = tabIds[0];
-        const firstTabSize = tabSizes[firstTabId];
+        const { width, height } = tabSizes[firstTabId] || MIN_TAB_SIZE;
+
         return {
-          width: firstTabSize ? firstTabSize.width : 0,
-          left: 0,
+          width: isVertical ? MIN_TAB_SIZE.width : width,
+          height: isVertical ? height : MIN_TAB_SIZE.height,
+          left: isVertical ? indicatorPosition : 0,
+          top: isVertical ? 0 : indicatorPosition,
         };
       }
 
       // Calculate position
       const selectedTabId = tabIds.indexOf(value);
-      const pos = [...tabIds].slice(0, selectedTabId).reduce(
+      const position = [...tabIds].slice(0, selectedTabId).reduce(
         (acc, tabId) => {
-          const { width } = tabSizes[tabId] || { width: 0 };
+          const { width, height } = tabSizes[tabId] || MIN_TAB_SIZE;
           return {
-            width,
-            left: acc.left + width,
+            left: isVertical ? acc.left : ((acc.left as number) += width),
+            top: isVertical ? ((acc.top as number) += height) : acc.top,
           };
         },
         {
-          left: 0,
+          left: isVertical ? indicatorPosition : 0,
+          top: isVertical ? 0 : indicatorPosition,
         },
       );
 
       // Calculate size
-      const { width } = tabSizes[value] || { width: 0 };
+      const { width, height } = tabSizes[value] || MIN_TAB_SIZE;
 
       return {
-        ...pos,
-        width,
+        ...position,
+        width: isVertical ? MIN_TAB_SIZE.width : width,
+        height: isVertical ? height : MIN_TAB_SIZE.height,
       };
-    }, [value, tabSizes, tabIds]);
+    }, [isVertical, value, tabSizes, tabIds]);
 
     const handleRenderTab = useCallback(
       (id: string, size: ComponentSize) => {
@@ -125,14 +162,20 @@ export const Tabs: FC<TabsProps> = memo(
     const handleClickTab = useCallback(
       (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
         const newValue = e.currentTarget.id;
-        if (onChange) { onChange(e, newValue); }
+        if (onChange) {
+          onChange(e, newValue);
+        }
       },
       [onChange],
     );
 
     return (
       <div className={classNames(className, 'ztopia-tabs')}>
-        <ul className={classNames('ztopia-tabs__items')}>
+        <ul
+          className={classNames('ztopia-tabs__items', {
+            'is-vertical': isVertical,
+          })}
+        >
           {Children.map(children, child =>
             isValidElement(child)
               ? cloneElement(child, {

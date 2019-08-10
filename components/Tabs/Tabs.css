@@ -6,6 +6,11 @@
     padding: 0;
     margin: 0;
     list-style: none;
+
+    &.is-vertical {
+      align-items: flex-start;
+      flex-direction: column;
+    }
   }
 
   &__item {
@@ -15,9 +20,6 @@
 
   &__indicator {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 2px;
     background-color: $black-dark;
     transition: $transition-fast;
   }

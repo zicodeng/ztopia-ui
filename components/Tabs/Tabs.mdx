@@ -5,6 +5,7 @@ route: /components/tabs
 ---
 
 import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
 
 import { Tabs, Tab } from './';
 import { TabsDemo } from './TabsDemo';
@@ -13,19 +14,96 @@ import { TabsDemo } from './TabsDemo';
 
 ## Demo
 
-### Controlled Tabs
+### Horizontal & Vertical Tabs
 
 <Playground>
-  <TabsDemo>
-    {({ value, onChange }) => (
-      <Tabs value={value} onChange={onChange}>
-        <Tab id="drama">Drama</Tab>
-        <Tab id="horror">Horror</Tab>
-        <Tab id="action">Action</Tab>
-        <Tab id="comedy">Comedy</Tab>
-      </Tabs>
-    )}
-  </TabsDemo>
+  <Container>
+    <TabsDemo>
+      {({ value, onChange }) => (
+        <Tabs value={value} onChange={onChange}>
+          <Tab id="drama">Drama</Tab>
+          <Tab id="horror">Horror</Tab>
+          <Tab id="action">Action</Tab>
+          <Tab id="comedy">Comedy</Tab>
+        </Tabs>
+      )}
+    </TabsDemo>
+  </Container>
+  <Container>
+    <TabsDemo>
+      {({ value, onChange }) => (
+        <Tabs isVertical value={value} onChange={onChange}>
+          <Tab id="drama">Drama</Tab>
+          <Tab id="horror">Horror</Tab>
+          <Tab id="action">Action</Tab>
+          <Tab id="comedy">Comedy</Tab>
+        </Tabs>
+      )}
+    </TabsDemo>
+  </Container>
+</Playground>
+
+### Indicator Placement
+
+<Playground>
+  <Container>
+    <TabsDemo>
+      {({ value, onChange }) => (
+        <Tabs indicatorPlacement="top" value={value} onChange={onChange}>
+          <Tab id="drama">Drama</Tab>
+          <Tab id="horror">Horror</Tab>
+          <Tab id="action">Action</Tab>
+          <Tab id="comedy">Comedy</Tab>
+        </Tabs>
+      )}
+    </TabsDemo>
+  </Container>
+  <Container>
+    <TabsDemo>
+      {({ value, onChange }) => (
+        <Tabs indicatorPlacement="bottom" value={value} onChange={onChange}>
+          <Tab id="drama">Drama</Tab>
+          <Tab id="horror">Horror</Tab>
+          <Tab id="action">Action</Tab>
+          <Tab id="comedy">Comedy</Tab>
+        </Tabs>
+      )}
+    </TabsDemo>
+  </Container>
+  <Container>
+    <TabsDemo>
+      {({ value, onChange }) => (
+        <Tabs
+          isVertical
+          indicatorPlacement="left"
+          value={value}
+          onChange={onChange}
+        >
+          <Tab id="drama">Drama</Tab>
+          <Tab id="horror">Horror</Tab>
+          <Tab id="action">Action</Tab>
+          <Tab id="comedy">Comedy</Tab>
+        </Tabs>
+      )}
+    </TabsDemo>
+  </Container>
+  <Container>
+    <TabsDemo>
+      {({ value, onChange }) => (
+        <Tabs
+          isVertical
+          indicatorPlacement="right"
+          value={value}
+          onChange={onChange}
+        >
+          <Tab id="drama">Drama</Tab>
+          <Tab id="horror">Horror</Tab>
+          <Tab id="action">Action</Tab>
+          <Tab id="comedy">Comedy</Tab>
+        </Tabs>
+      )}
+    </TabsDemo>
+  </Container>
 </Playground>
 
 ## API
