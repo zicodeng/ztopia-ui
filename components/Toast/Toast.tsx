@@ -29,7 +29,7 @@ export interface ToastOptions {
   /**
    * <@default=`'top-right'`>
    */
-  position?:
+  placement?:
     | 'top-right'
     | 'top-center'
     | 'top-left'
@@ -43,7 +43,7 @@ export interface ToastOptions {
 }
 
 export const ToastContainer: FC<ToastOptions> = memo(
-  ({ isProgressBarHidden, containerId, ...restProps }) => (
+  ({ isProgressBarHidden, containerId, placement, ...restProps }) => (
     <BaseToastContainer
       {...restProps}
       className="ztopia-toast"
@@ -52,6 +52,7 @@ export const ToastContainer: FC<ToastOptions> = memo(
       progressClassName="ztopia-toast__progress"
       hideProgressBar={isProgressBarHidden}
       containerId={containerId}
+      position={placement}
       enableMultiContainer={Boolean(containerId)}
       closeButton={createElement(({ closeToast }) => (
         <Times
@@ -66,19 +67,21 @@ export const ToastContainer: FC<ToastOptions> = memo(
 
 export const makeToast = (
   content: ReactNode,
-  { isProgressBarHidden, ...restOptions }: ToastOptions,
+  { isProgressBarHidden, placement, ...restOptions }: ToastOptions,
 ): ToastId =>
   toast(content, {
     hideProgressBar: isProgressBarHidden,
+    position: placement,
     ...restOptions,
   });
 
 export const updateToast = (
   toastId: ToastId,
-  { isProgressBarHidden, ...restOptions }: ToastOptions,
+  { isProgressBarHidden, placement, ...restOptions }: ToastOptions,
 ) =>
   toast.update(toastId, {
     hideProgressBar: isProgressBarHidden,
+    position: placement,
     ...restOptions,
   });
 
