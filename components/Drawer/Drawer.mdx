@@ -126,7 +126,7 @@ Dependency: [rc-drawer](https://github.com/react-component/drawer)
     {({ isOpen, openDrawer, closeDrawer }) => (
       <>
         <Button onClick={openDrawer}>Open</Button>
-        <Drawer isPushable isOpen={isOpen} onRequestClose={closeDrawer}>
+        <Drawer isPagePushable isOpen={isOpen} onRequestClose={closeDrawer}>
           <section style={{ padding: '20px 40px' }}>
             <h1>Hello, World!</h1>
             <p>{faker.lorem.paragraphs(1)}</p>

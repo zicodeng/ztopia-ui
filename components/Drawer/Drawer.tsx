@@ -11,10 +11,8 @@ export interface DrawerProps {
   isOpen?: boolean;
   /**
    * <@default=`false`>
-   *
-   * If true, page will be pushed by the drawer
    */
-  isPushable?: boolean;
+  isPagePushable?: boolean;
   /**
    * <@default=`'30%'`>
    */
@@ -36,7 +34,7 @@ export interface DrawerProps {
 
 export const Drawer: FC<DrawerProps> = ({
   isOpen = false,
-  isPushable = false,
+  isPagePushable = false,
   width,
   height,
   className,
@@ -51,7 +49,7 @@ export const Drawer: FC<DrawerProps> = ({
     <BaseDrawer
       {...restProps}
       handler={false}
-      level={isPushable ? undefined : null}
+      level={isPagePushable ? undefined : null}
       open={isOpen}
       width={newWidth}
       height={newHeight}
