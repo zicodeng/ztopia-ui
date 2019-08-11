@@ -8818,6 +8818,16 @@ rc-animate@2.x:
     rc-util "^4.8.0"
     react-lifecycles-compat "^3.0.4"
 
+rc-drawer@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/rc-drawer/-/rc-drawer-2.0.3.tgz#4774751ac3469d2817e4e2615f0534745266f21e"
+  integrity sha512-ubjc8fgPl7ZEsr1+jTnRt4ei8f6FHvw8UvZo+6g4MjJG6V1mNZBAl6eWXOo4DTeALK+7dySlitBmuI1hoCP4nQ==
+  dependencies:
+    babel-runtime "6.x"
+    classnames "^2.2.5"
+    rc-util "^4.7.0"
+    react-lifecycles-compat "^3.0.4"
+
 rc-progress@^2.5.1:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/rc-progress/-/rc-progress-2.5.1.tgz#ed5b573c0c8277a11e5a128ce5f5ca16f2e4dd6b"
@@ -8871,6 +8881,18 @@ rc-util@^4.0.4, rc-util@^4.4.0, rc-util@^4.8.0:
     prop-types "^15.5.10"
     react-lifecycles-compat "^3.0.4"
     shallowequal "^0.2.2"
+
+rc-util@^4.7.0:
+  version "4.9.0"
+  resolved "https://registry.yarnpkg.com/rc-util/-/rc-util-4.9.0.tgz#b1894bf9ba904aebc82a82531cab1f34266a69a1"
+  integrity sha512-DqA04S1nKJQ1ggrNC2IY67jQ+lTaPI9+4q91BRc/zTMEYScF9hMnXXM0qU6OwYI3+CfizzMd+JqT2l74AGe13Q==
+  dependencies:
+    add-dom-event-listener "^1.1.0"
+    babel-runtime "6.x"
+    prop-types "^15.5.10"
+    react-lifecycles-compat "^3.0.4"
+    shallowequal "^0.2.2"
+    warning "^4.0.3"
 
 rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
   version "1.2.8"

@@ -1,0 +1,124 @@
+---
+name: Drawer
+menu: Components
+route: /components/drawer
+---
+
+import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+import faker from 'faker';
+
+import { Button } from '../Button';
+
+import { Drawer } from './';
+import { DrawerDemo } from './DrawerDemo';
+
+# Drawer
+
+Dependency: [rc-drawer](https://github.com/react-component/drawer)
+
+## Demo
+
+### Placement
+
+<Playground>
+  <Container>
+    <DrawerDemo>
+      {({ isOpen, openDrawer, closeDrawer }) => (
+        <>
+          <Button onClick={openDrawer}>Top</Button>
+          <Drawer placement="top" isOpen={isOpen} onRequestClose={closeDrawer}>
+            <section style={{ padding: '20px 40px' }}>
+              <h1>Hello, World!</h1>
+              <p>{faker.lorem.paragraphs(1)}</p>
+              <p>{faker.lorem.paragraphs(5)}</p>
+              <p>{faker.lorem.paragraphs(10)}</p>
+            </section>
+          </Drawer>
+        </>
+      )}
+    </DrawerDemo>
+    <DrawerDemo>
+      {({ isOpen, openDrawer, closeDrawer }) => (
+        <>
+          <Button onClick={openDrawer}>Bottom</Button>
+          <Drawer
+            placement="bottom"
+            isOpen={isOpen}
+            onRequestClose={closeDrawer}
+          >
+            <section style={{ padding: '20px 40px' }}>
+              <h1>Hello, World!</h1>
+              <p>{faker.lorem.paragraphs(1)}</p>
+              <p>{faker.lorem.paragraphs(5)}</p>
+              <p>{faker.lorem.paragraphs(10)}</p>
+            </section>
+          </Drawer>
+        </>
+      )}
+    </DrawerDemo>
+    <DrawerDemo>
+      {({ isOpen, openDrawer, closeDrawer }) => (
+        <>
+          <Button onClick={openDrawer}>Left</Button>
+          <Drawer placement="left" isOpen={isOpen} onRequestClose={closeDrawer}>
+            <section style={{ padding: '20px 40px' }}>
+              <h1>Hello, World!</h1>
+              <p>{faker.lorem.paragraphs(1)}</p>
+              <p>{faker.lorem.paragraphs(5)}</p>
+              <p>{faker.lorem.paragraphs(10)}</p>
+            </section>
+          </Drawer>
+        </>
+      )}
+    </DrawerDemo>
+    <DrawerDemo>
+      {({ isOpen, openDrawer, closeDrawer }) => (
+        <>
+          <Button onClick={openDrawer}>Right</Button>
+          <Drawer
+            placement="right"
+            isOpen={isOpen}
+            onRequestClose={closeDrawer}
+          >
+            <section style={{ padding: '20px 40px' }}>
+              <h1>Hello, World!</h1>
+              <p>{faker.lorem.paragraphs(1)}</p>
+              <p>{faker.lorem.paragraphs(5)}</p>
+              <p>{faker.lorem.paragraphs(10)}</p>
+            </section>
+          </Drawer>
+        </>
+      )}
+    </DrawerDemo>
+  </Container>
+</Playground>
+
+### Custom Width & Height
+
+<Playground>
+  <DrawerDemo>
+    {({ isOpen, openDrawer, closeDrawer }) => (
+      <>
+        <Button onClick={openDrawer}>300 x 300 Drawer</Button>
+        <Drawer
+          width={300}
+          height={300}
+          isOpen={isOpen}
+          onRequestClose={closeDrawer}
+        >
+          <section style={{ padding: '20px 40px' }}>
+            <h1>Hello, World!</h1>
+            <p>{faker.lorem.paragraphs(1)}</p>
+            <p>{faker.lorem.paragraphs(5)}</p>
+            <p>{faker.lorem.paragraphs(10)}</p>
+          </section>
+        </Drawer>
+      </>
+    )}
+  </DrawerDemo>
+</Playground>
+
+## API
+
+<Props of={Drawer} />

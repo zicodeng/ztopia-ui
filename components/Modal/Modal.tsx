@@ -17,7 +17,7 @@ interface ModalProps {
    */
   size?: 'small' | 'medium' | 'large';
   /**
-   * Modal can be closed via pressing ESC key, clicking overlay or close icon
+   * Modal can be closed by pressing ESC key, clicking overlay or close icon
    */
   onRequestClose?: () => void;
 }
