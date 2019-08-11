@@ -1,0 +1,171 @@
+---
+name: Table
+menu: Components
+route: /components/table
+---
+
+import { Props, Playground } from 'docz';
+import faker from 'faker';
+
+import {
+  Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableHeadCell,
+  TableCell,
+} from './';
+
+# Table
+
+## Demo
+
+### Composition Pattern
+
+<Playground>
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableHeadCell>First Name</TableHeadCell>
+        <TableHeadCell>Last Name</TableHeadCell>
+        <TableHeadCell>Job Title</TableHeadCell>
+        <TableHeadCell>Phone Number</TableHeadCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      {Array.from({ length: 100 }).map((_, i) => (
+        <TableRow key={i}>
+          <TableCell>{faker.name.firstName()}</TableCell>
+          <TableCell>{faker.name.lastName()}</TableCell>
+          <TableCell>{faker.name.jobTitle()}</TableCell>
+          <TableCell>{faker.phone.phoneNumberFormat()}</TableCell>
+        </TableRow>
+      ))}
+    </TableBody>
+  </Table>
+</Playground>
+
+### Row Hovered Content
+
+<Playground>
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableHeadCell>First Name</TableHeadCell>
+        <TableHeadCell>Last Name</TableHeadCell>
+        <TableHeadCell>Job Title</TableHeadCell>
+        <TableHeadCell>Phone Number</TableHeadCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      {Array.from({ length: 100 }).map((_, i) => (
+        <TableRow
+          key={i}
+          hoveredContent={
+            <div>
+              <span style={{ color: 'green', marginRight: 10 }}>Edit</span>
+              <span style={{ color: 'red' }}>Delete</span>
+            </div>
+          }
+        >
+          <TableCell>{faker.name.firstName()}</TableCell>
+          <TableCell>{faker.name.lastName()}</TableCell>
+          <TableCell>{faker.name.jobTitle()}</TableCell>
+          <TableCell>{faker.phone.phoneNumberFormat()}</TableCell>
+        </TableRow>
+      ))}
+    </TableBody>
+  </Table>
+</Playground>
+
+### Pagination
+
+<Playground>
+  <Table
+    pagination={{
+      currPage: 1,
+      totalPages: 20,
+    }}
+  >
+    <TableHead>
+      <TableRow>
+        <TableHeadCell>First Name</TableHeadCell>
+        <TableHeadCell>Last Name</TableHeadCell>
+        <TableHeadCell>Job Title</TableHeadCell>
+        <TableHeadCell>Phone Number</TableHeadCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      {Array.from({ length: 100 }).map((_, i) => (
+        <TableRow key={i}>
+          <TableCell>{faker.name.firstName()}</TableCell>
+          <TableCell>{faker.name.lastName()}</TableCell>
+          <TableCell>{faker.name.jobTitle()}</TableCell>
+          <TableCell>{faker.phone.phoneNumberFormat()}</TableCell>
+        </TableRow>
+      ))}
+    </TableBody>
+  </Table>
+</Playground>
+
+### Loading
+
+<Playground>
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableHeadCell>First Name</TableHeadCell>
+        <TableHeadCell>Last Name</TableHeadCell>
+        <TableHeadCell>Job Title</TableHeadCell>
+        <TableHeadCell>Phone Number</TableHeadCell>
+      </TableRow>
+    </TableHead>
+    <TableBody isLoading>
+      {Array.from({ length: 100 }).map((_, i) => (
+        <TableRow key={i}>
+          <TableCell>{faker.name.firstName()}</TableCell>
+          <TableCell>{faker.name.lastName()}</TableCell>
+          <TableCell>{faker.name.jobTitle()}</TableCell>
+          <TableCell>{faker.phone.phoneNumberFormat()}</TableCell>
+        </TableRow>
+      ))}
+    </TableBody>
+  </Table>
+</Playground>
+
+## API
+
+### Table
+
+<Props of={Table} />
+
+Note: children must be either `<TableHead>` or `<TableBody>`
+
+```ts
+interface TablePagination {
+  currPage: number;
+  totalPages: number;
+  onClickPrev: (e: React.MouseEvent<SVGElement, MouseEvent>) => void;
+  onClickNext: (e: React.MouseEvent<SVGElement, MouseEvent>) => void;
+}
+```
+
+### TableHead
+
+<Props of={TableHead} />
+
+### TableBody
+
+<Props of={TableBody} />
+
+### TableRow
+
+<Props of={TableRow} />
+
+### TableHeadCell
+
+<Props of={TableHeadCell} />
+
+### TableCell
+
+<Props of={TableCell} />

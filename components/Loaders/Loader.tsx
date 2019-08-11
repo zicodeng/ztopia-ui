@@ -11,12 +11,12 @@ export interface LoaderProps {
    * <@default=`'medium'`>
    */
   size?: 'small' | 'medium' | 'large';
-  children: (props: { color: string; className: string }) => JSX.Element;
+  children?: (props: { color: string; className: string }) => JSX.Element;
 }
 
 export const Loader: FC<LoaderProps> = memo(
   ({ color = '#131518', className, size = 'medium', children }) =>
-    children({
+    children!({
       color,
       className: classNames(
         'ztopia-loader',

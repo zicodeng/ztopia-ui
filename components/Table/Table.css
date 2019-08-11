@@ -1,0 +1,109 @@
+.ztopia-table {
+  position: relative;
+  font-size: $font-size-s;
+  line-height: normal;
+  padding-top: 35px;
+
+  &__container {
+    overflow-y: auto;
+
+    > table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+  }
+
+  &__row-hovered-content {
+    position: relative;
+    padding: 0;
+    visibility: hidden;
+
+    > div {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      height: 35px;
+      padding: 0 $spacing-l;
+      color: $white;
+      align-items: center;
+      background-color: $white;
+      justify-content: flex-end;
+    }
+  }
+
+  &__row {
+    border-bottom: 1px solid $black-dark;
+
+    &.is-hoverable {
+      &:hover {
+        background-color: $white;
+
+        .ztopia-table__row-hovered-content {
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  &__head-cell {
+    padding: 0 $spacing-l;
+    white-space: nowrap;
+
+    > div {
+      position: absolute;
+      top: 0;
+      padding: $spacing-s $spacing-l;
+      color: $black-dark;
+      margin-left: -$spacing-l;
+    }
+
+    &--placeholder {
+      padding: 0;
+
+      > div {
+        display: none;
+      }
+    }
+  }
+
+  &__cell {
+    overflow: hidden;
+    height: 36px;
+    padding: 0 $spacing-l;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__pagination {
+    display: flex;
+    align-items: center;
+    float: right;
+    margin-top: $spacing-s;
+  }
+
+  &__pagination-controller {
+    cursor: pointer;
+    transition: $transition-fast;
+
+    &--prev {
+      margin: 0 $spacing-l;
+    }
+
+    &:hover {
+      color: $black-light;
+    }
+
+    &.is-disabled {
+      color: $white-dark;
+      cursor: not-allowed;
+    }
+  }
+
+  &__loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
