@@ -119,6 +119,26 @@ Dependency: [rc-drawer](https://github.com/react-component/drawer)
   </DrawerDemo>
 </Playground>
 
+### Drawer Pushes Page
+
+<Playground>
+  <DrawerDemo>
+    {({ isOpen, openDrawer, closeDrawer }) => (
+      <>
+        <Button onClick={openDrawer}>Open</Button>
+        <Drawer isPushable isOpen={isOpen} onRequestClose={closeDrawer}>
+          <section style={{ padding: '20px 40px' }}>
+            <h1>Hello, World!</h1>
+            <p>{faker.lorem.paragraphs(1)}</p>
+            <p>{faker.lorem.paragraphs(5)}</p>
+            <p>{faker.lorem.paragraphs(10)}</p>
+          </section>
+        </Drawer>
+      </>
+    )}
+  </DrawerDemo>
+</Playground>
+
 ## API
 
 <Props of={Drawer} />
