@@ -1,0 +1,143 @@
+---
+name: Map
+menu: Components
+route: /components/map
+---
+
+import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+import faker from 'faker';
+
+import { Map, createArcLayer, createIconLayer } from './';
+
+# Map
+
+Dependencies: [deck.gl](https://github.com/uber/deck.gl) and [react-map-gl](https://github.com/uber/react-map-gl)
+
+## Demo
+
+### Arc Layer
+
+<Playground>
+  <Container style={{ height: 600 }}>
+    <Map
+      layers={[
+        createArcLayer({
+          pickable: true,
+          autoHighlight: true,
+          id: 'arc-layer',
+          highlightColor: [255, 0, 0, 255],
+          data: Array.from({ length: 20 }).map(() => ({
+            source: {
+              country: faker.address.country(),
+              color: Array.from({ length: 3 }).map(() => Math.random() * 255),
+              coordinates: [
+                faker.address.longitude(),
+                faker.address.latitude(),
+              ],
+            },
+            target: {
+              country: faker.address.country(),
+              color: Array.from({ length: 3 }).map(() => Math.random() * 255),
+              coordinates: [
+                faker.address.longitude(),
+                faker.address.latitude(),
+              ],
+            },
+          })),
+          getWidth: 10,
+          getSourcePosition: datum => datum.source.coordinates,
+          getTargetPosition: datum => datum.target.coordinates,
+          getSourceColor: datum => datum.source.color,
+          getTargetColor: datum => datum.target.color,
+          onHover: hoverInfo => {
+            console.log('Map', 'ArcLayer', { hoverInfo });
+          },
+        }),
+      ]}
+    />
+  </Container>
+</Playground>
+
+### Icon Layer
+
+<Playground>
+  <Container style={{ height: 600 }}>
+    <Map
+      layers={[
+        createIconLayer({
+          pickable: true,
+          autoHighlight: true,
+          id: 'icon-layer',
+          highlightColor: [255, 0, 0, 255],
+          data: Array.from({ length: 20 }).map(() => ({
+            name: faker.name.findName(),
+            url: faker.image.avatar(),
+            coordinates: [Math.random() * 360 - 180, Math.random() * 180 - 90],
+          })),
+          sizeScale: 10,
+          getIcon: datum => ({
+            url: datum.url,
+            width: 128,
+            height: 128,
+            anchorY: 128,
+          }),
+          getSize: datum => 5,
+          getPosition: datum => datum.coordinates,
+          onHover: hoverInfo => {
+            console.log('Map', 'IconLayer', { hoverInfo });
+          },
+        }),
+      ]}
+    />
+  </Container>
+</Playground>
+
+## API
+
+### Map
+
+<Props of={Map} />
+
+### ArcLayer
+
+```ts
+const createArcLayer = (props: ArcLayerProps) => new ArcLayer(props);
+
+interface ArcLayerProps extends LayerProps {
+  getWidth?: number;
+  getSourcePosition: (datum: any) => Coordinate;
+  getTargetPosition: (datum: any) => Coordinate;
+  getSourceColor?: (datum: any) => RGB;
+  getTargetColor?: (datum: any) => RGB;
+}
+```
+
+### IconLayer
+
+```ts
+const createIconLayer = (props: IconLayerProps) => new IconLayer(props);
+
+interface IconLayerProps extends LayerProps {
+  sizeScale: number;
+  getIcon: (datum: any) => Icon;
+  getSize: (datum: any) => number;
+  getColor: (datum: any) => RGB;
+  getPosition: (datum: any) => Coordinate;
+}
+
+interface Icon {
+  width: number;
+  height: number;
+  /**
+   * Horizontal position of icon anchor
+   */
+  anchorX?: number;
+  /**
+   * Vertical position of icon anchor
+   */
+  anchorY?: number;
+  url: string;
+  id?: string;
+}
+```

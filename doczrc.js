@@ -4,6 +4,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import TerserJSPlugin from 'terser-webpack-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import FilterWarningsPlugin from 'webpack-filter-warnings-plugin';
+import Dotenv from 'dotenv-webpack';
 
 import pkg from './package.json';
 
@@ -47,6 +48,7 @@ export default {
             path.resolve(__dirname, './node_modules/react-toastify'),
             path.resolve(__dirname, './node_modules/react-datepicker'),
             path.resolve(__dirname, './node_modules/react-big-calendar'),
+            path.resolve(__dirname, './node_modules/mapbox-gl'),
           ],
           use: [
             isDev
@@ -97,6 +99,7 @@ export default {
       new FilterWarningsPlugin({
         exclude: /mini-css-extract-plugin[^]*Conflicting order between:/,
       }),
+      new Dotenv(),
     ],
   }),
   themeConfig: {
