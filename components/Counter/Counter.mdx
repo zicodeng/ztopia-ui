@@ -1,0 +1,34 @@
+---
+name: Counter
+menu: Components
+route: /components/counter
+---
+
+import { Props, Playground } from 'docz';
+import faker from 'faker';
+
+import { Counter } from './';
+
+# Counter
+
+Dependencies: [react-countup](https://github.com/glennreyes/react-countup) and [react-visibility-sensor](https://github.com/joshwnj/react-visibility-sensor)
+
+## Demo
+
+### Reset and Re-Animate on Visibility Change
+
+Scroll down and scroll up again to test it
+
+<Playground>
+  <Counter isResetEnabled start={0} end={10000} />
+</Playground>
+
+### Prefix, Separator & Suffix
+
+<Playground>
+  <Counter start={0} end={10000} prefix="$ " separator="," suffix=" left" />
+</Playground>
+
+## API
+
+<Props of={Counter} />
