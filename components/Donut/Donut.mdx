@@ -1,0 +1,73 @@
+---
+name: Donut
+menu: Components
+route: /components/donut
+---
+
+import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+import faker from 'faker';
+
+import { Donut } from './';
+
+# Donut
+
+Dependency: [recharts](https://github.com/recharts/recharts)
+
+## Demo
+
+### Basic Usage
+
+<Playground>
+  <Donut
+    nameAccessor="country"
+    valueAccessor="population"
+    data={Array.from({ length: 5 }).map((_, i) => ({
+      country: faker.address.country(),
+      population: Math.floor(Math.random() * 100000 + 10000),
+    }))}
+  />
+</Playground>
+
+### Color
+
+<Playground>
+  <Container>
+    <Donut
+      nameAccessor="country"
+      valueAccessor="population"
+      color="blue"
+      data={Array.from({ length: 5 }).map((_, i) => ({
+        country: faker.address.country(),
+        population: Math.floor(Math.random() * 100000 + 10000),
+      }))}
+    />
+    <Donut
+      nameAccessor="country"
+      valueAccessor="population"
+      color={['red', 'green', 'blue', 'yellow', 'purple']}
+      data={Array.from({ length: 5 }).map((_, i) => ({
+        country: faker.address.country(),
+        population: Math.floor(Math.random() * 100000 + 10000),
+      }))}
+    />
+  </Container>
+</Playground>
+
+### Pie
+
+<Playground>
+  <Donut
+    nameAccessor="country"
+    valueAccessor="population"
+    innerRadius={0}
+    data={Array.from({ length: 5 }).map((_, i) => ({
+      country: faker.address.country(),
+      population: Math.floor(Math.random() * 100000 + 10000),
+    }))}
+  />
+</Playground>
+
+## API
+
+<Props of={Donut} />
