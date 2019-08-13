@@ -1,0 +1,174 @@
+---
+name: Chart
+menu: Components
+route: /components/chart
+---
+
+import { Props, Playground } from 'docz';
+import faker from 'faker';
+
+import { Chart } from './';
+
+# Chart
+
+Dependency: [recharts](https://github.com/recharts/recharts)
+
+Known issues:
+
+- Bar chart tooltip not working: https://github.com/recharts/recharts/issues/1836
+
+## Demo
+
+### Line Chart
+
+<Playground>
+  <Chart
+    data={Array.from({ length: 5 }).map((_, i) => ({
+      country: faker.address.country(),
+      male: Math.floor(Math.random() * 100000 + 10000),
+      female: Math.floor(Math.random() * 100000 + 10000),
+      transgender: Math.floor(Math.random() * 100000 + 10000),
+    }))}
+    xAxis={{
+      accessor: 'country',
+    }}
+    lines={[
+      { accessor: 'male', stroke: 'blue' },
+      { accessor: 'female', stroke: 'red' },
+      { accessor: 'transgender' },
+    ]}
+  />
+</Playground>
+
+### Area Chart
+
+<Playground>
+  <Chart
+    data={Array.from({ length: 5 }).map((_, i) => ({
+      country: faker.address.country(),
+      male: Math.floor(Math.random() * 100000 + 10000),
+      female: Math.floor(Math.random() * 100000 + 10000),
+      transgender: Math.floor(Math.random() * 100000 + 10000),
+    }))}
+    xAxis={{
+      accessor: 'country',
+    }}
+    areas={[
+      { accessor: 'male', fill: 'blue', stroke: 'blue' },
+      { accessor: 'female', fill: 'red', stroke: 'red' },
+      { accessor: 'transgender' },
+    ]}
+  />
+</Playground>
+
+### Bar Chart
+
+<Playground>
+  <Chart
+    data={Array.from({ length: 5 }).map((_, i) => ({
+      country: faker.address.country(),
+      male: Math.floor(Math.random() * 100000 + 10000),
+      female: Math.floor(Math.random() * 100000 + 10000),
+      transgender: Math.floor(Math.random() * 100000 + 10000),
+    }))}
+    xAxis={{
+      accessor: 'country',
+    }}
+    bars={[
+      { accessor: 'male', fill: 'blue', stroke: 'blue' },
+      { accessor: 'female', fill: 'red', stroke: 'red' },
+      { accessor: 'transgender' },
+    ]}
+  />
+</Playground>
+
+### Composed Chart
+
+<Playground>
+  <Chart
+    data={Array.from({ length: 5 }).map((_, i) => ({
+      country: faker.address.country(),
+      male: Math.floor(Math.random() * 100000 + 10000),
+      female: Math.floor(Math.random() * 100000 + 10000),
+      transgender: Math.floor(Math.random() * 100000 + 10000),
+    }))}
+    xAxis={{
+      accessor: 'name',
+    }}
+    lines={[{ accessor: 'male', stroke: 'blue' }]}
+    areas={[{ accessor: 'female', fill: 'red', stroke: 'red' }]}
+    bars={[{ accessor: 'transgender', width: 20 }]}
+  />
+</Playground>
+
+## API
+
+<Props of={Chart} />
+
+```ts
+interface Axis {
+  accessor?: string;
+  color?: string;
+}
+
+type Accessor =
+  | string
+  | number
+  | ((datum: any) => string | number | [number, number] | null);
+
+interface Legend {
+  /**
+   * <@default=`50`>
+   */
+  height?: number;
+  variant?:
+    | 'plainline'
+    | 'line'
+    | 'square'
+    | 'rect'
+    | 'circle'
+    | 'cross'
+    | 'diamond'
+    | 'star'
+    | 'triangle'
+    | 'wye';
+}
+
+interface Shape {
+  stroke?: string;
+  fill?: string;
+  accessor: Accessor;
+}
+
+export type D3Interpolation =
+  | 'basis'
+  | 'basisClosed'
+  | 'basisOpen'
+  | 'linear'
+  | 'linearClosed'
+  | 'natural'
+  | 'monotoneX'
+  | 'monotoneY'
+  | 'monotone'
+  | 'step'
+  | 'stepBefore'
+  | 'stepAfter';
+
+interface Line extends Shape {
+  /**
+   * <@default=`'monotone'`>
+   */
+  variant?: D3Interpolation;
+}
+
+interface Area extends Shape {
+  /**
+   * <@default=`'monotone'`>
+   */
+  variant?: D3Interpolation;
+}
+
+interface Bar extends Shape {
+  width?: number;
+}
+```
