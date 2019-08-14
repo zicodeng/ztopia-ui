@@ -23,7 +23,7 @@ export interface TabProps {
    *
    * Called when Tab is rendered at the first time
    */
-  onRender: (id: string, size: ComponentSize) => void;
+  onRender?: (id: string, size: ComponentSize) => void;
 }
 
 export const Tab: FC<TabProps> = memo(
@@ -32,7 +32,7 @@ export const Tab: FC<TabProps> = memo(
     const size = useComponentSize(ref);
 
     useEffect(() => {
-      onRender(id, size);
+      onRender!(id, size);
     }, [size]);
 
     return (
