@@ -5,3 +5,71 @@ route: /
 ---
 
 # Introduction
+
+_A lightweight and multivariant React UI library built with customization and consistency in mind_
+
+## Why yet Another React UI Library?
+
+I am glad you are asking this question. I asked this exact same question before I
+started building this library. Why can't I just use [Semantic UI](https://github.com/Semantic-Org/Semantic-UI-React),
+[Material UI](https://github.com/mui-org/material-ui), or
+[Ant Design](https://github.com/ant-design/ant-design)? Yes, I totally can.
+That's what I initially tried when building applications. However, I quickly ran
+into some problems. For example, I might have to use two UI libraries because library A
+doesn't have the feature I want whereas library B does. This will potentially increase
+my application final bundle size by a large amount, if Webpack is not configured properly
+to make tree-shaking magic working or the libraries depend on too many other modules.
+In addition, popular UI libraries are often created by some large companies. On one hand,
+these libraries are well managed and qualities can be assured; on the other hand,
+they are created following the companies' design languages. For instance, Material UI
+is created by Google, thus following Google's material design principles. It doesn't
+make much sense for my organization sharing similar user interface and feeling with those
+big companies. In the end, I have to open web inspector, inspect every element and override CSS,
+to make it feel like my organization's style. Needless to say, this process is tedious
+
+## Why Ztopia UI
+
+Ztopia UI is built with the following principles in mind
+
+- Lightweight: using an UI library generally means we are working with a relatively higher
+  abstraction layer, so that we can focus on the application business logic
+  instead of internal UI rendering logic. However, libraries such as Material UI
+  are created for everyone, which means they need to cover all possible use cases.
+  This of course helps them obtain popularity. A downside of this is that they
+  become more complex and harder to use. Ztopia UI only focuses on the most essential features
+  of UI components. None of them has more than 10 props, which makes them very minimal
+  and easy to use
+
+- Multivariant: variants define how UI components look. Even though Ztopia UI
+  is lightweight, it doesn't necessarily mean it is lack of exciting features.
+  By smartly choosing component variants, we are able to create applications with totally different feelings
+
+- Customization: as I mentioned in the why section, overriding UI component library style to fit
+  a particular design language is a very common thing. With this observation in mind,
+  Ztopia UI is created with very minimal style, so the library size will be smaller
+  and users will have less CSS to override. In addition, Ztopia UI sticks with [CSS BEM](http://getbem.com/introduction/)
+  methodology and all components are prefixed with `ztopia-`. This also makes it easier
+  for library consumers to override CSS
+
+- Consistency: I believe that a consistent API across different components can help people
+  get familiar with this library, thus making Ztopia UI even easier to work with. For example,
+  you can expect that all boolean props start with `is`, `has`, and etc., which makes them sound like
+  a true and false question. If a component is implemented with different looks (e.g. `<Button>`),
+  the prop that controls this is called `variant` instead of `type` or `kind`.
+  A consistent API helps library consumers observe patterns, thus saving them some time
+  when reading documentation
+
+## Technologies
+
+Ztopia UI is built with the following technologies
+
+- TypeScript: yessss! built-in type support if your application is also written in TypeScript
+
+- CSS (BEM syntax)
+
+- Rollup: for transpiling and bundling all components
+
+- Docz with Ztopia theme: if you enjoy reading documentation for this library
+  and fall in love with tweaking React component props in real time, you should
+  definitely check out [Docz](https://github.com/pedronauck/docz) and [Ztopia theme](https://github.com/zicodeng/docz-theme-ztopia),
+  which is another open source project I created
