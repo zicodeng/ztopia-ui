@@ -61,7 +61,12 @@ export const Image: FC<ImageProps> = memo(
     );
 
     const placeholder = (
-      <Placeholder variant="image" width={width!} height={height!} />
+      <Placeholder
+        variant="image"
+        className={className}
+        width={width!}
+        height={height!}
+      />
     );
 
     const image = (

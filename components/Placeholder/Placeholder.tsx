@@ -14,6 +14,7 @@ export interface PlaceholderProps {
    * <@default=`'grey'`>
    */
   color?: string;
+  className?: string;
   width: number | string;
   height: number | string;
   /**
@@ -24,10 +25,14 @@ export interface PlaceholderProps {
 }
 
 export const Placeholder: FC<PlaceholderProps> = memo(
-  ({ rows, color, width, height, shape, variant }) =>
+  ({ rows, color, className, width, height, shape, variant }) =>
     variant === 'text' ? (
       <div
-        className={classNames('ztopia-placeholder', 'ztopia-placeholder--text')}
+        className={classNames(
+          className,
+          'ztopia-placeholder',
+          'ztopia-placeholder--text',
+        )}
         style={{ width }}
       >
         {Array.from({ length: rows! }).map((_, i) => (
