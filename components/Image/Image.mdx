@@ -31,6 +31,30 @@ Dependencies: [react-progressive-image](https://github.com/FormidableLabs/react-
   />
 </Playground>
 
+### Mask
+
+<Playground>
+  <Image
+    variant="normal"
+    src="https://i.ytimg.com/vi/HS7ulzLL034/maxresdefault.jpg"
+    caption={<h1 style={{ color: 'white', margin: 0 }}>Normal Image Mask</h1>}
+    maskStyle={{
+      backgroundColor: 'rgba(0, 0,0, 0.4)',
+    }}
+  />
+  <Image
+    variant="background"
+    height={400}
+    src="https://i.ytimg.com/vi/HS7ulzLL034/maxresdefault.jpg"
+    caption={
+      <h1 style={{ color: 'white', margin: 0 }}>Background Image Mask</h1>
+    }
+    maskStyle={{
+      backgroundColor: 'rgba(0, 0,0, 0.4)',
+    }}
+  />
+</Playground>
+
 ### Background Mode & Delay
 
 <Playground>
@@ -40,6 +64,7 @@ Dependencies: [react-progressive-image](https://github.com/FormidableLabs/react-
       width={400}
       height={400}
       src="https://s28566.pcdn.co/wp-content/uploads/2018/08/home-hero.jpg"
+      caption={<h1 style={{ color: 'white', margin: 0 }}>Earth Mother</h1>}
     />
     <Image
       variant="background"
@@ -47,6 +72,7 @@ Dependencies: [react-progressive-image](https://github.com/FormidableLabs/react-
       width={400}
       height={400}
       src="https://s28566.pcdn.co/wp-content/uploads/2018/08/home-hero.jpg"
+      caption={<h1 style={{ color: 'white', margin: 0 }}>Earth Mother</h1>}
     />
   </Container>
 </Playground>

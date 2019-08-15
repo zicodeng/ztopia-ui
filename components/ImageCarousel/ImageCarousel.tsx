@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { FC, memo, ReactNode } from 'react';
+import React, { CSSProperties, FC, memo, ReactNode } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 
 import { Image } from '../Image';
@@ -26,14 +26,24 @@ export interface ImageCarouselProps {
    */
   height?: number;
   className?: string;
+  imageMaskStyle?: CSSProperties | null;
   slides: ImageCarouselSlide[];
 }
 
 export const ImageCarousel: FC<ImageCarouselProps> = memo(
-  ({ isAutoPlay, isInfiniteLoop, height, className, slides, ...restProps }) => (
+  ({
+    isAutoPlay,
+    isInfiniteLoop,
+    height,
+    className,
+    imageMaskStyle,
+    slides,
+    ...restProps
+  }) => (
     <Carousel
       showThumbs={false}
       showStatus={false}
+      stopOnHover={true}
       autoPlay={isAutoPlay}
       infiniteLoop={isInfiniteLoop}
       className={classNames(className, 'ztopia-image-carousel')}
@@ -47,6 +57,7 @@ export const ImageCarousel: FC<ImageCarouselProps> = memo(
           variant="background"
           src={src}
           caption={caption}
+          maskStyle={imageMaskStyle}
         />
       ))}
     </Carousel>

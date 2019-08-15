@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { FC, memo, ReactNode } from 'react';
+import React, { CSSProperties, FC, memo, ReactNode } from 'react';
 import LazyLoad from 'react-lazyload';
 import ProgressiveImage from 'react-progressive-image';
 
@@ -34,6 +34,7 @@ export interface ImageProps {
    */
   variant?: 'normal' | 'background';
   caption?: ReactNode;
+  maskStyle?: CSSProperties | null;
 }
 
 export const Image: FC<ImageProps> = memo(
@@ -47,12 +48,17 @@ export const Image: FC<ImageProps> = memo(
     className,
     variant,
     caption,
+    maskStyle,
   }) => {
     if (variant === 'background' && typeof height !== 'number') {
       throw new Error(
         'height must be a number with fixed value in background mode',
       );
     }
+
+    const mask = maskStyle && (
+      <div className="ztopia-image__mask" style={maskStyle} />
+    );
 
     const placeholder = (
       <Placeholder variant="image" width={width!} height={height!} />
@@ -79,6 +85,7 @@ export const Image: FC<ImageProps> = memo(
                 {caption && (
                   <div className="ztopia-image__caption">{caption}</div>
                 )}
+                {mask}
               </div>
             );
           }
@@ -103,6 +110,7 @@ export const Image: FC<ImageProps> = memo(
                   {caption}
                 </figcaption>
               )}
+              {mask}
             </figure>
           );
         }}
