@@ -9,6 +9,10 @@ import './Image.css';
 
 export interface ImageProps {
   /**
+   * <@default=`true`>
+   */
+  isLazyLoading?: boolean;
+  /**
    * <@default=`0`>
    */
   delay?: number;
@@ -33,7 +37,17 @@ export interface ImageProps {
 }
 
 export const Image: FC<ImageProps> = memo(
-  ({ width, height, delay, src, alt, className, variant, caption }) => {
+  ({
+    isLazyLoading,
+    width,
+    height,
+    delay,
+    src,
+    alt,
+    className,
+    variant,
+    caption,
+  }) => {
     if (variant === 'background' && typeof height !== 'number') {
       throw new Error(
         'height must be a number with fixed value in background mode',
@@ -44,62 +58,69 @@ export const Image: FC<ImageProps> = memo(
       <Placeholder variant="image" width={width!} height={height!} />
     );
 
-    return (
-      <LazyLoad height={height} once offset={200} placeholder={placeholder}>
-        <ProgressiveImage delay={delay} src={src} placeholder="">
-          {(src, loading) => {
-            if (variant === 'background') {
-              if (loading) return placeholder;
-              return (
-                <div
-                  style={{
-                    width,
-                    height,
-                    backgroundImage: `url(${src})`,
-                  }}
-                  className={classNames(
-                    className,
-                    'ztopia-image',
-                    'ztopia-image--background',
-                  )}
-                >
-                  {caption && (
-                    <div className="ztopia-image__caption">{caption}</div>
-                  )}
-                </div>
-              );
-            }
+    const image = (
+      <ProgressiveImage delay={delay} src={src} placeholder="">
+        {(src, loading) => {
+          if (variant === 'background') {
+            if (loading) return placeholder;
             return (
-              <figure
-                className={classNames(
-                  className,
-                  'ztopia-image',
-                  'ztopia-image--normal',
-                  {
-                    'ztopia-image--loading': loading,
-                  },
-                )}
+              <div
                 style={{
                   width,
                   height,
+                  backgroundImage: `url(${src})`,
                 }}
-              >
-                <img src={src} alt={alt} />
-                {caption && (
-                  <figcaption className="ztopia-image__caption">
-                    {caption}
-                  </figcaption>
+                className={classNames(
+                  className,
+                  'ztopia-image',
+                  'ztopia-image--background',
                 )}
-              </figure>
+              >
+                {caption && (
+                  <div className="ztopia-image__caption">{caption}</div>
+                )}
+              </div>
             );
-          }}
-        </ProgressiveImage>
+          }
+          return (
+            <figure
+              className={classNames(
+                className,
+                'ztopia-image',
+                'ztopia-image--normal',
+                {
+                  'ztopia-image--loading': loading,
+                },
+              )}
+              style={{
+                width,
+                height,
+              }}
+            >
+              <img src={src} alt={alt} />
+              {caption && (
+                <figcaption className="ztopia-image__caption">
+                  {caption}
+                </figcaption>
+              )}
+            </figure>
+          );
+        }}
+      </ProgressiveImage>
+    );
+
+    return isLazyLoading ? (
+      <LazyLoad height={height} once offset={200} placeholder={placeholder}>
+        {image}
       </LazyLoad>
+    ) : (
+      image
     );
   },
 );
 
 Image.defaultProps = {
+  isLazyLoading: true,
   delay: 0,
   width: '100%',
   height: 'auto',
