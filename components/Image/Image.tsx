@@ -40,7 +40,7 @@ export const Image: FC<ImageProps> = memo(
       );
     }
     return (
-      <LazyLoad>
+      <LazyLoad height={height}>
         <ProgressiveImage delay={delay} src={src} placeholder="">
           {(src, loading) => {
             if (variant === 'background') {
