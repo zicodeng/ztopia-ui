@@ -11,6 +11,7 @@ export interface ButtonProps {
    * They most often appear as Call to Action (CTA) buttons and offer a clean look
    */
   isGhost?: boolean;
+  className?: string;
   /**
    * <@default=`'rect'`>
    */
@@ -23,9 +24,10 @@ export interface ButtonProps {
 }
 
 export const Button: FC<ButtonProps> = memo(
-  ({ isGhost, variant, size, children, ...restProps }) => (
+  ({ isGhost, className, variant, size, children, ...restProps }) => (
     <button
       className={classNames(
+        className,
         'ztopia-button',
         `ztopia-button--${variant}`,
         `ztopia-button--${size}`,
