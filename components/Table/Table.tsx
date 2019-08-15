@@ -1,8 +1,16 @@
 import classNames from 'classnames/bind';
-import React, { FC, memo, ReactElement } from 'react';
+import React, {
+  cloneElement,
+  FC,
+  isValidElement,
+  memo,
+  ReactElement,
+  ReactNode,
+  useMemo,
+} from 'react';
 
 import { ChevronLeft, ChevronRight } from '../Icons';
-import { MusicLoader } from '../Loaders';
+import { LoaderProps } from '../Loaders';
 
 import './Table.css';
 
@@ -77,23 +85,43 @@ export const TableHead: FC = memo(({ children }) => {
 });
 
 export interface TableBodyProps {
-  isLoading?: boolean;
+  /**
+   * A Ztopia Loader either in function form (`MusicLoader`) or element form (`<MusicLoader />`)
+   */
+  loader?: ReactNode | FC<LoaderProps> | null;
 }
 
 export const TableBody: FC<TableBodyProps> = memo(
-  ({ isLoading = false, children, ...restProps }) => (
-    <tbody className="ztopia-table__body" {...restProps}>
-      {isLoading ? (
-        <tr>
-          <td>
-            <MusicLoader className="ztopia-table__loader" />
-          </td>
-        </tr>
-      ) : (
-        children
-      )}
-    </tbody>
-  ),
+  ({ loader, children, ...restProps }) => {
+    const memoizedLoader = useMemo(() => {
+      if (!loader) return null;
+
+      if (typeof loader === 'object' && isValidElement(loader)) {
+        return cloneElement(loader, {
+          className: classNames(loader.props.className, 'ztopia-table__loader'),
+        });
+      }
+
+      if (typeof loader === 'function') {
+        const Loader = loader;
+        return <Loader className="ztopia-table__loader" />;
+      }
+
+      return null;
+    }, [loader]);
+
+    return (
+      <tbody className="ztopia-table__body" {...restProps}>
+        {loader ? (
+          <tr>
+            <td>{memoizedLoader}</td>
+          </tr>
+        ) : (
+          children
+        )}
+      </tbody>
+    );
+  },
 );
 
 export interface TableRow {

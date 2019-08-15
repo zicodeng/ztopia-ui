@@ -7,6 +7,8 @@ route: /components/table
 import { Props, Playground } from 'docz';
 import faker from 'faker';
 
+import { MusicLoader } from '../Loaders';
+
 import {
   Table,
   TableHead,
@@ -120,7 +122,7 @@ import {
         <TableHeadCell>Phone Number</TableHeadCell>
       </TableRow>
     </TableHead>
-    <TableBody isLoading>
+    <TableBody loader={MusicLoader}>
       {Array.from({ length: 100 }).map((_, i) => (
         <TableRow key={i}>
           <TableCell>{faker.name.firstName()}</TableCell>
