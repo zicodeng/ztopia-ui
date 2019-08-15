@@ -49,6 +49,7 @@ export const Placeholder: FC<PlaceholderProps> = memo(
     ) : (
       <div
         className={classNames(
+          className,
           'ztopia-placeholder',
           `ztopia-placeholder--${shape}`,
           `ztopia-placeholder--${variant}`,
