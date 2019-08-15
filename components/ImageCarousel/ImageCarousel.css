@@ -9,18 +9,18 @@
     transition-delay: 0.2s;
   }
 
-  .slide {
-    background: transparent;
+  .carousel {
+    .slide {
+      background: transparent;
 
-    &.selected {
-      .ztopia-image__caption {
-        opacity: 1;
-        transform: translateY(0);
+      &.selected {
+        .ztopia-image__caption {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     }
-  }
 
-  .carousel {
     > .control-arrow {
       &::before {
         width: 14px;
