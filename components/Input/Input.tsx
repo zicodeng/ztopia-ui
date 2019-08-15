@@ -19,6 +19,7 @@ export interface InputProps {
   label?: string;
   placeholder?: string;
   error?: string;
+  className?: string;
   /**
    * <@default=`'rect'`>
    */
@@ -35,6 +36,7 @@ export const Input = memo(
         label,
         placeholder,
         error,
+        className,
         variant = 'rect',
         onChange,
         ...restProps
@@ -58,7 +60,13 @@ export const Input = memo(
       }, [value]);
 
       return (
-        <div className={classNames('ztopia-input', `ztopia-input--${variant}`)}>
+        <div
+          className={classNames(
+            className,
+            'ztopia-input',
+            `ztopia-input--${variant}`,
+          )}
+        >
           {label && (
             <label
               className={classNames(
