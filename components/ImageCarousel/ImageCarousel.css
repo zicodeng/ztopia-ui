@@ -1,4 +1,6 @@
 .ztopia-image-carousel {
+  width: 100%;
+
   .ztopia-image__caption {
     position: absolute;
     top: 50px;
