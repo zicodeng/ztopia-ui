@@ -39,20 +39,17 @@ export const Image: FC<ImageProps> = memo(
         'height must be a number with fixed value in background mode',
       );
     }
+
+    const placeholder = (
+      <Placeholder variant="image" width={width!} height={height!} />
+    );
+
     return (
-      <LazyLoad height={height}>
+      <LazyLoad height={height} once offset={200} placeholder={placeholder}>
         <ProgressiveImage delay={delay} src={src} placeholder="">
           {(src, loading) => {
             if (variant === 'background') {
-              if (loading) {
-                return (
-                  <Placeholder
-                    variant="image"
-                    width={width!}
-                    height={height!}
-                  />
-                );
-              }
+              if (loading) return placeholder;
               return (
                 <div
                   style={{
