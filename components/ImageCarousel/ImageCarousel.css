@@ -22,6 +22,8 @@
     }
 
     > .control-arrow {
+      color: $black-dark;
+
       &::before {
         width: 14px;
         border: 0;
