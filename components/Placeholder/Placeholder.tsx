@@ -1,6 +1,8 @@
 import classNames from 'classnames';
 import React, { FC, memo } from 'react';
 
+import { Image } from '../Icons';
+
 import './Placeholder.css';
 
 export interface PlaceholderProps {
@@ -59,7 +61,9 @@ export const Placeholder: FC<PlaceholderProps> = memo(
           height,
           backgroundColor: color,
         }}
-      ></div>
+      >
+        {variant === 'image' && <Image />}
+      </div>
     ),
 );
 
