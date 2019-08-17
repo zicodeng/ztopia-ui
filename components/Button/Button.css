@@ -1,20 +1,29 @@
 %shaped-button {
   color: $white-light;
   background-color: $black-dark;
-  border-color: $black-dark;
 
   &:hover {
     background-color: $black-light;
-    border-color: $black-light;
   }
 
   &.is-ghost {
+    border: 1px solid $black-dark;
     color: $black-dark;
     background-color: transparent;
 
     &:hover {
       color: $white-light;
       background-color: $black-dark;
+    }
+  }
+
+  &.is-loading {
+    color: $black-dark;
+    cursor: wait;
+    transition: none;
+
+    &:hover {
+      background-color: currentColor;
     }
   }
 }
@@ -31,10 +40,22 @@
 }
 
 .ztopia-button {
+  position: relative;
+  display: flex;
+  border: 0;
   cursor: pointer;
+  align-items: center;
+  justify-content: center;
   outline: none;
   transition: $transition-fast;
 
+  &__loader {
+    position: absolute;
+  }
+
+  /*============================
+  =            Size            =
+  ============================*/
   &--small {
     padding: $spacing-xs $spacing-s;
   }
@@ -46,7 +67,11 @@
   &--large {
     padding: $spacing-m 30px;
   }
+  /*=====  End of Size  ======*/
 
+  /*===============================
+  =            Variant            =
+  ===============================*/
   &--rect {
     @extend %shaped-button;
 
@@ -72,4 +97,5 @@
   &--icon {
     @extend %unshaped-button;
   }
+  /*=====  End of Variant  ======*/
 }

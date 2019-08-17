@@ -1,5 +1,14 @@
 import classNames from 'classnames';
-import React, { FC, memo } from 'react';
+import React, {
+  cloneElement,
+  FC,
+  isValidElement,
+  memo,
+  ReactNode,
+  useMemo,
+} from 'react';
+
+import { LoaderProps } from '../Loaders';
 
 import './Button.css';
 
@@ -15,31 +24,59 @@ export interface ButtonProps {
   /**
    * <@default=`'rect'`>
    */
-  variant?: 'rect' | 'circle' | 'pill' | 'text';
+  variant?: 'rect' | 'circle' | 'pill' | 'text' | 'icon';
   /**
    * <@default=`'medium'`>
    */
   size?: 'small' | 'medium' | 'large';
+  /**
+   * A Ztopia Loader either in function form (`MusicLoader`) or element form (`<MusicLoader />`)
+   */
+  loader?: ReactNode | FC<LoaderProps> | null;
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 export const Button: FC<ButtonProps> = memo(
-  ({ isGhost, className, variant, size, children, ...restProps }) => (
-    <button
-      className={classNames(
-        className,
-        'ztopia-button',
-        `ztopia-button--${variant}`,
-        `ztopia-button--${size}`,
-        {
-          'is-ghost': isGhost,
-        },
-      )}
-      {...restProps}
-    >
-      {children}
-    </button>
-  ),
+  ({ isGhost, className, variant, size, loader, children, ...restProps }) => {
+    const memoizedLoader = useMemo(() => {
+      if (!loader) return null;
+
+      if (typeof loader === 'object' && isValidElement(loader)) {
+        return cloneElement(loader, {
+          className: classNames(
+            loader.props.className,
+            'ztopia-button__loader',
+          ),
+        });
+      }
+
+      if (typeof loader === 'function') {
+        const Loader = loader;
+        return <Loader className="ztopia-button__loader" />;
+      }
+
+      return null;
+    }, [loader]);
+
+    return (
+      <button
+        className={classNames(
+          className,
+          'ztopia-button',
+          `ztopia-button--${variant}`,
+          `ztopia-button--${size}`,
+          {
+            'is-ghost': isGhost,
+            'is-loading': Boolean(loader),
+          },
+        )}
+        {...restProps}
+      >
+        {children}
+        {memoizedLoader}
+      </button>
+    );
+  },
 );
 
 Button.defaultProps = {
