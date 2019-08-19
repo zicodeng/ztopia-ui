@@ -10,6 +10,8 @@ export interface SelectOption {
   label: string;
 }
 
+export type SelectValue = ValueType<SelectOption>;
+
 export interface SelectProps {
   /**
    * <@default=`false`>
@@ -27,7 +29,7 @@ export interface SelectProps {
   className?: string;
   value?: ValueType<SelectOption>;
   options?: SelectOption[];
-  onChange?: (value: ValueType<SelectOption>, actionMeta: ActionMeta) => void;
+  onChange?: (value: SelectValue, actionMeta: ActionMeta) => void;
 }
 
 export const Select: FC<SelectProps> = memo(
