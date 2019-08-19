@@ -124,12 +124,12 @@ export const TableBody: FC<TableBodyProps> = memo(
   },
 );
 
-export interface TableRow {
+export interface TableRowProps {
   hoveredContent?: JSX.Element;
   hoveredContentWidth?: number;
 }
 
-export const TableRow: FC<TableRow> = memo(
+export const TableRow: FC<TableRowProps> = memo(
   ({ hoveredContent = null, hoveredContentWidth = 100, children }) => (
     <tr
       className={classNames('ztopia-table__row', {
