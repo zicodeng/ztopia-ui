@@ -11,6 +11,7 @@ import React, {
 import './Input.css';
 
 export interface InputProps {
+  isDisabled?: boolean;
   /**
    * <@default=`'text'`>
    */
@@ -31,6 +32,7 @@ export const Input = memo(
   forwardRef<HTMLInputElement, InputProps>(
     (
       {
+        isDisabled,
         type,
         value,
         label,
@@ -83,6 +85,7 @@ export const Input = memo(
           <input
             {...restProps}
             ref={ref}
+            disabled={isDisabled}
             type={type}
             value={value}
             placeholder={placeholder}

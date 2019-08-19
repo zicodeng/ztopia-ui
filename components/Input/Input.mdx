@@ -57,26 +57,20 @@ import { InputDemo } from './InputDemo';
         />
       )}
     </InputDemo>
+  </Container>
+</Playground>
+
+### Disabled
+
+<Playground>
+  <Container>
     <InputDemo>
       {({ value, onChange }) => (
         <Input
+          isDisabled
           type="email"
           label="Email"
-          variant="pill"
-          error="Invalid email"
-          value={value}
-          onChange={onChange}
-        />
-      )}
-    </InputDemo>
-    <InputDemo>
-      {({ value, onChange }) => (
-        <Input
-          type="email"
-          label="Email"
-          variant="material"
-          error="Invalid email"
-          value={value}
+          value="I am disabled. You cannot change me :("
           onChange={onChange}
         />
       )}

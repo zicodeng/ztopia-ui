@@ -28,6 +28,27 @@
     }
   }
 
+  &__bar {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $black-dark;
+    content: '';
+    transform: scale(0);
+    transition: transform 150ms cubic-bezier(0.5, 0.5, 1, 1);
+
+    &.has-error {
+      background-color: $color-danger;
+    }
+
+    &.is-active {
+      transform: scale(1);
+    }
+  }
+
   &__input {
     width: 100%;
     height: 30px;
@@ -58,27 +79,16 @@
 
     &--material {
       border-bottom: 1px solid $white-dark;
-    }
-  }
 
-  &__bar {
-    position: absolute;
-    z-index: 1;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: $black-dark;
-    content: '';
-    transform: scale(0);
-    transition: transform 150ms cubic-bezier(0.5, 0.5, 1, 1);
-
-    &.has-error {
-      background-color: $color-danger;
+      &:disabled + .ztopia-input__bar {
+        cursor: not-allowed;
+        opacity: 0.4;
+      }
     }
 
-    &.is-active {
-      transform: scale(1);
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.4;
     }
   }
 
