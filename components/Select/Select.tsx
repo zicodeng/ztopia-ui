@@ -27,7 +27,8 @@ export interface SelectProps {
   maxMenuHeight?: number;
   label?: string;
   className?: string;
-  value?: ValueType<SelectOption>;
+  defaultValue?: SelectValue;
+  value?: SelectValue;
   options?: SelectOption[];
   onChange?: (value: SelectValue, actionMeta: ActionMeta) => void;
 }

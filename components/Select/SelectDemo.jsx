@@ -36,12 +36,7 @@ export const options = [
 ];
 
 export const SelectDemo = memo(({ children }) => {
-  const [value, setValue] = useState([
-    {
-      label: 'Pineapple',
-      value: 'pineapple',
-    },
-  ]);
+  const [value, setValue] = useState(null);
   const onChange = (value, actionMeta) => {
     console.log({ value, actionMeta });
     setValue(value);
