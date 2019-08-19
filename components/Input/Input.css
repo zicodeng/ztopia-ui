@@ -38,7 +38,7 @@
     background-color: $black-dark;
     content: '';
     transform: scale(0);
-    transition: transform 150ms cubic-bezier(0.5, 0.5, 1, 1);
+    transition: transform 0.2s cubic-bezier(0.5, 0.5, 1, 1);
 
     &.has-error {
       background-color: $color-danger;
