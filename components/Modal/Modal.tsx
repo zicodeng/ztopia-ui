@@ -10,8 +10,8 @@ export interface ModalProps {
   /**
    * <@default=`false`>
    */
-  isOpen: boolean;
-  className: string;
+  isOpen?: boolean;
+  className?: string;
   /**
    * <@default=`'medium'`>
    */
