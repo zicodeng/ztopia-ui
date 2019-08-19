@@ -1,4 +1,4 @@
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
 import React, {
   cloneElement,
   FC,
@@ -22,6 +22,7 @@ export interface TablePagination {
 }
 
 export interface TableProps {
+  className?: string;
   /**
    * <@default=`400`>
    */
@@ -30,8 +31,8 @@ export interface TableProps {
 }
 
 export const Table: FC<TableProps> = memo(
-  ({ height = 400, pagination, children }) => (
-    <div className="ztopia-table">
+  ({ className, height = 400, pagination, children }) => (
+    <div className={classNames(className, 'ztopia-table')}>
       <div className="ztopia-table__container" style={{ height }}>
         <table>{children}</table>
       </div>
@@ -68,10 +69,14 @@ export const Table: FC<TableProps> = memo(
   ),
 );
 
-export const TableHead: FC = memo(({ children }) => {
+export interface TableHeadProps {
+  className?: string;
+}
+
+export const TableHead: FC<TableHeadProps> = memo(({ className, children }) => {
   const headCells = (children as ReactElement).props.children;
   return (
-    <thead className="ztopia-table__head">
+    <thead className={classNames(className, 'ztopia-table__head')}>
       {React.cloneElement(
         children as ReactElement,
         {},
@@ -85,6 +90,7 @@ export const TableHead: FC = memo(({ children }) => {
 });
 
 export interface TableBodyProps {
+  className?: string;
   /**
    * A Ztopia Loader either in function form (`MusicLoader`) or element form (`<MusicLoader />`)
    */
@@ -92,7 +98,7 @@ export interface TableBodyProps {
 }
 
 export const TableBody: FC<TableBodyProps> = memo(
-  ({ loader, children, ...restProps }) => {
+  ({ className, loader, children, ...restProps }) => {
     const memoizedLoader = useMemo(() => {
       if (!loader) return null;
 
@@ -111,7 +117,10 @@ export const TableBody: FC<TableBodyProps> = memo(
     }, [loader]);
 
     return (
-      <tbody className="ztopia-table__body" {...restProps}>
+      <tbody
+        className={classNames(className, 'ztopia-table__body')}
+        {...restProps}
+      >
         {loader ? (
           <tr>
             <td>{memoizedLoader}</td>
@@ -125,14 +134,20 @@ export const TableBody: FC<TableBodyProps> = memo(
 );
 
 export interface TableRowProps {
+  className?: string;
   hoveredContent?: JSX.Element;
   hoveredContentWidth?: number;
 }
 
 export const TableRow: FC<TableRowProps> = memo(
-  ({ hoveredContent = null, hoveredContentWidth = 100, children }) => (
+  ({
+    className,
+    hoveredContent = null,
+    hoveredContentWidth = 100,
+    children,
+  }) => (
     <tr
-      className={classNames('ztopia-table__row', {
+      className={classNames(className, 'ztopia-table__row', {
         'is-hoverable': Boolean(hoveredContent),
       })}
     >

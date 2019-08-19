@@ -1,4 +1,4 @@
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
 import React, { FC, memo } from 'react';
 import ReactModal from 'react-modal';
 
