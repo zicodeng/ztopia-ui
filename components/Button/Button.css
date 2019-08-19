@@ -18,7 +18,7 @@
   }
 
   &.is-loading {
-    color: $black-dark;
+    color: transparent;
     cursor: wait;
     transition: none;
 
