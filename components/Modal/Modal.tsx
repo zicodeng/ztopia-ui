@@ -6,7 +6,7 @@ import { Times } from '../Icons';
 
 import './Modal.css';
 
-interface ModalProps {
+export interface ModalProps {
   /**
    * <@default=`false`>
    */
