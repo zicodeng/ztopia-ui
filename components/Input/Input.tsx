@@ -103,7 +103,6 @@ export const Input = memo(
           {variant === 'material' && (
             <div
               className={classNames('ztopia-input__bar', {
-                'is-active': isActive,
                 'has-error': Boolean(error),
               })}
             />

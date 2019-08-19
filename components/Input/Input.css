@@ -43,10 +43,6 @@
     &.has-error {
       background-color: $color-danger;
     }
-
-    &.is-active {
-      transform: scale(1);
-    }
   }
 
   &__input {
@@ -83,6 +79,10 @@
       &:disabled + .ztopia-input__bar {
         cursor: not-allowed;
         opacity: 0.4;
+      }
+
+      &:focus + .ztopia-input__bar {
+        transform: scale(1);
       }
     }
 
