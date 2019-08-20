@@ -17,8 +17,14 @@ export interface PlaceholderProps {
    */
   color?: string;
   className?: string;
-  width: number | string;
-  height: number | string;
+  /**
+   * <@default=`200`>
+   */
+  width?: number | string;
+  /**
+   * <@default=`200`>
+   */
+  height?: number | string;
   /**
    * <@default=`'rect'`>
    */
@@ -27,7 +33,15 @@ export interface PlaceholderProps {
 }
 
 export const Placeholder: FC<PlaceholderProps> = memo(
-  ({ rows, color, className, width, height, shape, variant }) =>
+  ({
+    rows = 1,
+    color = 'grey',
+    className,
+    width = 200,
+    height = 200,
+    shape = 'rect',
+    variant,
+  }) =>
     variant === 'text' ? (
       <div
         className={classNames(
@@ -66,9 +80,3 @@ export const Placeholder: FC<PlaceholderProps> = memo(
       </div>
     ),
 );
-
-Placeholder.defaultProps = {
-  rows: 1,
-  color: 'grey',
-  shape: 'rect',
-};
