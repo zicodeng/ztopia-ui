@@ -84,6 +84,7 @@ export const Input = memo(
           )}
           <input
             {...restProps}
+            autoComplete="on"
             ref={ref}
             disabled={isDisabled}
             type={type}
