@@ -52,7 +52,7 @@ export const Image: FC<ImageProps> = memo(
   }) => {
     if (variant === 'background' && typeof height !== 'number') {
       throw new Error(
-        'height must be a number with fixed value in background mode',
+        'Image height must be a number with fixed value in background mode',
       );
     }
 
@@ -101,7 +101,7 @@ export const Image: FC<ImageProps> = memo(
                 'ztopia-image',
                 'ztopia-image--normal',
                 {
-                  'ztopia-image--loading': loading,
+                  'is-loading': loading,
                 },
               )}
               style={{
