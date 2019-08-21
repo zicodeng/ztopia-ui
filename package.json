@@ -1,7 +1,7 @@
 {
   "name": "ztopia-ui",
   "description": "A lightweight and multivariant React UI library built with customization and consistency in mind",
-  "version": "1.0.39",
+  "version": "1.0.40",
   "author": "Zico Deng",
   "homepage": "https://github.com/zicodeng/ztopia-ui#readme",
   "keywords": [
@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": "docz dev",
-    "build:dev": "yarn post-build && NODE_ENV=development NODE_OPTIONS=--max_old_space_size=10240 ./node_modules/.bin/rollup -c --watch",
+    "build:dev": "NODE_ENV=development NODE_OPTIONS=--max_old_space_size=10240 ./node_modules/.bin/rollup -c --watch",
     "build:prod": "NODE_ENV=production NODE_OPTIONS=--max_old_space_size=10240 ./node_modules/.bin/rollup -c",
     "build-docs": "docz build && yarn create-200",
     "post-build": "cp -a ./styles ./dist/styles && cp ./package.json ./dist/package.json && cp ./README.md ./dist/README.md",
@@ -110,7 +110,7 @@
     "postcss-loader": "^3.0.0",
     "postcss-nested": "^4.1.2",
     "postcss-simple-vars": "^5.0.2",
-    "rollup": "^1.19.3",
+    "rollup": "^1.19.4",
     "rollup-plugin-commonjs": "^10.0.1",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-postcss": "^2.0.3",
