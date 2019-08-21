@@ -30,7 +30,7 @@ const onwarn = warning => {
   console.warn(`(!) ${warning.message}`);
 };
 
-const components = fs.readdirSync('./components');
+const components = ['Toast'] || fs.readdirSync('./components');
 
 export default components
   .filter(c => !c.startsWith('.'))

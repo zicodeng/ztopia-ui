@@ -2,11 +2,10 @@ import classNames from 'classnames';
 import React, { createElement, FC, memo, ReactNode } from 'react';
 import { toast, ToastContainer as BaseToastContainer } from 'react-toastify';
 
-// WHY: Rollup will mistakenly tree shake the CSS if using
-// import 'react-toastify/dist/ReactToastify.css'
-// @ts-ignore
-import styles from 'react-toastify/dist/ReactToastify.css';
 import { Times } from '../Icons';
+
+// The following import will not be injected, WHY?
+// import 'react-toastify/dist/ReactToastify.css';
 import './Toast.css';
 
 export type ToastId = number | string;
@@ -56,7 +55,6 @@ export const ToastContainer: FC<ToastOptions> = memo(
   }) => (
     <BaseToastContainer
       {...restProps}
-      style={styles}
       className={classNames(className, 'ztopia-toast')}
       toastClassName="ztopia-toast__content"
       bodyClassName="ztopia-toast__body"

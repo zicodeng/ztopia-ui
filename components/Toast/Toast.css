@@ -1,3 +1,5 @@
+@import 'react-toastify/dist/ReactToastify.css';
+
 .ztopia-toast {
   &__content {
     box-shadow: $box-shadow-2;
