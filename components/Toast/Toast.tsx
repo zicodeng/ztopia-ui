@@ -1,3 +1,4 @@
+import classNames from 'classnames/bind';
 import React, { createElement, FC, memo, ReactNode } from 'react';
 import { toast, ToastContainer as BaseToastContainer } from 'react-toastify';
 
@@ -12,7 +13,8 @@ export interface ToastOptions {
   /**
    * <@default=`false`>
    */
-  isProgressBarHidden: boolean;
+  isProgressBarHidden?: boolean;
+  className?: string;
   /**
    * For multiple container support. If enabled, `makeToast({containerId})` must match `<ToastContainer containerId>`
    */
@@ -43,10 +45,16 @@ export interface ToastOptions {
 }
 
 export const ToastContainer: FC<ToastOptions> = memo(
-  ({ isProgressBarHidden, containerId, placement, ...restProps }) => (
+  ({
+    isProgressBarHidden,
+    className,
+    containerId,
+    placement,
+    ...restProps
+  }) => (
     <BaseToastContainer
       {...restProps}
-      className="ztopia-toast"
+      className={classNames(className, 'ztopia-toast')}
       toastClassName="ztopia-toast__content"
       bodyClassName="ztopia-toast__body"
       progressClassName="ztopia-toast__progress"
