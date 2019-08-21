@@ -36,7 +36,7 @@ export default components
   .filter(c => !c.startsWith('.'))
   .map(c => ({
     input: `./components/${c}/index.ts`,
-    output: { file: `./dist/${c}/index.js`, sourceMap: true, format: 'esm' },
+    output: { file: `./dist/${c}/index.js`, format: 'esm' },
     external: id =>
       id.startsWith('../') ||
       (!id.startsWith('.') && !id.startsWith('/') && !id.endsWith('css')),
