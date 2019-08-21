@@ -42,7 +42,7 @@ export interface ToastOptions {
   /**
    * <@default=`'default'`>
    */
-  type?: 'default' | 'info' | 'success' | 'warning' | 'error';
+  variant?: 'default' | 'info' | 'success' | 'warning' | 'error';
 }
 
 export const ToastContainer: FC<ToastOptions> = memo(
@@ -76,21 +76,23 @@ export const ToastContainer: FC<ToastOptions> = memo(
 
 export const makeToast = (
   content: ReactNode,
-  { isProgressBarHidden, placement, ...restOptions }: ToastOptions,
+  { isProgressBarHidden, placement, variant, ...restOptions }: ToastOptions,
 ): ToastId =>
   toast(content, {
     hideProgressBar: isProgressBarHidden,
     position: placement,
+    type: variant,
     ...restOptions,
   });
 
 export const updateToast = (
   toastId: ToastId,
-  { isProgressBarHidden, placement, ...restOptions }: ToastOptions,
+  { isProgressBarHidden, placement, variant, ...restOptions }: ToastOptions,
 ) =>
   toast.update(toastId, {
     hideProgressBar: isProgressBarHidden,
     position: placement,
+    type: variant,
     ...restOptions,
   });
 
