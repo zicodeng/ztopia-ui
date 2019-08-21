@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { format, getYear } from 'date-fns';
+import { format, getYear, setYear } from 'date-fns';
 import React, {
   FC,
   memo,
@@ -13,7 +13,6 @@ import BaseDatePicker from 'react-datepicker';
 import { ChevronLeft, ChevronRight } from '../Icons';
 import { Input } from '../Input';
 
-import { setYear } from 'date-fns/esm';
 import 'react-datepicker/dist/react-datepicker.css';
 import './DatePicker.css';
 
