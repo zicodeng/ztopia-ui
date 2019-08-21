@@ -30,11 +30,12 @@ const onwarn = warning => {
   console.warn(`(!) ${warning.message}`);
 };
 
-const components = ['Toast'] || fs.readdirSync('./components');
+const components = fs.readdirSync('./components');
 
 export default components
   .filter(c => !c.startsWith('.'))
   .map(c => ({
+    treeshake: false,
     input: `./components/${c}/index.ts`,
     output: { file: `./dist/${c}/index.js`, format: 'esm' },
     external: id =>
