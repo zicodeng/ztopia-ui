@@ -65,7 +65,13 @@ export const Image: FC<ImageProps> = memo(
         variant="image"
         className={className}
         width={width}
-        height={typeof height === 'number' ? height : 200}
+        height={
+          typeof height === 'number'
+            ? height
+            : typeof width === 'number'
+            ? width / 2
+            : 200
+        }
       />
     );
 
@@ -99,17 +105,16 @@ export const Image: FC<ImageProps> = memo(
           // Normal image
           return (
             <figure
-              className={classNames('ztopia-image', 'ztopia-image--normal', {
-                'is-loading': loading,
-              })}
+              className={classNames(
+                className,
+                'ztopia-image',
+                'ztopia-image--normal',
+                {
+                  'is-loading': loading,
+                },
+              )}
             >
-              <img
-                width={width}
-                height={height}
-                src={src}
-                alt={alt}
-                className={className}
-              />
+              <img width={width} height={height} src={src} alt={alt} />
               {caption && (
                 <figcaption className="ztopia-image__caption">
                   {caption}
