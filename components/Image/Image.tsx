@@ -113,6 +113,10 @@ export const Image: FC<ImageProps> = memo(
                   'is-loading': loading,
                 },
               )}
+              style={{
+                width,
+                height,
+              }}
             >
               <img width={width} height={height} src={src} alt={alt} />
               {caption && (
