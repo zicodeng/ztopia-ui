@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { CSSProperties, FC, memo, ReactNode, useMemo } from 'react';
+import React, { CSSProperties, FC, memo, ReactNode } from 'react';
 import LazyLoad from 'react-lazyload';
 import ProgressiveImage from 'react-progressive-image';
 
