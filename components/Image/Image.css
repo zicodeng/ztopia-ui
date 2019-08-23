@@ -20,11 +20,6 @@
     opacity: 1;
     transition: $transition-slow;
 
-    > img {
-      width: 100%;
-      height: 100%;
-    }
-
     &.is-loading {
       filter: blur(5px);
       opacity: 0.5;

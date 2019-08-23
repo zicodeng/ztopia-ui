@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { CSSProperties, FC, memo, ReactNode } from 'react';
+import React, { CSSProperties, FC, memo, ReactNode, useMemo } from 'react';
 import LazyLoad from 'react-lazyload';
 import ProgressiveImage from 'react-progressive-image';
 
@@ -64,16 +64,17 @@ export const Image: FC<ImageProps> = memo(
       <Placeholder
         variant="image"
         className={className}
-        width={width!}
-        height={height!}
+        width={width}
+        height={typeof height === 'number' ? height : 200}
       />
     );
 
     const image = (
       <ProgressiveImage delay={delay} src={src} placeholder="">
         {(src, loading) => {
+          if (loading) return placeholder;
+
           if (variant === 'background') {
-            if (loading) return placeholder;
             return (
               <div
                 style={{
@@ -94,6 +95,8 @@ export const Image: FC<ImageProps> = memo(
               </div>
             );
           }
+
+          // Normal image
           return (
             <figure
               className={classNames(
@@ -104,12 +107,8 @@ export const Image: FC<ImageProps> = memo(
                   'is-loading': loading,
                 },
               )}
-              style={{
-                width,
-                height,
-              }}
             >
-              <img src={src} alt={alt} />
+              <img width={width} height={height} src={src} alt={alt} />
               {caption && (
                 <figcaption className="ztopia-image__caption">
                   {caption}
@@ -123,7 +122,7 @@ export const Image: FC<ImageProps> = memo(
     );
 
     return isLazyLoading ? (
-      <LazyLoad height={height} once offset={200} placeholder={placeholder}>
+      <LazyLoad once height={height} offset={200} placeholder={placeholder}>
         {image}
       </LazyLoad>
     ) : (
