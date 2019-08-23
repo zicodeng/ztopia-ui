@@ -99,16 +99,17 @@ export const Image: FC<ImageProps> = memo(
           // Normal image
           return (
             <figure
-              className={classNames(
-                className,
-                'ztopia-image',
-                'ztopia-image--normal',
-                {
-                  'is-loading': loading,
-                },
-              )}
+              className={classNames('ztopia-image', 'ztopia-image--normal', {
+                'is-loading': loading,
+              })}
             >
-              <img width={width} height={height} src={src} alt={alt} />
+              <img
+                width={width}
+                height={height}
+                src={src}
+                alt={alt}
+                className={className}
+              />
               {caption && (
                 <figcaption className="ztopia-image__caption">
                   {caption}
