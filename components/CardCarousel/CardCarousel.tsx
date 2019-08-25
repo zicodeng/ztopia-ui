@@ -93,6 +93,7 @@ export const CardCarousel: FC<CardCarouselProps> = memo(
             {cards.map((item, i) => (
               <li
                 key={i}
+                className="ztopia-card-carousel__card"
                 style={{
                   margin: `0 ${gap}px`,
                 }}
