@@ -7,7 +7,10 @@ route: /components/counter
 import { Props, Playground } from 'docz';
 import faker from 'faker';
 
+import { Button } from '../Button';
+
 import { Counter } from './';
+import { CounterDemo } from './CounterDemo';
 
 # Counter
 
@@ -27,6 +30,19 @@ Scroll down and scroll up again to test it
 
 <Playground>
   <Counter start={0} end={10000} prefix="$ " separator="," suffix=" left" />
+</Playground>
+
+### Auto-Update New End
+
+<Playground>
+  <CounterDemo>
+    {({ end, updateEnd }) => (
+      <>
+        <Counter start={0} end={end} />
+        <Button onClick={updateEnd}>Update End</Button>
+      </>
+    )}
+  </CounterDemo>
 </Playground>
 
 ## API

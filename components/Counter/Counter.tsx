@@ -29,12 +29,14 @@ export interface CounterProps {
 
 export const Counter: FC<CounterProps> = ({
   isResetEnabled = false,
+  end,
   className,
   style,
   children,
   ...restProps
 }) => {
-  const { countUp, start, reset } = useCountUp({
+  const { countUp, start, reset, update } = useCountUp({
+    end,
     ...restProps,
   });
 
@@ -48,6 +50,10 @@ export const Counter: FC<CounterProps> = ({
       reset();
     }
   }, [isVisible]);
+
+  useEffect(() => {
+    update(end);
+  }, [end]);
 
   const handleChange = useCallback(
     (isVisible: boolean) => {
