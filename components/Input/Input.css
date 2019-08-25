@@ -51,6 +51,7 @@
     padding: 0;
     border: 0;
     font-size: $font-size-m;
+    appearance: none;
     background-color: transparent;
     outline: 0;
 
