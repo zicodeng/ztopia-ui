@@ -5,7 +5,12 @@ import { IconProps } from './';
 
 import './Hamburger.css';
 
-export const Hamburger: FC<IconProps> = memo(
+export interface HamburgerProps extends IconProps {
+  isActive?: boolean;
+  onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+}
+
+export const Hamburger: FC<HamburgerProps> = memo(
   ({
     isActive,
     width,

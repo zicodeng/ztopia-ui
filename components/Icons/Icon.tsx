@@ -4,10 +4,6 @@ import { cloneElement, FC, isValidElement, memo } from 'react';
 import './Icon.css';
 
 export interface IconProps {
-  /**
-   * Some special icons have active state
-   */
-  isActive?: boolean;
   width?: number;
   height?: number;
   /**
@@ -19,14 +15,14 @@ export interface IconProps {
    * <@default=`'medium'`>
    */
   size?: 'small' | 'medium' | 'large';
-  onClick?: (
-    e: React.MouseEvent<SVGElement | HTMLDivElement, MouseEvent>,
-  ) => void;
 }
 
-export const Icon: FC<IconProps> = memo(
+export interface SVGProps extends IconProps {
+  onClick?: (e: React.MouseEvent<SVGElement, MouseEvent>) => void;
+}
+
+export const Icon: FC<SVGProps> = memo(
   ({
-    isActive,
     width,
     height,
     color = 'currentColor',
@@ -45,9 +41,6 @@ export const Icon: FC<IconProps> = memo(
             className,
             'ztopia-icon',
             `ztopia-icon--${size}`,
-            {
-              'is-active': isActive,
-            },
           ),
           style: {
             width,

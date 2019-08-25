@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 
-import { Icon, IconProps } from './';
+import { Icon, SVGProps } from './';
 
-export const StarSolid: FC<IconProps> = props => (
+export const StarSolid: FC<SVGProps> = props => (
   <Icon {...props}>
     <svg data-icon="star" viewBox="0 0 576 512">
       <path

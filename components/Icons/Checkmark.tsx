@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 
-import { Icon, IconProps } from './';
+import { Icon, SVGProps } from './';
 
-export const Checkmark: FC<IconProps> = props => (
+export const Checkmark: FC<SVGProps> = props => (
   <Icon {...props}>
     <svg data-icon="checkmark" viewBox="0 0 512 512">
       <path
