@@ -10,3 +10,4 @@ export * from './PartyParrot';
 export * from './StarRegular';
 export * from './StarSolid';
 export * from './Times';
+export * from './Hamburger';

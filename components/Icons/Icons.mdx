@@ -7,11 +7,13 @@ route: /components/icons
 import { Props, Playground } from 'docz';
 import { Container } from 'docz-theme-ztopia/helpers';
 
+import { IconDemo } from './IconDemo';
 import {
   Icon,
   Checkmark,
   ChevronLeft,
   ChevronRight,
+  Hamburger,
   HeartRegular,
   HeartSolid,
   Image,
@@ -53,6 +55,30 @@ import {
   </Container>
 </Playground>
 
+### Active
+
+Some special icons have active state
+
+<Playground>
+  <Container>
+    <IconDemo>
+      {({ isActive, onClick }) => (
+        <Hamburger isActive={isActive} onClick={onClick} size="small" />
+      )}
+    </IconDemo>
+    <IconDemo>
+      {({ isActive, onClick }) => (
+        <Hamburger isActive={isActive} onClick={onClick} size="medium" />
+      )}
+    </IconDemo>
+    <IconDemo>
+      {({ isActive, onClick }) => (
+        <Hamburger isActive={isActive} onClick={onClick} size="large" />
+      )}
+    </IconDemo>
+  </Container>
+</Playground>
+
 ## API
 
 <Props of={Icon} />
@@ -64,6 +90,7 @@ import {
     <Checkmark />
     <ChevronLeft />
     <ChevronRight />
+    <Hamburger />
     <HeartRegular />
     <HeartSolid />
     <Image />
