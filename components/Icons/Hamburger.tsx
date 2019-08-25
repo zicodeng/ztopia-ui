@@ -15,7 +15,7 @@ export const Hamburger: FC<HamburgerProps> = memo(
     isActive,
     width,
     height,
-    color = 'black',
+    color,
     className,
     size = 'medium',
     ...restProps

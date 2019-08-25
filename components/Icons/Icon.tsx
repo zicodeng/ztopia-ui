@@ -6,9 +6,6 @@ import './Icon.css';
 export interface IconProps {
   width?: number;
   height?: number;
-  /**
-   * <@default=`'currentColor'`>
-   */
   color?: string;
   className?: string;
   /**
@@ -22,15 +19,7 @@ export interface SVGProps extends IconProps {
 }
 
 export const Icon: FC<SVGProps> = memo(
-  ({
-    width,
-    height,
-    color = 'currentColor',
-    className,
-    size,
-    children,
-    onClick,
-  }) =>
+  ({ width, height, color, className, size, children, onClick }) =>
     isValidElement(children)
       ? cloneElement(children, {
           'aria-hidden': 'true',
