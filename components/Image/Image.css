@@ -31,6 +31,11 @@
     background-size: cover;
   }
 
+  /* https://stackoverflow.com/questions/11447707/div-container-larger-than-image-inside */
+  &__img {
+    display: block;
+  }
+
   &__placeholder {
     animation: fading 1.5s infinite;
     background-color: $black-dark;

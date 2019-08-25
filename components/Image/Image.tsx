@@ -1,9 +1,17 @@
 import classNames from 'classnames';
-import React, { CSSProperties, FC, memo, ReactNode } from 'react';
+import React, {
+  cloneElement,
+  CSSProperties,
+  FC,
+  isValidElement,
+  memo,
+  ReactNode,
+  useMemo,
+} from 'react';
 import LazyLoad from 'react-lazyload';
 import ProgressiveImage from 'react-progressive-image';
 
-import { Placeholder } from '../Placeholder';
+import { Placeholder, PlaceholderProps } from '../Placeholder';
 
 import './Image.css';
 
@@ -35,6 +43,10 @@ export interface ImageProps {
   variant?: 'normal' | 'background';
   caption?: ReactNode;
   maskStyle?: CSSProperties | null;
+  /**
+   * A Ztopia Placeholder either in function form (`Placeholder`) or element form (`<Placeholder />`)
+   */
+  placeholder?: ReactNode | FC<PlaceholderProps> | null;
 }
 
 export const Image: FC<ImageProps> = memo(
@@ -49,6 +61,7 @@ export const Image: FC<ImageProps> = memo(
     variant,
     caption,
     maskStyle,
+    placeholder,
   }) => {
     if (variant === 'background' && typeof height !== 'number') {
       throw new Error(
@@ -60,25 +73,38 @@ export const Image: FC<ImageProps> = memo(
       <div className="ztopia-image__mask" style={maskStyle} />
     );
 
-    const placeholder = (
-      <Placeholder
-        variant="image"
-        className={className}
-        width={width}
-        height={
-          typeof height === 'number'
-            ? height
-            : typeof width === 'number'
-            ? width / 2
-            : 200
-        }
-      />
-    );
+    const memoizedPlaceholder = useMemo(() => {
+      if (!placeholder || typeof placeholder === 'function') {
+        return (
+          <Placeholder
+            variant="image"
+            className={className}
+            width={width}
+            height={
+              typeof height === 'number'
+                ? height
+                : typeof width === 'number'
+                ? width / 2
+                : 200
+            }
+          />
+        );
+      }
+
+      if (typeof placeholder === 'object' && isValidElement(placeholder)) {
+        return cloneElement(placeholder, {
+          className,
+          variant: 'image',
+        });
+      }
+
+      return null;
+    }, [placeholder]);
 
     const image = (
       <ProgressiveImage delay={delay} src={src} placeholder="">
         {(src, loading) => {
-          if (loading) return placeholder;
+          if (loading) return memoizedPlaceholder;
 
           if (variant === 'background') {
             return (
@@ -118,7 +144,13 @@ export const Image: FC<ImageProps> = memo(
                 height,
               }}
             >
-              <img width={width} height={height} src={src} alt={alt} />
+              <img
+                width={width}
+                height={height}
+                src={src}
+                alt={alt}
+                className="ztopia-image__img"
+              />
               {caption && (
                 <figcaption className="ztopia-image__caption">
                   {caption}
@@ -132,7 +164,12 @@ export const Image: FC<ImageProps> = memo(
     );
 
     return isLazyLoading ? (
-      <LazyLoad once height={height} offset={200} placeholder={placeholder}>
+      <LazyLoad
+        once
+        height={height}
+        offset={200}
+        placeholder={memoizedPlaceholder}
+      >
         {image}
       </LazyLoad>
     ) : (

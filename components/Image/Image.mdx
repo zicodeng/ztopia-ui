@@ -7,6 +7,8 @@ route: /components/image
 import { Props, Playground } from 'docz';
 import { Container } from 'docz-theme-ztopia/helpers';
 
+import { Placeholder } from '../Placeholder';
+
 import { Image } from './';
 
 # Image
@@ -35,46 +37,23 @@ Dependencies: [react-progressive-image](https://github.com/FormidableLabs/react-
 
 <Playground>
   <Image
-    variant="normal"
     src="https://i.ytimg.com/vi/HS7ulzLL034/maxresdefault.jpg"
-    caption={<h1 style={{ color: 'white', margin: 0 }}>Normal Image Mask</h1>}
+    caption={<h1 style={{ color: 'white', margin: 0 }}>Mask</h1>}
     maskStyle={{
-      backgroundColor: 'rgba(0, 0,0, 0.4)',
-    }}
-  />
-  <Image
-    variant="background"
-    height={400}
-    src="https://i.ytimg.com/vi/HS7ulzLL034/maxresdefault.jpg"
-    caption={
-      <h1 style={{ color: 'white', margin: 0 }}>Background Image Mask</h1>
-    }
-    maskStyle={{
-      backgroundColor: 'rgba(0, 0,0, 0.4)',
+      backgroundColor: 'rgba(255, 0, 0, 0.4)',
     }}
   />
 </Playground>
 
-### Background Mode & Delay
+### Custom Placeholder & Delay
 
 <Playground>
-  <Container>
-    <Image
-      variant="background"
-      width={400}
-      height={400}
-      src="https://s28566.pcdn.co/wp-content/uploads/2018/08/home-hero.jpg"
-      caption={<h1 style={{ color: 'white', margin: 0 }}>Earth Mother</h1>}
-    />
-    <Image
-      variant="background"
-      delay={5000}
-      width={400}
-      height={400}
-      src="https://s28566.pcdn.co/wp-content/uploads/2018/08/home-hero.jpg"
-      caption={<h1 style={{ color: 'white', margin: 0 }}>Earth Mother</h1>}
-    />
-  </Container>
+  <Image
+    delay={10000}
+    src="https://s28566.pcdn.co/wp-content/uploads/2018/08/home-hero.jpg"
+    caption={<h1 style={{ color: 'white', margin: 0 }}>Earth Mother</h1>}
+    placeholder={<Placeholder width="100%" height={400} />}
+  />
 </Playground>
 
 ## API
