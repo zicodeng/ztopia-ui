@@ -3,6 +3,7 @@ import BaseDrawer from 'rc-drawer';
 import React, { FC } from 'react';
 
 import 'rc-drawer/assets/index.css';
+import './Drawer.css';
 
 export interface DrawerProps {
   /**
