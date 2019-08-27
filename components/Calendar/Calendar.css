@@ -19,10 +19,10 @@
   }
 
   .rbc-header {
-    padding: $spacing-xs;
     align-items: center;
-    border-color: $black-dark;
     justify-content: center;
+    padding: $spacing-xs;
+    border-color: $black-dark;
   }
 
   .rbc-day-bg {
@@ -96,8 +96,8 @@
     }
 
     .rbc-event {
-      border: 0;
       background-color: rgba(75, 137, 218, 0.6);
+      border: 0;
       border-left: 2px solid $blue-dark;
     }
   }
@@ -107,8 +107,8 @@
   }
 
   .rbc-event-label {
-    font-size: $font-size-xs;
     font-weight: bold;
+    font-size: $font-size-xs;
   }
 
   .rbc-time-content {
@@ -123,8 +123,8 @@
   .rbc-time-slot {
     display: flex;
     align-items: center;
-    border-color: $white;
     justify-content: center;
+    border-color: $white;
   }
 
   .rbc-current-time-indicator {
@@ -168,9 +168,9 @@
 
     button {
       color: $black-dark;
-      cursor: pointer;
       border-color: $black-dark;
       outline: none;
+      cursor: pointer;
       transition: $transition-fast;
 
       &:hover,

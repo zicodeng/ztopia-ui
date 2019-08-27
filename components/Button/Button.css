@@ -7,9 +7,9 @@
   }
 
   &.is-ghost {
-    border: 1px solid $black-dark;
     color: $black-dark;
     background-color: transparent;
+    border: 1px solid $black-dark;
 
     &:hover {
       color: $white-light;
@@ -30,9 +30,9 @@
 
 %unshaped-button {
   padding: 0;
-  border: 0;
   color: $black-dark;
   background-color: transparent;
+  border: 0;
 
   &:hover {
     color: $black-light;
@@ -42,11 +42,11 @@
 .ztopia-button {
   position: relative;
   display: flex;
-  border: 0;
-  cursor: pointer;
   align-items: center;
   justify-content: center;
+  border: 0;
   outline: none;
+  cursor: pointer;
   transition: $transition-fast;
 
   &__loader {

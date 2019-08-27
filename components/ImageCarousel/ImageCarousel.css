@@ -6,8 +6,8 @@
     position: absolute;
     top: 50px;
     left: 50px;
-    opacity: 0;
     transform: translateY(50px);
+    opacity: 0;
     transition: $transition-fast;
     transition-delay: 0.2s;
   }
@@ -18,8 +18,8 @@
 
       &.selected {
         .ztopia-image__caption {
-          opacity: 1;
           transform: translateY(0);
+          opacity: 1;
         }
       }
     }
@@ -50,11 +50,11 @@
       > .dot {
         width: 10px;
         height: 10px;
-        border: 1px solid $white;
         background-color: transparent;
+        border: 1px solid $white;
+        outline: none;
         box-shadow: none;
         opacity: 1;
-        outline: none;
 
         &.selected {
           background-color: $white;

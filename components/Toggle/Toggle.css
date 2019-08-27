@@ -3,11 +3,11 @@
     position: relative;
     display: inline-block;
     padding: 0;
+    background-color: transparent;
     border: 0;
     cursor: pointer;
-    background-color: transparent;
-    touch-action: pan-x;
     user-select: none;
+    touch-action: pan-x;
   }
 
   .react-toggle-thumb {
@@ -22,8 +22,8 @@
 
   .react-toggle-track {
     display: flex;
-    padding: 0;
     align-items: center;
+    padding: 0;
     background-color: $white-dark;
     transition: $transition-fast;
   }
@@ -32,8 +32,8 @@
     position: absolute;
     left: 0;
     display: flex;
-    color: $white-light;
     align-items: center;
+    color: $white-light;
     transform: translate($spacing-xs);
   }
 
@@ -41,19 +41,19 @@
     position: absolute;
     right: 0;
     display: flex;
-    color: $black-dark;
     align-items: center;
+    color: $black-dark;
     transform: translate(-$spacing-xs);
   }
 
   .react-toggle-screenreader-only {
     position: absolute;
-    overflow: hidden;
     width: 1px;
     height: 1px;
-    padding: 0;
-    border: 0;
     margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
     clip: rect(0 0 0 0);
   }
 

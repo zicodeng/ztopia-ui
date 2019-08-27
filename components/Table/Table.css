@@ -1,8 +1,8 @@
 .ztopia-table {
   position: relative;
+  padding-top: 35px;
   font-size: $font-size-s;
   line-height: normal;
-  padding-top: 35px;
 
   &__container {
     overflow-y: auto;
@@ -23,12 +23,12 @@
       top: 0;
       right: 0;
       display: flex;
+      align-items: center;
+      justify-content: flex-end;
       height: 35px;
       padding: 0 $spacing-l;
       color: $white;
-      align-items: center;
       background-color: $white;
-      justify-content: flex-end;
     }
   }
 
@@ -53,9 +53,9 @@
     > div {
       position: absolute;
       top: 0;
+      margin-left: -$spacing-l;
       padding: $spacing-s $spacing-l;
       color: $black-dark;
-      margin-left: -$spacing-l;
     }
 
     &--placeholder {
@@ -68,11 +68,11 @@
   }
 
   &__cell {
-    overflow: hidden;
     height: 36px;
     padding: 0 $spacing-l;
-    text-overflow: ellipsis;
+    overflow: hidden;
     white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   &__pagination {

@@ -10,8 +10,8 @@
   &__container {
     .select {
       &__control {
-        border: 0;
         background-color: transparent;
+        border: 0;
         border-bottom: 1px solid $white-dark;
         border-radius: 0;
         box-shadow: none;
@@ -66,12 +66,12 @@
       }
 
       &__menu {
-        border: 1px solid $black-dark;
+        margin-top: 0;
         background-color: $white-light;
+        border: 1px solid $black-dark;
         border-top: 0;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
-        margin-top: 0;
       }
 
       &__menu-list {
@@ -117,8 +117,8 @@
 
       &__multi-value__remove {
         color: $white-light;
-        cursor: pointer;
         border-radius: 0;
+        cursor: pointer;
 
         &:hover {
           color: $color-danger;

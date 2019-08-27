@@ -29,7 +29,8 @@
     "release": "yarn build:prod && bump --commit && yarn post-build && cd ./dist && yarn publish --non-interactive && cd ..",
     "deploy": "yarn build-docs && surge --domain ztopia-ui.zicodeng.me ./.docz/dist",
     "create-200": "cp ./.docz/dist/index.html ./.docz/dist/200.html",
-    "clean": "rm -rf .docz node_modules yarn.lock .rpt2_cache"
+    "clean": "rm -rf .docz node_modules yarn.lock .rpt2_cache",
+    "format:all": "prettier --write \"**/*.{js,jsx,ts,tsx,css,json,yml,md}\" --ignore-path ./.prettierignore && stylelint --fix \"./components/**/*.css\""
   },
   "husky": {
     "hooks": {
@@ -42,12 +43,7 @@
       "stylelint --fix",
       "git add"
     ],
-    "*.{ts,tsx}": [
-      "prettier --write",
-      "tslint --fix",
-      "git add"
-    ],
-    "*.{md,json,js,jsx}": [
+    "*.{js,jsx,ts,tsx,json,yml,md}": [
       "prettier --write",
       "git add"
     ]
@@ -123,11 +119,14 @@
     "style-loader": "^0.23.1",
     "stylelint": "^10.1.0",
     "stylelint-config-prettier": "^5.2.0",
-    "stylelint-config-standard": "^18.3.0",
+    "stylelint-config-rational-order": "^0.1.2",
     "stylelint-order": "^3.0.1",
+    "stylelint-prettier": "^1.1.1",
     "surge": "^0.21.3",
     "terser-webpack-plugin": "^1.4.1",
-    "tslint": "^5.18.0",
+    "tslint": "^5.19.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.5.3",
     "version-bump-prompt": "^5.0.4",
     "webpack-filter-warnings-plugin": "^1.2.1"

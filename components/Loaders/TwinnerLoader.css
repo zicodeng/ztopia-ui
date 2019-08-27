@@ -13,17 +13,17 @@
     top: 0;
     display: block;
     box-sizing: border-box;
-    animation: twinner-loader 1s infinite;
     border-color: transparent;
-    border-radius: 100%;
     border-style: double;
+    border-radius: 100%;
+    animation: twinner-loader 1s infinite;
     content: '';
   }
 
   &::before {
     right: 0;
-    animation-delay: -0.25s;
     border-right-color: currentColor;
+    animation-delay: -0.25s;
   }
 
   &::after {

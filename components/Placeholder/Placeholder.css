@@ -27,8 +27,8 @@
 
     > svg {
       width: 25%;
-      max-width: 80px;
       min-width: 15px;
+      max-width: 80px;
     }
   }
 

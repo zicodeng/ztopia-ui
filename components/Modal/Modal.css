@@ -1,15 +1,15 @@
 .ztopia-modal {
   &__overlay {
     position: fixed;
-    z-index: 999;
     top: 0;
     left: 0;
+    z-index: 999;
     display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100vw;
     height: 100vh;
-    align-items: center;
     background-color: rgba(0, 0, 0, 0.4);
-    justify-content: center;
     opacity: 0;
     transition: $transition-fast;
   }
@@ -23,9 +23,9 @@
     padding: 30px;
     color: $black-dark;
     background-color: $white-light;
-    opacity: 0;
     outline: none;
     transform: translateY(100px);
+    opacity: 0;
     transition: $transition-fast;
 
     &--small {
@@ -42,8 +42,8 @@
   }
 
   .ReactModal__Content--after-open {
-    opacity: 1;
     transform: translateY(0);
+    opacity: 1;
   }
 
   &__close-indicator {

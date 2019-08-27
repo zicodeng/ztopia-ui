@@ -9,10 +9,10 @@
 }
 
 .ztopia-loader--basic {
-  animation: basic-loader 1s infinite linear;
   background-color: transparent;
-  border-radius: 100%;
   border-style: solid;
+  border-radius: 100%;
+  animation: basic-loader 1s infinite linear;
 
   &.ztopia-loader--small {
     width: 30px;

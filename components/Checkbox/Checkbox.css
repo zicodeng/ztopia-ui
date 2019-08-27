@@ -5,11 +5,11 @@
   &__input-container {
     position: relative;
     display: flex;
+    align-items: center;
+    justify-content: center;
     width: 16px;
     height: 16px;
     border: 1px solid $black-dark;
-    align-items: center;
-    justify-content: center;
   }
 
   &__input {
@@ -18,9 +18,9 @@
     left: 0;
     width: 100%;
     height: 100%;
+    outline: none;
     cursor: pointer;
     appearance: none;
-    outline: none;
   }
 
   &__label {

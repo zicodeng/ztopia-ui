@@ -21,8 +21,8 @@
     transition: $transition-slow;
 
     &.is-loading {
-      filter: blur(5px);
       opacity: 0.5;
+      filter: blur(5px);
     }
   }
 
@@ -37,15 +37,15 @@
   }
 
   &__placeholder {
-    animation: fading 1.5s infinite;
     background-color: $black-dark;
+    animation: fading 1.5s infinite;
   }
 
   &__caption {
     position: absolute;
-    z-index: 1;
     top: $spacing-l;
     left: $spacing-l;
+    z-index: 1;
   }
 
   &__mask {

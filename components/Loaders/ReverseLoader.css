@@ -20,21 +20,21 @@
 
 .ztopia-loader--reverse {
   position: relative;
-  animation: reverse-loader-spin-forward 1.5s linear infinite;
   border-color: transparent;
-  border-left-color: currentColor;
-  border-radius: 50%;
   border-style: solid;
   border-top-color: currentColor;
+  border-left-color: currentColor;
+  border-radius: 50%;
+  animation: reverse-loader-spin-forward 1.5s linear infinite;
 
   &::before {
     position: absolute;
-    animation: reverse-loader-spin-backward 1s linear infinite;
     border-color: transparent;
-    border-left-color: currentColor;
-    border-radius: 50%;
     border-style: solid;
     border-top-color: currentColor;
+    border-left-color: currentColor;
+    border-radius: 50%;
+    animation: reverse-loader-spin-backward 1s linear infinite;
     content: '';
   }
 

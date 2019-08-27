@@ -14,15 +14,15 @@
     position: relative;
     padding: $spacing-s $spacing-m;
     color: $white-light;
-    cursor: pointer;
     background-color: $black-dark;
+    cursor: pointer;
   }
 
   &__panel-content {
     position: relative;
-    overflow: hidden;
     height: 0;
     padding: 0 $spacing-m;
+    overflow: hidden;
     transition: $transition-fast;
   }
 

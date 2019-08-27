@@ -28,10 +28,10 @@
   }
 
   .rc-tooltip-inner {
+    min-height: unset;
     padding: $spacing-xs $spacing-s;
     color: $black-dark;
     background-color: transparent;
     border-color: $black-dark;
-    min-height: unset;
   }
 }

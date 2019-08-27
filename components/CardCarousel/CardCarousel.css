@@ -4,17 +4,17 @@
 
   &__controller {
     position: absolute;
-    z-index: 1;
     top: 50%;
+    z-index: 1;
     display: flex;
+    align-items: center;
+    justify-content: center;
     width: 50px;
     height: 50px;
-    cursor: pointer;
-    align-items: center;
     background-color: $white-light;
     border-radius: 100%;
     box-shadow: $box-shadow-2;
-    justify-content: center;
+    cursor: pointer;
 
     &--left {
       left: 0;
@@ -28,8 +28,8 @@
   }
 
   &__container {
-    overflow: hidden;
     padding: $spacing-s 0;
+    overflow: hidden;
   }
 
   &__cards {
