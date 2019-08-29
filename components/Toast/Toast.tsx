@@ -76,25 +76,44 @@ export const ToastContainer: FC<ToastOptions> = memo(
 
 export const makeToast = (
   content: ReactNode,
-  { isProgressBarHidden, placement, variant, ...restOptions }: ToastOptions,
-): ToastId =>
-  toast(content, {
+  options?: ToastOptions,
+): ToastId => {
+  const {
+    isProgressBarHidden,
+    placement,
+    variant,
+    ...restOptions
+  } = options || {
+    isProgressBarHidden: undefined,
+    placement: undefined,
+    variant: undefined,
+  };
+  return toast(content, {
     hideProgressBar: isProgressBarHidden,
     position: placement,
     type: variant,
     ...restOptions,
   });
+};
 
-export const updateToast = (
-  toastId: ToastId,
-  { isProgressBarHidden, placement, variant, ...restOptions }: ToastOptions,
-) =>
-  toast.update(toastId, {
+export const updateToast = (toastId: ToastId, options?: ToastOptions) => {
+  const {
+    isProgressBarHidden,
+    placement,
+    variant,
+    ...restOptions
+  } = options || {
+    isProgressBarHidden: undefined,
+    placement: undefined,
+    variant: undefined,
+  };
+  return toast.update(toastId, {
     hideProgressBar: isProgressBarHidden,
     position: placement,
     type: variant,
     ...restOptions,
   });
+};
 
 export const dismissToast = (toastId: ToastId) => toast.dismiss(toastId);
 
