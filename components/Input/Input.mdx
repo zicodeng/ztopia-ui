@@ -78,6 +78,23 @@ import { InputDemo } from './InputDemo';
   </Container>
 </Playground>
 
+### Prefix & Suffix Icon
+
+<Playground>
+  <Container>
+    <InputDemo>
+      {({ value, onChange }) => (
+        <Input
+          prefixIcon={<i className="fas fa-search"></i>}
+          suffixIcon={<i className="fas fa-search"></i>}
+          value={value}
+          onChange={onChange}
+        />
+      )}
+    </InputDemo>
+  </Container>
+</Playground>
+
 ## API
 
 <Props of={Input} />
