@@ -5,7 +5,6 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 import url from 'rollup-plugin-url';
-import tslint from 'rollup-plugin-tslint';
 import progress from 'rollup-plugin-progress';
 import typescript from 'typescript';
 import typescript2 from 'rollup-plugin-typescript2';
@@ -60,10 +59,6 @@ export default components
       }),
       postcss({}),
       progress({}),
-      tslint({
-        configuration: './tslint.json',
-        include: [/\*.tsx?/],
-      }),
       isDev ? null : terser(),
     ],
   }));
