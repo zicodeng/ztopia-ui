@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import BaseSlider, { Handle, Marks } from 'rc-slider';
 import React, { FC, memo } from 'react';
 
-import { Tooltip } from '../Tooltip';
+import { Popper } from '../Popper';
 
 import 'rc-slider/assets/index.css';
 import './Slider.css';
@@ -30,7 +30,7 @@ export interface SliderProps {
 const handle = props => {
   const { value, dragging, index, ...restProps } = props;
   return (
-    <Tooltip
+    <Popper
       key={index}
       offsetX={-4}
       offsetY={-2}
@@ -39,7 +39,7 @@ const handle = props => {
       visible={dragging}
     >
       <Handle value={value} {...restProps} />
-    </Tooltip>
+    </Popper>
   );
 };
 

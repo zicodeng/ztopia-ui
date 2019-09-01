@@ -1,0 +1,99 @@
+---
+name: Popper
+menu: Components
+route: /components/popper
+---
+
+import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+
+import { Popper } from './';
+import { Box } from './PopperDemo';
+
+# Popper
+
+Dependency: [rc-tooltip](https://github.com/react-component/tooltip)
+
+## Demo
+
+### Trigger
+
+<Playground>
+  <Container>
+    <Popper trigger={['hover']} overlay={<h1>Hello, World!</h1>}>
+      <Box>Hover (Default)</Box>
+    </Popper>
+    <Popper trigger={['click']} overlay={<h1>Hello, World!</h1>}>
+      <Box>Click</Box>
+    </Popper>
+    <Popper trigger={['focus']} overlay={<h1>Hello, World!</h1>}>
+      <input placeholder="Focus" />
+    </Popper>
+  </Container>
+</Playground>
+
+### Placement
+
+<Playground>
+  <Container>
+    <Popper placement="top" overlay={<h1>Hello, World!</h1>}>
+      <Box>Top (Default)</Box>
+    </Popper>
+    <Popper placement="topLeft" overlay={<h1>Hello, World!</h1>}>
+      <Box>Top Left</Box>
+    </Popper>
+    <Popper placement="topRight" overlay={<h1>Hello, World!</h1>}>
+      <Box>Top Right</Box>
+    </Popper>
+  </Container>
+  <Container>
+    <Popper placement="right" overlay={<h1>Hello, World!</h1>}>
+      <Box>Right</Box>
+    </Popper>
+    <Popper placement="rightTop" overlay={<h1>Hello, World!</h1>}>
+      <Box>Right Top</Box>
+    </Popper>
+    <Popper placement="rightBottom" overlay={<h1>Hello, World!</h1>}>
+      <Box>Right Bottom</Box>
+    </Popper>
+  </Container>
+  <Container>
+    <Popper placement="bottom" overlay={<h1>Hello, World!</h1>}>
+      <Box>Bottom</Box>
+    </Popper>
+    <Popper placement="bottomLeft" overlay={<h1>Hello, World!</h1>}>
+      <Box>Bottom Left</Box>
+    </Popper>
+    <Popper placement="bottomRight" overlay={<h1>Hello, World!</h1>}>
+      <Box>Bottom Right</Box>
+    </Popper>
+  </Container>
+  <Container>
+    <Popper placement="left" overlay={<h1>Hello, World!</h1>}>
+      <Box>Left</Box>
+    </Popper>
+    <Popper placement="leftTop" overlay={<h1>Hello, World!</h1>}>
+      <Box>Left Top</Box>
+    </Popper>
+    <Popper placement="leftBottom" overlay={<h1>Hello, World!</h1>}>
+      <Box>Left Bottom</Box>
+    </Popper>
+  </Container>
+</Playground>
+
+### Offset
+
+<Playground>
+  <Container>
+    <Popper placement="right" offsetX={20} overlay={<h1>Hello, World!</h1>}>
+      <Box>OffsetX</Box>
+    </Popper>
+    <Popper placement="top" offsetY={-20} overlay={<h1>Hello, World!</h1>}>
+      <Box>OffsetY</Box>
+    </Popper>
+  </Container>
+</Playground>
+
+## API
+
+<Props of={Popper} />

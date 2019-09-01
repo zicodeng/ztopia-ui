@@ -1,11 +1,11 @@
 import classNames from 'classnames';
-import BaseTooltip from 'rc-tooltip';
+import Tooltip from 'rc-tooltip';
 import React, { FC, memo, ReactNode } from 'react';
 
 import 'rc-tooltip/assets/bootstrap_white.css';
-import './Tooltip.css';
+import './Popper.css';
 
-export interface TooltipProps {
+export interface PopperProps {
   /**
    * <@internal>
    */
@@ -40,7 +40,7 @@ export interface TooltipProps {
     | 'leftTop'
     | 'leftBottom';
   /**
-   * Tooltip content when it is triggered
+   * Popper content when it is triggered
    */
   overlay: ReactNode;
   /**
@@ -51,7 +51,7 @@ export interface TooltipProps {
 
 const ARROW_SIZE = 4;
 
-export const Tooltip: FC<TooltipProps> = memo(
+export const Popper: FC<PopperProps> = memo(
   ({ offsetX, offsetY, className, placement, children, ...restProps }) => {
     offsetX = placement!.includes('left')
       ? offsetX! - ARROW_SIZE
@@ -60,12 +60,12 @@ export const Tooltip: FC<TooltipProps> = memo(
       ? offsetY! - ARROW_SIZE
       : offsetY! + ARROW_SIZE;
     return (
-      <BaseTooltip
+      <Tooltip
         placement={placement}
         overlayClassName={classNames(
           className,
-          'ztopia-tooltip',
-          `ztopia-tooltip--${placement}`,
+          'ztopia-popper',
+          `ztopia-popper--${placement}`,
         )}
         arrowContent={<div className="rc-tooltip-arrow-inner"></div>}
         align={{
@@ -82,12 +82,12 @@ export const Tooltip: FC<TooltipProps> = memo(
         {...restProps}
       >
         {children}
-      </BaseTooltip>
+      </Tooltip>
     );
   },
 );
 
-Tooltip.defaultProps = {
+Popper.defaultProps = {
   offsetX: 0,
   offsetY: 0,
   trigger: ['hover'],
