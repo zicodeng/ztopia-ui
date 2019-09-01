@@ -11,6 +11,10 @@ export interface PopperProps {
    */
   visible?: boolean;
   /**
+   * <@default=`false`>
+   */
+  isTransitionDisabled?: boolean;
+  /**
    * <@default=`0`>
    */
   offsetX?: number;
@@ -52,7 +56,15 @@ export interface PopperProps {
 const ARROW_SIZE = 4;
 
 export const Popper: FC<PopperProps> = memo(
-  ({ offsetX, offsetY, className, placement, children, ...restProps }) => {
+  ({
+    isTransitionDisabled,
+    offsetX,
+    offsetY,
+    className,
+    placement,
+    children,
+    ...restProps
+  }) => {
     offsetX = placement!.includes('left')
       ? offsetX! - ARROW_SIZE
       : offsetX! + ARROW_SIZE;
@@ -71,14 +83,18 @@ export const Popper: FC<PopperProps> = memo(
         align={{
           offset: [offsetX, offsetY],
         }}
-        transitionName={{
-          enter: 'enter',
-          enterActive: 'enter-active',
-          leave: 'leave',
-          leaveActive: 'leave-active',
-          appear: 'appear',
-          appearActive: 'appear-active',
-        }}
+        transitionName={
+          isTransitionDisabled
+            ? null
+            : {
+                enter: 'enter',
+                enterActive: 'enter-active',
+                leave: 'leave',
+                leaveActive: 'leave-active',
+                appear: 'appear',
+                appearActive: 'appear-active',
+              }
+        }
         {...restProps}
       >
         {children}
@@ -88,6 +104,7 @@ export const Popper: FC<PopperProps> = memo(
 );
 
 Popper.defaultProps = {
+  isTransitionDisabled: false,
   offsetX: 0,
   offsetY: 0,
   trigger: ['hover'],
