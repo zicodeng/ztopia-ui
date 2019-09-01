@@ -1,7 +1,7 @@
 .ztopia-popper {
   padding: 0;
   line-height: inherit;
-  background-color: $white-light;
+  background-color: transparent;
   opacity: 1;
   transition: $transition-fast;
 
@@ -33,7 +33,7 @@
     min-height: unset;
     padding: $spacing-xs $spacing-s;
     color: $black-dark;
-    background-color: transparent;
+    background-color: $white-light;
     border-color: $black-dark;
   }
 
