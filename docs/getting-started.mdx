@@ -19,3 +19,46 @@ yarn add ztopia-ui
 ```ts
 import { Button } from 'ztopia-ui/Button';
 ```
+
+## Overriding Styles
+
+We recommend using CSS modules in your application and leverage `:global` rule
+to override Ztopia UI default styles
+
+```tsx
+<Button className="className" />
+```
+
+```css
+:global {
+  :local(.container) {
+    &.ztopia-button {
+      color: red;
+
+      &--rect {
+        color: blue;
+      }
+
+      &--circle {
+        color: green;
+      }
+    }
+  }
+}
+
+/* or */
+
+.container {
+  :global {
+    .ztopia-select {
+      &__label {
+        color: red;
+      }
+
+      &__container {
+        background-color: blue;
+      }
+    }
+  }
+}
+```
