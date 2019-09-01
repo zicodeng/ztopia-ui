@@ -83,6 +83,7 @@ export const Popper: FC<PopperProps> = memo(
         align={{
           offset: [offsetX, offsetY],
         }}
+        // @ts-ignore
         transitionName={
           isTransitionDisabled
             ? null
