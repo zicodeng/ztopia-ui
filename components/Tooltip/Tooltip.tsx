@@ -71,6 +71,14 @@ export const Tooltip: FC<TooltipProps> = memo(
         align={{
           offset: [offsetX, offsetY],
         }}
+        transitionName={{
+          enter: 'enter',
+          enterActive: 'enter-active',
+          leave: 'leave',
+          leaveActive: 'leave-active',
+          appear: 'appear',
+          appearActive: 'appear-active',
+        }}
         {...restProps}
       >
         {children}

@@ -2,6 +2,8 @@
   padding: 0;
   line-height: inherit;
   background-color: $white-light;
+  opacity: 1;
+  transition: $transition-fast;
 
   &--top .rc-tooltip-arrow,
   &--topLeft .rc-tooltip-arrow,
@@ -34,4 +36,86 @@
     background-color: transparent;
     border-color: $black-dark;
   }
+
+  /*==================================
+  =            Transition            =
+  ==================================*/
+  &.appear {
+    opacity: 0.01;
+
+    &.appear-active {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+
+  &.enter {
+    opacity: 0.01;
+
+    &.enter-active {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+
+  &.leave {
+    opacity: 1;
+
+    &.leave-active {
+      opacity: 0.01;
+    }
+  }
+
+  &--top,
+  &--topLeft,
+  &--topRight {
+    &.appear,
+    &.enter {
+      transform: translateY(-$spacing-l);
+    }
+
+    &.leave {
+      transform: translateY(-$spacing-l);
+    }
+  }
+
+  &--right,
+  &--rightTop,
+  &--rightBottom {
+    &.appear,
+    &.enter {
+      transform: translateX($spacing-l);
+    }
+
+    &.leave {
+      transform: translateX($spacing-l);
+    }
+  }
+
+  &--bottom,
+  &--bottomLeft,
+  &--bottomRight {
+    &.appear,
+    &.enter {
+      transform: translateY($spacing-l);
+    }
+
+    &.leave {
+      transform: translateY($spacing-l);
+    }
+  }
+
+  &--left,
+  &--leftTop,
+  &--leftBottom {
+    &.appear,
+    &.enter {
+      transform: translateX(-$spacing-l);
+    }
+
+    &.leave {
+      transform: translateX(-$spacing-l);
+    }
+  }
+  /*=====  End of Transition  ======*/
 }

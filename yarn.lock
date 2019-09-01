@@ -1513,7 +1513,7 @@
     "@types/rc-tooltip" "*"
     "@types/react" "*"
 
-"@types/rc-tooltip@*", "@types/rc-tooltip@^3.7.1":
+"@types/rc-tooltip@*":
   version "3.7.1"
   resolved "https://registry.yarnpkg.com/@types/rc-tooltip/-/rc-tooltip-3.7.1.tgz#20bde0f9c872f824c1dea86d0fc741dfd9aca3d7"
   integrity sha512-H+pW9+H42rlb3PBjcxuXhQre1ldr0gdDVbVfCj0Pf4Mdjd1plti9ekt1yJ+gGig3bRFLpCknWDmfOkAjKY+S+Q==
