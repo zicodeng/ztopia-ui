@@ -2,7 +2,7 @@
   color: $white-light;
   background-color: $black-dark;
 
-  &:hover {
+  &:not(.is-loading):hover {
     background-color: $black-light;
   }
 
@@ -21,10 +21,6 @@
     color: transparent;
     cursor: wait;
     transition: none;
-
-    &:hover {
-      background-color: currentColor;
-    }
   }
 }
 
