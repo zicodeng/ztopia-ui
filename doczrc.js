@@ -30,7 +30,9 @@ export default {
     { name: 'Components', menu: [] },
   ],
   filterComponents: files =>
-    files.filter(file => /([^d]\.(t|j)sx?)$/.test(file)),
+    files.filter(file =>
+      /(components|docs|public|styles).*([^d]\.(t|j)sx?)$/.test(file),
+    ),
   modifyBundlerConfig: (config, isDev) => ({
     ...config,
     module: {
