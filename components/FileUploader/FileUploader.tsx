@@ -5,13 +5,13 @@ import classNames from 'classnames';
 import { CloudUpload } from '../Icons';
 import { Image } from '../Image';
 
-import './Upload.css';
+import './FileUploader.css';
 
 interface PreviewFile extends File {
   thumbURL: string;
 }
 
-export interface UploadProps {
+export interface FileUploaderProps {
   /**
    * Allow multiple previewFiles
    *
@@ -40,7 +40,7 @@ enum DragState {
   Leave = 'drag-leave',
 }
 
-export const Upload: FC<UploadProps> = memo(
+export const FileUploader: FC<FileUploaderProps> = memo(
   ({
     isMulti = false,
     minSize,
@@ -89,30 +89,32 @@ export const Upload: FC<UploadProps> = memo(
     );
 
     return (
-      <section className="ztopia-upload">
+      <section className="ztopia-file-uploader">
         <div
           {...getRootProps({
-            className: classNames('ztopia-upload__dropzone', {
+            className: classNames('ztopia-file-uploader__dropzone', {
               [dragState!]: Boolean(dragState),
             }),
           })}
         >
           <input {...getInputProps()} />
-          <CloudUpload width={50} className="ztopia-upload__icon" />
-          <p className="ztopia-upload__title">Choose a File or Drag It Here</p>
+          <CloudUpload width={50} className="ztopia-file-uploader__icon" />
+          <p className="ztopia-file-uploader__title">
+            Choose a File or Drag It Here
+          </p>
         </div>
-        <ul className="ztopia-upload__file-previews">
+        <ul className="ztopia-file-uploader__file-previews">
           {previewFiles.map(({ thumbURL, name }, i) => {
             return (
-              <li key={i} className="ztopia-upload__file-preview">
+              <li key={i} className="ztopia-file-uploader__file-preview">
                 <Image
                   width={100}
                   height={100}
                   src={thumbURL}
                   variant="background"
-                  className="ztopia-upload__file-thumb"
+                  className="ztopia-file-uploader__file-thumb"
                 />
-                <span className="ztopia-upload__file-name">{name}</span>
+                <span className="ztopia-file-uploader__file-name">{name}</span>
               </li>
             );
           })}

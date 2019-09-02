@@ -1,4 +1,4 @@
-.ztopia-upload {
+.ztopia-file-uploader {
   &__dropzone {
     display: flex;
     flex-direction: column;
