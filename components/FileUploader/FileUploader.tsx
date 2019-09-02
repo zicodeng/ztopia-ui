@@ -26,6 +26,7 @@ export interface FileUploaderProps {
    * <@default=`10000`>
    */
   maxSize?: number;
+  className?: string;
   /**
    * <@default=`image/*`>
    */
@@ -45,6 +46,7 @@ export const FileUploader: FC<FileUploaderProps> = memo(
     isMulti = false,
     minSize,
     maxSize,
+    className,
     allowedFileTypes = 'image/*',
     ...restProps
   }) => {
@@ -89,7 +91,7 @@ export const FileUploader: FC<FileUploaderProps> = memo(
     );
 
     return (
-      <section className="ztopia-file-uploader">
+      <section className={classNames(className, 'ztopia-file-uploader')}>
         <div
           {...getRootProps({
             className: classNames('ztopia-file-uploader__dropzone', {
