@@ -1,0 +1,59 @@
+.ztopia-upload {
+  &__dropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    border: 2px dashed $black-light;
+    outline: none;
+    cursor: pointer;
+    transition: $transition-fast;
+
+    &:hover {
+      background-color: $green-light;
+    }
+
+    &.drag-enter {
+    }
+
+    &.drag-over {
+      background-color: $green-light;
+    }
+
+    &.drag-leave {
+    }
+  }
+
+  &__title {
+    margin: $spacing-l 0 0;
+  }
+
+  &__file-previews {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__file-preview {
+    margin: $spacing-s $spacing-s 0 0;
+    text-align: center;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__file-thumb {
+    margin-bottom: $spacing-xs;
+  }
+
+  &__file-name {
+    display: block;
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}

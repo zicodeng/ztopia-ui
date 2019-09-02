@@ -1,0 +1,46 @@
+---
+name: Upload
+menu: Components
+route: /components/upload
+---
+
+import { Props, Playground } from 'docz';
+
+import { Upload } from './';
+
+# Upload
+
+Dependency: [react-dropzone](https://github.com/react-dropzone/react-dropzone)
+
+## Demo
+
+### Multiple Files
+
+<Playground>
+  <Upload
+    isMulti
+    onDropAccepted={(files, e) => {
+      console.log('Upload', 'onDropAccepted', { files, e });
+    }}
+  />
+</Playground>
+
+### Min & Max File Size
+
+<Playground>
+  <Upload
+    minSize={1}
+    maxSize={100}
+    onDropAccepted={(files, e) => {
+      console.log('Upload', 'onDropAccepted', { files, e });
+    }}
+    onDropRejected={(files, e) => {
+      window.alert('File rejected, size not in range');
+      console.log('Upload', 'onDropRejected', { files, e });
+    }}
+  />
+</Playground>
+
+## API
+
+<Props of={Upload} />

@@ -64,6 +64,7 @@
     "react-countup": "^4.2.1",
     "react-datepicker": "^2.8.0",
     "react-dom": "^16.8.6",
+    "react-dropzone": "^10.1.8",
     "react-lazyload": "^2.6.2",
     "react-map-gl": "^5.0.8",
     "react-modal": "^3.9.1",
