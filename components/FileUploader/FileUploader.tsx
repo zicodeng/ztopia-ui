@@ -13,7 +13,7 @@ interface PreviewFile extends File {
 
 export interface FileUploaderProps {
   /**
-   * Allow multiple previewFiles
+   * Allow multiple files
    *
    * <@default=`false`>
    */
@@ -31,8 +31,8 @@ export interface FileUploaderProps {
    * <@default=`image/*`>
    */
   allowedFileTypes?: string | string[];
-  onDropAccepted?<T extends File>(previewFiles: T[], event: DropEvent): void;
-  onDropRejected?<T extends File>(previewFiles: T[], event: DropEvent): void;
+  onDropAccepted?<T extends File>(files: T[], event: DropEvent): void;
+  onDropRejected?<T extends File>(files: T[], event: DropEvent): void;
 }
 
 enum DragState {
