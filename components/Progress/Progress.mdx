@@ -21,10 +21,10 @@ Dependency: [rc-progress](https://github.com/react-component/progress)
 <Playground>
   <Container>
     <ProgressDemo>
-      {({ value }) => <Progress variant="line" value={value} />}
+      {({ percent }) => <Progress variant="line" percent={percent} />}
     </ProgressDemo>
     <ProgressDemo>
-      {({ value }) => <Progress variant="circle" value={value} />}
+      {({ percent }) => <Progress variant="circle" percent={percent} />}
     </ProgressDemo>
   </Container>
 </Playground>
@@ -34,19 +34,19 @@ Dependency: [rc-progress](https://github.com/react-component/progress)
 <Playground>
   <Container>
     <ProgressDemo>
-      {({ value }) => (
-        <Progress strokeWidth={4} strokeColor="#4b89da" value={value} />
+      {({ percent }) => (
+        <Progress strokeWidth={4} strokeColor="#4b89da" percent={percent} />
       )}
     </ProgressDemo>
     <ProgressDemo>
-      {({ value }) => (
+      {({ percent }) => (
         <Progress
           variant="circle"
           strokeWidth={4}
           trailWidth={4}
           strokeColor="#d94452"
           trailColor="#f76d82"
-          value={value}
+          percent={percent}
         />
       )}
     </ProgressDemo>

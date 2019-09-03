@@ -47,6 +47,7 @@ export default {
             path.resolve(__dirname, './node_modules/rc-tooltip'),
             path.resolve(__dirname, './node_modules/rc-slider'),
             path.resolve(__dirname, './node_modules/rc-drawer'),
+            path.resolve(__dirname, './node_modules/rc-progress'),
             path.resolve(__dirname, './node_modules/react-responsive-carousel'),
             path.resolve(__dirname, './node_modules/react-toastify'),
             path.resolve(__dirname, './node_modules/react-datepicker'),

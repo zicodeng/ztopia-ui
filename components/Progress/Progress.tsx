@@ -2,10 +2,14 @@ import classNames from 'classnames';
 import { Circle, Line } from 'rc-progress';
 import React, { CSSProperties, FC } from 'react';
 
+import 'rc-progress/assets/index.css';
 import './Progress.css';
 
 export interface ProgressProps {
-  value?: number;
+  /**
+   * Value must be in range of 0 to 100
+   */
+  percent?: number;
   /**
    * <@default=`1`>
    */
@@ -32,7 +36,7 @@ export interface ProgressProps {
 }
 
 export const Progress: FC<ProgressProps> = ({
-  value,
+  percent,
   strokeWidth,
   trailWidth,
   strokeColor,
@@ -42,19 +46,15 @@ export const Progress: FC<ProgressProps> = ({
   style,
 }) => {
   const props = {
+    percent,
     strokeWidth,
     trailWidth,
     strokeColor,
     trailColor,
     style,
-    percent: value,
     className: classNames(className, `ztopia-progress--${variant}`),
   };
-  return variant === 'line' ? (
-    <Line {...props} trailWidth={0} />
-  ) : (
-    <Circle {...props} />
-  );
+  return variant === 'line' ? <Line {...props} /> : <Circle {...props} />;
 };
 
 Progress.defaultProps = {
