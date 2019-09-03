@@ -4,10 +4,11 @@ import classNames from 'classnames';
 
 import { CloudUpload } from '../Icons';
 import { Image } from '../Image';
+import { Progress } from '../Progress';
 
 import './FileUploader.css';
 
-interface PreviewFile extends File {
+interface EnhancedFile extends File {
   thumbURL: string;
 }
 
@@ -28,11 +29,23 @@ export interface FileUploaderProps {
   maxSize?: number;
   className?: string;
   /**
+   * An object that associates file name and its current upload progress percent
+   *
+   * <@default=`{}`>
+   */
+  progress: { [fileName: string]: number };
+  /**
    * <@default=`image/*`>
    */
   allowedFileTypes?: string | string[];
-  onDropAccepted?<T extends File>(files: T[], event: DropEvent): void;
-  onDropRejected?<T extends File>(files: T[], event: DropEvent): void;
+  onDropAccepted?: <EnhancedFile>(
+    files: EnhancedFile[],
+    event: DropEvent,
+  ) => void;
+  onDropRejected?: <EnhancedFile>(
+    files: EnhancedFile[],
+    event: DropEvent,
+  ) => void;
 }
 
 enum DragState {
@@ -41,17 +54,26 @@ enum DragState {
   Leave = 'drag-leave',
 }
 
+const convertBytesToSize = (bytes: number) => {
+  const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+  if (bytes === 0) return 'N/A';
+  const i = Math.floor(Math.log(Math.abs(bytes)) / Math.log(1024));
+  if (i === 0) return `${bytes} ${sizes[i]}`;
+  return `${(bytes / 1024 ** i).toFixed(1)} ${sizes[i]}`;
+};
+
 export const FileUploader: FC<FileUploaderProps> = memo(
   ({
     isMulti = false,
     minSize,
     maxSize,
     className,
+    progress = {},
     allowedFileTypes = 'image/*',
     ...restProps
   }) => {
     const [dragState, setDragState] = useState<DragState | null>(null);
-    const [previewFiles, setPreviewFiles] = useState<PreviewFile[]>([]);
+    const [previewFiles, setPreviewFiles] = useState<EnhancedFile[]>([]);
 
     const { getRootProps, getInputProps } = useDropzone({
       multiple: isMulti,
@@ -106,17 +128,31 @@ export const FileUploader: FC<FileUploaderProps> = memo(
           </p>
         </div>
         <ul className="ztopia-file-uploader__file-previews">
-          {previewFiles.map(({ thumbURL, name }, i) => {
+          {previewFiles.map(({ thumbURL, name, size }, i) => {
             return (
               <li key={i} className="ztopia-file-uploader__file-preview">
                 <Image
-                  width={100}
-                  height={100}
+                  width={50}
+                  height={50}
                   src={thumbURL}
                   variant="background"
                   className="ztopia-file-uploader__file-thumb"
                 />
-                <span className="ztopia-file-uploader__file-name">{name}</span>
+                <div className="ztopia-file-uploader__upload-info">
+                  <div className="ztopia-file-uploader__file-meta">
+                    <span className="ztopia-file-uploader__file-name">
+                      {name}
+                    </span>
+                    <span className="ztopia-file-uploader__file-size">
+                      {convertBytesToSize(size)}
+                    </span>
+                  </div>
+                  <Progress
+                    percent={progress[name] || 0}
+                    strokeColor="#62ddbd"
+                    className="ztopia-file-uploader__progress"
+                  />
+                </div>
               </li>
             );
           })}

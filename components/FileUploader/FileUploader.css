@@ -30,30 +30,43 @@
   }
 
   &__file-previews {
-    display: flex;
     margin: 0;
     padding: 0;
     list-style: none;
   }
 
   &__file-preview {
-    margin: $spacing-s $spacing-s 0 0;
-    text-align: center;
-
-    &:last-child {
-      margin-right: 0;
-    }
+    display: flex;
+    margin: $spacing-l 0;
   }
 
   &__file-thumb {
-    margin-bottom: $spacing-xs;
+    flex: 0 0 50px;
+    margin-right: $spacing-m;
+  }
+
+  &__upload-info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow: hidden;
+  }
+
+  &__file-meta {
+    display: flex;
+    justify-content: space-between;
   }
 
   &__file-name {
     display: block;
-    width: 100px;
+    flex: 1;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+  }
+
+  &__progress {
+    flex: 0 0 6px;
   }
 }
