@@ -8,7 +8,7 @@ import { Progress } from '../Progress';
 
 import './FileUploader.css';
 
-interface EnhancedFile extends File {
+export interface EnhancedFile extends File {
   thumbURL: string;
 }
 
@@ -33,7 +33,7 @@ export interface FileUploaderProps {
    *
    * <@default=`{}`>
    */
-  progress: { [fileName: string]: number };
+  progress?: { [fileName: string]: number };
   /**
    * <@default=`image/*`>
    */
