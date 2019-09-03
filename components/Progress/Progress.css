@@ -1,6 +1,10 @@
 .ztopia-progress {
   &--line {
     width: 100%;
+
+    > .rc-progress-line-path {
+      stroke-dashoffset: 1px !important;
+    }
   }
 
   &--circle {

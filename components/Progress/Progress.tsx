@@ -50,7 +50,11 @@ export const Progress: FC<ProgressProps> = ({
     percent: value,
     className: classNames(className, `ztopia-progress--${variant}`),
   };
-  return variant === 'line' ? <Line {...props} /> : <Circle {...props} />;
+  return variant === 'line' ? (
+    <Line {...props} trailWidth={0} />
+  ) : (
+    <Circle {...props} />
+  );
 };
 
 Progress.defaultProps = {
