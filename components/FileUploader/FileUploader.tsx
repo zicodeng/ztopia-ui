@@ -38,14 +38,8 @@ export interface FileUploaderProps {
    * <@default=`image/*`>
    */
   allowedFileTypes?: string | string[];
-  onDropAccepted?: <EnhancedFile>(
-    files: EnhancedFile[],
-    event: DropEvent,
-  ) => void;
-  onDropRejected?: <EnhancedFile>(
-    files: EnhancedFile[],
-    event: DropEvent,
-  ) => void;
+  onDropAccepted?: (files: EnhancedFile[], event: DropEvent) => void;
+  onDropRejected?: (files: EnhancedFile[], event: DropEvent) => void;
 }
 
 enum DragState {
@@ -75,6 +69,7 @@ export const FileUploader: FC<FileUploaderProps> = memo(
     const [dragState, setDragState] = useState<DragState | null>(null);
     const [previewFiles, setPreviewFiles] = useState<EnhancedFile[]>([]);
 
+    // @ts-ignore
     const { getRootProps, getInputProps } = useDropzone({
       multiple: isMulti,
       minSize,
