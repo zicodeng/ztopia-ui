@@ -135,6 +135,31 @@ import {
   </Table>
 </Playground>
 
+### TableCell Width
+
+<Playground>
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableHeadCell>First Name</TableHeadCell>
+        <TableHeadCell>Last Name</TableHeadCell>
+        <TableHeadCell>Job Title</TableHeadCell>
+        <TableHeadCell>Phone Number</TableHeadCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      {Array.from({ length: 100 }).map((_, i) => (
+        <TableRow key={i}>
+          <TableCell width={100}>{faker.name.firstName()}</TableCell>
+          <TableCell width={100}>{faker.name.lastName()}</TableCell>
+          <TableCell>{faker.name.jobTitle()}</TableCell>
+          <TableCell>{faker.phone.phoneNumberFormat()}</TableCell>
+        </TableRow>
+      ))}
+    </TableBody>
+  </Table>
+</Playground>
+
 ## API
 
 ### Table

@@ -183,16 +183,16 @@ export const TableHeadCell: FC<TableHeadCellProps> = memo(
 );
 
 export interface TableCellProps {
-  maxWidth?: number;
+  width?: number;
   className?: string;
 }
 
 export const TableCell: FC<TableCellProps> = memo(
-  ({ maxWidth = 100, className, ...restProps }) => (
+  ({ width, className, ...restProps }) => (
     <td
       {...restProps}
       className={classNames(className, 'ztopia-table__cell')}
-      style={{ maxWidth }}
+      style={{ width, maxWidth: width }}
     />
   ),
 );
