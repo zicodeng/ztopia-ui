@@ -1,0 +1,26 @@
+---
+name: GridList
+menu: Components
+route: /components/grid-list
+---
+
+import { Props, Playground } from 'docz';
+
+import { GridList } from './';
+import { GridListDemo } from './GridListDemo';
+
+# GridList
+
+Dependency: [react-stack-grid](https://github.com/tsuyoshiwada/react-stack-grid)
+
+## Demo
+
+<Playground>
+  <GridListDemo>
+    {({ items }) => <GridList columnWidth={200}>{items}</GridList>}
+  </GridListDemo>
+</Playground>
+
+## API
+
+<Props of={GridList} />
