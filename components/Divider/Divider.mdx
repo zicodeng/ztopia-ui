@@ -1,0 +1,35 @@
+---
+name: Divider
+menu: Components
+route: /components/divider
+---
+
+import { Props, Playground } from 'docz';
+import faker from 'faker';
+
+import { Divider } from './';
+
+## Demo
+
+### Horizontal & Vertical
+
+<Playground>
+  <Divider />
+  <Divider isVertical width={1} height={500} />
+</Playground>
+
+### Color
+
+<Playground>
+  <Divider color="#ff0000" />
+</Playground>
+
+### Faded
+
+<Playground>
+  <Divider isFaded />
+</Playground>
+
+## API
+
+<Props of={Divider} />
