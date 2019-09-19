@@ -7,7 +7,7 @@ export interface GridListProps {
    * <@default=`5`>
    */
   gap?: number;
-  columnWidth: string;
+  columnWidth: string | number;
   className?: string;
 }
 
