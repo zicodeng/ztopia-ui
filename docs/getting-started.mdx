@@ -25,9 +25,13 @@ import { Button } from 'ztopia-ui/Button';
 We recommend using CSS modules in your application and leverage `:global` rule
 to override Ztopia UI default styles
 
-```tsx
-<Button className="className" />
+For example:
+
+```jsx
+<Button className="container" />
 ```
+
+Then, in your CSS file
 
 ```css
 :global {
