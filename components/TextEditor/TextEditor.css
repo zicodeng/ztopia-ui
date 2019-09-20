@@ -1,0 +1,134 @@
+.ztopia-text-editor {
+  position: relative;
+  outline: none;
+
+  p,
+  pre {
+    margin: $spacing-m 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  pre {
+    display: inline;
+    padding: 4px 6px;
+    background-color: #f5f7f9;
+  }
+
+  blockquote {
+    margin: $spacing-m 0;
+    padding: $spacing-xs 0 $spacing-xs $spacing-s;
+    border-left: 2px solid $black-dark;
+  }
+
+  ol,
+  ul {
+    margin: $spacing-m 0;
+    padding-left: $spacing-l;
+
+    li {
+      margin: $spacing-s 0;
+    }
+  }
+}
+
+.medium-editor-toolbar {
+  background-color: $black-dark;
+  border-color: $black-dark;
+  border-radius: 5px;
+
+  li {
+    button {
+      min-width: 40px;
+      height: 40px;
+      padding: 0;
+      color: $white-light;
+      border: 0;
+
+      &:hover {
+        color: $color-success;
+        background-color: transparent;
+      }
+    }
+
+    .medium-editor-button-active {
+      color: $color-success;
+      background-color: transparent;
+    }
+  }
+}
+
+.medium-editor-toolbar-form {
+  .medium-editor-toolbar-input {
+    height: 40px;
+    padding: $spacing-m;
+    background-color: $black-dark;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .medium-editor-toolbar-input {
+    width: 260px;
+  }
+
+  a {
+    font-size: $font-size-m;
+  }
+
+  .medium-editor-toolbar-save {
+    margin: 0;
+
+    &:hover {
+      color: $color-success;
+      transition: $transition-fast;
+    }
+  }
+
+  .medium-editor-toolbar-close {
+    margin: 0 $spacing-m;
+
+    &:hover {
+      color: $color-danger;
+      transition: $transition-fast;
+    }
+  }
+}
+
+.medium-editor-toolbar-form-active {
+  display: flex;
+  align-items: center;
+}
+
+.medium-editor-toolbar-anchor-preview {
+  padding: $spacing-xs $spacing-s $spacing-s;
+  background-color: $black-dark;
+  border-radius: 2px;
+
+  a {
+    margin: 0;
+    font-size: $font-size-xs;
+    text-decoration: none;
+  }
+}
+
+.medium-toolbar-arrow-under {
+  &::after {
+    top: 40px;
+    border-color: $black-dark transparent transparent;
+  }
+}
+
+.medium-toolbar-arrow-over {
+  &::before {
+    border-color: transparent transparent $black-dark;
+  }
+}
+
+.medium-editor-placeholder {
+  &::after {
+    color: $black-light;
+    pointer-events: none;
+  }
+}

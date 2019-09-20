@@ -1,0 +1,76 @@
+---
+name: TextEditor
+menu: Components
+route: /components/text-editor
+---
+
+import { Props, Playground } from 'docz';
+import faker from 'faker';
+
+import { TextEditor } from './';
+
+# TextEditor
+
+Dependencies: [medium-editor](https://github.com/yabwe/medium-editor) and [fontawesome](https://fontawesome.com/)
+
+## Demo
+
+### Placeholder
+
+<Playground>
+  <TextEditor
+    placeholder="Write your story here..."
+    onChange={newValue => {
+      console.log('TextEditor', 'onChange', { newValue });
+    }}
+  />
+</Playground>
+
+### Default Value
+
+<Playground>
+  <TextEditor
+    defaultValue={`<h1>Hello, World</h1><p>${faker.lorem.paragraphs(
+      2,
+    )}</p><p>${faker.lorem.paragraphs(6)}</p><p>${faker.lorem.paragraphs(
+      3,
+    )}</p>`}
+    onChange={newValue => {
+      console.log('TextEditor', 'onChange', { newValue });
+    }}
+  />
+</Playground>
+
+## API
+
+<Props of={TextEditor} />
+
+```ts
+type ToolbarOption =
+  | 'bold'
+  | 'italic'
+  | 'underline'
+  | 'strikethrough'
+  | 'subscript'
+  | 'superscript'
+  | 'anchor'
+  | 'image'
+  | 'quote'
+  | 'pre'
+  | 'orderedlist'
+  | 'unorderedlist'
+  | 'indent'
+  | 'outdent'
+  | 'justifyLeft'
+  | 'justifyCenter'
+  | 'justifyRight'
+  | 'justifyFull'
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'h5'
+  | 'h6'
+  | 'removeFormat'
+  | 'html';
+```

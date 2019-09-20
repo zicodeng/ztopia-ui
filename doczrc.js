@@ -53,6 +53,7 @@ export default {
             path.resolve(__dirname, './node_modules/react-datepicker'),
             path.resolve(__dirname, './node_modules/react-big-calendar'),
             path.resolve(__dirname, './node_modules/mapbox-gl'),
+            path.resolve(__dirname, './node_modules/medium-editor'),
           ],
           use: [
             isDev
