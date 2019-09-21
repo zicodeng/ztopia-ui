@@ -16,7 +16,7 @@ export default {
   theme: 'docz-theme-ztopia',
   notUseSpecifiers: true,
   typescript: true,
-  codeSandbox: false,
+  codeSandbox: true,
   htmlContext: {
     head: {
       raw: [

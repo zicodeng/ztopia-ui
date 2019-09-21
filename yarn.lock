@@ -4233,10 +4233,10 @@ docz-core@^1.2.0:
     ws "^7.0.0"
     yargs "^13.2.2"
 
-docz-theme-ztopia@^0.0.27:
-  version "0.0.27"
-  resolved "https://registry.yarnpkg.com/docz-theme-ztopia/-/docz-theme-ztopia-0.0.27.tgz#c11b642bf3a9291760df14b5f90a5c9c3e80ef3b"
-  integrity sha512-jRpesdy1eoFjpgAiEIDys5MavKTt1GR91ObyvoAE04yQ/RI6FoCvlOFvea1xxn+oRmys6LlYr8plmbzJx3DU+A==
+docz-theme-ztopia@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/docz-theme-ztopia/-/docz-theme-ztopia-0.1.1.tgz#b42ec0baa0aa9b9cb224a342c4f84f9bdee02f1d"
+  integrity sha512-Sx4FnF0uveWxBHBrmIlPRFFYjQu1TVBcCSgYqSnX05cfNQCgt14eaLaLqeVGbVDTrG68nTW39+oX2BbjN3Cw2Q==
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^1.2.19"
     "@fortawesome/free-regular-svg-icons" "^5.9.0"
