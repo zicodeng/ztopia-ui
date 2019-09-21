@@ -35,6 +35,7 @@ export interface SelectProps {
 
 export const Select: FC<SelectProps> = memo(
   ({
+    isMulti,
     maxMenuHeight,
     label,
     className,
@@ -43,10 +44,15 @@ export const Select: FC<SelectProps> = memo(
     onChange,
     ...restProps
   }) => (
-    <div className={classNames(className, 'ztopia-select')}>
+    <div
+      className={classNames(className, 'ztopia-select', {
+        'is-multi': isMulti,
+      })}
+    >
       {label && <label className="ztopia-select__label">{label}</label>}
       <ReactSelect
         {...restProps}
+        isMulti={isMulti}
         className="ztopia-select__container"
         classNamePrefix="select"
         value={value}
