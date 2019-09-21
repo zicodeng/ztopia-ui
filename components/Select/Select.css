@@ -1,5 +1,9 @@
 .ztopia-select {
-  height: auto;
+  height: 40px;
+
+  &.is-multi {
+    height: auto;
+  }
 
   &__label {
     display: block;
@@ -10,18 +14,17 @@
   &__container {
     margin-top: -4px;
 
-    &.is-multi {
-      margin-top: -2px;
-    }
-
     .select {
       &__control {
         position: relative;
+        height: 30px;
+        min-height: 0;
         background-color: transparent;
         border: 0;
         border-bottom: 1px solid $white-dark;
         border-radius: 0;
         box-shadow: none;
+        cursor: pointer;
 
         &::before,
         &::after {
@@ -63,6 +66,7 @@
       }
 
       &__indicator {
+        padding: 0 $spacing-xs;
         color: $white-dark;
         cursor: pointer;
       }
@@ -107,10 +111,12 @@
       }
 
       &__placeholder {
+        margin-left: 0;
         color: $white-dark;
       }
 
       &__input {
+        margin-left: -2px;
         color: $black-dark;
       }
 
@@ -138,6 +144,31 @@
         &:hover {
           color: $color-danger;
           background-color: $red-light;
+        }
+      }
+    }
+
+    &.is-multi {
+      margin-top: -2px;
+
+      .select {
+        &__control {
+          height: auto;
+          min-height: 38px;
+        }
+
+        &__value-container--has-value {
+          .select__input {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+
+    &.is-searchable {
+      .select {
+        &__control {
+          cursor: text;
         }
       }
     }
