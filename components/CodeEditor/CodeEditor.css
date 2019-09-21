@@ -1,0 +1,37 @@
+.ztopia-code-editor {
+  position: relative;
+  flex: 1;
+  line-height: 1.3rem;
+
+  pre {
+    font-size: 85%;
+    font-family: 'Source Code Pro, Menlo, monospace';
+  }
+}
+
+.CodeMirror {
+  max-width: 100%;
+  height: auto;
+}
+
+.CodeMirror-scroll {
+  max-height: 500px;
+  overflow: scroll;
+}
+
+.CodeMirror-gutters {
+  left: 2px;
+}
+
+.CodeMirror-lines {
+  box-sizing: content-box;
+  padding: 10px 0;
+}
+
+.CodeMirror-line {
+  padding: 0 10px;
+}
+
+.CodeMirror-linenumber {
+  padding: 0 8px;
+}

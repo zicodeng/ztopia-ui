@@ -1,0 +1,38 @@
+---
+name: CodeEditor
+menu: Components
+route: /components/code-editor
+---
+
+import { Props, Playground } from 'docz';
+
+import { CodeEditor } from './';
+import { CodeEditorDemo } from './CodeEditorDemo';
+
+# CodeEditor
+
+Dependency: [react-codemirror2](https://github.com/scniro/react-codemirror2)
+
+## Demo
+
+### Basic Usage
+
+<Playground>
+  <CodeEditorDemo>
+    {({ value, onChange }) => <CodeEditor value={value} onChange={onChange} />}
+  </CodeEditorDemo>
+</Playground>
+
+### Readonly
+
+<Playground>
+  <CodeEditorDemo>
+    {({ value, onChange }) => (
+      <CodeEditor isReadonly value={value} onChange={onChange} />
+    )}
+  </CodeEditorDemo>
+</Playground>
+
+## API
+
+<Props of={CodeEditor} />
