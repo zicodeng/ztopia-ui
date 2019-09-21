@@ -157,6 +157,7 @@ export const Input = memo(
               <div
                 className={classNames('ztopia-input__bar', {
                   'has-error': Boolean(error),
+                  'is-active': isActive,
                 })}
               />
             )}
