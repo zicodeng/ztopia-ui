@@ -36,13 +36,33 @@
     z-index: 1;
     width: 100%;
     height: 1px;
-    background-color: $black-dark;
-    transform: scale(0);
-    transition: transform 0.15s cubic-bezier(0.25, 0, 0.25, 1);
-    content: '';
+    background-color: $white-dark;
+
+    &::before,
+    &::after {
+      position: absolute;
+      width: 0;
+      height: 100%;
+      background-color: $black-dark;
+      transition: $transition-fast;
+      content: '';
+    }
+
+    &:before {
+      left: 50%;
+    }
+
+    &:after {
+      right: 50%;
+    }
 
     &.has-error {
       background-color: $color-danger;
+
+      &::before,
+      &::after {
+        background-color: $color-danger;
+      }
     }
 
     &.is-active {
@@ -102,7 +122,12 @@
     }
 
     &--material {
-      border-bottom: 1px solid $white-dark;
+      &:focus + .ztopia-input__bar {
+        &::before,
+        &::after {
+          width: 50%;
+        }
+      }
 
       &:disabled + .ztopia-input__bar {
         cursor: not-allowed;
