@@ -11,6 +11,10 @@ export interface ModalProps {
    * <@default=`false`>
    */
   isOpen?: boolean;
+  /**
+   * <@default=`false`>
+   */
+  isCloseIconShown?: boolean;
   className?: string;
   /**
    * <@default=`'medium'`>
@@ -23,7 +27,7 @@ export interface ModalProps {
 }
 
 export const Modal: FC<ModalProps> = memo(
-  ({ isOpen, className, size, onRequestClose, children }) => (
+  ({ isOpen, isCloseIconShown, className, size, onRequestClose, children }) => (
     <ReactModal
       ariaHideApp={false}
       isOpen={isOpen}
@@ -42,15 +46,18 @@ export const Modal: FC<ModalProps> = memo(
       onRequestClose={onRequestClose}
     >
       {children}
-      <Times
-        className="ztopia-modal__close-indicator"
-        onClick={onRequestClose}
-      />
+      {isCloseIconShown && (
+        <Times
+          className="ztopia-modal__close-indicator"
+          onClick={onRequestClose}
+        />
+      )}
     </ReactModal>
   ),
 );
 
 Modal.defaultProps = {
   isOpen: false,
+  isCloseIconShown: false,
   size: 'medium',
 };
