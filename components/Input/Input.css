@@ -48,11 +48,11 @@
       content: '';
     }
 
-    &:before {
+    &::before {
       left: 50%;
     }
 
-    &:after {
+    &::after {
       right: 50%;
     }
 

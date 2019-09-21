@@ -10,22 +10,40 @@
   &__container {
     .select {
       &__control {
+        position: relative;
         background-color: transparent;
         border: 0;
         border-bottom: 1px solid $white-dark;
         border-radius: 0;
         box-shadow: none;
-        transition: $transition-fast;
+
+        &::before,
+        &::after {
+          position: absolute;
+          bottom: -1px;
+          width: 0;
+          height: 1px;
+          background-color: $black-dark;
+          transition: $transition-fast;
+          content: '';
+        }
+
+        &::before {
+          left: 50%;
+        }
+
+        &::after {
+          right: 50%;
+        }
 
         &:hover {
-          border-color: $black-light;
+          border-color: $white-dark;
         }
 
         &--is-focused {
-          border-color: $black-dark;
-
-          &:hover {
-            border-color: $black-dark;
+          &::before,
+          &::after {
+            width: 50%;
           }
         }
       }
