@@ -37,9 +37,9 @@ export const options = [
 
 export const SelectDemo = memo(({ children }) => {
   const [value, setValue] = useState(null);
-  const onChange = (value, actionMeta) => {
-    console.log({ value, actionMeta });
-    setValue(value);
+  const onChange = (newValue, actionMeta) => {
+    console.log({ newValue, actionMeta });
+    setValue(newValue);
   };
   return children({ value, onChange });
 });

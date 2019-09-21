@@ -33,7 +33,7 @@ export interface RatingProps {
    * <@default=`'medium'`>
    */
   size?: 'small' | 'medium' | 'large';
-  onChange?: (value: number) => void;
+  onChange?: (newValue: number) => void;
 }
 
 export const Rating: FC<RatingProps> = memo(

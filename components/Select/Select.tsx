@@ -30,7 +30,7 @@ export interface SelectProps {
   defaultValue?: SelectValue;
   value?: SelectValue;
   options?: SelectOption[];
-  onChange?: (value: SelectValue, actionMeta: ActionMeta) => void;
+  onChange?: (newValue: SelectValue, actionMeta: ActionMeta) => void;
 }
 
 export const Select: FC<SelectProps> = memo(
