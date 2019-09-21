@@ -1,5 +1,5 @@
 .ztopia-select {
-  height: 50px;
+  height: auto;
 
   &__label {
     display: block;
@@ -8,6 +8,12 @@
   }
 
   &__container {
+    margin-top: -4px;
+
+    &.is-multi {
+      margin-top: -2px;
+    }
+
     .select {
       &__control {
         position: relative;
@@ -50,16 +56,6 @@
 
       &__value-container {
         padding: 2px 0;
-
-        > div {
-          margin: 0;
-        }
-
-        &--has-value {
-          > div {
-            margin: 2px;
-          }
-        }
       }
 
       &__indicator-separator {
@@ -124,6 +120,7 @@
       }
 
       &__multi-value {
+        margin: 2px;
         overflow: hidden;
         background-color: $black-dark;
       }

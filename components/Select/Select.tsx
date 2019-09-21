@@ -44,16 +44,14 @@ export const Select: FC<SelectProps> = memo(
     onChange,
     ...restProps
   }) => (
-    <div
-      className={classNames(className, 'ztopia-select', {
-        'is-multi': isMulti,
-      })}
-    >
+    <div className={classNames(className, 'ztopia-select')}>
       {label && <label className="ztopia-select__label">{label}</label>}
       <ReactSelect
         {...restProps}
         isMulti={isMulti}
-        className="ztopia-select__container"
+        className={classNames('ztopia-select__container', {
+          'is-multi': isMulti,
+        })}
         classNamePrefix="select"
         value={value}
         options={options}
