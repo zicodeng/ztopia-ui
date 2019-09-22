@@ -84,6 +84,7 @@
       }
 
       &__menu {
+        z-index: 999;
         margin-top: 0;
         background-color: $white-light;
         border: 1px solid $black-dark;
