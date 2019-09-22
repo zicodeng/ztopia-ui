@@ -13,6 +13,7 @@
 }
 
 .ztopia-placeholder {
+  cursor: wait;
   animation: fading 1.4s infinite;
 
   &--circle {
