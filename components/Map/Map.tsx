@@ -1,5 +1,6 @@
 import DeckGL from '@deck.gl/react';
-import React, { FC } from 'react';
+import { FlyToInterpolator } from '@deck.gl/core';
+import React, { FC, useState, useEffect, useCallback, memo } from 'react';
 import { StaticMap } from 'react-map-gl';
 
 // The current mapbox-gl release requires its stylesheet be included at all times.
@@ -45,32 +46,59 @@ export interface MapProps {
   /**
    * <@default=`{ longitude: 0, latitude: 30, zoom: 1, pitch: 0, bearing: 0 }`>
    */
-  initialViewState: ViewState;
-  layers: any[];
+  viewState?: ViewState;
+  layers?: any[];
 }
 
-export const Map: FC<MapProps> = ({
-  isControllerEnabled,
-  width,
-  height,
-  mapStyle,
-  initialViewState,
-  layers,
-}) => (
-  <DeckGL
-    controller={isControllerEnabled}
-    initialViewState={initialViewState}
-    layers={layers}
-  >
-    <StaticMap
-      reuseMap
-      preventStyleDiffing
-      width={width!}
-      height={height!}
-      mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
-      mapStyle={`mapbox://styles/mapbox/${mapStyle}-v9`}
-    />
-  </DeckGL>
+const VIEW_STATE_TRANSITION = {
+  transitionDuration: 2500,
+  transitionInterpolator: new FlyToInterpolator(),
+};
+
+export const Map: FC<MapProps> = memo(
+  ({
+    isControllerEnabled,
+    width,
+    height,
+    mapStyle,
+    viewState: initialViewState,
+    layers,
+  }) => {
+    const [viewState, setViewState] = useState({
+      ...initialViewState,
+      ...VIEW_STATE_TRANSITION,
+    });
+
+    useEffect(() => {
+      setViewState({
+        ...viewState,
+        ...initialViewState,
+        ...VIEW_STATE_TRANSITION,
+      });
+    }, [initialViewState]);
+
+    const handleViewStateChange = useCallback(({ viewState }) => {
+      setViewState(viewState);
+    }, []);
+
+    return (
+      <DeckGL
+        controller={isControllerEnabled}
+        viewState={viewState}
+        onViewStateChange={handleViewStateChange}
+        layers={layers}
+      >
+        <StaticMap
+          reuseMap
+          preventStyleDiffing
+          width={width!}
+          height={height!}
+          mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
+          mapStyle={`mapbox://styles/mapbox/${mapStyle}-v9`}
+        />
+      </DeckGL>
+    );
+  },
 );
 
 Map.defaultProps = {
@@ -78,7 +106,7 @@ Map.defaultProps = {
   width: '100%',
   height: '100%',
   mapStyle: 'dark',
-  initialViewState: {
+  viewState: {
     longitude: 0,
     latitude: 30,
     zoom: 1,

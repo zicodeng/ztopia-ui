@@ -8,12 +8,15 @@ import { Props, Playground } from 'docz';
 import { Container } from 'docz-theme-ztopia/helpers';
 import faker from 'faker';
 
+import { Button } from '../Button';
+
 import {
   Map,
   createArcLayer,
   createIconLayer,
   createScatterplotLayer,
 } from './';
+import { ViewStateTransitionDemo } from './MapDemo';
 
 # Map
 
@@ -128,6 +131,34 @@ Dependencies: [deck.gl](https://github.com/uber/deck.gl) and [react-map-gl](http
         }),
       ]}
     />
+  </Container>
+</Playground>
+
+### View State Transition (Fly to Effect)
+
+Read more how it works here: https://github.com/uber/deck.gl/blob/master/docs/api-reference/view-state-transitions.md
+
+<Playground>
+  <Container style={{ height: 600 }}>
+    <ViewStateTransitionDemo>
+      {({ viewState, updateViewState }) => (
+        <>
+          <Button
+            onClick={updateViewState}
+            style={{
+              backgroundColor: 'blue',
+              position: 'absolute',
+              top: 10,
+              right: 10,
+              zIndex: 1,
+            }}
+          >
+            Update View State
+          </Button>
+          <Map viewState={viewState} />
+        </>
+      )}
+    </ViewStateTransitionDemo>
   </Container>
 </Playground>
 
