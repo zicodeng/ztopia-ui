@@ -1,4 +1,4 @@
-import { ArcLayer, IconLayer } from '@deck.gl/layers';
+import { ArcLayer, IconLayer, ScatterplotLayer } from '@deck.gl/layers';
 
 export type RGB = [number, number, number];
 
@@ -75,3 +75,35 @@ export interface Icon {
   id?: string;
 }
 /*=====  End of Icon Layer  ======*/
+
+/*=========================================
+=            Scatterplot Layer            =
+=========================================*/
+export const createScatterplotLayer = (props: ScatterplotLayerProps) =>
+  new ScatterplotLayer(props);
+
+export interface ScatterplotLayerProps extends LayerProps {
+  stroked?: boolean;
+  filled?: boolean;
+  /**
+   * When zooming in and out, meter sizes scale with the base map, and pixel sizes remain the same on screen
+   */
+  lineWidthUnits?: 'meters' | 'pixels';
+  /**
+   * A global line width multiplier for all points
+   */
+  lineWidthScale?: number;
+  lineWidthMinPixels?: number;
+  lineWidthMaxPixels?: number;
+  /**
+   * A global radius multiplier for all points
+   */
+  radiusScale?: number;
+  radiusMinPixels?: number;
+  radiusMaxPixels?: number;
+  getPosition?: (datum: any) => Coordinate;
+  getRadius?: number | ((datum: any) => RGBA);
+  getFillColor?: RGBA | ((datum: any) => RGBA);
+  getLineColor?: RGBA | ((datum: any) => RGBA);
+}
+/*=====  End of Scatterplot Layer  ======*/

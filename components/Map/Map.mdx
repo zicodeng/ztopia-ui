@@ -8,7 +8,12 @@ import { Props, Playground } from 'docz';
 import { Container } from 'docz-theme-ztopia/helpers';
 import faker from 'faker';
 
-import { Map, createArcLayer, createIconLayer } from './';
+import {
+  Map,
+  createArcLayer,
+  createIconLayer,
+  createScatterplotLayer,
+} from './';
 
 # Map
 
@@ -51,7 +56,7 @@ Dependencies: [deck.gl](https://github.com/uber/deck.gl) and [react-map-gl](http
           getSourceColor: datum => datum.source.color,
           getTargetColor: datum => datum.target.color,
           onHover: hoverInfo => {
-            console.log('Map', 'ArcLayer', { hoverInfo });
+            console.log('Map', 'Arc Layer', { hoverInfo });
           },
         }),
       ]}
@@ -85,7 +90,40 @@ Dependencies: [deck.gl](https://github.com/uber/deck.gl) and [react-map-gl](http
           getSize: datum => 5,
           getPosition: datum => datum.coordinates,
           onHover: hoverInfo => {
-            console.log('Map', 'IconLayer', { hoverInfo });
+            console.log('Map', 'Icon Layer', { hoverInfo });
+          },
+        }),
+      ]}
+    />
+  </Container>
+</Playground>
+
+### Scatterplot Layer
+
+<Playground>
+  <Container style={{ height: 600 }}>
+    <Map
+      layers={[
+        createScatterplotLayer({
+          pickable: true,
+          autoHighlight: true,
+          stroked: true,
+          filled: true,
+          id: 'scatterplot-layer',
+          data: Array.from({ length: 20 }).map(() => ({
+            radius: Math.floor(Math.random() * 100),
+            fillColor: Array.from({ length: 3 }).map(() => Math.random() * 255),
+            coordinates: [Math.random() * 360 - 180, Math.random() * 180 - 90],
+          })),
+          lineWidthMinPixels: 1,
+          lineWidthScale: 100,
+          radiusScale: 10000,
+          getPosition: datum => datum.coordinates,
+          getRadius: datum => datum.radius,
+          getFillColor: datum => datum.fillColor,
+          getLineColor: datum => [255, 255, 0],
+          onHover: hoverInfo => {
+            console.log('Map', 'Scatterplot Layer', { hoverInfo });
           },
         }),
       ]}
@@ -99,7 +137,7 @@ Dependencies: [deck.gl](https://github.com/uber/deck.gl) and [react-map-gl](http
 
 <Props of={Map} />
 
-### ArcLayer
+### Arc Layer
 
 ```ts
 const createArcLayer = (props: ArcLayerProps) => new ArcLayer(props);
@@ -113,7 +151,7 @@ interface ArcLayerProps extends LayerProps {
 }
 ```
 
-### IconLayer
+### Icon Layer
 
 ```ts
 const createIconLayer = (props: IconLayerProps) => new IconLayer(props);
@@ -139,5 +177,37 @@ interface Icon {
   anchorY?: number;
   url: string;
   id?: string;
+}
+```
+
+### Scatterplot Layer
+
+```ts
+export const createScatterplotLayer = (props: ScatterplotLayerProps) =>
+  new ScatterplotLayer(props);
+
+export interface ScatterplotLayerProps extends LayerProps {
+  stroked?: boolean;
+  filled?: boolean;
+  /**
+   * When zooming in and out, meter sizes scale with the base map, and pixel sizes remain the same on screen
+   */
+  lineWidthUnits?: 'meters' | 'pixels';
+  /**
+   * A global line width multiplier for all points
+   */
+  lineWidthScale?: number;
+  lineWidthMinPixels?: number;
+  lineWidthMaxPixels?: number;
+  /**
+   * A global radius multiplier for all points
+   */
+  radiusScale?: number;
+  radiusMinPixels?: number;
+  radiusMaxPixels?: number;
+  getPosition?: (datum: any) => Coordinate;
+  getRadius?: number | ((datum: any) => RGBA);
+  getFillColor?: RGBA | ((datum: any) => RGBA);
+  getLineColor?: RGBA | ((datum: any) => RGBA);
 }
 ```
