@@ -39,7 +39,7 @@ export interface MapProps {
    */
   height?: number | string;
   /**
-   * <@default=`'streets'`>
+   * <@default=`'dark'`>
    */
   mapStyle?: 'light' | 'dark' | 'streets' | 'outdoors' | 'satellite';
   /**
@@ -77,7 +77,7 @@ Map.defaultProps = {
   isControllerEnabled: true,
   width: '100%',
   height: '100%',
-  mapStyle: 'streets',
+  mapStyle: 'dark',
   initialViewState: {
     longitude: 0,
     latitude: 30,
