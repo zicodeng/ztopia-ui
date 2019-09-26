@@ -30,7 +30,7 @@ export interface LayerProps {
   id: string;
   highlightColor?: RGBA;
   data: any[];
-  onHover: (hoverInfo: HoverInfo) => void;
+  onHover?: (hoverInfo: HoverInfo) => void;
 }
 
 /*=================================
@@ -102,7 +102,7 @@ export interface ScatterplotLayerProps extends LayerProps {
   radiusMinPixels?: number;
   radiusMaxPixels?: number;
   getPosition?: (datum: any) => Coordinate;
-  getRadius?: number | ((datum: any) => RGBA);
+  getRadius?: number | ((datum: any) => number);
   getFillColor?: RGBA | ((datum: any) => RGBA);
   getLineColor?: RGBA | ((datum: any) => RGBA);
 }
