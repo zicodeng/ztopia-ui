@@ -172,7 +172,7 @@ export const Image: FC<ImageProps> = memo(
       <LazyLoad
         once
         height={height}
-        offset={200}
+        offset={400}
         placeholder={memoizedPlaceholder}
       >
         {image}
