@@ -7,8 +7,9 @@ import React, {
   memo,
   ReactNode,
   useMemo,
+  useEffect,
 } from 'react';
-import LazyLoad from 'react-lazyload';
+import LazyLoad, { forceCheck } from 'react-lazyload';
 import ProgressiveImage from 'react-progressive-image';
 
 import { Placeholder, PlaceholderProps } from '../Placeholder';
@@ -68,6 +69,10 @@ export const Image: FC<ImageProps> = memo(
         'Image height must be a number with fixed value in background mode',
       );
     }
+
+    useEffect(() => {
+      forceCheck();
+    }, []);
 
     const mask = maskStyle && (
       <div className="ztopia-image__mask" style={maskStyle} />
