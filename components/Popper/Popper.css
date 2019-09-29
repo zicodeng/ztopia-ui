@@ -5,28 +5,36 @@
   opacity: 1;
   transition: $transition-fast;
 
-  &--top .rc-tooltip-arrow,
-  &--topLeft .rc-tooltip-arrow,
-  &--topRight .rc-tooltip-arrow {
-    border-top-color: $black-dark;
+  &--top,
+  &--topLeft,
+  &--topRight {
+    .rc-tooltip-arrow {
+      border-top-color: $black-dark;
+    }
   }
 
-  &--right .rc-tooltip-arrow,
-  &--rightTop .rc-tooltip-arrow,
-  &--rightBottom .rc-tooltip-arrow {
-    border-right-color: $black-dark;
+  &--right,
+  &--rightTop,
+  &--rightBottom {
+    .rc-tooltip-arrow {
+      border-right-color: $black-dark;
+    }
   }
 
-  &--bottom .rc-tooltip-arrow,
-  &--bottomLeft .rc-tooltip-arrow,
-  &--bottomRight .rc-tooltip-arrow {
-    border-bottom-color: $black-dark;
+  &--bottom,
+  &--bottomLeft,
+  &--bottomRight {
+    .rc-tooltip-arrow {
+      border-bottom-color: $black-dark;
+    }
   }
 
-  &--left .rc-tooltip-arrow,
-  &--leftTop .rc-tooltip-arrow,
-  &--leftBottom .rc-tooltip-arrow {
-    border-left-color: $black-dark;
+  &--left,
+  &--leftTop,
+  &--leftBottom {
+    .rc-tooltip-arrow {
+      border-left-color: $black-dark;
+    }
   }
 
   .rc-tooltip-inner {
