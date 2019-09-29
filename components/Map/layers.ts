@@ -9,7 +9,7 @@ export type RGBA = [number, number, number, number];
  */
 export type Coordinate = [number, number];
 
-export type HoverInfo = {
+export type Info = {
   x: number;
   y: number;
   object: any;
@@ -30,7 +30,8 @@ export interface LayerProps {
   id: string;
   highlightColor?: RGBA;
   data: any[];
-  onHover?: (hoverInfo: HoverInfo) => void;
+  onHover?: (info: Info) => void;
+  onClick?: (info: Info) => void;
 }
 
 /*=================================

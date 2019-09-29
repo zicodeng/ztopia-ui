@@ -15,7 +15,7 @@ export interface ViewState {
   zoom: number;
   /**
    * The bearing is the compass direction that is "up";
-   * for example,a bearing of 90° orients the map so that east is up
+   * for example, a bearing of 90° orients the map so that east is up
    */
   bearing?: number;
   /**
