@@ -31,18 +31,13 @@ export const Modal: FC<ModalProps> = memo(
     <ReactModal
       ariaHideApp={false}
       isOpen={isOpen}
-      bodyOpenClassName="ztopia-modal__body--open"
+      closeTimeoutMS={200}
       portalClassName={classNames(className, 'ztopia-modal')}
       className={classNames(
         'ztopia-modal__content',
         `ztopia-modal__content--${size}`,
-        {
-          'ztopia-modal__content--open': isOpen,
-        },
       )}
-      overlayClassName={classNames('ztopia-modal__overlay', {
-        'ztopia-modal__overlay--open': isOpen,
-      })}
+      overlayClassName={classNames('ztopia-modal__overlay')}
       onRequestClose={onRequestClose}
     >
       {children}

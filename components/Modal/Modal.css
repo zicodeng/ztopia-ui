@@ -18,6 +18,10 @@
     opacity: 1;
   }
 
+  .ReactModal__Overlay--before-close {
+    opacity: 0;
+  }
+
   &__content {
     position: relative;
     padding: 30px;
@@ -44,6 +48,11 @@
   .ReactModal__Content--after-open {
     transform: translateY(0);
     opacity: 1;
+  }
+
+  .ReactModal__Content--before-close {
+    transform: translateY(100px);
+    opacity: 0;
   }
 
   &__close-indicator {

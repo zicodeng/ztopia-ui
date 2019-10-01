@@ -1,4 +1,5 @@
 import React, { memo, useState } from 'react';
+import faker from 'faker';
 
 export const ModalDemo = memo(({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,3 +26,5 @@ export const Trigger = props => (
     {...props}
   />
 );
+
+export const LOREM = faker.lorem.paragraphs();

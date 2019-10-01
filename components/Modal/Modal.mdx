@@ -6,10 +6,9 @@ route: /components/modal
 
 import { Props, Playground } from 'docz';
 import { Container } from 'docz-theme-ztopia/helpers';
-import faker from 'faker';
 
 import { Modal } from './';
-import { ModalDemo, Trigger } from './ModalDemo.jsx';
+import { ModalDemo, Trigger, LOREM } from './ModalDemo.jsx';
 
 # Modal
 
@@ -27,7 +26,7 @@ Dependency: [react-modal](https://github.com/reactjs/react-modal)
           <Trigger onClick={openModal}>Small</Trigger>
           <Modal size="small" isOpen={isOpen} onRequestClose={closeModal}>
             <h1>Hello, World!</h1>
-            <p>{faker.lorem.paragraphs()}</p>
+            <p>{LOREM}</p>
           </Modal>
         </>
       )}
@@ -38,7 +37,7 @@ Dependency: [react-modal](https://github.com/reactjs/react-modal)
           <Trigger onClick={openModal}>Medium (Default)</Trigger>
           <Modal size="medium" isOpen={isOpen} onRequestClose={closeModal}>
             <h1>Hello, World!</h1>
-            <p>{faker.lorem.paragraphs()}</p>
+            <p>{LOREM}</p>
           </Modal>
         </>
       )}
@@ -49,7 +48,7 @@ Dependency: [react-modal](https://github.com/reactjs/react-modal)
           <Trigger onClick={openModal}>Large</Trigger>
           <Modal size="large" isOpen={isOpen} onRequestClose={closeModal}>
             <h1>Hello, World!</h1>
-            <p>{faker.lorem.paragraphs()}</p>
+            <p>{LOREM}</p>
           </Modal>
         </>
       )}
@@ -66,7 +65,7 @@ Dependency: [react-modal](https://github.com/reactjs/react-modal)
         <Trigger onClick={openModal}>Show Close Icon</Trigger>
         <Modal isCloseIconShown isOpen={isOpen} onRequestClose={closeModal}>
           <h1>Hello, World!</h1>
-          <p>{faker.lorem.paragraphs()}</p>
+          <p>{LOREM}</p>
         </Modal>
       </>
     )}
