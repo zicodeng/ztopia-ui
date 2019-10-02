@@ -12,6 +12,8 @@
 
   &__panel-header {
     position: relative;
+    display: flex;
+    align-items: center;
     padding: $spacing-s $spacing-m;
     color: $white-light;
     background-color: $black-dark;
