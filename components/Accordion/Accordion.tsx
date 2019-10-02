@@ -24,11 +24,10 @@ export interface AccordionProps {
   isMulti?: boolean;
   className?: string;
   defaultExpandedPanelIds?: string[];
-  children: AccordionPanel | AccordionPanel[];
 }
 
 export const Accordion: FC<AccordionProps> = memo(
-  ({ isMulti, className, defaultExpandedPanelIds, children }) => {
+  ({ isMulti = false, className, defaultExpandedPanelIds, children }) => {
     const [expandedPanelIds, setExpandedPanelIds] = useState<string[]>(
       defaultExpandedPanelIds || [],
     );
@@ -62,29 +61,24 @@ export const Accordion: FC<AccordionProps> = memo(
   },
 );
 
-Accordion.defaultProps = {
-  isMulti: false,
-};
-
 export interface AccordionPanel {
   /**
-   * <@internal>
-   *
    * Passed by Accordion
+   *
+   * <@internal>
    */
   isExpanded?: boolean;
   id: string;
   className?: string;
   /**
-   * <@internal>
-   *
    * Passed by Accordion
+   *
+   * <@internal>
    */
   onClickPanelHeader?: (
     e: React.MouseEvent<HTMLElement, MouseEvent>,
     id: string,
   ) => void;
-  children: AccordionPanelHeader | AccordionPanelContent;
 }
 
 export const AccordionPanel: FC<AccordionPanel> = ({
@@ -126,13 +120,13 @@ export interface AccordionPanelHeader {
    *
    * <@internal>
    */
-  isExpanded: boolean;
+  isExpanded?: boolean;
   /**
    * Passed by AccordionPanel
    *
    * <@internal>
    */
-  id: string;
+  id?: string;
   className?: string;
   /**
    * Passed by AccordionPanel
@@ -156,7 +150,7 @@ export const AccordionPanelHeader: FC<AccordionPanelHeader> = ({
     className={classNames(className, 'ztopia-accordion__panel-header', {
       'is-expanded': isExpanded,
     })}
-    onClick={e => onClickPanelHeader!(e, id)}
+    onClick={e => onClickPanelHeader!(e, id!)}
   >
     {children}
     <ChevronLeft
@@ -174,7 +168,7 @@ export interface AccordionPanelContent {
    *
    * <@internal>
    */
-  isExpanded: boolean;
+  isExpanded?: boolean;
   className?: string;
 }
 
