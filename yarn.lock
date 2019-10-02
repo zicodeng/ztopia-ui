@@ -9581,10 +9581,10 @@ rc-animate@2.x:
     rc-util "^4.8.0"
     react-lifecycles-compat "^3.0.4"
 
-rc-drawer@^2.0.3:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/rc-drawer/-/rc-drawer-2.0.6.tgz#b4a3beab7cf8aa80d3baaa52b3e08ac93bd32327"
-  integrity sha512-zEeJ+XeZ1vwCb5meWy83fvXm7TNPwsSOE17Y03AbuSxLShE2ROvXPE0U0/IKMT/MU0kkMUQ+eE4uiQ2XfOOAYQ==
+rc-drawer@^2.0.9:
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/rc-drawer/-/rc-drawer-2.0.9.tgz#d1d07b74416b50d22082b5886ec061be2b2b15fc"
+  integrity sha512-7qwEND3TLvJeyuUvZfMDkL2pHsR/XHX5HvoaBlIH9mTcFWBmMNrvYGDuGHgGsdNKZZgIBwlkvl5vhckydTUc9Q==
   dependencies:
     babel-runtime "6.x"
     classnames "^2.2.5"

@@ -22,7 +22,7 @@ export interface DrawerProps {
    */
   isContentDestoryDelayed?: boolean;
   /**
-   * <@default=`'30%'`>
+   * <@default=`400`>
    */
   width?: number | string;
   /**
@@ -56,7 +56,7 @@ export const Drawer: FC<DrawerProps> = memo<DrawerProps>(
     const [memoizedChildren, setMemoizedChildren] = useState<ReactNode>(null);
 
     const isVertical = placement === 'top' || placement === 'bottom';
-    const newWidth = width || (isVertical ? '100%' : '30%');
+    const newWidth = width || (isVertical ? '100%' : 400);
     const newHeight = height || (isVertical ? '30%' : '100%');
 
     // Delay destorying tmpItem so that we won't see drawer content gets destroyed immediately
