@@ -55,22 +55,29 @@ export interface PopperProps {
 
 const ARROW_SIZE = 4;
 
-export const Popper: FC<PopperProps> = memo(
+export const Popper: FC<PopperProps> = memo<PopperProps>(
   ({
-    isTransitionDisabled,
-    offsetX,
-    offsetY,
+    isTransitionDisabled = false,
+    offsetX = 0,
+    offsetY = 0,
     className,
-    placement,
+    trigger = ['hover'],
+    placement = 'top',
     children,
     ...restProps
   }) => {
-    offsetX = placement!.includes('left')
-      ? offsetX! - ARROW_SIZE
-      : offsetX! + ARROW_SIZE;
-    offsetY = placement!.includes('top')
-      ? offsetY! - ARROW_SIZE
-      : offsetY! + ARROW_SIZE;
+    if (placement.startsWith('left')) {
+      offsetX -= ARROW_SIZE;
+    }
+    if (placement.startsWith('right')) {
+      offsetX += ARROW_SIZE;
+    }
+    if (placement.startsWith('top')) {
+      offsetY -= ARROW_SIZE;
+    }
+    if (placement.startsWith('bottom')) {
+      offsetY += ARROW_SIZE;
+    }
     return (
       <Tooltip
         placement={placement}
@@ -83,6 +90,7 @@ export const Popper: FC<PopperProps> = memo(
         align={{
           offset: [offsetX, offsetY],
         }}
+        trigger={trigger}
         // @ts-ignore
         transitionName={
           isTransitionDisabled
@@ -103,11 +111,3 @@ export const Popper: FC<PopperProps> = memo(
     );
   },
 );
-
-Popper.defaultProps = {
-  isTransitionDisabled: false,
-  offsetX: 0,
-  offsetY: 0,
-  trigger: ['hover'],
-  placement: 'top',
-};
