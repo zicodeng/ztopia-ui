@@ -1,0 +1,61 @@
+---
+name: Timeline
+menu: Components
+route: /components/timeline
+---
+
+import { Props, Playground } from 'docz';
+import faker from 'faker';
+
+import { Timeline, TimelineItem } from './';
+
+# Timeline
+
+Dependency: [react-vertical-timeline](https://github.com/stephane-monnot/react-vertical-timeline)
+
+## Demo
+
+<Playground>
+  <Timeline>
+    <TimelineItem
+      date="2014"
+      icon={<i className="far fa-heart" style={{ fontSize: 25 }}></i>}
+      iconStyle={{ color: 'white', backgroundColor: 'red' }}
+      contentStyle={{ color: 'white', backgroundColor: 'red' }}
+      contentArrowStyle={{ borderRightColor: 'red' }}
+    >
+      <p>{faker.lorem.paragraph()}</p>
+      <p>{faker.lorem.paragraph(4)}</p>
+    </TimelineItem>
+    <TimelineItem
+      date="2015"
+      icon={<i className="fas fa-dollar-sign" style={{ fontSize: 25 }}></i>}
+      iconStyle={{ color: 'white', backgroundColor: 'green' }}
+      contentStyle={{ color: 'white', backgroundColor: 'green' }}
+      contentArrowStyle={{ borderRightColor: 'green' }}
+    >
+      <p>{faker.lorem.paragraph(2)}</p>
+      <p>{faker.lorem.paragraph(3)}</p>
+    </TimelineItem>
+    <TimelineItem
+      date="2016"
+      icon={<i className="far fa-star" style={{ fontSize: 25 }}></i>}
+      iconStyle={{ color: 'white', backgroundColor: 'yellow' }}
+      contentStyle={{ color: 'white', backgroundColor: 'yellow' }}
+      contentArrowStyle={{ borderRightColor: 'yellow' }}
+    >
+      <p>{faker.lorem.paragraph(2)}</p>
+      <p>{faker.lorem.paragraph(3)}</p>
+    </TimelineItem>
+  </Timeline>
+</Playground>
+
+## API
+
+### Timeline
+
+<Props of={Timeline} />
+
+### TimelineItem
+
+<Props of={TimelineItem} />

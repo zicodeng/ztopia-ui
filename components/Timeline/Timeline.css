@@ -1,0 +1,18 @@
+.ztopia-timeline {
+  &::before {
+    background-color: $black-dark;
+  }
+
+  &__item {
+    .vertical-timeline-element-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: none;
+    }
+
+    .vertical-timeline-element-content {
+      box-shadow: none;
+    }
+  }
+}

@@ -55,6 +55,10 @@ export default {
             path.resolve(__dirname, './node_modules/mapbox-gl'),
             path.resolve(__dirname, './node_modules/medium-editor'),
             path.resolve(__dirname, './node_modules/codemirror'),
+            path.resolve(
+              __dirname,
+              './node_modules/react-vertical-timeline-component',
+            ),
           ],
           use: [
             isDev
