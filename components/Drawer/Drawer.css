@@ -1,3 +1,14 @@
 .ztopia-drawer {
   outline: none;
+
+  > .drawer-mask {
+    cursor: pointer;
+  }
+
+  &.invisible-mask {
+    > .drawer-mask {
+      opacity: 0 !important;
+      animation: none !important;
+    }
+  }
 }

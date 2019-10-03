@@ -119,6 +119,42 @@ Dependency: [rc-drawer](https://github.com/react-component/drawer)
   </DrawerDemo>
 </Playground>
 
+### Hide Mask & Custom Close Handler
+
+<Playground>
+  <DrawerDemo>
+    {({ isOpen, openDrawer, closeDrawer }) => (
+      <>
+        <Button onClick={openDrawer}>Open</Button>
+        <Drawer
+          isMaskShown={false}
+          isOpen={isOpen}
+          onRequestClose={closeDrawer}
+          handler={
+            <Button
+              style={{
+                position: 'absolute',
+                top: 0,
+                zIndex: 1,
+              }}
+              onClick={closeDrawer}
+            >
+              Close Drawer
+            </Button>
+          }
+        >
+          <section style={{ padding: '20px 40px' }}>
+            <h1>Hello, World!</h1>
+            <p>{faker.lorem.paragraphs(1)}</p>
+            <p>{faker.lorem.paragraphs(5)}</p>
+            <p>{faker.lorem.paragraphs(10)}</p>
+          </section>
+        </Drawer>
+      </>
+    )}
+  </DrawerDemo>
+</Playground>
+
 ### Drawer Pushes Page
 
 <Playground>

@@ -22,6 +22,12 @@ export interface DrawerProps {
    */
   isContentDestoryDelayed?: boolean;
   /**
+   * <@default=`true`>
+   *
+   * If false, mask is completely hidden, disallowing any user interaction (users cannot close drawer via clicking mask)
+   */
+  isMaskShown?: boolean;
+  /**
    * <@default=`400`>
    */
   width?: number | string;
@@ -30,6 +36,7 @@ export interface DrawerProps {
    */
   height?: number | string;
   className?: string;
+  handler?: JSX.Element | null;
   /**
    * <@default=`right`>
    */
@@ -45,10 +52,12 @@ export const Drawer: FC<DrawerProps> = memo<DrawerProps>(
     isOpen = false,
     isPagePushable = false,
     isContentDestoryDelayed = true,
+    isMaskShown = true,
     width,
     height,
     className,
     placement = 'right',
+    handler,
     onRequestClose,
     children,
     ...restProps
@@ -83,9 +92,11 @@ export const Drawer: FC<DrawerProps> = memo<DrawerProps>(
     return (
       <BaseDrawer
         {...restProps}
-        handler={false}
+        handler={Boolean(handler) ? handler : false}
         level={isPagePushable ? undefined : null}
         open={isOpen}
+        showMask={isMaskShown}
+        maskClosable={isMaskShown}
         width={newWidth}
         height={newHeight}
         className={classNames(className, 'ztopia-drawer')}
