@@ -77,6 +77,8 @@ export const FloatingHearts: FC<FloatingHeartsProps> = ({
 
   useEffect(() => {
     let timerId: NodeJS.Timeout | null = setInterval(() => {
+      if (document.hidden) return;
+
       const invalidHeartIds = getInvalidHeartIds();
       const filteredHearts = hearts.filter(
         ({ props: { id } }) => invalidHeartIds.indexOf(id) === -1,
