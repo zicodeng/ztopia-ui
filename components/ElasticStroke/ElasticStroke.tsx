@@ -11,13 +11,13 @@ export interface ElasticStrokeProps {
 export const ElasticStroke: FC<ElasticStrokeProps> = memo(
   ({ width = '100%', height = '100%', text = 'Hello, World!' }) => (
     <svg
-      viewBox="0 -75 800 300"
+      viewBox="0 -80 800 300"
       className="ztopia-elastic-stroke"
       width={width}
       height={height}
     >
       <symbol id="text-symbol">
-        <text text-anchor="middle" x="50%" y="35%" className="text">
+        <text textAnchor="middle" x="50%" y="35%" className="text">
           {text}
         </text>
       </symbol>
