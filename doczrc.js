@@ -28,6 +28,7 @@ export default {
   menu: [
     { name: 'Docs', menu: ['Introduction', 'Getting Started', 'Contributing'] },
     { name: 'Components', menu: [] },
+    { name: 'Pens', menu: [] },
   ],
   filterComponents: files =>
     files.filter(file =>
