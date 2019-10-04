@@ -33,7 +33,6 @@ const handle = props => {
     <Popper
       key={index}
       isTransitionDisabled
-      offsetX={-4}
       offsetY={-2}
       placement="top"
       overlay={value}
