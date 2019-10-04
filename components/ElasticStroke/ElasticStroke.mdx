@@ -1,0 +1,29 @@
+---
+name: ElasticStroke
+menu: Pens
+route: /pens/elastic-stroke
+---
+
+import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+
+import { ElasticStroke } from './';
+
+# ElasticStroke
+
+## Demo
+
+<Playground>
+  <Container
+    isCentered
+    style={{
+      backgroundColor: '#082330',
+    }}
+  >
+    <ElasticStroke text="Zico Deng" />
+  </Container>
+</Playground>
+
+## API
+
+<Props of={ElasticStroke} />
