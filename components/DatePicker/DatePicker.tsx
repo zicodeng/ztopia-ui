@@ -24,13 +24,13 @@ export interface DatePickerProps {
   /**
    * <@default=`false`>
    */
-  isYearSelectEnabled?: boolean;
+  isYearSelectShown?: boolean;
   /**
    * <@default=`false`>
    *
    * If enabled, format will become a combination of `dateFormat` and `timeFormat`
    */
-  isTimeSelectEnabled?: boolean;
+  isTimeSelectShown?: boolean;
   /**
    * <@default=`30`>
    */
@@ -66,8 +66,8 @@ export interface DatePickerProps {
 }
 
 export const DatePicker: FC<DatePickerProps> = ({
-  isYearSelectEnabled,
-  isTimeSelectEnabled,
+  isYearSelectShown,
+  isTimeSelectShown,
   todayButton,
   timeFormat,
   dateFormat,
@@ -99,21 +99,21 @@ export const DatePicker: FC<DatePickerProps> = ({
   return (
     <BaseDatePicker
       {...restProps}
-      fixedHeight={isYearSelectEnabled || isTimeSelectEnabled}
+      fixedHeight={isYearSelectShown || isTimeSelectShown}
       showDisabledMonthNavigation
       disabledKeyboardNavigation
-      showTimeSelect={isTimeSelectEnabled}
+      showTimeSelect={isTimeSelectShown}
       selected={value}
       customInput={input}
       todayButton={todayButton}
       dateFormat={
-        isTimeSelectEnabled ? `${dateFormat} ${timeFormat}` : dateFormat
+        isTimeSelectShown ? `${dateFormat} ${timeFormat}` : dateFormat
       }
       popperClassName="ztopia-date-picker"
       calendarClassName="ztopia-date-picker__calendar"
       popperModifiers={{
         offset: {
-          enabled: isYearSelectEnabled,
+          enabled: isYearSelectShown,
           offset: '100px, 0px',
         },
       }}
@@ -127,7 +127,7 @@ export const DatePicker: FC<DatePickerProps> = ({
         <span className="ztopia-date-picker__day-content">{day}</span>
       )}
     >
-      {isYearSelectEnabled && (
+      {isYearSelectShown && (
         <YearSelect
           hasTodayButton={Boolean(todayButton)}
           value={year}
@@ -139,8 +139,8 @@ export const DatePicker: FC<DatePickerProps> = ({
 };
 
 DatePicker.defaultProps = {
-  isYearSelectEnabled: false,
-  isTimeSelectEnabled: false,
+  isYearSelectShown: false,
+  isTimeSelectShown: false,
   timeIntervals: 30,
   timeFormat: 'hh:mm aa',
   dateFormat: 'MM/dd/yyyy',

@@ -35,15 +35,15 @@ Dependencies: [react-datepicker](https://github.com/Hacker0x01/react-datepicker)
   </Container>
 </Playground>
 
-### Enable Year And Time Select
+### Show Year And Time Select
 
 <Playground>
   <Container style={{ height: 400, display: 'block' }}>
     <DatePickerDemo>
       {({ value, onChange }) => (
         <DatePicker
-          isYearSelectEnabled
-          isTimeSelectEnabled
+          isYearSelectShown
+          isTimeSelectShown
           input={<Input label="Birthday" variant="material" />}
           value={value}
           onChange={onChange}
@@ -60,8 +60,8 @@ Dependencies: [react-datepicker](https://github.com/Hacker0x01/react-datepicker)
     <DatePickerDemo>
       {({ value, onChange }) => (
         <DatePicker
-          isYearSelectEnabled
-          isTimeSelectEnabled
+          isYearSelectShown
+          isTimeSelectShown
           todayButton="Today"
           input={<Input label="Birthday" variant="material" />}
           value={value}
@@ -81,7 +81,7 @@ Date or time out of the range will be disabled
     <DatePickerDemo>
       {({ value, onChange }) => (
         <DatePicker
-          isTimeSelectEnabled
+          isTimeSelectShown
           minTime={setHours(setMinutes(new Date(), 0), 10)}
           maxTime={setHours(setMinutes(new Date(), 30), 20)}
           minDate={subDays(new Date(), 5)}
