@@ -80,7 +80,8 @@
     "react-toggle": "^4.0.2",
     "react-vertical-timeline-component": "^2.5.0",
     "react-visibility-sensor": "^5.1.1",
-    "recharts": "^1.7.0"
+    "recharts": "^1.7.0",
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
     "@types/moment": "^2.13.0",
@@ -93,6 +94,7 @@
     "@types/react-map-gl": "^5.0.0",
     "@types/react-select": "^3.0.0",
     "@types/react-toggle": "^4.0.2",
+    "@types/uuid": "^3.4.5",
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",
     "autoprefixer": "^9.6.1",
