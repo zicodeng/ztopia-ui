@@ -1,0 +1,43 @@
+---
+name: Typewriter
+menu: Pens
+route: /pens/typewriter
+---
+
+import { Props, Playground } from 'docz';
+import faker from 'faker';
+import Typist from 'react-typist';
+
+import { Typewriter } from './';
+
+# Typewriter
+
+Dependency: [react-typed](https://github.com/ssbeefeater/react-typed)
+
+## Demo
+
+### Basic Usage
+
+<Playground>
+  <Typewriter text={[faker.lorem.sentences(2)]} />
+</Playground>
+
+### Smart Backspace
+
+<Playground>
+  <Typewriter text={['Hello, World!', 'Hello, Zico!', 'Hello, Ztopia!']} />
+</Playground>
+
+### Type Speed & Back Speed
+
+<Playground>
+  <Typewriter
+    typeSpeed={10}
+    backSpeed={10}
+    text={[faker.lorem.paragraphs(4), faker.lorem.paragraphs(4)]}
+  />
+</Playground>
+
+## API
+
+<Props of={Typewriter} />

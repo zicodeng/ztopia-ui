@@ -78,6 +78,7 @@
     "react-stack-grid": "^0.7.1",
     "react-toastify": "^5.3.2",
     "react-toggle": "^4.0.2",
+    "react-typed": "^1.2.0",
     "react-vertical-timeline-component": "^2.5.0",
     "react-visibility-sensor": "^5.1.1",
     "recharts": "^1.7.0",
