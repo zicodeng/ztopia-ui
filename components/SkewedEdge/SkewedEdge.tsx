@@ -17,7 +17,7 @@ export interface SkewedEdgeProps {
 }
 
 export const SkewedEdge: FC<SkewedEdgeProps> = memo(
-  ({ className, direction = 'left-top-right', ...restProps }) => (
+  ({ className, direction = 'left-to-right', ...restProps }) => (
     <div
       className={classNames(
         className,
