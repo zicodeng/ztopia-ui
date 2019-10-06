@@ -1,5 +1,6 @@
 import React, { useEffect, useState, FC } from 'react';
 import uuidv4 from 'uuid/v4';
+import classNames from 'classnames';
 
 import './FloatingHearts.css';
 
@@ -68,10 +69,12 @@ export interface FloatingHeartsProps {
    * <@default=`1000`>
    */
   interval?: number;
+  className?: string;
 }
 
 export const FloatingHearts: FC<FloatingHeartsProps> = ({
   interval = 1000,
+  className,
 }) => {
   const [hearts, setHearts] = useState<JSX.Element[]>([]);
 
@@ -93,5 +96,9 @@ export const FloatingHearts: FC<FloatingHeartsProps> = ({
     };
   }, [hearts]);
 
-  return <div className="ztopia-floating-hearts">{hearts}</div>;
+  return (
+    <div className={classNames('ztopia-floating-hearts', className)}>
+      {hearts}
+    </div>
+  );
 };
