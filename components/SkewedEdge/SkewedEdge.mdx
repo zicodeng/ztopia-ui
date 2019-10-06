@@ -1,0 +1,50 @@
+---
+name: SkewedEdge
+menu: Pens
+route: /pens/skewed-edge
+---
+
+import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+
+import { SkewedEdge } from './';
+
+# SkewedEdge
+
+## Demo
+
+### Left to Right
+
+<Playground>
+  <Container gap={0} style={{ height: 600, backgroundColor: '#000000' }}>
+    <SkewedEdge direction="left-to-right" />
+  </Container>
+</Playground>
+
+### Right to Left
+
+<Playground>
+  <Container gap={0} style={{ height: 600, backgroundColor: '#000000' }}>
+    <SkewedEdge direction="right-to-left" />
+  </Container>
+</Playground>
+
+### Top to Bottom
+
+<Playground>
+  <Container gap={0} style={{ height: 600, backgroundColor: '#000000' }}>
+    <SkewedEdge direction="top-to-bottom" />
+  </Container>
+</Playground>
+
+### Bottom to Top
+
+<Playground>
+  <Container gap={0} style={{ height: 600, backgroundColor: '#000000' }}>
+    <SkewedEdge direction="bottom-to-top" />
+  </Container>
+</Playground>
+
+## API
+
+<Props of={SkewedEdge} />
