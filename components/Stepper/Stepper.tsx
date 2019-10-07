@@ -6,9 +6,9 @@ import { Checkmark } from '../Icons';
 import './Stepper.css';
 
 export interface Step {
-  indicator?: ReactNode;
   title?: string;
   desc?: string;
+  indicator?: ReactNode;
   content?: ReactNode;
 }
 
