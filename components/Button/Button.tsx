@@ -14,12 +14,17 @@ import './Button.css';
 
 export interface ButtonProps {
   /**
-   * <@default=`false`>
    * Ghost buttons are generally bordered by a very thin line,
    * while the internal section consists of plain text.
    * They most often appear as Call to Action (CTA) buttons and offer a clean look
+   *
+   * <@default=`false`>
    */
   isGhost?: boolean;
+  /**
+   * <@default=`false`>
+   */
+  isDisabled?: boolean;
   className?: string;
   /**
    * <@default=`'rect'`>
@@ -37,7 +42,16 @@ export interface ButtonProps {
 }
 
 export const Button: FC<ButtonProps> = memo(
-  ({ isGhost, className, variant, size, loader, children, ...restProps }) => {
+  ({
+    isGhost = false,
+    isDisabled = false,
+    className,
+    variant = 'rect',
+    size = 'medium',
+    loader,
+    children,
+    ...restProps
+  }) => {
     const memoizedLoader = useMemo(() => {
       if (!loader) return null;
 
@@ -60,6 +74,7 @@ export const Button: FC<ButtonProps> = memo(
 
     return (
       <button
+        disabled={isDisabled}
         className={classNames(
           className,
           'ztopia-button',
@@ -78,9 +93,3 @@ export const Button: FC<ButtonProps> = memo(
     );
   },
 );
-
-Button.defaultProps = {
-  isGhost: false,
-  variant: 'rect',
-  size: 'medium',
-};

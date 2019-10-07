@@ -2,7 +2,7 @@
   color: $white-light;
   background-color: $black-dark;
 
-  &:not(.is-loading):hover {
+  &:not(.is-loading):not(:disabled):hover {
     background-color: $black-light;
   }
 
@@ -30,7 +30,7 @@
   background-color: transparent;
   border: 0;
 
-  &:hover {
+  &:not(:disabled):hover {
     color: $black-light;
   }
 }
@@ -44,6 +44,11 @@
   outline: none;
   cursor: pointer;
   transition: $transition-fast;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
 
   &__loader {
     position: absolute;
