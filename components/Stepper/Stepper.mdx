@@ -1,0 +1,74 @@
+---
+name: Stepper
+menu: Components
+route: /components/stepper
+---
+
+import { Props, Playground } from 'docz';
+import faker from 'faker';
+
+import { Button } from '../Button';
+
+import { Stepper } from './';
+import { StepperDemo } from './StepperDemo';
+
+# Stepper
+
+## Demo
+
+### Basic Usage
+
+<Playground>
+  <StepperDemo>
+    {({ isFinished, currentStep, prevStep, nextStep, finish }) => (
+      <>
+        <Stepper
+          isFinished={isFinished}
+          currentStep={currentStep}
+          steps={[
+            {
+              title: 'Code It',
+              desc: faker.lorem.sentences(2),
+              content: faker.lorem.paragraphs(5),
+            },
+            {
+              title: 'Merge It',
+              desc: faker.lorem.sentences(3),
+              content: faker.lorem.paragraphs(4),
+            },
+            {
+              title: 'Ship It',
+              desc: faker.lorem.sentences(2),
+              content: faker.lorem.paragraphs(6),
+            },
+          ]}
+        />
+        <div
+          style={{
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'space-between',
+            marginTop: 20,
+          }}
+        >
+          {!isFinished && (
+            <Button onClick={prevStep} isDisabled={currentStep <= 1}>
+              Prev
+            </Button>
+          )}
+          {currentStep === 3 ? (
+            !isFinished && <Button onClick={finish}>Finish</Button>
+          ) : (
+            <Button onClick={nextStep} isDisabled={currentStep >= 3}>
+              Next
+            </Button>
+          )}
+        </div>
+      </>
+    )}
+  </StepperDemo>
+</Playground>
+
+## API
+
+<Props of={Stepper} />
