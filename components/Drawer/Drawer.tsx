@@ -1,4 +1,11 @@
-import React, { FC, useEffect, useState, ReactNode, memo } from 'react';
+import React, {
+  FC,
+  useEffect,
+  useState,
+  ReactNode,
+  memo,
+  CSSProperties,
+} from 'react';
 import classNames from 'classnames';
 import BaseDrawer from 'rc-drawer';
 
@@ -27,12 +34,19 @@ export interface DrawerProps {
    * If false, mask is completely hidden, disallowing any user interaction (users cannot close drawer via clicking mask)
    */
   isMaskShown?: boolean;
+  style?: CSSProperties;
   /**
-   * <@default=`400`>
+   * HTML element in which the Drawer will be rendered
+   *
+   * <@default=`'body'`>
+   */
+  containerEl?: string | HTMLElement;
+  /**
+   * <@default=`'100%' or 400`>
    */
   width?: number | string;
   /**
-   * <@default=`'30%'`>
+   * <@default=`'30%' or '100%'`>
    */
   height?: number | string;
   className?: string;
@@ -53,6 +67,7 @@ export const Drawer: FC<DrawerProps> = memo<DrawerProps>(
     isPagePushable = false,
     isContentDestoryDelayed = true,
     isMaskShown = true,
+    containerEl = 'body',
     width,
     height,
     className,
@@ -101,6 +116,7 @@ export const Drawer: FC<DrawerProps> = memo<DrawerProps>(
         height={newHeight}
         className={classNames(className, 'ztopia-drawer')}
         placement={placement}
+        getContainer={containerEl}
         onClose={onRequestClose}
       >
         {isContentDestoryDelayed ? memoizedChildren : children}

@@ -175,6 +175,40 @@ Dependency: [rc-drawer](https://github.com/react-component/drawer)
   </DrawerDemo>
 </Playground>
 
+### Custom Container
+
+<Playground>
+  <DrawerDemo>
+    {({ isOpen, openDrawer, closeDrawer, containerRef }) => (
+      <>
+        <Button onClick={openDrawer}>Open</Button>
+        <Drawer
+          containerEl={containerRef.current}
+          isOpen={isOpen}
+          onRequestClose={closeDrawer}
+          style={{
+            position: 'absolute',
+          }}
+        >
+          <section style={{ padding: '20px 40px' }}>
+            <h1>Hello, World!</h1>
+            <p>{faker.lorem.paragraphs(1)}</p>
+            <p>{faker.lorem.paragraphs(5)}</p>
+            <p>{faker.lorem.paragraphs(10)}</p>
+          </section>
+        </Drawer>
+        <div
+          ref={containerRef}
+          style={{
+            height: 300,
+            position: 'relative',
+          }}
+        />
+      </>
+    )}
+  </DrawerDemo>
+</Playground>
+
 ## API
 
 <Props of={Drawer} />
