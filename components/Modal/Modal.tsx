@@ -27,7 +27,14 @@ export interface ModalProps {
 }
 
 export const Modal: FC<ModalProps> = memo(
-  ({ isOpen, isCloseIconShown, className, size, onRequestClose, children }) => (
+  ({
+    isOpen = false,
+    isCloseIconShown = false,
+    className,
+    size = 'medium',
+    onRequestClose,
+    children,
+  }) => (
     <ReactModal
       ariaHideApp={false}
       isOpen={isOpen}
@@ -50,9 +57,3 @@ export const Modal: FC<ModalProps> = memo(
     </ReactModal>
   ),
 );
-
-Modal.defaultProps = {
-  isOpen: false,
-  isCloseIconShown: false,
-  size: 'medium',
-};

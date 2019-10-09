@@ -1573,6 +1573,13 @@
     "@types/react" "*"
     "@types/viewport-mercator-project" "*"
 
+"@types/react-modal@^3.8.3":
+  version "3.8.3"
+  resolved "https://registry.yarnpkg.com/@types/react-modal/-/react-modal-3.8.3.tgz#e7fb1ab42203d7344d33ec04c99e99bfeab4d34f"
+  integrity sha512-UBSa21GApA6Jly7ll9OQnZmEDttEJ8joy2TrfIEdf5bK6Sr8VTb3zHX0sPx7FTFDFdM9NpG4X0s5Dd2OXVTRhg==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-select@^3.0.0":
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@types/react-select/-/react-select-3.0.3.tgz#4c04cc35e1b5951433cbac576741c71127fd9c72"

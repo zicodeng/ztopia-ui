@@ -23,6 +23,9 @@ export interface PopperProps {
    * <@default=`0`>
    */
   offsetY?: number;
+  /**
+   * Specify container in which the Drawer should be rendered
+   */
   containerId?: string;
   className?: string;
   /**

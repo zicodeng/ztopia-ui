@@ -34,6 +34,9 @@ export interface DrawerProps {
    * If false, mask is completely hidden, disallowing any user interaction (users cannot close drawer via clicking mask)
    */
   isMaskShown?: boolean;
+  /**
+   * Specify container in which the Drawer should be rendered
+   */
   containerId?: string;
   style?: CSSProperties;
   /**
