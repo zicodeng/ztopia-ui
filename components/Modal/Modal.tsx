@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { FC, memo } from 'react';
+import React, { FC, memo, useCallback } from 'react';
 import ReactModal from 'react-modal';
 
 import { Times } from '../Icons';
@@ -15,6 +15,10 @@ export interface ModalProps {
    * <@default=`false`>
    */
   isCloseIconShown?: boolean;
+  /**
+   * Specify container in which the Modal should be rendered
+   */
+  containerId?: string;
   className?: string;
   /**
    * <@default=`'medium'`>
@@ -30,30 +34,39 @@ export const Modal: FC<ModalProps> = memo(
   ({
     isOpen = false,
     isCloseIconShown = false,
+    containerId,
     className,
     size = 'medium',
     onRequestClose,
     children,
-  }) => (
-    <ReactModal
-      ariaHideApp={false}
-      isOpen={isOpen}
-      closeTimeoutMS={200}
-      portalClassName={classNames(className, 'ztopia-modal')}
-      className={classNames(
-        'ztopia-modal__content',
-        `ztopia-modal__content--${size}`,
-      )}
-      overlayClassName={classNames('ztopia-modal__overlay')}
-      onRequestClose={onRequestClose}
-    >
-      {children}
-      {isCloseIconShown && (
-        <Times
-          className="ztopia-modal__close-indicator"
-          onClick={onRequestClose}
-        />
-      )}
-    </ReactModal>
-  ),
+  }) => {
+    const getParent = useCallback(
+      () => document.querySelector(containerId ? `#${containerId}` : 'body'),
+      [containerId],
+    );
+
+    return (
+      <ReactModal
+        ariaHideApp={false}
+        isOpen={isOpen}
+        closeTimeoutMS={200}
+        portalClassName={classNames(className, 'ztopia-modal')}
+        className={classNames(
+          'ztopia-modal__content',
+          `ztopia-modal__content--${size}`,
+        )}
+        overlayClassName={classNames('ztopia-modal__overlay')}
+        onRequestClose={onRequestClose}
+        parentSelector={getParent}
+      >
+        {children}
+        {isCloseIconShown && (
+          <Times
+            className="ztopia-modal__close-indicator"
+            onClick={onRequestClose}
+          />
+        )}
+      </ReactModal>
+    );
+  },
 );

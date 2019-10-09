@@ -72,6 +72,26 @@ Dependency: [react-modal](https://github.com/reactjs/react-modal)
   </ModalDemo>
 </Playground>
 
+### Custom Container
+
+<Playground>
+  <ModalDemo>
+    {({ isOpen, openModal, closeModal }) => (
+      <section id="custom-modal-container">
+        <Trigger onClick={openModal}>Custom Container</Trigger>
+        <Modal
+          containerId="custom-modal-container"
+          isOpen={isOpen}
+          onRequestClose={closeModal}
+        >
+          <h1>Hello, World!</h1>
+          <p>{LOREM}</p>
+        </Modal>
+      </section>
+    )}
+  </ModalDemo>
+</Playground>
+
 ## API
 
 <Props of={Modal} />
