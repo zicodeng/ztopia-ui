@@ -21,6 +21,7 @@ export interface InputProps {
    */
   type?: string;
   value?: string;
+  name?: string;
   label?: string;
   placeholder?: string;
   error?: string;
