@@ -10,6 +10,7 @@ import React, {
   useMemo,
   isValidElement,
   cloneElement,
+  Ref,
 } from 'react';
 
 import './Input.css';
@@ -32,6 +33,7 @@ export interface InputProps {
   variant?: 'material' | 'rect' | 'pill';
   prefixIcon?: ReactNode;
   suffixIcon?: ReactNode;
+  ref?: Ref<HTMLInputElement>;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
