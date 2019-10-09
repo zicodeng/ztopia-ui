@@ -1,6 +1,7 @@
+import React, { FC, memo, ReactNode } from 'react';
 import classNames from 'classnames';
 import Tooltip from 'rc-tooltip';
-import React, { FC, memo, ReactNode } from 'react';
+import camelCase from 'camelcase';
 
 import 'rc-tooltip/assets/bootstrap_white.css';
 import './Popper.css';
@@ -32,17 +33,17 @@ export interface PopperProps {
    */
   placement?:
     | 'top'
-    | 'topLeft'
-    | 'topRight'
+    | 'top-left'
+    | 'top-right'
     | 'right'
-    | 'rightTop'
-    | 'rightBottom'
+    | 'right-top'
+    | 'right-bottom'
     | 'bottom'
-    | 'bottomLeft'
-    | 'bottomRight'
+    | 'bottom-left'
+    | 'bottom-right'
     | 'left'
-    | 'leftTop'
-    | 'leftBottom';
+    | 'left-top'
+    | 'left-bottom';
   /**
    * Popper content when it is triggered
    */
@@ -80,7 +81,7 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
     }
     return (
       <Tooltip
-        placement={placement}
+        placement={camelCase(placement)}
         overlayClassName={classNames(
           className,
           'ztopia-popper',

@@ -6,32 +6,32 @@
   transition: $transition-fast;
 
   &--top,
-  &--topLeft,
-  &--topRight {
+  &--top-left,
+  &--top-right {
     .rc-tooltip-arrow {
       border-top-color: $black-dark;
     }
   }
 
   &--right,
-  &--rightTop,
-  &--rightBottom {
+  &--right-top,
+  &--right-bottom {
     .rc-tooltip-arrow {
       border-right-color: $black-dark;
     }
   }
 
   &--bottom,
-  &--bottomLeft,
-  &--bottomRight {
+  &--bottom-left,
+  &--bottom-right {
     .rc-tooltip-arrow {
       border-bottom-color: $black-dark;
     }
   }
 
   &--left,
-  &--leftTop,
-  &--leftBottom {
+  &--left-top,
+  &--left-bottom {
     .rc-tooltip-arrow {
       border-left-color: $black-dark;
     }
@@ -75,8 +75,8 @@
   }
 
   &--top,
-  &--topLeft,
-  &--topRight {
+  &--top-left,
+  &--top-right {
     &.appear,
     &.enter {
       transform: translateY(-$spacing-l);
@@ -88,8 +88,8 @@
   }
 
   &--right,
-  &--rightTop,
-  &--rightBottom {
+  &--right-top,
+  &--right-bottom {
     &.appear,
     &.enter {
       transform: translateX($spacing-l);
@@ -101,8 +101,8 @@
   }
 
   &--bottom,
-  &--bottomLeft,
-  &--bottomRight {
+  &--bottom-left,
+  &--bottom-right {
     &.appear,
     &.enter {
       transform: translateY($spacing-l);
@@ -114,8 +114,8 @@
   }
 
   &--left,
-  &--leftTop,
-  &--leftBottom {
+  &--left-top,
+  &--left-bottom {
     &.appear,
     &.enter {
       transform: translateX(-$spacing-l);
