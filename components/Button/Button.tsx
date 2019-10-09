@@ -25,6 +25,7 @@ export interface ButtonProps {
    * <@default=`false`>
    */
   isDisabled?: boolean;
+  type?: 'button' | 'submit' | 'reset';
   className?: string;
   /**
    * <@default=`'rect'`>
