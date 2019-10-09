@@ -44,6 +44,7 @@ export const Input = memo(
         isDisabled,
         type,
         value,
+        name,
         label,
         placeholder,
         error,
@@ -122,6 +123,7 @@ export const Input = memo(
         >
           {label && (
             <label
+              htmlFor={name}
               className={classNames(
                 'ztopia-input__label',
                 `ztopia-input__label--${variant}`,
@@ -139,6 +141,7 @@ export const Input = memo(
               {...restProps}
               autoComplete="on"
               ref={ref}
+              name={name}
               disabled={isDisabled}
               type={type}
               value={value}
