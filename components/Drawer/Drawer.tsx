@@ -67,7 +67,6 @@ export const Drawer: FC<DrawerProps> = memo<DrawerProps>(
     isPagePushable = false,
     isContentDestoryDelayed = true,
     isMaskShown = true,
-    style,
     containerEl = 'body',
     width,
     height,
@@ -119,10 +118,6 @@ export const Drawer: FC<DrawerProps> = memo<DrawerProps>(
         placement={placement}
         getContainer={containerEl}
         onClose={onRequestClose}
-        style={{
-          position: typeof containerEl === 'string' ? 'fixed' : 'absolute',
-          ...style,
-        }}
       >
         {isContentDestoryDelayed ? memoizedChildren : children}
       </BaseDrawer>

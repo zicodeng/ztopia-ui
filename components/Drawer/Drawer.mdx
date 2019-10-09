@@ -179,13 +179,16 @@ Dependency: [rc-drawer](https://github.com/react-component/drawer)
 
 <Playground>
   <DrawerDemo>
-    {({ isOpen, openDrawer, closeDrawer, containerRef }) => (
+    {({ isOpen, openDrawer, closeDrawer }) => (
       <>
         <Button onClick={openDrawer}>Open</Button>
         <Drawer
-          containerEl={containerRef.current}
+          containerEl="#custom-drawer-container"
           isOpen={isOpen}
           onRequestClose={closeDrawer}
+          style={{
+            position: 'absolute',
+          }}
         >
           <section style={{ padding: '20px 40px' }}>
             <h1>Hello, World!</h1>
@@ -195,7 +198,7 @@ Dependency: [rc-drawer](https://github.com/react-component/drawer)
           </section>
         </Drawer>
         <div
-          ref={containerRef}
+          id="custom-drawer-container"
           style={{
             height: 300,
             position: 'relative',
