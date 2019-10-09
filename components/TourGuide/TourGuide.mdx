@@ -1,0 +1,71 @@
+---
+name: TourGuide
+menu: Components
+route: /components/tour-guide
+---
+
+import { Props, Playground } from 'docz';
+import faker from 'faker';
+
+import { TourGuide } from './';
+import { Box } from './TourGuideDemo';
+
+## Demo
+
+Dependency: [react-joyride](https://github.com/gilbarbara/react-joyride)
+
+### Basic Usage
+
+<Playground>
+  <section
+    style={{
+      height: 1000,
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+    }}
+  >
+    <Box id="step-1">Hello</Box>
+    <Box id="step-2" style={{ alignSelf: 'center' }}>
+      Hola
+    </Box>
+    <Box id="step-3" style={{ alignSelf: 'flex-end' }}>
+      你好
+    </Box>
+    <TourGuide
+      steps={[
+        {
+          title: 'Hello',
+          content: faker.lorem.paragraph(),
+          placement: 'right',
+          target: '#step-1',
+        },
+        {
+          title: 'Hola',
+          content: faker.lorem.paragraph(),
+          placement: 'bottom',
+          target: '#step-2',
+        },
+        {
+          title: '你好',
+          content: faker.lorem.paragraph(),
+          placement: 'left',
+          target: '#step-3',
+        },
+      ]}
+    />
+  </section>
+</Playground>
+
+### API
+
+<Props of={TourGuide} />
+
+```ts
+interface Step {
+  title?: ReactNode;
+  content: ReactNode;
+  placement?: Placement;
+  target: string | HTMLElement;
+}
+```
