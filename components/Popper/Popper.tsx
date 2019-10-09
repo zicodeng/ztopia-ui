@@ -1,4 +1,4 @@
-import React, { FC, memo, ReactNode } from 'react';
+import React, { FC, memo, ReactNode, useState, useEffect } from 'react';
 import classNames from 'classnames';
 import Tooltip from 'rc-tooltip';
 import camelCase from 'camelcase';
@@ -23,7 +23,16 @@ export interface PopperProps {
    * <@default=`0`>
    */
   offsetY?: number;
+  containerId?: string;
   className?: string;
+  /**
+   * Popper content when it is triggered
+   */
+  overlay: ReactNode;
+  /**
+   * Element that triggers tooltip
+   */
+  children: ReactNode;
   /**
    * <@default=`'hover'`>
    */
@@ -44,14 +53,6 @@ export interface PopperProps {
     | 'left'
     | 'left-top'
     | 'left-bottom';
-  /**
-   * Popper content when it is triggered
-   */
-  overlay: ReactNode;
-  /**
-   * Element that triggers tooltip
-   */
-  children: ReactNode;
 }
 
 const ARROW_SIZE = 4;
@@ -61,12 +62,22 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
     isTransitionDisabled = false,
     offsetX = 0,
     offsetY = 0,
+    containerId,
     className,
+    children,
     trigger = ['hover'],
     placement = 'top',
-    children,
     ...restProps
   }) => {
+    const [containerEl, setContainerEl] = useState<HTMLElement | null>(null);
+
+    useEffect(() => {
+      if (containerId) {
+        const el = document.getElementById(containerId);
+        setContainerEl(el);
+      }
+    }, [containerId]);
+
     if (placement.startsWith('left')) {
       offsetX -= ARROW_SIZE;
     }
@@ -79,6 +90,7 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
     if (placement.startsWith('bottom')) {
       offsetY += ARROW_SIZE;
     }
+
     return (
       <Tooltip
         placement={camelCase(placement)}
@@ -92,6 +104,7 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
           offset: [offsetX, offsetY],
         }}
         trigger={trigger}
+        getTooltipContainer={containerEl ? () => containerEl : undefined}
         // @ts-ignore
         transitionName={
           isTransitionDisabled

@@ -3,8 +3,8 @@ import React from 'react';
 export const Box = props => (
   <div
     style={{
-      width: 100,
-      height: 100,
+      width: 150,
+      height: 150,
       fontSize: 14,
       display: 'flex',
       alignItems: 'center',

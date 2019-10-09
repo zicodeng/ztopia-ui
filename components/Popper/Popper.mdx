@@ -94,6 +94,20 @@ Dependency: [rc-tooltip](https://github.com/react-component/tooltip)
   </Container>
 </Playground>
 
+### Custom Container
+
+<Playground>
+  <section id="custom-popper-container">
+    <Popper
+      placement="right"
+      containerId="custom-popper-container"
+      overlay={<h1>Hello, World!</h1>}
+    >
+      <Box>Custom Container</Box>
+    </Popper>
+  </section>
+</Playground>
+
 ## API
 
 <Props of={Popper} />
