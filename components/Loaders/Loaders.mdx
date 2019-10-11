@@ -11,6 +11,7 @@ import {
   Loader,
   BarLoader,
   BasicLoader,
+  FadingLoader,
   MusicLoader,
   ReverseLoader,
   TwinnerLoader,
@@ -48,11 +49,23 @@ import {
 
 ### BasicLoader
 
+The value of prop `color` must be in hex coded
+
 <Playground>
   <Container>
     <BasicLoader color="#ff0000" size="small" />
     <BasicLoader color="#00ff00" size="medium" />
     <BasicLoader color="#0000ff" size="large" />
+  </Container>
+</Playground>
+
+### FadingLoader
+
+<Playground>
+  <Container>
+    <FadingLoader color="red" size="small" />
+    <FadingLoader color="green" size="medium" />
+    <FadingLoader color="blue" size="large" />
   </Container>
 </Playground>
 

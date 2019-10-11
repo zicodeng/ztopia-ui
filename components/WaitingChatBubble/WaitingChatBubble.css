@@ -1,0 +1,58 @@
+@keyframes fade-in-out {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.bubble {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 125px;
+  height: 75px;
+  background-color: #ddd;
+  border-radius: 75px;
+}
+.bubble::before,
+.bubble::after {
+  position: absolute;
+  background: #ddd;
+  border-radius: 100%;
+  content: '';
+}
+.bubble::before {
+  bottom: 0;
+  left: -6px;
+  width: 25px;
+  height: 25px;
+}
+.bubble::after {
+  bottom: -5px;
+  left: -18px;
+  width: 12.5px;
+  height: 12.5px;
+}
+
+.bubble__circle {
+  width: 20.8333333333px;
+  height: 20.8333333333px;
+  background-color: #bbb;
+  border-radius: 100%;
+  animation: fade-in-out 1.5s infinite;
+  animation-delay: 0.25s;
+}
+.bubble__circle:first-of-type {
+  margin-left: 20.8333333333px;
+  animation-delay: 0s;
+}
+.bubble__circle:last-of-type {
+  margin-right: 20.8333333333px;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
