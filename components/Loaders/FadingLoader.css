@@ -35,22 +35,22 @@
 
   &.ztopia-loader--small {
     > .ztopia-loader--fading__circle {
-      width: 15px;
-      height: 15px;
+      width: 10px;
+      height: 10px;
     }
   }
 
   &.ztopia-loader--medium {
     > .ztopia-loader--fading__circle {
-      width: 20px;
-      height: 20px;
+      width: 15px;
+      height: 15px;
     }
   }
 
   &.ztopia-loader--large {
     > .ztopia-loader--fading__circle {
-      width: 25px;
-      height: 25px;
+      width: 20px;
+      height: 20px;
     }
   }
 }

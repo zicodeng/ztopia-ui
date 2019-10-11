@@ -5,6 +5,7 @@ route: /pens/waiting-chat-bubble
 ---
 
 import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
 
 import { WaitingChatBubble } from './';
 
@@ -12,8 +13,14 @@ import { WaitingChatBubble } from './';
 
 ## Demo
 
+### Size
+
 <Playground>
-  <WaitingChatBubble />
+  <Container>
+    <WaitingChatBubble size="small" />
+    <WaitingChatBubble size="medium" />
+    <WaitingChatBubble size="large" />
+  </Container>
 </Playground>
 
 ## API
