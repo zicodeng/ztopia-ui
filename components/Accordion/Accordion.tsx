@@ -11,7 +11,7 @@ import React, {
   useState,
 } from 'react';
 
-import { ChevronLeft } from '../Icons';
+import { ChevronDown } from '../Icons';
 
 import './Accordion.css';
 
@@ -153,8 +153,7 @@ export const AccordionPanelHeader: FC<AccordionPanelHeader> = ({
     onClick={e => onClickPanelHeader!(e, id!)}
   >
     {children}
-    <ChevronLeft
-      size="small"
+    <ChevronDown
       className={classNames('ztopia-accordion__panel-indicator', {
         'is-expanded': isExpanded,
       })}
