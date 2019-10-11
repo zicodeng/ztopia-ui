@@ -8,9 +8,9 @@ import './BarLoader.css';
 export const BarLoader: FC<LoaderProps> = props => (
   <Loader {...props}>
     {({ color, className }) => (
-      <div className={classNames(className, 'ztopia-loader--line')}>
+      <div className={classNames(className, 'ztopia-loader--bar')}>
         <div
-          className="ztopia-loader--line__bar"
+          className="ztopia-loader--bar__indicator"
           style={{
             background: color,
           }}
