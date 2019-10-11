@@ -1,8 +1,10 @@
 export * from './Icon';
 
 export * from './Checkmark';
+export * from './ChevronDown';
 export * from './ChevronLeft';
 export * from './ChevronRight';
+export * from './ChevronUp';
 export * from './CloudUpload';
 export * from './HeartRegular';
 export * from './HeartSolid';
