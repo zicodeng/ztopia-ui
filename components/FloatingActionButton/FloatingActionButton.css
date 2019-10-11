@@ -1,0 +1,142 @@
+.ztopia-fab {
+  position: absolute;
+  background-color: $black-dark;
+  border-radius: 50%;
+  box-shadow: $box-shadow-2;
+  cursor: pointer;
+
+  &--small {
+    width: 40px;
+    height: 40px;
+  }
+
+  &--medium {
+    width: 50px;
+    height: 50px;
+  }
+
+  &--large {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Plus icon (+) */
+  &::before,
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: $white-light;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    content: '';
+  }
+
+  &::before {
+    width: 34%;
+    height: 2px;
+  }
+
+  &::after {
+    width: 2px;
+    height: 34%;
+  }
+
+  &__actions {
+    position: absolute;
+    left: -$spacing-s;
+    margin: 0;
+    padding: 30px $spacing-s 0 0;
+    list-style: none;
+    transform: rotate(180deg) translateY(-30px);
+    pointer-events: none;
+
+    &--small {
+      bottom: 50px;
+    }
+
+    &--medium {
+      bottom: 60px;
+    }
+
+    &--large {
+      bottom: 70px;
+    }
+  }
+
+  &__action {
+    margin-bottom: $spacing-s;
+    background-color: $black-dark;
+    border-radius: 50%;
+    box-shadow: $box-shadow-2;
+    transform: scale(0);
+    transition: $transition-fast;
+    transition: $transition-fast;
+
+    /* Set disappear sequence (reverse) */
+    &:nth-of-type(1) {
+      transition: transform 0.3s ease 0.16s, background-color 0.3s ease;
+    }
+
+    &:nth-of-type(2) {
+      transition: transform 0.3s ease 0.08s, background-color0.3s ease;
+    }
+
+    &:nth-of-type(3) {
+      transition: transform 0.3s ease 0s, background-color 0.3s ease;
+    }
+  }
+
+  &__action-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white-light;
+    transform: rotate(-180deg);
+
+    &--small {
+      width: 40px;
+      height: 40px;
+    }
+
+    &--medium {
+      width: 50px;
+      height: 50px;
+    }
+
+    &--large {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &:hover {
+    &::before,
+    &::after {
+      transform: translate(-50%, -50%) rotate(585deg);
+    }
+
+    .ztopia-fab__actions {
+      pointer-events: all;
+    }
+
+    /* Set appear sequence */
+    .ztopia-fab__action {
+      &:nth-of-type(1) {
+        transform: scale(1);
+        transition: transform 0.3s ease 0s, background-color 0.3s ease;
+      }
+
+      &:nth-of-type(2) {
+        transform: scale(1);
+        transition: transform 0.3s ease 0.08s, background-color 0.3s ease;
+      }
+
+      &:nth-of-type(3) {
+        transform: scale(1);
+        transition: transform 0.3s ease 0.16s, background-color 0.3s ease;
+      }
+    }
+  }
+}

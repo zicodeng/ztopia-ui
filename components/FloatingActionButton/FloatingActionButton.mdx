@@ -1,0 +1,81 @@
+---
+name: FloatingActionButton
+menu: Components
+route: /components/floating-action-button
+---
+
+import { Props, Playground } from 'docz';
+
+import { FloatingActionButton } from './';
+
+## Demo
+
+### Size Small
+
+<Playground>
+  <FloatingActionButton
+    size="small"
+    actions={[
+      {
+        icon: <i className="fas fa-heart" />,
+        desc: 'Love',
+      },
+      {
+        icon: <i className="fas fa-user" />,
+        desc: 'User',
+      },
+      {
+        icon: <i className="fas fa-home" />,
+        desc: 'Home',
+      },
+    ]}
+  />
+</Playground>
+
+### Size Medium (Default)
+
+<Playground>
+  <FloatingActionButton
+    size="medium"
+    actions={[
+      {
+        icon: <i className="fas fa-heart" />,
+        desc: 'Love',
+      },
+      {
+        icon: <i className="fas fa-user" />,
+        desc: 'User',
+      },
+      {
+        icon: <i className="fas fa-home" />,
+        desc: 'Home',
+      },
+    ]}
+  />
+</Playground>
+
+### Size Large
+
+<Playground>
+  <FloatingActionButton
+    size="large"
+    actions={[
+      {
+        icon: <i className="fas fa-heart" />,
+        desc: 'Love',
+      },
+      {
+        icon: <i className="fas fa-user" />,
+        desc: 'User',
+      },
+      {
+        icon: <i className="fas fa-home" />,
+        desc: 'Home',
+      },
+    ]}
+  />
+</Playground>
+
+## API
+
+<Props of={FloatingActionButton} />
