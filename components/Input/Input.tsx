@@ -22,6 +22,7 @@ export interface InputProps {
    */
   type?: string;
   value?: string;
+  defaultValue?: string;
   name?: string;
   label?: string;
   placeholder?: string;
@@ -44,6 +45,7 @@ export const Input = memo(
         isDisabled,
         type,
         value,
+        defaultValue,
         name,
         label,
         placeholder,
@@ -57,21 +59,17 @@ export const Input = memo(
       },
       ref,
     ) => {
-      const [isActive, setIsActive] = useState(false);
-
-      useEffect(() => {
-        if (placeholder || value) {
-          setIsActive(true);
-        }
-      }, [placeholder, value]);
+      const [isActive, setIsActive] = useState(
+        Boolean(placeholder || value || defaultValue),
+      );
 
       const handleFocusInput = useCallback(() => {
         setIsActive(true);
       }, []);
 
       const handleBlurInput = useCallback(() => {
-        if (!value && !placeholder) setIsActive(false);
-      }, [value]);
+        if (!placeholder && !value && !defaultValue) setIsActive(false);
+      }, [placeholder, value, defaultValue]);
 
       const memoizedPrefixIcon = useMemo(() => {
         const prefixIconClassName = classNames(
@@ -145,6 +143,7 @@ export const Input = memo(
               disabled={isDisabled}
               type={type}
               value={value}
+              defaultValue={defaultValue}
               placeholder={placeholder}
               className={classNames(
                 'ztopia-input__input',
