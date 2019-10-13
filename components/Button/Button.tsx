@@ -25,6 +25,9 @@ export interface ButtonProps {
    * <@default=`false`>
    */
   isDisabled?: boolean;
+  /**
+   * <@default=`'button'`>
+   */
   type?: 'button' | 'submit' | 'reset';
   className?: string;
   /**
@@ -42,10 +45,11 @@ export interface ButtonProps {
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-export const Button: FC<ButtonProps> = memo(
+export const Button: FC<ButtonProps> = memo<ButtonProps>(
   ({
     isGhost = false,
     isDisabled = false,
+    type = 'button',
     className,
     variant = 'rect',
     size = 'medium',
@@ -76,6 +80,7 @@ export const Button: FC<ButtonProps> = memo(
     return (
       <button
         disabled={isDisabled}
+        type={type}
         className={classNames(
           className,
           'ztopia-button',
