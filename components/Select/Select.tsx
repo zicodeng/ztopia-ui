@@ -25,6 +25,7 @@ export interface SelectProps {
    */
   isSearchable?: boolean;
   maxMenuHeight?: number;
+  name?: string;
   label?: string;
   className?: string;
   defaultValue?: SelectValue;
