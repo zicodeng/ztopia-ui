@@ -1,7 +1,7 @@
 {
   "name": "ztopia-ui",
   "description": "A lightweight and multivariant React UI library built with customization and consistency in mind",
-  "version": "1.14.1",
+  "version": "1.14.2",
   "author": "Zico Deng",
   "homepage": "https://github.com/zicodeng/ztopia-ui#readme",
   "keywords": [
@@ -30,7 +30,7 @@
     "create-200": "cp ./.docz/dist/index.html ./.docz/dist/200.html",
     "clean": "rm -rf .docz node_modules yarn.lock .rpt2_cache",
     "format:all": "prettier --write \"**/*.{js,jsx,ts,tsx,css,json,yml,md}\" --ignore-path ./.prettierignore && stylelint --fix \"./components/**/*.css\"",
-    "release": "env-cmd semantic-release --no-ci --dry-run"
+    "release": "env-cmd semantic-release --no-ci"
   },
   "husky": {
     "hooks": {
