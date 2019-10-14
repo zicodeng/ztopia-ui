@@ -11,8 +11,6 @@ jobs:
       script:
         - yarn install
       skip_cleanup: true
-    - stage: test
-      skip_cleanup: true
     - stage: build
       script:
         - yarn build:prod
