@@ -22,6 +22,7 @@
   },
   "scripts": {
     "start": "docz dev",
+    "commit": "yarn git-cz",
     "build:dev": "NODE_ENV=development NODE_OPTIONS=--max_old_space_size=10240 ./node_modules/.bin/rollup -c --watch",
     "build:prod": "NODE_ENV=production NODE_OPTIONS=--max_old_space_size=10240 ./node_modules/.bin/rollup -c",
     "build-docs": "NODE_OPTIONS=--max_old_space_size=10240 docz build && yarn create-200",
@@ -34,7 +35,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
@@ -47,6 +49,11 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "dependencies": {
     "@rehooks/component-size": "^1.0.3",
@@ -88,6 +95,9 @@
     "uuid": "^3.3.3"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@commitlint/prompt": "^8.2.0",
     "@types/moment": "^2.13.0",
     "@types/rc-slider": "^8.6.4",
     "@types/react": "^16.8.24",
@@ -103,8 +113,10 @@
     "@typescript-eslint/parser": "^2.0.0",
     "autoprefixer": "^9.6.1",
     "chalk": "^2.4.2",
+    "commitizen": "^4.0.3",
     "css-loader": "^3.1.0",
     "cssnano": "^4.1.10",
+    "cz-conventional-changelog": "3.0.2",
     "docz": "^1.2.0",
     "docz-theme-ztopia": "^0.1.1",
     "dotenv-webpack": "^1.7.0",
