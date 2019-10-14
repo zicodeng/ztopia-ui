@@ -3,9 +3,6 @@
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
-    ["@semantic-release/exec", {
-      "prepareCmd": "yarn build:prod && cp -a ./styles ./dist/styles && cp ./README.md ./dist/README.md && cp ./package.json ./dist/package.json",
-    }],
     ["@semantic-release/npm",
       "pkgRoot": "./dist"
     ],

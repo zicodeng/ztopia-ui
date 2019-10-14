@@ -5,10 +5,10 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 import url from 'rollup-plugin-url';
-import progress from 'rollup-plugin-progress';
 import typescript from 'typescript';
 import typescript2 from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
+import copy from 'rollup-plugin-copy';
 import chalk from 'chalk';
 
 import pkg from './package.json';
@@ -29,36 +29,47 @@ const onwarn = warning => {
   console.warn(`(!) ${warning.message}`);
 };
 
-const components = fs.readdirSync('./components');
+const components = fs
+  .readdirSync('./components')
+  .filter(compName => !compName.startsWith('.'));
 
-export default components
-  .filter(c => !c.startsWith('.'))
-  .map(c => ({
-    treeshake: false,
-    input: `./components/${c}/index.ts`,
-    output: { file: `./dist/${c}/index.js`, format: 'esm' },
-    external: id =>
-      id.startsWith('../') ||
-      (!id.startsWith('.') && !id.startsWith('/') && !id.endsWith('css')),
-    onwarn,
-    plugins: [
-      replace({
-        'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
-      }),
-      resolve({
-        extensions,
-      }),
-      url({
-        emitFiles: false,
-        limit: 5000 * 1024, // 5Mb
-      }),
-      commonjs({}),
-      typescript2({
-        typescript,
-        useTsconfigDeclarationDir: true,
-      }),
-      postcss({}),
-      progress({}),
-      isDev ? null : terser(),
-    ],
-  }));
+export default components.map((compName, i) => ({
+  treeshake: false,
+  input: `./components/${compName}/index.ts`,
+  output: { file: `./dist/${compName}/index.js`, format: 'esm' },
+  external: id =>
+    id.startsWith('../') ||
+    (!id.startsWith('.') && !id.startsWith('/') && !id.endsWith('css')),
+  onwarn,
+  plugins: [
+    replace({
+      'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
+    }),
+    resolve({
+      extensions,
+    }),
+    url({
+      emitFiles: false,
+      limit: 5000 * 1024, // 5Mb
+    }),
+    commonjs({}),
+    typescript2({
+      typescript,
+      clean: true,
+      useTsconfigDeclarationDir: true,
+    }),
+    postcss({}),
+    isDev ? null : terser(),
+    i === components.length - 1 && !isDev
+      ? copy({
+          verbose: true,
+          targets: [
+            {
+              src: ['./package.json', './README.md', './styles'],
+              dest: './dist',
+            },
+          ],
+        })
+      : null,
+  ],
+}));

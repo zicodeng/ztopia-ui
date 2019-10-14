@@ -26,11 +26,11 @@
     "build:dev": "NODE_ENV=development NODE_OPTIONS=--max_old_space_size=10240 ./node_modules/.bin/rollup -c --watch",
     "build:prod": "NODE_ENV=production NODE_OPTIONS=--max_old_space_size=10240 ./node_modules/.bin/rollup -c",
     "build-docs": "NODE_OPTIONS=--max_old_space_size=10240 docz build && yarn create-200",
+    "release": "env-cmd semantic-release --no-ci",
     "deploy": "yarn build-docs && surge --domain ztopia-ui.zicodeng.me ./.docz/dist",
     "create-200": "cp ./.docz/dist/index.html ./.docz/dist/200.html",
     "clean": "rm -rf .docz node_modules yarn.lock .rpt2_cache",
-    "format:all": "prettier --write \"**/*.{js,jsx,ts,tsx,css,json,yml,md}\" --ignore-path ./.prettierignore && stylelint --fix \"./components/**/*.css\"",
-    "release": "env-cmd semantic-release --no-ci"
+    "format:all": "prettier --write \"**/*.{js,jsx,ts,tsx,css,json,yml,md}\" --ignore-path ./.prettierignore && stylelint --fix \"./components/**/*.css\""
   },
   "husky": {
     "hooks": {
@@ -139,11 +139,11 @@
     "postcss-loader": "^3.0.0",
     "postcss-nested": "^4.1.2",
     "postcss-simple-vars": "^5.0.2",
-    "rollup": "^1.19.4",
+    "rollup": "^1.23.1",
     "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-copy": "^3.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-postcss": "^2.0.3",
-    "rollup-plugin-progress": "^1.1.1",
     "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-terser": "^5.1.1",
     "rollup-plugin-typescript2": "^0.22.1",
