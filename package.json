@@ -26,13 +26,11 @@
     "build:dev": "NODE_ENV=development NODE_OPTIONS=--max_old_space_size=10240 ./node_modules/.bin/rollup -c --watch",
     "build:prod": "NODE_ENV=production NODE_OPTIONS=--max_old_space_size=10240 ./node_modules/.bin/rollup -c",
     "build-docs": "NODE_OPTIONS=--max_old_space_size=10240 docz build && yarn create-200",
-    "release": "yarn build:prod && bump --commit --no-verify  && yarn post-build && cd ./dist && yarn publish --non-interactive && cd ..",
-    "post-build": "cp -a ./styles ./dist/styles && cp ./README.md ./dist/README.md && cp ./package.json ./dist/package.json",
     "deploy": "yarn build-docs && surge --domain ztopia-ui.zicodeng.me ./.docz/dist",
     "create-200": "cp ./.docz/dist/index.html ./.docz/dist/200.html",
     "clean": "rm -rf .docz node_modules yarn.lock .rpt2_cache",
     "format:all": "prettier --write \"**/*.{js,jsx,ts,tsx,css,json,yml,md}\" --ignore-path ./.prettierignore && stylelint --fix \"./components/**/*.css\"",
-    "release:local": "yarn post-build && env-cmd semantic-release --no-ci"
+    "release": "env-cmd semantic-release --no-ci --dry-run"
   },
   "husky": {
     "hooks": {
@@ -160,7 +158,6 @@
     "surge": "^0.21.3",
     "terser-webpack-plugin": "^1.4.1",
     "typescript": "^3.5.3",
-    "version-bump-prompt": "^5.0.4",
     "webpack-filter-warnings-plugin": "^1.2.1"
   },
   "peerDependencies": {
