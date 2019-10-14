@@ -13,7 +13,7 @@ jobs:
       skip_cleanup: true
     - stage: build
       script:
-        - yarn build:prod
+        - travis_wait 30 yarn build:prod
         - yarn post-build
       skip_cleanup: true
     - stage: release
