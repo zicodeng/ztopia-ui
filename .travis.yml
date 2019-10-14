@@ -14,13 +14,12 @@ jobs:
     - stage: build
       script:
         - travis_wait 30 yarn build:prod
-        - yarn post-build
       skip_cleanup: true
     - stage: release
       script:
-        - yarn semantic-release
+        - yarn release:ci
       if: branch = master
       skip_cleanup: true
     - stage: deploy
       script:
-        - yarn deploy
+        -  travis_wait 30 yarn deploy
