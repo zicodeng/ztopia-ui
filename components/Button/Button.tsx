@@ -99,5 +99,3 @@ export const Button: FC<ButtonProps> = memo<ButtonProps>(
     );
   },
 );
-
-console.log('test');
