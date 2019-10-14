@@ -24,7 +24,7 @@
   <img src="https://badgen.net/travis/zicodeng/ztopia-ui" alt="">
 </a>
 
-<a href="LICENSE.md" target="_blank">
+<a href="LICENSE" target="_blank">
   <img src="https://badgen.net/badge/license/MIT/blue" alt="">
 </a>
 
