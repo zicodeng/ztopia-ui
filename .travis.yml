@@ -1,0 +1,28 @@
+dist: trusty
+sudo: required
+language: node_js
+node_js:
+  - node
+os:
+  - linux
+jobs:
+  include:
+    - stage: install
+      script:
+        - yarn install
+      skip_cleanup: true
+    - stage: test
+      skip_cleanup: true
+    - stage: build
+      script:
+        - yarn build:prod
+        - yarn post-build
+      skip_cleanup: true
+    - stage: release
+      script:
+        - yarn semantic-release
+      if: branch = master
+      skip_cleanup: true
+    - stage: deploy
+      script:
+        - yarn deploy
