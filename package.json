@@ -27,7 +27,7 @@
     "build:prod": "NODE_ENV=production NODE_OPTIONS=--max_old_space_size=10240 ./node_modules/.bin/rollup -c",
     "build-docs": "NODE_OPTIONS=--max_old_space_size=10240 docz build && yarn create-200",
     "post-build": "cp -a ./styles ./dist/styles && cp ./package.json ./dist/package.json && cp ./README.md ./dist/README.md",
-    "release": "yarn build:prod && bump --commit && yarn post-build && cd ./dist && yarn publish --non-interactive && cd ..",
+    "release": "yarn build:prod && bump --commit --no-verify  && yarn post-build && cd ./dist && yarn publish --non-interactive && cd ..",
     "deploy": "yarn build-docs && surge --domain ztopia-ui.zicodeng.me ./.docz/dist",
     "create-200": "cp ./.docz/dist/index.html ./.docz/dist/200.html",
     "clean": "rm -rf .docz node_modules yarn.lock .rpt2_cache",
