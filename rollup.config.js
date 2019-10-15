@@ -19,8 +19,6 @@ const isDev = NODE_ENV === 'development';
 
 signale.wait(`Building ${pkg.name} for ${NODE_ENV}...`);
 
-fs.removeSync('./dist');
-
 const components = buildCache.diff;
 if (!components.length) {
   signale.complete('No change detected, skip building');
