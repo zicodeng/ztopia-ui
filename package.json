@@ -31,7 +31,7 @@
     "release:local": "yarn build:prod && env-cmd semantic-release --no-ci",
     "deploy": "yarn build-docs && surge --domain ztopia-ui.zicodeng.me ./.docz/dist",
     "create-200": "cp ./.docz/dist/index.html ./.docz/dist/200.html",
-    "clean": "rm -rf .docz node_modules yarn.lock .rpt2_cache",
+    "clean": "rm -rf .docz node_modules yarn.lock .rpt2_cache build-cache",
     "format:all": "prettier --write \"**/*.{js,jsx,ts,tsx,css,json,yml,md}\" --ignore-path ./.prettierignore && stylelint --fix \"./components/**/*.css\""
   },
   "husky": {
