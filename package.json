@@ -28,7 +28,7 @@
     "prebuild-cache": "node ./scripts/prebuild-cache.js",
     "postbuild-cache": "node ./scripts/postbuild-cache.js",
     "release:ci": "semantic-release",
-    "release:local": "env-cmd semantic-release --no-ci",
+    "release:local": "yarn build:prod && env-cmd semantic-release --no-ci",
     "deploy": "yarn build-docs && surge --domain ztopia-ui.zicodeng.me ./.docz/dist",
     "create-200": "cp ./.docz/dist/index.html ./.docz/dist/200.html",
     "clean": "rm -rf .docz node_modules yarn.lock .rpt2_cache",
