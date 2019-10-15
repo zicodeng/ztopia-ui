@@ -11,6 +11,7 @@ import { terser } from 'rollup-plugin-terser';
 import copy from 'rollup-plugin-copy';
 import chalk from 'chalk';
 
+import buildCache from './build-cache.json';
 import pkg from './package.json';
 
 const NODE_ENV = process.env.NODE_ENV;
@@ -20,18 +21,7 @@ console.log(chalk.green(`Building ${pkg.name} for ${NODE_ENV}...`));
 
 fs.removeSync('./dist');
 
-const extensions = ['.js', '.jsx', '.ts', '.tsx'];
-
-const onwarn = warning => {
-  if (warning.code === 'CIRCULAR_DEPENDENCY') {
-    return;
-  }
-  console.warn(`(!) ${warning.message}`);
-};
-
-const components = fs
-  .readdirSync('./components')
-  .filter(compName => !compName.startsWith('.'));
+const components = buildCache.diff;
 
 export default components.map((compName, i) => ({
   treeshake: false,
@@ -40,13 +30,16 @@ export default components.map((compName, i) => ({
   external: id =>
     id.startsWith('../') ||
     (!id.startsWith('.') && !id.startsWith('/') && !id.endsWith('css')),
-  onwarn,
+  onwarn: warning => {
+    if (warning.code === 'CIRCULAR_DEPENDENCY') return;
+    console.warn(`(!) ${warning.message}`);
+  },
   plugins: [
     replace({
       'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
     }),
     resolve({
-      extensions,
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
     }),
     url({
       emitFiles: false,
