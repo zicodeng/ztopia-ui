@@ -9,7 +9,7 @@ import typescript from 'typescript';
 import typescript2 from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
 import copy from 'rollup-plugin-copy';
-import chalk from 'chalk';
+import signale from 'signale';
 
 import buildCache from './build-cache.json';
 import pkg from './package.json';
@@ -17,11 +17,15 @@ import pkg from './package.json';
 const NODE_ENV = process.env.NODE_ENV;
 const isDev = NODE_ENV === 'development';
 
-console.log(chalk.green(`Building ${pkg.name} for ${NODE_ENV}...`));
+signale.wait(`Building ${pkg.name} for ${NODE_ENV}...`);
 
 fs.removeSync('./dist');
 
 const components = buildCache.diff;
+if (!components.length) {
+  signale.complete('No change detected, skip building');
+  process.exit(0);
+}
 
 export default components.map((compName, i) => ({
   treeshake: false,
