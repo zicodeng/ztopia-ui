@@ -48,6 +48,7 @@ export interface ImageProps {
    * A Ztopia Placeholder either in function form (`Placeholder`) or element form (`<Placeholder />`)
    */
   placeholder?: ReactNode | FC<PlaceholderProps> | null;
+  onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
 export const Image: FC<ImageProps> = memo(
@@ -63,6 +64,7 @@ export const Image: FC<ImageProps> = memo(
     caption,
     maskStyle,
     placeholder,
+    ...restProps
   }) => {
     if (variant === 'background' && typeof height !== 'number') {
       throw new Error(
@@ -124,6 +126,7 @@ export const Image: FC<ImageProps> = memo(
                   'ztopia-image',
                   'ztopia-image--background',
                 )}
+                {...restProps}
               >
                 {caption && (
                   <div className="ztopia-image__caption">{caption}</div>
@@ -148,6 +151,7 @@ export const Image: FC<ImageProps> = memo(
                 width,
                 height,
               }}
+              {...restProps}
             >
               <img
                 width={width}
