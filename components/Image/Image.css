@@ -14,6 +14,7 @@
 
 .ztopia-image {
   position: relative;
+  overflow: hidden;
 
   &--normal {
     margin: 0;
