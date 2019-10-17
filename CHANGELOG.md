@@ -1,3 +1,9 @@
+## [1.14.4](https://github.com/zicodeng/ztopia-ui/compare/v1.14.3...v1.14.4) (2019-10-17)
+
+### Bug Fixes
+
+- fix loading button loader style on Safari ([b522e08](https://github.com/zicodeng/ztopia-ui/commit/b522e08dda477901cfd482453885ee3e1553c33b))
+
 ## [1.14.3](https://github.com/zicodeng/ztopia-ui/compare/v1.14.2...v1.14.3) (2019-10-15)
 
 ### Bug Fixes
