@@ -10,6 +10,7 @@ import React, {
   isValidElement,
   cloneElement,
   Ref,
+  CSSProperties,
 } from 'react';
 
 import './Input.css';
@@ -33,6 +34,7 @@ export interface InputProps {
   variant?: 'material' | 'rect' | 'pill';
   prefixIcon?: ReactNode;
   suffixIcon?: ReactNode;
+  style?: CSSProperties;
   ref?: Ref<HTMLInputElement>;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
@@ -53,6 +55,7 @@ export const Input = memo(
         variant = 'rect',
         prefixIcon,
         suffixIcon,
+        style,
         onChange,
         ...restProps
       },
@@ -117,6 +120,7 @@ export const Input = memo(
             'ztopia-input',
             `ztopia-input--${variant}`,
           )}
+          style={style}
         >
           {label && (
             <label
