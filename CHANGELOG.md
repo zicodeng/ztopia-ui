@@ -1,3 +1,9 @@
+## [1.14.5](https://github.com/zicodeng/ztopia-ui/compare/v1.14.4...v1.14.5) (2019-10-18)
+
+### Bug Fixes
+
+- add style to Input interface ([6a149dd](https://github.com/zicodeng/ztopia-ui/commit/6a149dd4677917a4a9c028d4d01c10efe045d25d))
+
 ## [1.14.4](https://github.com/zicodeng/ztopia-ui/compare/v1.14.3...v1.14.4) (2019-10-17)
 
 ### Bug Fixes
