@@ -1,3 +1,9 @@
+## [1.14.6](https://github.com/zicodeng/ztopia-ui/compare/v1.14.5...v1.14.6) (2019-10-23)
+
+### Bug Fixes
+
+- fix Input is not active when value is set ([68dd1f5](https://github.com/zicodeng/ztopia-ui/commit/68dd1f5706e0a67fafd0f735d059eec4f70f60b2))
+
 ## [1.14.5](https://github.com/zicodeng/ztopia-ui/compare/v1.14.4...v1.14.5) (2019-10-18)
 
 ### Bug Fixes
