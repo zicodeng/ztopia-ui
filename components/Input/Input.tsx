@@ -11,6 +11,7 @@ import React, {
   cloneElement,
   Ref,
   CSSProperties,
+  useEffect,
 } from 'react';
 
 import './Input.css';
@@ -64,6 +65,10 @@ export const Input = memo(
       const [isActive, setIsActive] = useState(
         Boolean(placeholder || value || defaultValue),
       );
+
+      useEffect(() => {
+        setIsActive(Boolean(placeholder || value || defaultValue));
+      }, [placeholder, value, defaultValue]);
 
       const handleFocusInput = useCallback(() => {
         setIsActive(true);
