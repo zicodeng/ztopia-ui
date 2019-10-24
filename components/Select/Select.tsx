@@ -27,6 +27,10 @@ export interface SelectProps {
   maxMenuHeight?: number;
   name?: string;
   label?: string;
+  /**
+   * <@default=`'Select...'`>
+   */
+  placeholder?: string;
   className?: string;
   defaultValue?: SelectValue;
   value?: SelectValue;
@@ -36,10 +40,11 @@ export interface SelectProps {
 
 export const Select: FC<SelectProps> = memo(
   ({
-    isMulti,
-    isSearchable,
+    isMulti = false,
+    isSearchable = false,
     maxMenuHeight,
     label,
+    placeholder = 'Select...',
     className,
     value,
     options,
@@ -56,6 +61,7 @@ export const Select: FC<SelectProps> = memo(
         {...restProps}
         isMulti={isMulti}
         isSearchable={isSearchable}
+        placeholder={placeholder}
         className={classNames('ztopia-select__container', {
           'is-multi': isMulti,
           'is-searchable': isSearchable,
@@ -69,8 +75,3 @@ export const Select: FC<SelectProps> = memo(
     </div>
   ),
 );
-
-Select.defaultProps = {
-  isMulti: false,
-  isSearchable: false,
-};
