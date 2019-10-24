@@ -2068,7 +2068,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-select@^3.0.0":
+"@types/react-select@^3.0.5":
   version "3.0.5"
   resolved "https://registry.yarnpkg.com/@types/react-select/-/react-select-3.0.5.tgz#c615c1f7a0ea98e828b469d0f5ddd39ba3f0d319"
   integrity sha512-BodHwzj9WU1EWC1j8zx1iyAMDCrTURwdvMpOVvVFwDVU7fvs8Ks9fPTkUY3+BgYbpOJFr21bR3Jib/GonwanAQ==
@@ -12244,7 +12244,7 @@ react-responsive-carousel@^3.1.49:
     prop-types "^15.5.8"
     react-easy-swipe "^0.0.16"
 
-react-select@^3.0.4:
+react-select@^3.0.8:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/react-select/-/react-select-3.0.8.tgz#06ff764e29db843bcec439ef13e196865242e0c1"
   integrity sha512-v9LpOhckLlRmXN5A6/mGGEft4FMrfaBFTGAnuPHcUgVId7Je42kTq9y0Z+Ye5z8/j0XDT3zUqza8gaRaI1PZIg==
