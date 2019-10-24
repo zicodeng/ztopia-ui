@@ -1,3 +1,9 @@
+# [1.15.0](https://github.com/zicodeng/ztopia-ui/compare/v1.14.6...v1.15.0) (2019-10-24)
+
+### Features
+
+- add placeholder support to Select ([22108a0](https://github.com/zicodeng/ztopia-ui/commit/22108a00519a9f35c9c4bab27c0c33f191ec7171))
+
 ## [1.14.6](https://github.com/zicodeng/ztopia-ui/compare/v1.14.5...v1.14.6) (2019-10-23)
 
 ### Bug Fixes
