@@ -1,3 +1,9 @@
+# [1.16.0](https://github.com/zicodeng/ztopia-ui/compare/v1.15.0...v1.16.0) (2019-10-25)
+
+### Features
+
+- add isClearable prop to Select ([a80ad1d](https://github.com/zicodeng/ztopia-ui/commit/a80ad1d483f0c327492a2f588f72e24d0e834c89))
+
 # [1.15.0](https://github.com/zicodeng/ztopia-ui/compare/v1.14.6...v1.15.0) (2019-10-24)
 
 ### Features
