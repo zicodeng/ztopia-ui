@@ -1,3 +1,9 @@
+## [1.17.2](https://github.com/zicodeng/ztopia-ui/compare/v1.17.1...v1.17.2) (2019-10-26)
+
+### Bug Fixes
+
+- rename FloatingBoxes to FloatingShapes ([5e69ef7](https://github.com/zicodeng/ztopia-ui/commit/5e69ef7847de664acbccfb50353cc0e3aaef791a))
+
 ## [1.17.1](https://github.com/zicodeng/ztopia-ui/compare/v1.17.0...v1.17.1) (2019-10-26)
 
 ### Bug Fixes
