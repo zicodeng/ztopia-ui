@@ -1,3 +1,9 @@
+## [1.17.1](https://github.com/zicodeng/ztopia-ui/compare/v1.17.0...v1.17.1) (2019-10-26)
+
+### Bug Fixes
+
+- style hotfix ([04a9521](https://github.com/zicodeng/ztopia-ui/commit/04a95212a57ab943dde862c0fa444a4b834dc6d6))
+
 # [1.17.0](https://github.com/zicodeng/ztopia-ui/compare/v1.16.0...v1.17.0) (2019-10-26)
 
 ### Features
