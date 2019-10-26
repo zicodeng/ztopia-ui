@@ -21,7 +21,6 @@
   &__box {
     position: absolute;
     bottom: -150px;
-    background-color: $black-dark;
     animation: float 20s linear infinite;
 
     &:nth-of-type(1) {
