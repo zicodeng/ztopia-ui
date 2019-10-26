@@ -1,0 +1,34 @@
+---
+name: FloatingShapes
+menu: Pens
+route: /pens/floating-shapes
+---
+
+import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+
+import { FloatingShapes } from './';
+
+# FloatingShapes
+
+## Demo
+
+### Rect
+
+<Playground>
+  <Container style={{ height: 600 }}>
+    <FloatingShapes variant="rect" />
+  </Container>
+</Playground>
+
+### Circle
+
+<Playground>
+  <Container style={{ height: 600 }}>
+    <FloatingShapes variant="circle" />
+  </Container>
+</Playground>
+
+## API
+
+<Props of={FloatingShapes} />
