@@ -1,3 +1,9 @@
+## [1.17.3](https://github.com/zicodeng/ztopia-ui/compare/v1.17.2...v1.17.3) (2019-10-26)
+
+### Bug Fixes
+
+- fix animation ([b0b6624](https://github.com/zicodeng/ztopia-ui/commit/b0b66242f2adfc54e432311c11d4f8fdce37eed0))
+
 ## [1.17.2](https://github.com/zicodeng/ztopia-ui/compare/v1.17.1...v1.17.2) (2019-10-26)
 
 ### Bug Fixes
