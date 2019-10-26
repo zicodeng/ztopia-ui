@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/zicodeng/ztopia-ui/compare/v1.16.0...v1.17.0) (2019-10-26)
+
+### Features
+
+- add FloatingBoxes ([d3ef0c0](https://github.com/zicodeng/ztopia-ui/commit/d3ef0c0c7ea50e8d06aa2e41e1aa9789f58528a8))
+- implement IconCyclone ([0beff41](https://github.com/zicodeng/ztopia-ui/commit/0beff41accf02e53aabe53d0be55ca0fd1ec1978))
+
 # [1.16.0](https://github.com/zicodeng/ztopia-ui/compare/v1.15.0...v1.16.0) (2019-10-25)
 
 ### Features
