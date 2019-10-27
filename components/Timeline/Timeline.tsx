@@ -9,13 +9,18 @@ import 'react-vertical-timeline-component/style.min.css';
 import './Timeline.css';
 
 export interface TimelineProps {
+  /**
+   * <@default=`true`>
+   */
+  isAnimated?: boolean;
   className?: string;
   layout?: '1-column' | '2-columns';
 }
 
 export const Timeline: FC<TimelineProps> = memo(
-  ({ className, ...restProps }) => (
+  ({ isAnimated = true, className, ...restProps }) => (
     <VerticalTimeline
+      animate={isAnimated}
       className={classNames(className, 'ztopia-timeline')}
       {...restProps}
     />
