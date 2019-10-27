@@ -1,3 +1,9 @@
+# [1.19.0](https://github.com/zicodeng/ztopia-ui/compare/v1.18.0...v1.19.0) (2019-10-27)
+
+### Features
+
+- add gap support to Tabs ([eefe275](https://github.com/zicodeng/ztopia-ui/commit/eefe2752f95017c748a4108896322ddf45947cf8))
+
 # [1.18.0](https://github.com/zicodeng/ztopia-ui/compare/v1.17.3...v1.18.0) (2019-10-27)
 
 ### Features
