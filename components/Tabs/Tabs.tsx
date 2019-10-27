@@ -20,6 +20,10 @@ export interface TabProps {
   className?: string;
   /**
    * <@internal>
+   */
+  isVertical?: boolean;
+  /**
+   * <@internal>
    *
    * Called when Tab is rendered at the first time
    */
@@ -27,7 +31,7 @@ export interface TabProps {
 }
 
 export const Tab: FC<TabProps> = memo(
-  ({ id, className, children, onRender, ...restProps }) => {
+  ({ id, className, children, isVertical, onRender, ...restProps }) => {
     const ref = useRef(null);
     const size = useComponentSize(ref);
 
@@ -39,7 +43,9 @@ export const Tab: FC<TabProps> = memo(
       <li
         ref={ref}
         id={id}
-        className={classNames(className, 'ztopia-tabs__item')}
+        className={classNames(className, 'ztopia-tabs__item', {
+          'is-vertical': isVertical,
+        })}
         {...restProps}
       >
         {children}
@@ -53,6 +59,10 @@ export interface TabsProps {
    * <@default=`false`>
    */
   isVertical?: boolean;
+  /**
+   * <@default=`20`>
+   */
+  gap?: number;
   /**
    * Selected tab Id
    */
@@ -81,6 +91,7 @@ const MIN_TAB_SIZE = {
 export const Tabs: FC<TabsProps> = memo(
   ({
     isVertical = false,
+    gap = 20,
     value,
     className,
     indicatorPlacement,
@@ -129,8 +140,8 @@ export const Tabs: FC<TabsProps> = memo(
         (acc, tabId) => {
           const { width, height } = tabSizes[tabId] || MIN_TAB_SIZE;
           return {
-            left: isVertical ? acc.left : ((acc.left as number) += width),
-            top: isVertical ? ((acc.top as number) += height) : acc.top,
+            left: isVertical ? acc.left : ((acc.left as number) += width + gap),
+            top: isVertical ? ((acc.top as number) += height + gap) : acc.top,
           };
         },
         {
@@ -179,6 +190,7 @@ export const Tabs: FC<TabsProps> = memo(
           {Children.map(children, child =>
             isValidElement(child)
               ? cloneElement(child, {
+                  isVertical,
                   onClick: handleClickTab,
                   onRender: handleRenderTab,
                 })
