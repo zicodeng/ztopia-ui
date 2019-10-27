@@ -1,3 +1,9 @@
+# [1.18.0](https://github.com/zicodeng/ztopia-ui/compare/v1.17.3...v1.18.0) (2019-10-27)
+
+### Features
+
+- add isAnimated prop to Timeline ([977aa75](https://github.com/zicodeng/ztopia-ui/commit/977aa754d445bcbdd890f61a1b3c3bb98106df5e))
+
 ## [1.17.3](https://github.com/zicodeng/ztopia-ui/compare/v1.17.2...v1.17.3) (2019-10-26)
 
 ### Bug Fixes
