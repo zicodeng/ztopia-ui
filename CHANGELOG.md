@@ -1,3 +1,9 @@
+# [1.20.0](https://github.com/zicodeng/ztopia-ui/compare/v1.19.0...v1.20.0) (2019-10-28)
+
+### Features
+
+- add Select loading support ([8ee988a](https://github.com/zicodeng/ztopia-ui/commit/8ee988a24d95c51e271e701a9a1ca6819a32655d))
+
 # [1.19.0](https://github.com/zicodeng/ztopia-ui/compare/v1.18.0...v1.19.0) (2019-10-27)
 
 ### Features
