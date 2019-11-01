@@ -28,6 +28,7 @@
       height: 35px;
       padding: 0 $spacing-l;
       color: $white;
+      word-break: normal;
       background-color: $white;
     }
   }

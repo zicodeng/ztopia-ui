@@ -1,4 +1,6 @@
 .ztopia-slider {
+  word-break: normal;
+
   &.is-vertical {
     height: 200px;
   }

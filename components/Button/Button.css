@@ -11,7 +11,7 @@
     background-color: transparent;
     border: 1px solid $black-dark;
 
-    &:hover {
+    &:not(.is-loading):not(:disabled):hover {
       color: $white-light;
       background-color: $black-dark;
     }

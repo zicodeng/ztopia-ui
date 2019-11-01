@@ -20,6 +20,9 @@ export default {
   htmlContext: {
     head: {
       raw: [
+        '<link href="https://unpkg.com/sanitize.css" rel="stylesheet" />',
+        '<link href="https://unpkg.com/sanitize.css/forms.css" rel="stylesheet" />',
+        '<link href="https://unpkg.com/sanitize.css/typography.css" rel="stylesheet" />',
         '<script src="https://kit.fontawesome.com/fe2f496166.js"></script>',
       ],
     },
