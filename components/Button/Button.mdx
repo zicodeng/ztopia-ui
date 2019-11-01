@@ -67,9 +67,11 @@ import { Button } from './';
 
 <Playground>
   <Container>
-    <Button loader={<BasicLoader size="small" color="white" />}>Loading</Button>
-    <Button loader={<MusicLoader size="small" color="white" />}>Loading</Button>
-    <Button loader={<FadingLoader size="small" color="white" />}>
+    <Button isLoading>Loading</Button>
+    <Button isLoading loader={<MusicLoader size="small" color="white" />}>
+      Loading
+    </Button>
+    <Button isLoading loader={<FadingLoader size="small" color="white" />}>
       Loading
     </Button>
   </Container>

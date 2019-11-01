@@ -8,7 +8,7 @@ import React, {
   useMemo,
 } from 'react';
 
-import { LoaderProps } from '../Loaders';
+import { BasicLoader, LoaderProps } from '../Loaders';
 
 import './Button.css';
 
@@ -26,6 +26,10 @@ export interface ButtonProps {
    */
   isDisabled?: boolean;
   /**
+   * <@default=`false`>
+   */
+  isLoading?: boolean;
+  /**
    * <@default=`'button'`>
    */
   type?: 'button' | 'submit' | 'reset';
@@ -40,8 +44,10 @@ export interface ButtonProps {
   size?: 'small' | 'medium' | 'large';
   /**
    * A Ztopia Loader either in function form (`MusicLoader`) or element form (`<MusicLoader />`)
+   *
+   * <@default=`null`>
    */
-  loader?: ReactNode | FC<LoaderProps> | null;
+  loader?: ReactNode | FC<LoaderProps>;
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
@@ -49,25 +55,18 @@ export const Button: FC<ButtonProps> = memo<ButtonProps>(
   ({
     isGhost = false,
     isDisabled = false,
+    isLoading = false,
     type = 'button',
     className,
     variant = 'rect',
     size = 'medium',
     loader,
     children,
-    ...restProps
+    onClick,
   }) => {
     const memoizedLoader = useMemo(() => {
-      if (!loader) return null;
-
       if (typeof loader === 'object' && isValidElement(loader)) {
-        return cloneElement(loader, {
-          isCentered: true,
-          className: classNames(
-            loader.props.className,
-            'ztopia-button__loader',
-          ),
-        });
+        return cloneElement(loader, { isCentered: true });
       }
 
       if (typeof loader === 'function') {
@@ -75,7 +74,7 @@ export const Button: FC<ButtonProps> = memo<ButtonProps>(
         return <Loader isCentered />;
       }
 
-      return null;
+      return <BasicLoader isCentered size="small" color="white" />;
     }, [loader]);
 
     return (
@@ -89,13 +88,13 @@ export const Button: FC<ButtonProps> = memo<ButtonProps>(
           `ztopia-button--${size}`,
           {
             'is-ghost': isGhost,
-            'is-loading': Boolean(loader),
+            'is-loading': isLoading,
           },
         )}
-        {...restProps}
+        onClick={isLoading ? undefined : onClick}
       >
         {children}
-        {memoizedLoader}
+        {isLoading && memoizedLoader}
       </button>
     );
   },
