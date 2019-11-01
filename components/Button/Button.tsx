@@ -62,6 +62,7 @@ export const Button: FC<ButtonProps> = memo<ButtonProps>(
 
       if (typeof loader === 'object' && isValidElement(loader)) {
         return cloneElement(loader, {
+          isCentered: true,
           className: classNames(
             loader.props.className,
             'ztopia-button__loader',
@@ -71,7 +72,7 @@ export const Button: FC<ButtonProps> = memo<ButtonProps>(
 
       if (typeof loader === 'function') {
         const Loader = loader;
-        return <Loader className="ztopia-button__loader" />;
+        return <Loader isCentered />;
       }
 
       return null;

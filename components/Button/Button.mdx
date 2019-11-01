@@ -7,7 +7,7 @@ route: /components/button
 import { Props, Playground } from 'docz';
 import { Container } from 'docz-theme-ztopia/helpers';
 
-import { BasicLoader, MusicLoader } from '../Loaders';
+import { BasicLoader, MusicLoader, FadingLoader } from '../Loaders';
 
 import { Button } from './';
 
@@ -69,6 +69,9 @@ import { Button } from './';
   <Container>
     <Button loader={<BasicLoader size="small" color="white" />}>Loading</Button>
     <Button loader={<MusicLoader size="small" color="white" />}>Loading</Button>
+    <Button loader={<FadingLoader size="small" color="white" />}>
+      Loading
+    </Button>
   </Container>
 </Playground>
 
