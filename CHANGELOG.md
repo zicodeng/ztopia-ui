@@ -1,3 +1,14 @@
+# [1.21.0](https://github.com/zicodeng/ztopia-ui/compare/v1.20.0...v1.21.0) (2019-11-01)
+
+### Bug Fixes
+
+- fix loader style ([7bfbf43](https://github.com/zicodeng/ztopia-ui/commit/7bfbf431eaa53d19b5b92f7e683e085f08e45c01))
+
+### Features
+
+- add isLoading prop to Button ([1441499](https://github.com/zicodeng/ztopia-ui/commit/14414999940355f1704d13e9532bfba169daf241))
+- use sanitize.css ([65b9d0d](https://github.com/zicodeng/ztopia-ui/commit/65b9d0d491c58ce5a777900e237b62a4371fcdac))
+
 # [1.20.0](https://github.com/zicodeng/ztopia-ui/compare/v1.19.0...v1.20.0) (2019-10-28)
 
 ### Features
