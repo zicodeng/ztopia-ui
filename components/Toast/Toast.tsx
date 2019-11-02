@@ -14,7 +14,7 @@ export interface ToastOptions {
   /**
    * <@default=`false`>
    */
-  isProgressBarHidden?: boolean;
+  isProgressBarShown?: boolean;
   className?: string;
   /**
    * For multiple container support. If enabled, `makeToast({containerId})` must match `<ToastContainer containerId>`
@@ -45,12 +45,12 @@ export interface ToastOptions {
   variant?: 'default' | 'info' | 'success' | 'warning' | 'error';
 }
 
-export const ToastContainer: FC<ToastOptions> = memo(
+export const ToastContainer: FC<ToastOptions> = memo<ToastOptions>(
   ({
-    isProgressBarHidden,
+    isProgressBarShown = false,
     className,
     containerId,
-    placement,
+    placement = 'top-right',
     ...restProps
   }) => (
     <BaseToastContainer
@@ -59,7 +59,7 @@ export const ToastContainer: FC<ToastOptions> = memo(
       toastClassName="ztopia-toast__content"
       bodyClassName="ztopia-toast__body"
       progressClassName="ztopia-toast__progress"
-      hideProgressBar={isProgressBarHidden}
+      hideProgressBar={!isProgressBarShown}
       containerId={containerId}
       position={placement}
       enableMultiContainer={Boolean(containerId)}
@@ -76,39 +76,31 @@ export const ToastContainer: FC<ToastOptions> = memo(
 
 export const makeToast = (
   content: ReactNode,
-  options?: ToastOptions,
+  options: ToastOptions = {},
 ): ToastId => {
   const {
-    isProgressBarHidden,
-    placement,
-    variant,
+    isProgressBarShown = undefined,
+    placement = undefined,
+    variant = undefined,
     ...restOptions
-  } = options || {
-    isProgressBarHidden: undefined,
-    placement: undefined,
-    variant: undefined,
-  };
+  } = options;
   return toast(content, {
-    hideProgressBar: isProgressBarHidden,
+    hideProgressBar: isProgressBarShown,
     position: placement,
     type: variant,
     ...restOptions,
   });
 };
 
-export const updateToast = (toastId: ToastId, options?: ToastOptions) => {
+export const updateToast = (toastId: ToastId, options: ToastOptions = {}) => {
   const {
-    isProgressBarHidden,
-    placement,
-    variant,
+    isProgressBarShown = undefined,
+    placement = undefined,
+    variant = undefined,
     ...restOptions
-  } = options || {
-    isProgressBarHidden: undefined,
-    placement: undefined,
-    variant: undefined,
-  };
+  } = options;
   return toast.update(toastId, {
-    hideProgressBar: isProgressBarHidden,
+    hideProgressBar: isProgressBarShown,
     position: placement,
     type: variant,
     ...restOptions,
