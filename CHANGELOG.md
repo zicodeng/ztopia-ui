@@ -1,3 +1,14 @@
+# [1.22.0](https://github.com/zicodeng/ztopia-ui/compare/v1.21.2...v1.22.0) (2019-11-02)
+
+### Bug Fixes
+
+- make API more consistent ([04e898f](https://github.com/zicodeng/ztopia-ui/commit/04e898f8c5cbacbb2657a7ea65a6545fdb40a292))
+- remove redundant comments ([f03ef55](https://github.com/zicodeng/ztopia-ui/commit/f03ef55dfb969ac6563620575ad7357eb88820e4))
+
+### Features
+
+- add prop to show and hide toast close button ([e4d0ab6](https://github.com/zicodeng/ztopia-ui/commit/e4d0ab69586e89b97a9dd3387e31a90442e556f5))
+
 ## [1.21.2](https://github.com/zicodeng/ztopia-ui/compare/v1.21.1...v1.21.2) (2019-11-02)
 
 ### Bug Fixes
