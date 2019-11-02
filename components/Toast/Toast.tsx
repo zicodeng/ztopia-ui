@@ -4,8 +4,6 @@ import { toast, ToastContainer as BaseToastContainer } from 'react-toastify';
 
 import { Times } from '../Icons';
 
-// The following import will not be injected, WHY?
-// import 'react-toastify/dist/ReactToastify.css';
 import './Toast.css';
 
 export type ToastId = number | string;
