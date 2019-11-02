@@ -14,7 +14,7 @@ export interface ModalProps {
   /**
    * <@default=`false`>
    */
-  isCloseIconShown?: boolean;
+  isCloseButtonShown?: boolean;
   /**
    * Specify container in which the Modal should be rendered
    */
@@ -33,7 +33,7 @@ export interface ModalProps {
 export const Modal: FC<ModalProps> = memo(
   ({
     isOpen = false,
-    isCloseIconShown = false,
+    isCloseButtonShown = false,
     containerId,
     className,
     size = 'medium',
@@ -60,7 +60,7 @@ export const Modal: FC<ModalProps> = memo(
         parentSelector={getParent}
       >
         {children}
-        {isCloseIconShown && (
+        {isCloseButtonShown && (
           <Times
             className="ztopia-modal__close-indicator"
             onClick={onRequestClose}

@@ -56,14 +56,14 @@ Dependency: [react-modal](https://github.com/reactjs/react-modal)
   </Container>
 </Playground>
 
-### Show Close Icon
+### Show Close Button
 
 <Playground>
   <ModalDemo>
     {({ isOpen, openModal, closeModal }) => (
       <>
         <Trigger onClick={openModal}>Show Close Icon</Trigger>
-        <Modal isCloseIconShown isOpen={isOpen} onRequestClose={closeModal}>
+        <Modal isCloseButtonShown isOpen={isOpen} onRequestClose={closeModal}>
           <h1>Hello, World!</h1>
           <p>{LOREM}</p>
         </Modal>
