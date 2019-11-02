@@ -1,3 +1,10 @@
+## [1.21.1](https://github.com/zicodeng/ztopia-ui/compare/v1.21.0...v1.21.1) (2019-11-02)
+
+### Bug Fixes
+
+- add style prop to Button ([0c83340](https://github.com/zicodeng/ztopia-ui/commit/0c83340cf33f76c8e4e57b67adf933d6f09b8e9b))
+- fix basic loader small size ([fd93f56](https://github.com/zicodeng/ztopia-ui/commit/fd93f569ebbe42b72e059ce3df909c3ade09fe24))
+
 # [1.21.0](https://github.com/zicodeng/ztopia-ui/compare/v1.20.0...v1.21.0) (2019-11-01)
 
 ### Bug Fixes
