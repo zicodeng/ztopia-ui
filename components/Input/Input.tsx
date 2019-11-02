@@ -62,15 +62,17 @@ export const Input = memo(
       },
       ref,
     ) => {
+      const [isFocused, setIsFocused] = useState(false);
       const [isActive, setIsActive] = useState(
         Boolean(placeholder || value || defaultValue),
       );
 
       useEffect(() => {
-        setIsActive(Boolean(placeholder || value || defaultValue));
-      }, [placeholder, value, defaultValue]);
+        setIsActive(Boolean(isFocused || placeholder || value || defaultValue));
+      }, [isFocused, placeholder, value, defaultValue]);
 
       const handleFocusInput = useCallback(() => {
+        setIsFocused(true);
         setIsActive(true);
       }, []);
 
