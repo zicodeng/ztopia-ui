@@ -74,7 +74,7 @@ export const Button: FC<ButtonProps> = memo<ButtonProps>(
         return <Loader isCentered />;
       }
 
-      return <BasicLoader isCentered size="small" color="white" />;
+      return <BasicLoader isCentered size="small" color="#ffffff" />;
     }, [loader]);
 
     return (
