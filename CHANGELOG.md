@@ -1,3 +1,9 @@
+## [1.21.2](https://github.com/zicodeng/ztopia-ui/compare/v1.21.1...v1.21.2) (2019-11-02)
+
+### Bug Fixes
+
+- fix Input label not lifted even if Input is focused ([9e41119](https://github.com/zicodeng/ztopia-ui/commit/9e41119e66f22f9839afd617bd78da9d1d82c01e))
+
 ## [1.21.1](https://github.com/zicodeng/ztopia-ui/compare/v1.21.0...v1.21.1) (2019-11-02)
 
 ### Bug Fixes
