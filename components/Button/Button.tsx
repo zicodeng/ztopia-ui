@@ -6,6 +6,7 @@ import React, {
   memo,
   ReactNode,
   useMemo,
+  CSSProperties,
 } from 'react';
 
 import { BasicLoader, LoaderProps } from '../Loaders';
@@ -29,11 +30,15 @@ export interface ButtonProps {
    * <@default=`false`>
    */
   isLoading?: boolean;
+  className?: string;
+  /**
+   * <@default=`{}`>
+   */
+  style?: CSSProperties;
   /**
    * <@default=`'button'`>
    */
   type?: 'button' | 'submit' | 'reset';
-  className?: string;
   /**
    * <@default=`'rect'`>
    */
@@ -56,8 +61,9 @@ export const Button: FC<ButtonProps> = memo<ButtonProps>(
     isGhost = false,
     isDisabled = false,
     isLoading = false,
-    type = 'button',
     className,
+    style = {},
+    type = 'button',
     variant = 'rect',
     size = 'medium',
     loader,
@@ -81,6 +87,7 @@ export const Button: FC<ButtonProps> = memo<ButtonProps>(
       <button
         disabled={isDisabled}
         type={type}
+        style={style}
         className={classNames(
           className,
           'ztopia-button',
