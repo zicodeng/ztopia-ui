@@ -30,6 +30,41 @@ Dependency: [react-toastify](https://github.com/fkhadra/react-toastify)
   </Button>
 </Playground>
 
+### Show Progress
+
+<Playground>
+  <ToastContainer containerId="progress-bar-demo" />
+  <Container>
+    <Button
+      onClick={() =>
+        makeToast('Hello!', {
+          containerId: 'progress-bar-demo',
+          isProgressBarShown: true,
+        })
+      }
+    >
+      Make Toast
+    </Button>
+  </Container>
+</Playground>
+
+### Show Close Button
+
+<Playground>
+  <ToastContainer isCloseButtonShown containerId="close-button-demo" />
+  <Container>
+    <Button
+      onClick={() =>
+        makeToast('Hello!', {
+          containerId: 'close-button-demo',
+        })
+      }
+    >
+      Make Toast
+    </Button>
+  </Container>
+</Playground>
+
 ### Placement
 
 <Playground>
@@ -106,7 +141,7 @@ Dependency: [react-toastify](https://github.com/fkhadra/react-toastify)
     <Button
       onClick={() =>
         makeToast('Default', {
-          type: 'default',
+          variant: 'default',
           containerId: 'variant-demo',
         })
       }
@@ -116,7 +151,7 @@ Dependency: [react-toastify](https://github.com/fkhadra/react-toastify)
     <Button
       onClick={() =>
         makeToast('Info', {
-          type: 'info',
+          variant: 'info',
           containerId: 'variant-demo',
         })
       }
@@ -126,7 +161,7 @@ Dependency: [react-toastify](https://github.com/fkhadra/react-toastify)
     <Button
       onClick={() =>
         makeToast('Success', {
-          type: 'success',
+          variant: 'success',
           containerId: 'variant-demo',
         })
       }
@@ -136,7 +171,7 @@ Dependency: [react-toastify](https://github.com/fkhadra/react-toastify)
     <Button
       onClick={() =>
         makeToast('Warning', {
-          type: 'warning',
+          variant: 'warning',
           containerId: 'variant-demo',
         })
       }
@@ -146,7 +181,7 @@ Dependency: [react-toastify](https://github.com/fkhadra/react-toastify)
     <Button
       onClick={() =>
         makeToast('Error', {
-          type: 'error',
+          variant: 'error',
           containerId: 'variant-demo',
         })
       }
@@ -184,7 +219,7 @@ Dependency: [react-toastify](https://github.com/fkhadra/react-toastify)
   </Container>
 </Playground>
 
-### Update Toast
+### Update Toast by Toast ID
 
 <Playground>
   <ToastContainer containerId="update-demo" />
@@ -206,7 +241,7 @@ Dependency: [react-toastify](https://github.com/fkhadra/react-toastify)
           containerId: 'update-demo',
           render: 'Hola!',
           autoClose: 5000,
-          type: 'success',
+          variant: 'success',
         })
       }
     >
@@ -220,7 +255,7 @@ Dependency: [react-toastify](https://github.com/fkhadra/react-toastify)
 ### makeToast, updateToast, dismissToast & dismissAllToasts
 
 ```ts
-type ToastId = number | string;
+variant ToastId = number | string;
 
 const makeToast: (content: ReactNode, options: ToastOptions) => ToastId;
 

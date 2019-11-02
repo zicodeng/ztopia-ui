@@ -13,6 +13,10 @@ export interface ToastOptions {
    * <@default=`false`>
    */
   isProgressBarShown?: boolean;
+  /**
+   * <@default=`false`>
+   */
+  isCloseButtonShown?: boolean;
   className?: string;
   /**
    * For multiple container support. If enabled, `makeToast({containerId})` must match `<ToastContainer containerId>`
@@ -46,6 +50,7 @@ export interface ToastOptions {
 export const ToastContainer: FC<ToastOptions> = memo<ToastOptions>(
   ({
     isProgressBarShown = false,
+    isCloseButtonShown = false,
     className,
     containerId,
     placement = 'top-right',
@@ -61,13 +66,16 @@ export const ToastContainer: FC<ToastOptions> = memo<ToastOptions>(
       containerId={containerId}
       position={placement}
       enableMultiContainer={Boolean(containerId)}
-      closeButton={createElement(({ closeToast }) => (
-        <Times
-          size="small"
-          className="ztopia-toast__close-indicator"
-          onClick={closeToast}
-        />
-      ))}
+      closeButton={
+        isCloseButtonShown &&
+        createElement(({ closeToast }) => (
+          <Times
+            size="small"
+            className="ztopia-toast__close-indicator"
+            onClick={closeToast}
+          />
+        ))
+      }
     />
   ),
 );
@@ -77,13 +85,13 @@ export const makeToast = (
   options: ToastOptions = {},
 ): ToastId => {
   const {
-    isProgressBarShown = undefined,
-    placement = undefined,
-    variant = undefined,
+    isProgressBarShown = false,
+    placement = 'top-right',
+    variant = 'default',
     ...restOptions
   } = options;
   return toast(content, {
-    hideProgressBar: isProgressBarShown,
+    hideProgressBar: !isProgressBarShown,
     position: placement,
     type: variant,
     ...restOptions,
@@ -92,9 +100,9 @@ export const makeToast = (
 
 export const updateToast = (toastId: ToastId, options: ToastOptions = {}) => {
   const {
-    isProgressBarShown = undefined,
-    placement = undefined,
-    variant = undefined,
+    isProgressBarShown = false,
+    placement = 'top-right',
+    variant = 'default',
     ...restOptions
   } = options;
   return toast.update(toastId, {
