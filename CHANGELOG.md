@@ -1,3 +1,9 @@
+## [1.22.7](https://github.com/zicodeng/ztopia-ui/compare/v1.22.6...v1.22.7) (2019-11-03)
+
+### Bug Fixes
+
+- recalculate on cards change ([3bf41df](https://github.com/zicodeng/ztopia-ui/commit/3bf41df60c9f3f58e64a8b28e4694c9117622ba1))
+
 ## [1.22.6](https://github.com/zicodeng/ztopia-ui/compare/v1.22.5...v1.22.6) (2019-11-03)
 
 ### Bug Fixes
