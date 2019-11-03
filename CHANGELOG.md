@@ -1,3 +1,9 @@
+## [1.22.4](https://github.com/zicodeng/ztopia-ui/compare/v1.22.3...v1.22.4) (2019-11-03)
+
+### Bug Fixes
+
+- add pointer-events none to label ([56a641d](https://github.com/zicodeng/ztopia-ui/commit/56a641d92aa9a0cf12de03e30a628e259731cdb7))
+
 ## [1.22.3](https://github.com/zicodeng/ztopia-ui/compare/v1.22.2...v1.22.3) (2019-11-03)
 
 ### Bug Fixes
