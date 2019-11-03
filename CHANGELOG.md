@@ -1,3 +1,9 @@
+## [1.22.1](https://github.com/zicodeng/ztopia-ui/compare/v1.22.0...v1.22.1) (2019-11-03)
+
+### Bug Fixes
+
+- add label prop ([2caff28](https://github.com/zicodeng/ztopia-ui/commit/2caff287f379ac934b83111c70c0ee36dfe5b241))
+
 # [1.22.0](https://github.com/zicodeng/ztopia-ui/compare/v1.21.2...v1.22.0) (2019-11-02)
 
 ### Bug Fixes
