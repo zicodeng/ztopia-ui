@@ -1,3 +1,9 @@
+## [1.22.6](https://github.com/zicodeng/ztopia-ui/compare/v1.22.5...v1.22.6) (2019-11-03)
+
+### Bug Fixes
+
+- adjust text placeholder width random value ([3cce875](https://github.com/zicodeng/ztopia-ui/commit/3cce875e11c74bce77da5871829ff594d18874c6))
+
 ## [1.22.5](https://github.com/zicodeng/ztopia-ui/compare/v1.22.4...v1.22.5) (2019-11-03)
 
 ### Bug Fixes
