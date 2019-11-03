@@ -18,8 +18,8 @@ interface CardCarouselProps {
 }
 
 export const CardCarousel: FC<CardCarouselProps> = memo(
-  ({ gap, className, cards, ...restProps }) => {
-    const [x, setX] = useState(-gap!);
+  ({ gap = 10, className, cards, ...restProps }) => {
+    const [x, setX] = useState(-gap);
     const [width, setWidth] = useState(0);
     const [scrollWidth, setScrollWidth] = useState(0);
 
@@ -42,7 +42,7 @@ export const CardCarousel: FC<CardCarouselProps> = memo(
       if (x < minX) {
         setX(minX);
       }
-    }, [windowSize, width]);
+    }, [cards, windowSize, width]);
 
     return (
       <div
@@ -107,7 +107,3 @@ export const CardCarousel: FC<CardCarouselProps> = memo(
     );
   },
 );
-
-CardCarousel.defaultProps = {
-  gap: 10,
-};
