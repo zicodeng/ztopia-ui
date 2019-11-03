@@ -24,7 +24,7 @@ export interface FileUploaderProps {
    */
   minSize?: number;
   /**
-   * <@default=`10000`>
+   * <@default=`10000000 (10MB)`>
    */
   maxSize?: number;
   className?: string;
@@ -64,7 +64,7 @@ export const FileUploader: FC<FileUploaderProps> = memo(
   ({
     isMulti = false,
     minSize = 1,
-    maxSize = 10000,
+    maxSize = 10000000,
     className,
     label = 'Choose a File or Drag It Here',
     progress = {},
