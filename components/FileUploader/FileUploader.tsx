@@ -29,6 +29,10 @@ export interface FileUploaderProps {
   maxSize?: number;
   className?: string;
   /**
+   * <@default=``>
+   */
+  label?: string;
+  /**
    * An object that associates file name and its current upload progress percent
    *
    * <@default=`{}`>
@@ -59,9 +63,10 @@ const convertBytesToSize = (bytes: number) => {
 export const FileUploader: FC<FileUploaderProps> = memo(
   ({
     isMulti = false,
-    minSize,
-    maxSize,
+    minSize = 1,
+    maxSize = 10000,
     className,
+    label = 'Choose a File or Drag It Here',
     progress = {},
     allowedFileTypes = 'image/*',
     ...restProps
@@ -112,15 +117,13 @@ export const FileUploader: FC<FileUploaderProps> = memo(
         <div
           {...getRootProps({
             className: classNames('ztopia-file-uploader__dropzone', {
-              [dragState!]: Boolean(dragState),
+              [dragState as string]: Boolean(dragState),
             }),
           })}
         >
           <input {...getInputProps()} />
           <CloudUpload width={50} className="ztopia-file-uploader__icon" />
-          <p className="ztopia-file-uploader__title">
-            Choose a File or Drag It Here
-          </p>
+          <label className="ztopia-file-uploader__label">{label}</label>
         </div>
         <ul className="ztopia-file-uploader__file-previews">
           {previewFiles.map(({ thumbURL, name, size }, i) => {
