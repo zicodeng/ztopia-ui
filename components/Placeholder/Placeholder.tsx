@@ -56,7 +56,7 @@ export const Placeholder: FC<PlaceholderProps> = memo(
             key={i}
             style={{
               height,
-              width: `${Math.random() * 100 + 50}%`,
+              width: `${Math.random() * 80 + 50}%`,
               backgroundColor: color,
             }}
           />
