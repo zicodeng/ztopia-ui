@@ -1,3 +1,10 @@
+## [1.22.3](https://github.com/zicodeng/ztopia-ui/compare/v1.22.2...v1.22.3) (2019-11-03)
+
+### Bug Fixes
+
+- add closing tag to path ([f63435e](https://github.com/zicodeng/ztopia-ui/commit/f63435ed96ae18b09a3a582b2d6fc9c086fb263c))
+- update cloud upload icon ([3a4871f](https://github.com/zicodeng/ztopia-ui/commit/3a4871f7d588ff2c2ae3496d7d4945d3d2ed6994))
+
 ## [1.22.2](https://github.com/zicodeng/ztopia-ui/compare/v1.22.1...v1.22.2) (2019-11-03)
 
 ### Bug Fixes
