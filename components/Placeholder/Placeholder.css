@@ -38,6 +38,14 @@
 
     > div {
       margin: $spacing-s 0;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
   }
 }
