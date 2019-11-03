@@ -1,3 +1,9 @@
+## [1.22.2](https://github.com/zicodeng/ztopia-ui/compare/v1.22.1...v1.22.2) (2019-11-03)
+
+### Bug Fixes
+
+- fix max size ([aaf9094](https://github.com/zicodeng/ztopia-ui/commit/aaf9094a3a501c9479654337a3f62c627aa5cb18))
+
 ## [1.22.1](https://github.com/zicodeng/ztopia-ui/compare/v1.22.0...v1.22.1) (2019-11-03)
 
 ### Bug Fixes
