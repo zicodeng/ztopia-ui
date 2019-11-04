@@ -1,3 +1,9 @@
+# [1.23.0](https://github.com/zicodeng/ztopia-ui/compare/v1.22.7...v1.23.0) (2019-11-04)
+
+### Features
+
+- add TruncatedText ([b77f232](https://github.com/zicodeng/ztopia-ui/commit/b77f23228749fa97122555dc9487c95d6d245850))
+
 ## [1.22.7](https://github.com/zicodeng/ztopia-ui/compare/v1.22.6...v1.22.7) (2019-11-03)
 
 ### Bug Fixes
