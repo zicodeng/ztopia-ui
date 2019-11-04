@@ -81,6 +81,7 @@
     "react-dropzone": "^10.1.8",
     "react-joyride": "^2.1.1",
     "react-lazyload": "^2.6.2",
+    "react-lines-ellipsis": "^0.14.1",
     "react-map-gl": "^5.0.8",
     "react-modal": "^3.9.1",
     "react-progressive-image": "^0.6.0",
