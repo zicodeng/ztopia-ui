@@ -1,0 +1,26 @@
+---
+name: LikeButton
+menu: Pens
+route: /pens/like-button
+---
+
+import { Props, Playground } from 'docz';
+
+import { LikeButton } from './';
+import { LikeButtonDemo } from './LikeButtonDemo';
+
+# LikeButton
+
+## Demo
+
+<Playground>
+  <LikeButtonDemo>
+    {({ isLiked, onClick }) => (
+      <LikeButton isLiked={isLiked} onClick={onClick} />
+    )}
+  </LikeButtonDemo>
+</Playground>
+
+## API
+
+<Props of={LikeButton} />

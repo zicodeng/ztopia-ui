@@ -1,0 +1,71 @@
+@keyframes bouncy {
+  from,
+  to {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}
+
+.ztopia-like-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: $white-dark;
+  border: 0;
+  border-radius: 50%;
+  outline: 0;
+  cursor: pointer;
+
+  &__heart {
+    color: $white-light;
+    animation: bouncy 0.6s;
+
+    &--regular {
+      z-index: 1;
+      display: block;
+
+      &.is-liked {
+        display: none;
+      }
+    }
+
+    &--solid {
+      z-index: 1;
+      display: none;
+
+      &.is-liked {
+        display: block;
+      }
+    }
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $red;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: $transition-fast;
+    content: '';
+  }
+
+  &.is-liked {
+    &::after {
+      transform: scale(1);
+    }
+  }
+}
