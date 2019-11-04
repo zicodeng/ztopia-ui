@@ -1,3 +1,9 @@
+# [1.24.0](https://github.com/zicodeng/ztopia-ui/compare/v1.23.0...v1.24.0) (2019-11-04)
+
+### Features
+
+- add LikeButton ([bc8c93c](https://github.com/zicodeng/ztopia-ui/commit/bc8c93c1d00c18c5b9d2dc8ad52b9bb111e8b32c))
+
 # [1.23.0](https://github.com/zicodeng/ztopia-ui/compare/v1.22.7...v1.23.0) (2019-11-04)
 
 ### Features
