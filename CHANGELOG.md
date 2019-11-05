@@ -1,3 +1,10 @@
+## [1.25.2](https://github.com/zicodeng/ztopia-ui/compare/v1.25.1...v1.25.2) (2019-11-05)
+
+### Bug Fixes
+
+- add enum type Mood ([3fc82aa](https://github.com/zicodeng/ztopia-ui/commit/3fc82aac37e0d0294f4d064d6f04526642bef37a))
+- add types ([ae7df52](https://github.com/zicodeng/ztopia-ui/commit/ae7df52de5714fa549f74e68db673b617a20f23d))
+
 ## [1.25.1](https://github.com/zicodeng/ztopia-ui/compare/v1.25.0...v1.25.1) (2019-11-05)
 
 ### Bug Fixes
