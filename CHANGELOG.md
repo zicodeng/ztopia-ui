@@ -1,3 +1,9 @@
+## [1.24.1](https://github.com/zicodeng/ztopia-ui/compare/v1.24.0...v1.24.1) (2019-11-05)
+
+### Bug Fixes
+
+- spread rest props ([58c5e1a](https://github.com/zicodeng/ztopia-ui/commit/58c5e1a3406914c55544331413208e47419af817))
+
 # [1.24.0](https://github.com/zicodeng/ztopia-ui/compare/v1.23.0...v1.24.0) (2019-11-04)
 
 ### Features
