@@ -3,9 +3,15 @@ import classNames from 'classnames';
 
 import './MoodyDog.css';
 
-interface MoodyDogProps {
+export enum Mood {
+  Relaxed = 'relaxed',
+  Happy = 'happy',
+  Sad = 'sad',
+}
+
+export interface MoodyDogProps {
   className?: string;
-  mood?: 'relaxed' | 'happy' | 'sad';
+  mood?: Mood;
 }
 
 export const MoodyDog: FC<MoodyDogProps> = memo(
