@@ -1,3 +1,9 @@
+# [1.25.0](https://github.com/zicodeng/ztopia-ui/compare/v1.24.1...v1.25.0) (2019-11-05)
+
+### Features
+
+- add MoodyDog ([c37d893](https://github.com/zicodeng/ztopia-ui/commit/c37d893697e107b3a323b48e27997f8945596e40))
+
 ## [1.24.1](https://github.com/zicodeng/ztopia-ui/compare/v1.24.0...v1.24.1) (2019-11-05)
 
 ### Bug Fixes
