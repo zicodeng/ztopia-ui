@@ -54,6 +54,8 @@ export interface ButtonProps {
    */
   loader?: ReactNode | FC<LoaderProps>;
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onMouseEnter?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onMouseLeave?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 export const Button: FC<ButtonProps> = memo<ButtonProps>(
@@ -69,6 +71,7 @@ export const Button: FC<ButtonProps> = memo<ButtonProps>(
     loader,
     children,
     onClick,
+    ...restProps
   }) => {
     const memoizedLoader = useMemo(() => {
       if (typeof loader === 'object' && isValidElement(loader)) {
@@ -99,6 +102,7 @@ export const Button: FC<ButtonProps> = memo<ButtonProps>(
           },
         )}
         onClick={isLoading ? undefined : onClick}
+        {...restProps}
       >
         {children}
         {isLoading && memoizedLoader}
