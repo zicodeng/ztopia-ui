@@ -1,3 +1,9 @@
+## [1.25.1](https://github.com/zicodeng/ztopia-ui/compare/v1.25.0...v1.25.1) (2019-11-05)
+
+### Bug Fixes
+
+- pass className in ([6874f83](https://github.com/zicodeng/ztopia-ui/commit/6874f839c4795bfedf1b8d0dd441daff3c3e851a))
+
 # [1.25.0](https://github.com/zicodeng/ztopia-ui/compare/v1.24.1...v1.25.0) (2019-11-05)
 
 ### Features
