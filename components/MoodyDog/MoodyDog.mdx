@@ -1,0 +1,77 @@
+---
+name: MoodyDog
+menu: Pens
+route: /pens/moody-dog
+---
+
+import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+
+import { Button } from '../Button';
+
+import { MoodyDog } from './';
+import { MoodyDogDemo } from './MoodyDogDemo';
+
+# MoodyDog
+
+## Demo
+
+### Mood Relaxed, Happy and & Sad
+
+<Playground>
+  <Container
+    style={{
+      justifyContent: 'space-around',
+    }}
+  >
+    <MoodyDog mood="relaxed" />
+    <MoodyDog mood="happy" />
+    <MoodyDog mood="sad" />
+  </Container>
+</Playground>
+
+### Mood Transition
+
+<Playground>
+  <MoodyDogDemo>
+    {({ mood, setMood }) => (
+      <>
+        <MoodyDog mood={mood} />
+        <div
+          style={{
+            width: 300,
+            display: 'flex',
+            justifyContent: 'space-evenly',
+            margin: '30px auto 0',
+          }}
+        >
+          <Button
+            onClick={() => {
+              setMood('relaxed');
+            }}
+          >
+            Relaxed
+          </Button>
+          <Button
+            onClick={() => {
+              setMood('happy');
+            }}
+          >
+            Happy
+          </Button>
+          <Button
+            onClick={() => {
+              setMood('sad');
+            }}
+          >
+            Sad
+          </Button>
+        </div>
+      </>
+    )}
+  </MoodyDogDemo>
+</Playground>
+
+## API
+
+<Props of={MoodyDog} />

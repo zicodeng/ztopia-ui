@@ -1,0 +1,391 @@
+$brown-light: #f7aa2b;
+$brown: #cb7a1d;
+$brown-dark: #451d1c;
+$white: #fff;
+$red: #f5534f;
+$grey: #e8e7ec;
+
+%transition {
+  transition: 0.2s ease-in;
+}
+
+@keyframes move-tongue {
+  100% {
+    height: 27px;
+  }
+}
+
+@keyframes move-tail {
+  0% {
+    transform: rotate(37deg);
+  }
+  100% {
+    transform: rotate(52deg);
+  }
+}
+@keyframes cry {
+  100% {
+    visibility: visible;
+  }
+}
+
+.head,
+.body {
+  position: relative;
+  width: 115px;
+}
+
+.head {
+  height: 115px;
+  margin: 0 auto;
+  border-radius: 50% 50% 0 0;
+}
+
+.ears {
+  position: relative;
+  top: -14%;
+  width: 100%;
+
+  &::before,
+  &::after {
+    @extend %transition;
+    position: absolute;
+    top: 0;
+    width: 35px;
+    height: 70px;
+    background: $brown;
+    border-top: 11px solid $brown-light;
+    border-right: 7px solid $brown-light;
+    border-left: 7px solid $brown-light;
+    content: '';
+  }
+
+  &::before {
+    left: 0;
+    border-radius: 50% 45% 0 0;
+  }
+
+  &::after {
+    right: 0;
+    border-radius: 45% 50% 0 0;
+  }
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: $brown-light;
+  border-radius: 50% 50% 0 0;
+  &::before,
+  &::after {
+    @extend %transition;
+    display: block;
+    margin: auto;
+    background: $white;
+    content: '';
+  }
+
+  &::before {
+    width: 15px;
+    height: 35px;
+    margin-top: 24px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    width: 60px;
+    height: 65px;
+    border-radius: 45% 45% 0 0;
+  }
+}
+
+.eyes {
+  @extend %transition;
+  position: relative;
+  top: 29%;
+  text-align: center;
+  &::before,
+  &::after {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 14.5%;
+    background: $brown-dark;
+    border-radius: 100%;
+    content: '';
+  }
+}
+
+.teardrop {
+  @extend %transition;
+  position: absolute;
+  top: 125%;
+  left: 19%;
+  width: 6px;
+  height: 6px;
+  background: $white;
+  border-radius: 0 50% 50% 50%;
+  transform: rotate(45deg);
+  visibility: hidden;
+}
+
+.nose {
+  @extend %transition;
+  position: relative;
+  top: 35%;
+  width: 16px;
+  height: 8px;
+  margin: auto;
+  background: $brown-dark;
+  border-radius: 35px 35px 65px 65px;
+}
+
+.mouth {
+  @extend %transition;
+  position: relative;
+  top: 34.5%;
+  width: 4px;
+  height: 6px;
+  margin: 0 auto;
+  text-align: center;
+  background: $brown-dark;
+  &::before,
+  &::after {
+    position: absolute;
+    top: -4px;
+    z-index: 2;
+    width: 18px;
+    height: 18px;
+    border: 4px solid $brown-dark;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-radius: 50%;
+    content: '';
+  }
+
+  &::before {
+    transform: translateX(-89%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translateX(-2px) rotate(45deg);
+  }
+}
+
+.tongue {
+  position: relative;
+  z-index: 1;
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+    @extend %transition;
+  }
+
+  &::before {
+    top: 10px;
+    left: -7px;
+    z-index: -1;
+    width: 18px;
+    height: 0;
+    background: $brown-dark;
+    border-radius: 50%;
+  }
+
+  &::after {
+    top: 14px;
+    left: -4px;
+    z-index: 5;
+    width: 12px;
+    height: 0;
+    background: $red;
+    border-radius: 20px;
+  }
+}
+
+.chin {
+  @extend %transition;
+  position: relative;
+  top: 47.5%;
+  z-index: 0;
+  width: 12px;
+  height: 12px;
+  margin: 0 auto;
+  border-top: 10px solid $grey;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-radius: 2px;
+}
+
+.body {
+  position: relative;
+  z-index: 0;
+  height: 139px;
+  margin: auto;
+  &::before,
+  &::after {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin: auto;
+    background: $brown-light;
+    content: '';
+  }
+
+  &::after {
+    top: -2px;
+    bottom: -1px;
+    width: 60px;
+    background: $white;
+  }
+}
+
+.tail {
+  @extend %transition;
+  position: absolute;
+  bottom: 1px;
+  left: -60%;
+  z-index: -2;
+  width: 93px;
+  height: 15px;
+  background: $brown-light;
+  border-radius: 25px 0 0 25px;
+  transform: rotate(45deg);
+  transform-origin: 100% 50%;
+}
+
+.legs {
+  position: absolute;
+  bottom: 0;
+  left: -10%;
+  width: 120%;
+  height: 15%;
+  background: $brown-light;
+  border-radius: 10px 10px 0 0;
+  &::before,
+  &::after {
+    position: absolute;
+    bottom: 1px;
+    z-index: -1;
+    background: $brown;
+    content: '';
+  }
+
+  &::before {
+    left: -7.5%;
+    width: 115%;
+    height: 55%;
+    border-radius: 5px 5px 0 0;
+  }
+
+  &::after {
+    left: -3.5%;
+    width: 107%;
+    height: 250%;
+    border-radius: 20px 20px 35px 35px;
+  }
+}
+
+.dog {
+  &--happy {
+    .face &::before {
+      margin-top: 10px;
+    }
+    &::after {
+      height: 85px;
+    }
+    .eyes {
+      top: 13%;
+      &::before,
+      &::after {
+        width: 18px;
+        height: 5px;
+        margin: 0px 12.5%;
+        border-radius: 20px;
+        transform: rotate(-37.5deg);
+      }
+
+      &::after {
+        transform: rotate(37.5deg);
+      }
+    }
+    .nose {
+      top: 18%;
+    }
+    .mouth {
+      top: 16.5%;
+    }
+    .tongue {
+      &::before {
+        height: 12px;
+      }
+      &::after {
+        height: 24px;
+        animation: move-tongue 0.1s linear 0.35s infinite alternate forwards;
+      }
+    }
+    .chin {
+      top: 34%;
+    }
+    .tail {
+      animation: move-tail 0.1s linear infinite alternate forwards;
+    }
+  }
+
+  &--sad {
+    .ears {
+      &::before {
+        transform: rotate(-50deg) translate(-7px, 2px);
+      }
+      &::after {
+        transform: rotate(50deg) translate(7px, 2px);
+      }
+    }
+    .face {
+      &::before {
+        margin-top: 28px;
+      }
+      &::after {
+        height: 55px;
+      }
+    }
+    .eyes {
+      top: 38%;
+      &::before,
+      &::after {
+        width: 18px;
+        height: 5px;
+        margin: 0px 14.5%;
+        border-radius: 20px;
+        transform: rotate(-37.5deg);
+      }
+      &::after {
+        transform: rotate(37.5deg);
+      }
+    }
+    .teardrop {
+      animation: cry 0.1s ease-in 0.25s forwards;
+    }
+    .nose {
+      top: 44%;
+    }
+    .mouth {
+      top: 42%;
+    }
+    .chin {
+      top: 52%;
+    }
+    .tail {
+      transform: rotate(0);
+    }
+  }
+}
