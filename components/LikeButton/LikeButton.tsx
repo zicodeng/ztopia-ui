@@ -15,12 +15,13 @@ export interface LikeButton {
 }
 
 export const LikeButton: FC<LikeButton> = memo(
-  ({ isLiked = false, className, onClick }) => (
+  ({ isLiked = false, className, onClick, ...restProps }) => (
     <button
       className={classNames(className, 'ztopia-like-button', {
         'is-liked': isLiked,
       })}
       onClick={onClick}
+      {...restProps}
     >
       <HeartRegular
         size="large"
