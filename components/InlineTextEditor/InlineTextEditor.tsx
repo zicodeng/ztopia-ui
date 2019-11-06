@@ -1,9 +1,10 @@
 import React, { FC, useEffect, ChangeEvent } from 'react';
 import MediumEditor from 'medium-editor';
+import classNames from 'classnames';
 
 import 'medium-editor/dist/css/medium-editor.min.css';
 import 'medium-editor/dist/css/themes/flat.min.css';
-import './TextEditor.css';
+import './InlineTextEditor.css';
 
 export type ToolbarOption =
   | 'bold'
@@ -33,7 +34,7 @@ export type ToolbarOption =
   | 'removeFormat'
   | 'html';
 
-export interface TextEditorProps {
+export interface InlineTextEditorProps {
   /**
    * Default inner HTML string
    *
@@ -44,6 +45,7 @@ export interface TextEditorProps {
    * <@default=`'Type your text here...'`>
    */
   placeholder?: string;
+  className?: string;
   /**
    * <@default=`['bold', 'italic', 'underline', 'anchor', 'h1', 'h2', 'h3', 'quote', 'orderedlist', 'unorderedlist']`>
    */
@@ -51,9 +53,10 @@ export interface TextEditorProps {
   onChange?: (newValue: string) => void;
 }
 
-export const TextEditor: FC<TextEditorProps> = ({
+export const InlineTextEditor: FC<InlineTextEditorProps> = ({
   defaultValue = '',
   placeholder = 'Type your text here...',
+  className,
   toolbarOptions = [
     'bold',
     'italic',
@@ -69,7 +72,7 @@ export const TextEditor: FC<TextEditorProps> = ({
   onChange,
 }) => {
   useEffect(() => {
-    const editor = new MediumEditor('#ztopia-text-editor', {
+    const editor = new MediumEditor('#ztopia-inline-text-editor', {
       buttonLabels: 'fontawesome',
       toolbar: {
         buttons: toolbarOptions,
@@ -93,8 +96,8 @@ export const TextEditor: FC<TextEditorProps> = ({
 
   return (
     <div
-      id="ztopia-text-editor"
-      className={'ztopia-text-editor'}
+      id="ztopia-inline-text-editor"
+      className={classNames(className, 'ztopia-inline-text-editor')}
       dangerouslySetInnerHTML={{ __html: defaultValue }}
     />
   );

@@ -1,15 +1,15 @@
 ---
-name: TextEditor
+name: InlineTextEditor
 menu: Components
-route: /components/text-editor
+route: /components/inline-text-editor
 ---
 
 import { Props, Playground } from 'docz';
 import faker from 'faker';
 
-import { TextEditor } from './';
+import { InlineTextEditor } from './';
 
-# TextEditor
+# InlineTextEditor
 
 Dependencies: [medium-editor](https://github.com/yabwe/medium-editor) and [fontawesome](https://fontawesome.com/)
 
@@ -18,10 +18,10 @@ Dependencies: [medium-editor](https://github.com/yabwe/medium-editor) and [fonta
 ### Placeholder
 
 <Playground>
-  <TextEditor
+  <InlineTextEditor
     placeholder="Write your story here..."
     onChange={newValue => {
-      console.log('TextEditor', 'onChange', { newValue });
+      console.log('InlineTextEditor', 'onChange', { newValue });
     }}
   />
 </Playground>
@@ -29,21 +29,21 @@ Dependencies: [medium-editor](https://github.com/yabwe/medium-editor) and [fonta
 ### Default Value
 
 <Playground>
-  <TextEditor
+  <InlineTextEditor
     defaultValue={`<h1>Hello, World</h1><p>${faker.lorem.paragraphs(
       2,
     )}</p><p>${faker.lorem.paragraphs(6)}</p><p>${faker.lorem.paragraphs(
       3,
     )}</p>`}
     onChange={newValue => {
-      console.log('TextEditor', 'onChange', { newValue });
+      console.log('InlineTextEditor', 'onChange', { newValue });
     }}
   />
 </Playground>
 
 ## API
 
-<Props of={TextEditor} />
+<Props of={InlineTextEditor} />
 
 ```ts
 type ToolbarOption =
