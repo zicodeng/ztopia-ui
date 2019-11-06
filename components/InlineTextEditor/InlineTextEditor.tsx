@@ -68,6 +68,7 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = ({
     'quote',
     'orderedlist',
     'unorderedlist',
+    'pre',
   ],
   onChange,
 }) => {
@@ -95,7 +96,7 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = ({
   }, []);
 
   return (
-    <section
+    <div
       id="ztopia-inline-text-editor"
       className={classNames(className, 'ztopia-inline-text-editor')}
       dangerouslySetInnerHTML={{ __html: defaultValue }}
