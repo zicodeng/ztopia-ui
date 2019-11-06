@@ -1,3 +1,9 @@
+## [1.25.3](https://github.com/zicodeng/ztopia-ui/compare/v1.25.2...v1.25.3) (2019-11-06)
+
+### Bug Fixes
+
+- rename TextEditor to InlineTextEditor ([0d6a240](https://github.com/zicodeng/ztopia-ui/commit/0d6a24028b2bd4a3d722e82e754a9c08037345f7))
+
 ## [1.25.2](https://github.com/zicodeng/ztopia-ui/compare/v1.25.1...v1.25.2) (2019-11-05)
 
 ### Bug Fixes
