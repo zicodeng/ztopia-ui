@@ -95,7 +95,7 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = ({
   }, []);
 
   return (
-    <div
+    <section
       id="ztopia-inline-text-editor"
       className={classNames(className, 'ztopia-inline-text-editor')}
       dangerouslySetInnerHTML={{ __html: defaultValue }}

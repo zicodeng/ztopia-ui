@@ -1,6 +1,7 @@
 .ztopia-inline-text-editor {
   position: relative;
   outline: none;
+  cursor: text;
 
   p,
   pre {
