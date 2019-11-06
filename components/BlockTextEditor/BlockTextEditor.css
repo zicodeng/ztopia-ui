@@ -1,0 +1,32 @@
+.ztopia-block-text-editor {
+  .public-DraftStyleDefault-block,
+  pre {
+    margin: $spacing-m 0;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  pre {
+    display: inline;
+    padding: 4px 6px;
+    background-color: #f5f7f9;
+  }
+
+  blockquote {
+    margin: $spacing-m 0;
+    padding: $spacing-xs 0 $spacing-xs $spacing-s;
+    border-left: 2px solid $black-dark;
+  }
+
+  .public-DraftStyleDefault-ol,
+  .public-DraftStyleDefault-ul {
+    margin: $spacing-m 0;
+    padding-left: $spacing-l;
+  }
+}
+
+.bf-content {
+  cursor: text;
+}

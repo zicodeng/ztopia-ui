@@ -47,7 +47,7 @@ export interface InlineTextEditorProps {
   placeholder?: string;
   className?: string;
   /**
-   * <@default=`['bold', 'italic', 'underline', 'anchor', 'h1', 'h2', 'h3', 'quote', 'orderedlist', 'unorderedlist']`>
+   * <@default=`['bold', 'italic', 'underline', 'anchor', 'h1', 'h2', 'quote', 'orderedlist', 'unorderedlist']`>
    */
   toolbarOptions?: ToolbarOption[];
   onChange?: (newValue: string) => void;
@@ -64,11 +64,9 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = ({
     'anchor',
     'h1',
     'h2',
-    'h3',
     'quote',
     'orderedlist',
     'unorderedlist',
-    'pre',
   ],
   onChange,
 }) => {
