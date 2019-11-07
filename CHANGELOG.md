@@ -1,3 +1,16 @@
+# [1.26.0](https://github.com/zicodeng/ztopia-ui/compare/v1.25.3...v1.26.0) (2019-11-07)
+
+### Bug Fixes
+
+- style hotfix ([930d025](https://github.com/zicodeng/ztopia-ui/commit/930d0257118ec8d3d71db98b1e56c672a1a49ce8))
+- style hotfix ([e9da4b1](https://github.com/zicodeng/ztopia-ui/commit/e9da4b1172e1d7d47eac6a9908e04df7d57dcd85))
+- style hotfix and render as section ([37d0ad7](https://github.com/zicodeng/ztopia-ui/commit/37d0ad7b67d87cc9a6d52feee6279970a6b9cb0b))
+- use first-of-type instead of first-child ([5a25817](https://github.com/zicodeng/ztopia-ui/commit/5a25817e38c5f83c765fb02bc154ca1d7d96c5c2))
+
+### Features
+
+- add block text editor ([0f78158](https://github.com/zicodeng/ztopia-ui/commit/0f7815806a1651f2878670ae6e8806ad895f6f77))
+
 ## [1.25.3](https://github.com/zicodeng/ztopia-ui/compare/v1.25.2...v1.25.3) (2019-11-06)
 
 ### Bug Fixes
