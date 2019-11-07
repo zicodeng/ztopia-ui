@@ -1,5 +1,5 @@
 import React, { FC, memo, useState, useCallback } from 'react';
-import BraftEditor from 'braft-editor';
+import BraftEditor, { ControlType } from 'braft-editor';
 
 import 'braft-editor/dist/index.css';
 import './BlockTextEditor.css';
@@ -11,11 +11,32 @@ export interface BlockTextEditorProps {
    * <@default=`''`>
    */
   defaultValue?: string;
+  /**
+   * <@default=`['bold', 'italic', 'underline', 'separator', 'blockquote', 'list-ol', 'list-ul', 'separator', 'link', 'emoji']`>
+   */
+  toolbarOptions?: ControlType[];
   onChange?: (newValue: string) => void;
 }
 
-export const BlockTextEditor: FC<BlockTextEditorProps> = memo(
-  ({ defaultValue = '', onChange }) => {
+export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
+  BlockTextEditorProps
+>(
+  ({
+    defaultValue = '',
+    toolbarOptions = [
+      'bold',
+      'italic',
+      'underline',
+      'separator',
+      'blockquote',
+      'list-ol',
+      'list-ul',
+      'separator',
+      'link',
+      'emoji',
+    ],
+    onChange,
+  }) => {
     const [editorState, setEditorState] = useState(
       BraftEditor.createEditorState(defaultValue),
     );
@@ -29,9 +50,12 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo(
     );
 
     return (
-      <section className="ztopia-block-text-editor">
-        <BraftEditor value={editorState} onChange={handleChange} />
-      </section>
+      <BraftEditor
+        className="ztopia-block-text-editor"
+        controls={toolbarOptions}
+        value={editorState}
+        onChange={handleChange}
+      />
     );
   },
 );

@@ -15,8 +15,25 @@ Dependency: [braft-editor](https://github.com/margox/braft-editor)
 
 ## Demo
 
+### Basic Usage
+
 <Playground>
-  <BlockTextEditor />
+  <BlockTextEditor
+    onChange={newValue => {
+      console.log('BlockTextEditor', 'onChange', { newValue });
+    }}
+  />
+</Playground>
+
+### Default Value
+
+<Playground>
+  <BlockTextEditor
+    defaultValue="<p>❤️Hello, World❤️</p><p></p><p>To be or not to be? That is the question</p>"
+    onChange={newValue => {
+      console.log('BlockTextEditor', 'onChange', { newValue });
+    }}
+  />
 </Playground>
 
 ## API
