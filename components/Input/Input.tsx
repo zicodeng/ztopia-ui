@@ -22,7 +22,7 @@ export interface InputProps {
    * <@default=`'text'`>
    */
   type?: string;
-  value?: string;
+  value?: string | number;
   defaultValue?: string;
   name?: string;
   label?: string;
