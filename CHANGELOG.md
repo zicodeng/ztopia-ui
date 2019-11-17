@@ -1,3 +1,9 @@
+## [1.26.1](https://github.com/zicodeng/ztopia-ui/compare/v1.26.0...v1.26.1) (2019-11-17)
+
+### Bug Fixes
+
+- allow Input value to be number type ([d758242](https://github.com/zicodeng/ztopia-ui/commit/d75824216c666f936597a1eba5df5ecc77ace187))
+
 # [1.26.0](https://github.com/zicodeng/ztopia-ui/compare/v1.25.3...v1.26.0) (2019-11-07)
 
 ### Bug Fixes
