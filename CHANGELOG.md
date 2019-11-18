@@ -1,3 +1,9 @@
+# [1.27.0](https://github.com/zicodeng/ztopia-ui/compare/v1.26.2...v1.27.0) (2019-11-18)
+
+### Features
+
+- implement Textarea ([363a101](https://github.com/zicodeng/ztopia-ui/commit/363a101dde86cd7d76690dbb16956eccd9dbd3ac))
+
 ## [1.26.2](https://github.com/zicodeng/ztopia-ui/compare/v1.26.1...v1.26.2) (2019-11-18)
 
 ### Bug Fixes
