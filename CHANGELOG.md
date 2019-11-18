@@ -1,3 +1,9 @@
+## [1.26.2](https://github.com/zicodeng/ztopia-ui/compare/v1.26.1...v1.26.2) (2019-11-18)
+
+### Bug Fixes
+
+- add thumbs up icon ([0e4583a](https://github.com/zicodeng/ztopia-ui/commit/0e4583a55432881101740d8fcba47f16c498aee2))
+
 ## [1.26.1](https://github.com/zicodeng/ztopia-ui/compare/v1.26.0...v1.26.1) (2019-11-17)
 
 ### Bug Fixes
