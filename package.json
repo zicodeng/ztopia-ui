@@ -90,6 +90,7 @@
     "react-responsive-carousel": "^3.1.49",
     "react-select": "^3.0.8",
     "react-stack-grid": "^0.7.1",
+    "react-textarea-autosize": "^7.1.2",
     "react-toastify": "^5.3.2",
     "react-toggle": "^4.0.2",
     "react-typed": "^1.2.0",
