@@ -1,5 +1,9 @@
 export * from './Icon';
 
+// Special icons
+export * from './Hamburger';
+
+// Regular icons
 export * from './Checkmark';
 export * from './ChevronDown';
 export * from './ChevronLeft';
@@ -12,5 +16,5 @@ export * from './Image';
 export * from './PartyParrot';
 export * from './StarRegular';
 export * from './StarSolid';
+export * from './ThumbsUp';
 export * from './Times';
-export * from './Hamburger';
