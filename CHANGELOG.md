@@ -1,3 +1,9 @@
+## [1.27.1](https://github.com/zicodeng/ztopia-ui/compare/v1.27.0...v1.27.1) (2019-12-10)
+
+### Bug Fixes
+
+- fix z index issue and add z index variables ([0a2ccdc](https://github.com/zicodeng/ztopia-ui/commit/0a2ccdc2631400d348e0b99cc791e3136b9857b7))
+
 # [1.27.0](https://github.com/zicodeng/ztopia-ui/compare/v1.26.2...v1.27.0) (2019-11-18)
 
 ### Features
