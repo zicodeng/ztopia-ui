@@ -74,6 +74,23 @@ const transitions = {
   'transition-fast': 'all 0.3s ease',
 };
 
+const zIndexLevels = {
+  'z-index-level-1': '9000',
+  'z-index-level-2': '8000',
+  'z-index-level-3': '7000',
+  'z-index-level-4': '6000',
+  'z-index-level-5': '5000',
+  'z-index-level-6': '4000',
+  'z-index-level-7': '3000',
+  'z-index-level-8': '2000',
+  'z-index-level-9': '1000',
+};
+
+const semanticZIndexes = {
+  'z-index-modal': zIndexLevels['z-index-level-1'],
+  'z-index-drawer': zIndexLevels['z-index-level-2'],
+};
+
 module.exports = {
   ...colorPalette,
   ...semanticColors,
@@ -82,4 +99,6 @@ module.exports = {
   ...lineHeights,
   ...shadows,
   ...transitions,
+  ...zIndexLevels,
+  ...semanticZIndexes,
 };

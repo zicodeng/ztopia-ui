@@ -1,4 +1,5 @@
 .ztopia-drawer {
+  z-index: $z-index-drawer;
   outline: none;
 
   > .drawer-mask {
