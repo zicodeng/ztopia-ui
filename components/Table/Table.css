@@ -13,6 +13,12 @@
     }
   }
 
+  &__bottom-element {
+    display: flex;
+    justify-content: center;
+    padding: $spacing-l 0;
+  }
+
   &__row-hovered-content {
     position: relative;
     padding: 0;

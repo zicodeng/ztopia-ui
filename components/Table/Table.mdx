@@ -7,7 +7,7 @@ route: /components/table
 import { Props, Playground } from 'docz';
 import faker from 'faker';
 
-import { MusicLoader } from '../Loaders';
+import { MusicLoader, FadingLoader } from '../Loaders';
 
 import {
   Table,
@@ -152,6 +152,31 @@ import {
         <TableRow key={i}>
           <TableCell width={100}>{faker.name.firstName()}</TableCell>
           <TableCell width={100}>{faker.name.lastName()}</TableCell>
+          <TableCell>{faker.name.jobTitle()}</TableCell>
+          <TableCell>{faker.phone.phoneNumberFormat()}</TableCell>
+        </TableRow>
+      ))}
+    </TableBody>
+  </Table>
+</Playground>
+
+### Bottom Element
+
+<Playground>
+  <Table bottomElement={<FadingLoader size="small" />} onScrollBottom={() => {console.log('Table', 'onScrollBottom')}}>
+    <TableHead>
+      <TableRow>
+        <TableHeadCell>First Name</TableHeadCell>
+        <TableHeadCell>Last Name</TableHeadCell>
+        <TableHeadCell>Job Title</TableHeadCell>
+        <TableHeadCell>Phone Number</TableHeadCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      {Array.from({ length: 100 }).map((_, i) => (
+        <TableRow key={i}>
+          <TableCell>{faker.name.firstName()}</TableCell>
+          <TableCell>{faker.name.lastName()}</TableCell>
           <TableCell>{faker.name.jobTitle()}</TableCell>
           <TableCell>{faker.phone.phoneNumberFormat()}</TableCell>
         </TableRow>
