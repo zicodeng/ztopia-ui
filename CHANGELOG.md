@@ -1,3 +1,9 @@
+# [1.29.0](https://github.com/zicodeng/ztopia-ui/compare/v1.28.0...v1.29.0) (2019-12-11)
+
+### Features
+
+- add table bottomElement and onScrollBottom props ([6913428](https://github.com/zicodeng/ztopia-ui/commit/69134280bf3d7f9ea61a499ec6aaa6f7b8ba01b7))
+
 # [1.28.0](https://github.com/zicodeng/ztopia-ui/compare/v1.27.1...v1.28.0) (2019-12-11)
 
 ### Features
