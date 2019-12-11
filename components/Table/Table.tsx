@@ -26,14 +26,18 @@ export interface TableProps {
   /**
    * <@default=`400`>
    */
-  height?: string | number;
+  maxHeight?: string | number;
+  /**
+   * <@default=`400`>
+   */
+  minHeight?: string | number;
   pagination?: TablePagination;
 }
 
 export const Table: FC<TableProps> = memo(
-  ({ className, height = 400, pagination, children }) => (
+  ({ className, maxHeight = 400, minHeight = 400, pagination, children }) => (
     <div className={classNames(className, 'ztopia-table')}>
-      <div className="ztopia-table__container" style={{ height }}>
+      <div className="ztopia-table__container" style={{ maxHeight, minHeight }}>
         <table>{children}</table>
       </div>
       {pagination && (
