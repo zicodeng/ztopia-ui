@@ -1,3 +1,9 @@
+## [1.29.1](https://github.com/zicodeng/ztopia-ui/compare/v1.29.0...v1.29.1) (2019-12-11)
+
+### Bug Fixes
+
+- add onScrollBottom to useCallback dependency ([42bc918](https://github.com/zicodeng/ztopia-ui/commit/42bc91866d261616f7b698ddb9290fb4972e5dfe))
+
 # [1.29.0](https://github.com/zicodeng/ztopia-ui/compare/v1.28.0...v1.29.0) (2019-12-11)
 
 ### Features
