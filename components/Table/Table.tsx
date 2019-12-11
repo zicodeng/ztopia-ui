@@ -66,7 +66,7 @@ export const Table: FC<TableProps> = memo(
       ) {
         onScrollBottom();
       }
-    }, [tableContainerRef]);
+    }, [onScrollBottom, tableContainerRef]);
 
     return (
       <div className={classNames(className, 'ztopia-table')}>
