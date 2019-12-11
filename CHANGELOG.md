@@ -1,3 +1,9 @@
+# [1.28.0](https://github.com/zicodeng/ztopia-ui/compare/v1.27.1...v1.28.0) (2019-12-11)
+
+### Features
+
+- remove height and add minHeight and maxHeight props ([837ddf6](https://github.com/zicodeng/ztopia-ui/commit/837ddf6941729a346b968eab42af40a9ae46a95a))
+
 ## [1.27.1](https://github.com/zicodeng/ztopia-ui/compare/v1.27.0...v1.27.1) (2019-12-10)
 
 ### Bug Fixes
