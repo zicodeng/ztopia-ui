@@ -1,0 +1,50 @@
+---
+name: CodeInput
+menu: Components
+route: /components/code-input
+---
+
+import { Props, Playground } from 'docz';
+
+import { CodeInput } from './';
+import { CodeInputDemo } from './CodeInputDemo';
+
+# CodeInput
+
+Dependency: [react-code-input](https://github.com/40818419/react-code-input)
+
+## Demo
+
+### Type Text
+
+<Playground>
+  <CodeInputDemo>
+    {({ value, onChange }) => (
+      <CodeInput type="text" value={value} onChange={onChange} />
+    )}
+  </CodeInputDemo>
+</Playground>
+
+### Type Number
+
+<Playground>
+  <CodeInputDemo>
+    {({ value, onChange }) => (
+      <CodeInput type="number" value={value} onChange={onChange} />
+    )}
+  </CodeInputDemo>
+</Playground>
+
+### Type Password
+
+<Playground>
+  <CodeInputDemo>
+    {({ value, onChange }) => (
+      <CodeInput type="password" value={value} onChange={onChange} />
+    )}
+  </CodeInputDemo>
+</Playground>
+
+## API
+
+<Props of={CodeInput} />

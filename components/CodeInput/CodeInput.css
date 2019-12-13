@@ -1,0 +1,28 @@
+.ztopia-code-input {
+  > input {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    font-size: $font-size-xl;
+    text-align: center;
+    text-transform: uppercase;
+    border-color: $white-dark;
+    outline: 0;
+    transition: $transition-fast;
+    appearance: none;
+
+    &:focus {
+      border-color: $black-dark;
+    }
+
+    &:not(:first-of-type) {
+      margin-left: $spacing-s;
+    }
+
+    &[type='number']::-webkit-inner-spin-button,
+    &[type='number']::-webkit-outer-spin-button {
+      margin: 0;
+      appearance: none;
+    }
+  }
+}

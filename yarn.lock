@@ -12051,6 +12051,15 @@ react-big-calendar@^0.22.0:
     uncontrollable "^7.0.0"
     warning "^4.0.2"
 
+react-code-input@^3.8.1:
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/react-code-input/-/react-code-input-3.8.1.tgz#8700cb809d4768d76ca50e7d990d0e548f0e6ee3"
+  integrity sha512-pFrPqcRoJj/Aao2PFrnH9lKquSp52K7QIc+6Pft8xloEidjOvhWB4RjmJvoBmkkkiBHEuicHxu+zyFbFKt27uQ==
+  dependencies:
+    classnames "^2.2.5"
+    react "^16.3.2"
+    react-dom "^16.3.2"
+
 react-codemirror2@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/react-codemirror2/-/react-codemirror2-6.0.0.tgz#180065df57a64026026cde569a9708fdf7656525"
@@ -12149,6 +12158,16 @@ react-docgen@^4.1.1:
     doctrine "^3.0.0"
     node-dir "^0.1.10"
     recast "^0.17.3"
+
+react-dom@^16.3.2:
+  version "16.12.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.12.0.tgz#0da4b714b8d13c2038c9396b54a92baea633fe11"
+  integrity sha512-LMxFfAGrcS3kETtQaCkTKjMiifahaMySFDn71fZUNpPHZQEzmk/GiAeIT8JSOrHB23fnuCOMruL2a8NYlw+8Gw==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    scheduler "^0.18.0"
 
 react-dom@^16.8.6:
   version "16.10.2"
@@ -12487,6 +12506,15 @@ react-visibility-sensor@^5.1.1:
   integrity sha512-cTUHqIK+zDYpeK19rzW6zF9YfT4486TIgizZW53wEZ+/GPBbK7cNS0EHyJVyHYacwFEvvHLEKfgJndbemWhB/w==
   dependencies:
     prop-types "^15.7.2"
+
+react@^16.3.2:
+  version "16.12.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.12.0.tgz#0c0a9c6a142429e3614834d5a778e18aa78a0b83"
+  integrity sha512-fglqy3k5E+81pA8s+7K0/T3DBCF0ZDOher1elBFzF7O6arXJgzyu/FW+COxFvAWXJoJN9KIZbT2LXlukwphYTA==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
 
 react@^16.7.0-alpha.0, react@^16.8.6:
   version "16.10.2"
@@ -13507,6 +13535,14 @@ scheduler@^0.16.2:
   version "0.16.2"
   resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.16.2.tgz#f74cd9d33eff6fc554edfb79864868e4819132c1"
   integrity sha512-BqYVWqwz6s1wZMhjFvLfVR5WXP7ZY32M/wYPo04CcuPM7XZEbV2TBNW7Z0UkguPTl0dWMA59VbNXxK6q+pHItg==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+
+scheduler@^0.18.0:
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.18.0.tgz#5901ad6659bc1d8f3fdaf36eb7a67b0d6746b1c4"
+  integrity sha512-agTSHR1Nbfi6ulI0kYNK0203joW2Y5W4po4l+v03tOoiJKpTBbxpNhWDvqc/4IcOw+KLmSiQLTasZ4cab2/UWQ==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
