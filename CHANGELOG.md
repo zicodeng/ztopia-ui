@@ -1,3 +1,9 @@
+# [1.30.0](https://github.com/zicodeng/ztopia-ui/compare/v1.29.1...v1.30.0) (2019-12-13)
+
+### Features
+
+- implement CodeInput component ([d515d8f](https://github.com/zicodeng/ztopia-ui/commit/d515d8fb616926a0c0aa2cdfe4fcad1848700ed0))
+
 ## [1.29.1](https://github.com/zicodeng/ztopia-ui/compare/v1.29.0...v1.29.1) (2019-12-11)
 
 ### Bug Fixes
