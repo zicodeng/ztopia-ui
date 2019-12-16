@@ -1,4 +1,6 @@
 .ztopia-accordion {
+  padding: 0;
+  list-style: none;
   border: 1px solid $black-dark;
 
   &__panel {
@@ -25,6 +27,7 @@
     height: 0;
     padding: 0 $spacing-m;
     overflow: hidden;
+    list-style: none;
     transition: $transition-fast;
   }
 

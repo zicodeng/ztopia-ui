@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import React, {
   Children,
   cloneElement,
+  createElement,
   FC,
   isValidElement,
   memo,
@@ -23,11 +24,21 @@ export interface AccordionProps {
    */
   isMulti?: boolean;
   className?: string;
+  /**
+   * <@default=`section`>
+   */
+  component?: string;
   defaultExpandedPanelIds?: string[];
 }
 
 export const Accordion: FC<AccordionProps> = memo(
-  ({ isMulti = false, className, defaultExpandedPanelIds, children }) => {
+  ({
+    isMulti = false,
+    className,
+    component = 'section',
+    defaultExpandedPanelIds,
+    children,
+  }) => {
     const [expandedPanelIds, setExpandedPanelIds] = useState<string[]>(
       defaultExpandedPanelIds || [],
     );
@@ -46,17 +57,17 @@ export const Accordion: FC<AccordionProps> = memo(
       [expandedPanelIds],
     );
 
-    return (
-      <section className={classNames(className, 'ztopia-accordion')}>
-        {Children.map(children, child =>
-          isValidElement(child)
-            ? cloneElement(child, {
-                isExpanded: expandedPanelIds.indexOf(child.props.id) !== -1,
-                onClickPanelHeader: handleClickPanelHeader,
-              })
-            : child,
-        )}
-      </section>
+    return createElement(
+      component,
+      { className: classNames(className, 'ztopia-accordion') },
+      Children.map(children, child =>
+        isValidElement(child)
+          ? cloneElement(child, {
+              isExpanded: expandedPanelIds.indexOf(child.props.id) !== -1,
+              onClickPanelHeader: handleClickPanelHeader,
+            })
+          : child,
+      ),
     );
   },
 );
@@ -71,6 +82,10 @@ export interface AccordionPanel {
   id: string;
   className?: string;
   /**
+   * <@default=`article`>
+   */
+  component?: string;
+  /**
    * Passed by Accordion
    *
    * <@internal>
@@ -81,38 +96,43 @@ export interface AccordionPanel {
   ) => void;
 }
 
-export const AccordionPanel: FC<AccordionPanel> = ({
-  isExpanded,
-  id,
-  className,
-  onClickPanelHeader,
-  children,
-}) => {
-  if (!children || !children[0] || !children[1]) {
-    throw new Error(
-      'AccordionPanel must have exact two children: the first child must be AccordionPanelHeader, and the second child must be AccordionPanelContent',
-    );
-  }
-  const header = children[0];
-  const content = children[1];
-  return (
-    <article
-      id={id}
-      className={classNames(className, 'ztopia-accordion__panel', {
-        'is-expanded': isExpanded,
-      })}
-    >
-      {cloneElement(header, {
-        isExpanded,
+export const AccordionPanel: FC<AccordionPanel> = memo(
+  ({
+    isExpanded,
+    id,
+    className,
+    component = 'article',
+    onClickPanelHeader,
+    children,
+  }) => {
+    if (!children || !children[0] || !children[1]) {
+      throw new Error(
+        'AccordionPanel must have exact two children: the first child must be AccordionPanelHeader, and the second child must be AccordionPanelContent',
+      );
+    }
+    const header = children[0];
+    const content = children[1];
+    return createElement(
+      component,
+      {
         id,
-        onClickPanelHeader,
-      })}
-      {cloneElement(content, {
-        isExpanded,
-      })}
-    </article>
-  );
-};
+        className: classNames(className, 'ztopia-accordion__panel', {
+          'is-expanded': isExpanded,
+        }),
+      },
+      <>
+        {cloneElement(header, {
+          isExpanded,
+          id,
+          onClickPanelHeader,
+        })}
+        {cloneElement(content, {
+          isExpanded,
+        })}
+      </>,
+    );
+  },
+);
 
 export interface AccordionPanelHeader {
   /**
@@ -129,6 +149,10 @@ export interface AccordionPanelHeader {
   id?: string;
   className?: string;
   /**
+   * <@default=`header`>
+   */
+  component?: string;
+  /**
    * Passed by AccordionPanel
    *
    * <@internal>
@@ -139,26 +163,32 @@ export interface AccordionPanelHeader {
   ) => void;
 }
 
-export const AccordionPanelHeader: FC<AccordionPanelHeader> = ({
-  isExpanded,
-  id,
-  className,
-  onClickPanelHeader,
-  children,
-}) => (
-  <header
-    className={classNames(className, 'ztopia-accordion__panel-header', {
-      'is-expanded': isExpanded,
-    })}
-    onClick={e => onClickPanelHeader!(e, id!)}
-  >
-    {children}
-    <ChevronDown
-      className={classNames('ztopia-accordion__panel-indicator', {
-        'is-expanded': isExpanded,
-      })}
-    />
-  </header>
+export const AccordionPanelHeader: FC<AccordionPanelHeader> = memo(
+  ({
+    isExpanded,
+    id,
+    className,
+    component = 'header',
+    onClickPanelHeader,
+    children,
+  }) =>
+    createElement(
+      component,
+      {
+        className: classNames(className, 'ztopia-accordion__panel-header', {
+          'is-expanded': isExpanded,
+        }),
+        onClick: e => onClickPanelHeader!(e, id!),
+      },
+      <>
+        {children}
+        <ChevronDown
+          className={classNames('ztopia-accordion__panel-indicator', {
+            'is-expanded': isExpanded,
+          })}
+        />
+      </>,
+    ),
 );
 
 export interface AccordionPanelContent {
@@ -169,32 +199,33 @@ export interface AccordionPanelContent {
    */
   isExpanded?: boolean;
   className?: string;
+  /**
+   * <@default=`div`>
+   */
+  component?: string;
 }
 
-export const AccordionPanelContent: FC<AccordionPanelContent> = ({
-  isExpanded,
-  className,
-  ...restProps
-}) => {
-  const [height, setHeight] = useState(0);
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) {
-      return;
-    }
-    setHeight(node.scrollHeight);
-  }, [isExpanded]);
-  return (
-    <div
-      {...restProps}
-      ref={ref}
-      className={classNames(className, 'ztopia-accordion__panel-content', {
+export const AccordionPanelContent: FC<AccordionPanelContent> = memo(
+  ({ isExpanded, className, component = 'div', ...restProps }) => {
+    const ref = useRef<HTMLDivElement>(null);
+
+    const [height, setHeight] = useState(0);
+
+    useEffect(() => {
+      const node = ref.current;
+      if (!node) {
+        return;
+      }
+      setHeight(node.scrollHeight);
+    }, [isExpanded]);
+
+    return createElement(component, {
+      ...restProps,
+      ref,
+      className: classNames(className, 'ztopia-accordion__panel-content', {
         'is-expanded': isExpanded,
-      })}
-      style={{
-        height: isExpanded ? height : 0,
-      }}
-    />
-  );
-};
+      }),
+      style: { height: isExpanded ? height : 0 },
+    });
+  },
+);
