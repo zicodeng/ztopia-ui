@@ -1,3 +1,9 @@
+# [1.31.0](https://github.com/zicodeng/ztopia-ui/compare/v1.30.0...v1.31.0) (2019-12-16)
+
+### Features
+
+- add component prop to Accordion ([ff22e6d](https://github.com/zicodeng/ztopia-ui/commit/ff22e6da45ce28e089ccf479d7bca8eb39229ab6))
+
 # [1.30.0](https://github.com/zicodeng/ztopia-ui/compare/v1.29.1...v1.30.0) (2019-12-13)
 
 ### Features
