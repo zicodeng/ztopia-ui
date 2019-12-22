@@ -1,3 +1,9 @@
+# [1.32.0](https://github.com/zicodeng/ztopia-ui/compare/v1.31.0...v1.32.0) (2019-12-22)
+
+### Features
+
+- add expandedPanel prop to Accordion ([291965b](https://github.com/zicodeng/ztopia-ui/commit/291965b971cad16ba1d7ed42302a2a385ff97da5))
+
 # [1.31.0](https://github.com/zicodeng/ztopia-ui/compare/v1.30.0...v1.31.0) (2019-12-16)
 
 ### Features
