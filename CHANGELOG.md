@@ -1,3 +1,9 @@
+## [1.32.1](https://github.com/zicodeng/ztopia-ui/compare/v1.32.0...v1.32.1) (2019-12-22)
+
+### Bug Fixes
+
+- close expanded panels when new expandedPanelId is passed ([ed37645](https://github.com/zicodeng/ztopia-ui/commit/ed376455c48a9dca341c6ced979eb5f936e27b56))
+
 # [1.32.0](https://github.com/zicodeng/ztopia-ui/compare/v1.31.0...v1.32.0) (2019-12-22)
 
 ### Features
