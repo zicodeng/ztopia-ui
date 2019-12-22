@@ -11,6 +11,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import { uniq } from 'lodash-es';
 
 import { ChevronDown } from '../Icons';
 
@@ -28,6 +29,7 @@ export interface AccordionProps {
    * <@default=`section`>
    */
   component?: string;
+  expandedPanelId?: string;
   defaultExpandedPanelIds?: string[];
 }
 
@@ -36,12 +38,19 @@ export const Accordion: FC<AccordionProps> = memo(
     isMulti = false,
     className,
     component = 'section',
-    defaultExpandedPanelIds,
+    expandedPanelId,
+    defaultExpandedPanelIds = [],
     children,
   }) => {
     const [expandedPanelIds, setExpandedPanelIds] = useState<string[]>(
-      defaultExpandedPanelIds || [],
+      defaultExpandedPanelIds,
     );
+
+    useEffect(() => {
+      if (expandedPanelId) {
+        setExpandedPanelIds(uniq([expandedPanelId, ...expandedPanelIds]));
+      }
+    }, [expandedPanelId]);
 
     const handleClickPanelHeader = useCallback(
       (_e: React.MouseEvent<HTMLElement, MouseEvent>, id: string) => {

@@ -108,11 +108,41 @@ import {
   </Accordion>
 </Playground>
 
+### Expanded Panel
+
+<Playground>
+  <Accordion expandedPanelId="panel-1">
+    <AccordionPanel id="panel-1">
+      <AccordionPanelHeader>Panel 1</AccordionPanelHeader>
+      <AccordionPanelContent>
+        <p>{faker.lorem.paragraph(5)}</p>
+        <p>{faker.lorem.paragraph(10)}</p>
+      </AccordionPanelContent>
+    </AccordionPanel>
+    <AccordionPanel id="panel-2">
+      <AccordionPanelHeader>Panel 2</AccordionPanelHeader>
+      <AccordionPanelContent>
+        <p>{faker.lorem.paragraph(5)}</p>
+        <p>{faker.lorem.paragraph(10)}</p>
+        <p>{faker.lorem.paragraph(20)}</p>
+      </AccordionPanelContent>
+    </AccordionPanel>
+    <AccordionPanel id="panel-3">
+      <AccordionPanelHeader>Panel 3</AccordionPanelHeader>
+      <AccordionPanelContent>
+        <p>{faker.lorem.paragraph(5)}</p>
+        <p>{faker.lorem.paragraph(20)}</p>
+        <p>{faker.lorem.paragraph(10)}</p>
+      </AccordionPanelContent>
+    </AccordionPanel>
+  </Accordion>
+</Playground>
+
 
 ### Component
 
 <Playground>
-  <Accordion defaultExpandedPanelIds={['panel-1', 'panel-2']} component="ul">
+  <Accordion component="ul">
     <AccordionPanel id="panel-1" component="li">
       <AccordionPanelHeader component="span">Panel 1</AccordionPanelHeader>
       <AccordionPanelContent component="ul">
