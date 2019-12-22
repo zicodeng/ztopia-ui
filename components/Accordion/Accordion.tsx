@@ -11,7 +11,6 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { uniq } from 'lodash-es';
 
 import { ChevronDown } from '../Icons';
 
@@ -47,9 +46,7 @@ export const Accordion: FC<AccordionProps> = memo(
     );
 
     useEffect(() => {
-      if (expandedPanelId) {
-        setExpandedPanelIds(uniq([expandedPanelId, ...expandedPanelIds]));
-      }
+      if (expandedPanelId) setExpandedPanelIds([expandedPanelId]);
     }, [expandedPanelId]);
 
     const handleClickPanelHeader = useCallback(
