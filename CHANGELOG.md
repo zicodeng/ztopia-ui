@@ -1,3 +1,9 @@
+## [1.32.2](https://github.com/zicodeng/ztopia-ui/compare/v1.32.1...v1.32.2) (2019-12-24)
+
+### Bug Fixes
+
+- fix accordion expanded height is not calculated correctly ([02d844f](https://github.com/zicodeng/ztopia-ui/commit/02d844f88648134a108e620b0db8b8003a846294))
+
 ## [1.32.1](https://github.com/zicodeng/ztopia-ui/compare/v1.32.0...v1.32.1) (2019-12-22)
 
 ### Bug Fixes
