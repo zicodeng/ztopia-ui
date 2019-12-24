@@ -47,6 +47,7 @@ export const Accordion: FC<AccordionProps> = memo(
 
     useEffect(() => {
       if (expandedPanelId) setExpandedPanelIds([expandedPanelId]);
+      else setExpandedPanelIds(defaultExpandedPanelIds);
     }, [expandedPanelId]);
 
     const handleClickPanelHeader = useCallback(
