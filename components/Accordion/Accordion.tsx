@@ -42,7 +42,7 @@ export const Accordion: FC<AccordionProps> = memo(
     children,
   }) => {
     const [expandedPanelIds, setExpandedPanelIds] = useState<string[]>(
-      defaultExpandedPanelIds,
+      expandedPanelId ? [expandedPanelId] : defaultExpandedPanelIds,
     );
 
     useEffect(() => {
