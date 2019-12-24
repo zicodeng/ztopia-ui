@@ -1,3 +1,9 @@
+## [1.32.3](https://github.com/zicodeng/ztopia-ui/compare/v1.32.2...v1.32.3) (2019-12-24)
+
+### Bug Fixes
+
+- use defaultExpandedPanelIds when expandedPanelId is falsy ([81a4eef](https://github.com/zicodeng/ztopia-ui/commit/81a4eef721ecbf698c7152f71042e5501ec23537))
+
 ## [1.32.2](https://github.com/zicodeng/ztopia-ui/compare/v1.32.1...v1.32.2) (2019-12-24)
 
 ### Bug Fixes
