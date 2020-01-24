@@ -15,12 +15,12 @@
   animation: basic-loader 1s infinite linear;
 
   &.ztopia-loader--small {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
     border-width: 3px;
 
     &.is-centered {
-      margin: -14px 0 0 -14px;
+      margin: -13px 0 0 -13px;
     }
   }
 
