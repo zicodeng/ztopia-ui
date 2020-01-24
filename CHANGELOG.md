@@ -1,3 +1,9 @@
+## [1.32.6](https://github.com/zicodeng/ztopia-ui/compare/v1.32.5...v1.32.6) (2020-01-24)
+
+### Bug Fixes
+
+- adjust basic loader size ([9c04c61](https://github.com/zicodeng/ztopia-ui/commit/9c04c61d3f6129c2cda5ac6a2f0af79f3ffb8c90))
+
 ## [1.32.5](https://github.com/zicodeng/ztopia-ui/compare/v1.32.4...v1.32.5) (2020-01-24)
 
 ### Bug Fixes
