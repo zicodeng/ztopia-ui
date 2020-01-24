@@ -119,7 +119,7 @@
     "@types/react-lazyload": "^2.5.0",
     "@types/react-map-gl": "^5.0.0",
     "@types/react-modal": "^3.8.3",
-    "@types/react-select": "^3.0.5",
+    "@types/react-select": "^3.0.10",
     "@types/react-toggle": "^4.0.2",
     "@types/uuid": "^3.4.5",
     "@typescript-eslint/eslint-plugin": "^2.0.0",

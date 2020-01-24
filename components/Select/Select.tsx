@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import React, { FC, memo } from 'react';
-import ReactSelect from 'react-select';
-import { ActionMeta, ValueType } from 'react-select/src/types';
+import ReactSelect, { ActionMeta, ValueType } from 'react-select';
 
 import './Select.css';
 
