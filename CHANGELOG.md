@@ -1,3 +1,9 @@
+## [1.32.5](https://github.com/zicodeng/ztopia-ui/compare/v1.32.4...v1.32.5) (2020-01-24)
+
+### Bug Fixes
+
+- use hex-rgb library to do color conversion ([f8ee175](https://github.com/zicodeng/ztopia-ui/commit/f8ee175a9434c9646f07497a989ee7765b9fdf57))
+
 ## [1.32.4](https://github.com/zicodeng/ztopia-ui/compare/v1.32.3...v1.32.4) (2020-01-24)
 
 ### Bug Fixes
