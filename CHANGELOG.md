@@ -1,3 +1,9 @@
+## [1.32.8](https://github.com/zicodeng/ztopia-ui/compare/v1.32.7...v1.32.8) (2020-01-26)
+
+### Bug Fixes
+
+- add gradient rendering support to Progress ([83a7eb6](https://github.com/zicodeng/ztopia-ui/commit/83a7eb6e9bf7ba55eacc9bf151e064583c037eaa))
+
 ## [1.32.7](https://github.com/zicodeng/ztopia-ui/compare/v1.32.6...v1.32.7) (2020-01-24)
 
 ### Bug Fixes
