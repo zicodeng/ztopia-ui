@@ -1,12 +1,12 @@
 import classNames from 'classnames';
-import React, { FC, memo } from 'react';
+import React, { FC, memo, ReactNode } from 'react';
 import ReactSelect, { ActionMeta, ValueType } from 'react-select';
 
 import './Select.css';
 
 export interface SelectOption {
   value: string;
-  label: string;
+  label: ReactNode;
 }
 
 export type SelectValue = ValueType<SelectOption>;
