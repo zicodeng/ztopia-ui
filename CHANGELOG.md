@@ -1,3 +1,9 @@
+## [1.32.9](https://github.com/zicodeng/ztopia-ui/compare/v1.32.8...v1.32.9) (2020-01-27)
+
+### Bug Fixes
+
+- select label type should be ReactNode ([adef669](https://github.com/zicodeng/ztopia-ui/commit/adef6698adef5c645a28e004926796e3f6c9fcd7))
+
 ## [1.32.8](https://github.com/zicodeng/ztopia-ui/compare/v1.32.7...v1.32.8) (2020-01-26)
 
 ### Bug Fixes
