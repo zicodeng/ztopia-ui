@@ -45,15 +45,15 @@ export interface SelectProps<OptionType extends OptionTypeBase = SelectOption> {
    * <@default=`'Select...'`>
    */
   placeholder?: string;
-  /**
-   * <@default=`'No options'`>
-   */
-  noOptionsMessage?: string;
   className?: string;
   defaultValue?: SelectValue;
   value?: ValueType<OptionType>;
   options?: OptionsType<OptionType>;
   styles?: StylesConfig;
+  /**
+   * <@default=`() => 'No options'`>
+   */
+  renderNoOptionMessage?: (obj: { inputValue: string }) => ReactNode;
   onChange?: (newValue: SelectValue, actionMeta: ActionMeta) => void;
 }
 
@@ -66,10 +66,10 @@ export const Select: FC<SelectProps> = memo(
     maxMenuHeight = 200,
     label,
     placeholder = 'Select...',
-    noOptionsMessage = 'No options',
     className,
     value,
     options,
+    renderNoOptionMessage = () => 'No option',
     onChange,
     ...restProps
   }) => (
@@ -85,8 +85,8 @@ export const Select: FC<SelectProps> = memo(
         isSearchable={isSearchable}
         isLoading={isLoading}
         isClearable={isClearable}
+        maxMenuHeight={maxMenuHeight}
         placeholder={placeholder}
-        noOptionsMessage={noOptionsMessage}
         className={classNames('ztopia-select__container', {
           'is-multi': isMulti,
           'is-searchable': isSearchable,
@@ -94,8 +94,8 @@ export const Select: FC<SelectProps> = memo(
         classNamePrefix="select"
         value={value}
         options={options}
+        noOptionsMessage={renderNoOptionMessage}
         onChange={onChange}
-        maxMenuHeight={maxMenuHeight}
       />
     </div>
   ),
