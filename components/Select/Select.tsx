@@ -5,6 +5,7 @@ import {
   ValueType,
   OptionsType,
   OptionTypeBase,
+  StylesConfig,
 } from 'react-select';
 import WindowedSelect from 'react-windowed-select';
 
@@ -44,10 +45,15 @@ export interface SelectProps<OptionType extends OptionTypeBase = SelectOption> {
    * <@default=`'Select...'`>
    */
   placeholder?: string;
+  /**
+   * <@default=`'No options'`>
+   */
+  noOptionsMessage?: string;
   className?: string;
   defaultValue?: SelectValue;
   value?: ValueType<OptionType>;
   options?: OptionsType<OptionType>;
+  styles?: StylesConfig;
   onChange?: (newValue: SelectValue, actionMeta: ActionMeta) => void;
 }
 
@@ -60,6 +66,7 @@ export const Select: FC<SelectProps> = memo(
     maxMenuHeight = 200,
     label,
     placeholder = 'Select...',
+    noOptionsMessage = 'No options',
     className,
     value,
     options,
@@ -79,6 +86,7 @@ export const Select: FC<SelectProps> = memo(
         isLoading={isLoading}
         isClearable={isClearable}
         placeholder={placeholder}
+        noOptionsMessage={noOptionsMessage}
         className={classNames('ztopia-select__container', {
           'is-multi': isMulti,
           'is-searchable': isSearchable,
