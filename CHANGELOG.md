@@ -1,3 +1,9 @@
+# [1.33.0](https://github.com/zicodeng/ztopia-ui/compare/v1.32.9...v1.33.0) (2020-01-31)
+
+### Features
+
+- add windowing support for Select ([aa4c846](https://github.com/zicodeng/ztopia-ui/commit/aa4c84682b04ccbaa15d135ae08aaeb40286ccd2))
+
 ## [1.32.9](https://github.com/zicodeng/ztopia-ui/compare/v1.32.8...v1.32.9) (2020-01-27)
 
 ### Bug Fixes
