@@ -1,3 +1,9 @@
+## [1.33.1](https://github.com/zicodeng/ztopia-ui/compare/v1.33.0...v1.33.1) (2020-01-31)
+
+### Bug Fixes
+
+- add noOptionMessage and styles props to Select ([6f2002c](https://github.com/zicodeng/ztopia-ui/commit/6f2002c8649defe328246106c3014593458c77f9))
+
 # [1.33.0](https://github.com/zicodeng/ztopia-ui/compare/v1.32.9...v1.33.0) (2020-01-31)
 
 ### Features
