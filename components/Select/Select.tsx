@@ -1,17 +1,20 @@
 import classNames from 'classnames';
 import React, { FC, memo, ReactNode } from 'react';
-import ReactSelect, { ActionMeta, ValueType } from 'react-select';
+import {
+  ActionMeta,
+  ValueType,
+  OptionsType,
+  OptionTypeBase,
+} from 'react-select';
+import WindowedSelect from 'react-windowed-select';
 
 import './Select.css';
 
-export interface SelectOption {
-  value: string;
-  label: ReactNode;
-}
+export type SelectOption = { label: ReactNode; value: string };
 
 export type SelectValue = ValueType<SelectOption>;
 
-export interface SelectProps {
+export interface SelectProps<OptionType extends OptionTypeBase = SelectOption> {
   /**
    * <@default=`false`>
    *
@@ -31,6 +34,9 @@ export interface SelectProps {
    * <@default=`true`>
    */
   isClearable?: boolean;
+  /**
+   * <@default=`200`>
+   */
   maxMenuHeight?: number;
   name?: string;
   label?: string;
@@ -40,8 +46,8 @@ export interface SelectProps {
   placeholder?: string;
   className?: string;
   defaultValue?: SelectValue;
-  value?: SelectValue;
-  options?: SelectOption[];
+  value?: ValueType<OptionType>;
+  options?: OptionsType<OptionType>;
   onChange?: (newValue: SelectValue, actionMeta: ActionMeta) => void;
 }
 
@@ -51,7 +57,7 @@ export const Select: FC<SelectProps> = memo(
     isSearchable = false,
     isLoading = false,
     isClearable = true,
-    maxMenuHeight,
+    maxMenuHeight = 200,
     label,
     placeholder = 'Select...',
     className,
@@ -66,7 +72,7 @@ export const Select: FC<SelectProps> = memo(
       })}
     >
       {label && <label className="ztopia-select__label">{label}</label>}
-      <ReactSelect
+      <WindowedSelect
         {...restProps}
         isMulti={isMulti}
         isSearchable={isSearchable}

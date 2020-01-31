@@ -91,7 +91,6 @@
     "react-progressive-image": "^0.6.0",
     "react-rating": "^1.7.2",
     "react-responsive-carousel": "^3.1.49",
-    "react-select": "^3.0.8",
     "react-stack-grid": "^0.7.1",
     "react-textarea-autosize": "^7.1.2",
     "react-toastify": "^5.3.2",
@@ -99,6 +98,7 @@
     "react-typed": "^1.2.0",
     "react-vertical-timeline-component": "^2.5.0",
     "react-visibility-sensor": "^5.1.1",
+    "react-windowed-select": "^2.0.2",
     "recharts": "^1.7.0",
     "uuid": "^3.3.3"
   },
