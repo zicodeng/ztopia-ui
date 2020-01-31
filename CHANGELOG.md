@@ -1,3 +1,9 @@
+## [1.33.2](https://github.com/zicodeng/ztopia-ui/compare/v1.33.1...v1.33.2) (2020-01-31)
+
+### Bug Fixes
+
+- fix noOptionsMessage is not a function ([49df478](https://github.com/zicodeng/ztopia-ui/commit/49df478a2b41b6d3ae72d01f2dc6eb26b407a66d))
+
 ## [1.33.1](https://github.com/zicodeng/ztopia-ui/compare/v1.33.0...v1.33.1) (2020-01-31)
 
 ### Bug Fixes
