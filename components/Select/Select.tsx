@@ -2,7 +2,6 @@ import classNames from 'classnames';
 import React, { FC, memo, ReactNode } from 'react';
 import {
   ActionMeta,
-  ValueType,
   OptionsType,
   OptionTypeBase,
   StylesConfig,
@@ -13,7 +12,7 @@ import './Select.css';
 
 export type SelectOption = { label: ReactNode; value: string };
 
-export type SelectValue = ValueType<SelectOption>;
+export type SelectValue = SelectOption | null;
 
 export interface SelectProps<OptionType extends OptionTypeBase = SelectOption> {
   /**
@@ -47,7 +46,7 @@ export interface SelectProps<OptionType extends OptionTypeBase = SelectOption> {
   placeholder?: string;
   className?: string;
   defaultValue?: SelectValue;
-  value?: ValueType<OptionType>;
+  value?: SelectValue;
   options?: OptionsType<OptionType>;
   styles?: StylesConfig;
   /**
