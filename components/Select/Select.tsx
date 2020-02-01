@@ -12,7 +12,7 @@ import './Select.css';
 
 export type SelectOption = { label: ReactNode; value: string };
 
-export type SelectValue = SelectOption | null;
+export type SelectValue = SelectOption | SelectOption[] | null;
 
 export interface SelectProps<OptionType extends OptionTypeBase = SelectOption> {
   /**
