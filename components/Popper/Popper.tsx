@@ -8,9 +8,9 @@ import './Popper.css';
 
 export interface PopperProps {
   /**
-   * <@internal>
+   * <@default=`false`>
    */
-  visible?: boolean;
+  isVisible?: boolean;
   /**
    * <@default=`false`>
    */
@@ -62,6 +62,7 @@ const ARROW_SIZE = 4;
 
 export const Popper: FC<PopperProps> = memo<PopperProps>(
   ({
+    isVisible,
     isTransitionDisabled = false,
     offsetX = 0,
     offsetY = 0,
@@ -96,6 +97,7 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
 
     return (
       <Tooltip
+        visible={isVisible}
         placement={camelCase(placement)}
         overlayClassName={classNames(
           className,
