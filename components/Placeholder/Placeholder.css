@@ -13,8 +13,7 @@
 }
 
 .ztopia-placeholder {
-  cursor: wait;
-  animation: fading 1.4s infinite;
+  opacity: 0.6;
 
   &--circle {
     border-radius: 100%;
@@ -47,5 +46,10 @@
         margin-bottom: 0;
       }
     }
+  }
+
+  &.is-animated {
+    cursor: wait;
+    animation: fading 1.4s infinite;
   }
 }

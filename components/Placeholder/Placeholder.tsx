@@ -7,6 +7,12 @@ import './Placeholder.css';
 
 export interface PlaceholderProps {
   /**
+   * By default, placeholder is animated with fading effect
+   *
+   * <@default=`true`>
+   */
+  isAnimated?: boolean;
+  /**
    * <@default=`1`>
    *
    * Require `variant='text'`
@@ -34,6 +40,7 @@ export interface PlaceholderProps {
 
 export const Placeholder: FC<PlaceholderProps> = memo(
   ({
+    isAnimated = true,
     rows = 1,
     color = 'grey',
     className,
@@ -41,17 +48,18 @@ export const Placeholder: FC<PlaceholderProps> = memo(
     height = 200,
     shape = 'rect',
     variant,
-  }) =>
-    variant === 'text' ? (
-      <div
-        className={classNames(
-          className,
-          'ztopia-placeholder',
-          'ztopia-placeholder--text',
-        )}
-        style={{ width }}
-      >
-        {Array.from({ length: rows! }).map((_, i) => (
+  }) => {
+    const sharedClassNames = classNames(
+      className,
+      'ztopia-placeholder',
+      `ztopia-placeholder--${variant}`,
+      {
+        'is-animated': isAnimated,
+      },
+    );
+    return variant === 'text' ? (
+      <div className={sharedClassNames} style={{ width }}>
+        {Array.from({ length: rows }).map((_, i) => (
           <div
             key={i}
             style={{
@@ -64,12 +72,7 @@ export const Placeholder: FC<PlaceholderProps> = memo(
       </div>
     ) : (
       <div
-        className={classNames(
-          className,
-          'ztopia-placeholder',
-          `ztopia-placeholder--${shape}`,
-          `ztopia-placeholder--${variant}`,
-        )}
+        className={classNames(sharedClassNames, `ztopia-placeholder--${shape}`)}
         style={{
           width,
           height,
@@ -78,5 +81,6 @@ export const Placeholder: FC<PlaceholderProps> = memo(
       >
         {variant === 'image' && <Image />}
       </div>
-    ),
+    );
+  },
 );
