@@ -1,3 +1,9 @@
+## [1.33.6](https://github.com/zicodeng/ztopia-ui/compare/v1.33.5...v1.33.6) (2020-02-02)
+
+### Bug Fixes
+
+- rename visible to isVisible ([b4d6ab0](https://github.com/zicodeng/ztopia-ui/commit/b4d6ab0dbcbf501c692692d84e7a7f26f96209af))
+
 ## [1.33.5](https://github.com/zicodeng/ztopia-ui/compare/v1.33.4...v1.33.5) (2020-02-02)
 
 ### Bug Fixes
