@@ -1,3 +1,9 @@
+## [1.33.5](https://github.com/zicodeng/ztopia-ui/compare/v1.33.4...v1.33.5) (2020-02-02)
+
+### Bug Fixes
+
+- support static placeholder ([14dd935](https://github.com/zicodeng/ztopia-ui/commit/14dd9355f9615446b75e19ba6c73892eef4164a9))
+
 ## [1.33.4](https://github.com/zicodeng/ztopia-ui/compare/v1.33.3...v1.33.4) (2020-02-01)
 
 ### Bug Fixes
