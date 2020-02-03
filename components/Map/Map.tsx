@@ -9,6 +9,14 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 const MAPBOX_ACCESS_TOKEN = process.env.MAPBOX_ACCESS_TOKEN;
 
+const DEFAULT_VIEW_STATE = {
+  longitude: 0,
+  latitude: 30,
+  zoom: 1,
+  pitch: 0,
+  bearing: 0,
+};
+
 export interface ViewState {
   latitude: number;
   longitude: number;
@@ -57,11 +65,11 @@ const VIEW_STATE_TRANSITION = {
 
 export const Map: FC<MapProps> = memo(
   ({
-    isControllerEnabled,
-    width,
-    height,
-    mapStyle,
-    viewState: initialViewState,
+    isControllerEnabled = true,
+    width = '100%',
+    height = '100%',
+    mapStyle = 'streets',
+    viewState: initialViewState = DEFAULT_VIEW_STATE,
     layers,
   }) => {
     const [viewState, setViewState] = useState({
@@ -83,6 +91,8 @@ export const Map: FC<MapProps> = memo(
 
     return (
       <DeckGL
+        width={width}
+        height={height}
         controller={isControllerEnabled}
         viewState={viewState}
         onViewStateChange={handleViewStateChange}
@@ -91,8 +101,8 @@ export const Map: FC<MapProps> = memo(
         <StaticMap
           reuseMap
           preventStyleDiffing
-          width={width!}
-          height={height!}
+          width={width}
+          height={height}
           mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
           mapStyle={`mapbox://styles/mapbox/${mapStyle}-v9`}
         />
@@ -100,17 +110,3 @@ export const Map: FC<MapProps> = memo(
     );
   },
 );
-
-Map.defaultProps = {
-  isControllerEnabled: true,
-  width: '100%',
-  height: '100%',
-  mapStyle: 'dark',
-  viewState: {
-    longitude: 0,
-    latitude: 30,
-    zoom: 1,
-    pitch: 0,
-    bearing: 0,
-  },
-};

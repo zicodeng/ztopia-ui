@@ -65,7 +65,7 @@
     "classnames": "^2.2.6",
     "css-keyframer": "^1.0.1",
     "date-fns": "^2.0.0-beta.4",
-    "deck.gl": "^7.2.0",
+    "deck.gl": "^8.0.12",
     "hex-rgb": "^4.1.0",
     "lodash-es": "^4.17.15",
     "medium-editor": "^5.23.3",
