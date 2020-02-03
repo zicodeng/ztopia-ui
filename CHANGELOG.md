@@ -1,3 +1,9 @@
+## [1.33.7](https://github.com/zicodeng/ztopia-ui/compare/v1.33.6...v1.33.7) (2020-02-03)
+
+### Bug Fixes
+
+- upgrade deck.gl to v8 ([4fe3ec8](https://github.com/zicodeng/ztopia-ui/commit/4fe3ec85bd67133efc0b438a0a0e80e1dfe74524))
+
 ## [1.33.6](https://github.com/zicodeng/ztopia-ui/compare/v1.33.5...v1.33.6) (2020-02-02)
 
 ### Bug Fixes
