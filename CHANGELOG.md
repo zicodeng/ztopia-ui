@@ -1,3 +1,9 @@
+# [1.34.0](https://github.com/zicodeng/ztopia-ui/compare/v1.33.7...v1.34.0) (2020-02-04)
+
+### Features
+
+- implement bullet screen ([b3fc919](https://github.com/zicodeng/ztopia-ui/commit/b3fc919675c155f3c030acc5d33659afeabd2499))
+
 ## [1.33.7](https://github.com/zicodeng/ztopia-ui/compare/v1.33.6...v1.33.7) (2020-02-03)
 
 ### Bug Fixes
