@@ -1,0 +1,49 @@
+---
+name: BulletScreen
+menu: Pens
+route: /pens/bullet-screen
+---
+
+import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+import faker from 'faker';
+
+import { BulletScreen } from './';
+
+# BulletScreen
+
+Dependency: [danmu.js](https://github.com/bytedance/danmu.js)
+
+## Demo
+
+<Playground>
+  <Container style={{ height: 600 }}>
+    <BulletScreen
+      comments={Array.from({ length: 50 }).map((_, i) => ({
+        id: i,
+        duration: Math.random() * 5000 + 5000,
+        startTime: Math.random() * 10000 + 10000,
+        text: faker.lorem.words(),
+        style: {
+          color: faker.commerce.color(),
+          fontSize: `${Math.random() * 50 + 10}px`
+        }
+      }))}
+    />
+  </Container>
+</Playground>
+
+## API
+
+<Props of={BulletScreen} />
+
+```ts
+interface BulletScreenComment {
+  id: number;
+  // Must be greater than 5000
+  duration: number;
+  startTime: number;
+  text: string;
+  style?: CSSProperties;
+}
+```
