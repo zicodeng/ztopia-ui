@@ -27,6 +27,8 @@ export interface DonutProps {
   data: ReadonlyArray<object>;
 }
 
+const renderLabel = ({ name }) => name;
+
 export const Donut: FC<DonutProps> = memo(
   ({
     width = 400,
@@ -46,7 +48,9 @@ export const Donut: FC<DonutProps> = memo(
           }}
         />
         <Pie
-          label
+          cx="50%"
+          cy="50%"
+          label={renderLabel}
           key={nameAccessor}
           nameKey={nameAccessor}
           dataKey={valueAccessor}
