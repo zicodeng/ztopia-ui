@@ -1,3 +1,9 @@
+## [1.34.1](https://github.com/zicodeng/ztopia-ui/compare/v1.34.0...v1.34.1) (2020-02-07)
+
+### Bug Fixes
+
+- upgrade recharts version ([e6974eb](https://github.com/zicodeng/ztopia-ui/commit/e6974ebcf0f65e4c80b6a5b27c22e6bc2b914158))
+
 # [1.34.0](https://github.com/zicodeng/ztopia-ui/compare/v1.33.7...v1.34.0) (2020-02-04)
 
 ### Features

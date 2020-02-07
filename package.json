@@ -1,7 +1,7 @@
 {
   "name": "ztopia-ui",
   "description": "A lightweight and multivariant React UI library built with customization and consistency in mind",
-  "version": "1.34.0",
+  "version": "1.34.1",
   "author": "Zico Deng",
   "homepage": "https://github.com/zicodeng/ztopia-ui#readme",
   "keywords": [
@@ -100,7 +100,7 @@
     "react-vertical-timeline-component": "^2.5.0",
     "react-visibility-sensor": "^5.1.1",
     "react-windowed-select": "^2.0.2",
-    "recharts": "^2.0.0-beta.1",
+    "recharts": "^1.7.0",
     "uuid": "^3.3.3"
   },
   "devDependencies": {
