@@ -1,7 +1,15 @@
-import React, { FC, memo } from 'react';
+import React, { FC, memo, ReactNode } from 'react';
 import { Cell, Pie, PieChart, Tooltip } from 'recharts';
 
 export interface DonutProps {
+  /**
+   * <@default=`true`>
+   */
+  isTooltipShown?: boolean;
+  /**
+   * <@default=`true`>
+   */
+  isAnimated?: boolean;
   /**
    * <@default=`400`>
    */
@@ -24,6 +32,10 @@ export interface DonutProps {
    * <@default=`'60%'`>
    */
   outerRadius?: number | string;
+  /**
+   * <@default=`function renderLabel`>
+   */
+  label?: boolean | ((sliceInfo: any) => ReactNode | JSX.Element);
   data: ReadonlyArray<object>;
 }
 
@@ -31,6 +43,8 @@ const renderLabel = ({ name }) => name;
 
 export const Donut: FC<DonutProps> = memo(
   ({
+    isTooltipShown = true,
+    isAnimated = true,
     width = 400,
     height = 400,
     nameAccessor,
@@ -38,31 +52,31 @@ export const Donut: FC<DonutProps> = memo(
     color = '#131518',
     innerRadius = '20%',
     outerRadius = '60%',
+    label = renderLabel,
     data,
-  }) => {
-    return (
-      <PieChart width={width} height={height}>
+  }) => (
+    <PieChart width={width} height={height}>
+      {isTooltipShown && (
         <Tooltip
           contentStyle={{
             borderColor: Array.isArray(color) ? '#131518' : color,
           }}
         />
-        <Pie
-          cx="50%"
-          cy="50%"
-          label={renderLabel}
-          key={nameAccessor}
-          nameKey={nameAccessor}
-          dataKey={valueAccessor}
-          fill={Array.isArray(color) ? null : color}
-          innerRadius={innerRadius}
-          outerRadius={outerRadius}
-          data={data}
-        >
-          {Array.isArray(color) &&
-            data.map((_, i) => <Cell key={i} fill={color[i] || '#131518'} />)}
-        </Pie>
-      </PieChart>
-    );
-  },
+      )}
+      <Pie
+        isAnimationActive={isAnimated}
+        label={label}
+        key={nameAccessor}
+        nameKey={nameAccessor}
+        dataKey={valueAccessor}
+        fill={Array.isArray(color) ? null : color}
+        innerRadius={innerRadius}
+        outerRadius={outerRadius}
+        data={data}
+      >
+        {Array.isArray(color) &&
+          data.map((_, i) => <Cell key={i} fill={color[i] || '#131518'} />)}
+      </Pie>
+    </PieChart>
+  ),
 );

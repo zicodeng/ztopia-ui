@@ -100,7 +100,7 @@
     "react-vertical-timeline-component": "^2.5.0",
     "react-visibility-sensor": "^5.1.1",
     "react-windowed-select": "^2.0.2",
-    "recharts": "^1.7.0",
+    "recharts": "^2.0.0-beta.1",
     "uuid": "^3.3.3"
   },
   "devDependencies": {
