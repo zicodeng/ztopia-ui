@@ -1,3 +1,9 @@
+## [1.34.3](https://github.com/zicodeng/ztopia-ui/compare/v1.34.2...v1.34.3) (2020-02-08)
+
+### Bug Fixes
+
+- enhance Donut ([5e3fd42](https://github.com/zicodeng/ztopia-ui/commit/5e3fd42eba97ac678b857ce1ba2f8b370f8a887b))
+
 ## [1.34.2](https://github.com/zicodeng/ztopia-ui/compare/v1.34.1...v1.34.2) (2020-02-08)
 
 ### Bug Fixes
