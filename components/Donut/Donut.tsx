@@ -21,6 +21,18 @@ export interface DonutProps {
   nameAccessor: string;
   valueAccessor: string;
   /**
+   * The x-coordinate of center
+   *
+   * <@default=`50%`>
+   */
+  cx: number | string;
+  /**
+   * The y-coordinate of center
+   *
+   * <@default=`50%`>
+   */
+  cy: number | string;
+  /**
    * <@default=`'#131518'`>
    */
   color?: string | string[];
@@ -36,6 +48,10 @@ export interface DonutProps {
    * <@default=`function renderLabel`>
    */
   label?: boolean | ((sliceInfo: any) => ReactNode | JSX.Element);
+  /**
+   * <@default=`true`>
+   */
+  labelLine?: boolean | ((sliceInfo: any) => ReactNode | JSX.Element);
   data: ReadonlyArray<object>;
 }
 
@@ -49,10 +65,13 @@ export const Donut: FC<DonutProps> = memo(
     height = 400,
     nameAccessor,
     valueAccessor,
+    cx = '50%',
+    cy = '50%',
     color = '#131518',
     innerRadius = '20%',
     outerRadius = '60%',
     label = renderLabel,
+    labelLine = true,
     data,
   }) => (
     <PieChart width={width} height={height}>
@@ -64,9 +83,11 @@ export const Donut: FC<DonutProps> = memo(
         />
       )}
       <Pie
+        cx={cx}
+        cy={cy}
         isAnimationActive={isAnimated}
         label={label}
-        key={nameAccessor}
+        labelLine={labelLine}
         nameKey={nameAccessor}
         dataKey={valueAccessor}
         fill={Array.isArray(color) ? null : color}
