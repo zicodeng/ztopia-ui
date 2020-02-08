@@ -25,13 +25,13 @@ export interface DonutProps {
    *
    * <@default=`50%`>
    */
-  cx: number | string;
+  cx?: number | string;
   /**
    * The y-coordinate of center
    *
    * <@default=`50%`>
    */
-  cy: number | string;
+  cy?: number | string;
   /**
    * <@default=`'#131518'`>
    */
