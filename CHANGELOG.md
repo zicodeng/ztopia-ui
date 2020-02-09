@@ -1,3 +1,9 @@
+## [1.34.5](https://github.com/zicodeng/ztopia-ui/compare/v1.34.4...v1.34.5) (2020-02-09)
+
+### Bug Fixes
+
+- fix Popper not showing when isVisible is not set ([ff66060](https://github.com/zicodeng/ztopia-ui/commit/ff660608ab3e4d4804b3de7883f3e16eac730eda))
+
 ## [1.34.4](https://github.com/zicodeng/ztopia-ui/compare/v1.34.3...v1.34.4) (2020-02-08)
 
 ### Bug Fixes
