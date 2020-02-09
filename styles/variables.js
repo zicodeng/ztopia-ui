@@ -5,41 +5,33 @@ const colorPalette = {
 
   'black-light': '#464b53',
   black: '#272b31',
-  'black-dark': '#131518',
+  'black-dark': '#101010',
 
   'blue-light': '#73b1f4',
   blue: '#5e9cea',
   'blue-dark': '#4b89da',
 
   'red-light': '#f76d82',
-  red: '#ec5564',
+  red: '#eb5757',
   'red-dark': '#d94452',
 
-  'orange-light': '#fc8370',
-  orange: '#fb6d51',
-  'orange-dark': '#e8563f',
-
-  'yellow-light': '#fcd277',
-  yellow: '#fcf800',
-  'yellow-dark': '#ffec40',
-
-  'green-light': '#62ddbd',
-  green: '#46cead',
-  'green-dark': '#35bb9b',
+  green: '#27ae60',
 };
 
 const semanticColors = {
-  'color-danger': '#d91621',
+  'color-danger': colorPalette['red'],
   'color-warning': '#ffa300',
-  'color-success': '#33c677',
+  'color-success': colorPalette['green'],
 };
 
 const spacings = {
-  'spacing-xs': '5px',
-  'spacing-s': '10px',
-  'spacing-m': '15px',
-  'spacing-l': '20px',
-  'spacing-xl': '25px',
+  'spacing-xxs': '2px',
+  'spacing-xs': '4px',
+  'spacing-s': '8px',
+  'spacing-m': '12px',
+  'spacing-l': '16px',
+  'spacing-xl': '20px',
+  'spacing-xxl': '24px',
 };
 
 const fonts = {
@@ -48,14 +40,8 @@ const fonts = {
   'font-size-m': '16px',
   'font-size-l': '18px',
   'font-size-xl': ' 20px',
-};
 
-const lineHeights = {
-  'line-height-xs': '0.8rem',
-  'line-height-s': '1rem',
-  'line-height-m': '1.2rem',
-  'line-height-l': '1.8rem',
-  'line-height-xl': '2.0rem',
+  'font-family': 'Roboto, Arial, Helvetica, sans-serif',
 };
 
 const shadows = {
@@ -96,7 +82,6 @@ module.exports = {
   ...semanticColors,
   ...spacings,
   ...fonts,
-  ...lineHeights,
   ...shadows,
   ...transitions,
   ...zIndexLevels,

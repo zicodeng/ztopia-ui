@@ -193,7 +193,6 @@
     &__day-name {
       width: 35px;
       margin: 1px;
-      line-height: $line-height-l;
     }
 
     &__time-container {

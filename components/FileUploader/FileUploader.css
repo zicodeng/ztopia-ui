@@ -5,20 +5,21 @@
     align-items: center;
     justify-content: center;
     height: 200px;
+    color: $black-light;
     border: 2px dashed $black;
     outline: none;
     cursor: pointer;
     transition: $transition-fast;
 
     &:hover {
-      background-color: $green-light;
+      border-color: $green;
     }
 
     &.drag-enter {
     }
 
     &.drag-over {
-      background-color: $green-light;
+      border-color: $green;
     }
 
     &.drag-leave {
@@ -50,7 +51,7 @@
     flex: 1;
     flex-direction: column;
     justify-content: space-evenly;
-    margin: 0 $spacing-m;
+    margin: 0 $spacing-l;
     overflow: hidden;
   }
 
