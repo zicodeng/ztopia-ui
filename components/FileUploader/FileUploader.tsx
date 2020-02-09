@@ -1,8 +1,8 @@
-import React, { memo, FC, useState, useEffect } from 'react';
+import React, { memo, FC, useState, useEffect, useCallback } from 'react';
 import { useDropzone, DropEvent } from 'react-dropzone';
 import classNames from 'classnames';
 
-import { CloudUpload } from '../Icons';
+import { CloudUpload, Times } from '../Icons';
 import { Image } from '../Image';
 import { Progress } from '../Progress';
 
@@ -73,6 +73,7 @@ export const FileUploader: FC<FileUploaderProps> = memo(
   }) => {
     const [dragState, setDragState] = useState<DragState | null>(null);
     const [previewFiles, setPreviewFiles] = useState<EnhancedFile[]>([]);
+    const [previewURLs, setPreviewURLs] = useState<string[]>([]);
 
     // @ts-ignore
     const { getRootProps, getInputProps } = useDropzone({
@@ -82,13 +83,16 @@ export const FileUploader: FC<FileUploaderProps> = memo(
       accept: allowedFileTypes,
       onDrop: acceptedFiles => {
         setDragState(null);
-        setPreviewFiles(
-          acceptedFiles.map(file =>
-            Object.assign(file, {
-              thumbURL: URL.createObjectURL(file),
-            }),
-          ),
-        );
+        const previewURLs: string[] = [];
+        const previewFiles = acceptedFiles.map(file => {
+          const thumbURL = URL.createObjectURL(file);
+          previewURLs.push(thumbURL);
+          return Object.assign(file, {
+            thumbURL,
+          });
+        });
+        setPreviewFiles(previewFiles);
+        setPreviewURLs(previewURLs);
       },
       onDragEnter: () => {
         setDragState(DragState.Enter);
@@ -104,29 +108,44 @@ export const FileUploader: FC<FileUploaderProps> = memo(
 
     useEffect(
       () => () => {
-        // Make sure to revoke the data uris to avoid memory leaks
-        previewFiles.forEach(previewFile =>
-          URL.revokeObjectURL(previewFile.thumbURL),
-        );
+        // Make sure to revoke the data URIs to avoid memory leaks
+        previewURLs.forEach(url => URL.revokeObjectURL(url));
+      },
+      [previewURLs],
+    );
+
+    const handleClickFileRemoveIndicator = useCallback(
+      (fileName: string) => {
+        const newPreviewFiles = previewFiles.filter(previewFile => {
+          const { name, thumbURL } = previewFile;
+          if (name === fileName) {
+            URL.revokeObjectURL(thumbURL);
+            return false;
+          } else return true;
+        });
+        setPreviewFiles(newPreviewFiles);
       },
       [previewFiles],
     );
 
     return (
       <section className={classNames(className, 'ztopia-file-uploader')}>
-        <div
-          {...getRootProps({
-            className: classNames('ztopia-file-uploader__dropzone', {
-              [dragState as string]: Boolean(dragState),
-            }),
-          })}
-        >
-          <input {...getInputProps()} />
-          <CloudUpload width={50} className="ztopia-file-uploader__icon" />
-          <label className="ztopia-file-uploader__label">{label}</label>
-        </div>
+        {!previewFiles.length && (
+          <div
+            {...getRootProps({
+              className: classNames('ztopia-file-uploader__dropzone', {
+                [dragState as string]: Boolean(dragState),
+              }),
+            })}
+          >
+            <input {...getInputProps()} />
+            <CloudUpload width={50} className="ztopia-file-uploader__icon" />
+            <label className="ztopia-file-uploader__label">{label}</label>
+          </div>
+        )}
         <ul className="ztopia-file-uploader__file-previews">
-          {previewFiles.map(({ thumbURL, name, size }, i) => {
+          {previewFiles.map((previewFile, i) => {
+            const { thumbURL, name, size } = previewFile;
             return (
               <li key={i} className="ztopia-file-uploader__file-preview">
                 <Image
@@ -151,6 +170,11 @@ export const FileUploader: FC<FileUploaderProps> = memo(
                     className="ztopia-file-uploader__progress"
                   />
                 </div>
+                <Times
+                  size="small"
+                  className="ztopia-file-uploader__file-remove-indicator"
+                  onClick={() => handleClickFileRemoveIndicator(name)}
+                />
               </li>
             );
           })}

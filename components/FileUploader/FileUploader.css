@@ -43,7 +43,6 @@
 
   &__file-thumb {
     flex: 0 0 50px;
-    margin-right: $spacing-m;
   }
 
   &__upload-info {
@@ -51,6 +50,7 @@
     flex: 1;
     flex-direction: column;
     justify-content: space-evenly;
+    margin: 0 $spacing-m;
     overflow: hidden;
   }
 
@@ -69,5 +69,15 @@
 
   &__progress {
     flex: 0 0 6px;
+  }
+
+  &__file-remove-indicator {
+    color: $white-dark;
+    cursor: pointer;
+    transition: $transition-fast;
+
+    &:hover {
+      color: $color-danger;
+    }
   }
 }
