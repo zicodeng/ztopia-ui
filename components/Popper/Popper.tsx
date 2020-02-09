@@ -8,7 +8,7 @@ import './Popper.css';
 
 export interface PopperProps {
   /**
-   * <@default=`false`>
+   * <@default=`undefined`>
    */
   isVisible?: boolean;
   /**
@@ -62,7 +62,7 @@ const ARROW_SIZE = 4;
 
 export const Popper: FC<PopperProps> = memo<PopperProps>(
   ({
-    isVisible,
+    isVisible = undefined,
     isTransitionDisabled = false,
     offsetX = 0,
     offsetY = 0,
@@ -95,38 +95,38 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
       offsetY += ARROW_SIZE;
     }
 
+    const props = {
+      placement: camelCase(placement),
+      overlayClassName: classNames(
+        className,
+        'ztopia-popper',
+        `ztopia-popper--${placement}`,
+      ),
+      arrowContent: <div className="rc-tooltip-arrow-inner"></div>,
+      align: {
+        offset: [offsetX, offsetY],
+      },
+      trigger,
+      getTooltipContainer: containerEl ? () => containerEl : undefined,
+      transitionName: isTransitionDisabled
+        ? null
+        : {
+            enter: 'enter',
+            enterActive: 'enter-active',
+            leave: 'leave',
+            leaveActive: 'leave-active',
+            appear: 'appear',
+            appearActive: 'appear-active',
+          },
+      ...restProps,
+    };
+
+    // @ts-ignore
+    if (isVisible !== undefined) props.visible = isVisible;
+
     return (
-      <Tooltip
-        visible={isVisible}
-        placement={camelCase(placement)}
-        overlayClassName={classNames(
-          className,
-          'ztopia-popper',
-          `ztopia-popper--${placement}`,
-        )}
-        arrowContent={<div className="rc-tooltip-arrow-inner"></div>}
-        align={{
-          offset: [offsetX, offsetY],
-        }}
-        trigger={trigger}
-        getTooltipContainer={containerEl ? () => containerEl : undefined}
-        // @ts-ignore
-        transitionName={
-          isTransitionDisabled
-            ? null
-            : {
-                enter: 'enter',
-                enterActive: 'enter-active',
-                leave: 'leave',
-                leaveActive: 'leave-active',
-                appear: 'appear',
-                appearActive: 'appear-active',
-              }
-        }
-        {...restProps}
-      >
-        {children}
-      </Tooltip>
+      // @ts-ignore
+      <Tooltip {...props}>{children}</Tooltip>
     );
   },
 );
