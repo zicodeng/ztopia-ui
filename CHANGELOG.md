@@ -1,3 +1,10 @@
+## [1.34.6](https://github.com/zicodeng/ztopia-ui/compare/v1.34.5...v1.34.6) (2020-02-09)
+
+### Bug Fixes
+
+- remove dragzone after file is selected and add remove button ([c1f4ec1](https://github.com/zicodeng/ztopia-ui/commit/c1f4ec1ed1633a7cb461774b54852f38ddbc0827))
+- update css variables ([9e851b9](https://github.com/zicodeng/ztopia-ui/commit/9e851b9f354f990ffd3d066037f992cc17f3cb71))
+
 ## [1.34.5](https://github.com/zicodeng/ztopia-ui/compare/v1.34.4...v1.34.5) (2020-02-09)
 
 ### Bug Fixes
