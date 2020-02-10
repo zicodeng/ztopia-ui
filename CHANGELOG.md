@@ -1,3 +1,9 @@
+## [1.34.8](https://github.com/zicodeng/ztopia-ui/compare/v1.34.7...v1.34.8) (2020-02-10)
+
+### Bug Fixes
+
+- allow children to be render in Image ([9b245bb](https://github.com/zicodeng/ztopia-ui/commit/9b245bb94ceddaa0228a7339fa98a2f45ced1a8d))
+
 ## [1.34.7](https://github.com/zicodeng/ztopia-ui/compare/v1.34.6...v1.34.7) (2020-02-10)
 
 ### Bug Fixes
