@@ -64,6 +64,7 @@ export const Image: FC<ImageProps> = memo(
     caption,
     maskStyle,
     placeholder,
+    children,
     ...restProps
   }) => {
     if (variant === 'background' && typeof height !== 'number') {
@@ -132,6 +133,7 @@ export const Image: FC<ImageProps> = memo(
                   <div className="ztopia-image__caption">{caption}</div>
                 )}
                 {mask}
+                {children}
               </div>
             );
           }
@@ -166,6 +168,7 @@ export const Image: FC<ImageProps> = memo(
                 </figcaption>
               )}
               {mask}
+              {children}
             </figure>
           );
         }}
