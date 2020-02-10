@@ -1,3 +1,9 @@
+## [1.34.7](https://github.com/zicodeng/ztopia-ui/compare/v1.34.6...v1.34.7) (2020-02-10)
+
+### Bug Fixes
+
+- add isFileRemoveIndicatorShown prop to FileUploader ([d0f51e9](https://github.com/zicodeng/ztopia-ui/commit/d0f51e99c263a9cc74827e1af9353ab0ccffe17a))
+
 ## [1.34.6](https://github.com/zicodeng/ztopia-ui/compare/v1.34.5...v1.34.6) (2020-02-09)
 
 ### Bug Fixes
