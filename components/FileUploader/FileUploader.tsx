@@ -14,6 +14,10 @@ export interface EnhancedFile extends File {
 
 export interface FileUploaderProps {
   /**
+   * <@default=`true`>
+   */
+  isFileRemoveIndicatorShown?: boolean;
+  /**
    * Allow multiple files
    *
    * <@default=`false`>
@@ -62,6 +66,7 @@ const convertBytesToSize = (bytes: number) => {
 
 export const FileUploader: FC<FileUploaderProps> = memo(
   ({
+    isFileRemoveIndicatorShown = true,
     isMulti = false,
     minSize = 1,
     maxSize = 10000000,
@@ -170,11 +175,13 @@ export const FileUploader: FC<FileUploaderProps> = memo(
                     className="ztopia-file-uploader__progress"
                   />
                 </div>
-                <Times
-                  size="small"
-                  className="ztopia-file-uploader__file-remove-indicator"
-                  onClick={() => handleClickFileRemoveIndicator(name)}
-                />
+                {isFileRemoveIndicatorShown && (
+                  <Times
+                    size="small"
+                    className="ztopia-file-uploader__file-remove-indicator"
+                    onClick={() => handleClickFileRemoveIndicator(name)}
+                  />
+                )}
               </li>
             );
           })}

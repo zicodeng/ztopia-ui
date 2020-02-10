@@ -51,7 +51,7 @@
     flex: 1;
     flex-direction: column;
     justify-content: space-evenly;
-    margin: 0 $spacing-l;
+    margin-left: $spacing-l;
     overflow: hidden;
   }
 
@@ -73,6 +73,7 @@
   }
 
   &__file-remove-indicator {
+    margin-left: $spacing-l;
     color: $white-dark;
     cursor: pointer;
     transition: $transition-fast;
