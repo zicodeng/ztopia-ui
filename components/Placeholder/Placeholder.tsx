@@ -49,14 +49,10 @@ export const Placeholder: FC<PlaceholderProps> = memo(
     shape = 'rect',
     variant,
   }) => {
-    const sharedClassNames = classNames(
-      className,
-      'ztopia-placeholder',
-      `ztopia-placeholder--${variant}`,
-      {
-        'is-animated': isAnimated,
-      },
-    );
+    const sharedClassNames = classNames(className, 'ztopia-placeholder', {
+      'is-animated': isAnimated,
+      [`ztopia-placeholder--${variant}`]: variant,
+    });
     return variant === 'text' ? (
       <div className={sharedClassNames} style={{ width }}>
         {Array.from({ length: rows }).map((_, i) => (
