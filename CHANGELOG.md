@@ -1,3 +1,9 @@
+## [1.34.9](https://github.com/zicodeng/ztopia-ui/compare/v1.34.8...v1.34.9) (2020-02-20)
+
+### Bug Fixes
+
+- do not add variant class name when variant is undefined ([a1aa137](https://github.com/zicodeng/ztopia-ui/commit/a1aa1373a7c8a8b1abade066699d4117702c1a7b))
+
 ## [1.34.8](https://github.com/zicodeng/ztopia-ui/compare/v1.34.7...v1.34.8) (2020-02-10)
 
 ### Bug Fixes
