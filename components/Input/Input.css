@@ -177,8 +177,8 @@
 
   &__error {
     position: absolute;
+    right: 0;
     bottom: -2px;
-    left: 0;
     color: $color-danger;
     transform: translateY(100%);
   }
