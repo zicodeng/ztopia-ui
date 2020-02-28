@@ -40,6 +40,7 @@ export interface SelectProps<OptionType extends OptionTypeBase = SelectOption> {
   maxMenuHeight?: number;
   name?: string;
   label?: string;
+  error?: string;
   /**
    * <@default=`'Select...'`>
    */
@@ -64,6 +65,7 @@ export const Select: FC<SelectProps> = memo(
     isClearable = true,
     maxMenuHeight = 200,
     label,
+    error,
     placeholder = 'Select...',
     className,
     value,
@@ -89,6 +91,7 @@ export const Select: FC<SelectProps> = memo(
         className={classNames('ztopia-select__container', {
           'is-multi': isMulti,
           'is-searchable': isSearchable,
+          'has-error': Boolean(error),
         })}
         classNamePrefix="select"
         value={value}
@@ -96,6 +99,7 @@ export const Select: FC<SelectProps> = memo(
         noOptionsMessage={renderNoOptionMessage}
         onChange={onChange}
       />
+      {error && <span className="ztopia-select__error">{error}</span>}
     </div>
   ),
 );

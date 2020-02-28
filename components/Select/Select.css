@@ -1,4 +1,5 @@
 .ztopia-select {
+  position: relative;
   height: 40px;
 
   &.is-multi {
@@ -174,5 +175,26 @@
         }
       }
     }
+
+    &.has-error {
+      .select {
+        &__control {
+          &::before,
+          &::after {
+            width: 50%;
+            background-color: $color-danger;
+          }
+        }
+      }
+    }
+  }
+
+  &__error {
+    position: absolute;
+    right: 0;
+    bottom: -2px;
+    color: $color-danger;
+    font-size: $font-size-xs;
+    transform: translateY(100%);
   }
 }

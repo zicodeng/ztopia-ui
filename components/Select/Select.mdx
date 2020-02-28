@@ -62,6 +62,22 @@ Dependency: [react-select](https://github.com/JedWatson/react-select)
   </SelectDemo>
 </Playground>
 
+### Error
+
+<Playground>
+  <SelectDemo>
+    {({ value, onChange }) => (
+      <Select
+        label="What is your favorite fruit?"
+        value={value}
+        error="Empty value"
+        options={options}
+        onChange={onChange}
+      />
+    )}
+  </SelectDemo>
+</Playground>
+
 ## API
 
 <Props of={Select} />
