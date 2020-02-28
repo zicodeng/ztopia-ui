@@ -1,3 +1,10 @@
+## [1.34.10](https://github.com/zicodeng/ztopia-ui/compare/v1.34.9...v1.34.10) (2020-02-28)
+
+### Bug Fixes
+
+- add error prop to Select ([6af5fda](https://github.com/zicodeng/ztopia-ui/commit/6af5fda4c2d6f7ceb189ef2f2b035339a900f433))
+- place input error to left ([04cf96a](https://github.com/zicodeng/ztopia-ui/commit/04cf96a9f23bbfc83100022d1aba9a597bf62372))
+
 ## [1.34.9](https://github.com/zicodeng/ztopia-ui/compare/v1.34.8...v1.34.9) (2020-02-20)
 
 ### Bug Fixes
