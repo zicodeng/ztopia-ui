@@ -18,6 +18,8 @@ import './Input.css';
 
 export interface InputProps {
   isDisabled?: boolean;
+  min?: number;
+  max?: number;
   /**
    * <@default=`'text'`>
    */
