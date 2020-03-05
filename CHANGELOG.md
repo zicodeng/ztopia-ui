@@ -1,3 +1,9 @@
+## [1.34.11](https://github.com/zicodeng/ztopia-ui/compare/v1.34.10...v1.34.11) (2020-03-05)
+
+### Bug Fixes
+
+- remove redundant isFocused state in Input ([3b9c342](https://github.com/zicodeng/ztopia-ui/commit/3b9c34202cfc606d6e1134cbaa2d5da9d738e0c9))
+
 ## [1.34.10](https://github.com/zicodeng/ztopia-ui/compare/v1.34.9...v1.34.10) (2020-02-28)
 
 ### Bug Fixes
