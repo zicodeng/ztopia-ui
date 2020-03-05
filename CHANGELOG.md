@@ -1,3 +1,10 @@
+## [1.34.12](https://github.com/zicodeng/ztopia-ui/compare/v1.34.11...v1.34.12) (2020-03-05)
+
+### Bug Fixes
+
+- add min max props to Input ([d6f90c1](https://github.com/zicodeng/ztopia-ui/commit/d6f90c1a346a026572a61b83d1767d8bb8002786))
+- fix material input active state when type is number ([805e363](https://github.com/zicodeng/ztopia-ui/commit/805e363d454d7bcc30a09f6597648d7c08be74a4))
+
 ## [1.34.11](https://github.com/zicodeng/ztopia-ui/compare/v1.34.10...v1.34.11) (2020-03-05)
 
 ### Bug Fixes
