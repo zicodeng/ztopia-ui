@@ -64,21 +64,27 @@ export const Input = memo(
       },
       ref,
     ) => {
-      const [isActive, setIsActive] = useState(
-        Boolean(placeholder || value || defaultValue),
+      const shouldBeActive = Boolean(
+        placeholder ||
+          typeof value === 'number' ||
+          value ||
+          typeof defaultValue === 'number' ||
+          defaultValue,
       );
 
+      const [isActive, setIsActive] = useState(shouldBeActive);
+
       useEffect(() => {
-        setIsActive(Boolean(placeholder || value || defaultValue));
-      }, [placeholder, value, defaultValue]);
+        setIsActive(shouldBeActive);
+      }, [shouldBeActive]);
 
       const handleFocusInput = useCallback(() => {
         setIsActive(true);
       }, []);
 
       const handleBlurInput = useCallback(() => {
-        if (!placeholder && !value && !defaultValue) setIsActive(false);
-      }, [placeholder, value, defaultValue]);
+        setIsActive(shouldBeActive);
+      }, [shouldBeActive]);
 
       const memoizedPrefixIcon = useMemo(() => {
         const prefixIconClassName = classNames(
