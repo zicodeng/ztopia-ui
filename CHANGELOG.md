@@ -1,3 +1,9 @@
+## [1.34.13](https://github.com/zicodeng/ztopia-ui/compare/v1.34.12...v1.34.13) (2020-03-08)
+
+### Bug Fixes
+
+- update placeholder image size ([9cb2dde](https://github.com/zicodeng/ztopia-ui/commit/9cb2ddee70f26121c5bf501874a67b64f7b872f3))
+
 ## [1.34.12](https://github.com/zicodeng/ztopia-ui/compare/v1.34.11...v1.34.12) (2020-03-05)
 
 ### Bug Fixes
