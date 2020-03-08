@@ -29,6 +29,8 @@
       width: 25%;
       min-width: 15px;
       max-width: 80px;
+      height: 20%;
+      min-height: 40px;
     }
   }
 
