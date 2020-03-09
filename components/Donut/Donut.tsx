@@ -21,6 +21,10 @@ export interface DonutProps {
   nameAccessor: string;
   valueAccessor: string;
   /**
+   * Value unit, e.g. %
+   */
+  unit?: string;
+  /**
    * The x-coordinate of center
    *
    * <@default=`50%`>
@@ -65,6 +69,7 @@ export const Donut: FC<DonutProps> = memo(
     height = 400,
     nameAccessor,
     valueAccessor,
+    unit,
     cx = '50%',
     cy = '50%',
     color = '#131518',
@@ -81,6 +86,7 @@ export const Donut: FC<DonutProps> = memo(
             zIndex: 9999,
             borderColor: Array.isArray(color) ? '#131518' : color,
           }}
+          formatter={value => `${value}${unit || ''}`}
         />
       )}
       <Pie
