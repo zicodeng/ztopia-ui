@@ -1,3 +1,11 @@
+## [1.34.14](https://github.com/zicodeng/ztopia-ui/compare/v1.34.13...v1.34.14) (2020-03-09)
+
+### Bug Fixes
+
+- add unit prop to Donut ([fdbf53b](https://github.com/zicodeng/ztopia-ui/commit/fdbf53bf54d57a35c73c689651e41c35f48ac1a9))
+- fix demo image src ([9f1b0dd](https://github.com/zicodeng/ztopia-ui/commit/9f1b0ddb6bad35a8cdae64a5ab1a0b48eac8114b))
+- maximize Donut tooltip z-index ([999fdda](https://github.com/zicodeng/ztopia-ui/commit/999fdda1e828544ea6f0c25a80ebb1ee72afe70e))
+
 ## [1.34.13](https://github.com/zicodeng/ztopia-ui/compare/v1.34.12...v1.34.13) (2020-03-08)
 
 ### Bug Fixes
