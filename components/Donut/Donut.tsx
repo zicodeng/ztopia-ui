@@ -78,6 +78,7 @@ export const Donut: FC<DonutProps> = memo(
       {isTooltipShown && (
         <Tooltip
           contentStyle={{
+            zIndex: 9999,
             borderColor: Array.isArray(color) ? '#131518' : color,
           }}
         />
