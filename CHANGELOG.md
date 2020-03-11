@@ -1,3 +1,9 @@
+## [1.34.16](https://github.com/zicodeng/ztopia-ui/compare/v1.34.15...v1.34.16) (2020-03-11)
+
+### Bug Fixes
+
+- add onChange to useEffect dependency ([080ea99](https://github.com/zicodeng/ztopia-ui/commit/080ea99043d8393e9bdcf14cceafb1695a371ea8))
+
 ## [1.34.15](https://github.com/zicodeng/ztopia-ui/compare/v1.34.14...v1.34.15) (2020-03-11)
 
 ### Bug Fixes
