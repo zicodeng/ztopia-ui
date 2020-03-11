@@ -13,7 +13,31 @@
   h4,
   h5,
   h6 {
-    margin-bottom: 0;
+    margin: 0;
+
+    + p,
+    + pre,
+    + blockquote,
+    + ol,
+    + ul,
+    + div {
+      margin-top: $spacing-s;
+    }
+  }
+
+  h1 {
+    margin-top: 40px;
+  }
+
+  h2 {
+    margin-top: 30px;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: $spacing-xxl;
   }
 
   p,
@@ -27,31 +51,30 @@
 
   ol,
   ul {
-    padding-left: $spacing-l;
+    padding-left: 30px;
 
     li {
       margin: $spacing-s 0;
     }
   }
 
-  h1 {
-    margin-top: 60px;
-    font-size: 40px;
+  ol {
+    list-style: decimal;
   }
 
-  h2 {
-    margin-top: 40px;
-    font-size: 26px;
+  ul {
+    list-style: disc;
   }
 
   pre {
-    padding: 4px 6px;
+    padding: $spacing-xs 6px;
     background-color: #f5f7f9;
   }
 
   blockquote {
     padding: $spacing-xs 0 $spacing-xs $spacing-s;
     color: $black-light;
+    font-style: italic;
     border-left: 2px solid $black-dark;
   }
 }

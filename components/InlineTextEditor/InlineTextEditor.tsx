@@ -64,6 +64,7 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = ({
     'anchor',
     'h1',
     'h2',
+    'h3',
     'quote',
     'orderedlist',
     'unorderedlist',
