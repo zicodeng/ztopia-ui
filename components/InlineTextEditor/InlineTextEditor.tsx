@@ -92,7 +92,7 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = ({
     return () => {
       editor.destroy();
     };
-  }, []);
+  }, [onChange]);
 
   return (
     <div
