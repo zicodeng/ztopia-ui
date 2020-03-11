@@ -1,3 +1,10 @@
+## [1.34.15](https://github.com/zicodeng/ztopia-ui/compare/v1.34.14...v1.34.15) (2020-03-11)
+
+### Bug Fixes
+
+- style update ([5818afe](https://github.com/zicodeng/ztopia-ui/commit/5818afebe377146a1582da9557646325273e65bc))
+- update font awesome source link ([039d2c6](https://github.com/zicodeng/ztopia-ui/commit/039d2c662be720f38d98c52b4349e3b1ff173f5d))
+
 ## [1.34.14](https://github.com/zicodeng/ztopia-ui/compare/v1.34.13...v1.34.14) (2020-03-09)
 
 ### Bug Fixes
