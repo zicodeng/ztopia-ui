@@ -1,3 +1,9 @@
+## [1.34.19](https://github.com/zicodeng/ztopia-ui/compare/v1.34.18...v1.34.19) (2020-03-12)
+
+### Bug Fixes
+
+- export MediumEditor type ([335f75e](https://github.com/zicodeng/ztopia-ui/commit/335f75e14c3c4251660162b0a1fea0b4e3af3275))
+
 ## [1.34.18](https://github.com/zicodeng/ztopia-ui/compare/v1.34.17...v1.34.18) (2020-03-12)
 
 ### Bug Fixes
