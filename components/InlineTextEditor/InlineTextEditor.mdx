@@ -7,7 +7,7 @@ route: /components/inline-text-editor
 import { Props, Playground } from 'docz';
 
 import { InlineTextEditor } from './';
-import { InlineTextEditorDemo } from './InlineTextEditorDemo';
+import { DEFAULT_VALUE } from './InlineTextEditorDemo';
 
 # InlineTextEditor
 
@@ -15,12 +15,12 @@ Dependencies: [medium-editor](https://github.com/yabwe/medium-editor) and [fonta
 
 ## Demo
 
+### Basic Usage
+
+Once you obtain a reference to editor instance through `onReady`, you can call `editor.getContent()` to manually access content
+
 <Playground>
-  <InlineTextEditorDemo>
-    {({ value, onChange }) => (
-      <InlineTextEditor defaultValue={value} onChange={onChange} />
-    )}
-  </InlineTextEditorDemo>
+  <InlineTextEditor defaultValue={DEFAULT_VALUE} />
 </Playground>
 
 ## API

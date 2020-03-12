@@ -1,4 +1,4 @@
-import React, { FC, useEffect, ChangeEvent, useState, memo } from 'react';
+import React, { FC, useEffect, ChangeEvent, memo } from 'react';
 import MediumEditor, { MediumEditor as IMediumEditor } from 'medium-editor';
 import classNames from 'classnames';
 
@@ -73,8 +73,6 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
     onChange,
     onReady,
   }) => {
-    const [editor, setEditor] = useState<IMediumEditor | null>(null);
-
     useEffect(() => {
       const editor = new MediumEditor('#ztopia-inline-text-editor', {
         targetBlank: true,
@@ -90,18 +88,7 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
           linkValidation: true,
         },
       });
-      setEditor(editor);
       if (onReady) onReady(editor);
-
-      editor.setContent(defaultValue);
-
-      return () => {
-        editor.destroy();
-      };
-    }, []);
-
-    useEffect(() => {
-      if (!editor) return;
 
       editor.subscribe(
         'editableInput',
@@ -109,12 +96,17 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
           if (onChange) onChange(editable.innerHTML);
         },
       );
-    }, [editor, onChange]);
+
+      return () => {
+        editor.destroy();
+      };
+    }, []);
 
     return (
       <div
         id="ztopia-inline-text-editor"
         className={classNames(className, 'ztopia-inline-text-editor')}
+        dangerouslySetInnerHTML={{ __html: defaultValue }}
       />
     );
   },
