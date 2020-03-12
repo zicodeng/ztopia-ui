@@ -1,3 +1,9 @@
+## [1.34.20](https://github.com/zicodeng/ztopia-ui/compare/v1.34.19...v1.34.20) (2020-03-12)
+
+### Bug Fixes
+
+- rename exported type ([564b10b](https://github.com/zicodeng/ztopia-ui/commit/564b10b50b5361d67e22440cb0f19a7f5dbe6efb))
+
 ## [1.34.19](https://github.com/zicodeng/ztopia-ui/compare/v1.34.18...v1.34.19) (2020-03-12)
 
 ### Bug Fixes
