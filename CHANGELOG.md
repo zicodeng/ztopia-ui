@@ -1,3 +1,9 @@
+## [1.34.23](https://github.com/zicodeng/ztopia-ui/compare/v1.34.22...v1.34.23) (2020-03-12)
+
+### Bug Fixes
+
+- fix card carousel hiding part of the first card ([1cbe628](https://github.com/zicodeng/ztopia-ui/commit/1cbe628a42cc0f110e7c65263a0bfe26d33e53a7))
+
 ## [1.34.22](https://github.com/zicodeng/ztopia-ui/compare/v1.34.21...v1.34.22) (2020-03-12)
 
 ### Bug Fixes
