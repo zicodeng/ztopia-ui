@@ -6,7 +6,7 @@ import 'medium-editor/dist/css/medium-editor.min.css';
 import 'medium-editor/dist/css/themes/flat.min.css';
 import './InlineTextEditor.css';
 
-export type MediumEditor = IMediumEditor;
+export type Editor = IMediumEditor;
 
 export type ToolbarOption =
   | 'bold'
@@ -51,7 +51,7 @@ export interface InlineTextEditorProps {
    */
   toolbarOptions?: ToolbarOption[];
   onChange?: (newValue: string) => void;
-  onReady?: (editor: IMediumEditor) => void;
+  onReady?: (editor: Editor) => void;
 }
 
 export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
