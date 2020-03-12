@@ -91,7 +91,6 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
         },
       });
       setEditor(editor);
-      if (onReady) onReady(editor);
 
       editor.setContent(defaultValue);
 
@@ -110,6 +109,10 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
         },
       );
     }, [editor, onChange]);
+
+    useEffect(() => {
+      if (editor && onReady) onReady(editor);
+    }, [editor, onReady]);
 
     return (
       <div
