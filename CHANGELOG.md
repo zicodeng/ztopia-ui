@@ -1,3 +1,9 @@
+## [1.34.24](https://github.com/zicodeng/ztopia-ui/compare/v1.34.23...v1.34.24) (2020-03-12)
+
+### Bug Fixes
+
+- remove redundant logic ([369bd2f](https://github.com/zicodeng/ztopia-ui/commit/369bd2f3fd537bd3870422e9ced34ba22b8d3388))
+
 ## [1.34.23](https://github.com/zicodeng/ztopia-ui/compare/v1.34.22...v1.34.23) (2020-03-12)
 
 ### Bug Fixes
