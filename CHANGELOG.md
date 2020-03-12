@@ -1,3 +1,9 @@
+## [1.34.17](https://github.com/zicodeng/ztopia-ui/compare/v1.34.16...v1.34.17) (2020-03-12)
+
+### Bug Fixes
+
+- fix editor input not feeling smooth ([6ed3371](https://github.com/zicodeng/ztopia-ui/commit/6ed337119bc26e7c9197feaf88d9d3ce0292a795))
+
 ## [1.34.16](https://github.com/zicodeng/ztopia-ui/compare/v1.34.15...v1.34.16) (2020-03-11)
 
 ### Bug Fixes
