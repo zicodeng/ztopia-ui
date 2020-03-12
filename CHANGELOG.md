@@ -1,3 +1,9 @@
+## [1.34.21](https://github.com/zicodeng/ztopia-ui/compare/v1.34.20...v1.34.21) (2020-03-12)
+
+### Bug Fixes
+
+- add onReady to useEffect dependency ([554ad10](https://github.com/zicodeng/ztopia-ui/commit/554ad105164a9ce429df81e10ec96577778fa60d))
+
 ## [1.34.20](https://github.com/zicodeng/ztopia-ui/compare/v1.34.19...v1.34.20) (2020-03-12)
 
 ### Bug Fixes
