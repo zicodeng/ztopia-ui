@@ -6,6 +6,8 @@ import 'medium-editor/dist/css/medium-editor.min.css';
 import 'medium-editor/dist/css/themes/flat.min.css';
 import './InlineTextEditor.css';
 
+export type MediumEditor = IMediumEditor;
+
 export type ToolbarOption =
   | 'bold'
   | 'italic'
