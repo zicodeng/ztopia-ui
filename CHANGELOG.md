@@ -1,3 +1,9 @@
+## [1.34.22](https://github.com/zicodeng/ztopia-ui/compare/v1.34.21...v1.34.22) (2020-03-12)
+
+### Bug Fixes
+
+- move onReady call after component is mounted ([ce97deb](https://github.com/zicodeng/ztopia-ui/commit/ce97deb5f4c1f0ac3e50ecefc807ef0b46835e3c))
+
 ## [1.34.21](https://github.com/zicodeng/ztopia-ui/compare/v1.34.20...v1.34.21) (2020-03-12)
 
 ### Bug Fixes
