@@ -40,14 +40,11 @@ export const CardCarousel: FC<CardCarouselProps> = memo(
     useEffect(() => {
       const carouselNode = carouselRef.current;
       const cardsNode = cardsRef.current;
-      if (!carouselNode || !cardsNode) {
-        return;
-      }
+      if (!carouselNode || !cardsNode) return;
+
       setWidth(carouselNode.offsetWidth);
       setScrollWidth(cardsNode.scrollWidth);
-      if (x < minX) {
-        setX(minX);
-      }
+      if (x < minX) setX(minX);
     }, [cards, windowSize, width]);
 
     return (
@@ -66,7 +63,7 @@ export const CardCarousel: FC<CardCarouselProps> = memo(
           )}
           onClick={() => {
             const newX = x + step;
-            setX(newX > 0 ? -gap! : newX);
+            setX(newX > 0 ? 0 : newX);
           }}
         >
           <ChevronLeft size="small" />
