@@ -1,4 +1,4 @@
-import React, { FC, useEffect, ChangeEvent } from 'react';
+import React, { FC, useEffect, ChangeEvent, useState, memo } from 'react';
 import MediumEditor from 'medium-editor';
 import classNames from 'classnames';
 
@@ -36,8 +36,6 @@ export type ToolbarOption =
 
 export interface InlineTextEditorProps {
   /**
-   * Default inner HTML string
-   *
    * <@default=`''`>
    */
   defaultValue?: string;
@@ -53,52 +51,61 @@ export interface InlineTextEditorProps {
   onChange?: (newValue: string) => void;
 }
 
-export const InlineTextEditor: FC<InlineTextEditorProps> = ({
-  defaultValue = '',
-  placeholder = 'Type your text here...',
-  className,
-  toolbarOptions = [
-    'bold',
-    'italic',
-    'underline',
-    'anchor',
-    'h1',
-    'h2',
-    'h3',
-    'quote',
-    'orderedlist',
-    'unorderedlist',
-  ],
-  onChange,
-}) => {
-  useEffect(() => {
-    const editor = new MediumEditor('#ztopia-inline-text-editor', {
-      buttonLabels: 'fontawesome',
-      toolbar: {
-        buttons: toolbarOptions,
-      },
-      placeholder: {
-        text: placeholder,
-      },
-    });
+export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
+  ({
+    defaultValue = '',
+    placeholder = 'Type your text here...',
+    className,
+    toolbarOptions = [
+      'bold',
+      'italic',
+      'underline',
+      'anchor',
+      'h1',
+      'h2',
+      'quote',
+      'orderedlist',
+      'unorderedlist',
+    ],
+    onChange,
+  }) => {
+    const [editor, setEditor] = useState<MediumEditor | null>(null);
 
-    editor.subscribe('editableInput', function(
-      _e: ChangeEvent<HTMLDivElement>,
-      editable: HTMLDivElement,
-    ) {
-      if (onChange) onChange(editable.innerHTML);
-    });
+    useEffect(() => {
+      const editor = new MediumEditor('#ztopia-inline-text-editor', {
+        buttonLabels: 'fontawesome',
+        toolbar: {
+          buttons: toolbarOptions,
+        },
+        placeholder: {
+          text: placeholder,
+        },
+      });
+      setEditor(editor);
 
-    return () => {
-      editor.destroy();
-    };
-  }, [onChange]);
+      editor.setContent(defaultValue);
 
-  return (
-    <div
-      id="ztopia-inline-text-editor"
-      className={classNames(className, 'ztopia-inline-text-editor')}
-      dangerouslySetInnerHTML={{ __html: defaultValue }}
-    />
-  );
-};
+      return () => {
+        editor.destroy();
+      };
+    }, []);
+
+    useEffect(() => {
+      if (!editor) return;
+
+      editor.subscribe(
+        'editableInput',
+        (_e: ChangeEvent<HTMLDivElement>, editable: HTMLDivElement) => {
+          if (onChange) onChange(editable.innerHTML);
+        },
+      );
+    }, [editor, onChange]);
+
+    return (
+      <div
+        id="ztopia-inline-text-editor"
+        className={classNames(className, 'ztopia-inline-text-editor')}
+      />
+    );
+  },
+);

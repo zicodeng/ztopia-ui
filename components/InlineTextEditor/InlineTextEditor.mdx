@@ -5,9 +5,9 @@ route: /components/inline-text-editor
 ---
 
 import { Props, Playground } from 'docz';
-import faker from 'faker';
 
 import { InlineTextEditor } from './';
+import { InlineTextEditorDemo } from './InlineTextEditorDemo';
 
 # InlineTextEditor
 
@@ -15,30 +15,12 @@ Dependencies: [medium-editor](https://github.com/yabwe/medium-editor) and [fonta
 
 ## Demo
 
-### Placeholder
-
 <Playground>
-  <InlineTextEditor
-    placeholder="Write your story here..."
-    onChange={newValue => {
-      console.log('InlineTextEditor', 'onChange', { newValue });
-    }}
-  />
-</Playground>
-
-### Default Value
-
-<Playground>
-  <InlineTextEditor
-    defaultValue={`<h1>Hello, World</h1><p>${faker.lorem.paragraphs(
-      2,
-    )}</p><p>${faker.lorem.paragraphs(6)}</p><p>${faker.lorem.paragraphs(
-      3,
-    )}</p>`}
-    onChange={newValue => {
-      console.log('InlineTextEditor', 'onChange', { newValue });
-    }}
-  />
+  <InlineTextEditorDemo>
+    {({ value, onChange }) => (
+      <InlineTextEditor defaultValue={value} onChange={onChange} />
+    )}
+  </InlineTextEditorDemo>
 </Playground>
 
 ## API
