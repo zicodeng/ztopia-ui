@@ -17,6 +17,12 @@ interface CardCarouselProps {
   cards: JSX.Element[];
 }
 
+const getCardMargin = (i: number, total: number, gap: number): string => {
+  if (i === 0) return `0 ${gap}px 0 0`;
+  if (i === total - 1) return `0 0 0 ${gap}px`;
+  return `0 ${gap}px`;
+};
+
 export const CardCarousel: FC<CardCarouselProps> = memo(
   ({ gap = 10, className, cards, ...restProps }) => {
     const [x, setX] = useState(-gap);
@@ -90,15 +96,15 @@ export const CardCarousel: FC<CardCarouselProps> = memo(
               margin: 0,
             }}
           >
-            {cards.map((item, i) => (
+            {cards.map((card, i) => (
               <li
                 key={i}
                 className="ztopia-card-carousel__card"
                 style={{
-                  margin: `0 ${gap}px`,
+                  margin: getCardMargin(i, cards.length, gap),
                 }}
               >
-                {item}
+                {card}
               </li>
             ))}
           </ul>
