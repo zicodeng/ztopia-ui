@@ -1,3 +1,10 @@
+## [1.34.18](https://github.com/zicodeng/ztopia-ui/compare/v1.34.17...v1.34.18) (2020-03-12)
+
+### Bug Fixes
+
+- add onReady prop ([69aac01](https://github.com/zicodeng/ztopia-ui/commit/69aac01ef9f8b2c2bfc566fe2c417d0ff8996f55))
+- adjust first and last card margin ([e0e6b8d](https://github.com/zicodeng/ztopia-ui/commit/e0e6b8dc3fa912f4bbda94adb48008e103bd4f18))
+
 ## [1.34.17](https://github.com/zicodeng/ztopia-ui/compare/v1.34.16...v1.34.17) (2020-03-12)
 
 ### Bug Fixes
