@@ -1,5 +1,5 @@
 import React, { FC, useEffect, ChangeEvent, useState, memo } from 'react';
-import MediumEditor from 'medium-editor';
+import MediumEditor, { MediumEditor as IMediumEditor } from 'medium-editor';
 import classNames from 'classnames';
 
 import 'medium-editor/dist/css/medium-editor.min.css';
@@ -49,6 +49,7 @@ export interface InlineTextEditorProps {
    */
   toolbarOptions?: ToolbarOption[];
   onChange?: (newValue: string) => void;
+  onReady?: (editor: IMediumEditor) => void;
 }
 
 export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
@@ -68,11 +69,14 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
       'unorderedlist',
     ],
     onChange,
+    onReady,
   }) => {
-    const [editor, setEditor] = useState<MediumEditor | null>(null);
+    const [editor, setEditor] = useState<IMediumEditor | null>(null);
 
     useEffect(() => {
       const editor = new MediumEditor('#ztopia-inline-text-editor', {
+        targetBlank: true,
+        autoLink: true,
         buttonLabels: 'fontawesome',
         toolbar: {
           buttons: toolbarOptions,
@@ -80,8 +84,12 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
         placeholder: {
           text: placeholder,
         },
+        anchor: {
+          linkValidation: true,
+        },
       });
       setEditor(editor);
+      if (onReady) onReady(editor);
 
       editor.setContent(defaultValue);
 
@@ -95,7 +103,7 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
 
       editor.subscribe(
         'editableInput',
-        (_e: ChangeEvent<HTMLDivElement>, editable: HTMLDivElement) => {
+        (_e: ChangeEvent<HTMLDivElement>, editable: HTMLElement) => {
           if (onChange) onChange(editable.innerHTML);
         },
       );
