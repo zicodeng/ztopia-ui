@@ -1,3 +1,10 @@
+## [1.34.25](https://github.com/zicodeng/ztopia-ui/compare/v1.34.24...v1.34.25) (2020-03-21)
+
+### Bug Fixes
+
+- add color to placeholder image ([cec1977](https://github.com/zicodeng/ztopia-ui/commit/cec197778fbe03abb534546655d5f673ea315774))
+- fix typing ([deb43ff](https://github.com/zicodeng/ztopia-ui/commit/deb43ff58bb0e667340c30193c655a91fed91d31))
+
 ## [1.34.24](https://github.com/zicodeng/ztopia-ui/compare/v1.34.23...v1.34.24) (2020-03-12)
 
 ### Bug Fixes
