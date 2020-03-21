@@ -36,7 +36,7 @@ const handle = props => {
       offsetY={-2}
       placement="top"
       overlay={value}
-      visible={dragging}
+      isVisible={dragging}
     >
       <Handle value={value} {...restProps} />
     </Popper>
