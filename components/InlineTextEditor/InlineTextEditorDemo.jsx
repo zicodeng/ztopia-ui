@@ -34,5 +34,5 @@ export const DEFAULT_VALUE = `
 <blockquote>${faker.lorem.paragraphs(2)}</blockquote>
 
 <h1>Link</h1>
-<a href="www.google.com">Google.com</a>
+<a href="https://www.google.com">Google.com</a>
 `;

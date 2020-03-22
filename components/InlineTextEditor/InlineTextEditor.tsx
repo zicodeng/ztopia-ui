@@ -38,6 +38,10 @@ export type ToolbarOption =
 
 export interface InlineTextEditorProps {
   /**
+   *  <@default=`'false'`>
+   */
+  isReadonly?: boolean;
+  /**
    * <@default=`''`>
    */
   defaultValue?: string;
@@ -56,6 +60,7 @@ export interface InlineTextEditorProps {
 
 export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
   ({
+    isReadonly = false,
     defaultValue = '',
     placeholder = 'Type your text here...',
     className,
@@ -77,15 +82,19 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
       const editor = new MediumEditor('#ztopia-inline-text-editor', {
         targetBlank: true,
         autoLink: true,
+        disableEditing: isReadonly,
         buttonLabels: 'fontawesome',
-        toolbar: {
-          buttons: toolbarOptions,
-        },
+        toolbar: isReadonly
+          ? false
+          : {
+              buttons: toolbarOptions,
+            },
         placeholder: {
           text: placeholder,
         },
         anchor: {
           linkValidation: true,
+          placeholderText: '输入网址链接，如：https://www.wenwentips.com',
         },
       });
       if (onReady) onReady(editor);
