@@ -1,3 +1,9 @@
+## [1.34.26](https://github.com/zicodeng/ztopia-ui/compare/v1.34.25...v1.34.26) (2020-03-22)
+
+### Bug Fixes
+
+- add isReadonly prop to InlineTextEditor ([bdc76e7](https://github.com/zicodeng/ztopia-ui/commit/bdc76e73b2f3bcba66e405d8d6399838bd1dbec7))
+
 ## [1.34.25](https://github.com/zicodeng/ztopia-ui/compare/v1.34.24...v1.34.25) (2020-03-21)
 
 ### Bug Fixes
