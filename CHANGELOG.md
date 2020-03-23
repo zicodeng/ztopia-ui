@@ -1,3 +1,9 @@
+## [1.34.27](https://github.com/zicodeng/ztopia-ui/compare/v1.34.26...v1.34.27) (2020-03-23)
+
+### Bug Fixes
+
+- add id prop to InlineTextEditor ([f18f574](https://github.com/zicodeng/ztopia-ui/commit/f18f574a530740fb8df1f1e6112cdbfa1e730a34))
+
 ## [1.34.26](https://github.com/zicodeng/ztopia-ui/compare/v1.34.25...v1.34.26) (2020-03-22)
 
 ### Bug Fixes
