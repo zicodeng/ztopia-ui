@@ -41,6 +41,7 @@ export interface InlineTextEditorProps {
    *  <@default=`'false'`>
    */
   isReadonly?: boolean;
+  id?: string;
   /**
    * <@default=`''`>
    */
@@ -61,6 +62,7 @@ export interface InlineTextEditorProps {
 export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
   ({
     isReadonly = false,
+    id = 'ztopia-inline-text-editor',
     defaultValue = '',
     placeholder = 'Type your text here...',
     className,
@@ -79,7 +81,7 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
     onReady,
   }) => {
     useEffect(() => {
-      const editor = new MediumEditor('#ztopia-inline-text-editor', {
+      const editor = new MediumEditor(`#${id}`, {
         targetBlank: true,
         autoLink: true,
         disableEditing: isReadonly,
@@ -109,11 +111,11 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
       return () => {
         editor.destroy();
       };
-    }, []);
+    }, [id]);
 
     return (
       <div
-        id="ztopia-inline-text-editor"
+        id={id}
         className={classNames(className, 'ztopia-inline-text-editor')}
         dangerouslySetInnerHTML={{ __html: defaultValue }}
       />

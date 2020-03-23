@@ -1,4 +1,6 @@
+import React, { useState } from 'react';
 import faker from 'faker';
+import { memo } from 'react';
 
 export const DEFAULT_VALUE = `
 <h1>Headings</h1>
@@ -36,3 +38,14 @@ export const DEFAULT_VALUE = `
 <h1>Link</h1>
 <a href="https://www.google.com">Google.com</a>
 `;
+
+export const InlineTextEditorDemo = memo(({ children }) => {
+  const [editor, setEditor] = useState(null);
+  const onReady = editor => {
+    setEditor(editor);
+  };
+  const printEditorContent = () => {
+    if (editor) console.log(editor.getContent());
+  };
+  return children({ onReady, printEditorContent });
+});

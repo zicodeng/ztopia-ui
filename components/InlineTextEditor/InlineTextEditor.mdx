@@ -6,8 +6,11 @@ route: /components/inline-text-editor
 
 import { Props, Playground } from 'docz';
 
+import { Button } from '../Button'
+
 import { InlineTextEditor } from './';
-import { DEFAULT_VALUE } from './InlineTextEditorDemo';
+import { DEFAULT_VALUE, InlineTextEditorDemo } from './InlineTextEditorDemo';
+
 
 # InlineTextEditor
 
@@ -20,7 +23,14 @@ Dependencies: [medium-editor](https://github.com/yabwe/medium-editor) and [fonta
 Once you obtain a reference to editor instance through `onReady`, you can call `editor.getContent()` to manually access content
 
 <Playground>
-  <InlineTextEditor defaultValue={DEFAULT_VALUE} />
+  <InlineTextEditorDemo>
+    {({ onReady, printEditorContent }) => (
+      <>
+        <InlineTextEditor defaultValue={DEFAULT_VALUE} onReady={onReady} />
+        <Button style={{ marginTop: 50 }} onClick={printEditorContent}>Print Editor Content</Button>
+      </>
+    )}
+  </InlineTextEditorDemo>
 </Playground>
 
 ## API
