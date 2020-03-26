@@ -1,3 +1,9 @@
+## [1.34.28](https://github.com/zicodeng/ztopia-ui/compare/v1.34.27...v1.34.28) (2020-03-26)
+
+### Bug Fixes
+
+- add required dep ([369ee3f](https://github.com/zicodeng/ztopia-ui/commit/369ee3f8ce83cb3d9bfa2bd7dd1c82fff3287774))
+
 ## [1.34.27](https://github.com/zicodeng/ztopia-ui/compare/v1.34.26...v1.34.27) (2020-03-23)
 
 ### Bug Fixes
