@@ -1,4 +1,4 @@
-import React, { FC, useEffect, ChangeEvent, memo, useRef } from 'react';
+import React, { FC, useEffect, ChangeEvent, memo } from 'react';
 import MediumEditor, { MediumEditor as IMediumEditor } from 'medium-editor';
 import classNames from 'classnames';
 
