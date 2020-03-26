@@ -1,3 +1,10 @@
+## [1.34.30](https://github.com/zicodeng/ztopia-ui/compare/v1.34.29...v1.34.30) (2020-03-26)
+
+### Bug Fixes
+
+- remove redundant ref ([17f9637](https://github.com/zicodeng/ztopia-ui/commit/17f96375a0d91c3948e112a7b4268d3b139b6b60))
+- remove unused import ([2e642ff](https://github.com/zicodeng/ztopia-ui/commit/2e642ff02e3c73d55a1f4c96f0da9ce6fcc78d6e))
+
 ## [1.34.29](https://github.com/zicodeng/ztopia-ui/compare/v1.34.28...v1.34.29) (2020-03-26)
 
 ### Bug Fixes
