@@ -1,4 +1,4 @@
-import React, { FC, useEffect, ChangeEvent, memo } from 'react';
+import React, { FC, useEffect, ChangeEvent, memo, useRef } from 'react';
 import MediumEditor, { MediumEditor as IMediumEditor } from 'medium-editor';
 import classNames from 'classnames';
 
@@ -80,6 +80,8 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
     onChange,
     onReady,
   }) => {
+    const ref = useRef<Editor | null>(null);
+
     useEffect(() => {
       const editor = new MediumEditor(`#${id}`, {
         targetBlank: true,
@@ -99,6 +101,8 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
           placeholderText: '输入网址链接，如：https://www.wenwentips.com',
         },
       });
+
+      ref.current = editor;
       if (onReady) onReady(editor);
 
       editor.subscribe(
@@ -111,7 +115,12 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
       return () => {
         editor.destroy();
       };
-    }, [isReadonly, id, toolbarOptions]);
+    }, [isReadonly]);
+
+    useEffect(() => {
+      const editor = ref.current;
+      if (editor) editor.setContent(defaultValue);
+    }, [defaultValue]);
 
     return (
       <div
