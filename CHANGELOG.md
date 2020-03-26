@@ -1,3 +1,9 @@
+## [1.34.29](https://github.com/zicodeng/ztopia-ui/compare/v1.34.28...v1.34.29) (2020-03-26)
+
+### Bug Fixes
+
+- call editor.setContent on defaultValue change ([11ab63a](https://github.com/zicodeng/ztopia-ui/commit/11ab63a006990af3dd1086267426e8ef5541ef6b))
+
 ## [1.34.28](https://github.com/zicodeng/ztopia-ui/compare/v1.34.27...v1.34.28) (2020-03-26)
 
 ### Bug Fixes
