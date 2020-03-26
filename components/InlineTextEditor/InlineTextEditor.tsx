@@ -80,8 +80,6 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
     onChange,
     onReady,
   }) => {
-    const ref = useRef<Editor | null>(null);
-
     useEffect(() => {
       const editor = new MediumEditor(`#${id}`, {
         targetBlank: true,
@@ -101,8 +99,6 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
           placeholderText: '输入网址链接，如：https://www.wenwentips.com',
         },
       });
-
-      ref.current = editor;
       if (onReady) onReady(editor);
 
       editor.subscribe(
@@ -116,11 +112,6 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
         editor.destroy();
       };
     }, [isReadonly]);
-
-    useEffect(() => {
-      const editor = ref.current;
-      if (editor) editor.setContent(defaultValue);
-    }, [defaultValue]);
 
     return (
       <div
