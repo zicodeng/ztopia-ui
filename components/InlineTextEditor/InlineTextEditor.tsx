@@ -111,7 +111,7 @@ export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
       return () => {
         editor.destroy();
       };
-    }, [id]);
+    }, [isReadonly, id, toolbarOptions]);
 
     return (
       <div
