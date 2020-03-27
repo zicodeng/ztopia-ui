@@ -1,3 +1,9 @@
+## [1.34.31](https://github.com/zicodeng/ztopia-ui/compare/v1.34.30...v1.34.31) (2020-03-27)
+
+### Bug Fixes
+
+- upgrade rc-drawer ([614fcca](https://github.com/zicodeng/ztopia-ui/commit/614fcca40df036536e19e15f942bf606ad7dd77d))
+
 ## [1.34.30](https://github.com/zicodeng/ztopia-ui/compare/v1.34.29...v1.34.30) (2020-03-26)
 
 ### Bug Fixes
