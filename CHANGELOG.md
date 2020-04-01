@@ -1,3 +1,9 @@
+## [1.34.32](https://github.com/zicodeng/ztopia-ui/compare/v1.34.31...v1.34.32) (2020-04-01)
+
+### Bug Fixes
+
+- add gap to step ([d3448c5](https://github.com/zicodeng/ztopia-ui/commit/d3448c5d1b93d98e26d7925f58c1e2e2d7c354f0))
+
 ## [1.34.31](https://github.com/zicodeng/ztopia-ui/compare/v1.34.30...v1.34.31) (2020-03-27)
 
 ### Bug Fixes
