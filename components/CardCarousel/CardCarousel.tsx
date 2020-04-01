@@ -35,7 +35,7 @@ export const CardCarousel: FC<CardCarouselProps> = memo(
     const windowSize = useWindowSize();
 
     const minX = -(scrollWidth - width);
-    const step = (scrollWidth / cards.length) * 2;
+    const step = (scrollWidth / cards.length) * 2 + gap;
 
     useEffect(() => {
       const carouselNode = carouselRef.current;
@@ -55,7 +55,7 @@ export const CardCarousel: FC<CardCarouselProps> = memo(
       >
         <div
           style={{
-            display: x >= -gap! ? 'none' : 'flex',
+            display: x >= -gap ? 'none' : 'flex',
           }}
           className={classNames(
             'ztopia-card-carousel__controller',
