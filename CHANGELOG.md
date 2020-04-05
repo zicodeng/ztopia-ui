@@ -1,3 +1,9 @@
+## [1.35.3](https://github.com/zicodeng/ztopia-ui/compare/v1.35.2...v1.35.3) (2020-04-05)
+
+### Bug Fixes
+
+- remove className ([2a2bd7c](https://github.com/zicodeng/ztopia-ui/commit/2a2bd7c56d53df274436bb006ff903423b909a28))
+
 ## [1.35.2](https://github.com/zicodeng/ztopia-ui/compare/v1.35.1...v1.35.2) (2020-04-05)
 
 ### Bug Fixes
