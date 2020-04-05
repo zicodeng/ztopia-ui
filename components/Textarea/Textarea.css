@@ -1,12 +1,14 @@
 .ztopia-textarea {
   position: relative;
+  line-height: 1.4rem;
 
   &__input {
     width: 100%;
     padding: $spacing-s;
-    line-height: 1.4rem;
+    font-size: inherit;
+    border: 1px solid $white-dark;
     outline: 0;
-    transition: $transition-fast;
+    transition: border-color 0.3s ease;
 
     &:focus {
       border-color: $black-dark;
