@@ -10,7 +10,7 @@ import {
 
 import './LikeButton.css';
 
-export interface LikeButton {
+export interface LikeButtonProps {
   /**
    * <@default=`false`>
    */
@@ -24,7 +24,7 @@ export interface LikeButton {
   onClick?: () => void;
 }
 
-export const LikeButton = memo<LikeButton>(
+export const LikeButton = memo<LikeButtonProps>(
   ({
     isLiked = false,
     className,
