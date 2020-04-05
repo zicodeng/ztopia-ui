@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import { Icon, SVGProps } from '.';
 
-export const ThumbsUp: FC<SVGProps> = props => (
+export const ThumbsUpRegular: FC<SVGProps> = props => (
   <Icon {...props}>
     <svg data-icon="thumbs-up" viewBox="0 0 512 512">
       <path

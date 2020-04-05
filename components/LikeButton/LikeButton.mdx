@@ -12,23 +12,89 @@ import { LikeButtonDemo } from './LikeButtonDemo';
 
 # LikeButton
 
-## Size
+## Demo
+
+### Variant
 
 <Playground>
   <Container>
     <LikeButtonDemo>
       {({ isLiked, onClick }) => (
-        <LikeButton size="small" isLiked={isLiked} onClick={onClick} />
+        <LikeButton variant="heart" isLiked={isLiked} onClick={onClick} />
       )}
     </LikeButtonDemo>
     <LikeButtonDemo>
       {({ isLiked, onClick }) => (
-        <LikeButton size="medium" isLiked={isLiked} onClick={onClick} />
+        <LikeButton variant="thumbs-up" isLiked={isLiked} onClick={onClick} />
+      )}
+    </LikeButtonDemo>
+  </Container>
+</Playground>
+
+### Size
+
+<Playground>
+  <Container>
+    <LikeButtonDemo>
+      {({ isLiked, onClick }) => (
+        <LikeButton
+          variant="heart"
+          size="small"
+          isLiked={isLiked}
+          onClick={onClick}
+        />
       )}
     </LikeButtonDemo>
     <LikeButtonDemo>
       {({ isLiked, onClick }) => (
-        <LikeButton size="large" isLiked={isLiked} onClick={onClick} />
+        <LikeButton
+          variant="heart"
+          size="medium"
+          isLiked={isLiked}
+          onClick={onClick}
+        />
+      )}
+    </LikeButtonDemo>
+    <LikeButtonDemo>
+      {({ isLiked, onClick }) => (
+        <LikeButton
+          variant="heart"
+          size="large"
+          isLiked={isLiked}
+          onClick={onClick}
+        />
+      )}
+    </LikeButtonDemo>
+  </Container>
+  <Container>
+    <LikeButtonDemo>
+      {({ isLiked, onClick }) => (
+        <LikeButton
+          variant="thumbs-up"
+          size="small"
+          isLiked={isLiked}
+          onClick={onClick}
+        />
+      )}
+    </LikeButtonDemo>
+    <LikeButtonDemo>
+      {({ isLiked, onClick }) => (
+        <LikeButton
+          variant="thumbs-up"
+          size="medium"
+          isLiked={isLiked}
+          onClick={onClick}
+        />
+      )}
+    </LikeButtonDemo>
+    <LikeButtonDemo>
+      {({ isLiked, onClick }) => (
+        <LikeButton
+          variant="thumbs-up"
+          size="large"
+          isLiked={isLiked}
+          onClick={onClick}
+        />
       )}
     </LikeButtonDemo>
   </Container>

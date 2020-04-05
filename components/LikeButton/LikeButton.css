@@ -16,28 +16,59 @@
 
 .ztopia-like-button {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: $white-dark;
+  padding: 0;
   border: 0;
-  border-radius: 50%;
   outline: 0;
   cursor: pointer;
 
-  &--small {
-    width: 24px;
-    height: 24px;
+  &--heart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $white-dark;
+    border-radius: 50%;
+
+    &.ztopia-like-button {
+      &--small {
+        width: 24px;
+        height: 24px;
+      }
+
+      &--medium {
+        width: 34px;
+        height: 34px;
+      }
+
+      &--large {
+        width: 44px;
+        height: 44px;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $red;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: $transition-fast;
+      content: '';
+    }
+
+    &.is-liked {
+      &::after {
+        transform: scale(1);
+      }
+    }
   }
 
-  &--medium {
-    width: 34px;
-    height: 34px;
-  }
-
-  &--large {
-    width: 44px;
-    height: 44px;
+  &--thumbs-up {
+    &.is-liked {
+      color: $red;
+    }
   }
 
   &__heart {
@@ -63,22 +94,7 @@
     }
   }
 
-  &::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: $red;
-    border-radius: 50%;
-    transform: scale(0);
-    transition: $transition-fast;
-    content: '';
-  }
-
-  &.is-liked {
-    &::after {
-      transform: scale(1);
-    }
+  &__thumbs-up {
+    animation: bouncy 0.6s;
   }
 }

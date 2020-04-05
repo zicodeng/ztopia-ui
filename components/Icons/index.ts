@@ -16,5 +16,6 @@ export * from './Image';
 export * from './PartyParrot';
 export * from './StarRegular';
 export * from './StarSolid';
-export * from './ThumbsUp';
+export * from './ThumbsUpRegular';
+export * from './ThumbsUpSolid';
 export * from './Times';
