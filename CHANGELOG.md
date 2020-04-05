@@ -1,3 +1,9 @@
+## [1.35.1](https://github.com/zicodeng/ztopia-ui/compare/v1.35.0...v1.35.1) (2020-04-05)
+
+### Bug Fixes
+
+- rename LikeButton prop interface ([1a33d9b](https://github.com/zicodeng/ztopia-ui/commit/1a33d9bc631668323a7a397452da85b1fb96a53f))
+
 # [1.35.0](https://github.com/zicodeng/ztopia-ui/compare/v1.34.33...v1.35.0) (2020-04-05)
 
 ### Features
