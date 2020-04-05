@@ -1,3 +1,9 @@
+## [1.34.33](https://github.com/zicodeng/ztopia-ui/compare/v1.34.32...v1.34.33) (2020-04-05)
+
+### Bug Fixes
+
+- add different sizes to LikeButton ([0397e11](https://github.com/zicodeng/ztopia-ui/commit/0397e11cf304c1718e2762443230677556145ad9))
+
 ## [1.34.32](https://github.com/zicodeng/ztopia-ui/compare/v1.34.31...v1.34.32) (2020-04-01)
 
 ### Bug Fixes
