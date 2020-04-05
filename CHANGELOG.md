@@ -1,3 +1,9 @@
+# [1.35.0](https://github.com/zicodeng/ztopia-ui/compare/v1.34.33...v1.35.0) (2020-04-05)
+
+### Features
+
+- add LikeButton thumbs-up variant ([1724442](https://github.com/zicodeng/ztopia-ui/commit/17244421a029a1a8ad074e0d2b57e80cb2aab961))
+
 ## [1.34.33](https://github.com/zicodeng/ztopia-ui/compare/v1.34.32...v1.34.33) (2020-04-05)
 
 ### Bug Fixes
