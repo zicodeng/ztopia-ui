@@ -33,7 +33,7 @@ export const InnerTextarea: FC<InnerTextareaProps> = memo(
   ({ error, className, ...restProps }) => (
     <div className={classNames(className, 'ztopia-textarea')}>
       <TextareaAutosize
-        className={classNames(className, 'ztopia-textarea__input', {
+        className={classNames('ztopia-textarea__input', {
           'has-error': Boolean(error),
         })}
         {...restProps}
