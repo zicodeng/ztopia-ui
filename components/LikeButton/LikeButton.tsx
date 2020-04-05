@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import React, { memo } from 'react';
 import classNames from 'classnames';
 
 import { HeartRegular, HeartSolid } from '../Icons';
@@ -11,20 +11,29 @@ export interface LikeButton {
    */
   isLiked?: boolean;
   className?: string;
+  /**
+   * <@default=`medium`>
+   */
+  size?: 'small' | 'medium' | 'large';
   onClick?: () => void;
 }
 
-export const LikeButton: FC<LikeButton> = memo(
-  ({ isLiked = false, className, onClick, ...restProps }) => (
+export const LikeButton = memo<LikeButton>(
+  ({ isLiked = false, className, size = 'medium', onClick, ...restProps }) => (
     <button
-      className={classNames(className, 'ztopia-like-button', {
-        'is-liked': isLiked,
-      })}
+      className={classNames(
+        className,
+        'ztopia-like-button',
+        `ztopia-like-button--${size}`,
+        {
+          'is-liked': isLiked,
+        },
+      )}
       onClick={onClick}
       {...restProps}
     >
       <HeartRegular
-        size="large"
+        size={size}
         className={classNames(
           'ztopia-like-button__heart',
           'ztopia-like-button__heart--regular',
@@ -34,7 +43,7 @@ export const LikeButton: FC<LikeButton> = memo(
         )}
       />
       <HeartSolid
-        size="large"
+        size={size}
         className={classNames(
           'ztopia-like-button__heart',
           'ztopia-like-button__heart--solid',

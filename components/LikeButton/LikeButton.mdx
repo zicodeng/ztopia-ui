@@ -5,20 +5,33 @@ route: /pens/like-button
 ---
 
 import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
 
 import { LikeButton } from './';
 import { LikeButtonDemo } from './LikeButtonDemo';
 
 # LikeButton
 
-## Demo
+## Size
 
 <Playground>
-  <LikeButtonDemo>
-    {({ isLiked, onClick }) => (
-      <LikeButton isLiked={isLiked} onClick={onClick} />
-    )}
-  </LikeButtonDemo>
+  <Container>
+    <LikeButtonDemo>
+      {({ isLiked, onClick }) => (
+        <LikeButton size="small" isLiked={isLiked} onClick={onClick} />
+      )}
+    </LikeButtonDemo>
+    <LikeButtonDemo>
+      {({ isLiked, onClick }) => (
+        <LikeButton size="medium" isLiked={isLiked} onClick={onClick} />
+      )}
+    </LikeButtonDemo>
+    <LikeButtonDemo>
+      {({ isLiked, onClick }) => (
+        <LikeButton size="large" isLiked={isLiked} onClick={onClick} />
+      )}
+    </LikeButtonDemo>
+  </Container>
 </Playground>
 
 ## API

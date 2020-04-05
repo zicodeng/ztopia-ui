@@ -19,13 +19,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
   background-color: $white-dark;
   border: 0;
   border-radius: 50%;
   outline: 0;
   cursor: pointer;
+
+  &--small {
+    width: 24px;
+    height: 24px;
+  }
+
+  &--medium {
+    width: 34px;
+    height: 34px;
+  }
+
+  &--large {
+    width: 44px;
+    height: 44px;
+  }
 
   &__heart {
     color: $white-light;
