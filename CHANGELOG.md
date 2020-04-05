@@ -1,3 +1,9 @@
+## [1.35.2](https://github.com/zicodeng/ztopia-ui/compare/v1.35.1...v1.35.2) (2020-04-05)
+
+### Bug Fixes
+
+- add error prop to Textarea ([935adb7](https://github.com/zicodeng/ztopia-ui/commit/935adb7e59880ef02cd55ca0b4002e9e6a69c5dc))
+
 ## [1.35.1](https://github.com/zicodeng/ztopia-ui/compare/v1.35.0...v1.35.1) (2020-04-05)
 
 ### Bug Fixes
