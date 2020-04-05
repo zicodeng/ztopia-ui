@@ -1,11 +1,11 @@
 .ztopia-textarea {
   position: relative;
-  line-height: 1.4rem;
 
   &__input {
     width: 100%;
     padding: $spacing-s;
     font-size: inherit;
+    line-height: 1.4rem;
     border: 1px solid $white-dark;
     outline: 0;
     transition: border-color 0.3s ease;
@@ -22,7 +22,7 @@
   &__error {
     position: absolute;
     right: 0;
-    bottom: -2px;
+    bottom: $spacing-xxs;
     color: $color-danger;
     transform: translateY(100%);
   }
