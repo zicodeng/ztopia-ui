@@ -73,8 +73,9 @@ const zIndexLevels = {
 };
 
 const semanticZIndexes = {
-  'z-index-modal': zIndexLevels['z-index-level-1'],
-  'z-index-drawer': zIndexLevels['z-index-level-2'],
+  'z-index-popper': zIndexLevels['z-index-level-1'],
+  'z-index-modal': zIndexLevels['z-index-level-2'],
+  'z-index-drawer': zIndexLevels['z-index-level-3'],
 };
 
 module.exports = {

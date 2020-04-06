@@ -1,4 +1,5 @@
 .ztopia-popper {
+  z-index: $z-index-popper;
   padding: 0;
   line-height: inherit;
   background-color: transparent;
