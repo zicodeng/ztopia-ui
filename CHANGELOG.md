@@ -1,3 +1,9 @@
+## [1.35.6](https://github.com/zicodeng/ztopia-ui/compare/v1.35.5...v1.35.6) (2020-04-06)
+
+### Bug Fixes
+
+- add z-index for popper and make it level 1 ([e1301d4](https://github.com/zicodeng/ztopia-ui/commit/e1301d4257f19bc375343a6896eef2a0101a79e3))
+
 ## [1.35.5](https://github.com/zicodeng/ztopia-ui/compare/v1.35.4...v1.35.5) (2020-04-05)
 
 ### Bug Fixes
