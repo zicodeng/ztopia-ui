@@ -69,7 +69,7 @@ export const Image: FC<ImageProps> = memo(
   }) => {
     if (variant === 'background' && typeof height !== 'number') {
       throw new Error(
-        'Image height must be a number with fixed value in background mode',
+        'Image: prop height must be a number with fixed value in background mode',
       );
     }
 

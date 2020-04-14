@@ -114,7 +114,7 @@ export const AccordionPanel: FC<AccordionPanel> = memo(
   }) => {
     if (!children || !children[0] || !children[1]) {
       throw new Error(
-        'AccordionPanel must have exact two children: the first child must be AccordionPanelHeader, and the second child must be AccordionPanelContent',
+        'AccordionPanel: must have exact two children. The first child must be AccordionPanelHeader, and the second child must be AccordionPanelContent',
       );
     }
     const header = children[0];
