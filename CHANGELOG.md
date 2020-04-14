@@ -1,3 +1,9 @@
+## [1.35.10](https://github.com/zicodeng/ztopia-ui/compare/v1.35.9...v1.35.10) (2020-04-14)
+
+### Bug Fixes
+
+- export SliderHandle for tooltip customization ([8b3385c](https://github.com/zicodeng/ztopia-ui/commit/8b3385ceb75f8869f701c708549c7d15c2a1a585))
+
 ## [1.35.9](https://github.com/zicodeng/ztopia-ui/compare/v1.35.8...v1.35.9) (2020-04-14)
 
 ### Bug Fixes
