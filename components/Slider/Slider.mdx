@@ -17,7 +17,13 @@ Dependency: [rc-slider](https://github.com/react-component/slider/)
 ### Min & Max
 
 <Playground>
-  <Slider min={10} max={50} />
+  <Slider
+    min={10}
+    max={50}
+    onChange={value => {
+      console.log('Slider', 'onChange', { value });
+    }}
+  />
 </Playground>
 
 ### Step & Marks
@@ -32,13 +38,32 @@ Dependency: [rc-slider](https://github.com/react-component/slider/)
       75: <h1>75</h1>,
       100: <h1>100</h1>,
     }}
+    onChange={value => {
+      console.log('Slider', 'onChange', { value });
+    }}
   />
 </Playground>
 
 ### Vertical
 
 <Playground>
-  <Slider isVertical />
+  <Slider
+    isVertical
+    onChange={value => {
+      console.log('Slider', 'onChange', { value });
+    }}
+  />
+</Playground>
+
+### Range
+
+<Playground>
+  <Slider
+    variant="range"
+    onChange={value => {
+      console.log('Slider', 'onChange', { value });
+    }}
+  />
 </Playground>
 
 ## API

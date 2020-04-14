@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import BaseSlider, { Handle, Marks } from 'rc-slider';
+import BasicSlider, { Handle, Marks, Range } from 'rc-slider';
 import React, { FC, memo } from 'react';
 
 import { Popper } from '../Popper';
@@ -20,10 +20,15 @@ export interface SliderProps {
    * <@default=`100`>
    */
   max?: number;
-  value?: number;
+  /**
+   * The value of a basic slider is a single number.
+   * The value of a range slider is an array of numbers
+   */
+  value?: number | number[];
   step?: number;
   className?: string;
   marks?: Marks;
+  variant?: 'basic' | 'range';
   onChange?: () => void;
 }
 
@@ -43,23 +48,43 @@ const handle = props => {
   );
 };
 
-export const Slider: FC<SliderProps> = memo(
-  ({ isVertical, className, ...restProps }) => {
-    return (
-      <BaseSlider
-        vertical={isVertical}
-        className={classNames(className, 'ztopia-slider', {
-          'is-vertical': isVertical,
-        })}
-        handle={handle}
-        {...restProps}
-      />
-    );
+export const Slider: FC<SliderProps> = memo<SliderProps>(
+  ({
+    isVertical = false,
+    min = 0,
+    max = 100,
+    value,
+    className,
+    variant = 'basic',
+    ...restProps
+  }) => {
+    const sliderProps = {
+      vertical: isVertical,
+      min,
+      max,
+      className: classNames(className, 'ztopia-slider', {
+        'is-vertical': isVertical,
+      }),
+      handle,
+      ...restProps,
+    };
+
+    if (variant === 'basic') {
+      if (value && typeof value !== 'number')
+        throw new Error(
+          'Slider: prop value of a basic slider must be a number',
+        );
+      return <BasicSlider {...sliderProps} />;
+    }
+
+    if (variant === 'range') {
+      if (value && !Array.isArray(value))
+        throw new Error(
+          'Slider: prop value of a range slider must be an array of numbers',
+        );
+      return <Range allowCross={false} {...sliderProps} />;
+    }
+
+    throw new Error(`Slider: unknown variant ${variant}`);
   },
 );
-
-Slider.defaultProps = {
-  isVertical: false,
-  min: 0,
-  max: 100,
-};
