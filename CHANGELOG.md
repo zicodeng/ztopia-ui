@@ -1,3 +1,9 @@
+## [1.35.8](https://github.com/zicodeng/ztopia-ui/compare/v1.35.7...v1.35.8) (2020-04-14)
+
+### Bug Fixes
+
+- fix Slider onChange prop typing ([55d5c74](https://github.com/zicodeng/ztopia-ui/commit/55d5c74d0f079f3e6cf2e44bb0dbb7babc99d94f))
+
 ## [1.35.7](https://github.com/zicodeng/ztopia-ui/compare/v1.35.6...v1.35.7) (2020-04-14)
 
 ### Bug Fixes
