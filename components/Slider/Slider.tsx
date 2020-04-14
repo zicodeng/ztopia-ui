@@ -29,7 +29,7 @@ export interface SliderProps {
   className?: string;
   marks?: Marks;
   variant?: 'basic' | 'range';
-  onChange?: () => void;
+  onChange?: (value: number | number[]) => void;
 }
 
 const handle = props => {
