@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import BasicSlider, { Handle, Marks, Range } from 'rc-slider';
+import BasicSlider, { Handle, Marks, Range, HandleProps } from 'rc-slider';
 import React, { FC, memo } from 'react';
 
 import { Popper } from '../Popper';
@@ -23,6 +23,8 @@ export interface SliderProps {
   /**
    * The value of a basic slider is a single number.
    * The value of a range slider is an array of numbers
+   *
+   * <@default=`0`>
    */
   value?: number | number[];
   step?: number;
@@ -30,9 +32,10 @@ export interface SliderProps {
   marks?: Marks;
   variant?: 'basic' | 'range';
   onChange?: (value: number | number[]) => void;
+  renderHandle?: (props: any) => JSX.Element;
 }
 
-const handle = props => {
+const defaultRenderHandle = props => {
   const { value, dragging, index, ...restProps } = props;
   return (
     <Popper
@@ -48,14 +51,17 @@ const handle = props => {
   );
 };
 
+export const SliderHandle = memo<HandleProps>(props => <Handle {...props} />);
+
 export const Slider: FC<SliderProps> = memo<SliderProps>(
   ({
     isVertical = false,
     min = 0,
     max = 100,
-    value,
+    value = 0,
     className,
     variant = 'basic',
+    renderHandle = defaultRenderHandle,
     ...restProps
   }) => {
     const sliderProps = {
@@ -65,7 +71,7 @@ export const Slider: FC<SliderProps> = memo<SliderProps>(
       className: classNames(className, 'ztopia-slider', {
         'is-vertical': isVertical,
       }),
-      handle,
+      handle: renderHandle,
       ...restProps,
     };
 

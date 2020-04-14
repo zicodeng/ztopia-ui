@@ -7,6 +7,7 @@ route: /components/slider
 import { Props, Playground } from 'docz';
 
 import { Slider } from './';
+import { BasicSliderDemo, RangeSliderDemo } from './SliderDemo';
 
 # Slider
 
@@ -17,53 +18,52 @@ Dependency: [rc-slider](https://github.com/react-component/slider/)
 ### Min & Max
 
 <Playground>
-  <Slider
-    min={10}
-    max={50}
-    onChange={value => {
-      console.log('Slider', 'onChange', { value });
-    }}
-  />
+  <BasicSliderDemo>
+    {({ value, onChange }) => (
+      <Slider min={10} max={50} value={value} onChange={onChange} />
+    )}
+  </BasicSliderDemo>
 </Playground>
 
 ### Step & Marks
 
 <Playground>
-  <Slider
-    step={25}
-    marks={{
-      0: <h1>0</h1>,
-      25: <h1>25</h1>,
-      50: <h1>50</h1>,
-      75: <h1>75</h1>,
-      100: <h1>100</h1>,
-    }}
-    onChange={value => {
-      console.log('Slider', 'onChange', { value });
-    }}
-  />
+  <BasicSliderDemo>
+    {({ value, onChange }) => (
+      <Slider
+        step={25}
+        marks={{
+          0: <h1>0</h1>,
+          25: <h1>25</h1>,
+          50: <h1>50</h1>,
+          75: <h1>75</h1>,
+          100: <h1>100</h1>,
+        }}
+        value={value}
+        onChange={onChange}
+      />
+    )}
+  </BasicSliderDemo>
 </Playground>
 
 ### Vertical
 
 <Playground>
-  <Slider
-    isVertical
-    onChange={value => {
-      console.log('Slider', 'onChange', { value });
-    }}
-  />
+  <BasicSliderDemo>
+    {({ value, onChange }) => (
+      <Slider isVertical value={value} onChange={onChange} />
+    )}
+  </BasicSliderDemo>
 </Playground>
 
 ### Range
 
 <Playground>
-  <Slider
-    variant="range"
-    onChange={value => {
-      console.log('Slider', 'onChange', { value });
-    }}
-  />
+  <RangeSliderDemo>
+    {({ value, onChange }) => (
+      <Slider variant="range" value={value} onChange={onChange} />
+    )}
+  </RangeSliderDemo>
 </Playground>
 
 ## API
