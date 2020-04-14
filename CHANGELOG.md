@@ -1,3 +1,9 @@
+## [1.35.9](https://github.com/zicodeng/ztopia-ui/compare/v1.35.8...v1.35.9) (2020-04-14)
+
+### Bug Fixes
+
+- pass value to Slider ([5428290](https://github.com/zicodeng/ztopia-ui/commit/5428290d69c59ebad3bde53ed369c9b014e00721))
+
 ## [1.35.8](https://github.com/zicodeng/ztopia-ui/compare/v1.35.7...v1.35.8) (2020-04-14)
 
 ### Bug Fixes
