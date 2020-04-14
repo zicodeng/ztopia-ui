@@ -1,3 +1,10 @@
+## [1.35.7](https://github.com/zicodeng/ztopia-ui/compare/v1.35.6...v1.35.7) (2020-04-14)
+
+### Bug Fixes
+
+- add range slider ([9cc2cc8](https://github.com/zicodeng/ztopia-ui/commit/9cc2cc840a1994ac716e0cc37377fdf891c52059))
+- standardize error messages ([02f5ff4](https://github.com/zicodeng/ztopia-ui/commit/02f5ff499f5dce0090ee322cc3bffe30d205bcaf))
+
 ## [1.35.6](https://github.com/zicodeng/ztopia-ui/compare/v1.35.5...v1.35.6) (2020-04-06)
 
 ### Bug Fixes
