@@ -74,7 +74,7 @@ export const Slider: FC<SliderProps> = memo<SliderProps>(
         throw new Error(
           'Slider: prop value of a basic slider must be a number',
         );
-      return <BasicSlider {...sliderProps} />;
+      return <BasicSlider value={value} {...sliderProps} />;
     }
 
     if (variant === 'range') {
@@ -82,7 +82,9 @@ export const Slider: FC<SliderProps> = memo<SliderProps>(
         throw new Error(
           'Slider: prop value of a range slider must be an array of numbers',
         );
-      return <Range allowCross={false} {...sliderProps} />;
+      return (
+        <Range allowCross={false} value={value as number[]} {...sliderProps} />
+      );
     }
 
     throw new Error(`Slider: unknown variant ${variant}`);
