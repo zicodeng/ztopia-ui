@@ -1,3 +1,9 @@
+## [1.35.11](https://github.com/zicodeng/ztopia-ui/compare/v1.35.10...v1.35.11) (2020-04-17)
+
+### Bug Fixes
+
+- add size prop to Checkbox ([8930ae8](https://github.com/zicodeng/ztopia-ui/commit/8930ae82e355846f697081bdfc78c81b70ca7cec))
+
 ## [1.35.10](https://github.com/zicodeng/ztopia-ui/compare/v1.35.9...v1.35.10) (2020-04-14)
 
 ### Bug Fixes
