@@ -23,7 +23,7 @@
       height: 18px;
 
       &.is-border-rounded {
-        border-radius: $border-radius-m;
+        border-radius: 3px;
       }
     }
 
@@ -32,7 +32,7 @@
       height: 20px;
 
       &.is-border-rounded {
-        border-radius: $border-radius-m;
+        border-radius: 4px;
       }
     }
   }
