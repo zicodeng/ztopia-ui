@@ -1,3 +1,9 @@
+## [1.35.12](https://github.com/zicodeng/ztopia-ui/compare/v1.35.11...v1.35.12) (2020-04-17)
+
+### Bug Fixes
+
+- fix checkbox border radius style ([21334fe](https://github.com/zicodeng/ztopia-ui/commit/21334fe648b0aace036eef45531c1413909cd6f7))
+
 ## [1.35.11](https://github.com/zicodeng/ztopia-ui/compare/v1.35.10...v1.35.11) (2020-04-17)
 
 ### Bug Fixes
