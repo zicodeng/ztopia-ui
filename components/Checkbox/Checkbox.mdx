@@ -40,6 +40,60 @@ import { CheckboxDemo } from './CheckboxDemo.jsx';
   </Container>
 </Playground>
 
+### Size
+
+<Playground>
+  <Container>
+    <CheckboxDemo>
+      {({ isChecked, onChange }) => (
+        <Checkbox
+          size="small"
+          label="Small"
+          isChecked={isChecked}
+          onChange={onChange}
+        />
+      )}
+    </CheckboxDemo>
+    <CheckboxDemo>
+      {({ isChecked, onChange }) => (
+        <Checkbox
+          size="medium"
+          label="Medium"
+          isChecked={isChecked}
+          onChange={onChange}
+        />
+      )}
+    </CheckboxDemo>
+    <CheckboxDemo>
+      {({ isChecked, onChange }) => (
+        <Checkbox
+          size="large"
+          label="Large"
+          isChecked={isChecked}
+          onChange={onChange}
+        />
+      )}
+    </CheckboxDemo>
+  </Container>
+</Playground>
+
+### Rounded Border
+
+<Playground>
+  <Container>
+    <CheckboxDemo>
+      {({ isChecked, onChange }) => (
+        <Checkbox
+          isBorderRounded
+          label="Small"
+          isChecked={isChecked}
+          onChange={onChange}
+        />
+      )}
+    </CheckboxDemo>
+  </Container>
+</Playground>
+
 ## API
 
 <Props of={Checkbox} />

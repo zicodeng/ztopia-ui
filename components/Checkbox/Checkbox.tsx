@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { ChangeEvent, FC } from 'react';
+import React, { ChangeEvent, memo } from 'react';
 
 import { Checkmark } from '../Icons';
 
@@ -10,25 +10,40 @@ export interface CheckboxProps {
    * <@default=`false`>
    */
   isChecked?: boolean;
+  /**
+   * <@default=`false`>
+   */
+  isBorderRounded?: boolean;
   label?: string;
   /**
    * If provided, clicking label will have the same effect as clicking checkbox
    */
   id?: string;
   className?: string;
+  size?: 'small' | 'medium' | 'large';
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const Checkbox: FC<CheckboxProps> = ({
-  isChecked,
-  label,
-  id,
-  className,
-  onChange,
-}) => {
-  return (
+export const Checkbox = memo<CheckboxProps>(
+  ({
+    isChecked = false,
+    isBorderRounded = false,
+    label,
+    id,
+    className,
+    size = 'medium',
+    onChange,
+  }) => (
     <div className={classNames(className, 'ztopia-checkbox')}>
-      <div className={classNames('ztopia-checkbox__input-container')}>
+      <div
+        className={classNames(
+          'ztopia-checkbox__input-container',
+          `ztopia-checkbox__input-container--${size}`,
+          {
+            'is-border-rounded': isBorderRounded,
+          },
+        )}
+      >
         <input
           type="checkbox"
           id={id}
@@ -49,9 +64,5 @@ export const Checkbox: FC<CheckboxProps> = ({
         </label>
       )}
     </div>
-  );
-};
-
-Checkbox.defaultProps = {
-  isChecked: false,
-};
+  ),
+);

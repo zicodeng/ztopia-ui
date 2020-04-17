@@ -78,6 +78,12 @@ const semanticZIndexes = {
   'z-index-drawer': zIndexLevels['z-index-level-3'],
 };
 
+const borderRadiuses = {
+  'border-radius-s': '2px',
+  'border-radius-m': '5px',
+  'border-radius-l': '8px',
+};
+
 module.exports = {
   ...colorPalette,
   ...semanticColors,
@@ -87,4 +93,5 @@ module.exports = {
   ...transitions,
   ...zIndexLevels,
   ...semanticZIndexes,
+  ...borderRadiuses,
 };
