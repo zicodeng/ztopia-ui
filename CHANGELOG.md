@@ -1,3 +1,9 @@
+## [1.35.13](https://github.com/zicodeng/ztopia-ui/compare/v1.35.12...v1.35.13) (2020-05-04)
+
+### Bug Fixes
+
+- add tooltip background color ([4eda010](https://github.com/zicodeng/ztopia-ui/commit/4eda010bbe6d47377e77decee6ab6f0cf0fc0a77))
+
 ## [1.35.12](https://github.com/zicodeng/ztopia-ui/compare/v1.35.11...v1.35.12) (2020-04-17)
 
 ### Bug Fixes
