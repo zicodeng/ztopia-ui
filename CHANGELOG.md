@@ -1,3 +1,9 @@
+## [1.35.15](https://github.com/zicodeng/ztopia-ui/compare/v1.35.14...v1.35.15) (2020-05-11)
+
+### Bug Fixes
+
+- dont override renderMaxSelectedOptionsReachedMessage ([2703151](https://github.com/zicodeng/ztopia-ui/commit/2703151b6493a8c0d4d566d1188d4f4c2a86d8d1))
+
 ## [1.35.14](https://github.com/zicodeng/ztopia-ui/compare/v1.35.13...v1.35.14) (2020-05-11)
 
 ### Bug Fixes
