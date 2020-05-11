@@ -16,9 +16,9 @@ export type SelectValue = SelectOption | SelectOption[] | null;
 
 export interface SelectProps<OptionType extends OptionTypeBase = SelectOption> {
   /**
-   * <@default=`false`>
-   *
    * Enable isMulti selection
+   *
+   * <@default=`false`>
    */
   isMulti?: boolean;
   /**
@@ -38,6 +38,10 @@ export interface SelectProps<OptionType extends OptionTypeBase = SelectOption> {
    * <@default=`200`>
    */
   maxMenuHeight?: number;
+  /**
+   * <@default=`undefined`>
+   */
+  maxSelectedOptions?: number;
   name?: string;
   label?: string;
   error?: string;
@@ -54,6 +58,12 @@ export interface SelectProps<OptionType extends OptionTypeBase = SelectOption> {
    * <@default=`() => 'No options'`>
    */
   renderNoOptionMessage?: (obj: { inputValue: string }) => ReactNode;
+  /**
+   * <@default=`() => 'Cannot select more than N options'`>
+   */
+  renderMaxSelectedOptionsReachedMessage?: (obj: {
+    inputValue: string;
+  }) => ReactNode;
   onChange?: (newValue: SelectValue, actionMeta: ActionMeta) => void;
 }
 
@@ -64,6 +74,7 @@ export const Select: FC<SelectProps> = memo(
     isLoading = false,
     isClearable = true,
     maxMenuHeight = 200,
+    maxSelectedOptions,
     label,
     error,
     placeholder = 'Select...',
@@ -71,35 +82,53 @@ export const Select: FC<SelectProps> = memo(
     value,
     options,
     renderNoOptionMessage = () => 'No option',
+    renderMaxSelectedOptionsReachedMessage,
     onChange,
     ...restProps
-  }) => (
-    <div
-      className={classNames(className, 'ztopia-select', {
-        'is-multi': isMulti,
-      })}
-    >
-      {label && <label className="ztopia-select__label">{label}</label>}
-      <WindowedSelect
-        {...restProps}
-        isMulti={isMulti}
-        isSearchable={isSearchable}
-        isLoading={isLoading}
-        isClearable={isClearable}
-        maxMenuHeight={maxMenuHeight}
-        placeholder={placeholder}
-        className={classNames('ztopia-select__container', {
+  }) => {
+    const isMaxSelectedOptionsReached = Boolean(
+      isMulti &&
+        value &&
+        Array.isArray(value) &&
+        maxSelectedOptions &&
+        value.length >= maxSelectedOptions,
+    );
+
+    if (isMaxSelectedOptionsReached) {
+      renderMaxSelectedOptionsReachedMessage = () =>
+        `Cannot select more than ${(value as SelectOption[]).length} options`;
+    }
+
+    return (
+      <div
+        className={classNames(className, 'ztopia-select', {
           'is-multi': isMulti,
-          'is-searchable': isSearchable,
-          'has-error': Boolean(error),
         })}
-        classNamePrefix="select"
-        value={value}
-        options={options}
-        noOptionsMessage={renderNoOptionMessage}
-        onChange={onChange}
-      />
-      {error && <span className="ztopia-select__error">{error}</span>}
-    </div>
-  ),
+      >
+        {label && <label className="ztopia-select__label">{label}</label>}
+        <WindowedSelect
+          {...restProps}
+          isMulti={isMulti}
+          isSearchable={isSearchable}
+          isLoading={isLoading}
+          isClearable={isClearable}
+          maxMenuHeight={maxMenuHeight}
+          placeholder={placeholder}
+          className={classNames('ztopia-select__container', {
+            'is-multi': isMulti,
+            'is-searchable': isSearchable,
+            'has-error': Boolean(error),
+          })}
+          classNamePrefix="select"
+          value={value}
+          options={isMaxSelectedOptionsReached ? [] : options}
+          noOptionsMessage={
+            renderMaxSelectedOptionsReachedMessage || renderNoOptionMessage
+          }
+          onChange={onChange}
+        />
+        {error && <span className="ztopia-select__error">{error}</span>}
+      </div>
+    );
+  },
 );

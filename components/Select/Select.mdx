@@ -62,6 +62,23 @@ Dependency: [react-select](https://github.com/JedWatson/react-select)
   </SelectDemo>
 </Playground>
 
+### Max Selected Values
+
+<Playground>
+  <SelectDemo>
+    {({ value, onChange }) => (
+      <Select
+        isMulti
+        maxSelectedOptions={2}
+        label="What are your favorite fruits?"
+        value={value}
+        options={options}
+        onChange={onChange}
+      />
+    )}
+  </SelectDemo>
+</Playground>
+
 ### Error
 
 <Playground>
