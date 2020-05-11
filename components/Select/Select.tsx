@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { FC, memo, ReactNode } from 'react';
+import React, { FC, memo, ReactNode, useCallback } from 'react';
 import {
   ActionMeta,
   OptionsType,
@@ -94,10 +94,11 @@ export const Select: FC<SelectProps> = memo(
         value.length >= maxSelectedOptions,
     );
 
-    if (isMaxSelectedOptionsReached) {
-      renderMaxSelectedOptionsReachedMessage = () =>
-        `Cannot select more than ${(value as SelectOption[]).length} options`;
-    }
+    const defaultRenderMaxSelectedOptionsReachedMessage = useCallback(
+      () =>
+        `Cannot select more than ${(value as SelectOption[]).length} options`,
+      [value],
+    );
 
     return (
       <div
@@ -123,7 +124,10 @@ export const Select: FC<SelectProps> = memo(
           value={value}
           options={isMaxSelectedOptionsReached ? [] : options}
           noOptionsMessage={
-            renderMaxSelectedOptionsReachedMessage || renderNoOptionMessage
+            isMaxSelectedOptionsReached
+              ? renderMaxSelectedOptionsReachedMessage ||
+                defaultRenderMaxSelectedOptionsReachedMessage
+              : renderNoOptionMessage
           }
           onChange={onChange}
         />
