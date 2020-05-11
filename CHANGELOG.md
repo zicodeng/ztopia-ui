@@ -1,3 +1,9 @@
+## [1.35.14](https://github.com/zicodeng/ztopia-ui/compare/v1.35.13...v1.35.14) (2020-05-11)
+
+### Bug Fixes
+
+- add maxSelectedOptions prop to Select ([89000aa](https://github.com/zicodeng/ztopia-ui/commit/89000aaf5f3437b4bbacbc8dd8f6e3b7e37bf62d))
+
 ## [1.35.13](https://github.com/zicodeng/ztopia-ui/compare/v1.35.12...v1.35.13) (2020-05-04)
 
 ### Bug Fixes
