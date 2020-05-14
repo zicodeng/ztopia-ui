@@ -1,3 +1,9 @@
+## [1.35.17](https://github.com/zicodeng/ztopia-ui/compare/v1.35.16...v1.35.17) (2020-05-14)
+
+### Bug Fixes
+
+- fix Tabs indicator position ([647c598](https://github.com/zicodeng/ztopia-ui/commit/647c598144becd31be5ae892eca944bcbd93a0c6))
+
 ## [1.35.16](https://github.com/zicodeng/ztopia-ui/compare/v1.35.15...v1.35.16) (2020-05-13)
 
 ### Bug Fixes
