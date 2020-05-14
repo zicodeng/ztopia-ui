@@ -15,7 +15,12 @@
 
   &__item {
     padding: $spacing-xs 0;
+    color: $black-light;
     cursor: pointer;
+
+    &.is-selected {
+      color: $black-dark;
+    }
 
     &.is-vertical {
       padding: 0 $spacing-s;

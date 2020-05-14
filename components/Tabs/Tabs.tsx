@@ -22,6 +22,10 @@ export interface TabProps {
   /**
    * <@internal>
    */
+  isSelected?: boolean;
+  /**
+   * <@internal>
+   */
   isVertical?: boolean;
   /**
    * <@internal>
@@ -44,6 +48,7 @@ export const Tab: FC<TabProps> = memo(
     id,
     className,
     children,
+    isSelected,
     isVertical,
     idx,
     gap,
@@ -68,6 +73,7 @@ export const Tab: FC<TabProps> = memo(
         ref={ref}
         id={id}
         className={classNames(className, 'ztopia-tabs__item', {
+          'is-selected': isSelected,
           'is-vertical': isVertical,
         })}
         style={style}
@@ -213,6 +219,9 @@ export const Tabs: FC<TabsProps> = memo(
           {Children.map(children, (child, i) =>
             isValidElement(child)
               ? cloneElement(child, {
+                  isSelected:
+                    child.props.id ===
+                    (value || (i === 0 ? child.props.id : '')),
                   isVertical,
                   idx: i,
                   gap,
