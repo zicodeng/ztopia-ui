@@ -1,3 +1,9 @@
+## [1.35.18](https://github.com/zicodeng/ztopia-ui/compare/v1.35.17...v1.35.18) (2020-05-14)
+
+### Bug Fixes
+
+- add isSelected class name to selected tab ([e7d7c3e](https://github.com/zicodeng/ztopia-ui/commit/e7d7c3ed98e9f0379c22a5f6f8f915d474e90389))
+
 ## [1.35.17](https://github.com/zicodeng/ztopia-ui/compare/v1.35.16...v1.35.17) (2020-05-14)
 
 ### Bug Fixes
