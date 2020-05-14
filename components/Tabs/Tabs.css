@@ -14,21 +14,11 @@
   }
 
   &__item {
-    margin-right: $spacing-l;
     padding: $spacing-xs 0;
     cursor: pointer;
 
-    &:last-of-type {
-      margin-right: 0;
-    }
-
     &.is-vertical {
-      margin-bottom: $spacing-l;
       padding: 0 $spacing-s;
-
-      &:last-of-type {
-        margin-bottom: 0;
-      }
     }
   }
 

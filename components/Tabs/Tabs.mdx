@@ -47,6 +47,7 @@ import { TabsDemo } from './TabsDemo';
 
 <Playground>
   <Container>
+    Top
     <TabsDemo>
       {({ value, onChange }) => (
         <Tabs indicatorPlacement="top" value={value} onChange={onChange}>
@@ -58,7 +59,8 @@ import { TabsDemo } from './TabsDemo';
       )}
     </TabsDemo>
   </Container>
-  <Container>
+  <Container style={{ marginTop: 50 }}>
+    Bottom
     <TabsDemo>
       {({ value, onChange }) => (
         <Tabs indicatorPlacement="bottom" value={value} onChange={onChange}>
@@ -70,7 +72,8 @@ import { TabsDemo } from './TabsDemo';
       )}
     </TabsDemo>
   </Container>
-  <Container>
+  <Container style={{ marginTop: 50 }}>
+    Left
     <TabsDemo>
       {({ value, onChange }) => (
         <Tabs
@@ -87,7 +90,8 @@ import { TabsDemo } from './TabsDemo';
       )}
     </TabsDemo>
   </Container>
-  <Container>
+  <Container style={{ marginTop: 50 }}>
+    Right
     <TabsDemo>
       {({ value, onChange }) => (
         <Tabs

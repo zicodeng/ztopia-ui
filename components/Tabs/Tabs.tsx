@@ -11,6 +11,7 @@ import React, {
   useMemo,
   useRef,
   useState,
+  CSSProperties,
 } from 'react';
 
 import './Tabs.css';
@@ -24,6 +25,14 @@ export interface TabProps {
   isVertical?: boolean;
   /**
    * <@internal>
+   */
+  idx?: number;
+  /**
+   * <@internal>
+   */
+  gap?: number;
+  /**
+   * <@internal>
    *
    * Called when Tab is rendered at the first time
    */
@@ -31,13 +40,28 @@ export interface TabProps {
 }
 
 export const Tab: FC<TabProps> = memo(
-  ({ id, className, children, isVertical, onRender, ...restProps }) => {
+  ({
+    id,
+    className,
+    children,
+    isVertical,
+    idx,
+    gap,
+    onRender,
+    ...restProps
+  }) => {
     const ref = useRef(null);
     const size = useComponentSize(ref);
 
     useEffect(() => {
       onRender!(id, size);
     }, [size]);
+
+    const style: CSSProperties = {};
+    if (idx !== 0) {
+      if (isVertical) style.marginTop = gap;
+      else style.marginLeft = gap;
+    }
 
     return (
       <li
@@ -46,6 +70,7 @@ export const Tab: FC<TabProps> = memo(
         className={classNames(className, 'ztopia-tabs__item', {
           'is-vertical': isVertical,
         })}
+        style={style}
         {...restProps}
       >
         {children}
@@ -173,9 +198,7 @@ export const Tabs: FC<TabsProps> = memo(
     const handleClickTab = useCallback(
       (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
         const newValue = e.currentTarget.id;
-        if (onChange) {
-          onChange(e, newValue);
-        }
+        if (onChange) onChange(e, newValue);
       },
       [onChange],
     );
@@ -187,10 +210,12 @@ export const Tabs: FC<TabsProps> = memo(
             'is-vertical': isVertical,
           })}
         >
-          {Children.map(children, child =>
+          {Children.map(children, (child, i) =>
             isValidElement(child)
               ? cloneElement(child, {
                   isVertical,
+                  idx: i,
+                  gap,
                   onClick: handleClickTab,
                   onRender: handleRenderTab,
                 })
