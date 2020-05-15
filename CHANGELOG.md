@@ -1,3 +1,11 @@
+## [1.35.19](https://github.com/zicodeng/ztopia-ui/compare/v1.35.18...v1.35.19) (2020-05-15)
+
+### Bug Fixes
+
+- add edit icon ([590a116](https://github.com/zicodeng/ztopia-ui/commit/590a116a175b65b58fb08234177542d98c96fa20))
+- rename Edit to IconEdit ([b13439b](https://github.com/zicodeng/ztopia-ui/commit/b13439b5bff2fd4f1c6cdb1b59aab7cdeb81bb97))
+- use div instead of li ([4244ad3](https://github.com/zicodeng/ztopia-ui/commit/4244ad350371e5b2fe5b80757fcd6f105809c480))
+
 ## [1.35.18](https://github.com/zicodeng/ztopia-ui/compare/v1.35.17...v1.35.18) (2020-05-14)
 
 ### Bug Fixes
