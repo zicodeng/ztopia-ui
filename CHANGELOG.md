@@ -1,3 +1,9 @@
+## [1.35.20](https://github.com/zicodeng/ztopia-ui/compare/v1.35.19...v1.35.20) (2020-05-15)
+
+### Bug Fixes
+
+- add isAction prop to Icon ([9b3be4c](https://github.com/zicodeng/ztopia-ui/commit/9b3be4c505467c4e1aae871ff9eedae06f3b5fc8))
+
 ## [1.35.19](https://github.com/zicodeng/ztopia-ui/compare/v1.35.18...v1.35.19) (2020-05-15)
 
 ### Bug Fixes
