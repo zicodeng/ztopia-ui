@@ -1,3 +1,9 @@
+## [1.35.22](https://github.com/zicodeng/ztopia-ui/compare/v1.35.21...v1.35.22) (2020-05-15)
+
+### Bug Fixes
+
+- prefix all icons with IconXXX ([52375d4](https://github.com/zicodeng/ztopia-ui/commit/52375d490c1042f5ec07720873d68bf3ef5c831c))
+
 ## [1.35.21](https://github.com/zicodeng/ztopia-ui/compare/v1.35.20...v1.35.21) (2020-05-15)
 
 ### Bug Fixes
