@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import React, { FC, memo, ReactNode, useCallback } from 'react';
 import {
   ActionMeta,
@@ -7,6 +6,7 @@ import {
   StylesConfig,
 } from 'react-select';
 import WindowedSelect from 'react-windowed-select';
+import classNames from 'classnames';
 
 import './Select.css';
 

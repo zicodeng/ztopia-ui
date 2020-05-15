@@ -1,13 +1,13 @@
-import classNames from 'classnames';
 import React, {
   cloneElement,
+  CSSProperties,
   FC,
   isValidElement,
   memo,
   ReactNode,
   useMemo,
-  CSSProperties,
 } from 'react';
+import classNames from 'classnames';
 
 import { BasicLoader, LoaderProps } from '../Loaders';
 

@@ -1,6 +1,6 @@
-import React, { useEffect, useState, FC } from 'react';
-import uuidv4 from 'uuid/v4';
+import React, { FC, useEffect, useState } from 'react';
 import classNames from 'classnames';
+import uuidv4 from 'uuid/v4';
 
 import './FloatingHearts.css';
 

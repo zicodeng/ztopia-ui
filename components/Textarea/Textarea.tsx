@@ -1,11 +1,11 @@
 import React, {
-  FC,
   DetailedHTMLProps,
-  TextareaHTMLAttributes,
+  FC,
   memo,
+  TextareaHTMLAttributes,
 } from 'react';
-import classNames from 'classnames';
 import TextareaAutosize from 'react-textarea-autosize';
+import classNames from 'classnames';
 
 import './Textarea.css';
 

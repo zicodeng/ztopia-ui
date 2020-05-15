@@ -1,4 +1,4 @@
-import React, { FC, CSSProperties, memo } from 'react';
+import React, { CSSProperties, FC, memo } from 'react';
 import classNames from 'classnames';
 
 import './SkewedEdge.css';

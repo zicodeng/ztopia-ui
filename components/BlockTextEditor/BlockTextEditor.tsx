@@ -1,4 +1,4 @@
-import React, { FC, memo, useState, useCallback } from 'react';
+import React, { FC, memo, useCallback, useState } from 'react';
 import BraftEditor, { ControlType } from 'braft-editor';
 
 import 'braft-editor/dist/index.css';

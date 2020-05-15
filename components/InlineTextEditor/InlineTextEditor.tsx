@@ -1,6 +1,6 @@
-import React, { FC, useEffect, ChangeEvent, memo } from 'react';
-import MediumEditor, { MediumEditor as IMediumEditor } from 'medium-editor';
+import React, { ChangeEvent, FC, memo, useEffect } from 'react';
 import classNames from 'classnames';
+import MediumEditor, { MediumEditor as IMediumEditor } from 'medium-editor';
 
 import 'medium-editor/dist/css/medium-editor.min.css';
 import 'medium-editor/dist/css/themes/flat.min.css';

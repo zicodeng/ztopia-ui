@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import React, {
   cloneElement,
   FC,
@@ -6,10 +5,11 @@ import React, {
   memo,
   ReactElement,
   ReactNode,
+  useCallback,
   useMemo,
   useRef,
-  useCallback,
 } from 'react';
+import classNames from 'classnames';
 import { throttle } from 'lodash-es';
 
 import { IconChevronLeft, IconChevronRight } from '../Icons';

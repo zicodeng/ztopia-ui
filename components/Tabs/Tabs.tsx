@@ -1,8 +1,7 @@
-import useComponentSize, { ComponentSize } from '@rehooks/component-size';
-import classNames from 'classnames';
 import React, {
   Children,
   cloneElement,
+  CSSProperties,
   FC,
   isValidElement,
   memo,
@@ -11,8 +10,9 @@ import React, {
   useMemo,
   useRef,
   useState,
-  CSSProperties,
 } from 'react';
+import useComponentSize, { ComponentSize } from '@rehooks/component-size';
+import classNames from 'classnames';
 
 import './Tabs.css';
 

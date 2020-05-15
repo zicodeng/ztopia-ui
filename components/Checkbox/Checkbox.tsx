@@ -1,5 +1,5 @@
-import classNames from 'classnames';
 import React, { ChangeEvent, memo } from 'react';
+import classNames from 'classnames';
 
 import { IconCheckmark } from '../Icons';
 

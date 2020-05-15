@@ -1,5 +1,3 @@
-import classNames from 'classnames';
-import { format, getYear, setYear } from 'date-fns';
 import React, {
   FC,
   memo,
@@ -9,6 +7,8 @@ import React, {
   useRef,
 } from 'react';
 import BaseDatePicker from 'react-datepicker';
+import classNames from 'classnames';
+import { format, getYear, setYear } from 'date-fns';
 
 import { IconChevronLeft, IconChevronRight } from '../Icons';
 import { Input } from '../Input';
@@ -64,6 +64,48 @@ export interface DatePickerProps {
   input?: ReactNode;
   onChange: (newValue: Date | null) => void;
 }
+
+const renderCustomHeader = ({
+  prevMonthButtonDisabled,
+  nextMonthButtonDisabled,
+  date,
+  increaseMonth,
+  decreaseMonth,
+}: {
+  prevMonthButtonDisabled: boolean;
+  nextMonthButtonDisabled: boolean;
+  date: Date;
+  increaseMonth: () => void;
+  decreaseMonth: () => void;
+  changeYear: (year: number) => void;
+  changeMonth: (month: number) => void;
+}) => (
+  <div className="ztopia-date-picker__header">
+    {!prevMonthButtonDisabled && (
+      <IconChevronLeft
+        size="small"
+        className={classNames(
+          'ztopia-date-picker__nav',
+          'ztopia-date-picker__nav--prev',
+        )}
+        onClick={decreaseMonth}
+      />
+    )}
+    <span className="ztopia-date-picker__month-title">
+      {format(date, 'MMMM yyyy')}
+    </span>
+    {!nextMonthButtonDisabled && (
+      <IconChevronRight
+        size="small"
+        className={classNames(
+          'ztopia-date-picker__nav',
+          'ztopia-date-picker__nav--next',
+        )}
+        onClick={increaseMonth}
+      />
+    )}
+  </div>
+);
 
 export const DatePicker: FC<DatePickerProps> = ({
   isYearSelectShown,
@@ -146,48 +188,6 @@ DatePicker.defaultProps = {
   dateFormat: 'MM/dd/yyyy',
   input: <Input />,
 };
-
-const renderCustomHeader = ({
-  prevMonthButtonDisabled,
-  nextMonthButtonDisabled,
-  date,
-  increaseMonth,
-  decreaseMonth,
-}: {
-  prevMonthButtonDisabled: boolean;
-  nextMonthButtonDisabled: boolean;
-  date: Date;
-  increaseMonth: () => void;
-  decreaseMonth: () => void;
-  changeYear: (year: number) => void;
-  changeMonth: (month: number) => void;
-}) => (
-  <div className="ztopia-date-picker__header">
-    {!prevMonthButtonDisabled && (
-      <IconChevronLeft
-        size="small"
-        className={classNames(
-          'ztopia-date-picker__nav',
-          'ztopia-date-picker__nav--prev',
-        )}
-        onClick={decreaseMonth}
-      />
-    )}
-    <span className="ztopia-date-picker__month-title">
-      {format(date, 'MMMM yyyy')}
-    </span>
-    {!nextMonthButtonDisabled && (
-      <IconChevronRight
-        size="small"
-        className={classNames(
-          'ztopia-date-picker__nav',
-          'ztopia-date-picker__nav--next',
-        )}
-        onClick={increaseMonth}
-      />
-    )}
-  </div>
-);
 
 interface YearSelectProps {
   hasTodayButton?: boolean;

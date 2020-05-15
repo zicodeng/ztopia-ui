@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, memo } from 'react';
+import React, { FC, memo, ReactNode } from 'react';
 import classNames from 'classnames';
 import uuidv4 from 'uuid/v4';
 
@@ -37,8 +37,8 @@ export const FloatingActionButton: FC<FloatingActionButtonProps> = memo(
             `ztopia-fab__actions--${size}`,
           )}
         >
-          {actions.map(({ icon, desc, onClick }) => (
-            <li className="ztopia-fab__action" onClick={onClick}>
+          {actions.map(({ icon, desc, onClick }, i) => (
+            <li key={i} className="ztopia-fab__action" onClick={onClick}>
               <Popper
                 containerId={id}
                 offsetX={-5}

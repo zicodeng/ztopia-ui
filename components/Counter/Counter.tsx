@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import React, {
   CSSProperties,
   FC,
@@ -8,6 +7,7 @@ import React, {
 } from 'react';
 import { useCountUp } from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';
+import classNames from 'classnames';
 
 export interface CounterProps {
   /**
@@ -32,7 +32,6 @@ export const Counter: FC<CounterProps> = ({
   end,
   className,
   style,
-  children,
   ...restProps
 }) => {
   const { countUp, start, reset, update } = useCountUp({

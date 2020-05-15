@@ -1,9 +1,9 @@
-import React, { FC, memo, CSSProperties } from 'react';
-import classNames from 'classnames';
+import React, { CSSProperties, FC, memo } from 'react';
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
+import classNames from 'classnames';
 
 import 'react-vertical-timeline-component/style.min.css';
 import './Timeline.css';

@@ -1,6 +1,6 @@
 import React, { FC, memo } from 'react';
-import classNames from 'classnames';
 import Typed from 'react-typed';
+import classNames from 'classnames';
 
 export interface TypewriterProps {
   /**

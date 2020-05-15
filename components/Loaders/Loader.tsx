@@ -1,5 +1,5 @@
-import classNames from 'classnames';
 import { FC, memo } from 'react';
+import classNames from 'classnames';
 
 import './Loader.css';
 

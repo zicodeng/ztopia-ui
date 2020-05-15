@@ -1,9 +1,9 @@
-import React, { FC, useState, useCallback, memo } from 'react';
+import React, { FC, memo, useCallback, useState } from 'react';
 import {
   ChromePicker,
   ChromePickerProps,
-  ColorResult,
   Color,
+  ColorResult,
   RGBColor,
 } from 'react-color';
 

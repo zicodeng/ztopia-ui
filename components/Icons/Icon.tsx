@@ -1,12 +1,12 @@
-import classNames from 'classnames';
 import React, {
   cloneElement,
+  CSSProperties,
   FC,
   isValidElement,
   memo,
-  CSSProperties,
   SVGProps,
 } from 'react';
+import classNames from 'classnames';
 
 import './Icon.css';
 

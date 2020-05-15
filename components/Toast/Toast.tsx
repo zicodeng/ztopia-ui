@@ -1,6 +1,6 @@
-import classNames from 'classnames';
 import React, { createElement, FC, memo, ReactNode } from 'react';
 import { toast, ToastContainer as BaseToastContainer } from 'react-toastify';
+import classNames from 'classnames';
 
 import { IconTimes } from '../Icons';
 

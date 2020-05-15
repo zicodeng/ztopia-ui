@@ -1,7 +1,7 @@
-import React, { FC, memo, ReactNode, useState, useEffect } from 'react';
+import React, { FC, memo, ReactNode, useEffect, useState } from 'react';
+import camelCase from 'camelcase';
 import classNames from 'classnames';
 import Tooltip from 'rc-tooltip';
-import camelCase from 'camelcase';
 
 import 'rc-tooltip/assets/bootstrap_white.css';
 import './Popper.css';

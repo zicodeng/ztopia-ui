@@ -1,7 +1,7 @@
-import DeckGL from '@deck.gl/react';
-import { FlyToInterpolator } from '@deck.gl/core';
-import React, { FC, useState, useEffect, useCallback, memo } from 'react';
+import React, { FC, memo, useCallback, useEffect, useState } from 'react';
 import { StaticMap } from 'react-map-gl';
+import { FlyToInterpolator } from '@deck.gl/core';
+import DeckGL from '@deck.gl/react';
 
 // The current mapbox-gl release requires its stylesheet be included at all times.
 // The marker, popup and navigation components in react-map-gl also need the stylesheet to work properly.

@@ -1,6 +1,6 @@
-import classNames from 'classnames';
 import React, { ChangeEvent, FC, memo } from 'react';
 import BaseToggle, { ToggleIcons } from 'react-toggle';
+import classNames from 'classnames';
 
 import './Toggle.css';
 

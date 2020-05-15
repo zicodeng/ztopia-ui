@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import React, {
   Children,
   cloneElement,
@@ -11,6 +10,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import classNames from 'classnames';
 
 import { IconChevronDown } from '../Icons';
 

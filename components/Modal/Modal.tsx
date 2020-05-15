@@ -1,6 +1,6 @@
-import classNames from 'classnames';
 import React, { FC, memo, useCallback } from 'react';
 import ReactModal from 'react-modal';
+import classNames from 'classnames';
 
 import { IconTimes } from '../Icons';
 

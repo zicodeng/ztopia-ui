@@ -21,7 +21,7 @@ export const Sunrise: FC<SunriseProps> = ({ width = 400, height = 300 }) => (
       </clipPath>
     </defs>
     <line id="line" x1="-76" x2="76"></line>
-    <g id="sun" clip-path="url(#cp)">
+    <g id="sun" clipPath="url(#cp)">
       <g id="mover">
         <circle id="main" r="50"></circle>
         <g id="eyes">

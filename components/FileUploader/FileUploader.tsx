@@ -1,5 +1,5 @@
-import React, { memo, FC, useState, useEffect, useCallback } from 'react';
-import { useDropzone, DropEvent } from 'react-dropzone';
+import React, { FC, memo, useCallback, useEffect, useState } from 'react';
+import { DropEvent, useDropzone } from 'react-dropzone';
 import classNames from 'classnames';
 
 import { IconCloudUpload, IconTimes } from '../Icons';

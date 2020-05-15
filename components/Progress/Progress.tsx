@@ -1,6 +1,6 @@
+import React, { CSSProperties, FC, memo } from 'react';
 import classNames from 'classnames';
 import { Circle, Line } from 'rc-progress';
-import React, { CSSProperties, FC, memo } from 'react';
 
 import 'rc-progress/assets/index.css';
 import './Progress.css';
@@ -44,7 +44,7 @@ export interface ProgressProps {
 const calcGradientColor = percent => {
   let r = 0;
   let g = 0;
-  let b = 0;
+  const b = 0;
   if (percent < 50) {
     r = 255;
     g = Math.round(5.1 * percent);

@@ -1,6 +1,6 @@
+import React, { FC, memo, useEffect, useRef, useState } from 'react';
 import useWindowSize from '@rehooks/window-size';
 import classNames from 'classnames';
-import React, { FC, memo, useEffect, useRef, useState } from 'react';
 
 import { IconChevronLeft, IconChevronRight } from '../Icons';
 

@@ -1,6 +1,6 @@
-import React, { FC, useEffect, CSSProperties, memo } from 'react';
-import Danmu from 'danmu.js';
+import React, { CSSProperties, FC, memo, useEffect } from 'react';
 import classNames from 'classnames';
+import Danmu from 'danmu.js';
 
 import './BulletScreen.css';
 

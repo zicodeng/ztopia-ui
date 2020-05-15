@@ -1,5 +1,5 @@
-import StackGrid from 'react-stack-grid';
 import React, { FC } from 'react';
+import StackGrid from 'react-stack-grid';
 import classNames from 'classnames';
 
 export interface GridListProps {

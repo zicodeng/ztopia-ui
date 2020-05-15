@@ -1,4 +1,4 @@
-import React, { FC, CSSProperties } from 'react';
+import React, { CSSProperties, FC } from 'react';
 import classNames from 'classnames';
 
 export interface DividerProps {

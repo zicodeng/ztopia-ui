@@ -1,11 +1,7 @@
-import React, { useCallback, FC, memo } from 'react';
-import classNames from 'classnames';
+import React, { FC, memo, useCallback } from 'react';
 import { Controlled as BaseCodeMirror } from 'react-codemirror2';
+import classNames from 'classnames';
 
-// CodeMirror base style
-import 'codemirror/lib/codemirror.css';
-// CodeMirror themes
-import 'codemirror/theme/monokai.css';
 // CodeMirror Modes
 import 'codemirror/mode/markdown/markdown';
 import 'codemirror/mode/javascript/javascript';
@@ -16,6 +12,10 @@ import 'codemirror/addon/edit/matchbrackets';
 import 'codemirror/addon/edit/closetag';
 import 'codemirror/addon/fold/xml-fold';
 
+// CodeMirror base style
+import 'codemirror/lib/codemirror.css';
+// CodeMirror themes
+import 'codemirror/theme/monokai.css';
 import './CodeEditor.css';
 
 export interface CodeEditorProps {

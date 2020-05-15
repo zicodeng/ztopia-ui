@@ -1,5 +1,5 @@
-import classNames from 'classnames';
 import React, { FC, useMemo } from 'react';
+import classNames from 'classnames';
 import hexRgb from 'hex-rgb';
 
 import { Loader, LoaderProps } from './';

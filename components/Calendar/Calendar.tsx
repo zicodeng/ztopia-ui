@@ -1,7 +1,7 @@
-import classNames from 'classnames';
-import moment from 'moment';
 import React, { FC } from 'react';
 import { Calendar as BaseCalendar, momentLocalizer } from 'react-big-calendar';
+import classNames from 'classnames';
+import moment from 'moment';
 
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import './Calendar.css';

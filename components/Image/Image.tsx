@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import React, {
   cloneElement,
   CSSProperties,
@@ -6,11 +5,12 @@ import React, {
   isValidElement,
   memo,
   ReactNode,
-  useMemo,
   useEffect,
+  useMemo,
 } from 'react';
 import LazyLoad, { forceCheck } from 'react-lazyload';
 import ProgressiveImage from 'react-progressive-image';
+import classNames from 'classnames';
 
 import { Placeholder, PlaceholderProps } from '../Placeholder';
 

@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, memo } from 'react';
+import React, { FC, memo, ReactNode } from 'react';
 import Joyride, { Locale, Styles } from 'react-joyride';
 
 export type Placement = 'top' | 'bottom' | 'left' | 'right' | 'auto' | 'center';

@@ -1,6 +1,6 @@
-import classNames from 'classnames';
 import React, { CSSProperties, FC, memo, ReactNode } from 'react';
 import { Carousel } from 'react-responsive-carousel';
+import classNames from 'classnames';
 
 import { Image } from '../Image';
 

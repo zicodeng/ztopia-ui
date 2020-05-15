@@ -1,4 +1,4 @@
-import React, { memo, FC } from 'react';
+import React, { FC, memo } from 'react';
 import ReactCodeInput from 'react-code-input';
 import classNames from 'classnames';
 

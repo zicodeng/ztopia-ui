@@ -1,6 +1,6 @@
-import classNames from 'classnames';
-import BasicSlider, { Handle, Marks, Range, HandleProps } from 'rc-slider';
 import React, { FC, memo } from 'react';
+import classNames from 'classnames';
+import BasicSlider, { Handle, HandleProps, Marks, Range } from 'rc-slider';
 
 import { Popper } from '../Popper';
 

@@ -1,10 +1,10 @@
 import React, {
+  CSSProperties,
   FC,
+  memo,
+  ReactNode,
   useEffect,
   useState,
-  ReactNode,
-  memo,
-  CSSProperties,
 } from 'react';
 import classNames from 'classnames';
 import BaseDrawer from 'rc-drawer';
@@ -105,7 +105,7 @@ export const Drawer: FC<DrawerProps> = memo<DrawerProps>(
     return (
       <BaseDrawer
         {...restProps}
-        handler={Boolean(handler) ? handler : false}
+        handler={handler ? handler : false}
         level={isPagePushable ? undefined : null}
         open={isOpen}
         showMask={isMaskShown}

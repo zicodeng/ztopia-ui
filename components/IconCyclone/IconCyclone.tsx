@@ -1,4 +1,4 @@
-import React, { FC, memo, cloneElement } from 'react';
+import React, { cloneElement, FC, memo } from 'react';
 import classNames from 'classnames';
 import CSSKeyframer from 'css-keyframer';
 
@@ -27,11 +27,11 @@ export const IconCyclone: FC<IconCycloneProps> = memo(
     className,
     colors = ['#ffd700', '#95a9ff', '#db7093', '#fff8dc', '#c2b7fe'],
     icons = [
-      <i className="fas fa-star" />,
-      <i className="fas fa-paper-plane" />,
-      <i className="far fa-square" />,
-      <i className="fas fa-square" />,
-      <i className="fab fa-codepen" />,
+      <i key={1} className="fas fa-star" />,
+      <i key={2} className="fas fa-paper-plane" />,
+      <i key={3} className="far fa-square" />,
+      <i key={4} className="fas fa-square" />,
+      <i key={5} className="fab fa-codepen" />,
     ],
   }) => {
     return (

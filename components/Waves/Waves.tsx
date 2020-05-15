@@ -1,4 +1,4 @@
-import React, { memo, FC } from 'react';
+import React, { FC, memo } from 'react';
 import classNames from 'classnames';
 
 import './Waves.css';
