@@ -10,7 +10,7 @@ import React, {
 } from 'react';
 import BaseDatePicker from 'react-datepicker';
 
-import { ChevronLeft, ChevronRight } from '../Icons';
+import { IconChevronLeft, IconChevronRight } from '../Icons';
 import { Input } from '../Input';
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -164,7 +164,7 @@ const renderCustomHeader = ({
 }) => (
   <div className="ztopia-date-picker__header">
     {!prevMonthButtonDisabled && (
-      <ChevronLeft
+      <IconChevronLeft
         size="small"
         className={classNames(
           'ztopia-date-picker__nav',
@@ -177,7 +177,7 @@ const renderCustomHeader = ({
       {format(date, 'MMMM yyyy')}
     </span>
     {!nextMonthButtonDisabled && (
-      <ChevronRight
+      <IconChevronRight
         size="small"
         className={classNames(
           'ztopia-date-picker__nav',

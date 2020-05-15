@@ -12,7 +12,7 @@ import React, {
 } from 'react';
 import { throttle } from 'lodash-es';
 
-import { ChevronLeft, ChevronRight } from '../Icons';
+import { IconChevronLeft, IconChevronRight } from '../Icons';
 import { LoaderProps } from '../Loaders';
 
 import './Table.css';
@@ -88,7 +88,7 @@ export const Table: FC<TableProps> = memo(
             <span className="ztopia-table__pagination-info">
               {pagination.currPage} of {pagination.totalPages}
             </span>
-            <ChevronLeft
+            <IconChevronLeft
               size="small"
               className={classNames(
                 'ztopia-table__pagination-controller',
@@ -99,7 +99,7 @@ export const Table: FC<TableProps> = memo(
               )}
               onClick={pagination.onClickPrev}
             />
-            <ChevronRight
+            <IconChevronRight
               size="small"
               className={classNames(
                 'ztopia-table__pagination-controller',

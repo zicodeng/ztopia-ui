@@ -1,7 +1,12 @@
 import React, { FC, memo } from 'react';
 import BaseRating from 'react-rating';
 
-import { HeartRegular, HeartSolid, StarRegular, StarSolid } from '../Icons';
+import {
+  IconHeartRegular,
+  IconHeartSolid,
+  IconStarRegular,
+  IconStarSolid,
+} from '../Icons';
 
 export interface RatingProps {
   /**
@@ -60,16 +65,16 @@ export const Rating: FC<RatingProps> = memo(
         className="ztopia-rating"
         fullSymbol={
           variant === 'star' ? (
-            <StarSolid {...symbolProps} />
+            <IconStarSolid {...symbolProps} />
           ) : (
-            <HeartSolid {...symbolProps} />
+            <IconHeartSolid {...symbolProps} />
           )
         }
         emptySymbol={
           variant === 'star' ? (
-            <StarRegular {...symbolProps} />
+            <IconStarRegular {...symbolProps} />
           ) : (
-            <HeartRegular {...symbolProps} />
+            <IconHeartRegular {...symbolProps} />
           )
         }
         {...restProps}

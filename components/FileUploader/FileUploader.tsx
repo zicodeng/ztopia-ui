@@ -2,7 +2,7 @@ import React, { memo, FC, useState, useEffect, useCallback } from 'react';
 import { useDropzone, DropEvent } from 'react-dropzone';
 import classNames from 'classnames';
 
-import { CloudUpload, Times } from '../Icons';
+import { IconCloudUpload, IconTimes } from '../Icons';
 import { Image } from '../Image';
 import { Progress } from '../Progress';
 
@@ -144,7 +144,10 @@ export const FileUploader: FC<FileUploaderProps> = memo(
             })}
           >
             <input {...getInputProps()} />
-            <CloudUpload width={50} className="ztopia-file-uploader__icon" />
+            <IconCloudUpload
+              width={50}
+              className="ztopia-file-uploader__icon"
+            />
             <label className="ztopia-file-uploader__label">{label}</label>
           </div>
         )}
@@ -176,7 +179,7 @@ export const FileUploader: FC<FileUploaderProps> = memo(
                   />
                 </div>
                 {isFileRemoveIndicatorShown && (
-                  <Times
+                  <IconTimes
                     size="small"
                     className="ztopia-file-uploader__file-remove-indicator"
                     onClick={() => handleClickFileRemoveIndicator(name)}

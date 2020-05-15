@@ -1,9 +1,16 @@
 import classNames from 'classnames';
-import { cloneElement, FC, isValidElement, memo } from 'react';
+import React, {
+  cloneElement,
+  FC,
+  isValidElement,
+  memo,
+  CSSProperties,
+  SVGProps,
+} from 'react';
 
 import './Icon.css';
 
-export interface IconProps {
+export interface BaseIconProps {
   /**
    * <@default=`false`>
    *
@@ -14,26 +21,23 @@ export interface IconProps {
   height?: number;
   color?: string;
   className?: string;
+  style?: CSSProperties;
   /**
    * <@default=`'medium'`>
    */
   size?: 'small' | 'medium' | 'large';
 }
 
-export interface SVGProps extends IconProps {
-  onClick?: (e: React.MouseEvent<SVGElement, MouseEvent>) => void;
-}
-
-export const Icon: FC<SVGProps> = memo(
+export const InnerIcon: FC<BaseIconProps> = memo(
   ({
     isAction = false,
     width,
     height,
     color,
     className,
-    size,
+    style,
+    size = 'medium',
     children,
-    onClick,
     ...restProps
   }) =>
     isValidElement(children)
@@ -54,13 +58,13 @@ export const Icon: FC<SVGProps> = memo(
             width,
             height,
             color,
+            ...style,
           },
-          onClick,
           ...restProps,
         })
       : null,
 );
 
-Icon.defaultProps = {
-  size: 'medium',
-};
+export type IconProps = BaseIconProps & SVGProps<SVGSVGElement>;
+
+export const Icon = (props: IconProps) => <InnerIcon {...props} />;

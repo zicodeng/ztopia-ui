@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React, { createElement, FC, memo, ReactNode } from 'react';
 import { toast, ToastContainer as BaseToastContainer } from 'react-toastify';
 
-import { Times } from '../Icons';
+import { IconTimes } from '../Icons';
 
 import './Toast.css';
 
@@ -69,7 +69,7 @@ export const ToastContainer: FC<ToastOptions> = memo<ToastOptions>(
       closeButton={
         isCloseButtonShown &&
         createElement(({ closeToast }) => (
-          <Times
+          <IconTimes
             size="small"
             className="ztopia-toast__close-indicator"
             onClick={closeToast}

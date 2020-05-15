@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React, { FC, memo, useCallback } from 'react';
 import ReactModal from 'react-modal';
 
-import { Times } from '../Icons';
+import { IconTimes } from '../Icons';
 
 import './Modal.css';
 
@@ -61,7 +61,7 @@ export const Modal: FC<ModalProps> = memo(
       >
         {children}
         {isCloseButtonShown && (
-          <Times
+          <IconTimes
             className="ztopia-modal__close-indicator"
             onClick={onRequestClose}
           />

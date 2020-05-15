@@ -1,22 +1,22 @@
 export * from './Icon';
 
 // Special icons
-export * from './Hamburger';
+export * from './IconHamburger';
 
 // Regular icons
-export * from './Checkmark';
-export * from './ChevronDown';
-export * from './ChevronLeft';
-export * from './ChevronRight';
-export * from './ChevronUp';
-export * from './CloudUpload';
+export * from './IconCheckmark';
+export * from './IconChevronDown';
+export * from './IconChevronLeft';
+export * from './IconChevronRight';
+export * from './IconChevronUp';
+export * from './IconCloudUpload';
 export * from './IconEdit';
-export * from './HeartRegular';
-export * from './HeartSolid';
-export * from './Image';
-export * from './PartyParrot';
-export * from './StarRegular';
-export * from './StarSolid';
-export * from './ThumbsUpRegular';
-export * from './ThumbsUpSolid';
-export * from './Times';
+export * from './IconHeartRegular';
+export * from './IconHeartSolid';
+export * from './IconImage';
+export * from './IconPartyParrot';
+export * from './IconStarRegular';
+export * from './IconStarSolid';
+export * from './IconThumbsUpRegular';
+export * from './IconThumbsUpSolid';
+export * from './IconTimes';

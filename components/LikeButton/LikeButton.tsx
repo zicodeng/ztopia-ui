@@ -2,10 +2,10 @@ import React, { memo, useMemo } from 'react';
 import classNames from 'classnames';
 
 import {
-  HeartRegular,
-  HeartSolid,
-  ThumbsUpRegular,
-  ThumbsUpSolid,
+  IconHeartRegular,
+  IconHeartSolid,
+  IconThumbsUpRegular,
+  IconThumbsUpSolid,
 } from '../Icons';
 
 import './LikeButton.css';
@@ -37,7 +37,7 @@ export const LikeButton = memo<LikeButtonProps>(
       if (variant === 'heart') {
         return (
           <>
-            <HeartRegular
+            <IconHeartRegular
               size={size}
               className={classNames(
                 'ztopia-like-button__heart',
@@ -47,7 +47,7 @@ export const LikeButton = memo<LikeButtonProps>(
                 },
               )}
             />
-            <HeartSolid
+            <IconHeartSolid
               size={size}
               className={classNames(
                 'ztopia-like-button__heart',
@@ -62,9 +62,11 @@ export const LikeButton = memo<LikeButtonProps>(
       } else if (variant === 'thumbs-up') {
         const sharedClassNames = classNames('ztopia-like-button__thumbs-up');
         if (isLiked)
-          return <ThumbsUpSolid size={size} className={sharedClassNames} />;
+          return <IconThumbsUpSolid size={size} className={sharedClassNames} />;
         else
-          return <ThumbsUpRegular size={size} className={sharedClassNames} />;
+          return (
+            <IconThumbsUpRegular size={size} className={sharedClassNames} />
+          );
       }
 
       return null;

@@ -1,16 +1,16 @@
 import classNames from 'classnames';
 import React, { FC, memo } from 'react';
 
-import { IconProps } from './';
+import { BaseIconProps } from '.';
 
-import './Hamburger.css';
+import './IconHamburger.css';
 
-export interface HamburgerProps extends IconProps {
+export interface HamburgerProps extends BaseIconProps {
   isActive?: boolean;
   onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
-export const Hamburger: FC<HamburgerProps> = memo(
+export const IconHamburger: FC<HamburgerProps> = memo(
   ({
     isActive,
     width,

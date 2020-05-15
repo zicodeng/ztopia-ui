@@ -10,23 +10,24 @@ import { Container } from 'docz-theme-ztopia/helpers';
 import { IconDemo } from './IconDemo';
 import {
   Icon,
-  Hamburger,
-  Checkmark,
-  ChevronDown,
-  ChevronLeft,
-  ChevronRight,
-  ChevronUp,
-  CloudUpload,
+  InnerIcon,
+  IconHamburger,
+  IconCheckmark,
+  IconChevronDown,
+  IconChevronLeft,
+  IconChevronRight,
+  IconChevronUp,
+  IconCloudUpload,
   IconEdit,
-  HeartRegular,
-  HeartSolid,
-  Image,
-  PartyParrot,
-  StarRegular,
-  StarSolid,
-  ThumbsUpRegular,
-  ThumbsUpSolid,
-  Times,
+  IconHeartRegular,
+  IconHeartSolid,
+  IconImage,
+  IconPartyParrot,
+  IconStarRegular,
+  IconStarSolid,
+  IconThumbsUpRegular,
+  IconThumbsUpSolid,
+  IconTimes,
 } from './';
 
 # Icon
@@ -37,9 +38,9 @@ import {
 
 <Playground>
   <Container>
-    <PartyParrot size="small" />
-    <PartyParrot size="medium" />
-    <PartyParrot size="large" />
+    <IconPartyParrot size="small" />
+    <IconPartyParrot size="medium" />
+    <IconPartyParrot size="large" />
   </Container>
 </Playground>
 
@@ -47,7 +48,7 @@ import {
 
 <Playground>
   <Container>
-    <PartyParrot width={50} height={50} />
+    <IconPartyParrot width={50} height={50} />
   </Container>
 </Playground>
 
@@ -55,36 +56,36 @@ import {
 
 <Playground>
   <Container>
-    <HeartSolid color="red" />
-    <HeartSolid color="green" />
-    <HeartSolid color="blue" />
+    <IconHeartSolid color="red" />
+    <IconHeartSolid color="green" />
+    <IconHeartSolid color="blue" />
   </Container>
 </Playground>
 
 ### API
 
-<Props of={Icon} />
+<Props of={InnerIcon} />
 
 ### Gallery
 
 <Playground>
   <Container>
-    <Checkmark />
-    <ChevronDown />
-    <ChevronLeft />
-    <ChevronRight />
-    <ChevronUp />
-    <CloudUpload />
+    <IconCheckmark />
+    <IconChevronDown />
+    <IconChevronLeft />
+    <IconChevronRight />
+    <IconChevronUp />
+    <IconCloudUpload />
     <IconEdit />
-    <HeartRegular />
-    <HeartSolid />
-    <Image />
-    <PartyParrot />
-    <StarRegular />
-    <StarSolid />
-    <ThumbsUpRegular />
-    <ThumbsUpSolid />
-    <Times />
+    <IconHeartRegular />
+    <IconHeartSolid />
+    <IconImage />
+    <IconPartyParrot />
+    <IconStarRegular />
+    <IconStarSolid />
+    <IconThumbsUpRegular />
+    <IconThumbsUpSolid />
+    <IconTimes />
   </Container>
 </Playground>
 
@@ -92,23 +93,23 @@ import {
 
 [Font Awesome](https://fontawesome.com)
 
-## Hamburger
+## IconHamburger
 
 <Playground>
   <Container>
     <IconDemo>
       {({ isActive, onClick }) => (
-        <Hamburger isActive={isActive} onClick={onClick} size="small" />
+        <IconHamburger isActive={isActive} onClick={onClick} size="small" />
       )}
     </IconDemo>
     <IconDemo>
       {({ isActive, onClick }) => (
-        <Hamburger isActive={isActive} onClick={onClick} size="medium" />
+        <IconHamburger isActive={isActive} onClick={onClick} size="medium" />
       )}
     </IconDemo>
     <IconDemo>
       {({ isActive, onClick }) => (
-        <Hamburger isActive={isActive} onClick={onClick} size="large" />
+        <IconHamburger isActive={isActive} onClick={onClick} size="large" />
       )}
     </IconDemo>
   </Container>
@@ -116,4 +117,4 @@ import {
 
 ### API
 
-<Props of={Hamburger} />
+<Props of={IconHamburger} />

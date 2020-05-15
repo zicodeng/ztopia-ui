@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React, { FC, useMemo } from 'react';
 import hexRgb from 'hex-rgb';
 
-import { Loader, LoaderProps } from '.';
+import { Loader, LoaderProps } from './';
 
 import './BasicLoader.css';
 

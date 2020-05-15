@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { ChangeEvent, memo } from 'react';
 
-import { Checkmark } from '../Icons';
+import { IconCheckmark } from '../Icons';
 
 import './Checkbox.css';
 
@@ -51,7 +51,7 @@ export const Checkbox = memo<CheckboxProps>(
           onChange={onChange}
           className="ztopia-checkbox__input"
         />
-        {isChecked && <Checkmark size="small" />}
+        {isChecked && <IconCheckmark size="small" />}
       </div>
       {label && (
         <label

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { FC } from 'react';
 
-import { Loader, LoaderProps } from '.';
+import { Loader, LoaderProps } from './';
 
 import './BarLoader.css';
 

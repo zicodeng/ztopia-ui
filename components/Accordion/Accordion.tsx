@@ -12,7 +12,7 @@ import React, {
   useState,
 } from 'react';
 
-import { ChevronDown } from '../Icons';
+import { IconChevronDown } from '../Icons';
 
 import './Accordion.css';
 
@@ -189,7 +189,7 @@ export const AccordionPanelHeader: FC<AccordionPanelHeader> = memo(
       },
       <>
         {children}
-        <ChevronDown
+        <IconChevronDown
           className={classNames('ztopia-accordion__panel-indicator', {
             'is-expanded': isExpanded,
           })}

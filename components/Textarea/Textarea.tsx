@@ -9,16 +9,6 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 import './Textarea.css';
 
-export type TextareaProps = InnerTextareaProps &
-  DetailedHTMLProps<
-    TextareaHTMLAttributes<HTMLTextAreaElement>,
-    HTMLTextAreaElement
-  >;
-
-export const Textarea: FC<TextareaProps> = memo(props => (
-  <InnerTextarea {...props} />
-));
-
 export interface InnerTextareaProps {
   minRows?: number;
   maxRows?: number;
@@ -42,3 +32,11 @@ export const InnerTextarea: FC<InnerTextareaProps> = memo(
     </div>
   ),
 );
+
+export type TextareaProps = InnerTextareaProps &
+  DetailedHTMLProps<
+    TextareaHTMLAttributes<HTMLTextAreaElement>,
+    HTMLTextAreaElement
+  >;
+
+export const Textarea = (props: TextareaProps) => <InnerTextarea {...props} />;

@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 
-import { Icon, SVGProps } from './';
+import { Icon, IconProps } from '.';
 
-export const PartyParrot: FC<SVGProps> = props => (
+export const IconPartyParrot: FC<IconProps> = props => (
   <Icon {...props}>
     <svg data-icon="party-parrot" viewBox="0 0 128 128">
       <g

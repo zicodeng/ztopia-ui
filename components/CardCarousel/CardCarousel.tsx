@@ -2,7 +2,7 @@ import useWindowSize from '@rehooks/window-size';
 import classNames from 'classnames';
 import React, { FC, memo, useEffect, useRef, useState } from 'react';
 
-import { ChevronLeft, ChevronRight } from '../Icons';
+import { IconChevronLeft, IconChevronRight } from '../Icons';
 
 import './CardCarousel.css';
 
@@ -66,7 +66,7 @@ export const CardCarousel: FC<CardCarouselProps> = memo(
             setX(newX > 0 ? 0 : newX);
           }}
         >
-          <ChevronLeft size="small" />
+          <IconChevronLeft size="small" />
         </div>
         <div
           style={{
@@ -81,7 +81,7 @@ export const CardCarousel: FC<CardCarouselProps> = memo(
             setX(newX < minX ? minX : newX);
           }}
         >
-          <ChevronRight size="small" />
+          <IconChevronRight size="small" />
         </div>
         <div className="ztopia-card-carousel__container">
           <ul

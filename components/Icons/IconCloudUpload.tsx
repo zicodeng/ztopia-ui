@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 
-import { Icon, SVGProps } from './';
+import { Icon, IconProps } from '.';
 
-export const CloudUpload: FC<SVGProps> = props => (
+export const IconCloudUpload: FC<IconProps> = props => (
   <Icon {...props}>
     <svg data-icon="cloud-upload-alt" viewBox="0 0 640 512">
       <path

@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 
-import { Icon, SVGProps } from './';
+import { Icon, IconProps } from './';
 
-export const ChevronDown: FC<SVGProps> = props => (
+export const IconChevronDown: FC<IconProps> = props => (
   <Icon {...props}>
     <svg data-icon="chevron-down" viewBox="0 0 448 512">
       <path

@@ -1,7 +1,7 @@
 import React, { FC, memo, ReactNode } from 'react';
 import classNames from 'classnames';
 
-import { Checkmark } from '../Icons';
+import { IconCheckmark } from '../Icons';
 
 import './Stepper.css';
 
@@ -50,7 +50,7 @@ export const Stepper: FC<StepperProps> = memo(
                   })}
                 >
                   {isCompleted && !isCurrent ? (
-                    <Checkmark />
+                    <IconCheckmark />
                   ) : (
                     indicator || i + 1
                   )}
