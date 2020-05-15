@@ -10,6 +10,7 @@ export * from './ChevronLeft';
 export * from './ChevronRight';
 export * from './ChevronUp';
 export * from './CloudUpload';
+export * from './Edit';
 export * from './HeartRegular';
 export * from './HeartSolid';
 export * from './Image';
