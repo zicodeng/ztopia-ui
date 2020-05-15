@@ -6,7 +6,7 @@ import { Input } from '../Input';
 const ITEMS = Array.from({ length: 20 }).map((_, i) => {
   const name = faker.name.findName();
   return (
-    <li
+    <div
       key={name}
       style={{
         width: 200,
@@ -19,7 +19,7 @@ const ITEMS = Array.from({ length: 20 }).map((_, i) => {
       }}
     >
       {name}
-    </li>
+    </div>
   );
 });
 
