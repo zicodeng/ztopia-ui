@@ -34,6 +34,7 @@ export const Icon: FC<SVGProps> = memo(
     size,
     children,
     onClick,
+    ...restProps
   }) =>
     isValidElement(children)
       ? cloneElement(children, {
@@ -55,6 +56,7 @@ export const Icon: FC<SVGProps> = memo(
             color,
           },
           onClick,
+          ...restProps,
         })
       : null,
 );
