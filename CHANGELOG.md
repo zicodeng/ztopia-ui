@@ -1,3 +1,9 @@
+## [1.35.21](https://github.com/zicodeng/ztopia-ui/compare/v1.35.20...v1.35.21) (2020-05-15)
+
+### Bug Fixes
+
+- pass through Icon rest props ([d1c2bbc](https://github.com/zicodeng/ztopia-ui/commit/d1c2bbcc92ffc1ef08a4587880c93fb923629922))
+
 ## [1.35.20](https://github.com/zicodeng/ztopia-ui/compare/v1.35.19...v1.35.20) (2020-05-15)
 
 ### Bug Fixes
