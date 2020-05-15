@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 
-import { Icon, SVGProps } from './';
+import { Icon, SVGProps } from '.';
 
-export const Edit: FC<SVGProps> = props => (
+export const IconEdit: FC<SVGProps> = props => (
   <Icon {...props}>
     <svg data-icon="edit" viewBox="0 0 576 512">
       <path
