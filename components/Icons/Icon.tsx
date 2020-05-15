@@ -4,6 +4,12 @@ import { cloneElement, FC, isValidElement, memo } from 'react';
 import './Icon.css';
 
 export interface IconProps {
+  /**
+   * <@default=`false`>
+   *
+   * Action icon will make cursor pointer type
+   */
+  isAction?: boolean;
   width?: number;
   height?: number;
   color?: string;
@@ -19,7 +25,16 @@ export interface SVGProps extends IconProps {
 }
 
 export const Icon: FC<SVGProps> = memo(
-  ({ width, height, color, className, size, children, onClick }) =>
+  ({
+    isAction = false,
+    width,
+    height,
+    color,
+    className,
+    size,
+    children,
+    onClick,
+  }) =>
     isValidElement(children)
       ? cloneElement(children, {
           'aria-hidden': 'true',
@@ -30,6 +45,9 @@ export const Icon: FC<SVGProps> = memo(
             className,
             'ztopia-icon',
             `ztopia-icon--${size}`,
+            {
+              'is-action': isAction,
+            },
           ),
           style: {
             width,

@@ -10,4 +10,9 @@
   &--large {
     width: 20px;
   }
+
+  &.is-action {
+    cursor: pointer;
+    transition: $transition-fast;
+  }
 }
