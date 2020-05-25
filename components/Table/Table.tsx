@@ -184,7 +184,7 @@ export const TableBody: FC<TableBodyProps> = memo(
 
 export interface TableRowProps {
   className?: string;
-  hoveredContent?: JSX.Element;
+  hoveredContent?: ReactNode;
   hoveredContentWidth?: number;
 }
 
