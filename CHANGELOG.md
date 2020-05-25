@@ -1,3 +1,9 @@
+## [1.35.25](https://github.com/zicodeng/ztopia-ui/compare/v1.35.24...v1.35.25) (2020-05-25)
+
+### Bug Fixes
+
+- use ReactNode for Table hoveredContent ([bf87f52](https://github.com/zicodeng/ztopia-ui/commit/bf87f528aedce2ea5c2d2d8ac158b7b3f09252c0))
+
 ## [1.35.24](https://github.com/zicodeng/ztopia-ui/compare/v1.35.23...v1.35.24) (2020-05-25)
 
 ### Bug Fixes
