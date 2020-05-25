@@ -12,9 +12,9 @@ import React, {
 import classNames from 'classnames';
 import { throttle } from 'lodash-es';
 
+import { Button } from '../Button';
 import { IconChevronLeft, IconChevronRight } from '../Icons';
 import { LoaderProps } from '../Loaders';
-import { Button } from '../Button';
 
 import './Table.css';
 
