@@ -1,3 +1,9 @@
+## [1.35.23](https://github.com/zicodeng/ztopia-ui/compare/v1.35.22...v1.35.23) (2020-05-25)
+
+### Bug Fixes
+
+- wrap controller with Button ([f3de369](https://github.com/zicodeng/ztopia-ui/commit/f3de369a339738883751a229bcf45a09fb220456))
+
 ## [1.35.22](https://github.com/zicodeng/ztopia-ui/compare/v1.35.21...v1.35.22) (2020-05-15)
 
 ### Bug Fixes
