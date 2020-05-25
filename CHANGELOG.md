@@ -1,3 +1,9 @@
+## [1.35.24](https://github.com/zicodeng/ztopia-ui/compare/v1.35.23...v1.35.24) (2020-05-25)
+
+### Bug Fixes
+
+- add common pagination-controller class name ([9dd7903](https://github.com/zicodeng/ztopia-ui/commit/9dd79038eaf33461185b2d38f4f70e768d68da43))
+
 ## [1.35.23](https://github.com/zicodeng/ztopia-ui/compare/v1.35.22...v1.35.23) (2020-05-25)
 
 ### Bug Fixes
