@@ -87,6 +87,12 @@ import {
     pagination={{
       currPage: 1,
       totalPages: 20,
+      onClickPrev: () => {
+        console.log('Table', 'onClickPrev');
+      },
+      onClickNext: () => {
+        console.log('Table', 'onClickNext');
+      },
     }}
   >
     <TableHead>
@@ -163,7 +169,12 @@ import {
 ### Bottom Element
 
 <Playground>
-  <Table bottomElement={<FadingLoader size="small" />} onScrollBottom={() => {console.log('Table', 'onScrollBottom')}}>
+  <Table
+    bottomElement={<FadingLoader size="small" />}
+    onScrollBottom={() => {
+      console.log('Table', 'onScrollBottom');
+    }}
+  >
     <TableHead>
       <TableRow>
         <TableHeadCell>First Name</TableHeadCell>

@@ -14,14 +14,15 @@ import { throttle } from 'lodash-es';
 
 import { IconChevronLeft, IconChevronRight } from '../Icons';
 import { LoaderProps } from '../Loaders';
+import { Button } from '../Button';
 
 import './Table.css';
 
 export interface TablePagination {
   currPage: number;
   totalPages: number;
-  onClickPrev: (e: React.MouseEvent<SVGElement, MouseEvent>) => void;
-  onClickNext: (e: React.MouseEvent<SVGElement, MouseEvent>) => void;
+  onClickPrev: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClickNext: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 export interface TableProps {
@@ -88,28 +89,26 @@ export const Table: FC<TableProps> = memo(
             <span className="ztopia-table__pagination-info">
               {pagination.currPage} of {pagination.totalPages}
             </span>
-            <IconChevronLeft
-              size="small"
+            <Button
+              variant="icon"
+              isDisabled={pagination.currPage === 1}
               className={classNames(
-                'ztopia-table__pagination-controller',
                 'ztopia-table__pagination-controller--prev',
-                {
-                  'is-disabled': pagination.currPage === 1,
-                },
               )}
               onClick={pagination.onClickPrev}
-            />
-            <IconChevronRight
-              size="small"
+            >
+              <IconChevronLeft size="small" />
+            </Button>
+            <Button
+              variant="icon"
+              isDisabled={pagination.currPage === pagination.totalPages}
               className={classNames(
-                'ztopia-table__pagination-controller',
                 'ztopia-table__pagination-controller--next',
-                {
-                  'is-disabled': pagination.currPage === pagination.totalPages,
-                },
               )}
               onClick={pagination.onClickNext}
-            />
+            >
+              <IconChevronRight size="small" />
+            </Button>
           </div>
         )}
       </div>

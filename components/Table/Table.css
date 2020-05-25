@@ -90,20 +90,8 @@
   }
 
   &__pagination-controller {
-    cursor: pointer;
-    transition: $transition-fast;
-
     &--prev {
       margin: 0 $spacing-l;
-    }
-
-    &:hover {
-      color: $black-light;
-    }
-
-    &.is-disabled {
-      color: $white-dark;
-      cursor: not-allowed;
     }
   }
 
