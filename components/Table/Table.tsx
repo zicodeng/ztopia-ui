@@ -93,6 +93,7 @@ export const Table: FC<TableProps> = memo(
               variant="icon"
               isDisabled={pagination.currPage === 1}
               className={classNames(
+                'ztopia-table__pagination-controller',
                 'ztopia-table__pagination-controller--prev',
               )}
               onClick={pagination.onClickPrev}
@@ -103,6 +104,7 @@ export const Table: FC<TableProps> = memo(
               variant="icon"
               isDisabled={pagination.currPage === pagination.totalPages}
               className={classNames(
+                'ztopia-table__pagination-controller',
                 'ztopia-table__pagination-controller--next',
               )}
               onClick={pagination.onClickNext}
