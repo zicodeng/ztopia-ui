@@ -92,7 +92,9 @@ export const Table: FC<TableProps> = memo(
             </span>
             <Button
               variant="icon"
-              isDisabled={pagination.currPage === 1}
+              isDisabled={
+                pagination.totalPages === 0 || pagination.currPage === 1
+              }
               className={classNames(
                 'ztopia-table__pagination-controller',
                 'ztopia-table__pagination-controller--prev',
@@ -104,7 +106,7 @@ export const Table: FC<TableProps> = memo(
             <Button
               variant="icon"
               isDisabled={
-                pagination.totalPages > 0 &&
+                pagination.totalPages === 0 ||
                 pagination.currPage === pagination.totalPages
               }
               className={classNames(
