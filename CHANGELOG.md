@@ -1,3 +1,9 @@
+## [1.35.26](https://github.com/zicodeng/ztopia-ui/compare/v1.35.25...v1.35.26) (2020-05-26)
+
+### Bug Fixes
+
+- handle when totalPages = 0 ([b95a281](https://github.com/zicodeng/ztopia-ui/commit/b95a2812bbcb52b8c0ba692e1c79de9624360b78))
+
 ## [1.35.25](https://github.com/zicodeng/ztopia-ui/compare/v1.35.24...v1.35.25) (2020-05-25)
 
 ### Bug Fixes
