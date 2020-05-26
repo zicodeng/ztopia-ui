@@ -1,3 +1,9 @@
+## [1.35.28](https://github.com/zicodeng/ztopia-ui/compare/v1.35.27...v1.35.28) (2020-05-26)
+
+### Bug Fixes
+
+- add infinite scroll support to Table ([460fb9a](https://github.com/zicodeng/ztopia-ui/commit/460fb9a02d09bdf84af0950cd4054fee02676be5))
+
 ## [1.35.27](https://github.com/zicodeng/ztopia-ui/compare/v1.35.26...v1.35.27) (2020-05-26)
 
 ### Bug Fixes
