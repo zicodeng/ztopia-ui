@@ -87,7 +87,8 @@ export const Table: FC<TableProps> = memo(
         {pagination && (
           <div className="ztopia-table__pagination">
             <span className="ztopia-table__pagination-info">
-              {pagination.currPage} of {pagination.totalPages}
+              {pagination.totalPages > 0 ? pagination.currPage : 0} of{' '}
+              {pagination.totalPages}
             </span>
             <Button
               variant="icon"
@@ -102,7 +103,10 @@ export const Table: FC<TableProps> = memo(
             </Button>
             <Button
               variant="icon"
-              isDisabled={pagination.currPage === pagination.totalPages}
+              isDisabled={
+                pagination.totalPages > 0 &&
+                pagination.currPage === pagination.totalPages
+              }
               className={classNames(
                 'ztopia-table__pagination-controller',
                 'ztopia-table__pagination-controller--next',
