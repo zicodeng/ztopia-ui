@@ -7,7 +7,7 @@ route: /components/table
 import { Props, Playground } from 'docz';
 import faker from 'faker';
 
-import { MusicLoader, FadingLoader } from '../Loaders';
+import { MusicLoader } from '../Loaders';
 
 import {
   Table,
@@ -166,13 +166,13 @@ import {
   </Table>
 </Playground>
 
-### Bottom Element
+### Infinite Scrolling
 
 <Playground>
   <Table
-    bottomElement={<FadingLoader size="small" />}
-    onScrollBottom={() => {
-      console.log('Table', 'onScrollBottom');
+    hasMore={true}
+    loadMore={() => {
+      console.log('Table', 'loadMore');
     }}
   >
     <TableHead>

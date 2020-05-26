@@ -13,7 +13,7 @@
     }
   }
 
-  &__bottom-element {
+  &__infinite-scroll-loader {
     display: flex;
     justify-content: center;
     padding: $spacing-l 0;

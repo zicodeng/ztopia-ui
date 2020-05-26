@@ -5,16 +5,14 @@ import React, {
   memo,
   ReactElement,
   ReactNode,
-  useCallback,
   useMemo,
-  useRef,
 } from 'react';
+import InfiniteScroll from 'react-infinite-scroller';
 import classNames from 'classnames';
-import { throttle } from 'lodash-es';
 
 import { Button } from '../Button';
 import { IconChevronLeft, IconChevronRight } from '../Icons';
-import { LoaderProps } from '../Loaders';
+import { FadingLoader, LoaderProps } from '../Loaders';
 
 import './Table.css';
 
@@ -26,6 +24,10 @@ export interface TablePagination {
 }
 
 export interface TableProps {
+  /**
+   * <@default=`false`>
+   */
+  hasMore?: string;
   className?: string;
   /**
    * <@default=`400`>
@@ -37,91 +39,84 @@ export interface TableProps {
   minHeight?: string | number;
   pagination?: TablePagination;
   /**
-   * Displayed when table has been scrolled to bottom
+   * <@default=`<FadingLoader />`>
    */
-  bottomElement?: ReactNode;
-  /**
-   * Called when table has been scrolled to bottom, commonly used for loading more data
-   */
-  onScrollBottom?: () => void;
+  infiniteScrollLoader?: ReactNode;
+  loadMore?: () => void;
 }
 
 export const Table: FC<TableProps> = memo(
   ({
+    hasMore = false,
     className,
     maxHeight = 400,
     minHeight = 400,
     pagination,
-    bottomElement,
-    onScrollBottom,
+    infiniteScrollLoader = (
+      <FadingLoader key="ztopia-table__infinite-scroll-loader" size="small" />
+    ),
+    loadMore,
     children,
-  }) => {
-    const tableContainerRef = useRef<HTMLDivElement>(null);
-
-    const handleScroll = useCallback(() => {
-      const element = tableContainerRef.current;
-      if (
-        element &&
-        element.scrollHeight - element.scrollTop === element.clientHeight &&
-        onScrollBottom
-      ) {
-        onScrollBottom();
-      }
-    }, [onScrollBottom, tableContainerRef]);
-
-    return (
-      <div className={classNames(className, 'ztopia-table')}>
-        <div
-          ref={tableContainerRef}
-          className="ztopia-table__container"
-          style={{ maxHeight, minHeight }}
-          onScroll={throttle(handleScroll, 500)}
-        >
+  }) => (
+    <div className={classNames(className, 'ztopia-table')}>
+      <div className="ztopia-table__container" style={{ maxHeight, minHeight }}>
+        {loadMore ? (
+          <InfiniteScroll
+            initialLoad={false}
+            useWindow={false}
+            hasMore={hasMore}
+            loadMore={loadMore}
+            loader={
+              <div
+                className={classNames('ztopia-table__infinite-scroll-loader')}
+              >
+                {infiniteScrollLoader}
+              </div>
+            }
+          >
+            <table>{children}</table>
+          </InfiniteScroll>
+        ) : (
           <table>{children}</table>
-          {bottomElement && (
-            <div className={classNames('ztopia-table__bottom-element')}>
-              {bottomElement}
-            </div>
-          )}
-        </div>
-        {pagination && (
-          <div className="ztopia-table__pagination">
-            <span className="ztopia-table__pagination-info">
-              {pagination.totalPages > 0 ? pagination.currPage : 0} of{' '}
-              {pagination.totalPages}
-            </span>
-            <Button
-              variant="icon"
-              isDisabled={
-                pagination.totalPages === 0 || pagination.currPage === 1
-              }
-              className={classNames(
-                'ztopia-table__pagination-controller',
-                'ztopia-table__pagination-controller--prev',
-              )}
-              onClick={pagination.onClickPrev}
-            >
-              <IconChevronLeft size="small" />
-            </Button>
-            <Button
-              variant="icon"
-              isDisabled={
-                pagination.totalPages === 0 ||
-                pagination.currPage === pagination.totalPages
-              }
-              className={classNames(
-                'ztopia-table__pagination-controller',
-                'ztopia-table__pagination-controller--next',
-              )}
-              onClick={pagination.onClickNext}
-            >
-              <IconChevronRight size="small" />
-            </Button>
-          </div>
         )}
       </div>
-    );
-  },
+      {pagination && (
+        <div className="ztopia-table__pagination">
+          <span className="ztopia-table__pagination-info">
+            {pagination.totalPages > 0 ? pagination.currPage : 0} of{' '}
+            {pagination.totalPages}
+          </span>
+          <Button
+            variant="icon"
+            isDisabled={
+              pagination.totalPages === 0 || pagination.currPage === 1
+            }
+            className={classNames(
+              'ztopia-table__pagination-controller',
+              'ztopia-table__pagination-controller--prev',
+            )}
+            onClick={pagination.onClickPrev}
+          >
+            <IconChevronLeft size="small" />
+          </Button>
+          <Button
+            variant="icon"
+            isDisabled={
+              pagination.totalPages === 0 ||
+              pagination.currPage === pagination.totalPages
+            }
+            className={classNames(
+              'ztopia-table__pagination-controller',
+              'ztopia-table__pagination-controller--next',
+            )}
+            onClick={pagination.onClickNext}
+          >
+            <IconChevronRight size="small" />
+          </Button>
+        </div>
+      )}
+    </div>
+  ),
 );
 
 export interface TableHeadProps {
