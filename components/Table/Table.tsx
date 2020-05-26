@@ -41,7 +41,7 @@ export interface TableProps {
   /**
    * <@default=`<FadingLoader />`>
    */
-  infiniteScrollLoader?: ReactNode;
+  infiniteScrollLoader?: JSX.Element;
   loadMore?: () => void;
 }
 
@@ -67,11 +67,11 @@ export const Table: FC<TableProps> = memo(
             hasMore={hasMore}
             loadMore={loadMore}
             loader={
-              <div
-                className={classNames('ztopia-table__infinite-scroll-loader')}
-              >
-                {infiniteScrollLoader}
-              </div>
+              infiniteScrollLoader &&
+              cloneElement(infiniteScrollLoader, {
+                key: 'ztopia-table__infinite-scroll-loader',
+                className: 'ztopia-table__infinite-scroll-loader',
+              })
             }
           >
             <table>{children}</table>
