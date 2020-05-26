@@ -1,3 +1,9 @@
+## [1.35.30](https://github.com/zicodeng/ztopia-ui/compare/v1.35.29...v1.35.30) (2020-05-26)
+
+### Bug Fixes
+
+- fix key issue ([ca4bc23](https://github.com/zicodeng/ztopia-ui/commit/ca4bc23f3b21a1a51b7f41902d1a7296df7018a0))
+
 ## [1.35.29](https://github.com/zicodeng/ztopia-ui/compare/v1.35.28...v1.35.29) (2020-05-26)
 
 ### Bug Fixes
