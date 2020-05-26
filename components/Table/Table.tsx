@@ -27,7 +27,7 @@ export interface TableProps {
   /**
    * <@default=`false`>
    */
-  hasMore?: string;
+  hasMore?: boolean;
   className?: string;
   /**
    * <@default=`400`>
