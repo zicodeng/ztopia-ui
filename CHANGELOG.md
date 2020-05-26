@@ -1,3 +1,9 @@
+## [1.35.27](https://github.com/zicodeng/ztopia-ui/compare/v1.35.26...v1.35.27) (2020-05-26)
+
+### Bug Fixes
+
+- fix table pagination ([72664f6](https://github.com/zicodeng/ztopia-ui/commit/72664f64a99afdc81fa97b1935926cec961c28aa))
+
 ## [1.35.26](https://github.com/zicodeng/ztopia-ui/compare/v1.35.25...v1.35.26) (2020-05-26)
 
 ### Bug Fixes
