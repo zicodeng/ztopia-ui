@@ -1,0 +1,7 @@
+.ztopia-infinite-scroll {
+  &__loader {
+    display: flex;
+    justify-content: center;
+    padding: $spacing-l 0;
+  }
+}

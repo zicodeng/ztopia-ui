@@ -7,12 +7,12 @@ import React, {
   ReactNode,
   useMemo,
 } from 'react';
-import InfiniteScroll from 'react-infinite-scroller';
 import classNames from 'classnames';
 
 import { Button } from '../Button';
 import { IconChevronLeft, IconChevronRight } from '../Icons';
-import { FadingLoader, LoaderProps } from '../Loaders';
+import { InfiniteScroll, InfiniteScrollProps } from '../InfiniteScroll';
+import { LoaderProps } from '../Loaders';
 
 import './Table.css';
 
@@ -23,11 +23,7 @@ export interface TablePagination {
   onClickNext: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-export interface TableProps {
-  /**
-   * <@default=`false`>
-   */
-  hasMore?: boolean;
+export interface TableProps extends Omit<InfiniteScrollProps, 'loader'> {
   className?: string;
   /**
    * <@default=`400`>
@@ -38,11 +34,7 @@ export interface TableProps {
    */
   minHeight?: string | number;
   pagination?: TablePagination;
-  /**
-   * <@default=`<FadingLoader />`>
-   */
   infiniteScrollLoader?: JSX.Element;
-  loadMore?: () => void;
 }
 
 export const Table: FC<TableProps> = memo(
@@ -52,9 +44,7 @@ export const Table: FC<TableProps> = memo(
     maxHeight = 400,
     minHeight = 400,
     pagination,
-    infiniteScrollLoader = (
-      <FadingLoader key="ztopia-table__infinite-scroll-loader" size="small" />
-    ),
+    infiniteScrollLoader,
     loadMore,
     children,
   }) => (
@@ -62,17 +52,9 @@ export const Table: FC<TableProps> = memo(
       <div className="ztopia-table__container" style={{ maxHeight, minHeight }}>
         {loadMore ? (
           <InfiniteScroll
-            initialLoad={false}
-            useWindow={false}
             hasMore={hasMore}
             loadMore={loadMore}
-            loader={
-              infiniteScrollLoader &&
-              cloneElement(infiniteScrollLoader, {
-                key: 'ztopia-table__infinite-scroll-loader',
-                className: 'ztopia-table__infinite-scroll-loader',
-              })
-            }
+            loader={infiniteScrollLoader}
           >
             <table>{children}</table>
           </InfiniteScroll>

@@ -1,0 +1,39 @@
+---
+name: InfiniteScroll
+menu: Components
+route: /components/infinite-scroll
+---
+
+import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
+
+import { InfiniteScroll } from './';
+import { InfiniteScrollDemo } from './InfiniteScrollDemo';
+
+# InfiniteScroll
+
+Dependency: [react-infinite-scroller](https://github.com/danbovey/react-infinite-scroller)
+
+## Demo
+
+<Playground>
+  <Container
+    style={{
+      height: 400,
+      overflowY: 'auto',
+      display: 'block',
+    }}
+  >
+    <InfiniteScrollDemo>
+      {({ items, loadMore }) => (
+        <InfiniteScroll hasMore={items.length !== 100} loadMore={loadMore}>
+          {items}
+        </InfiniteScroll>
+      )}
+    </InfiniteScrollDemo>
+  </Container>
+</Playground>
+
+## API
+
+<Props of={InfiniteScroll} />
