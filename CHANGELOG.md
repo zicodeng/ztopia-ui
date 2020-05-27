@@ -1,3 +1,9 @@
+# [1.36.0](https://github.com/zicodeng/ztopia-ui/compare/v1.35.30...v1.36.0) (2020-05-27)
+
+### Features
+
+- implement InfiniteScroll component ([62bc6d6](https://github.com/zicodeng/ztopia-ui/commit/62bc6d6f282beb598da9fa0c72698e3d80a0deb1))
+
 ## [1.35.30](https://github.com/zicodeng/ztopia-ui/compare/v1.35.29...v1.35.30) (2020-05-26)
 
 ### Bug Fixes
