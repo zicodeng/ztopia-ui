@@ -1,0 +1,5 @@
+.ztopia-truncated-text {
+  &__read-more-indicator {
+    cursor: pointer;
+  }
+}
