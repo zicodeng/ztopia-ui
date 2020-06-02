@@ -11,6 +11,8 @@ export * from './IconChevronRight';
 export * from './IconChevronUp';
 export * from './IconCloudUpload';
 export * from './IconEdit';
+export * from './IconExclamationCircleRegular';
+export * from './IconExclamationCircleSolid';
 export * from './IconHeartRegular';
 export * from './IconHeartSolid';
 export * from './IconImage';
