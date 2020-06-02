@@ -1,7 +1,7 @@
 import React, { FC, memo } from 'react';
 import classNames from 'classnames';
 
-import { BaseIconProps } from '.';
+import { BaseIconProps } from './';
 
 import './IconHamburger.css';
 

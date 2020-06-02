@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { Icon, IconProps } from '.';
+import { Icon, IconProps } from './';
 
 export const IconCloudUpload: FC<IconProps> = props => (
   <Icon {...props}>
