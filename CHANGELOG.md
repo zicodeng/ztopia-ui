@@ -1,3 +1,9 @@
+## [1.36.2](https://github.com/zicodeng/ztopia-ui/compare/v1.36.1...v1.36.2) (2020-06-02)
+
+### Bug Fixes
+
+- add readMoreIndicator prop ([f5eac53](https://github.com/zicodeng/ztopia-ui/commit/f5eac5318e4f8de1c731173871cce18e5bb14d38))
+
 ## [1.36.1](https://github.com/zicodeng/ztopia-ui/compare/v1.36.0...v1.36.1) (2020-06-02)
 
 ### Bug Fixes
