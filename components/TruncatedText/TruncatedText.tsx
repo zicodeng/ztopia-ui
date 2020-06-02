@@ -20,7 +20,7 @@ export interface TruncatedText {
    */
   maxLine: number;
   /**
-   * <@default=`... read more`>
+   * <@default=`null`>
    */
   readMoreIndicator?: ReactNode;
   /**
