@@ -1,3 +1,9 @@
+## [1.36.1](https://github.com/zicodeng/ztopia-ui/compare/v1.36.0...v1.36.1) (2020-06-02)
+
+### Bug Fixes
+
+- add exclamation circle icon ([39dae74](https://github.com/zicodeng/ztopia-ui/commit/39dae74e15bd2d42db565c1862718df84e83bcc8))
+
 # [1.36.0](https://github.com/zicodeng/ztopia-ui/compare/v1.35.30...v1.36.0) (2020-05-27)
 
 ### Features
