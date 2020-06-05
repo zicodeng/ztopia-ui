@@ -11,6 +11,13 @@ export interface InfiniteScrollProps {
    */
   hasMore?: boolean;
   /**
+   * Add scroll listeners to the window, or else,
+   * the component's parentNode
+   *
+   * <@default=`false`>
+   */
+  isWindowUsed?: boolean;
+  /**
    * <@default=`200`>
    */
   offset?: boolean;
@@ -28,18 +35,25 @@ export interface InfiniteScrollProps {
 
 export const InfiniteScroll: FC<InfiniteScrollProps> = memo<
   InfiniteScrollProps
->(({ offset = 200, loader = <FadingLoader size="small" />, ...restProps }) => (
-  <BaseInfiniteScroll
-    initialLoad={false}
-    useWindow={false}
-    threshold={offset}
-    loader={
-      loader &&
-      cloneElement(loader, {
-        key: 'ztopia-infinite-scroll__loader',
-        className: 'ztopia-infinite-scroll__loader',
-      })
-    }
-    {...restProps}
-  />
-));
+>(
+  ({
+    isWindowUsed = false,
+    offset = 200,
+    loader = <FadingLoader size="small" />,
+    ...restProps
+  }) => (
+    <BaseInfiniteScroll
+      initialLoad={false}
+      useWindow={isWindowUsed}
+      threshold={offset}
+      loader={
+        loader &&
+        cloneElement(loader, {
+          key: 'ztopia-infinite-scroll__loader',
+          className: 'ztopia-infinite-scroll__loader',
+        })
+      }
+      {...restProps}
+    />
+  ),
+);
