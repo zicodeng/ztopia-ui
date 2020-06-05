@@ -7,7 +7,7 @@ import './TruncatedText.css';
 
 const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis);
 
-export interface TruncatedText {
+export interface TruncatedTextProps {
   /**
    * <@default=`false`>
    */
@@ -15,7 +15,7 @@ export interface TruncatedText {
   /**
    * <@default=`2`>
    */
-  maxLine: number;
+  maxLine?: number;
   /**
    * <@default=`... read more`>
    */
@@ -29,9 +29,9 @@ export interface TruncatedText {
   className?: string;
 }
 
-export const TruncatedText: FC<TruncatedText> = ({
+export const TruncatedText: FC<TruncatedTextProps> = ({
   isExpandable = false,
-  maxLine,
+  maxLine = 2,
   readMoreIndicator = '... read more',
   element = 'p',
   className,
