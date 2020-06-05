@@ -1,3 +1,9 @@
+## [1.36.6](https://github.com/zicodeng/ztopia-ui/compare/v1.36.5...v1.36.6) (2020-06-05)
+
+### Bug Fixes
+
+- add isWindowUsed prop ([bdcde3c](https://github.com/zicodeng/ztopia-ui/commit/bdcde3c1666d81e141f293e4edce26303b9f7d1a))
+
 ## [1.36.5](https://github.com/zicodeng/ztopia-ui/compare/v1.36.4...v1.36.5) (2020-06-05)
 
 ### Bug Fixes
