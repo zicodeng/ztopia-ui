@@ -1,3 +1,9 @@
+## [1.36.3](https://github.com/zicodeng/ztopia-ui/compare/v1.36.2...v1.36.3) (2020-06-05)
+
+### Bug Fixes
+
+- improve props ([31e36d2](https://github.com/zicodeng/ztopia-ui/commit/31e36d25d1e5fdc275640ad427b0de7bdaa46903))
+
 ## [1.36.2](https://github.com/zicodeng/ztopia-ui/compare/v1.36.1...v1.36.2) (2020-06-02)
 
 ### Bug Fixes
