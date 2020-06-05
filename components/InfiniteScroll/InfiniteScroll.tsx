@@ -1,4 +1,4 @@
-import React, { cloneElement, FC,memo } from 'react';
+import React, { cloneElement, FC, memo } from 'react';
 import BaseInfiniteScroll from 'react-infinite-scroller';
 
 import { FadingLoader } from '../Loaders';
@@ -14,6 +14,11 @@ export interface InfiniteScrollProps {
    * <@default=`200`>
    */
   offset?: boolean;
+  /**
+   * <@default=`'div'`>
+   */
+  element?: string;
+  className?: string;
   /**
    * <@default=`<FadingLoader />`>
    */
