@@ -20,7 +20,7 @@ export interface InfiniteScrollProps {
   /**
    * <@default=`200`>
    */
-  offset?: boolean;
+  offset?: number;
   /**
    * <@default=`'div'`>
    */
