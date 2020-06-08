@@ -42,7 +42,7 @@ export interface ButtonProps {
   /**
    * <@default=`'rect'`>
    */
-  variant?: 'rect' | 'circle' | 'pill' | 'text' | 'icon';
+  variant?: 'rect' | 'circle' | 'pill' | 'text' | 'icon' | 'link';
   /**
    * <@default=`'medium'`>
    */
@@ -86,21 +86,31 @@ export const Button: FC<ButtonProps> = memo<ButtonProps>(
       return <BasicLoader isCentered size="small" color="#ffffff" />;
     }, [loader]);
 
+    const sharedClassNames = classNames(
+      className,
+      'ztopia-button',
+      `ztopia-button--${variant}`,
+      `ztopia-button--${size}`,
+      {
+        'is-ghost': isGhost,
+        'is-loading': isLoading,
+      },
+    );
+
+    if (variant === 'link') {
+      return (
+        <span style={style} className={sharedClassNames} {...restProps}>
+          {children}
+        </span>
+      );
+    }
+
     return (
       <button
         disabled={isDisabled}
         type={type}
         style={style}
-        className={classNames(
-          className,
-          'ztopia-button',
-          `ztopia-button--${variant}`,
-          `ztopia-button--${size}`,
-          {
-            'is-ghost': isGhost,
-            'is-loading': isLoading,
-          },
-        )}
+        className={sharedClassNames}
         onClick={isLoading ? undefined : onClick}
         {...restProps}
       >
