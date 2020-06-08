@@ -42,11 +42,15 @@ export interface ButtonProps {
   /**
    * <@default=`'rect'`>
    */
-  variant?: 'rect' | 'circle' | 'pill' | 'text' | 'icon' | 'link';
+  variant?: 'rect' | 'circle' | 'pill' | 'text' | 'icon';
   /**
    * <@default=`'medium'`>
    */
   size?: 'small' | 'medium' | 'large';
+  /**
+   * <@default=`button`>
+   */
+  element?: 'button' | 'span';
   /**
    * A Ztopia Loader either in function form (`MusicLoader`) or element form (`<MusicLoader />`)
    *
@@ -65,6 +69,7 @@ export const Button: FC<ButtonProps> = memo<ButtonProps>(
     isLoading = false,
     className,
     style = {},
+    element = 'button',
     type = 'button',
     variant = 'rect',
     size = 'medium',
@@ -97,7 +102,7 @@ export const Button: FC<ButtonProps> = memo<ButtonProps>(
       },
     );
 
-    if (variant === 'link') {
+    if (element === 'span') {
       return (
         <span style={style} className={sharedClassNames} {...restProps}>
           {children}
