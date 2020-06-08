@@ -1,3 +1,9 @@
+## [1.36.7](https://github.com/zicodeng/ztopia-ui/compare/v1.36.6...v1.36.7) (2020-06-08)
+
+### Bug Fixes
+
+- add Button variant link ([e902024](https://github.com/zicodeng/ztopia-ui/commit/e902024be1402b4a7b5ac37f1f98240603423e64))
+
 ## [1.36.6](https://github.com/zicodeng/ztopia-ui/compare/v1.36.5...v1.36.6) (2020-06-05)
 
 ### Bug Fixes
