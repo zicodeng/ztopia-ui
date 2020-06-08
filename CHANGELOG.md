@@ -1,3 +1,9 @@
+## [1.36.8](https://github.com/zicodeng/ztopia-ui/compare/v1.36.7...v1.36.8) (2020-06-08)
+
+### Bug Fixes
+
+- add Button prop element ([10cd45d](https://github.com/zicodeng/ztopia-ui/commit/10cd45d730f4e6b8a769c3df14423efbdf89955b))
+
 ## [1.36.7](https://github.com/zicodeng/ztopia-ui/compare/v1.36.6...v1.36.7) (2020-06-08)
 
 ### Bug Fixes
