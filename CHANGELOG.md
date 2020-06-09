@@ -1,3 +1,10 @@
+## [1.36.11](https://github.com/zicodeng/ztopia-ui/compare/v1.36.10...v1.36.11) (2020-06-09)
+
+### Bug Fixes
+
+- improve style ([ce26690](https://github.com/zicodeng/ztopia-ui/commit/ce266901ffa34ddb60a76c4adb70b761a9a1004b))
+- make BlockTextEditor style consistent with InlineTextEditor style ([b810b67](https://github.com/zicodeng/ztopia-ui/commit/b810b67d177e857c79ed74b4c7141020402c049b))
+
 ## [1.36.10](https://github.com/zicodeng/ztopia-ui/compare/v1.36.9...v1.36.10) (2020-06-09)
 
 ### Bug Fixes
