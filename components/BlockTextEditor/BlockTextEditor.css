@@ -1,5 +1,191 @@
 .ztopia-block-text-editor {
+  .bf-controlbar {
+    /* Button */
+    .control-item {
+      &.active {
+        color: $black-dark;
+      }
+    }
+
+    /* Arrow */
+    [data-title] {
+      /* Tooltip Arrow */
+      &::before {
+        border-bottom-color: $black-dark;
+      }
+
+      /* Tooltip Content */
+      &::after {
+        padding: $spacing-xs $spacing-s;
+        background-color: $black-dark;
+      }
+    }
+
+    /* Dropdown */
+    .dropdown-content {
+      > .dropdown-arrow {
+        background-color: $black-dark;
+      }
+
+      > .dropdown-content-inner {
+        background-color: $black-dark;
+      }
+    }
+
+    /* Emoji */
+    .bf-emojis-wrap {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    /* Link Editor */
+    .bf-link-editor {
+      > .input-group > input {
+        padding: 0 $spacing-m;
+        font-weight: normal;
+        background-color: $black;
+        border: 1px solid $black-light;
+        box-shadow: none;
+        transition: $transition-fast;
+
+        &:hover,
+        &:focus {
+          border-color: $white-dark;
+        }
+      }
+
+      > .switch-group {
+        > label {
+          color: $white-dark;
+        }
+
+        > .bf-switch {
+          cursor: pointer;
+
+          &.active {
+            background-color: $blue;
+          }
+        }
+      }
+
+      > .buttons {
+        /* Remove Link Button */
+        > .button-remove-link {
+          color: $white-dark;
+          transition: $transition-fast;
+
+          &:hover {
+            color: $color-danger;
+          }
+        }
+
+        /* Cancel Button */
+        > button.default {
+          background-color: $black;
+          transition: $transition-fast;
+
+          &:hover {
+            background-color: $black-light;
+          }
+        }
+
+        /* Confirm Button */
+        > button.primary {
+          background-color: $blue;
+          transition: $transition-fast;
+
+          &:hover {
+            background-color: $blue-light;
+          }
+        }
+      }
+    }
+  }
+
   .bf-content {
     cursor: text;
+
+    [data-contents='true'] {
+      *:first-child {
+        margin-top: 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0;
+
+        + p,
+        + pre,
+        + blockquote,
+        + ol,
+        + ul,
+        + div {
+          margin-top: $spacing-s;
+        }
+      }
+
+      h1 {
+        margin-top: 40px;
+      }
+
+      h2 {
+        margin-top: 30px;
+      }
+
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin-top: $spacing-xxl;
+      }
+
+      p,
+      pre,
+      blockquote,
+      ol,
+      ul,
+      div {
+        margin: $spacing-l 0 0;
+      }
+
+      ol,
+      ul {
+        padding-left: 30px;
+
+        li {
+          margin: $spacing-s 0;
+        }
+      }
+
+      ol {
+        list-style: decimal;
+      }
+
+      ul {
+        list-style: disc;
+      }
+
+      pre {
+        padding: $spacing-xs 6px;
+        color: inherit;
+        font-size: inherit;
+        font-family: monospace, monospace;
+        background-color: #f5f7f9;
+      }
+
+      blockquote {
+        padding: $spacing-xs 0 $spacing-xs $spacing-s;
+        color: $black-light;
+        font-style: italic;
+        background-color: transparent;
+        border-left: 2px solid $black-dark;
+      }
+    }
   }
 }

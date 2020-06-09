@@ -8,6 +8,7 @@ import { Props, Playground } from 'docz';
 import faker from 'faker';
 
 import { BlockTextEditor } from './';
+import { DEFAULT_VALUE } from './BlockTextEditorDemo';
 
 # BlockTextEditor
 
@@ -19,17 +20,7 @@ Dependency: [braft-editor](https://github.com/margox/braft-editor)
 
 <Playground>
   <BlockTextEditor
-    onChange={newValue => {
-      console.log('BlockTextEditor', 'onChange', { newValue });
-    }}
-  />
-</Playground>
-
-### Default Value
-
-<Playground>
-  <BlockTextEditor
-    defaultValue="<p>❤️Hello, World❤️</p><p></p><p>To be or not to be? That is the question</p>"
+    defaultValue={DEFAULT_VALUE}
     onChange={newValue => {
       console.log('BlockTextEditor', 'onChange', { newValue });
     }}

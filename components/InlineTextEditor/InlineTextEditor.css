@@ -68,6 +68,9 @@
 
   pre {
     padding: $spacing-xs 6px;
+    color: inherit;
+    font-size: inherit;
+    font-family: monospace, monospace;
     background-color: #f5f7f9;
   }
 
@@ -75,6 +78,7 @@
     padding: $spacing-xs 0 $spacing-xs $spacing-s;
     color: $black-light;
     font-style: italic;
+    background-color: transparent;
     border-left: 2px solid $black-dark;
   }
 }
