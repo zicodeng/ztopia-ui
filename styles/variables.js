@@ -13,7 +13,7 @@ const colorPalette = {
 
   'red-light': '#f76d82',
   red: '#eb5757',
-  'red-dark': '#d94452',
+  'red-dark': '#ff0000',
 
   green: '#27ae60',
 };

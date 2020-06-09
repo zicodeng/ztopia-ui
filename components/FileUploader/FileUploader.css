@@ -6,13 +6,13 @@
     justify-content: center;
     height: 200px;
     color: $black-light;
-    border: 2px dashed $black;
+    border: 2px dashed $white-dark;
     outline: none;
     cursor: pointer;
     transition: $transition-fast;
 
     &:hover {
-      border-color: $green;
+      border-color: $color-success;
     }
 
     &.drag-enter {

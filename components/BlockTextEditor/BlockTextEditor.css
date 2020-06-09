@@ -1,9 +1,18 @@
 .ztopia-block-text-editor {
   .bf-controlbar {
+    border-bottom: 1px solid $white-dark;
+    box-shadow: none;
+
+    /* Separator */
+    .separator-line {
+      background-color: $white-dark;
+      box-shadow: none;
+    }
+
     /* Button */
     .control-item {
       &.active {
-        color: $black-dark;
+        color: $blue;
       }
     }
 
@@ -22,17 +31,71 @@
     }
 
     /* Dropdown */
-    .dropdown-content {
-      > .dropdown-arrow {
-        background-color: $black-dark;
+    .bf-dropdown {
+      .dropdown-handler {
+        &:hover {
+          background-color: $white;
+        }
       }
 
-      > .dropdown-content-inner {
-        background-color: $black-dark;
+      .dropdown-content {
+        > .dropdown-arrow {
+          background-color: $black-dark;
+        }
+
+        > .dropdown-content-inner {
+          background-color: $black-dark;
+
+          /* Headings Menu */
+          > .menu {
+            > .menu-item {
+              &:not(.active) {
+                color: $white-dark;
+                box-shadow: none;
+
+                &:not(:first-of-type) {
+                  border-top: 1px solid $black-light;
+                }
+              }
+
+              &.active,
+              &:hover {
+                color: $white-light;
+              }
+
+              &:hover:not(.active) {
+                background-color: $black;
+              }
+
+              &.active {
+                background-color: $blue;
+              }
+            }
+          }
+        }
       }
     }
 
-    /* Emoji */
+    /* Text Color Picker */
+    .text-color-dropdown {
+      .bf-color-switch-buttons {
+        > button {
+          color: $white-dark;
+          transition: $transition-fast;
+
+          &:hover {
+            color: $white-light;
+          }
+
+          &.active {
+            color: $blue;
+            border-bottom-color: $blue;
+          }
+        }
+      }
+    }
+
+    /* Emoji Picker */
     .bf-emojis-wrap {
       &::before,
       &::after {
@@ -52,7 +115,7 @@
 
         &:hover,
         &:focus {
-          border-color: $white-dark;
+          border-color: $blue;
         }
       }
 
@@ -71,6 +134,9 @@
       }
 
       > .buttons {
+        border-top: 1px solid $black;
+        box-shadow: none;
+
         /* Remove Link Button */
         > .button-remove-link {
           color: $white-dark;
@@ -108,8 +174,12 @@
     cursor: text;
 
     [data-contents='true'] {
-      *:first-child {
+      > *:first-child {
         margin-top: 0;
+
+        > * {
+          margin-top: 0;
+        }
       }
 
       h1,
@@ -119,6 +189,10 @@
       h5,
       h6 {
         margin: 0;
+
+        > div {
+          margin-top: 0;
+        }
 
         + p,
         + pre,
@@ -132,10 +206,28 @@
 
       h1 {
         margin-top: 40px;
+        font-size: 28px;
       }
 
       h2 {
         margin-top: 30px;
+        font-size: 24px;
+      }
+
+      h3 {
+        font-size: $font-size-xl;
+      }
+
+      h4 {
+        font-size: $font-size-m;
+      }
+
+      h5 {
+        font-size: $font-size-s;
+      }
+
+      h6 {
+        font-size: $font-size-xs;
       }
 
       h3,
@@ -186,6 +278,207 @@
         background-color: transparent;
         border-left: 2px solid $black-dark;
       }
+    }
+  }
+}
+
+/* Modal */
+.bf-modal {
+  .bf-modal-mask {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .bf-modal-content {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .bf-modal-caption {
+    color: $black-dark;
+  }
+
+  .bf-modal-close-button {
+    color: $white-dark;
+    transition: $transition-fast;
+
+    &:hover {
+      color: $color-danger;
+    }
+  }
+}
+
+/* Media Uploader */
+.braft-finder {
+  .bf-toggle-external-form {
+    .bf-bottom-text {
+      color: $white-dark;
+      transition: $transition-fast;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  .bf-drag-uploader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed $white-dark;
+    transition: $transition-fast;
+
+    &:hover {
+      background-color: transparent;
+      border-color: $color-success;
+    }
+  }
+
+  .bf-drag-tip {
+    margin: 0;
+    color: $black-light;
+    font-size: $font-size-xl;
+  }
+
+  .bf-manager-footer {
+    .button-cancel {
+      color: $white-light;
+      background-color: $white-dark;
+      transition: $transition-fast;
+
+      &:hover {
+        background-color: $color-danger;
+      }
+    }
+
+    .button-insert {
+      background-color: $blue;
+      transition: $transition-fast;
+
+      &:hover {
+        background-color: $blue-dark;
+      }
+    }
+  }
+
+  .bf-external-input {
+    input {
+      font-size: $font-size-s;
+      border: 1px solid $white-dark;
+      box-shadow: none;
+      transition: $transition-fast;
+
+      &:focus {
+        border-color: $blue;
+        box-shadow: none;
+      }
+    }
+
+    button {
+      background-color: $blue;
+      transition: $transition-fast;
+
+      &:hover {
+        background-color: $blue-dark;
+      }
+    }
+  }
+
+  .bf-switch-external-type {
+    > button {
+      color: $black-light;
+      background-color: $white;
+      transition: $transition-fast;
+
+      &:hover {
+        background-color: $white-dark;
+      }
+    }
+
+    &[data-type='IMAGE'] > [data-type='IMAGE'],
+    &[data-type='VIDEO'] > [data-type='VIDEO'],
+    &[data-type='AUDIO'] > [data-type='AUDIO'],
+    &[data-type='EMBED'] > [data-type='EMBED'],
+    &[data-type='FILE'] > [data-type='FILE'] {
+      background-color: $blue-dark;
+    }
+  }
+
+  .bf-external-tip {
+    color: $white-dark;
+  }
+
+  .bf-list-tools {
+    > .bf-select-all,
+    > .bf-deselect-all {
+      color: $white-dark;
+      transition: $transition-fast;
+    }
+
+    > .bf-select-all {
+      &:hover {
+        color: $blue-dark;
+      }
+    }
+
+    > .bf-deselect-all {
+      &:hover {
+        color: $color-danger;
+      }
+    }
+
+    > .bf-remove-selected {
+      color: $color-danger;
+      transition: $transition-fast;
+
+      &:hover {
+        color: $red-dark;
+      }
+    }
+  }
+
+  .bf-item {
+    cursor: pointer;
+
+    &.active {
+      /* Check Mark */
+      &::before {
+        font-size: 30px;
+      }
+
+      /* Image Mask */
+      &::after {
+        background-color: rgba(94, 156, 234, 0.3);
+        transition: $transition-fast;
+      }
+
+      &:hover {
+        &::after {
+          background-color: $blue;
+        }
+      }
+    }
+  }
+
+  .bf-item-remove {
+    transition: $transition-fast;
+
+    &:hover {
+      color: $color-danger;
+    }
+  }
+
+  .bf-add-item {
+    color: $black-light;
+    background-color: $white;
+    border-radius: 0;
+    transition: $transition-fast;
+
+    &:hover {
+      background-color: $white-dark;
+    }
+
+    > i {
+      font-size: 35px;
     }
   }
 }

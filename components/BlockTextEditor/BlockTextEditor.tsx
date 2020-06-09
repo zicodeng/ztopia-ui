@@ -14,7 +14,7 @@ export interface BlockTextEditorProps {
   defaultValue?: string;
   className?: string;
   /**
-   * <@default=`['bold', 'italic', 'underline', 'separator', 'blockquote', 'list-ol', 'list-ul', 'separator', 'link', 'emoji']`>
+   * <@default=`['headings', 'separator', 'text-color', 'bold', 'italic', 'underline', 'strike-through', 'separator', 'list-ol', 'list-ul', 'blockquote', 'separator', 'link', 'emoji', 'separator', 'fullscreen']`>
    */
   toolbarOptions?: ControlType[];
   onChange?: (newValue: string) => void;
@@ -27,16 +27,23 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
     defaultValue = '',
     className,
     toolbarOptions = [
+      'headings',
+      'separator',
+      'text-color',
       'bold',
       'italic',
       'underline',
+      'strike-through',
       'separator',
-      'blockquote',
       'list-ol',
       'list-ul',
+      'blockquote',
       'separator',
       'link',
       'emoji',
+      'media',
+      'separator',
+      'fullscreen',
     ],
     onChange,
   }) => {
@@ -58,6 +65,13 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
         controls={toolbarOptions}
         value={editorState}
         onChange={handleChange}
+        imageControls={['remove']}
+        media={{
+          accepts: {
+            video: false,
+            audio: false,
+          },
+        }}
       />
     );
   },
