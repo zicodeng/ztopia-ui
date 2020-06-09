@@ -1,3 +1,9 @@
+## [1.36.10](https://github.com/zicodeng/ztopia-ui/compare/v1.36.9...v1.36.10) (2020-06-09)
+
+### Bug Fixes
+
+- add className prop ([b05b0f0](https://github.com/zicodeng/ztopia-ui/commit/b05b0f0e90e51c4c63024235305271ad94f600be))
+
 ## [1.36.9](https://github.com/zicodeng/ztopia-ui/compare/v1.36.8...v1.36.9) (2020-06-08)
 
 ### Bug Fixes
