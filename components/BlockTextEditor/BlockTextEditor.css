@@ -1,4 +1,7 @@
 .ztopia-block-text-editor {
+  /*===============================
+  =            Toolbar            =
+  ===============================*/
   .bf-controlbar {
     border-bottom: 1px solid $white-dark;
     box-shadow: none;
@@ -101,7 +104,9 @@
     }
     /*=====  End of Text Color Picker  ======*/
 
-    /* Emoji Picker */
+    /*====================================
+    =            Emoji Picker            =
+    ====================================*/
     .bf-emojis-wrap {
       /* Shadow */
       &::before,
@@ -109,6 +114,7 @@
         display: none;
       }
     }
+    /*=====  End of Emoji Picker  ======*/
 
     /*===================================
     =            Link Editor            =
@@ -179,6 +185,7 @@
     }
     /*=====  End of Link Editor  ======*/
   }
+  /*=====  End of Toolbar  ======*/
 
   .bf-content {
     cursor: text;
