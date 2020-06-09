@@ -1,3 +1,9 @@
+## [1.36.13](https://github.com/zicodeng/ztopia-ui/compare/v1.36.12...v1.36.13) (2020-06-09)
+
+### Bug Fixes
+
+- better comment ([2c8fc74](https://github.com/zicodeng/ztopia-ui/commit/2c8fc7471b545fdf34ee1dd47653df5348a8033c))
+
 ## [1.36.12](https://github.com/zicodeng/ztopia-ui/compare/v1.36.11...v1.36.12) (2020-06-09)
 
 ### Bug Fixes
