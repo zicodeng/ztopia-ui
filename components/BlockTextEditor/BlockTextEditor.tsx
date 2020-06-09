@@ -1,5 +1,6 @@
 import React, { FC, memo, useCallback, useState } from 'react';
 import BraftEditor, { ControlType } from 'braft-editor';
+import classNames from 'classnames';
 
 import 'braft-editor/dist/index.css';
 import './BlockTextEditor.css';
@@ -11,6 +12,7 @@ export interface BlockTextEditorProps {
    * <@default=`''`>
    */
   defaultValue?: string;
+  className?: string;
   /**
    * <@default=`['bold', 'italic', 'underline', 'separator', 'blockquote', 'list-ol', 'list-ul', 'separator', 'link', 'emoji']`>
    */
@@ -23,6 +25,7 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
 >(
   ({
     defaultValue = '',
+    className,
     toolbarOptions = [
       'bold',
       'italic',
@@ -51,7 +54,7 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
 
     return (
       <BraftEditor
-        className="ztopia-block-text-editor"
+        className={classNames(className, 'ztopia-block-text-editor')}
         controls={toolbarOptions}
         value={editorState}
         onChange={handleChange}

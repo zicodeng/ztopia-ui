@@ -1,6 +1,5 @@
 .ztopia-block-text-editor {
-}
-
-.bf-content {
-  cursor: text;
+  .bf-content {
+    cursor: text;
+  }
 }
