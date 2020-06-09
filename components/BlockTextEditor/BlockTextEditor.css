@@ -30,7 +30,9 @@
       }
     }
 
-    /* Dropdown */
+    /*=========================================
+    =            Headings Dropdown            =
+    =========================================*/
     .bf-dropdown {
       .dropdown-handler {
         &:hover {
@@ -75,8 +77,11 @@
         }
       }
     }
+    /*=====  End of Headings Dropdown  ======*/
 
-    /* Text Color Picker */
+    /*=========================================
+    =            Text Color Picker            =
+    =========================================*/
     .text-color-dropdown {
       .bf-color-switch-buttons {
         > button {
@@ -94,16 +99,20 @@
         }
       }
     }
+    /*=====  End of Text Color Picker  ======*/
 
     /* Emoji Picker */
     .bf-emojis-wrap {
+      /* Shadow */
       &::before,
       &::after {
         display: none;
       }
     }
 
-    /* Link Editor */
+    /*===================================
+    =            Link Editor            =
+    ===================================*/
     .bf-link-editor {
       > .input-group > input {
         padding: 0 $spacing-m;
@@ -168,6 +177,7 @@
         }
       }
     }
+    /*=====  End of Link Editor  ======*/
   }
 
   .bf-content {
@@ -282,7 +292,9 @@
   }
 }
 
-/* Modal */
+/*=============================
+=            Modal            =
+=============================*/
 .bf-modal {
   .bf-modal-mask {
     background-color: rgba(0, 0, 0, 0.3);
@@ -305,180 +317,184 @@
       color: $color-danger;
     }
   }
-}
 
-/* Media Uploader */
-.braft-finder {
-  .bf-toggle-external-form {
-    .bf-bottom-text {
-      color: $white-dark;
+  /*======================================
+  =            Media Uploader            =
+  ======================================*/
+  .braft-finder {
+    .bf-toggle-external-form {
+      .bf-bottom-text {
+        color: $white-dark;
+        transition: $transition-fast;
+
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+
+    .bf-drag-uploader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px dashed $white-dark;
       transition: $transition-fast;
 
       &:hover {
-        color: $blue;
-      }
-    }
-  }
-
-  .bf-drag-uploader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px dashed $white-dark;
-    transition: $transition-fast;
-
-    &:hover {
-      background-color: transparent;
-      border-color: $color-success;
-    }
-  }
-
-  .bf-drag-tip {
-    margin: 0;
-    color: $black-light;
-    font-size: $font-size-xl;
-  }
-
-  .bf-manager-footer {
-    .button-cancel {
-      color: $white-light;
-      background-color: $white-dark;
-      transition: $transition-fast;
-
-      &:hover {
-        background-color: $color-danger;
+        background-color: transparent;
+        border-color: $color-success;
       }
     }
 
-    .button-insert {
-      background-color: $blue;
-      transition: $transition-fast;
-
-      &:hover {
-        background-color: $blue-dark;
-      }
-    }
-  }
-
-  .bf-external-input {
-    input {
-      font-size: $font-size-s;
-      border: 1px solid $white-dark;
-      box-shadow: none;
-      transition: $transition-fast;
-
-      &:focus {
-        border-color: $blue;
-        box-shadow: none;
-      }
-    }
-
-    button {
-      background-color: $blue;
-      transition: $transition-fast;
-
-      &:hover {
-        background-color: $blue-dark;
-      }
-    }
-  }
-
-  .bf-switch-external-type {
-    > button {
+    .bf-drag-tip {
+      margin: 0;
       color: $black-light;
-      background-color: $white;
-      transition: $transition-fast;
+      font-size: $font-size-xl;
+    }
 
-      &:hover {
+    .bf-manager-footer {
+      .button-cancel {
+        color: $white-light;
         background-color: $white-dark;
+        transition: $transition-fast;
+
+        &:hover {
+          background-color: $color-danger;
+        }
+      }
+
+      .button-insert {
+        background-color: $blue;
+        transition: $transition-fast;
+
+        &:hover {
+          background-color: $blue-dark;
+        }
       }
     }
 
-    &[data-type='IMAGE'] > [data-type='IMAGE'],
-    &[data-type='VIDEO'] > [data-type='VIDEO'],
-    &[data-type='AUDIO'] > [data-type='AUDIO'],
-    &[data-type='EMBED'] > [data-type='EMBED'],
-    &[data-type='FILE'] > [data-type='FILE'] {
-      background-color: $blue-dark;
+    .bf-external-input {
+      input {
+        font-size: $font-size-s;
+        border: 1px solid $white-dark;
+        box-shadow: none;
+        transition: $transition-fast;
+
+        &:focus {
+          border-color: $blue;
+          box-shadow: none;
+        }
+      }
+
+      button {
+        background-color: $blue;
+        transition: $transition-fast;
+
+        &:hover {
+          background-color: $blue-dark;
+        }
+      }
     }
-  }
 
-  .bf-external-tip {
-    color: $white-dark;
-  }
+    .bf-switch-external-type {
+      > button {
+        color: $black-light;
+        background-color: $white;
+        transition: $transition-fast;
 
-  .bf-list-tools {
-    > .bf-select-all,
-    > .bf-deselect-all {
+        &:hover {
+          background-color: $white-dark;
+        }
+      }
+
+      &[data-type='IMAGE'] > [data-type='IMAGE'],
+      &[data-type='VIDEO'] > [data-type='VIDEO'],
+      &[data-type='AUDIO'] > [data-type='AUDIO'],
+      &[data-type='EMBED'] > [data-type='EMBED'],
+      &[data-type='FILE'] > [data-type='FILE'] {
+        background-color: $blue-dark;
+      }
+    }
+
+    .bf-external-tip {
       color: $white-dark;
-      transition: $transition-fast;
     }
 
-    > .bf-select-all {
-      &:hover {
-        color: $blue-dark;
+    .bf-list-tools {
+      > .bf-select-all,
+      > .bf-deselect-all {
+        color: $white-dark;
+        transition: $transition-fast;
+      }
+
+      > .bf-select-all {
+        &:hover {
+          color: $blue-dark;
+        }
+      }
+
+      > .bf-deselect-all {
+        &:hover {
+          color: $color-danger;
+        }
+      }
+
+      > .bf-remove-selected {
+        color: $color-danger;
+        transition: $transition-fast;
+
+        &:hover {
+          color: $red-dark;
+        }
       }
     }
 
-    > .bf-deselect-all {
+    .bf-item {
+      cursor: pointer;
+
+      &.active {
+        /* Check Mark */
+        &::before {
+          font-size: 30px;
+        }
+
+        /* Image Mask */
+        &::after {
+          background-color: rgba(94, 156, 234, 0.3);
+          transition: $transition-fast;
+        }
+
+        &:hover {
+          &::after {
+            background-color: $blue;
+          }
+        }
+      }
+    }
+
+    .bf-item-remove {
+      transition: $transition-fast;
+
       &:hover {
         color: $color-danger;
       }
     }
 
-    > .bf-remove-selected {
-      color: $color-danger;
+    .bf-add-item {
+      color: $black-light;
+      background-color: $white;
+      border-radius: 0;
       transition: $transition-fast;
 
       &:hover {
-        color: $red-dark;
+        background-color: $white-dark;
+      }
+
+      > i {
+        font-size: 35px;
       }
     }
   }
-
-  .bf-item {
-    cursor: pointer;
-
-    &.active {
-      /* Check Mark */
-      &::before {
-        font-size: 30px;
-      }
-
-      /* Image Mask */
-      &::after {
-        background-color: rgba(94, 156, 234, 0.3);
-        transition: $transition-fast;
-      }
-
-      &:hover {
-        &::after {
-          background-color: $blue;
-        }
-      }
-    }
-  }
-
-  .bf-item-remove {
-    transition: $transition-fast;
-
-    &:hover {
-      color: $color-danger;
-    }
-  }
-
-  .bf-add-item {
-    color: $black-light;
-    background-color: $white;
-    border-radius: 0;
-    transition: $transition-fast;
-
-    &:hover {
-      background-color: $white-dark;
-    }
-
-    > i {
-      font-size: 35px;
-    }
-  }
+  /*=====  End of Media Uploader  ======*/
 }
+/*=====  End of Modal  ======*/
