@@ -12,6 +12,7 @@ export interface BlockTextEditorProps {
    * <@default=`''`>
    */
   defaultValue?: string;
+  placeholder?: string;
   className?: string;
   /**
    * <@default=`['headings', 'separator', 'text-color', 'bold', 'italic', 'underline', 'strike-through', 'separator', 'list-ol', 'list-ul', 'blockquote', 'separator', 'link', 'separator', 'emoji', 'remove-styles', 'separator', 'fullscreen']`>
@@ -25,6 +26,7 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
 >(
   ({
     defaultValue = '',
+    placeholder,
     className,
     toolbarOptions = [
       'headings',
@@ -63,6 +65,7 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
 
     return (
       <BraftEditor
+        placeholder={placeholder}
         className={classNames(className, 'ztopia-block-text-editor')}
         controls={toolbarOptions}
         value={editorState}
