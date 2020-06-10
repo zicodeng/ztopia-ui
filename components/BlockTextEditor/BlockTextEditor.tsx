@@ -1,5 +1,5 @@
-import React, { FC, memo, useCallback, useState } from 'react';
-import BraftEditor, { ControlType } from 'braft-editor';
+import React, { FC, memo, useCallback, useEffect,useState } from 'react';
+import BraftEditor, { ControlType, EditorState } from 'braft-editor';
 import classNames from 'classnames';
 
 import 'braft-editor/dist/index.css';
@@ -25,6 +25,7 @@ export interface BlockTextEditorProps {
    */
   toolbarOptions?: ControlType[];
   onChange?: (newValue: string) => void;
+  onReady?: (editorState: EditorState) => void;
 }
 
 export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
@@ -57,10 +58,15 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
       'fullscreen',
     ],
     onChange,
+    onReady,
   }) => {
     const [editorState, setEditorState] = useState(
       BraftEditor.createEditorState(defaultValue),
     );
+
+    useEffect(() => {
+      if (onReady) onReady(editorState);
+    }, [editorState, onReady]);
 
     const handleChange = useCallback(
       newEditorState => {
