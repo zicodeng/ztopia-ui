@@ -6,13 +6,17 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import BraftEditor, { ControlType, EditorState } from 'braft-editor';
+import BraftEditor, { ControlType } from 'braft-editor';
 import classNames from 'classnames';
 
 import 'braft-editor/dist/index.css';
 import './BlockTextEditor.css';
 
-export type BlockTextEditorState = EditorState;
+export type BlockTextEditorState = {
+  toHTML(option?: Record<string, any>): string;
+  toText(): string;
+  isEmpty(): boolean;
+};
 
 export interface BlockTextEditorProps {
   /**
