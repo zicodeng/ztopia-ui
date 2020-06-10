@@ -1,3 +1,9 @@
+## [1.36.25](https://github.com/zicodeng/ztopia-ui/compare/v1.36.24...v1.36.25) (2020-06-10)
+
+### Bug Fixes
+
+- export BlockTextEditorState ([07b47c6](https://github.com/zicodeng/ztopia-ui/commit/07b47c6893199b01313512cbbf49d1d873d69c15))
+
 ## [1.36.24](https://github.com/zicodeng/ztopia-ui/compare/v1.36.23...v1.36.24) (2020-06-10)
 
 ### Bug Fixes
