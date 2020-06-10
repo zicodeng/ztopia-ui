@@ -178,7 +178,7 @@
           transition: $transition-fast;
 
           &:hover {
-            background-color: $black-light;
+            background-color: $color-danger;
           }
         }
 
