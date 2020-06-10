@@ -1,3 +1,9 @@
+## [1.36.22](https://github.com/zicodeng/ztopia-ui/compare/v1.36.21...v1.36.22) (2020-06-10)
+
+### Bug Fixes
+
+- add onReady prop for editorState ([729826f](https://github.com/zicodeng/ztopia-ui/commit/729826f6f85f6bb56eb2f1254db5a28c29c91048))
+
 ## [1.36.21](https://github.com/zicodeng/ztopia-ui/compare/v1.36.20...v1.36.21) (2020-06-10)
 
 ### Bug Fixes
