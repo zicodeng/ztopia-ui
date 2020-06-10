@@ -12,6 +12,8 @@ import classNames from 'classnames';
 import 'braft-editor/dist/index.css';
 import './BlockTextEditor.css';
 
+export type BlockTextEditorState = EditorState;
+
 export interface BlockTextEditorProps {
   /**
    * Default inner HTML string
@@ -27,7 +29,7 @@ export interface BlockTextEditorProps {
    */
   toolbarOptions?: ControlType[];
   onChange?: (newValue: string) => void;
-  onReady?: (editorState: EditorState) => void;
+  onReady?: (editorState: BlockTextEditorState) => void;
 }
 
 export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
@@ -62,7 +64,7 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
     onChange,
     onReady,
   }) => {
-    const [editorState, setEditorState] = useState(
+    const [editorState, setEditorState] = useState<BlockTextEditorState>(
       BraftEditor.createEditorState(defaultValue),
     );
 
