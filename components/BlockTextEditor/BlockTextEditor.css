@@ -292,6 +292,15 @@
         border-left: 2px solid $black-dark;
       }
     }
+
+    .bf-image {
+      float: none !important;
+      text-align: center;
+
+      img:hover {
+        outline-color: $blue;
+      }
+    }
   }
 }
 
