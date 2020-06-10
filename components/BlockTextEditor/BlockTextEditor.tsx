@@ -1,4 +1,11 @@
-import React, { FC, memo, useCallback, useEffect,useState } from 'react';
+import React, {
+  CSSProperties,
+  FC,
+  memo,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
 import BraftEditor, { ControlType, EditorState } from 'braft-editor';
 import classNames from 'classnames';
 
@@ -14,12 +21,7 @@ export interface BlockTextEditorProps {
   defaultValue?: string;
   placeholder?: string;
   className?: string;
-  /**
-   * Height of the content editing area, excluding toolbar
-   *
-   * <@default=`'100%'`>
-   */
-  contentHeight?: string | number;
+  contentStyle?: CSSProperties;
   /**
    * <@default=`['headings', 'separator', 'text-color', 'bold', 'italic', 'underline', 'strike-through', 'separator', 'list-ol', 'list-ul', 'blockquote', 'separator', 'link', 'separator', 'emoji', 'remove-styles', 'separator', 'fullscreen']`>
    */
@@ -35,7 +37,7 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
     defaultValue = '',
     placeholder,
     className,
-    contentHeight = '100%',
+    contentStyle,
     toolbarOptions = [
       'headings',
       'separator',
@@ -85,9 +87,7 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
         onChange={handleChange}
         imageControls={['align-left', 'align-center', 'align-right', 'remove']}
         imageResizable={false}
-        contentStyle={{
-          height: contentHeight,
-        }}
+        contentStyle={contentStyle}
         media={{
           accepts: {
             video: false,
