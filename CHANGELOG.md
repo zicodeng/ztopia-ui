@@ -1,3 +1,9 @@
+## [1.36.26](https://github.com/zicodeng/ztopia-ui/compare/v1.36.25...v1.36.26) (2020-06-10)
+
+### Bug Fixes
+
+- fix BlockTextEditorState typing ([f32df12](https://github.com/zicodeng/ztopia-ui/commit/f32df129aa50f8043bbccd32939ecbf9c26f2dc6))
+
 ## [1.36.25](https://github.com/zicodeng/ztopia-ui/compare/v1.36.24...v1.36.25) (2020-06-10)
 
 ### Bug Fixes
