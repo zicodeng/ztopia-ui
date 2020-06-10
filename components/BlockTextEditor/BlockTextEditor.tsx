@@ -65,7 +65,8 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
         controls={toolbarOptions}
         value={editorState}
         onChange={handleChange}
-        imageControls={['remove']}
+        imageControls={[]}
+        imageResizable={false}
         media={{
           accepts: {
             video: false,
