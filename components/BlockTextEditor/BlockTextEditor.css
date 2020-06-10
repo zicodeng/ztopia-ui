@@ -294,9 +294,6 @@
     }
 
     .bf-image {
-      float: none !important;
-      text-align: center;
-
       > img:hover {
         outline-color: $blue;
       }
