@@ -37,12 +37,6 @@
     =            Headings Dropdown            =
     =========================================*/
     .bf-dropdown {
-      .dropdown-handler {
-        &:hover {
-          background-color: $white;
-        }
-      }
-
       .dropdown-content {
         > .dropdown-arrow {
           background-color: $black-dark;
