@@ -15,6 +15,12 @@ export interface BlockTextEditorProps {
   placeholder?: string;
   className?: string;
   /**
+   * Height of the content editing area, excluding toolbar
+   *
+   * <@default=`'100%'`>
+   */
+  contentHeight?: string | number;
+  /**
    * <@default=`['headings', 'separator', 'text-color', 'bold', 'italic', 'underline', 'strike-through', 'separator', 'list-ol', 'list-ul', 'blockquote', 'separator', 'link', 'separator', 'emoji', 'remove-styles', 'separator', 'fullscreen']`>
    */
   toolbarOptions?: ControlType[];
@@ -28,6 +34,7 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
     defaultValue = '',
     placeholder,
     className,
+    contentHeight = '100%',
     toolbarOptions = [
       'headings',
       'separator',
@@ -72,6 +79,9 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
         onChange={handleChange}
         imageControls={[]}
         imageResizable={false}
+        contentStyle={{
+          height: contentHeight,
+        }}
         media={{
           accepts: {
             video: false,
