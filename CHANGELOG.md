@@ -1,3 +1,9 @@
+## [1.36.15](https://github.com/zicodeng/ztopia-ui/compare/v1.36.14...v1.36.15) (2020-06-10)
+
+### Bug Fixes
+
+- add remove-styles to default toolbar options ([03abc4a](https://github.com/zicodeng/ztopia-ui/commit/03abc4ac2a5eaa2d277ac4ad5e8aa3a9c93c56d9))
+
 ## [1.36.14](https://github.com/zicodeng/ztopia-ui/compare/v1.36.13...v1.36.14) (2020-06-10)
 
 ### Bug Fixes
