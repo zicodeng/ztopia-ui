@@ -1,3 +1,10 @@
+## [1.36.20](https://github.com/zicodeng/ztopia-ui/compare/v1.36.19...v1.36.20) (2020-06-10)
+
+### Bug Fixes
+
+- add contentHeight prop ([27c2f5c](https://github.com/zicodeng/ztopia-ui/commit/27c2f5c837ac7315ff28857172ab63e90acbd025))
+- style hotfix ([558acd1](https://github.com/zicodeng/ztopia-ui/commit/558acd1bb745f0d828455be892780f5cfc891483))
+
 ## [1.36.19](https://github.com/zicodeng/ztopia-ui/compare/v1.36.18...v1.36.19) (2020-06-10)
 
 ### Bug Fixes
