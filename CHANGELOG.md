@@ -1,3 +1,9 @@
+## [1.36.23](https://github.com/zicodeng/ztopia-ui/compare/v1.36.22...v1.36.23) (2020-06-10)
+
+### Bug Fixes
+
+- add contentStyle prop ([847d8d0](https://github.com/zicodeng/ztopia-ui/commit/847d8d0447c95da6d2cd99994a7a6a27b1b7712b))
+
 ## [1.36.22](https://github.com/zicodeng/ztopia-ui/compare/v1.36.21...v1.36.22) (2020-06-10)
 
 ### Bug Fixes
