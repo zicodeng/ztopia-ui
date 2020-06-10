@@ -1,3 +1,9 @@
+## [1.36.19](https://github.com/zicodeng/ztopia-ui/compare/v1.36.18...v1.36.19) (2020-06-10)
+
+### Bug Fixes
+
+- add placeholder prop ([b8e391b](https://github.com/zicodeng/ztopia-ui/commit/b8e391baa6798901d669dc4bcc7620593182dde7))
+
 ## [1.36.18](https://github.com/zicodeng/ztopia-ui/compare/v1.36.17...v1.36.18) (2020-06-10)
 
 ### Bug Fixes
