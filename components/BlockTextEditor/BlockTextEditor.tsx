@@ -14,7 +14,7 @@ export interface BlockTextEditorProps {
   defaultValue?: string;
   className?: string;
   /**
-   * <@default=`['headings', 'separator', 'text-color', 'bold', 'italic', 'underline', 'strike-through', 'separator', 'list-ol', 'list-ul', 'blockquote', 'separator', 'link', 'emoji', 'separator', 'fullscreen']`>
+   * <@default=`['headings', 'separator', 'text-color', 'bold', 'italic', 'underline', 'strike-through', 'separator', 'list-ol', 'list-ul', 'blockquote', 'separator', 'link', 'separator', 'emoji', 'remove-styles', 'separator', 'fullscreen']`>
    */
   toolbarOptions?: ControlType[];
   onChange?: (newValue: string) => void;
@@ -40,8 +40,10 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
       'blockquote',
       'separator',
       'link',
-      'emoji',
       'media',
+      'separator',
+      'emoji',
+      'remove-styles',
       'separator',
       'fullscreen',
     ],
