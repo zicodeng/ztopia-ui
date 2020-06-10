@@ -297,8 +297,34 @@
       float: none !important;
       text-align: center;
 
-      img:hover {
+      > img:hover {
         outline-color: $blue;
+      }
+
+      /* Media Toolbar */
+      > .bf-media-toolbar {
+        background-color: $black-dark;
+
+        .bf-media-toolbar-arrow {
+          border-top-color: $black-dark;
+        }
+
+        a {
+          color: $white-dark;
+          transition: $transition-fast;
+
+          &:hover {
+            color: $white-light;
+          }
+        }
+
+        &[data-align='center'] [data-align='center'],
+        &[data-align='left'] [data-align='left'],
+        &[data-align='right'] [data-align='right'],
+        &[data-float='left'] [data-float='left'],
+        &[data-float='right'] [data-float='right'] {
+          color: $blue;
+        }
       }
     }
   }

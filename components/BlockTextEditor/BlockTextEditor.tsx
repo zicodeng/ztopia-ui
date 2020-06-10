@@ -77,7 +77,7 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
         controls={toolbarOptions}
         value={editorState}
         onChange={handleChange}
-        imageControls={[]}
+        imageControls={['align-left', 'align-center', 'align-right', 'remove']}
         imageResizable={false}
         contentStyle={{
           height: contentHeight,
