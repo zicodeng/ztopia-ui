@@ -1,3 +1,9 @@
+## [1.36.21](https://github.com/zicodeng/ztopia-ui/compare/v1.36.20...v1.36.21) (2020-06-10)
+
+### Bug Fixes
+
+- add media toolbar ([3fae9eb](https://github.com/zicodeng/ztopia-ui/commit/3fae9ebc4b1b8d9a6ff960dea8a184e754e19c88))
+
 ## [1.36.20](https://github.com/zicodeng/ztopia-ui/compare/v1.36.19...v1.36.20) (2020-06-10)
 
 ### Bug Fixes
