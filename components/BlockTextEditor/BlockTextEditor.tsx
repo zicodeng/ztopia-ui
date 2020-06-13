@@ -37,6 +37,25 @@ type ImageControl =
   | 'size'
   | 'remove';
 
+interface MediaUploadParam {
+  file: File;
+  progress: (progress: number) => void;
+  libraryId: string;
+  success: (res: {
+    url: string;
+    meta: {
+      id: string;
+      title: string;
+      alt: string;
+      loop: boolean;
+      autoPlay: boolean;
+      controls: boolean;
+      poster: string;
+    };
+  }) => void;
+  error: (err: { msg: string }) => void;
+}
+
 export interface BlockTextEditorProps {
   /**
    * Default inner HTML string
@@ -58,6 +77,7 @@ export interface BlockTextEditorProps {
   imageControls?: ImageControl[];
   onChange?: (newValue: string) => void;
   onReady?: (editorState: BlockTextEditorState) => void;
+  onMediaUpload?: (mediaUploadParam: MediaUploadParam) => void;
 }
 
 export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
@@ -100,6 +120,7 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
     ],
     onChange,
     onReady,
+    onMediaUpload,
   }) => {
     const [editorState, setEditorState] = useState<BlockTextEditorState>(
       BraftEditor.createEditorState(defaultValue),
@@ -129,10 +150,12 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
         imageResizable={false}
         contentStyle={contentStyle}
         media={{
+          externals: {},
           accepts: {
             video: false,
             audio: false,
           },
+          uploadFn: onMediaUpload,
         }}
       />
     );
