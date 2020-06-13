@@ -53,18 +53,34 @@ export const Placeholder: FC<PlaceholderProps> = memo(
       'is-animated': isAnimated,
       [`ztopia-placeholder--${variant}`]: variant,
     });
+
+    const randomWidthPlaceholder = (
+      <div
+        style={{
+          height,
+          width: `${Math.random() * 80 + 20}%`,
+          backgroundColor: color,
+        }}
+      />
+    );
+
     return variant === 'text' ? (
       <div className={sharedClassNames} style={{ width }}>
-        {Array.from({ length: rows }).map((_, i) => (
-          <div
-            key={i}
-            style={{
-              height,
-              width: `${Math.random() * 80 + 50}%`,
-              backgroundColor: color,
-            }}
-          />
-        ))}
+        {rows === 1
+          ? randomWidthPlaceholder
+          : [
+              ...Array.from({ length: rows - 1 }).map((_, i) => (
+                <div
+                  key={i}
+                  style={{
+                    height,
+                    width: '100%',
+                    backgroundColor: color,
+                  }}
+                />
+              )),
+              randomWidthPlaceholder,
+            ]}
       </div>
     ) : (
       <div
