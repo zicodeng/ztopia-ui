@@ -27,6 +27,16 @@ type Heading =
   | 'header-six'
   | 'unstyled';
 
+type ImageControl =
+  | 'float-left'
+  | 'float-right'
+  | 'align-left'
+  | 'align-center'
+  | 'align-right'
+  | 'link'
+  | 'size'
+  | 'remove';
+
 export interface BlockTextEditorProps {
   /**
    * Default inner HTML string
@@ -42,6 +52,10 @@ export interface BlockTextEditorProps {
    */
   toolbarOptions?: ControlType[];
   headings?: Heading[];
+  /**
+   * <@default=`['align-left', 'align-center', 'align-right', 'remove']`>
+   */
+  imageControls: ImageControl[];
   onChange?: (newValue: string) => void;
   onReady?: (editorState: BlockTextEditorState) => void;
 }
@@ -62,6 +76,7 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
       'header-five',
       'header-six',
     ],
+    imageControls = ['align-left', 'align-center', 'align-right', 'remove'],
     toolbarOptions = [
       'headings',
       'separator',
@@ -110,7 +125,7 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
         controls={toolbarOptions}
         value={editorState}
         onChange={handleChange}
-        imageControls={['align-left', 'align-center', 'align-right', 'remove']}
+        imageControls={imageControls}
         imageResizable={false}
         contentStyle={contentStyle}
         media={{
