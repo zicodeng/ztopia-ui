@@ -55,7 +55,7 @@ export interface BlockTextEditorProps {
   /**
    * <@default=`['align-left', 'align-center', 'align-right', 'remove']`>
    */
-  imageControls: ImageControl[];
+  imageControls?: ImageControl[];
   onChange?: (newValue: string) => void;
   onReady?: (editorState: BlockTextEditorState) => void;
 }
