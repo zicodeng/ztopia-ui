@@ -1,3 +1,9 @@
+## [1.36.32](https://github.com/zicodeng/ztopia-ui/compare/v1.36.31...v1.36.32) (2020-06-13)
+
+### Bug Fixes
+
+- mark imageControls to be optional prop ([9b6f133](https://github.com/zicodeng/ztopia-ui/commit/9b6f133c4cb229f0c894f3d61f2a1c53813c4cfe))
+
 ## [1.36.31](https://github.com/zicodeng/ztopia-ui/compare/v1.36.30...v1.36.31) (2020-06-13)
 
 ### Bug Fixes
