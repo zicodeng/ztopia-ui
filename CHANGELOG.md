@@ -1,3 +1,9 @@
+## [1.36.31](https://github.com/zicodeng/ztopia-ui/compare/v1.36.30...v1.36.31) (2020-06-13)
+
+### Bug Fixes
+
+- add imageControls prop ([ef26401](https://github.com/zicodeng/ztopia-ui/commit/ef26401a9a2be86a0b20b5ec2246df5dd9136142))
+
 ## [1.36.30](https://github.com/zicodeng/ztopia-ui/compare/v1.36.29...v1.36.30) (2020-06-13)
 
 ### Bug Fixes
