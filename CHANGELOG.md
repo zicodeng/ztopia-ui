@@ -1,3 +1,9 @@
+## [1.36.34](https://github.com/zicodeng/ztopia-ui/compare/v1.36.33...v1.36.34) (2020-06-13)
+
+### Bug Fixes
+
+- customize media upload fn ([c8a7498](https://github.com/zicodeng/ztopia-ui/commit/c8a74984e0c2d5271f94f12a8cc8deadb28f595a))
+
 ## [1.36.33](https://github.com/zicodeng/ztopia-ui/compare/v1.36.32...v1.36.33) (2020-06-13)
 
 ### Bug Fixes
