@@ -192,6 +192,7 @@
   /*=====  End of Toolbar  ======*/
 
   .bf-content {
+    font-size: inherit;
     cursor: text;
 
     [data-contents='true'] {
@@ -291,6 +292,11 @@
         background-color: transparent;
         border-left: 2px solid $black-dark;
       }
+    }
+
+    /* Placeholder */
+    .public-DraftEditorPlaceholder-root {
+      font-size: inherit;
     }
 
     .bf-image {
