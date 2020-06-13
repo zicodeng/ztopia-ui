@@ -1,3 +1,9 @@
+## [1.36.33](https://github.com/zicodeng/ztopia-ui/compare/v1.36.32...v1.36.33) (2020-06-13)
+
+### Bug Fixes
+
+- improve text placeholder ([333137b](https://github.com/zicodeng/ztopia-ui/commit/333137b5b06630f40c441978c8faab33d84d9743))
+
 ## [1.36.32](https://github.com/zicodeng/ztopia-ui/compare/v1.36.31...v1.36.32) (2020-06-13)
 
 ### Bug Fixes
