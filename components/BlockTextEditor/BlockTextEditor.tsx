@@ -32,6 +32,15 @@ export interface BlockTextEditorProps {
    * <@default=`['headings', 'separator', 'text-color', 'bold', 'italic', 'underline', 'strike-through', 'separator', 'list-ol', 'list-ul', 'blockquote', 'separator', 'link', 'separator', 'emoji', 'remove-styles', 'separator', 'fullscreen']`>
    */
   toolbarOptions?: ControlType[];
+  headings?: [
+
+      | 'header-one'
+      | 'header-two'
+      | 'header-three'
+      | 'header-four'
+      | 'header-five'
+      | 'header-six',
+  ];
   onChange?: (newValue: string) => void;
   onReady?: (editorState: BlockTextEditorState) => void;
 }
@@ -44,6 +53,14 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
     placeholder,
     className,
     contentStyle,
+    headings = [
+      'header-one',
+      'header-two',
+      'header-three',
+      'header-four',
+      'header-five',
+      'header-six',
+    ],
     toolbarOptions = [
       'headings',
       'separator',
@@ -88,6 +105,7 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
       <BraftEditor
         placeholder={placeholder}
         className={classNames(className, 'ztopia-block-text-editor')}
+        headings={headings}
         controls={toolbarOptions}
         value={editorState}
         onChange={handleChange}
