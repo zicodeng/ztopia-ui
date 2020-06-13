@@ -1,3 +1,9 @@
+## [1.36.28](https://github.com/zicodeng/ztopia-ui/compare/v1.36.27...v1.36.28) (2020-06-13)
+
+### Bug Fixes
+
+- customize-heading-options ([eed9f17](https://github.com/zicodeng/ztopia-ui/commit/eed9f175a2c706fcec344193715b4449b4a946a8))
+
 ## [1.36.27](https://github.com/zicodeng/ztopia-ui/compare/v1.36.26...v1.36.27) (2020-06-13)
 
 ### Bug Fixes
