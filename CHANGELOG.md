@@ -1,3 +1,9 @@
+## [1.36.27](https://github.com/zicodeng/ztopia-ui/compare/v1.36.26...v1.36.27) (2020-06-13)
+
+### Bug Fixes
+
+- make content size inherit ([f0182c7](https://github.com/zicodeng/ztopia-ui/commit/f0182c797951e73bcb84ffe632d0adb2e9dfff2d))
+
 ## [1.36.26](https://github.com/zicodeng/ztopia-ui/compare/v1.36.25...v1.36.26) (2020-06-10)
 
 ### Bug Fixes
