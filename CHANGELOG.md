@@ -1,3 +1,9 @@
+## [1.36.29](https://github.com/zicodeng/ztopia-ui/compare/v1.36.28...v1.36.29) (2020-06-13)
+
+### Bug Fixes
+
+- fix typing ([ef82d52](https://github.com/zicodeng/ztopia-ui/commit/ef82d5285bbc68f67d239640f125e7ddef895de5))
+
 ## [1.36.28](https://github.com/zicodeng/ztopia-ui/compare/v1.36.27...v1.36.28) (2020-06-13)
 
 ### Bug Fixes
