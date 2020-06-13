@@ -18,6 +18,15 @@ export type BlockTextEditorState = {
   isEmpty(): boolean;
 };
 
+type Heading =
+  | 'header-one'
+  | 'header-two'
+  | 'header-three'
+  | 'header-four'
+  | 'header-five'
+  | 'header-six'
+  | 'unstyled';
+
 export interface BlockTextEditorProps {
   /**
    * Default inner HTML string
@@ -32,15 +41,7 @@ export interface BlockTextEditorProps {
    * <@default=`['headings', 'separator', 'text-color', 'bold', 'italic', 'underline', 'strike-through', 'separator', 'list-ol', 'list-ul', 'blockquote', 'separator', 'link', 'separator', 'emoji', 'remove-styles', 'separator', 'fullscreen']`>
    */
   toolbarOptions?: ControlType[];
-  headings?: [
-
-      | 'header-one'
-      | 'header-two'
-      | 'header-three'
-      | 'header-four'
-      | 'header-five'
-      | 'header-six',
-  ];
+  headings?: Heading[];
   onChange?: (newValue: string) => void;
   onReady?: (editorState: BlockTextEditorState) => void;
 }
