@@ -213,7 +213,8 @@
         + pre,
         + blockquote,
         + ol,
-        + ul {
+        + ul,
+        + div {
           margin-top: $spacing-s;
         }
       }
