@@ -305,6 +305,11 @@
         outline-color: $blue;
       }
 
+      /* Progress Bar */
+      .bf-item-uploading-bar {
+        background-color: $color-success;
+      }
+
       /* Media Toolbar */
       > .bf-media-toolbar {
         background-color: $black-dark;
