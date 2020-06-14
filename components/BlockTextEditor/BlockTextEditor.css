@@ -1,3 +1,17 @@
+@keyframes fading {
+  0% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 0.1;
+  }
+}
+
 .ztopia-block-text-editor {
   /*===============================
   =            Toolbar            =
@@ -310,6 +324,7 @@
         position: absolute;
         cursor: wait;
         opacity: 0.1;
+        animation: fading 1.4s infinite;
       }
 
       &::before {
