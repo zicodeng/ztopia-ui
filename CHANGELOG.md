@@ -1,3 +1,10 @@
+## [1.36.35](https://github.com/zicodeng/ztopia-ui/compare/v1.36.34...v1.36.35) (2020-06-14)
+
+### Bug Fixes
+
+- add image placeholder ([964bd05](https://github.com/zicodeng/ztopia-ui/commit/964bd05796f860bba86b2c63dd6188b33eda4d87))
+- style hotfix ([c0bdc5c](https://github.com/zicodeng/ztopia-ui/commit/c0bdc5c612a06b487ce2410414b2db1b2f8b4e4f))
+
 ## [1.36.34](https://github.com/zicodeng/ztopia-ui/compare/v1.36.33...v1.36.34) (2020-06-13)
 
 ### Bug Fixes
