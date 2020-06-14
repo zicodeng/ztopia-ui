@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import React, { cloneElement,FC, memo } from 'react';
 import classNames from 'classnames';
 
 import { IconImage } from '../Icons';
@@ -79,7 +79,9 @@ export const Placeholder: FC<PlaceholderProps> = memo(
                   }}
                 />
               )),
-              randomWidthPlaceholder,
+              cloneElement(randomWidthPlaceholder, {
+                key: rows,
+              }),
             ]}
       </div>
     ) : (
