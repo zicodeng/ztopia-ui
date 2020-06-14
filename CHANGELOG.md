@@ -1,3 +1,9 @@
+## [1.36.37](https://github.com/zicodeng/ztopia-ui/compare/v1.36.36...v1.36.37) (2020-06-14)
+
+### Bug Fixes
+
+- adding fading animation to image placeholder ([d0f8b5d](https://github.com/zicodeng/ztopia-ui/commit/d0f8b5d0f5730254fbe97271f0132bf5655595de))
+
 ## [1.36.36](https://github.com/zicodeng/ztopia-ui/compare/v1.36.35...v1.36.36) (2020-06-14)
 
 ### Bug Fixes
