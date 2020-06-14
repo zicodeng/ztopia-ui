@@ -315,8 +315,8 @@
     }
 
     .bf-image {
-      width: 100%;
-      min-height: 300px;
+      min-width: 200px;
+      min-height: 200px;
 
       /* Image Placeholder */
       &::before,
@@ -355,11 +355,6 @@
             outline-color: $blue;
           }
         }
-      }
-
-      /* Progress Bar */
-      .bf-item-uploading-bar {
-        background-color: $color-success;
       }
 
       /* Media Toolbar */
@@ -592,6 +587,13 @@
 
       > i {
         font-size: 35px;
+      }
+    }
+
+    /* Progress Bar */
+    .bf-item-uploading {
+      .bf-item-uploading-bar {
+        background-color: $color-success;
       }
     }
   }
