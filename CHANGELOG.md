@@ -1,3 +1,9 @@
+## [1.36.39](https://github.com/zicodeng/ztopia-ui/compare/v1.36.38...v1.36.39) (2020-06-14)
+
+### Bug Fixes
+
+- fix unique key error ([ccaae40](https://github.com/zicodeng/ztopia-ui/commit/ccaae402bd383e076fe9a0139175f52b645ce4bb))
+
 ## [1.36.38](https://github.com/zicodeng/ztopia-ui/compare/v1.36.37...v1.36.38) (2020-06-14)
 
 ### Bug Fixes
