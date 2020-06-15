@@ -133,7 +133,11 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
     const handleChange = useCallback(
       newEditorState => {
         setEditorState(newEditorState);
-        if (onChange) onChange(newEditorState.toHTML());
+        if (onChange) {
+          const newContent = newEditorState.toHTML();
+          const isEmpty = newContent === '<p></p>';
+          onChange(isEmpty ? '' : newContent);
+        }
       },
       [onChange],
     );
