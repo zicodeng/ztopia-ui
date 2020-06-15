@@ -12,6 +12,7 @@ import './Textarea.css';
 export interface InnerTextareaProps {
   minRows?: number;
   maxRows?: number;
+  label?: string;
   error?: string;
   /**
    * <@internal>
@@ -20,8 +21,9 @@ export interface InnerTextareaProps {
 }
 
 export const InnerTextarea: FC<InnerTextareaProps> = memo(
-  ({ error, className, ...restProps }) => (
+  ({ label, error, className, ...restProps }) => (
     <div className={classNames(className, 'ztopia-textarea')}>
+      {label && <span className="ztopia-textarea__label">{label}</span>}
       <TextareaAutosize
         className={classNames('ztopia-textarea__input', {
           'has-error': Boolean(error),
