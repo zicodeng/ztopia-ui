@@ -1,3 +1,9 @@
+## [1.36.40](https://github.com/zicodeng/ztopia-ui/compare/v1.36.39...v1.36.40) (2020-06-15)
+
+### Bug Fixes
+
+- add label prop to Textarea ([468eb21](https://github.com/zicodeng/ztopia-ui/commit/468eb212c0291093094853fa5a57212176764cde))
+
 ## [1.36.39](https://github.com/zicodeng/ztopia-ui/compare/v1.36.38...v1.36.39) (2020-06-14)
 
 ### Bug Fixes
