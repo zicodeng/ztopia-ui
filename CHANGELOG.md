@@ -1,3 +1,9 @@
+## [1.36.41](https://github.com/zicodeng/ztopia-ui/compare/v1.36.40...v1.36.41) (2020-06-15)
+
+### Bug Fixes
+
+- fix BlockTextEditor empty content ([97b37b1](https://github.com/zicodeng/ztopia-ui/commit/97b37b1cf7fe0e02a00b5a31ccaf8d91c107d3dd))
+
 ## [1.36.40](https://github.com/zicodeng/ztopia-ui/compare/v1.36.39...v1.36.40) (2020-06-15)
 
 ### Bug Fixes
