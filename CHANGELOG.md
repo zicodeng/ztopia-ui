@@ -1,3 +1,9 @@
+## [1.36.44](https://github.com/zicodeng/ztopia-ui/compare/v1.36.43...v1.36.44) (2020-06-16)
+
+### Bug Fixes
+
+- add HTML support for TruncatedText ([eab3f62](https://github.com/zicodeng/ztopia-ui/commit/eab3f62cd48c89a028da0dc712923444ccd014ce))
+
 ## [1.36.43](https://github.com/zicodeng/ztopia-ui/compare/v1.36.42...v1.36.43) (2020-06-16)
 
 ### Bug Fixes
