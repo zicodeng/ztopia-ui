@@ -1,13 +1,19 @@
-import React, { cloneElement, FC, useCallback, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import LinesEllipsis from 'react-lines-ellipsis';
+import HTMLEllipsis from 'react-lines-ellipsis/lib/html';
 import responsiveHOC from 'react-lines-ellipsis/lib/responsiveHOC';
 import classNames from 'classnames';
 
 import './TruncatedText.css';
 
-const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis);
+const ResponsiveLinesEllipsis = responsiveHOC()(LinesEllipsis);
+const ResponsiveHTMLEllipsis = responsiveHOC()(HTMLEllipsis);
 
 export interface TruncatedTextProps {
+  /**
+   * <@default=`false`>
+   */
+  isHTML?: boolean;
   /**
    * <@default=`false`>
    */
@@ -17,59 +23,84 @@ export interface TruncatedTextProps {
    */
   maxLine?: number;
   /**
-   * <@default=`... read more`>
+   * <@default=`''`>
    */
-  readMoreIndicator?: JSX.Element | string;
+  ellipsis?: string;
   /**
    * HTML element the truncated text should be rendered as
    *
-   * <@default=`'p'`>
+   * <@default=`'p' for normal text or 'div' for HTML`>
    */
   element?: string;
   className?: string;
+  children: string;
 }
 
-export const TruncatedText: FC<TruncatedTextProps> = ({
-  isExpandable = false,
-  maxLine = 2,
-  readMoreIndicator = '... read more',
-  element = 'p',
-  className,
-  children,
-}) => {
-  const [isTruncated, setIsTruncated] = useState<boolean>(true);
+export const TruncatedText = memo<TruncatedTextProps>(
+  ({
+    isHTML = false,
+    isExpandable = false,
+    maxLine = 2,
+    ellipsis = '',
+    element,
+    className,
+    children,
+  }) => {
+    const [isTruncated, setIsTruncated] = useState<boolean>(true);
 
-  const handleReadMoreIndicatorClick = useCallback(() => {
-    setIsTruncated(false);
-  }, []);
+    const handleClick = useCallback(() => {
+      setIsTruncated(false);
+    }, []);
 
-  return isTruncated ? (
-    <ResponsiveEllipsis
-      className={classNames(className, 'ztopia-truncated-text')}
-      text={children}
-      maxLine={maxLine}
-      ellipsis={
-        isExpandable
-          ? cloneElement(
-              typeof readMoreIndicator === 'string' ? (
-                <span>{readMoreIndicator}</span>
-              ) : (
-                readMoreIndicator
-              ),
-              {
-                onClick: handleReadMoreIndicatorClick,
-                className: classNames(
-                  (readMoreIndicator as JSX.Element).props &&
-                    (readMoreIndicator as JSX.Element).props.className,
-                  'ztopia-truncated-text__read-more-indicator',
-                ),
-              },
-            )
-          : undefined
+    if (isTruncated) {
+      const sharedProps: any = {
+        maxLine,
+        className: classNames(className, 'ztopia-truncated-text', {
+          'is-expandable': isExpandable,
+        }),
+      };
+      if (isExpandable) {
+        sharedProps.onClick = handleClick;
+
+        const ellipsisClassName = 'ztopia-truncated-text__ellipsis';
+
+        if (isHTML) {
+          sharedProps.ellipsisHTML = `... <span class=${ellipsisClassName}>${ellipsis}</span>`;
+        } else {
+          sharedProps.ellipsis = (
+            <>
+              ... <span className={ellipsisClassName}>{ellipsis}</span>
+            </>
+          );
+        }
       }
-      component={element}
-    />
-  ) : (
-    <p className={className}>{children}</p>
-  );
-};
+
+      if (isHTML) {
+        return (
+          <ResponsiveHTMLEllipsis
+            unsafeHTML={children}
+            component={element || 'div'}
+            {...sharedProps}
+          />
+        );
+      } else {
+        return (
+          <ResponsiveLinesEllipsis
+            text={children}
+            component={element || 'p'}
+            {...sharedProps}
+          />
+        );
+      }
+    }
+
+    return isHTML ? (
+      <div
+        className={className}
+        dangerouslySetInnerHTML={{ __html: children }}
+      />
+    ) : (
+      <p className={className}>{children}</p>
+    );
+  },
+);

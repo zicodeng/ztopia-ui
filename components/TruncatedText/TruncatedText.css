@@ -1,5 +1,15 @@
 .ztopia-truncated-text {
-  &__read-more-indicator {
+  &.is-expandable {
     cursor: pointer;
+
+    .ztopia-truncated-text__ellipsis {
+      transition: $transition-fast;
+    }
+
+    &:hover {
+      .ztopia-truncated-text__ellipsis {
+        color: $color-success;
+      }
+    }
   }
 }
