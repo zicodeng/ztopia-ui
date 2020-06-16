@@ -10,6 +10,10 @@ import classNames from 'classnames';
 import './Textarea.css';
 
 export interface InnerTextareaProps {
+  /**
+   * <@default=`false`>
+   */
+  isDisabled?: boolean;
   minRows?: number;
   maxRows?: number;
   label?: string;
@@ -21,12 +25,14 @@ export interface InnerTextareaProps {
 }
 
 export const InnerTextarea: FC<InnerTextareaProps> = memo(
-  ({ label, error, className, ...restProps }) => (
+  ({ isDisabled = false, label, error, className, ...restProps }) => (
     <div className={classNames(className, 'ztopia-textarea')}>
       {label && <span className="ztopia-textarea__label">{label}</span>}
       <TextareaAutosize
+        disabled={isDisabled}
         className={classNames('ztopia-textarea__input', {
           'has-error': Boolean(error),
+          'is-disabled': isDisabled,
         })}
         {...restProps}
       />

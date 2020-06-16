@@ -22,6 +22,10 @@
     &.has-error {
       border-color: $color-danger;
     }
+
+    &.is-disabled {
+      opacity: 0.4;
+    }
   }
 
   &__error {

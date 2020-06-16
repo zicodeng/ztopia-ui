@@ -5,6 +5,7 @@ route: /components/textarea
 ---
 
 import { Props, Playground } from 'docz';
+import faker from 'faker';
 
 import { InnerTextarea, Textarea } from './';
 
@@ -28,6 +29,12 @@ import { InnerTextarea, Textarea } from './';
 
 <Playground>
   <Textarea label="Fun Fact" error="Input cannot be empty" />
+</Playground>
+
+### Disabled
+
+<Playground>
+  <Textarea isDisabled value={faker.lorem.paragraph(5)} />
 </Playground>
 
 ## API
