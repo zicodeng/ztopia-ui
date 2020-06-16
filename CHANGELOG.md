@@ -1,3 +1,9 @@
+## [1.36.43](https://github.com/zicodeng/ztopia-ui/compare/v1.36.42...v1.36.43) (2020-06-16)
+
+### Bug Fixes
+
+- remove debug code ([305697e](https://github.com/zicodeng/ztopia-ui/commit/305697ea62fdbd8ed1db3abad0600dd4db1d1f15))
+
 ## [1.36.42](https://github.com/zicodeng/ztopia-ui/compare/v1.36.41...v1.36.42) (2020-06-16)
 
 ### Bug Fixes
