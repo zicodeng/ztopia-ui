@@ -142,14 +142,13 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
       [onChange],
     );
 
-    const isHeightAuto =
-      !contentStyle || (!contentStyle.height || contentStyle.height === 'auto');
-
     return (
       <BraftEditor
         placeholder={placeholder}
         className={classNames(className, 'ztopia-block-text-editor', {
-          'is-height-auto': isHeightAuto,
+          'is-height-auto':
+            !contentStyle ||
+            (!contentStyle.height || contentStyle.height === 'auto'),
         })}
         headings={headings}
         controls={toolbarOptions}
@@ -157,11 +156,7 @@ export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
         onChange={handleChange}
         imageControls={imageControls}
         imageResizable={false}
-        // contentStyle={contentStyle}
-        contentStyle={{
-          height: 'auto',
-          minHeight: 200,
-        }}
+        contentStyle={contentStyle}
         media={{
           externals: {},
           accepts: {
