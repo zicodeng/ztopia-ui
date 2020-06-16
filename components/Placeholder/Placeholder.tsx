@@ -1,4 +1,4 @@
-import React, { cloneElement,FC, memo } from 'react';
+import React, { cloneElement, FC, memo } from 'react';
 import classNames from 'classnames';
 
 import { IconImage } from '../Icons';
