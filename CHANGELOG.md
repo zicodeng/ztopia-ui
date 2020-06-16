@@ -1,3 +1,9 @@
+## [1.36.45](https://github.com/zicodeng/ztopia-ui/compare/v1.36.44...v1.36.45) (2020-06-16)
+
+### Bug Fixes
+
+- add isDisabled prop to Textarea ([7fb3c96](https://github.com/zicodeng/ztopia-ui/commit/7fb3c963e289b026ed248b19ead143ee8027e9d4))
+
 ## [1.36.44](https://github.com/zicodeng/ztopia-ui/compare/v1.36.43...v1.36.44) (2020-06-16)
 
 ### Bug Fixes
