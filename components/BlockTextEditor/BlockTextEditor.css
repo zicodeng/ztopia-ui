@@ -13,6 +13,8 @@
 }
 
 .ztopia-block-text-editor {
+  border: 1px solid red;
+
   /*===============================
   =            Toolbar            =
   ===============================*/
@@ -381,6 +383,18 @@
         &[data-float='left'] [data-float='left'],
         &[data-float='right'] [data-float='right'] {
           color: $blue;
+        }
+      }
+    }
+  }
+
+  &.is-height-auto {
+    .bf-content {
+      padding-bottom: 0;
+
+      .public-DraftEditor-content {
+        > div {
+          padding-bottom: 0;
         }
       }
     }
