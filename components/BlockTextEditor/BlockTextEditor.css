@@ -559,16 +559,25 @@
     .bf-item {
       cursor: pointer;
 
+      /* Image Mask */
+      &::after {
+        transition: $transition-fast;
+      }
+
+      &:hover {
+        &::after {
+          background-color: rgba(94, 156, 234, 0.3);
+        }
+      }
+
       &.active {
         /* Check Mark */
         &::before {
           font-size: 30px;
         }
 
-        /* Image Mask */
         &::after {
           background-color: rgba(94, 156, 234, 0.3);
-          transition: $transition-fast;
         }
 
         &:hover {
