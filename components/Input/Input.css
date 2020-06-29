@@ -139,7 +139,7 @@
     appearance: none;
 
     &--material {
-      &.is-active + .ztopia-input__bar {
+      &:focus + .ztopia-input__bar {
         &::before,
         &::after {
           width: 50%;
