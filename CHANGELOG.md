@@ -1,3 +1,9 @@
+## [1.36.47](https://github.com/zicodeng/ztopia-ui/compare/v1.36.46...v1.36.47) (2020-06-29)
+
+### Bug Fixes
+
+- add Input delimiter prop ([27a2d91](https://github.com/zicodeng/ztopia-ui/commit/27a2d91ee0ee9dc3f220e3217ff03ffc3881eefe))
+
 ## [1.36.46](https://github.com/zicodeng/ztopia-ui/compare/v1.36.45...v1.36.46) (2020-06-17)
 
 ### Bug Fixes
