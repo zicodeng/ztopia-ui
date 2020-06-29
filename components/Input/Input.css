@@ -74,20 +74,12 @@
     position: relative;
     display: flex;
     align-items: center;
-  }
-
-  &__input {
-    width: 100%;
-    height: 30px;
-    padding: 0;
-    font-size: $font-size-m;
-    background-color: transparent;
-    border: 0;
+    min-height: 30px;
     outline: 0;
-    appearance: none;
+    cursor: text;
 
     &--rect {
-      padding: 0 $spacing-xs;
+      padding: 0 $spacing-s;
       border: 1px solid $black-dark;
 
       &.has-error {
@@ -95,11 +87,11 @@
       }
 
       &.has-prefix-icon {
-        padding-left: $spacing-xl;
+        padding-left: $spacing-xxl;
       }
 
       &.has-suffix-icon {
-        padding-right: $spacing-xl;
+        padding-right: $spacing-xxl;
       }
     }
 
@@ -122,18 +114,6 @@
     }
 
     &--material {
-      &:focus + .ztopia-input__bar {
-        &::before,
-        &::after {
-          width: 50%;
-        }
-      }
-
-      &:disabled + .ztopia-input__bar {
-        cursor: not-allowed;
-        opacity: 0.4;
-      }
-
       &.has-prefix-icon {
         padding-left: $spacing-l;
       }
@@ -143,9 +123,48 @@
       }
     }
 
-    &:disabled {
+    &.is-disabled {
       cursor: not-allowed;
       opacity: 0.4;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0;
+    font-size: $font-size-m;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    appearance: none;
+
+    &--material {
+      &.is-active + .ztopia-input__bar {
+        &::before,
+        &::after {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  &__tags {
+    display: flex;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__tag {
+    padding: $spacing-xxs $spacing-s;
+    color: $white-light;
+    font-size: $font-size-xs;
+    line-height: normal;
+    background-color: $black-dark;
+    border-radius: $border-radius-s;
+
+    &:not(:last-of-type) {
+      margin-right: $spacing-s;
     }
   }
 

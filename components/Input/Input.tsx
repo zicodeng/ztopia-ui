@@ -10,6 +10,7 @@ import React, {
   useCallback,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from 'react';
 import classNames from 'classnames';
@@ -30,6 +31,10 @@ export interface InputProps {
   label?: string;
   placeholder?: string;
   error?: string;
+  /**
+   * If defined, value will be by split and shown as tags on input blur
+   */
+  delimiter?: string;
   className?: string;
   /**
    * <@default=`'rect'`>
@@ -54,6 +59,7 @@ export const Input = memo(
         label,
         placeholder,
         error,
+        delimiter,
         className,
         variant = 'rect',
         prefixIcon,
@@ -64,7 +70,10 @@ export const Input = memo(
       },
       ref,
     ) => {
-      const shouldBeActive = Boolean(
+      const inputRef = useRef<HTMLInputElement>(null);
+      const inputContainerRef = useRef<HTMLDivElement>(null);
+
+      const isDefaultActive = Boolean(
         placeholder ||
           typeof value === 'number' ||
           value ||
@@ -72,19 +81,40 @@ export const Input = memo(
           defaultValue,
       );
 
-      const [isActive, setIsActive] = useState(shouldBeActive);
+      const [isActive, setIsActive] = useState(isDefaultActive);
+      const [isInputContainerFocused, setIsInputContainerFocused] = useState(
+        false,
+      );
 
-      useEffect(() => {
-        setIsActive(shouldBeActive);
-      }, [shouldBeActive]);
-
-      const handleFocusInput = useCallback(() => {
-        setIsActive(true);
+      const handleInputContainerClick = useCallback(() => {
+        const inputEl = inputRef.current;
+        if (inputEl) inputEl.focus();
       }, []);
 
-      const handleBlurInput = useCallback(() => {
-        setIsActive(shouldBeActive);
-      }, [shouldBeActive]);
+      const handleWindowClick = useCallback(
+        e => {
+          const inputContainerEl = inputContainerRef.current;
+          const isFocused = Boolean(
+            inputContainerEl && inputContainerEl.contains(e.target),
+          );
+
+          setIsInputContainerFocused(isFocused);
+          setIsActive(isFocused || isDefaultActive);
+        },
+        [isDefaultActive],
+      );
+
+      useEffect(() => {
+        window.addEventListener('mousedown', handleWindowClick, false);
+
+        return () => {
+          window.removeEventListener('mousedown', handleWindowClick, false);
+        };
+      }, [handleWindowClick]);
+
+      useEffect(() => {
+        setIsActive(isDefaultActive);
+      }, [isDefaultActive]);
 
       const memoizedPrefixIcon = useMemo(() => {
         const prefixIconClassName = classNames(
@@ -149,31 +179,54 @@ export const Input = memo(
               {label}
             </label>
           )}
-          <div className="ztopia-input__input-container">
+          <div
+            tabIndex={-1}
+            ref={inputContainerRef}
+            className={classNames(
+              'ztopia-input__input-container',
+              `ztopia-input__input-container--${variant}`,
+              {
+                'has-error': Boolean(error),
+                'has-prefix-icon': Boolean(prefixIcon),
+                'has-suffix-icon': Boolean(suffixIcon),
+                'is-disabled': isDisabled,
+              },
+            )}
+            onClick={handleInputContainerClick}
+          >
             {memoizedPrefixIcon && memoizedPrefixIcon}
-            <input
-              {...restProps}
-              autoComplete="on"
-              ref={ref}
-              name={name}
-              disabled={isDisabled}
-              type={type}
-              value={value}
-              defaultValue={defaultValue}
-              placeholder={placeholder}
-              className={classNames(
-                'ztopia-input__input',
-                `ztopia-input__input--${variant}`,
-                {
-                  'has-error': Boolean(error),
-                  'has-prefix-icon': Boolean(prefixIcon),
-                  'has-suffix-icon': Boolean(suffixIcon),
-                },
-              )}
-              onChange={onChange}
-              onFocus={handleFocusInput}
-              onBlur={handleBlurInput}
-            />
+            {delimiter &&
+            value &&
+            typeof value === 'string' &&
+            !isInputContainerFocused ? (
+              <ul className={classNames('ztopia-input__tags')}>
+                {value.split(delimiter).map((tag, i) => (
+                  <li key={i} className={classNames('ztopia-input__tag')}>
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <input
+                {...restProps}
+                autoComplete="on"
+                ref={inputRef || ref}
+                name={name}
+                disabled={isDisabled}
+                type={type}
+                value={value}
+                defaultValue={defaultValue}
+                placeholder={placeholder}
+                className={classNames(
+                  'ztopia-input__input',
+                  `ztopia-input__input--${variant}`,
+                  {
+                    'is-active': isActive,
+                  },
+                )}
+                onChange={onChange}
+              />
+            )}
             {variant === 'material' && (
               <div
                 className={classNames('ztopia-input__bar', {

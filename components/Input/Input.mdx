@@ -95,6 +95,18 @@ import { InputDemo } from './InputDemo';
   </Container>
 </Playground>
 
+### Delimiter
+
+<Playground>
+  <Container>
+    <InputDemo defaultValue="apple, banana, strawberry">
+      {({ value, onChange }) => (
+        <Input delimiter="," value={value} onChange={onChange} />
+      )}
+    </InputDemo>
+  </Container>
+</Playground>
+
 ## API
 
 <Props of={Input} />
