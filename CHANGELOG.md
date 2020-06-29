@@ -1,3 +1,9 @@
+## [1.36.48](https://github.com/zicodeng/ztopia-ui/compare/v1.36.47...v1.36.48) (2020-06-29)
+
+### Bug Fixes
+
+- fix material input focus style ([6672ba8](https://github.com/zicodeng/ztopia-ui/commit/6672ba8d9adff93bc2781da1f584df8bfc0ceed6))
+
 ## [1.36.47](https://github.com/zicodeng/ztopia-ui/compare/v1.36.46...v1.36.47) (2020-06-29)
 
 ### Bug Fixes
