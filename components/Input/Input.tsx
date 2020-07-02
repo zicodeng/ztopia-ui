@@ -218,7 +218,10 @@ export const Input = memo(
                 value={value}
                 defaultValue={defaultValue}
                 placeholder={placeholder}
-                className="ztopia-input__input"
+                className={classNames(
+                  'ztopia-input__input',
+                  `ztopia-input__input--${variant}`,
+                )}
                 onChange={onChange}
               />
             )}
