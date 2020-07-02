@@ -1,3 +1,9 @@
+## [1.36.53](https://github.com/zicodeng/ztopia-ui/compare/v1.36.52...v1.36.53) (2020-07-02)
+
+### Bug Fixes
+
+- fix material bar active state when disabled ([55ef71d](https://github.com/zicodeng/ztopia-ui/commit/55ef71d1e63f6a2f3069886abe5a600ccee3adb5))
+
 ## [1.36.52](https://github.com/zicodeng/ztopia-ui/compare/v1.36.51...v1.36.52) (2020-07-02)
 
 ### Bug Fixes
