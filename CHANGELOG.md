@@ -1,3 +1,9 @@
+## [1.36.54](https://github.com/zicodeng/ztopia-ui/compare/v1.36.53...v1.36.54) (2020-07-02)
+
+### Bug Fixes
+
+- fix Input disabled state ([03abfbd](https://github.com/zicodeng/ztopia-ui/commit/03abfbdca1be4c8c0c2fb47ffd8ab240f519254c))
+
 ## [1.36.53](https://github.com/zicodeng/ztopia-ui/compare/v1.36.52...v1.36.53) (2020-07-02)
 
 ### Bug Fixes
