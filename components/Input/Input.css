@@ -5,7 +5,7 @@
 
   &--material {
     height: 40px;
-    padding-top: $spacing-s;
+    padding-top: 10px;
   }
 
   &__label {
@@ -18,7 +18,7 @@
 
     &--material {
       position: absolute;
-      top: 36%;
+      top: 42%;
       transition: $transition-fast;
       pointer-events: none;
 
