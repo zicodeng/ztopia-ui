@@ -75,7 +75,6 @@
     display: flex;
     align-items: center;
     min-height: 30px;
-    font-size: $font-size-m;
     outline: 0;
     cursor: text;
 
@@ -142,6 +141,7 @@
   &__input {
     width: 100%;
     padding: 0;
+    font-size: $font-size-m;
     background-color: transparent;
     border: 0;
     outline: 0;
