@@ -122,7 +122,7 @@
         padding-right: $spacing-l;
       }
 
-      &.is-focused {
+      &.is-focused:not(.is-disabled) {
         > .ztopia-input__bar {
           &::before,
           &::after {
