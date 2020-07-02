@@ -93,6 +93,8 @@ export const Input = memo(
 
       const handleWindowClick = useCallback(
         e => {
+          if (isDisabled) return;
+
           const inputContainerEl = inputContainerRef.current;
           const isFocused = Boolean(
             inputContainerEl && inputContainerEl.contains(e.target),
@@ -101,7 +103,7 @@ export const Input = memo(
           setIsInputContainerFocused(isFocused);
           setIsActive(isFocused || isDefaultActive);
         },
-        [isDefaultActive],
+        [isDefaultActive, isDisabled],
       );
 
       useEffect(() => {
