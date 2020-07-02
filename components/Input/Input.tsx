@@ -190,6 +190,7 @@ export const Input = memo(
                 'has-prefix-icon': Boolean(prefixIcon),
                 'has-suffix-icon': Boolean(suffixIcon),
                 'is-disabled': isDisabled,
+                'is-focused': isInputContainerFocused,
               },
             )}
             onClick={handleInputContainerClick}
@@ -217,13 +218,7 @@ export const Input = memo(
                 value={value}
                 defaultValue={defaultValue}
                 placeholder={placeholder}
-                className={classNames(
-                  'ztopia-input__input',
-                  `ztopia-input__input--${variant}`,
-                  {
-                    'is-active': isActive,
-                  },
-                )}
+                className="ztopia-input__input"
                 onChange={onChange}
               />
             )}
