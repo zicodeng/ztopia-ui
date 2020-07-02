@@ -1,3 +1,9 @@
+## [1.36.49](https://github.com/zicodeng/ztopia-ui/compare/v1.36.48...v1.36.49) (2020-07-02)
+
+### Bug Fixes
+
+- style hotfix ([2f762de](https://github.com/zicodeng/ztopia-ui/commit/2f762de57c831e333ebf0dcac0e6994ffce25f5d))
+
 ## [1.36.48](https://github.com/zicodeng/ztopia-ui/compare/v1.36.47...v1.36.48) (2020-06-29)
 
 ### Bug Fixes
