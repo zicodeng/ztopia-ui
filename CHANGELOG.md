@@ -1,3 +1,9 @@
+## [1.36.52](https://github.com/zicodeng/ztopia-ui/compare/v1.36.51...v1.36.52) (2020-07-02)
+
+### Bug Fixes
+
+- add variant to input className ([073b8b5](https://github.com/zicodeng/ztopia-ui/commit/073b8b53ce92e8c66b553ed6cf42e8bfe9353843))
+
 ## [1.36.51](https://github.com/zicodeng/ztopia-ui/compare/v1.36.50...v1.36.51) (2020-07-02)
 
 ### Bug Fixes
