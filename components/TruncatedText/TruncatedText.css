@@ -15,7 +15,7 @@
       /* Create the ... */
       &::before {
         position: absolute;
-        right: 1em;
+        right: 0;
         bottom: 0;
         content: '...';
       }
@@ -23,7 +23,7 @@
       /* Hide ... if we have text, which is less than or equal to max lines */
       &::after {
         position: absolute;
-        right: 1em;
+        right: 0;
         width: 1em;
         height: 1em;
         margin-top: 0.2em;
