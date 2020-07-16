@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { createElement,memo, useCallback, useState } from 'react';
 import LinesEllipsis from 'react-lines-ellipsis';
 import HTMLEllipsis from 'react-lines-ellipsis/lib/html';
 import responsiveHOC from 'react-lines-ellipsis/lib/responsiveHOC';
@@ -105,18 +105,30 @@ export const TruncatedText = memo<TruncatedTextProps>(
         );
       } else {
         if (isCSSTruncation) {
-          return (
-            <p
-              className={classNames(sharedProps.className, 'is-css-truncation')}
-              style={{
+          const isSingleLine = maxLine === 1;
+          const style = isSingleLine
+            ? {}
+            : {
                 lineHeight: cssTruncationLineHeight + cssTruncationUnit,
                 maxHeight:
                   maxLine * cssTruncationLineHeight + cssTruncationUnit,
-              }}
-              onClick={sharedProps.onClick}
-            >
-              {children}
-            </p>
+              };
+
+          return createElement(
+            element || 'p',
+            {
+              className: classNames(
+                sharedProps.className,
+                'is-css-truncation',
+                {
+                  'is-single-line': maxLine === 1,
+                  'is-multi-line': maxLine > 1,
+                },
+              ),
+              style,
+              onClick: sharedProps.onClick,
+            },
+            children,
           );
         } else {
           return (
@@ -136,7 +148,13 @@ export const TruncatedText = memo<TruncatedTextProps>(
         dangerouslySetInnerHTML={{ __html: children }}
       />
     ) : (
-      <p className={className}>{children}</p>
+      createElement(
+        element || 'p',
+        {
+          className,
+        },
+        children,
+      )
     );
   },
 );
