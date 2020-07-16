@@ -1,3 +1,9 @@
+## [1.36.57](https://github.com/zicodeng/ztopia-ui/compare/v1.36.56...v1.36.57) (2020-07-16)
+
+### Bug Fixes
+
+- use text-overflow for single line truncation ([9a24e4b](https://github.com/zicodeng/ztopia-ui/commit/9a24e4bb28f6fad70c4279736d42dc24d6b894f1))
+
 ## [1.36.56](https://github.com/zicodeng/ztopia-ui/compare/v1.36.55...v1.36.56) (2020-07-16)
 
 ### Bug Fixes
