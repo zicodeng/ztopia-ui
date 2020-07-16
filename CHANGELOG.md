@@ -1,3 +1,9 @@
+## [1.36.56](https://github.com/zicodeng/ztopia-ui/compare/v1.36.55...v1.36.56) (2020-07-16)
+
+### Bug Fixes
+
+- support pure css truncation ([65bf015](https://github.com/zicodeng/ztopia-ui/commit/65bf015b070c777a80caa9f73b72c9e6b3b8c6b5))
+
 ## [1.36.55](https://github.com/zicodeng/ztopia-ui/compare/v1.36.54...v1.36.55) (2020-07-02)
 
 ### Bug Fixes
