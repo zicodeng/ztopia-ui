@@ -11,6 +11,13 @@ const ResponsiveHTMLEllipsis = responsiveHOC()(HTMLEllipsis);
 
 export interface TruncatedTextProps {
   /**
+   * Use pure CSS for truncation. This has better rendering performance
+   * but it is hacky in nature. It does not work with HTML content
+   *
+   * <@default=`false`>
+   */
+  isCSSTruncation?: boolean;
+  /**
    * <@default=`false`>
    */
   isHTML?: boolean;
@@ -22,6 +29,14 @@ export interface TruncatedTextProps {
    * <@default=`2`>
    */
   maxLine?: number;
+  /**
+   * <@default=`1.2`>
+   */
+  cssTruncationLineHeight?: number;
+  /**
+   * <@default=`em`>
+   */
+  cssTruncationUnit?: 'em' | 'rem';
   /**
    * <@default=`''`>
    */
@@ -38,9 +53,12 @@ export interface TruncatedTextProps {
 
 export const TruncatedText = memo<TruncatedTextProps>(
   ({
+    isCSSTruncation = false,
     isHTML = false,
     isExpandable = false,
     maxLine = 2,
+    cssTruncationLineHeight = 1.2,
+    cssTruncationUnit = 'em',
     ellipsis = '',
     element,
     className,
@@ -64,14 +82,16 @@ export const TruncatedText = memo<TruncatedTextProps>(
 
         const ellipsisClassName = 'ztopia-truncated-text__ellipsis';
 
-        if (isHTML) {
-          sharedProps.ellipsisHTML = `... <span class=${ellipsisClassName}>${ellipsis}</span>`;
-        } else {
-          sharedProps.ellipsis = (
-            <>
-              ... <span className={ellipsisClassName}>{ellipsis}</span>
-            </>
-          );
+        if (!isCSSTruncation) {
+          if (isHTML) {
+            sharedProps.ellipsisHTML = `... <span class=${ellipsisClassName}>${ellipsis}</span>`;
+          } else {
+            sharedProps.ellipsis = (
+              <>
+                ... <span className={ellipsisClassName}>{ellipsis}</span>
+              </>
+            );
+          }
         }
       }
 
@@ -84,13 +104,29 @@ export const TruncatedText = memo<TruncatedTextProps>(
           />
         );
       } else {
-        return (
-          <ResponsiveLinesEllipsis
-            text={children}
-            component={element || 'p'}
-            {...sharedProps}
-          />
-        );
+        if (isCSSTruncation) {
+          return (
+            <p
+              className={classNames(sharedProps.className, 'is-css-truncation')}
+              style={{
+                lineHeight: cssTruncationLineHeight + cssTruncationUnit,
+                maxHeight:
+                  maxLine * cssTruncationLineHeight + cssTruncationUnit,
+              }}
+              onClick={sharedProps.onClick}
+            >
+              {children}
+            </p>
+          );
+        } else {
+          return (
+            <ResponsiveLinesEllipsis
+              text={children}
+              component={element || 'p'}
+              {...sharedProps}
+            />
+          );
+        }
       }
     }
 

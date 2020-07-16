@@ -1,4 +1,31 @@
 .ztopia-truncated-text {
+  &.is-css-truncation {
+    position: relative;
+    margin-right: -1em;
+    padding-right: 1em;
+    overflow: hidden;
+    text-align: justify;
+
+    /* Create the ... */
+    &::before {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      content: '...';
+    }
+
+    /* Hide ... if we have text, which is less than or equal to max lines */
+    &::after {
+      position: absolute;
+      right: 0;
+      width: 1em;
+      height: 1em;
+      margin-top: 0.2em;
+      background: $white-light;
+      content: '';
+    }
+  }
+
   &.is-expandable {
     cursor: pointer;
 
