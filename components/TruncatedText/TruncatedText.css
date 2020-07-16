@@ -11,12 +11,11 @@
       margin-right: -1em;
       padding-right: 1em;
       overflow: hidden;
-      text-align: justify;
 
       /* Create the ... */
       &::before {
         position: absolute;
-        right: 0;
+        right: 1em;
         bottom: 0;
         content: '...';
       }
@@ -24,7 +23,7 @@
       /* Hide ... if we have text, which is less than or equal to max lines */
       &::after {
         position: absolute;
-        right: 0;
+        right: 1em;
         width: 1em;
         height: 1em;
         margin-top: 0.2em;
