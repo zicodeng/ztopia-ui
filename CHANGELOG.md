@@ -1,3 +1,10 @@
+## [1.36.60](https://github.com/zicodeng/ztopia-ui/compare/v1.36.59...v1.36.60) (2020-07-20)
+
+### Bug Fixes
+
+- add IconBell ([63f3f4d](https://github.com/zicodeng/ztopia-ui/commit/63f3f4d1a2ef25d2a170cd5dae909712e159e623))
+- use useWindowSize from react-use ([9efb914](https://github.com/zicodeng/ztopia-ui/commit/9efb9144d10d76ade5f2500be171380bcdb2d51a))
+
 ## [1.36.59](https://github.com/zicodeng/ztopia-ui/compare/v1.36.58...v1.36.59) (2020-07-16)
 
 ### Bug Fixes
