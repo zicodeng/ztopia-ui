@@ -64,10 +64,6 @@
         background-color: $color-danger;
       }
     }
-
-    &.is-active {
-      transform: scale(1);
-    }
   }
 
   &__input-container {
@@ -146,6 +142,15 @@
     border: 0;
     outline: 0;
     appearance: none;
+
+    /* &:focus:not(.is-disabled) {
+      + .ztopia-input__bar {
+        &::before,
+        &::after {
+          width: 50%;
+        }
+      }
+    } */
   }
 
   &__tags {

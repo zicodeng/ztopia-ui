@@ -91,6 +91,16 @@ export const Input = memo(
         if (inputEl) inputEl.focus();
       }, []);
 
+      const handleInputFocus = useCallback(() => {
+        setIsInputContainerFocused(true);
+        setIsActive(true);
+      }, []);
+
+      const handleInputBlur = useCallback(() => {
+        setIsInputContainerFocused(false);
+        setIsActive(isDefaultActive);
+      }, [isDefaultActive]);
+
       const handleWindowClick = useCallback(
         e => {
           if (isDisabled) return;
@@ -225,6 +235,8 @@ export const Input = memo(
                   `ztopia-input__input--${variant}`,
                 )}
                 onChange={onChange}
+                onFocus={handleInputFocus}
+                onBlur={handleInputBlur}
               />
             )}
             {variant === 'material' && (
