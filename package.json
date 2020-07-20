@@ -64,7 +64,6 @@
   },
   "dependencies": {
     "@rehooks/component-size": "^1.0.3",
-    "@rehooks/window-size": "^1.0.2",
     "braft-editor": "^2.3.8",
     "camelcase": "^5.3.1",
     "classnames": "^2.2.6",
