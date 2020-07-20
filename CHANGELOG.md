@@ -1,3 +1,9 @@
+## [1.36.61](https://github.com/zicodeng/ztopia-ui/compare/v1.36.60...v1.36.61) (2020-07-20)
+
+### Bug Fixes
+
+- fix input active state when focused ([6212b89](https://github.com/zicodeng/ztopia-ui/commit/6212b89ca61c5ae568fa1480779cc470d816849b))
+
 ## [1.36.60](https://github.com/zicodeng/ztopia-ui/compare/v1.36.59...v1.36.60) (2020-07-20)
 
 ### Bug Fixes
