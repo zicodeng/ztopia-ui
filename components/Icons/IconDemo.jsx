@@ -5,3 +5,8 @@ export const IconDemo = memo(({ children }) => {
   const onClick = () => setIsActive(!isActive);
   return children({ isActive, onClick });
 });
+
+export const IconBellDemo = memo(({ children }) => {
+  const [count, setCount] = useState(0);
+  return children({ count, setCount });
+});

@@ -2,6 +2,7 @@ export * from './Icon';
 
 // Special icons
 export * from './IconHamburger';
+export * from './IconBell';
 
 // Regular icons
 export * from './IconCheckmark';

@@ -7,11 +7,14 @@ route: /components/icons
 import { Props, Playground } from 'docz';
 import { Container } from 'docz-theme-ztopia/helpers';
 
-import { IconDemo } from './IconDemo';
+import { Button } from '../Button';
+
+import { IconDemo, IconBellDemo } from './IconDemo';
 import {
   Icon,
   InnerIcon,
   IconHamburger,
+  IconBell,
   IconCheckmark,
   IconChevronDown,
   IconChevronLeft,
@@ -34,7 +37,7 @@ import {
 
 # Icon
 
-## SVG
+## Basic SVG Icons
 
 ### Size
 
@@ -97,7 +100,9 @@ import {
 
 [Font Awesome](https://fontawesome.com)
 
-## IconHamburger
+## Special Icons
+
+### IconHamburger
 
 <Playground>
   <Container>
@@ -119,6 +124,36 @@ import {
   </Container>
 </Playground>
 
-### API
-
 <Props of={IconHamburger} />
+
+### IconBell
+
+<Playground>
+  <Container>
+    <IconBellDemo>
+      {({ count, setCount }) => (
+        <>
+          <IconBell isAnimated count={count} size="large" />
+          <Button
+            onClick={() => {
+              setCount(++count);
+            }}
+          >
+            Increase Count
+          </Button>
+          <Button
+            onClick={() => {
+              if (count > 0) {
+                setCount(--count);
+              }
+            }}
+          >
+            Decrease Count
+          </Button>
+        </>
+      )}
+    </IconBellDemo>
+  </Container>
+</Playground>
+
+<Props of={IconBell} />

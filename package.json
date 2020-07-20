@@ -103,6 +103,7 @@
     "react-toastify": "^5.3.2",
     "react-toggle": "^4.0.2",
     "react-typed": "^1.2.0",
+    "react-use": "^15.3.2",
     "react-vertical-timeline-component": "^2.5.0",
     "react-visibility-sensor": "^5.1.1",
     "react-windowed-select": "^2.0.2",
