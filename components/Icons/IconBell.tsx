@@ -2,17 +2,17 @@ import React, { FC, memo, useEffect, useRef } from 'react';
 import { usePrevious } from 'react-use';
 import classNames from 'classnames';
 
-import { BaseIconProps,Icon } from './';
+import { BaseIconProps, Icon } from './';
 
 import './IconBell.css';
 
-export interface BellProps extends BaseIconProps {
+export interface IconBellProps extends BaseIconProps {
   isAnimated?: boolean;
   count?: number;
   onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
-export const IconBell: FC<BellProps> = memo(
+export const IconBell: FC<IconBellProps> = memo(
   ({ isAnimated, count, className, onClick, ...restProps }) => {
     const ref = useRef<HTMLDivElement>(null);
 
