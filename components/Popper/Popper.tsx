@@ -19,6 +19,10 @@ import './Popper.css';
 
 export interface PopperProps {
   /**
+   * <@default=`undefined`>
+   */
+  isVisible?: boolean;
+  /**
    * <@default=`false`>
    */
   isTransitionDisabled?: boolean;
@@ -75,6 +79,7 @@ const ARROW_SIZE = 4;
 
 export const Popper: FC<PopperProps> = memo<PopperProps>(
   ({
+    isVisible = undefined,
     isTransitionDisabled = false,
     isHiddenOnOverlayClick = false,
     offsetX = 0,
@@ -91,15 +96,15 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
     const overlayRef = useRef<HTMLElement>(null);
 
     const [containerEl, setContainerEl] = useState<HTMLElement | null>(null);
-    const [isVisible, setIsVisible] = useState(false);
+    const [localIsVisible, setLocalIsVisible] = useState(false);
 
     const handleOverlayClick = useCallback(() => {
-      setIsVisible(false);
+      setLocalIsVisible(false);
     }, []);
 
     const handleChildrenClick = useCallback(() => {
-      setIsVisible(!isVisible);
-    }, [isVisible]);
+      setLocalIsVisible(!localIsVisible);
+    }, [localIsVisible]);
 
     const handleWindowClick = useCallback(e => {
       const childrenEl = childrenRef.current;
@@ -112,7 +117,7 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
         return;
       }
 
-      setIsVisible(false);
+      setLocalIsVisible(false);
     }, []);
 
     useEffect(() => {
@@ -174,7 +179,9 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
     };
 
     // @ts-ignore
-    if (isHiddenOnOverlayClick) props.visible = isVisible;
+    if (isHiddenOnOverlayClick) props.visible = localIsVisible;
+    // @ts-ignore
+    if (isVisible !== undefined) props.visible = isVisible;
 
     return (
       // @ts-ignore
