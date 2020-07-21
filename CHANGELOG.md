@@ -1,3 +1,9 @@
+## [1.36.64](https://github.com/zicodeng/ztopia-ui/compare/v1.36.63...v1.36.64) (2020-07-21)
+
+### Bug Fixes
+
+- add Popper isHiddenOnOverlayClick prop ([07a318f](https://github.com/zicodeng/ztopia-ui/commit/07a318f9f909f58cfb2a3f1d568548e74d9684f7))
+
 ## [1.36.63](https://github.com/zicodeng/ztopia-ui/compare/v1.36.62...v1.36.63) (2020-07-21)
 
 ### Bug Fixes
