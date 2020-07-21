@@ -1,3 +1,9 @@
+## [1.36.63](https://github.com/zicodeng/ztopia-ui/compare/v1.36.62...v1.36.63) (2020-07-21)
+
+### Bug Fixes
+
+- fix prop name ([e21757a](https://github.com/zicodeng/ztopia-ui/commit/e21757a79a088d96ba78f93a10b9298fbbba71b9))
+
 ## [1.36.62](https://github.com/zicodeng/ztopia-ui/compare/v1.36.61...v1.36.62) (2020-07-21)
 
 ### Bug Fixes
