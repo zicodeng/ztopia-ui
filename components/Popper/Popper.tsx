@@ -1,4 +1,15 @@
-import React, { FC, memo, ReactNode, useEffect, useState } from 'react';
+import React, {
+  cloneElement,
+  FC,
+  isValidElement,
+  memo,
+  ReactElement,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import camelCase from 'camelcase';
 import classNames from 'classnames';
 import Tooltip from 'rc-tooltip';
@@ -8,13 +19,15 @@ import './Popper.css';
 
 export interface PopperProps {
   /**
-   * <@default=`undefined`>
-   */
-  isVisible?: boolean;
-  /**
    * <@default=`false`>
    */
   isTransitionDisabled?: boolean;
+  /**
+   * Hide popper when overlay is clicked
+   *
+   * <@default=`false`>
+   */
+  isHiddenOnOverlayClick?: boolean;
   /**
    * <@default=`0`>
    */
@@ -62,8 +75,8 @@ const ARROW_SIZE = 4;
 
 export const Popper: FC<PopperProps> = memo<PopperProps>(
   ({
-    isVisible = undefined,
     isTransitionDisabled = false,
+    isHiddenOnOverlayClick = false,
     offsetX = 0,
     offsetY = 0,
     containerId,
@@ -71,9 +84,36 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
     children,
     trigger = ['hover'],
     placement = 'top',
+    overlay,
     ...restProps
   }) => {
+    const childrenRef = useRef<HTMLElement>(null);
+    const overlayRef = useRef<HTMLElement>(null);
+
     const [containerEl, setContainerEl] = useState<HTMLElement | null>(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    const handleOverlayClick = useCallback(() => {
+      setIsVisible(false);
+    }, []);
+
+    const handleChildrenClick = useCallback(() => {
+      setIsVisible(!isVisible);
+    }, [isVisible]);
+
+    const handleWindowClick = useCallback(e => {
+      const childrenEl = childrenRef.current;
+      const overlayEl = overlayRef.current;
+
+      if (
+        (childrenEl && childrenEl.contains(e.target)) ||
+        (overlayEl && overlayEl.contains(e.target))
+      ) {
+        return;
+      }
+
+      setIsVisible(false);
+    }, []);
 
     useEffect(() => {
       if (containerId) {
@@ -81,6 +121,18 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
         setContainerEl(el);
       }
     }, [containerId]);
+
+    useEffect(() => {
+      if (isHiddenOnOverlayClick) {
+        window.addEventListener('mousedown', handleWindowClick, false);
+      }
+
+      return () => {
+        if (isHiddenOnOverlayClick) {
+          window.removeEventListener('mousedown', handleWindowClick, false);
+        }
+      };
+    }, [isHiddenOnOverlayClick, handleWindowClick]);
 
     if (placement.startsWith('left')) {
       offsetX -= ARROW_SIZE;
@@ -122,11 +174,28 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
     };
 
     // @ts-ignore
-    if (isVisible !== undefined) props.visible = isVisible;
+    if (isHiddenOnOverlayClick) props.visible = isVisible;
 
     return (
       // @ts-ignore
-      <Tooltip {...props}>{children}</Tooltip>
+      <Tooltip
+        overlay={
+          isValidElement && isHiddenOnOverlayClick
+            ? cloneElement(overlay as ReactElement, {
+                ref: overlayRef,
+                onClick: handleOverlayClick,
+              })
+            : overlay
+        }
+        {...props}
+      >
+        {isValidElement && isHiddenOnOverlayClick
+          ? cloneElement(children as ReactElement, {
+              ref: childrenRef,
+              onClick: handleChildrenClick,
+            })
+          : children}
+      </Tooltip>
     );
   },
 );

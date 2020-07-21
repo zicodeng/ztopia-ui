@@ -108,6 +108,20 @@ Dependency: [rc-tooltip](https://github.com/react-component/tooltip)
   </section>
 </Playground>
 
+### Hide on Overlay Click
+
+<Playground>
+  <Container>
+    <Popper
+      isHiddenOnOverlayClick
+      trigger={['click']}
+      overlay={<h1>Hello, World!</h1>}
+    >
+      <Box>Click</Box>
+    </Popper>
+  </Container>
+</Playground>
+
 ## API
 
 <Props of={Popper} />

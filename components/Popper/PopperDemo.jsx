@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
-export const Box = props => (
+export const Box = forwardRef((props, ref) => (
   <div
+    ref={ref}
     style={{
       width: 150,
       height: 150,
@@ -13,4 +14,4 @@ export const Box = props => (
     }}
     {...props}
   />
-);
+));
