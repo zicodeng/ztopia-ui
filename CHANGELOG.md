@@ -1,3 +1,9 @@
+## [1.36.65](https://github.com/zicodeng/ztopia-ui/compare/v1.36.64...v1.36.65) (2020-07-21)
+
+### Bug Fixes
+
+- add back isVisible prop ([dab3980](https://github.com/zicodeng/ztopia-ui/commit/dab39800d0649e28e4d995ae9150874883d52b7a))
+
 ## [1.36.64](https://github.com/zicodeng/ztopia-ui/compare/v1.36.63...v1.36.64) (2020-07-21)
 
 ### Bug Fixes
