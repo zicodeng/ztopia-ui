@@ -54,6 +54,10 @@ export interface PopperProps {
    */
   children: ReactNode;
   /**
+   * <@default=`undefined`>
+   */
+  HideOnOverlayClickExceptionElementIds?: string[];
+  /**
    * <@default=`'hover'`>
    */
   trigger?: ('hover' | 'click' | 'focus')[];
@@ -87,6 +91,7 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
     containerId,
     className,
     children,
+    HideOnOverlayClickExceptionElementIds,
     trigger = ['hover'],
     placement = 'top',
     overlay,
@@ -98,9 +103,19 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
     const [containerEl, setContainerEl] = useState<HTMLElement | null>(null);
     const [localIsVisible, setLocalIsVisible] = useState(false);
 
-    const handleOverlayClick = useCallback(() => {
-      setLocalIsVisible(false);
-    }, []);
+    const handleOverlayClick = useCallback(
+      e => {
+        if (HideOnOverlayClickExceptionElementIds) {
+          for (const id of HideOnOverlayClickExceptionElementIds) {
+            const el = document.getElementById(id);
+            if (el && el.contains(e.target)) return;
+          }
+        }
+
+        setLocalIsVisible(false);
+      },
+      [HideOnOverlayClickExceptionElementIds],
+    );
 
     const handleChildrenClick = useCallback(() => {
       setLocalIsVisible(!localIsVisible);
@@ -110,6 +125,7 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
       const childrenEl = childrenRef.current;
       const overlayEl = overlayRef.current;
 
+      // Defer to handleOverlayClick and handleChildrenClick to determine visibility
       if (
         (childrenEl && childrenEl.contains(e.target)) ||
         (overlayEl && overlayEl.contains(e.target))

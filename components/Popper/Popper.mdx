@@ -114,8 +114,16 @@ Dependency: [rc-tooltip](https://github.com/react-component/tooltip)
   <Container>
     <Popper
       isHiddenOnOverlayClick
+      HideOnOverlayClickExceptionElementIds={['popper-stay-visible']}
       trigger={['click']}
-      overlay={<h1>Hello, World!</h1>}
+      overlay={
+        <div>
+          <h1 style={{ color: 'red' }}>Click Me to Hide</h1>
+          <h1 style={{ color: 'blue' }} id="popper-stay-visible">
+            Click Me to Stay Visible
+          </h1>
+        </div>
+      }
     >
       <Box>Click</Box>
     </Popper>
