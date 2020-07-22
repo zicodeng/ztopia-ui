@@ -1,3 +1,9 @@
+## [1.36.66](https://github.com/zicodeng/ztopia-ui/compare/v1.36.65...v1.36.66) (2020-07-22)
+
+### Bug Fixes
+
+- add HideOnOverlayClickExceptionElementIds prop ([f706bf9](https://github.com/zicodeng/ztopia-ui/commit/f706bf9f618185e719445113e6e5634160ba9adb))
+
 ## [1.36.65](https://github.com/zicodeng/ztopia-ui/compare/v1.36.64...v1.36.65) (2020-07-21)
 
 ### Bug Fixes
