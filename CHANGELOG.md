@@ -1,3 +1,9 @@
+## [1.36.68](https://github.com/zicodeng/ztopia-ui/compare/v1.36.67...v1.36.68) (2020-07-23)
+
+### Bug Fixes
+
+- delete fixed height ([4938052](https://github.com/zicodeng/ztopia-ui/commit/4938052b4479d746d39e4989a8a7aafa63788c39))
+
 ## [1.36.67](https://github.com/zicodeng/ztopia-ui/compare/v1.36.66...v1.36.67) (2020-07-23)
 
 ### Bug Fixes
