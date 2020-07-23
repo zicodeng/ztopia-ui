@@ -13,7 +13,7 @@ export interface IconBellProps extends BaseIconProps {
 }
 
 export const IconBell: FC<IconBellProps> = memo(
-  ({ isAnimated, count, size, className, onClick, ...restProps }) => {
+  ({ isAnimated, count, className, onClick, ...restProps }) => {
     const ref = useRef<HTMLDivElement>(null);
 
     const prevCount = usePrevious(count);
@@ -33,14 +33,10 @@ export const IconBell: FC<IconBellProps> = memo(
     return (
       <div
         ref={ref}
-        className={classNames(
-          className,
-          'ztopia-icon--bell',
-          `ztopia-icon--bell--${size}`,
-        )}
+        className={classNames(className, 'ztopia-icon--bell')}
         onClick={onClick}
       >
-        <Icon size={size} {...restProps}>
+        <Icon {...restProps}>
           <svg data-icon="bell" viewBox="0 0 448 512">
             <path
               fill="currentColor"
