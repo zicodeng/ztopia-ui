@@ -1,3 +1,9 @@
+## [1.36.67](https://github.com/zicodeng/ztopia-ui/compare/v1.36.66...v1.36.67) (2020-07-23)
+
+### Bug Fixes
+
+- fix bell icon animation ([00ec71d](https://github.com/zicodeng/ztopia-ui/commit/00ec71d6f2f4c1960b730d7d14a7113b0224977a))
+
 ## [1.36.66](https://github.com/zicodeng/ztopia-ui/compare/v1.36.65...v1.36.66) (2020-07-22)
 
 ### Bug Fixes
