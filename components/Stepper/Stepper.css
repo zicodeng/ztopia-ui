@@ -28,8 +28,7 @@
     border: 1px solid $white-dark;
     border-radius: 100%;
 
-    &.is-completed,
-    &.is-current {
+    &.is-active {
       color: $white-light;
       background-color: $black-dark;
       border-color: $black-dark;
@@ -46,7 +45,7 @@
     transform: translateY(-50%);
     content: '';
 
-    &.is-completed {
+    &.is-active {
       background-color: $black-dark;
     }
   }

@@ -40,12 +40,12 @@ export const Stepper: FC<StepperProps> = memo(
           {steps.map(({ indicator, title, desc }, i) => {
             const isCurrent = !isFinished && currentStep === i;
             const isCompleted = isFinished || currentStep > i;
+
             return (
               <li key={i} className="ztopia-stepper__step">
                 <span
                   className={classNames('ztopia-stepper__step-indicator', {
-                    'is-completed': isCompleted,
-                    'is-current': isCurrent,
+                    'is-active': isCurrent || isCompleted,
                   })}
                 >
                   {isCompleted && !isCurrent ? (
@@ -57,7 +57,7 @@ export const Stepper: FC<StepperProps> = memo(
                 {i < steps.length - 1 && (
                   <span
                     className={classNames('ztopia-stepper__step-tail', {
-                      'is-completed': isCompleted,
+                      'is-active': isCompleted,
                     })}
                   />
                 )}
