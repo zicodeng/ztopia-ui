@@ -20,7 +20,7 @@ export interface StepperProps {
    */
   isFinished?: boolean;
   /**
-   * <@default=`1`>
+   * <@default=`0`>
    */
   currentStep?: number;
   className?: string;
@@ -28,9 +28,8 @@ export interface StepperProps {
 }
 
 export const Stepper: FC<StepperProps> = memo(
-  ({ isFinished = false, currentStep = 1, className, steps }) => {
-    const currIdx = currentStep - 1;
-    if (currentStep < 1 || currentStep > steps.length) {
+  ({ isFinished = false, currentStep = 0, className, steps }) => {
+    if (currentStep < 0 || currentStep > steps.length) {
       throw new Error(
         `Stepper: prop currentStep must be a number between 0 and ${steps.length}`,
       );
@@ -39,8 +38,8 @@ export const Stepper: FC<StepperProps> = memo(
       <section className={classNames(className, 'ztopia-stepper')}>
         <ul className="ztopia-stepper__header">
           {steps.map(({ indicator, title, desc }, i) => {
-            const isCurrent = !isFinished && currIdx === i;
-            const isCompleted = isFinished || currIdx > i;
+            const isCurrent = !isFinished && currentStep === i;
+            const isCompleted = isFinished || currentStep > i;
             return (
               <li key={i} className="ztopia-stepper__step">
                 <span
@@ -76,7 +75,9 @@ export const Stepper: FC<StepperProps> = memo(
             );
           })}
         </ul>
-        <div className="ztopia-stepper__content">{steps[currIdx].content}</div>
+        <div className="ztopia-stepper__content">
+          {steps[currentStep].content}
+        </div>
       </section>
     );
   },

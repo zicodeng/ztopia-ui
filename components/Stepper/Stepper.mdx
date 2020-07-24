@@ -52,14 +52,14 @@ import { StepperDemo } from './StepperDemo';
           }}
         >
           {!isFinished && (
-            <Button onClick={prevStep} isDisabled={currentStep <= 1}>
+            <Button onClick={prevStep} isDisabled={currentStep <= 0}>
               Prev
             </Button>
           )}
-          {currentStep === 3 ? (
+          {currentStep === 2 ? (
             !isFinished && <Button onClick={finish}>Finish</Button>
           ) : (
-            <Button onClick={nextStep} isDisabled={currentStep >= 3}>
+            <Button onClick={nextStep} isDisabled={currentStep >= 2}>
               Next
             </Button>
           )}
