@@ -1,3 +1,10 @@
+## [1.36.69](https://github.com/zicodeng/ztopia-ui/compare/v1.36.68...v1.36.69) (2020-07-25)
+
+### Bug Fixes
+
+- make Stepper zero-index based ([8fa0e78](https://github.com/zicodeng/ztopia-ui/commit/8fa0e783a132b5a7a4155f6e933629d491050344))
+- simplify logic ([aab07a8](https://github.com/zicodeng/ztopia-ui/commit/aab07a8dcc6bf4e3a5aef96f8915dd1861897435))
+
 ## [1.36.68](https://github.com/zicodeng/ztopia-ui/compare/v1.36.67...v1.36.68) (2020-07-23)
 
 ### Bug Fixes
