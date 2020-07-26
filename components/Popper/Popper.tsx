@@ -17,6 +17,8 @@ import Tooltip from 'rc-tooltip';
 import 'rc-tooltip/assets/bootstrap_white.css';
 import './Popper.css';
 
+export const HIDE_ON_CLICK_EXCEPTION = 'hide-on-click-exception';
+
 export interface PopperProps {
   /**
    * <@default=`undefined`>
@@ -27,11 +29,13 @@ export interface PopperProps {
    */
   isTransitionDisabled?: boolean;
   /**
-   * Hide popper when overlay is clicked
+   * Hide popper when overlay or children is clicked.
+   * This behaviour can be overridden by adding custom data attribute:
+   * data-ztopia-popper="hide-on-click-exception"
    *
    * <@default=`false`>
    */
-  isHiddenOnOverlayClick?: boolean;
+  isHiddenOnClick?: boolean;
   /**
    * <@default=`0`>
    */
@@ -53,10 +57,6 @@ export interface PopperProps {
    * Element that triggers tooltip
    */
   children: ReactNode;
-  /**
-   * <@default=`undefined`>
-   */
-  HideOnOverlayClickExceptionElementIds?: string[];
   /**
    * <@default=`'hover'`>
    */
@@ -85,13 +85,12 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
   ({
     isVisible = undefined,
     isTransitionDisabled = false,
-    isHiddenOnOverlayClick = false,
+    isHiddenOnClick = false,
     offsetX = 0,
     offsetY = 0,
     containerId,
     className,
     children,
-    HideOnOverlayClickExceptionElementIds,
     trigger = ['hover'],
     placement = 'top',
     overlay,
@@ -103,19 +102,18 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
     const [containerEl, setContainerEl] = useState<HTMLElement | null>(null);
     const [localIsVisible, setLocalIsVisible] = useState(false);
 
-    const handleOverlayClick = useCallback(
-      e => {
-        if (HideOnOverlayClickExceptionElementIds) {
-          for (const id of HideOnOverlayClickExceptionElementIds) {
-            const el = document.getElementById(id);
-            if (el && el.contains(e.target)) return;
-          }
-        }
+    const handleOverlayClick = useCallback(e => {
+      const elements = document.querySelectorAll(
+        `[data-ztopia-popper="${HIDE_ON_CLICK_EXCEPTION}"]`,
+      );
 
-        setLocalIsVisible(false);
-      },
-      [HideOnOverlayClickExceptionElementIds],
-    );
+      // Don't hide if elements with exception data attribute are clicked
+      for (const el of elements) {
+        if (el && el.contains(e.target)) return;
+      }
+
+      setLocalIsVisible(false);
+    }, []);
 
     const handleChildrenClick = useCallback(() => {
       setLocalIsVisible(!localIsVisible);
@@ -144,16 +142,16 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
     }, [containerId]);
 
     useEffect(() => {
-      if (isHiddenOnOverlayClick) {
+      if (isHiddenOnClick) {
         window.addEventListener('mousedown', handleWindowClick, false);
       }
 
       return () => {
-        if (isHiddenOnOverlayClick) {
+        if (isHiddenOnClick) {
           window.removeEventListener('mousedown', handleWindowClick, false);
         }
       };
-    }, [isHiddenOnOverlayClick, handleWindowClick]);
+    }, [isHiddenOnClick, handleWindowClick]);
 
     if (placement.startsWith('left')) {
       offsetX -= ARROW_SIZE;
@@ -195,7 +193,7 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
     };
 
     // @ts-ignore
-    if (isHiddenOnOverlayClick) props.visible = localIsVisible;
+    if (isHiddenOnClick) props.visible = localIsVisible;
     // @ts-ignore
     if (isVisible !== undefined) props.visible = isVisible;
 
@@ -203,7 +201,7 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
       // @ts-ignore
       <Tooltip
         overlay={
-          isValidElement && isHiddenOnOverlayClick
+          isValidElement && isHiddenOnClick
             ? cloneElement(overlay as ReactElement, {
                 ref: overlayRef,
                 onClick: handleOverlayClick,
@@ -212,7 +210,7 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
         }
         {...props}
       >
-        {isValidElement && isHiddenOnOverlayClick
+        {isValidElement && isHiddenOnClick
           ? cloneElement(children as ReactElement, {
               ref: childrenRef,
               onClick: handleChildrenClick,

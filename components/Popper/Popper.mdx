@@ -113,13 +113,15 @@ Dependency: [rc-tooltip](https://github.com/react-component/tooltip)
 <Playground>
   <Container>
     <Popper
-      isHiddenOnOverlayClick
-      HideOnOverlayClickExceptionElementIds={['popper-stay-visible']}
+      isHiddenOnClick
       trigger={['click']}
       overlay={
         <div>
           <h1 style={{ color: 'red' }}>Click Me to Hide</h1>
-          <h1 style={{ color: 'blue' }} id="popper-stay-visible">
+          <h1
+            style={{ color: 'blue' }}
+            data-ztopia-popper="hide-on-click-exception"
+          >
             Click Me to Stay Visible
           </h1>
         </div>
