@@ -1,3 +1,9 @@
+## [1.36.70](https://github.com/zicodeng/ztopia-ui/compare/v1.36.69...v1.36.70) (2020-07-26)
+
+### Bug Fixes
+
+- use data attribute to control hide exception ([61c8caf](https://github.com/zicodeng/ztopia-ui/commit/61c8caf76c6f5b2ea22c05fa10c0eeb9296617fe))
+
 ## [1.36.69](https://github.com/zicodeng/ztopia-ui/compare/v1.36.68...v1.36.69) (2020-07-25)
 
 ### Bug Fixes
