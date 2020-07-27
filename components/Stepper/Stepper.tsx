@@ -29,12 +29,14 @@ export interface StepperProps {
 
 export const Stepper: FC<StepperProps> = memo(
   ({ isFinished = false, currentStep = 0, className, steps }) => {
-    if (currentStep < 0 || currentStep >= steps.length) {
+    const maxSteps = steps.length - 1;
+
+    if (currentStep < 0 || currentStep > maxSteps) {
       throw new Error(
-        `Stepper: prop currentStep must be a number between 0 and ${steps.length -
-          1}`,
+        `Stepper: prop currentStep must be a number between 0 and ${maxSteps}`,
       );
     }
+
     return (
       <section className={classNames(className, 'ztopia-stepper')}>
         <ul className="ztopia-stepper__header">
@@ -55,7 +57,7 @@ export const Stepper: FC<StepperProps> = memo(
                     indicator || i + 1
                   )}
                 </span>
-                {i < steps.length - 1 && (
+                {i < maxSteps && (
                   <span
                     className={classNames('ztopia-stepper__step-tail', {
                       'is-active': isCompleted,
