@@ -29,9 +29,10 @@ export interface StepperProps {
 
 export const Stepper: FC<StepperProps> = memo(
   ({ isFinished = false, currentStep = 0, className, steps }) => {
-    if (currentStep < 0 || currentStep > steps.length) {
+    if (currentStep < 0 || currentStep >= steps.length) {
       throw new Error(
-        `Stepper: prop currentStep must be a number between 0 and ${steps.length}`,
+        `Stepper: prop currentStep must be a number between 0 and ${steps.length -
+          1}`,
       );
     }
     return (
