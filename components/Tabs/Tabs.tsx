@@ -224,8 +224,9 @@ export const Tabs: FC<TabsProps> = memo(
             isValidElement(child)
               ? cloneElement(child, {
                   isSelected:
+                    !isNil(value) &&
                     child.props.id ===
-                    (value || (i === 0 ? child.props.id : '')),
+                      (value || (i === 0 ? child.props.id : '')),
                   isVertical,
                   idx: i,
                   gap,
