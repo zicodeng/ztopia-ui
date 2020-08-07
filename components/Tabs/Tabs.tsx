@@ -13,6 +13,7 @@ import React, {
 } from 'react';
 import useComponentSize, { ComponentSize } from '@rehooks/component-size';
 import classNames from 'classnames';
+import { isEmpty, isNil } from 'lodash-es';
 
 import './Tabs.css';
 
@@ -97,7 +98,7 @@ export interface TabsProps {
   /**
    * Selected tab Id
    */
-  value?: string;
+  value?: string | null;
   className?: string;
   /**
    * <@default=`'left or bottom'`>
@@ -152,8 +153,11 @@ export const Tabs: FC<TabsProps> = memo(
     );
 
     const indicatorStyle = useMemo(() => {
-      // Default to the first tab if there is no value
-      if (!value) {
+      // Don't show active tab if value is undefined or null
+      if (isNil(value)) return;
+
+      // Default to the first tab if value is empty
+      if (isEmpty(value)) {
         const firstTabId = tabIds[0];
         const { width, height } = tabSizes[firstTabId] || MIN_TAB_SIZE;
 
