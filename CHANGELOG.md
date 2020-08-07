@@ -1,3 +1,10 @@
+## [1.36.71](https://github.com/zicodeng/ztopia-ui/compare/v1.36.70...v1.36.71) (2020-08-07)
+
+### Bug Fixes
+
+- add onFocus and onBlur to Input ([d767013](https://github.com/zicodeng/ztopia-ui/commit/d76701385dcd293094669fc8473aec0e73c40b21))
+- fix currentStep validation logic ([6093ecd](https://github.com/zicodeng/ztopia-ui/commit/6093ecd1860389c75b10e5e59cc09da35eba99d2))
+
 ## [1.36.70](https://github.com/zicodeng/ztopia-ui/compare/v1.36.69...v1.36.70) (2020-07-26)
 
 ### Bug Fixes
