@@ -1,3 +1,9 @@
+## [1.36.73](https://github.com/zicodeng/ztopia-ui/compare/v1.36.72...v1.36.73) (2020-08-07)
+
+### Bug Fixes
+
+- unselect tab if value is nil ([ef74f0b](https://github.com/zicodeng/ztopia-ui/commit/ef74f0bf8db16a81d65f9784d2db744dd1897d0a))
+
 ## [1.36.72](https://github.com/zicodeng/ztopia-ui/compare/v1.36.71...v1.36.72) (2020-08-07)
 
 ### Bug Fixes
