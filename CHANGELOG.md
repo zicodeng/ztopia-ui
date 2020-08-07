@@ -1,3 +1,9 @@
+## [1.36.72](https://github.com/zicodeng/ztopia-ui/compare/v1.36.71...v1.36.72) (2020-08-07)
+
+### Bug Fixes
+
+- allow Tabs value to be null ([db87049](https://github.com/zicodeng/ztopia-ui/commit/db87049982e8cf993f548011c191a76e8193102a))
+
 ## [1.36.71](https://github.com/zicodeng/ztopia-ui/compare/v1.36.70...v1.36.71) (2020-08-07)
 
 ### Bug Fixes
