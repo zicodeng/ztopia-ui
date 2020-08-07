@@ -45,6 +45,8 @@ export interface InputProps {
   style?: CSSProperties;
   ref?: Ref<HTMLInputElement>;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  onFocus?: (e: ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const Input = memo(
@@ -66,6 +68,8 @@ export const Input = memo(
         suffixIcon,
         style,
         onChange,
+        onFocus,
+        onBlur,
         ...restProps
       },
       ref,
@@ -91,15 +95,25 @@ export const Input = memo(
         if (inputEl) inputEl.focus();
       }, []);
 
-      const handleInputFocus = useCallback(() => {
-        setIsInputContainerFocused(true);
-        setIsActive(true);
-      }, []);
+      const handleInputFocus = useCallback(
+        e => {
+          setIsInputContainerFocused(true);
+          setIsActive(true);
 
-      const handleInputBlur = useCallback(() => {
-        setIsInputContainerFocused(false);
-        setIsActive(isDefaultActive);
-      }, [isDefaultActive]);
+          if (onFocus) onFocus(e);
+        },
+        [onFocus],
+      );
+
+      const handleInputBlur = useCallback(
+        e => {
+          setIsInputContainerFocused(false);
+          setIsActive(isDefaultActive);
+
+          if (onBlur) onBlur(e);
+        },
+        [isDefaultActive, onBlur],
+      );
 
       const handleWindowClick = useCallback(
         e => {
