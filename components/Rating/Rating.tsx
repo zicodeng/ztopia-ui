@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import React, { memo } from 'react';
 import BaseRating from 'react-rating';
 
 import {
@@ -30,6 +30,7 @@ export interface RatingProps {
    * Color of each symbol
    */
   color?: string;
+  className?: string;
   /**
    * <@default=`'star'`>
    */
@@ -41,15 +42,15 @@ export interface RatingProps {
   onChange?: (newValue: number) => void;
 }
 
-export const Rating: FC<RatingProps> = memo(
+export const Rating = memo<RatingProps>(
   ({
-    isReadonly,
-    fraction,
+    isReadonly = false,
+    fraction = 1,
     width,
     value,
-    color,
-    variant,
-    size,
+    color = '#ffec40',
+    variant = 'star',
+    size = 'medium',
     ...restProps
   }) => {
     const symbolProps = {
@@ -82,11 +83,3 @@ export const Rating: FC<RatingProps> = memo(
     );
   },
 );
-
-Rating.defaultProps = {
-  isReadonly: false,
-  fraction: 1,
-  color: '#ffec40',
-  variant: 'star',
-  size: 'medium',
-};
