@@ -1,3 +1,9 @@
+## [1.36.74](https://github.com/zicodeng/ztopia-ui/compare/v1.36.73...v1.36.74) (2020-08-12)
+
+### Bug Fixes
+
+- add arrowSize and isArrowHidden prop to Popper ([23e7c50](https://github.com/zicodeng/ztopia-ui/commit/23e7c508d1390f1a30f68dd60adb90392828e84b))
+
 ## [1.36.73](https://github.com/zicodeng/ztopia-ui/compare/v1.36.72...v1.36.73) (2020-08-07)
 
 ### Bug Fixes
