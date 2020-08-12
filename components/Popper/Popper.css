@@ -46,6 +46,12 @@
     border-color: $black-dark;
   }
 
+  &.is-arrow-hidden {
+    .rc-tooltip-arrow {
+      display: none;
+    }
+  }
+
   /*==================================
   =            Transition            =
   ==================================*/

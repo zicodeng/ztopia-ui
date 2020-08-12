@@ -37,6 +37,14 @@ export interface PopperProps {
    */
   isHiddenOnClick?: boolean;
   /**
+   * <@default=`false`>
+   */
+  isArrowHidden?: boolean;
+  /**
+   * <@default=`4`>
+   */
+  arrowSize?: number;
+  /**
    * <@default=`0`>
    */
   offsetX?: number;
@@ -79,13 +87,13 @@ export interface PopperProps {
     | 'left-bottom';
 }
 
-const ARROW_SIZE = 4;
-
 export const Popper: FC<PopperProps> = memo<PopperProps>(
   ({
     isVisible = undefined,
     isTransitionDisabled = false,
     isHiddenOnClick = false,
+    isArrowHidden = false,
+    arrowSize = 4,
     offsetX = 0,
     offsetY = 0,
     containerId,
@@ -154,16 +162,16 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
     }, [isHiddenOnClick, handleWindowClick]);
 
     if (placement.startsWith('left')) {
-      offsetX -= ARROW_SIZE;
+      offsetX -= arrowSize;
     }
     if (placement.startsWith('right')) {
-      offsetX += ARROW_SIZE;
+      offsetX += arrowSize;
     }
     if (placement.startsWith('top')) {
-      offsetY -= ARROW_SIZE;
+      offsetY -= arrowSize;
     }
     if (placement.startsWith('bottom')) {
-      offsetY += ARROW_SIZE;
+      offsetY += arrowSize;
     }
 
     const props = {
@@ -172,6 +180,9 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
         className,
         'ztopia-popper',
         `ztopia-popper--${placement}`,
+        {
+          'is-arrow-hidden': isArrowHidden,
+        },
       ),
       arrowContent: <div className="rc-tooltip-arrow-inner"></div>,
       align: {
