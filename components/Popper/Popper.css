@@ -44,6 +44,7 @@
     color: $black-dark;
     background-color: $white-light;
     border-color: $black-dark;
+    border-radius: $border-radius-s;
   }
 
   &.is-arrow-hidden {
