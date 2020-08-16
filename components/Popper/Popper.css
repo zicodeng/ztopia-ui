@@ -41,7 +41,6 @@
   .rc-tooltip-inner {
     min-height: unset;
     padding: $spacing-xs $spacing-s;
-    overflow: hidden;
     color: $black-dark;
     background-color: $white-light;
     border-color: $black-dark;
