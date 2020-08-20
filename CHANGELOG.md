@@ -1,3 +1,9 @@
+## [1.36.79](https://github.com/zicodeng/ztopia-ui/compare/v1.36.78...v1.36.79) (2020-08-20)
+
+### Bug Fixes
+
+- add ztopia-image class name for placeholder ([e9934c5](https://github.com/zicodeng/ztopia-ui/commit/e9934c529029b6ed364b0f8e959afd1126e7250f))
+
 ## [1.36.78](https://github.com/zicodeng/ztopia-ui/compare/v1.36.77...v1.36.78) (2020-08-16)
 
 ### Bug Fixes
