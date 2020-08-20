@@ -86,7 +86,7 @@ export const Image: FC<ImageProps> = memo(
         return (
           <Placeholder
             variant="image"
-            className={className}
+            className={classNames(className, 'ztopia-image')}
             width={width}
             height={
               typeof height === 'number'
