@@ -1,3 +1,9 @@
+## [1.36.80](https://github.com/zicodeng/ztopia-ui/compare/v1.36.79...v1.36.80) (2020-08-21)
+
+### Bug Fixes
+
+- control popper shadow and border ([152048f](https://github.com/zicodeng/ztopia-ui/commit/152048f949c91103fc6b7b1ce3b1a13a4bd6e7a8))
+
 ## [1.36.79](https://github.com/zicodeng/ztopia-ui/compare/v1.36.78...v1.36.79) (2020-08-20)
 
 ### Bug Fixes
