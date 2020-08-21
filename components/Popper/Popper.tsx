@@ -41,6 +41,14 @@ export interface PopperProps {
    */
   isArrowHidden?: boolean;
   /**
+   * <@default=`false`>
+   */
+  isBorderHidden?: boolean;
+  /**
+   * <@default=`false`>
+   */
+  isShadowShown?: boolean;
+  /**
    * <@default=`4`>
    */
   arrowSize?: number;
@@ -93,6 +101,8 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
     isTransitionDisabled = false,
     isHiddenOnClick = false,
     isArrowHidden = false,
+    isBorderHidden = false,
+    isShadowShown = false,
     arrowSize = 4,
     offsetX = 0,
     offsetY = 0,
@@ -182,6 +192,8 @@ export const Popper: FC<PopperProps> = memo<PopperProps>(
         `ztopia-popper--${placement}`,
         {
           'is-arrow-hidden': isArrowHidden,
+          'is-border-hidden': isBorderHidden,
+          'is-shadow-shown': isShadowShown,
         },
       ),
       arrowContent: <div className="rc-tooltip-arrow-inner"></div>,

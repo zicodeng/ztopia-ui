@@ -53,6 +53,20 @@
     }
   }
 
+  &.is-border-hidden {
+    .rc-tooltip-arrow {
+      border: 0;
+    }
+
+    .rc-tooltip-inner {
+      border: 0;
+    }
+  }
+
+  &.is-shadow-shown {
+    box-shadow: $box-shadow-3;
+  }
+
   /*==================================
   =            Transition            =
   ==================================*/
