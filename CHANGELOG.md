@@ -1,3 +1,9 @@
+## [1.36.82](https://github.com/zicodeng/ztopia-ui/compare/v1.36.81...v1.36.82) (2020-09-12)
+
+### Bug Fixes
+
+- add defaultPreviewFiles prop ([4e2dcba](https://github.com/zicodeng/ztopia-ui/commit/4e2dcbaf292bcae91dd36e4aaf951206645ba3c0))
+
 ## [1.36.81](https://github.com/zicodeng/ztopia-ui/compare/v1.36.80...v1.36.81) (2020-09-12)
 
 ### Bug Fixes
