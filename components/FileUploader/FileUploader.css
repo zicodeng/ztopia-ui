@@ -53,7 +53,7 @@
 
     &::after {
       color: $white-light;
-      content: 'Reselect file';
+      content: 'Reselect a File';
     }
 
     &:hover {

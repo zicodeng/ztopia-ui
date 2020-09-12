@@ -47,6 +47,10 @@ export interface FileUploaderProps {
    */
   progress?: { [fileName: string]: number };
   /**
+   * <@default=`[]`>
+   */
+  defaultPreviewFiles: EnhancedFile[];
+  /**
    * <@default=`image/*`>
    */
   allowedFileTypes?: string | string[];
@@ -78,11 +82,14 @@ export const FileUploader: FC<FileUploaderProps> = memo(
     label = 'Choose a File or Drag It Here',
     variant = 'primary',
     progress = {},
+    defaultPreviewFiles = [],
     allowedFileTypes = 'image/*',
     ...restProps
   }) => {
     const [dragState, setDragState] = useState<DragState | null>(null);
-    const [previewFiles, setPreviewFiles] = useState<EnhancedFile[]>([]);
+    const [previewFiles, setPreviewFiles] = useState<EnhancedFile[]>(
+      defaultPreviewFiles,
+    );
     const [previewURLs, setPreviewURLs] = useState<string[]>([]);
 
     // @ts-ignore
