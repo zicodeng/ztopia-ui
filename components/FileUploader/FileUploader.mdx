@@ -5,6 +5,7 @@ route: /components/file-uploader
 ---
 
 import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
 
 import { FileUploader } from './';
 
@@ -13,6 +14,30 @@ import { FileUploader } from './';
 Dependency: [react-dropzone](https://github.com/react-dropzone/react-dropzone)
 
 ## Demo
+
+### Variant
+
+<Playground>
+  <Container
+    style={{
+      display: 'block',
+    }}
+  >
+    <FileUploader
+      label="Primary"
+      onDropAccepted={(files, e) => {
+        console.log('FileUploader', 'onDropAccepted', { files, e });
+      }}
+    />
+    <FileUploader
+      variant="secondary"
+      label="Secondary"
+      onDropAccepted={(files, e) => {
+        console.log('FileUploader', 'onDropAccepted', { files, e });
+      }}
+    />
+  </Container>
+</Playground>
 
 ### Multiple Files
 

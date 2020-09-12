@@ -37,6 +37,10 @@ export interface FileUploaderProps {
    */
   label?: string;
   /**
+   * <@default=`'primary'`>
+   */
+  variant?: 'primary' | 'secondary';
+  /**
    * An object that associates file name and its current upload progress percent
    *
    * <@default=`{}`>
@@ -72,6 +76,7 @@ export const FileUploader: FC<FileUploaderProps> = memo(
     maxSize = 10000000,
     className,
     label = 'Choose a File or Drag It Here',
+    variant = 'primary',
     progress = {},
     allowedFileTypes = 'image/*',
     ...restProps
@@ -151,44 +156,68 @@ export const FileUploader: FC<FileUploaderProps> = memo(
             <label className="ztopia-file-uploader__label">{label}</label>
           </div>
         )}
-        <ul className="ztopia-file-uploader__file-previews">
-          {previewFiles.map((previewFile, i) => {
-            const { thumbURL, name, size } = previewFile;
-            return (
-              <li key={i} className="ztopia-file-uploader__file-preview">
-                <Image
-                  width={50}
-                  height={50}
-                  src={thumbURL}
-                  variant="background"
-                  className="ztopia-file-uploader__file-thumb"
-                />
-                <div className="ztopia-file-uploader__upload-info">
-                  <div className="ztopia-file-uploader__file-meta">
-                    <span className="ztopia-file-uploader__file-name">
-                      {name}
-                    </span>
-                    <span className="ztopia-file-uploader__file-size">
-                      {convertBytesToSize(size)}
-                    </span>
+        {variant === 'primary' || isMulti ? (
+          <ul className="ztopia-file-uploader__file-previews">
+            {previewFiles.map((previewFile, i) => {
+              const { thumbURL, name, size } = previewFile;
+              return (
+                <li key={i} className="ztopia-file-uploader__file-preview">
+                  <Image
+                    width={50}
+                    height={50}
+                    src={thumbURL}
+                    variant="background"
+                    className="ztopia-file-uploader__file-thumb"
+                  />
+                  <div className="ztopia-file-uploader__upload-info">
+                    <div className="ztopia-file-uploader__file-meta">
+                      <span className="ztopia-file-uploader__file-name">
+                        {name}
+                      </span>
+                      <span className="ztopia-file-uploader__file-size">
+                        {convertBytesToSize(size)}
+                      </span>
+                    </div>
+                    <Progress
+                      percent={progress[name] || 0}
+                      strokeColor="#62ddbd"
+                      className="ztopia-file-uploader__progress"
+                    />
                   </div>
-                  <Progress
-                    percent={progress[name] || 0}
-                    strokeColor="#62ddbd"
-                    className="ztopia-file-uploader__progress"
-                  />
-                </div>
-                {isFileRemoveIndicatorShown && (
-                  <IconTimes
-                    size="small"
-                    className="ztopia-file-uploader__file-remove-indicator"
-                    onClick={() => handleClickFileRemoveIndicator(name)}
-                  />
-                )}
-              </li>
-            );
-          })}
-        </ul>
+                  {isFileRemoveIndicatorShown && (
+                    <IconTimes
+                      size="small"
+                      className="ztopia-file-uploader__file-remove-indicator"
+                      onClick={() => handleClickFileRemoveIndicator(name)}
+                    />
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          // On secondary variant, we allow users to reselect a file by clicking preview
+          previewFiles[0] && (
+            <div
+              {...getRootProps({
+                className: classNames(
+                  'ztopia-file-uploader__reselect-dropzone',
+                  {
+                    [dragState as string]: Boolean(dragState),
+                  },
+                ),
+              })}
+            >
+              <Image
+                width="100%"
+                height={200}
+                variant="background"
+                src={previewFiles[0].thumbURL}
+              />
+              <input {...getInputProps()} />
+            </div>
+          )
+        )}
       </section>
     );
   },

@@ -26,6 +26,47 @@
     }
   }
 
+  &__reselect-dropzone {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      position: absolute;
+      z-index: 1;
+      opacity: 0;
+      transition: $transition-fast;
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $black-dark;
+      content: '';
+    }
+
+    &::after {
+      color: $white-light;
+      content: 'Reselect file';
+    }
+
+    &:hover {
+      &::before {
+        opacity: 0.3;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
   &__label {
     margin: $spacing-l 0 0;
     pointer-events: none;
@@ -43,7 +84,9 @@
   }
 
   &__file-thumb {
-    flex: 0 0 50px;
+    &--primary {
+      flex: 0 0 50px;
+    }
   }
 
   &__upload-info {
