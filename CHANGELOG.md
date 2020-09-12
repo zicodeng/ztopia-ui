@@ -1,3 +1,9 @@
+## [1.36.81](https://github.com/zicodeng/ztopia-ui/compare/v1.36.80...v1.36.81) (2020-09-12)
+
+### Bug Fixes
+
+- add variant prop ([a6d17ae](https://github.com/zicodeng/ztopia-ui/commit/a6d17ae0703da1e12dd5281bed7bce9af141e0ae))
+
 ## [1.36.80](https://github.com/zicodeng/ztopia-ui/compare/v1.36.79...v1.36.80) (2020-08-21)
 
 ### Bug Fixes
