@@ -54,7 +54,7 @@ export interface InlineTextEditorProps {
   /**
    * <@default=`['bold', 'italic', 'underline', 'anchor', 'h1', 'h2', 'quote', 'orderedlist', 'unorderedlist']`>
    */
-  toolbarOptions?: ToolbarOption[];
+  toolbarOptions?: ToolbarOption[] | MediumEditor.Button[];
   onChange?: (newValue: string) => void;
   onReady?: (editor: Editor) => void;
 }
