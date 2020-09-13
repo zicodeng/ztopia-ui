@@ -1,3 +1,9 @@
+## [1.36.85](https://github.com/zicodeng/ztopia-ui/compare/v1.36.84...v1.36.85) (2020-09-13)
+
+### Bug Fixes
+
+- add missing dependency ([21d4634](https://github.com/zicodeng/ztopia-ui/commit/21d46349d6057ace318902f5f3d3d6e22a934368))
+
 ## [1.36.84](https://github.com/zicodeng/ztopia-ui/compare/v1.36.83...v1.36.84) (2020-09-13)
 
 ### Bug Fixes
