@@ -49,7 +49,7 @@ export interface FileUploaderProps {
   /**
    * <@default=`[]`>
    */
-  defaultPreviewFiles: EnhancedFile[];
+  defaultPreviewFiles?: EnhancedFile[];
   /**
    * <@default=`image/*`>
    */
