@@ -1,3 +1,9 @@
+## [1.36.89](https://github.com/zicodeng/ztopia-ui/compare/v1.36.88...v1.36.89) (2020-09-26)
+
+### Bug Fixes
+
+- fix preview file not updated ([41f52cb](https://github.com/zicodeng/ztopia-ui/commit/41f52cbe92fad7931be407e208d6440bdc608ef2))
+
 ## [1.36.88](https://github.com/zicodeng/ztopia-ui/compare/v1.36.87...v1.36.88) (2020-09-26)
 
 ### Bug Fixes
