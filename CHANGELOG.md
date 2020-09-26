@@ -1,3 +1,9 @@
+## [1.36.87](https://github.com/zicodeng/ztopia-ui/compare/v1.36.86...v1.36.87) (2020-09-26)
+
+### Bug Fixes
+
+- add previewURL prop to FileUploader ([311be6a](https://github.com/zicodeng/ztopia-ui/commit/311be6aa935e19b2632ec775b6057dee7f47f984))
+
 ## [1.36.86](https://github.com/zicodeng/ztopia-ui/compare/v1.36.85...v1.36.86) (2020-09-13)
 
 ### Bug Fixes
