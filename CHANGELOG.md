@@ -1,3 +1,9 @@
+## [1.36.88](https://github.com/zicodeng/ztopia-ui/compare/v1.36.87...v1.36.88) (2020-09-26)
+
+### Bug Fixes
+
+- fix cannot read property thumbURL of undefined ([46877a6](https://github.com/zicodeng/ztopia-ui/commit/46877a6543e4af35c79b703b7ff7657077e1048e))
+
 ## [1.36.87](https://github.com/zicodeng/ztopia-ui/compare/v1.36.86...v1.36.87) (2020-09-26)
 
 ### Bug Fixes
