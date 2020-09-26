@@ -97,7 +97,6 @@ export const FileUploader: FC<FileUploaderProps> = memo(
       maxSize,
       accept: allowedFileTypes,
       onDrop: acceptedFiles => {
-        setDragState(null);
         const previewURLs: string[] = [];
         const previewFiles = acceptedFiles.map(file => {
           const thumbURL = URL.createObjectURL(file);
@@ -106,6 +105,8 @@ export const FileUploader: FC<FileUploaderProps> = memo(
             thumbURL,
           });
         });
+
+        setDragState(null);
         setPreviewFiles(previewFiles);
         setPreviewURLs(previewURLs);
       },
@@ -120,6 +121,11 @@ export const FileUploader: FC<FileUploaderProps> = memo(
       },
       ...restProps,
     });
+
+    useEffect(() => {
+      // @ts-ignore
+      if (previewURL) setPreviewFiles([{ thumbURL: previewURL }]);
+    }, [previewURL]);
 
     useEffect(
       () => () => {
@@ -202,7 +208,7 @@ export const FileUploader: FC<FileUploaderProps> = memo(
           </ul>
         ) : (
           // On secondary variant, we allow users to reselect a file by clicking preview
-          previewURL && (
+          previewFiles[0] && (
             <div
               {...getRootProps({
                 className: classNames(
@@ -217,7 +223,7 @@ export const FileUploader: FC<FileUploaderProps> = memo(
                 width="100%"
                 height={200}
                 variant="background"
-                src={previewURL}
+                src={previewFiles[0].thumbURL}
               />
               <input {...getInputProps()} />
             </div>

@@ -32,11 +32,7 @@ Dependency: [react-dropzone](https://github.com/react-dropzone/react-dropzone)
     <FileUploader
       variant="secondary"
       label="Secondary"
-      defaultPreviewFiles={[
-        {
-          thumbURL: 'https://cdn.pixabay.com/photo/2015/06/19/21/24/the-road-815297__340.jpg',
-        }
-      ]}
+      previewURL="https://cdn.pixabay.com/photo/2015/06/19/21/24/the-road-815297__340.jpg"
       onDropAccepted={(files, e) => {
         console.log('FileUploader', 'onDropAccepted', { files, e });
       }}
