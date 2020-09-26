@@ -67,6 +67,12 @@
     }
   }
 
+  &__reselect-dropzone-image {
+    &.is-blurred {
+      filter: blur(2px);
+    }
+  }
+
   &__label {
     margin: $spacing-l 0 0;
     pointer-events: none;

@@ -1,6 +1,7 @@
 import React, { FC, memo, useCallback, useEffect, useState } from 'react';
 import { DropEvent, useDropzone } from 'react-dropzone';
 import classNames from 'classnames';
+import { get } from 'lodash-es';
 
 import { IconCloudUpload, IconTimes } from '../Icons';
 import { Image } from '../Image';
@@ -149,6 +150,8 @@ export const FileUploader: FC<FileUploaderProps> = memo(
       [previewFiles],
     );
 
+    const reselectDropzoneImgURL = get(previewFiles[0], 'thumbURL');
+
     return (
       <section className={classNames(className, 'ztopia-file-uploader')}>
         {!previewFiles.length && (
@@ -208,7 +211,7 @@ export const FileUploader: FC<FileUploaderProps> = memo(
           </ul>
         ) : (
           // On secondary variant, we allow users to reselect a file by clicking preview
-          previewFiles[0] && (
+          reselectDropzoneImgURL && (
             <div
               {...getRootProps({
                 className: classNames(
@@ -223,7 +226,14 @@ export const FileUploader: FC<FileUploaderProps> = memo(
                 width="100%"
                 height={200}
                 variant="background"
-                src={previewFiles[0].thumbURL}
+                className={classNames(
+                  'ztopia-file-uploader__reselect-dropzone-image',
+                  {
+                    // Show image as blurred if it hasn't uploaded yet
+                    'is-blurred': reselectDropzoneImgURL.includes('blob'),
+                  },
+                )}
+                src={reselectDropzoneImgURL}
               />
               <input {...getInputProps()} />
             </div>
