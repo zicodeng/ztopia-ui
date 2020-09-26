@@ -1,3 +1,9 @@
+## [1.36.90](https://github.com/zicodeng/ztopia-ui/compare/v1.36.89...v1.36.90) (2020-09-26)
+
+### Bug Fixes
+
+- blur reselect dropzone blob image ([e9c066a](https://github.com/zicodeng/ztopia-ui/commit/e9c066aea3ca3d8dd5edd5e32df77696f03fa085))
+
 ## [1.36.89](https://github.com/zicodeng/ztopia-ui/compare/v1.36.88...v1.36.89) (2020-09-26)
 
 ### Bug Fixes
