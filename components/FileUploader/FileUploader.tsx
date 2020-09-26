@@ -47,9 +47,9 @@ export interface FileUploaderProps {
    */
   progress?: { [fileName: string]: number };
   /**
-   * <@default=`[]`>
+   * Can be used to set preview URL for secondary variant FileUploader only
    */
-  defaultPreviewFiles?: EnhancedFile[];
+  previewURL?: string;
   /**
    * <@default=`image/*`>
    */
@@ -82,14 +82,12 @@ export const FileUploader: FC<FileUploaderProps> = memo(
     label = 'Choose a File or Drag It Here',
     variant = 'primary',
     progress = {},
-    defaultPreviewFiles = [],
+    previewURL,
     allowedFileTypes = 'image/*',
     ...restProps
   }) => {
     const [dragState, setDragState] = useState<DragState | null>(null);
-    const [previewFiles, setPreviewFiles] = useState<EnhancedFile[]>(
-      defaultPreviewFiles,
-    );
+    const [previewFiles, setPreviewFiles] = useState<EnhancedFile[]>([]);
     const [previewURLs, setPreviewURLs] = useState<string[]>([]);
 
     // @ts-ignore
@@ -204,7 +202,7 @@ export const FileUploader: FC<FileUploaderProps> = memo(
           </ul>
         ) : (
           // On secondary variant, we allow users to reselect a file by clicking preview
-          previewFiles[0] && (
+          previewURL && (
             <div
               {...getRootProps({
                 className: classNames(
