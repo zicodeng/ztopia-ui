@@ -217,7 +217,7 @@ export const FileUploader: FC<FileUploaderProps> = memo(
                 width="100%"
                 height={200}
                 variant="background"
-                src={previewFiles[0].thumbURL}
+                src={previewURL}
               />
               <input {...getInputProps()} />
             </div>
