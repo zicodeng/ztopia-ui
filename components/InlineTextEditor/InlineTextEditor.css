@@ -81,6 +81,17 @@
     background-color: transparent;
     border-left: 2px solid $black-dark;
   }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .medium-editor-toolbar {
