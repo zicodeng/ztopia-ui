@@ -1,3 +1,9 @@
+## [1.36.93](https://github.com/zicodeng/ztopia-ui/compare/v1.36.92...v1.36.93) (2020-09-29)
+
+### Bug Fixes
+
+- add calendar locale support ([75e4d72](https://github.com/zicodeng/ztopia-ui/commit/75e4d72993ebf80f05727b28aa6bb0dff914aedf))
+
 ## [1.36.92](https://github.com/zicodeng/ztopia-ui/compare/v1.36.91...v1.36.92) (2020-09-27)
 
 ### Bug Fixes
