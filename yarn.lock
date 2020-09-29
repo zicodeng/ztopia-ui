@@ -2044,13 +2044,6 @@
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
 
-"@types/moment@^2.13.0":
-  version "2.13.0"
-  resolved "https://registry.yarnpkg.com/@types/moment/-/moment-2.13.0.tgz#604ebd189bc3bc34a1548689404e61a2a4aac896"
-  integrity sha1-YE69GJvDvDShVIaJQE5hoqSqyJY=
-  dependencies:
-    moment "*"
-
 "@types/node@*", "@types/node@^12.0.2":
   version "12.7.12"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.7.12.tgz#7c6c571cc2f3f3ac4a59a5f2bd48f5bdbc8653cc"
@@ -2091,10 +2084,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-big-calendar@^0.22.1":
-  version "0.22.3"
-  resolved "https://registry.yarnpkg.com/@types/react-big-calendar/-/react-big-calendar-0.22.3.tgz#9c78191132c4922240b33230313723e9007e9e0b"
-  integrity sha512-y207TfUNF+zm+REKAJVwO8/9hDXBpHSSQZU3VlAbKe+Sk3RRg6DYx83FXN6W43y/jKrparHq3Yg+bpnh2/thzQ==
+"@types/react-big-calendar@^0.24.6":
+  version "0.24.6"
+  resolved "https://packages.convoy.com:443/artifactory/api/npm/npm/@types/react-big-calendar/-/react-big-calendar-0.24.6.tgz#7e3aca92343578d401d42b9b6393299412c722d8"
+  integrity sha1-fjrKkjQ1eNQB1CubY5MplBLHItg=
   dependencies:
     "@types/prop-types" "*"
     "@types/react" "*"
@@ -5077,10 +5070,15 @@ date-fns@^1.27.2:
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
   integrity sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
 
-date-fns@^2.0.0-beta.4, date-fns@^2.0.1:
+date-fns@^2.0.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.4.1.tgz#b53f9bb65ae6bd9239437035710e01cf383b625e"
   integrity sha512-2RhmH/sjDSCYW2F3ZQxOUx/I7PvzXpi89aQL2d3OAxSTwLx6NilATeUbe0menFE3Lu5lFkOFci36ivimwYHHxw==
+
+date-fns@^2.16.1:
+  version "2.16.1"
+  resolved "https://packages.convoy.com:443/artifactory/api/npm/npm/date-fns/-/date-fns-2.16.1.tgz#05775792c3f3331da812af253e1a935851d3834b"
+  integrity sha1-BXdXksPzMx2oEq8lPhqTWFHTg0s=
 
 date-now@^0.1.4:
   version "0.1.4"
@@ -9913,15 +9911,10 @@ mem@^4.0.0:
     mimic-fn "^2.0.0"
     p-is-promise "^2.0.0"
 
-"memoize-one@>=3.1.1 <6", memoize-one@^5.0.0:
+"memoize-one@>=3.1.1 <6", memoize-one@^5.0.0, memoize-one@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.1.1.tgz#047b6e3199b508eaec03504de71229b8eb1d75c0"
   integrity sha512-HKeeBpWvqiVJD57ZUAsJNm71eHTykffzcLZVYWiVfQeI1rJtuEaS7hQiEpWfVVk18donPwJEcFKIkCmPJNOhHA==
-
-memoize-one@^4.0.3:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-4.1.0.tgz#a2387c58c03fff27ca390c31b764a79addf3f906"
-  integrity sha512-2GApq0yI/b22J2j9rhbrAlsHb0Qcz+7yWxeLG8h+95sl1XPUgeLimQSOdur4Vw7cUhrBHwaUZxWFZueojqNRzA==
 
 memory-fs@^0.4.1:
   version "0.4.1"
@@ -10288,11 +10281,6 @@ modify-values@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/modify-values/-/modify-values-1.0.1.tgz#b3939fa605546474e3e3e3c63d64bd43b4ee6022"
   integrity sha512-xV2bxeN6F7oYjZWTe/YPAy6MN2M+sL4u/Rlm2AHCIVGfo2p1yGmBHQ6vHehl4bRTZBdHu3TSkWdYgkwpYzAGSw==
-
-moment@*, moment@^2.24.0:
-  version "2.24.0"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
-  integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
 
 moniker@0.1.2:
   version "0.1.2"
@@ -12701,10 +12689,10 @@ re-resizable@^5.0.0:
   dependencies:
     fast-memoize "^2.5.1"
 
-react-big-calendar@^0.22.0:
-  version "0.22.1"
-  resolved "https://registry.yarnpkg.com/react-big-calendar/-/react-big-calendar-0.22.1.tgz#7b523cee4c423410a05e4499a720e8dae12ebec6"
-  integrity sha512-Pd0x0W4vjs5oDzPl3kvIlJok4ESO7p/+jpxKil0xkJ5sfsYlB/lZMCht7htEy9/WInnnJQGcXx+tLIcEzDbV8g==
+react-big-calendar@^0.28.0:
+  version "0.28.0"
+  resolved "https://packages.convoy.com:443/artifactory/api/npm/npm/react-big-calendar/-/react-big-calendar-0.28.0.tgz#078b9fbab24faa78c0362b0dcdcd0225fbcbf3f8"
+  integrity sha1-B4ufurJPqnjANisNzc0CJfvL8/g=
   dependencies:
     "@babel/runtime" "^7.1.5"
     clsx "^1.0.4"
@@ -12713,11 +12701,10 @@ react-big-calendar@^0.22.0:
     invariant "^2.2.4"
     lodash "^4.17.11"
     lodash-es "^4.17.11"
-    memoize-one "^4.0.3"
-    prop-types "^15.6.2"
+    memoize-one "^5.1.1"
+    prop-types "^15.7.2"
     react-overlays "^2.0.0-0"
     uncontrollable "^7.0.0"
-    warning "^4.0.2"
 
 react-code-input@^3.8.1:
   version "3.8.1"

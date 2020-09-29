@@ -6,7 +6,7 @@ route: /components/calendar
 
 import { Props, Playground } from 'docz';
 import { Container } from 'docz-theme-ztopia/helpers';
-import moment from 'moment';
+import { addDays, subDays, setHours, setMinutes } from 'date-fns';
 
 import { Calendar } from './';
 import { CalendarDemo } from './CalendarDemo';
@@ -28,60 +28,26 @@ Dependencies: [react-big-calender](https://github.com/intljusticemission/react-b
           {
             allDay: true,
             title: 'Make the World Better Place',
-            start: moment()
-              .subtract(2, 'd')
-              .toDate(),
-            end: moment()
-              .add(2, 'd')
-              .toDate(),
+            start: subDays(new Date(), 2),
+            end: addDays(new Date(), 2),
           },
           {
             allDay: true,
             title: 'Camping',
-            start: moment()
-              .subtract(1, 'd')
-              .toDate(),
-            end: moment()
-              .add(1, 'd')
-              .toDate(),
+            start: subDays(new Date(), 1),
+            end: addDays(new Date(), 1),
           },
           {
             allDay: false,
             title: 'Study',
-            start: moment()
-              .set('year', moment().get('year'))
-              .add(1, 'd')
-              .set('hour', 6)
-              .toDate(),
-            end: moment()
-              .set('year', moment().get('year'))
-              .add(1, 'd')
-              .set('hour', 16)
-              .toDate(),
+            start: setHours(setMinutes(new Date(), 0), 6),
+            end: setHours(setMinutes(new Date(), 30), 16),
           },
           {
             allDay: false,
             title: 'Practice Guitar',
-            start: moment()
-              .set('year', moment().get('year'))
-              .set('hour', 9)
-              .toDate(),
-            end: moment()
-              .set('year', moment().get('year'))
-              .set('hour', 21)
-              .toDate(),
-          },
-          {
-            allDay: false,
-            title: 'Slack',
-            start: moment()
-              .set('year', moment().get('year'))
-              .set('hour', 6)
-              .toDate(),
-            end: moment()
-              .set('year', moment().get('year'))
-              .set('hour', 12)
-              .toDate(),
+            start: setHours(setMinutes(new Date(), 0), 12),
+            end: setHours(setMinutes(new Date(), 60), 14),
           },
         ]}
       />
