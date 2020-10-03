@@ -59,8 +59,7 @@
     position: absolute;
     top: $spacing-l;
     right: $spacing-l;
-    color: $color-danger;
-    cursor: pointer;
+    color: $red;
 
     &:hover {
       color: $red-dark;

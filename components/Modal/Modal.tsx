@@ -62,6 +62,7 @@ export const Modal: FC<ModalProps> = memo(
         {children}
         {isCloseButtonShown && (
           <IconTimes
+            isAction
             className="ztopia-modal__close-indicator"
             onClick={onRequestClose}
           />
