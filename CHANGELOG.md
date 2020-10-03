@@ -1,3 +1,9 @@
+## [1.36.95](https://github.com/zicodeng/ztopia-ui/compare/v1.36.94...v1.36.95) (2020-10-03)
+
+### Bug Fixes
+
+- default interval to 5 sec ([56d68ca](https://github.com/zicodeng/ztopia-ui/commit/56d68ca6b618974eed250345ea66569501ff9179))
+
 ## [1.36.94](https://github.com/zicodeng/ztopia-ui/compare/v1.36.93...v1.36.94) (2020-10-03)
 
 ### Bug Fixes
