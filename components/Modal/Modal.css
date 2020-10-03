@@ -57,14 +57,13 @@
 
   &__close-indicator {
     position: absolute;
-    top: $spacing-xl;
-    right: $spacing-xl;
+    top: $spacing-l;
+    right: $spacing-l;
     color: $color-danger;
-    font-size: x-large;
     cursor: pointer;
 
     &:hover {
-      color: $color-danger;
+      color: $red-dark;
     }
   }
 }
