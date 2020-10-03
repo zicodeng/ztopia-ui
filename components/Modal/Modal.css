@@ -59,10 +59,10 @@
     position: absolute;
     top: $spacing-l;
     right: $spacing-l;
-    color: $red;
+    color: $white-dark;
 
     &:hover {
-      color: $red-dark;
+      color: $red;
     }
   }
 }
