@@ -1,3 +1,9 @@
+## [1.36.96](https://github.com/zicodeng/ztopia-ui/compare/v1.36.95...v1.36.96) (2020-10-03)
+
+### Bug Fixes
+
+- update Modal style ([e61e31f](https://github.com/zicodeng/ztopia-ui/commit/e61e31fb5a50e346409272481b71a688187130d8))
+
 ## [1.36.95](https://github.com/zicodeng/ztopia-ui/compare/v1.36.94...v1.36.95) (2020-10-03)
 
 ### Bug Fixes
