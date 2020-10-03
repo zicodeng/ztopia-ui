@@ -1,3 +1,9 @@
+## [1.36.94](https://github.com/zicodeng/ztopia-ui/compare/v1.36.93...v1.36.94) (2020-10-03)
+
+### Bug Fixes
+
+- default transition time to 5 sec ([5ab3673](https://github.com/zicodeng/ztopia-ui/commit/5ab367392376f716ec8ef4030752533917c41c5c))
+
 ## [1.36.93](https://github.com/zicodeng/ztopia-ui/compare/v1.36.92...v1.36.93) (2020-09-29)
 
 ### Bug Fixes
