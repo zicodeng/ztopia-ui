@@ -1,4 +1,4 @@
-import React, { cloneElement, FC, memo } from 'react';
+import React, { cloneElement, memo } from 'react';
 import classNames from 'classnames';
 import CSSKeyframer from 'css-keyframer';
 
@@ -21,7 +21,7 @@ const getRandomNumber = max => Math.floor(Math.random() * max);
 
 const keyframer = new CSSKeyframer();
 
-export const IconCyclone: FC<IconCycloneProps> = memo(
+export const IconCyclone = memo<IconCycloneProps>(
   ({
     count = 50,
     className,

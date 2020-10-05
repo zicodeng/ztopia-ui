@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import React, { memo } from 'react';
 import classNames from 'classnames';
 import BasicSlider, { Handle, HandleProps, Marks, Range } from 'rc-slider';
 
@@ -53,7 +53,7 @@ const defaultRenderHandle = props => {
 
 export const SliderHandle = memo<HandleProps>(props => <Handle {...props} />);
 
-export const Slider: FC<SliderProps> = memo<SliderProps>(
+export const Slider = memo<SliderProps>(
   ({
     isVertical = false,
     min = 0,

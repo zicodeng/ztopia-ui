@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, memo } from 'react';
+import React, { CSSProperties, memo, ReactNode } from 'react';
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -14,10 +14,11 @@ export interface TimelineProps {
    */
   isAnimated?: boolean;
   className?: string;
+  children?: ReactNode;
   layout?: '1-column' | '2-columns';
 }
 
-export const Timeline: FC<TimelineProps> = memo(
+export const Timeline = memo<TimelineProps>(
   ({ isAnimated = true, className, ...restProps }) => (
     <VerticalTimeline
       animate={isAnimated}
@@ -34,9 +35,10 @@ export interface TimelineItemProps {
   iconStyle?: CSSProperties;
   contentStyle?: CSSProperties;
   contentArrowStyle?: CSSProperties;
+  children?: ReactNode;
 }
 
-export const TimelineItem: FC<TimelineItemProps> = memo(
+export const TimelineItem = memo<TimelineItemProps>(
   ({ className, ...restProps }) => (
     <VerticalTimelineElement
       className={classNames(className, 'ztopia-timeline__item')}

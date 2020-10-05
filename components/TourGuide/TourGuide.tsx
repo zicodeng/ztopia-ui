@@ -1,4 +1,4 @@
-import React, { FC, memo, ReactNode } from 'react';
+import React, { memo, ReactNode } from 'react';
 import Joyride, { Locale, Styles } from 'react-joyride';
 
 export type Placement = 'top' | 'bottom' | 'left' | 'right' | 'auto' | 'center';
@@ -16,7 +16,7 @@ export interface TourGuideProps {
   steps: Step[];
 }
 
-export const TourGuide: FC<TourGuideProps> = memo(props => (
+export const TourGuide = memo<TourGuideProps>(props => (
   <Joyride
     disableCloseOnEsc
     disableOverlayClose

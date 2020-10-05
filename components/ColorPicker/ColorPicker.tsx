@@ -1,4 +1,4 @@
-import React, { FC, memo, useCallback, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import {
   ChromePicker,
   ChromePickerProps,
@@ -29,7 +29,7 @@ export interface ColorPickerProps extends ChromePickerProps {
   popperProps?: PopperProps;
 }
 
-export const ColorPicker: FC<ColorPickerProps> = memo(
+export const ColorPicker = memo<ColorPickerProps>(
   ({
     isTriggerShown = false,
     color = '#000000',

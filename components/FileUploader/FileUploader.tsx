@@ -1,4 +1,4 @@
-import React, { FC, memo, useCallback, useEffect, useState } from 'react';
+import React, { memo, useCallback, useEffect, useState } from 'react';
 import { DropEvent, useDropzone } from 'react-dropzone';
 import classNames from 'classnames';
 import { get } from 'lodash-es';
@@ -73,7 +73,7 @@ const convertBytesToSize = (bytes: number) => {
   return `${(bytes / 1024 ** i).toFixed(1)} ${sizes[i]}`;
 };
 
-export const FileUploader: FC<FileUploaderProps> = memo(
+export const FileUploader = memo<FileUploaderProps>(
   ({
     isFileRemoveIndicatorShown = true,
     isMulti = false,

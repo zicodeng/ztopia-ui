@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import React, { memo } from 'react';
 import classNames from 'classnames';
 
 import './MoodyDog.css';
@@ -14,7 +14,7 @@ export interface MoodyDogProps {
   mood?: Mood;
 }
 
-export const MoodyDog: FC<MoodyDogProps> = memo(
+export const MoodyDog = memo<MoodyDogProps>(
   ({ className, mood = 'relaxed' }) => (
     <div className={classNames(className, 'dog', `dog--${mood}`)}>
       <div className="head">

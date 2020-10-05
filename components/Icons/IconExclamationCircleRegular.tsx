@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import React, { memo } from 'react';
 
 import { Icon, IconProps } from './';
 
-export const IconExclamationCircleRegular: FC<IconProps> = props => (
+export const IconExclamationCircleRegular = memo<IconProps>(props => (
   <Icon {...props}>
     <svg data-icon="exclamation-circle" viewBox="0 0 512 512">
       <path
@@ -11,4 +11,4 @@ export const IconExclamationCircleRegular: FC<IconProps> = props => (
       ></path>
     </svg>
   </Icon>
-);
+));

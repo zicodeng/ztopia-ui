@@ -1,4 +1,4 @@
-import React, { FC, memo, useEffect, useRef, useState } from 'react';
+import React, { memo, useEffect, useRef, useState } from 'react';
 import { useWindowSize } from 'react-use';
 import classNames from 'classnames';
 
@@ -23,7 +23,7 @@ const getCardMargin = (i: number, total: number, gap: number): string => {
   return `0 ${gap}px`;
 };
 
-export const CardCarousel: FC<CardCarouselProps> = memo(
+export const CardCarousel = memo<CardCarouselProps>(
   ({ gap = 10, className, cards, ...restProps }) => {
     const [x, setX] = useState(-gap);
     const [width, setWidth] = useState(0);

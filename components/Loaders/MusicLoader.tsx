@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import React, { memo } from 'react';
 import classNames from 'classnames';
 
 import { Loader, LoaderProps } from './';
 
 import './MusicLoader.css';
 
-export const MusicLoader: FC<LoaderProps> = props => (
+export const MusicLoader = memo<LoaderProps>(props => (
   <Loader {...props}>
     {({ color, className }) => (
       <div className={classNames(className, 'ztopia-loader--music')}>
@@ -21,4 +21,4 @@ export const MusicLoader: FC<LoaderProps> = props => (
       </div>
     )}
   </Loader>
-);
+));

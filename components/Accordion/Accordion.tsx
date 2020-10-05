@@ -2,9 +2,9 @@ import React, {
   Children,
   cloneElement,
   createElement,
-  FC,
   isValidElement,
   memo,
+  ReactNode,
   useCallback,
   useEffect,
   useRef,
@@ -29,17 +29,18 @@ export interface AccordionProps {
    */
   component?: string;
   expandedPanelId?: string;
+  children?: ReactNode;
   defaultExpandedPanelIds?: string[];
 }
 
-export const Accordion: FC<AccordionProps> = memo(
+export const Accordion = memo<AccordionProps>(
   ({
     isMulti = false,
     className,
     component = 'section',
     expandedPanelId,
-    defaultExpandedPanelIds = [],
     children,
+    defaultExpandedPanelIds = [],
   }) => {
     const [expandedPanelIds, setExpandedPanelIds] = useState<string[]>(
       expandedPanelId ? [expandedPanelId] : defaultExpandedPanelIds,
@@ -92,6 +93,7 @@ export interface AccordionPanel {
    * <@default=`article`>
    */
   component?: string;
+  children?: ReactNode;
   /**
    * Passed by Accordion
    *
@@ -103,14 +105,14 @@ export interface AccordionPanel {
   ) => void;
 }
 
-export const AccordionPanel: FC<AccordionPanel> = memo(
+export const AccordionPanel = memo<AccordionPanel>(
   ({
     isExpanded,
     id,
     className,
     component = 'article',
-    onClickPanelHeader,
     children,
+    onClickPanelHeader,
   }) => {
     if (!children || !children[0] || !children[1]) {
       throw new Error(
@@ -159,6 +161,7 @@ export interface AccordionPanelHeader {
    * <@default=`header`>
    */
   component?: string;
+  children?: ReactNode;
   /**
    * Passed by AccordionPanel
    *
@@ -170,7 +173,7 @@ export interface AccordionPanelHeader {
   ) => void;
 }
 
-export const AccordionPanelHeader: FC<AccordionPanelHeader> = memo(
+export const AccordionPanelHeader = memo<AccordionPanelHeader>(
   ({
     isExpanded,
     id,
@@ -210,9 +213,10 @@ export interface AccordionPanelContent {
    * <@default=`div`>
    */
   component?: string;
+  children?: ReactNode;
 }
 
-export const AccordionPanelContent: FC<AccordionPanelContent> = memo(
+export const AccordionPanelContent = memo<AccordionPanelContent>(
   ({ isExpanded, className, component = 'div', ...restProps }) => {
     const ref = useRef<HTMLDivElement>(null);
 

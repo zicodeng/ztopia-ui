@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
+import React, { memo } from 'react';
 import { Calendar as BaseCalendar, dateFnsLocalizer } from 'react-big-calendar';
 import classNames from 'classnames';
-import { format, getDay,parse, startOfWeek } from 'date-fns';
+import { format, getDay, parse, startOfWeek } from 'date-fns';
 import enUS from 'date-fns/locale/en-US';
 import zhCN from 'date-fns/locale/zh-CN';
 
@@ -51,36 +51,29 @@ export interface CalendarProps {
   onSelectEvent?: (event: Event, e: React.SyntheticEvent<HTMLElement>) => void;
 }
 
-export const Calendar: FC<CalendarProps> = ({
-  isSelectable,
-  className,
-  locale = 'en-US',
-  ...restProps
-}) => (
-  <BaseCalendar
-    {...restProps}
-    selectable={isSelectable}
-    className={classNames(className, 'ztopia-calendar')}
-    localizer={localizer}
-    culture={locale}
-    messages={
-      locale === 'zh-CN'
-        ? {
-            today: '今天',
-            next: '>',
-            previous: '<',
-            month: '月',
-            week: '周',
-            day: '日',
-            agenda: '议程',
-            showMore: count => `查看更多(${count}+)`,
-            allDay: '全天',
-          }
-        : undefined
-    }
-  />
+export const Calendar = memo<CalendarProps>(
+  ({ isSelectable = false, className, locale = 'en-US', ...restProps }) => (
+    <BaseCalendar
+      {...restProps}
+      selectable={isSelectable}
+      className={classNames(className, 'ztopia-calendar')}
+      localizer={localizer}
+      culture={locale}
+      messages={
+        locale === 'zh-CN'
+          ? {
+              today: '今天',
+              next: '>',
+              previous: '<',
+              month: '月',
+              week: '周',
+              day: '日',
+              agenda: '议程',
+              showMore: count => `查看更多(${count}+)`,
+              allDay: '全天',
+            }
+          : undefined
+      }
+    />
+  ),
 );
-
-Calendar.defaultProps = {
-  isSelectable: false,
-};

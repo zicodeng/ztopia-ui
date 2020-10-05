@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC } from 'react';
+import React, { CSSProperties, memo } from 'react';
 import classNames from 'classnames';
 
 export interface DividerProps {
@@ -26,26 +26,28 @@ export interface DividerProps {
   style?: CSSProperties;
 }
 
-export const Divider: FC<DividerProps> = ({
-  isFaded = false,
-  isVertical = false,
-  className,
-  width = '100%',
-  height = 1,
-  color = '#131518',
-  style,
-}) => (
-  <div
-    className={classNames(className, 'ztopia-divider')}
-    style={{
-      ...style,
-      width,
-      height,
-      background: isFaded
-        ? `linear-gradient(${
-            isVertical ? 0 : 90
-          }deg, transparent, ${color} 50%, transparent 100%)`
-        : color,
-    }}
-  />
+export const Divider = memo<DividerProps>(
+  ({
+    isFaded = false,
+    isVertical = false,
+    className,
+    width = '100%',
+    height = 1,
+    color = '#131518',
+    style,
+  }) => (
+    <div
+      className={classNames(className, 'ztopia-divider')}
+      style={{
+        ...style,
+        width,
+        height,
+        background: isFaded
+          ? `linear-gradient(${
+              isVertical ? 0 : 90
+            }deg, transparent, ${color} 50%, transparent 100%)`
+          : color,
+      }}
+    />
+  ),
 );

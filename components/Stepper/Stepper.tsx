@@ -1,4 +1,4 @@
-import React, { FC, memo, ReactNode } from 'react';
+import React, { memo, ReactNode } from 'react';
 import classNames from 'classnames';
 
 import { IconCheckmark } from '../Icons';
@@ -27,7 +27,7 @@ export interface StepperProps {
   steps: Step[];
 }
 
-export const Stepper: FC<StepperProps> = memo(
+export const Stepper = memo<StepperProps>(
   ({ isFinished = false, currentStep = 0, className, steps }) => {
     const maxSteps = steps.length - 1;
 

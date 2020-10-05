@@ -1,4 +1,4 @@
-import React, { FC, memo, useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import {
   Area as BaseArea,
   AreaChart,
@@ -113,7 +113,7 @@ export interface ChartProps {
   bars?: Bar[];
 }
 
-export const Chart: FC<ChartProps> = memo(
+export const Chart = memo<ChartProps>(
   ({
     width = 800,
     height = 400,

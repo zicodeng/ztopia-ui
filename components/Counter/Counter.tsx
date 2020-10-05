@@ -1,6 +1,6 @@
 import React, {
   CSSProperties,
-  FC,
+  memo,
   useCallback,
   useEffect,
   useState,
@@ -27,45 +27,41 @@ export interface CounterProps {
   style?: CSSProperties;
 }
 
-export const Counter: FC<CounterProps> = ({
-  isResetEnabled = false,
-  end,
-  className,
-  style,
-  ...restProps
-}) => {
-  const { countUp, start, reset, update } = useCountUp({
-    end,
-    ...restProps,
-  });
+export const Counter = memo<CounterProps>(
+  ({ isResetEnabled = false, end, className, style, ...restProps }) => {
+    const { countUp, start, reset, update } = useCountUp({
+      end,
+      ...restProps,
+    });
 
-  const [isVisible, setIsVisible] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    if (!isResetEnabled) return;
-    if (isVisible) {
-      start();
-    } else {
-      reset();
-    }
-  }, [isVisible]);
+    useEffect(() => {
+      if (!isResetEnabled) return;
+      if (isVisible) {
+        start();
+      } else {
+        reset();
+      }
+    }, [isVisible]);
 
-  useEffect(() => {
-    update(end);
-  }, [end]);
+    useEffect(() => {
+      update(end);
+    }, [end]);
 
-  const handleChange = useCallback(
-    (isVisible: boolean) => {
-      if (isResetEnabled) setIsVisible(isVisible);
-    },
-    [isResetEnabled],
-  );
+    const handleChange = useCallback(
+      (isVisible: boolean) => {
+        if (isResetEnabled) setIsVisible(isVisible);
+      },
+      [isResetEnabled],
+    );
 
-  return (
-    <VisibilitySensor onChange={handleChange}>
-      <span className={classNames('ztopia-counter', className)} style={style}>
-        {countUp}
-      </span>
-    </VisibilitySensor>
-  );
-};
+    return (
+      <VisibilitySensor onChange={handleChange}>
+        <span className={classNames('ztopia-counter', className)} style={style}>
+          {countUp}
+        </span>
+      </VisibilitySensor>
+    );
+  },
+);

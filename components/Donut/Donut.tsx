@@ -1,4 +1,4 @@
-import React, { FC, memo, ReactNode } from 'react';
+import React, { memo, ReactNode } from 'react';
 import { Cell, Pie, PieChart, Tooltip } from 'recharts';
 
 export interface DonutProps {
@@ -61,7 +61,7 @@ export interface DonutProps {
 
 const renderLabel = ({ name }) => name;
 
-export const Donut: FC<DonutProps> = memo(
+export const Donut = memo<DonutProps>(
   ({
     isTooltipShown = true,
     isAnimated = true,

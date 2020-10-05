@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { memo } from 'react';
 import classNames from 'classnames';
 
 import './Loader.css';
@@ -20,7 +20,7 @@ export interface LoaderProps {
   children?: (props: { color: string; className: string }) => JSX.Element;
 }
 
-export const Loader: FC<LoaderProps> = memo(
+export const Loader = memo<LoaderProps>(
   ({
     isCentered = false,
     color = '#131518',

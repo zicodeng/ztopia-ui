@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, memo, useEffect } from 'react';
+import React, { ChangeEvent, memo, useEffect } from 'react';
 import classNames from 'classnames';
 import MediumEditor, { MediumEditor as IMediumEditor } from 'medium-editor';
 
@@ -59,7 +59,7 @@ export interface InlineTextEditorProps {
   onReady?: (editor: Editor) => void;
 }
 
-export const InlineTextEditor: FC<InlineTextEditorProps> = memo(
+export const InlineTextEditor = memo<InlineTextEditorProps>(
   ({
     isReadonly = false,
     id = 'ztopia-inline-text-editor',

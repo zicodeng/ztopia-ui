@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import React, { memo } from 'react';
 
 import './ElasticStroke.css';
 
@@ -8,7 +8,7 @@ export interface ElasticStrokeProps {
   text?: string;
 }
 
-export const ElasticStroke: FC<ElasticStrokeProps> = memo(
+export const ElasticStroke = memo<ElasticStrokeProps>(
   ({ width = '100%', height = '100%', text = 'Hello, World!' }) => (
     <svg
       viewBox="0 -80 800 300"

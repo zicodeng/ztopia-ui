@@ -2,9 +2,9 @@ import React, {
   Children,
   cloneElement,
   CSSProperties,
-  FC,
   isValidElement,
   memo,
+  ReactNode,
   useCallback,
   useEffect,
   useMemo,
@@ -20,6 +20,7 @@ import './Tabs.css';
 export interface TabProps {
   id: string;
   className?: string;
+  children?: ReactNode;
   /**
    * <@internal>
    */
@@ -44,11 +45,11 @@ export interface TabProps {
   onRender?: (id: string, size: ComponentSize) => void;
 }
 
-export const Tab: FC<TabProps> = memo(
+export const Tab = memo<TabProps>(
   ({
     id,
     className,
-    children,
+    children, // Internal props
     isSelected,
     isVertical,
     idx,
@@ -95,11 +96,12 @@ export interface TabsProps {
    * <@default=`20`>
    */
   gap?: number;
+  className?: string;
+  children?: ReactNode;
   /**
    * Selected tab Id
    */
   value?: string | null;
-  className?: string;
   /**
    * <@default=`'left or bottom'`>
    *
@@ -120,14 +122,14 @@ const MIN_TAB_SIZE = {
   height: 2,
 };
 
-export const Tabs: FC<TabsProps> = memo(
+export const Tabs = memo<TabsProps>(
   ({
     isVertical = false,
     gap = 20,
     value,
     className,
-    indicatorPlacement,
     children,
+    indicatorPlacement,
     onChange,
   }) => {
     indicatorPlacement = indicatorPlacement || (isVertical ? 'left' : 'bottom');

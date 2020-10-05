@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import React, { memo } from 'react';
 import classNames from 'classnames';
 
 import { Loader, LoaderProps } from './';
 
 import './BarLoader.css';
 
-export const BarLoader: FC<LoaderProps> = props => (
+export const BarLoader = memo<LoaderProps>(props => (
   <Loader {...props}>
     {({ color, className }) => (
       <div className={classNames(className, 'ztopia-loader--bar')}>
@@ -18,4 +18,4 @@ export const BarLoader: FC<LoaderProps> = props => (
       </div>
     )}
   </Loader>
-);
+));

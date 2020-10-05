@@ -43,6 +43,7 @@ export interface ImageProps {
    */
   variant?: 'normal' | 'background';
   caption?: ReactNode;
+  children?: ReactNode;
   maskStyle?: CSSProperties | null;
   /**
    * A Ztopia Placeholder either in function form (`Placeholder`) or element form (`<Placeholder />`)
@@ -51,16 +52,16 @@ export interface ImageProps {
   onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
-export const Image: FC<ImageProps> = memo(
+export const Image = memo<ImageProps>(
   ({
-    isLazyLoading,
-    width,
-    height,
-    delay,
+    isLazyLoading = false,
+    width = '100%',
+    height = 'auto',
+    delay = 0,
     src,
     alt,
     className,
-    variant,
+    variant = 'normal',
     caption,
     maskStyle,
     placeholder,
@@ -189,11 +190,3 @@ export const Image: FC<ImageProps> = memo(
     );
   },
 );
-
-Image.defaultProps = {
-  isLazyLoading: true,
-  delay: 0,
-  width: '100%',
-  height: 'auto',
-  variant: 'normal',
-};

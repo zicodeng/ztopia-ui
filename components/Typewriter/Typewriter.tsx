@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import React, { memo } from 'react';
 import Typed from 'react-typed';
 import classNames from 'classnames';
 
@@ -20,7 +20,7 @@ export interface TypewriterProps {
   text?: string[];
 }
 
-export const Typewriter: FC<TypewriterProps> = memo(
+export const Typewriter = memo<TypewriterProps>(
   ({
     isLooped = false,
     typeSpeed = 60,

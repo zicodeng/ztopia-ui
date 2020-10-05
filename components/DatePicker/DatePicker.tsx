@@ -1,11 +1,4 @@
-import React, {
-  FC,
-  memo,
-  ReactNode,
-  useCallback,
-  useEffect,
-  useRef,
-} from 'react';
+import React, { memo, ReactNode, useCallback, useEffect, useRef } from 'react';
 import BaseDatePicker from 'react-datepicker';
 import classNames from 'classnames';
 import { format, getYear, setYear } from 'date-fns';
@@ -107,87 +100,82 @@ const renderCustomHeader = ({
   </div>
 );
 
-export const DatePicker: FC<DatePickerProps> = ({
-  isYearSelectShown,
-  isTimeSelectShown,
-  todayButton,
-  timeFormat,
-  dateFormat,
-  value,
-  input,
-  onChange,
-  ...restProps
-}) => {
-  let changeYear: ((year: number) => void) | null = null;
-  const year = getYear(value || new Date());
+export const DatePicker = memo<DatePickerProps>(
+  ({
+    isYearSelectShown = false,
+    isTimeSelectShown = false,
+    timeIntervals = 30,
+    todayButton,
+    timeFormat = 'hh:mm aa',
+    dateFormat = 'MM/dd/yyyy',
+    value,
+    input = <Input />,
+    onChange,
+    ...restProps
+  }) => {
+    let changeYear: ((year: number) => void) | null = null;
+    const year = getYear(value || new Date());
 
-  useEffect(() => {
-    if (changeYear) changeYear(year);
-  }, [year]);
+    useEffect(() => {
+      if (changeYear) changeYear(year);
+    }, [year]);
 
-  const handleSelectYear = useCallback(
-    (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
-      const selectedYear = parseInt(e.currentTarget.id, 10);
-      const newValue = setYear(value || new Date(), selectedYear);
-      onChange(newValue);
-    },
-    [value],
-  );
+    const handleSelectYear = useCallback(
+      (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+        const selectedYear = parseInt(e.currentTarget.id, 10);
+        const newValue = setYear(value || new Date(), selectedYear);
+        onChange(newValue);
+      },
+      [value],
+    );
 
-  const handleChangeYear = useCallback((date: Date) => {
-    onChange(date);
-  }, []);
+    const handleChangeYear = useCallback((date: Date) => {
+      onChange(date);
+    }, []);
 
-  return (
-    <BaseDatePicker
-      {...restProps}
-      fixedHeight={isYearSelectShown || isTimeSelectShown}
-      showDisabledMonthNavigation
-      disabledKeyboardNavigation
-      showTimeSelect={isTimeSelectShown}
-      selected={value}
-      customInput={input}
-      todayButton={todayButton}
-      dateFormat={
-        isTimeSelectShown ? `${dateFormat} ${timeFormat}` : dateFormat
-      }
-      popperClassName="ztopia-date-picker"
-      calendarClassName="ztopia-date-picker__calendar"
-      popperModifiers={{
-        offset: {
-          enabled: isYearSelectShown,
-          offset: '100px, 0px',
-        },
-      }}
-      onChange={onChange}
-      onYearChange={handleChangeYear}
-      renderCustomHeader={args => {
-        changeYear = args.changeYear;
-        return renderCustomHeader(args);
-      }}
-      renderDayContents={day => (
-        <span className="ztopia-date-picker__day-content">{day}</span>
-      )}
-    >
-      {isYearSelectShown && (
-        <YearSelect
-          hasTodayButton={Boolean(todayButton)}
-          value={year}
-          onChange={handleSelectYear}
-        />
-      )}
-    </BaseDatePicker>
-  );
-};
-
-DatePicker.defaultProps = {
-  isYearSelectShown: false,
-  isTimeSelectShown: false,
-  timeIntervals: 30,
-  timeFormat: 'hh:mm aa',
-  dateFormat: 'MM/dd/yyyy',
-  input: <Input />,
-};
+    return (
+      <BaseDatePicker
+        {...restProps}
+        fixedHeight={isYearSelectShown || isTimeSelectShown}
+        showDisabledMonthNavigation
+        disabledKeyboardNavigation
+        showTimeSelect={isTimeSelectShown}
+        timeIntervals={timeIntervals}
+        selected={value}
+        customInput={input}
+        todayButton={todayButton}
+        dateFormat={
+          isTimeSelectShown ? `${dateFormat} ${timeFormat}` : dateFormat
+        }
+        popperClassName="ztopia-date-picker"
+        calendarClassName="ztopia-date-picker__calendar"
+        popperModifiers={{
+          offset: {
+            enabled: isYearSelectShown,
+            offset: '100px, 0px',
+          },
+        }}
+        onChange={onChange}
+        onYearChange={handleChangeYear}
+        renderCustomHeader={args => {
+          changeYear = args.changeYear;
+          return renderCustomHeader(args);
+        }}
+        renderDayContents={day => (
+          <span className="ztopia-date-picker__day-content">{day}</span>
+        )}
+      >
+        {isYearSelectShown && (
+          <YearSelect
+            hasTodayButton={Boolean(todayButton)}
+            value={year}
+            onChange={handleSelectYear}
+          />
+        )}
+      </BaseDatePicker>
+    );
+  },
+);
 
 interface YearSelectProps {
   hasTodayButton?: boolean;
@@ -198,7 +186,7 @@ interface YearSelectProps {
 const MIN_YEAR = 1900;
 const TOTAL_YEARS = 201;
 
-const YearSelect: FC<YearSelectProps> = memo(
+const YearSelect = memo<YearSelectProps>(
   ({ hasTodayButton, value, onChange }) => {
     const ref = useRef<HTMLUListElement>(null);
 

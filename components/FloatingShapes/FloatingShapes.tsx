@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import React, { memo } from 'react';
 import classNames from 'classnames';
 
 import './FloatingShapes.css';
@@ -12,7 +12,7 @@ export interface FloatingShapesProps {
   variant?: 'rect' | 'circle';
 }
 
-export const FloatingShapes: FC<FloatingShapesProps> = memo(
+export const FloatingShapes = memo<FloatingShapesProps>(
   ({ className, color = '#46cead', variant = 'rect' }) => (
     <section className={classNames(className, 'ztopia-floating-boxes')}>
       {Array.from({ length: 6 }).map((_, i) => (

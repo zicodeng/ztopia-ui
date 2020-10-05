@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, memo, useEffect } from 'react';
+import React, { CSSProperties, memo, useEffect } from 'react';
 import classNames from 'classnames';
 import Danmu from 'danmu.js';
 
@@ -20,7 +20,7 @@ export interface BulletScreenProps {
   comments: BulletScreenComment[];
 }
 
-export const BulletScreen: FC<BulletScreenProps> = memo(
+export const BulletScreen = memo<BulletScreenProps>(
   ({ className, comments }) => {
     useEffect(() => {
       const danmu = new Danmu({

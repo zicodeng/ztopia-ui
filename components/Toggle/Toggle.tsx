@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, memo } from 'react';
+import React, { ChangeEvent, memo } from 'react';
 import BaseToggle, { ToggleIcons } from 'react-toggle';
 import classNames from 'classnames';
 
@@ -26,8 +26,16 @@ export interface ToggleProps {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const Toggle: FC<ToggleProps> = memo(
-  ({ isChecked, isDisabled, id, className, size, icons, onChange }) => (
+export const Toggle = memo<ToggleProps>(
+  ({
+    isChecked = false,
+    isDisabled = false,
+    id,
+    className,
+    size = 'medium',
+    icons = false,
+    onChange,
+  }) => (
     <div
       className={classNames(
         className,
@@ -49,10 +57,3 @@ export const Toggle: FC<ToggleProps> = memo(
     </div>
   ),
 );
-
-Toggle.defaultProps = {
-  isChecked: false,
-  isDisabled: false,
-  size: 'medium',
-  icons: false,
-};

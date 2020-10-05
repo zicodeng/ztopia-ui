@@ -1,4 +1,4 @@
-import React, { FC, memo, useCallback } from 'react';
+import React, { memo, ReactNode, useCallback } from 'react';
 import ReactModal from 'react-modal';
 import classNames from 'classnames';
 
@@ -20,6 +20,7 @@ export interface ModalProps {
    */
   containerId?: string;
   className?: string;
+  children?: ReactNode;
   /**
    * <@default=`'medium'`>
    */
@@ -30,15 +31,15 @@ export interface ModalProps {
   onRequestClose?: () => void;
 }
 
-export const Modal: FC<ModalProps> = memo(
+export const Modal = memo<ModalProps>(
   ({
     isOpen = false,
     isCloseButtonShown = false,
     containerId,
     className,
+    children,
     size = 'medium',
     onRequestClose,
-    children,
   }) => {
     const getParent = useCallback(
       () => document.querySelector(containerId ? `#${containerId}` : 'body'),

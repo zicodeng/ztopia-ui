@@ -1,9 +1,9 @@
 import React, {
   cloneElement,
   CSSProperties,
-  FC,
   isValidElement,
   memo,
+  ReactNode,
   SVGProps,
 } from 'react';
 import classNames from 'classnames';
@@ -22,13 +22,14 @@ export interface BaseIconProps {
   color?: string;
   className?: string;
   style?: CSSProperties;
+  children?: ReactNode;
   /**
    * <@default=`'medium'`>
    */
   size?: 'small' | 'medium' | 'large';
 }
 
-export const InnerIcon: FC<BaseIconProps> = memo(
+export const InnerIcon = memo<BaseIconProps>(
   ({
     isAction = false,
     width,

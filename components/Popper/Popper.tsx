@@ -1,6 +1,5 @@
 import React, {
   cloneElement,
-  FC,
   isValidElement,
   memo,
   ReactElement,
@@ -72,7 +71,7 @@ export interface PopperProps {
   /**
    * Element that triggers tooltip
    */
-  children: ReactNode;
+  children?: ReactNode;
   /**
    * <@default=`'hover'`>
    */
@@ -95,7 +94,7 @@ export interface PopperProps {
     | 'left-bottom';
 }
 
-export const Popper: FC<PopperProps> = memo<PopperProps>(
+export const Popper = memo<PopperProps>(
   ({
     isVisible = undefined,
     isTransitionDisabled = false,

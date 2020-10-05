@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import uuidv4 from 'uuid/v4';
 
@@ -72,33 +72,32 @@ export interface FloatingHeartsProps {
   className?: string;
 }
 
-export const FloatingHearts: FC<FloatingHeartsProps> = ({
-  interval = 1000,
-  className,
-}) => {
-  const [hearts, setHearts] = useState<JSX.Element[]>([]);
+export const FloatingHearts = memo<FloatingHeartsProps>(
+  ({ interval = 1000, className }) => {
+    const [hearts, setHearts] = useState<JSX.Element[]>([]);
 
-  useEffect(() => {
-    let timerId: NodeJS.Timeout | null = setInterval(() => {
-      if (document.hidden) return;
+    useEffect(() => {
+      let timerId: NodeJS.Timeout | null = setInterval(() => {
+        if (document.hidden) return;
 
-      const invalidHeartIds = getInvalidHeartIds();
-      const filteredHearts = hearts.filter(
-        ({ props: { id } }) => invalidHeartIds.indexOf(id) === -1,
-      );
-      setHearts([...filteredHearts, ...createHearts()]);
-    }, interval);
+        const invalidHeartIds = getInvalidHeartIds();
+        const filteredHearts = hearts.filter(
+          ({ props: { id } }) => invalidHeartIds.indexOf(id) === -1,
+        );
+        setHearts([...filteredHearts, ...createHearts()]);
+      }, interval);
 
-    return () => {
-      if (!timerId) return;
-      clearInterval(timerId);
-      timerId = null;
-    };
-  }, [hearts]);
+      return () => {
+        if (!timerId) return;
+        clearInterval(timerId);
+        timerId = null;
+      };
+    }, [hearts]);
 
-  return (
-    <div className={classNames('ztopia-floating-hearts', className)}>
-      {hearts}
-    </div>
-  );
-};
+    return (
+      <div className={classNames('ztopia-floating-hearts', className)}>
+        {hearts}
+      </div>
+    );
+  },
+);

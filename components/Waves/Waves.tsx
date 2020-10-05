@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import React, { memo } from 'react';
 import classNames from 'classnames';
 
 import './Waves.css';
@@ -18,7 +18,7 @@ const convertHexToRGBA = (hex, alpha = 1) => {
   return `rgba(${r},${g},${b},${alpha})`;
 };
 
-export const Waves: FC<WaveProps> = memo(({ className, color = '#131518' }) => (
+export const Waves = memo<WaveProps>(({ className, color = '#131518' }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 24 150 28"

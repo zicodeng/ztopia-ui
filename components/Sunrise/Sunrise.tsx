@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { memo } from 'react';
 
 import './Sunrise.css';
 
@@ -7,7 +7,7 @@ export interface SunriseProps {
   height?: string | number;
 }
 
-export const Sunrise: FC<SunriseProps> = ({ width = 400, height = 300 }) => (
+export const Sunrise = memo<SunriseProps>(({ width = 400, height = 300 }) => (
   <svg
     viewBox="-200 -175 400 300"
     className="ztopia-sunrise"
@@ -41,4 +41,4 @@ export const Sunrise: FC<SunriseProps> = ({ width = 400, height = 300 }) => (
       </g>
     </g>
   </svg>
-);
+));

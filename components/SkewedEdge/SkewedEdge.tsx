@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, memo } from 'react';
+import React, { CSSProperties, memo } from 'react';
 import classNames from 'classnames';
 
 import './SkewedEdge.css';
@@ -16,7 +16,7 @@ export interface SkewedEdgeProps {
     | 'bottom-to-top';
 }
 
-export const SkewedEdge: FC<SkewedEdgeProps> = memo(
+export const SkewedEdge = memo<SkewedEdgeProps>(
   ({ className, direction = 'left-to-right', ...restProps }) => (
     <div
       className={classNames(

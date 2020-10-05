@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import React, { memo } from 'react';
 import classNames from 'classnames';
 
 import { BaseIconProps } from './';
@@ -10,7 +10,7 @@ export interface HamburgerProps extends BaseIconProps {
   onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
-export const IconHamburger: FC<HamburgerProps> = memo(
+export const IconHamburger = memo<HamburgerProps>(
   ({
     isActive,
     width,

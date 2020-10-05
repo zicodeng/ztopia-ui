@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import React, { memo } from 'react';
 import classNames from 'classnames';
 
 import { Loader, LoaderProps } from './';
 
 import './ReverseLoader.css';
 
-export const ReverseLoader: FC<LoaderProps> = props => (
+export const ReverseLoader = memo<LoaderProps>(props => (
   <Loader {...props}>
     {({ color, className }) => (
       <div
@@ -16,4 +16,4 @@ export const ReverseLoader: FC<LoaderProps> = props => (
       />
     )}
   </Loader>
-);
+));

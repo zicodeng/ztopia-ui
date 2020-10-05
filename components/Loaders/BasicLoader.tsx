@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import classNames from 'classnames';
 import hexRgb from 'hex-rgb';
 
@@ -6,7 +6,7 @@ import { Loader, LoaderProps } from './';
 
 import './BasicLoader.css';
 
-export const BasicLoader: FC<LoaderProps> = props => (
+export const BasicLoader = memo<LoaderProps>(props => (
   <Loader {...props}>
     {({ color, className }) => {
       const { red, green, blue } = useMemo(() => hexRgb(color), [color]);
@@ -21,4 +21,4 @@ export const BasicLoader: FC<LoaderProps> = props => (
       );
     }}
   </Loader>
-);
+));

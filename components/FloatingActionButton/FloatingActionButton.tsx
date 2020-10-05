@@ -1,4 +1,4 @@
-import React, { FC, memo, ReactNode } from 'react';
+import React, { memo, ReactNode } from 'react';
 import classNames from 'classnames';
 import uuidv4 from 'uuid/v4';
 
@@ -19,7 +19,7 @@ export interface FloatingActionButtonProps {
   actions: Action[];
 }
 
-export const FloatingActionButton: FC<FloatingActionButtonProps> = memo(
+export const FloatingActionButton = memo<FloatingActionButtonProps>(
   ({ offset = 50, className, size = 'medium', actions }) => {
     const id = uuidv4();
     return (

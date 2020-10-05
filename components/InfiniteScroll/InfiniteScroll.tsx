@@ -1,4 +1,4 @@
-import React, { cloneElement, FC, memo } from 'react';
+import React, { cloneElement, memo, ReactNode } from 'react';
 import BaseInfiniteScroll from 'react-infinite-scroller';
 
 import { FadingLoader } from '../Loaders';
@@ -30,12 +30,11 @@ export interface InfiniteScrollProps {
    * <@default=`<FadingLoader />`>
    */
   loader?: JSX.Element;
+  children?: ReactNode;
   loadMore?: () => void;
 }
 
-export const InfiniteScroll: FC<InfiniteScrollProps> = memo<
-  InfiniteScrollProps
->(
+export const InfiniteScroll = memo<InfiniteScrollProps>(
   ({
     isWindowUsed = false,
     offset = 200,

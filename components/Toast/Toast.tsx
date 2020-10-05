@@ -1,4 +1,4 @@
-import React, { createElement, FC, memo, ReactNode } from 'react';
+import React, { createElement, memo, ReactNode } from 'react';
 import { toast, ToastContainer as BaseToastContainer } from 'react-toastify';
 import classNames from 'classnames';
 
@@ -47,7 +47,7 @@ export interface ToastOptions {
   variant?: 'default' | 'info' | 'success' | 'warning' | 'error';
 }
 
-export const ToastContainer: FC<ToastOptions> = memo<ToastOptions>(
+export const ToastContainer = memo<ToastOptions>(
   ({
     isProgressBarShown = false,
     isCloseButtonShown = false,

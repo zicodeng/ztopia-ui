@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import React, { memo } from 'react';
 
 import { Icon, IconProps } from './';
 
-export const IconStarRegular: FC<IconProps> = props => (
+export const IconStarRegular = memo<IconProps>(props => (
   <Icon {...props}>
     <svg data-icon="star" viewBox="0 0 576 512">
       <path
@@ -11,4 +11,4 @@ export const IconStarRegular: FC<IconProps> = props => (
       ></path>
     </svg>
   </Icon>
-);
+));

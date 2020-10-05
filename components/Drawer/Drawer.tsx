@@ -1,6 +1,5 @@
 import React, {
   CSSProperties,
-  FC,
   memo,
   ReactNode,
   useEffect,
@@ -38,7 +37,9 @@ export interface DrawerProps {
    * Specify container in which the Drawer should be rendered
    */
   containerId?: string;
+  className?: string;
   style?: CSSProperties;
+  children?: ReactNode;
   /**
    * <@default=`'100%' or 400`>
    */
@@ -47,7 +48,6 @@ export interface DrawerProps {
    * <@default=`'30%' or '100%'`>
    */
   height?: number | string;
-  className?: string;
   handler?: JSX.Element | null;
   /**
    * <@default=`right`>
@@ -59,20 +59,20 @@ export interface DrawerProps {
   onRequestClose?: () => void;
 }
 
-export const Drawer: FC<DrawerProps> = memo<DrawerProps>(
+export const Drawer = memo<DrawerProps>(
   ({
     isOpen = false,
     isPagePushable = false,
     isContentDestoryDelayed = true,
     isMaskShown = true,
     containerId,
+    className,
+    children,
     width,
     height,
-    className,
     placement = 'right',
     handler,
     onRequestClose,
-    children,
     ...restProps
   }) => {
     const [memoizedChildren, setMemoizedChildren] = useState<ReactNode>(null);

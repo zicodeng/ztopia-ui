@@ -1,4 +1,4 @@
-import React, { FC, memo, useEffect, useRef } from 'react';
+import React, { memo, useEffect, useRef } from 'react';
 import { usePrevious } from 'react-use';
 import classNames from 'classnames';
 
@@ -12,7 +12,7 @@ export interface IconBellProps extends BaseIconProps {
   onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
-export const IconBell: FC<IconBellProps> = memo(
+export const IconBell = memo<IconBellProps>(
   ({ isAnimated, count, className, onClick, ...restProps }) => {
     const ref = useRef<HTMLDivElement>(null);
 

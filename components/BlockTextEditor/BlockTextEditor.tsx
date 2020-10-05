@@ -1,6 +1,5 @@
 import React, {
   CSSProperties,
-  FC,
   memo,
   useCallback,
   useEffect,
@@ -80,9 +79,7 @@ export interface BlockTextEditorProps {
   onMediaUpload?: (mediaUploadParam: MediaUploadParam) => void;
 }
 
-export const BlockTextEditor: FC<BlockTextEditorProps> = memo<
-  BlockTextEditorProps
->(
+export const BlockTextEditor = memo<BlockTextEditorProps>(
   ({
     defaultValue = '',
     placeholder,

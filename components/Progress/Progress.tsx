@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, memo } from 'react';
+import React, { CSSProperties, memo } from 'react';
 import classNames from 'classnames';
 import { Circle, Line } from 'rc-progress';
 
@@ -56,7 +56,7 @@ const calcGradientColor = percent => {
   return '#' + ('000000' + h.toString(16)).slice(-6);
 };
 
-export const Progress: FC<ProgressProps> = memo(
+export const Progress = memo<ProgressProps>(
   ({
     isGradientEnabled = false,
     percent,

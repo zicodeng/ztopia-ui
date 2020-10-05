@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import React, { memo } from 'react';
 import classNames from 'classnames';
 
 import { FadingLoader } from '../Loaders';
@@ -10,7 +10,7 @@ export interface WaitingChatBubbleProps {
   size?: 'small' | 'medium' | 'large';
 }
 
-export const WaitingChatBubble: FC<WaitingChatBubbleProps> = memo(
+export const WaitingChatBubble = memo<WaitingChatBubbleProps>(
   ({ className, size = 'medium' }) => (
     <div
       className={classNames(

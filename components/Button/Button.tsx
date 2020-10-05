@@ -35,6 +35,7 @@ export interface ButtonProps {
    * <@default=`{}`>
    */
   style?: CSSProperties;
+  children?: ReactNode;
   /**
    * <@default=`'button'`>
    */
@@ -62,19 +63,19 @@ export interface ButtonProps {
   onMouseLeave?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-export const Button: FC<ButtonProps> = memo<ButtonProps>(
+export const Button = memo<ButtonProps>(
   ({
     isGhost = false,
     isDisabled = false,
     isLoading = false,
     className,
     style = {},
-    element = 'button',
+    children,
     type = 'button',
     variant = 'rect',
     size = 'medium',
+    element = 'button',
     loader,
-    children,
     onClick,
     ...restProps
   }) => {

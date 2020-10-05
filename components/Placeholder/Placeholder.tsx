@@ -1,4 +1,4 @@
-import React, { cloneElement, FC, memo } from 'react';
+import React, { cloneElement, memo } from 'react';
 import classNames from 'classnames';
 
 import { IconImage } from '../Icons';
@@ -38,7 +38,7 @@ export interface PlaceholderProps {
   variant?: 'image' | 'text';
 }
 
-export const Placeholder: FC<PlaceholderProps> = memo(
+export const Placeholder = memo<PlaceholderProps>(
   ({
     isAnimated = true,
     rows = 1,

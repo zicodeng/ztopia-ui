@@ -1,4 +1,4 @@
-import React, { FC, memo, useCallback, useEffect, useState } from 'react';
+import React, { memo, useCallback, useEffect, useState } from 'react';
 import { StaticMap } from 'react-map-gl';
 import { FlyToInterpolator } from '@deck.gl/core';
 import DeckGL from '@deck.gl/react';
@@ -63,7 +63,7 @@ const VIEW_STATE_TRANSITION = {
   transitionInterpolator: new FlyToInterpolator(),
 };
 
-export const Map: FC<MapProps> = memo(
+export const Map = memo<MapProps>(
   ({
     isControllerEnabled = true,
     width = '100%',

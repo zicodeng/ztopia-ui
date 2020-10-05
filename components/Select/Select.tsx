@@ -1,4 +1,4 @@
-import React, { FC, memo, ReactNode, useCallback } from 'react';
+import React, { memo, ReactNode, useCallback } from 'react';
 import {
   ActionMeta,
   OptionsType,
@@ -67,7 +67,7 @@ export interface SelectProps<OptionType extends OptionTypeBase = SelectOption> {
   onChange?: (newValue: SelectValue, actionMeta: ActionMeta) => void;
 }
 
-export const Select: FC<SelectProps> = memo(
+export const Select = memo<SelectProps>(
   ({
     isMulti = false,
     isSearchable = false,

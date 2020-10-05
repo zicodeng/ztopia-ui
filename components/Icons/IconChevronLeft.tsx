@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import React, { memo } from 'react';
 
 import { Icon, IconProps } from './';
 
-export const IconChevronLeft: FC<IconProps> = props => (
+export const IconChevronLeft = memo<IconProps>(props => (
   <Icon {...props}>
     <svg data-icon="chevron-left" viewBox="0 0 320 512">
       <path
@@ -11,4 +11,4 @@ export const IconChevronLeft: FC<IconProps> = props => (
       ></path>
     </svg>
   </Icon>
-);
+));

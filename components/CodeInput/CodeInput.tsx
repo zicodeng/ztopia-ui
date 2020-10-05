@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import React, { memo } from 'react';
 import ReactCodeInput from 'react-code-input';
 import classNames from 'classnames';
 
@@ -19,7 +19,7 @@ export interface CodeInputProps {
   onChange?: (newValue: string) => void;
 }
 
-export const CodeInput: FC<CodeInputProps> = memo(
+export const CodeInput = memo<CodeInputProps>(
   ({ totalFields = '6', value, name, className, type = 'text', onChange }) => (
     <ReactCodeInput
       fields={totalFields}

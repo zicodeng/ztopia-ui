@@ -1,4 +1,4 @@
-import React, { FC, memo, useCallback } from 'react';
+import React, { memo, useCallback } from 'react';
 import { Controlled as BaseCodeMirror } from 'react-codemirror2';
 import classNames from 'classnames';
 
@@ -32,7 +32,7 @@ export interface CodeEditorProps {
   onChange: (newValue: string) => void;
 }
 
-export const CodeEditor: FC<CodeEditorProps> = memo(
+export const CodeEditor = memo<CodeEditorProps>(
   ({ isReadonly = false, className, language = 'jsx', value, onChange }) => {
     /**
      * Remove trailing line after editor is mounted

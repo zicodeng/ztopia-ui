@@ -1,9 +1,4 @@
-import React, {
-  DetailedHTMLProps,
-  FC,
-  memo,
-  TextareaHTMLAttributes,
-} from 'react';
+import React, { DetailedHTMLProps, memo, TextareaHTMLAttributes } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import classNames from 'classnames';
 
@@ -24,7 +19,7 @@ export interface InnerTextareaProps {
   className?: Pick<TextareaProps, 'className'>;
 }
 
-export const InnerTextarea: FC<InnerTextareaProps> = memo(
+export const InnerTextarea = memo<InnerTextareaProps>(
   ({ isDisabled = false, label, error, className, ...restProps }) => (
     <div className={classNames(className, 'ztopia-textarea')}>
       {label && <span className="ztopia-textarea__label">{label}</span>}
