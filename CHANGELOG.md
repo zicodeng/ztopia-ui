@@ -1,3 +1,9 @@
+## [1.36.99](https://github.com/zicodeng/ztopia-ui/compare/v1.36.98...v1.36.99) (2020-10-05)
+
+### Bug Fixes
+
+- pass prop to memo ([865c8cd](https://github.com/zicodeng/ztopia-ui/commit/865c8cd8c5627ad04507917172ff30e2a737ae61))
+
 ## [1.36.98](https://github.com/zicodeng/ztopia-ui/compare/v1.36.97...v1.36.98) (2020-10-03)
 
 ### Bug Fixes
