@@ -1,5 +1,9 @@
 import React, { memo } from 'react';
-import { Calendar as BaseCalendar, dateFnsLocalizer } from 'react-big-calendar';
+import {
+  Calendar as BaseCalendar,
+  CalendarProps as BaseCalendarProps,
+  dateFnsLocalizer,
+} from 'react-big-calendar';
 import classNames from 'classnames';
 import { format, getDay, parse, startOfWeek } from 'date-fns';
 import enUS from 'date-fns/locale/en-US';
@@ -36,32 +40,17 @@ export interface Slot {
   action: 'select' | 'click' | 'doubleClick';
 }
 
-export interface CalendarProps {
-  /**
-   * <@default=`false`>
-   */
-  isSelectable?: boolean;
-  className?: string;
-  events?: Event[];
+export interface CalendarProps extends BaseCalendarProps {
   /**
    * <@default=`en-US`>
    */
   locale?: 'en-US' | 'zh-CN';
-  onSelectSlot?: (slot: Slot) => void;
-  onSelectEvent?: (event: Event, e: React.SyntheticEvent<HTMLElement>) => void;
 }
 
 export const Calendar = memo<CalendarProps>(
-  ({
-    isSelectable = false,
-    className,
-    events = [],
-    locale = 'en-US',
-    ...restProps
-  }) => (
+  ({ locale = 'en-US', className, events = [], ...restProps }) => (
     <BaseCalendar
       {...restProps}
-      selectable={isSelectable}
       className={classNames(className, 'ztopia-calendar')}
       events={events}
       localizer={localizer}
