@@ -1,3 +1,9 @@
+## [1.37.1](https://github.com/zicodeng/ztopia-ui/compare/v1.37.0...v1.37.1) (2020-10-11)
+
+### Bug Fixes
+
+- import lib CalendarProps ([2e0dc99](https://github.com/zicodeng/ztopia-ui/commit/2e0dc99c5b1f6100e34fcf0f6a66cc91a2ae5373))
+
 # [1.37.0](https://github.com/zicodeng/ztopia-ui/compare/v1.36.102...v1.37.0) (2020-10-11)
 
 ### Bug Fixes
