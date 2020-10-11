@@ -64,7 +64,7 @@ export interface SelectProps<OptionType extends OptionTypeBase = SelectOption> {
   renderMaxSelectedOptionsReachedMessage?: (obj: {
     inputValue: string;
   }) => ReactNode;
-  onChange?: (newValue: SelectValue, actionMeta: ActionMeta) => void;
+  onChange?: (newSelectValue: SelectValue, actionMeta: ActionMeta) => void;
 }
 
 export const Select = memo<SelectProps>(
