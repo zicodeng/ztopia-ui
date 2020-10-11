@@ -27,19 +27,30 @@ const localizer = dateFnsLocalizer({
 
 export interface CalendarProps extends BaseCalendarProps {
   /**
-   * <@default=`en-US`>
+   * <@default=`false`>
+   */
+  isSelectable?: boolean;
+  /**
+   * <@default=`'en-US'`>
    */
   locale?: 'en-US' | 'zh-CN';
 }
 
 export const Calendar = memo<CalendarProps>(
-  ({ locale = 'en-US', className, events = [], ...restProps }) => (
+  ({
+    isSelectable = false,
+    locale = 'en-US',
+    className,
+    events = [],
+    ...restProps
+  }) => (
     <BaseCalendar
       {...restProps}
+      selectable={isSelectable}
+      culture={locale}
+      localizer={localizer}
       className={classNames(className, 'ztopia-calendar')}
       events={events}
-      localizer={localizer}
-      culture={locale}
       messages={
         locale === 'zh-CN'
           ? {
