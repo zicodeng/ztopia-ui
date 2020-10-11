@@ -62,7 +62,7 @@ export const Calendar = memo<CalendarProps>(
               day: '日',
               agenda: '议程',
               allDay: '全天',
-              noEventsInRange: '无事件',
+              noEventsInRange: '暂无事件',
               showMore: count => `查看更多(${count}+)`,
             }
           : undefined
