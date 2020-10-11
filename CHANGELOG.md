@@ -1,3 +1,9 @@
+## [1.36.104](https://github.com/zicodeng/ztopia-ui/compare/v1.36.103...v1.36.104) (2020-10-11)
+
+### Bug Fixes
+
+- add isSelectable prop to Calendar ([9da8041](https://github.com/zicodeng/ztopia-ui/commit/9da80417726384b96a17a754f1ccd835802de377))
+
 ## [1.36.103](https://github.com/zicodeng/ztopia-ui/compare/v1.36.102...v1.36.103) (2020-10-11)
 
 ### Bug Fixes
