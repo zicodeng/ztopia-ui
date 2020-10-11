@@ -1,3 +1,10 @@
+## [1.36.103](https://github.com/zicodeng/ztopia-ui/compare/v1.36.102...v1.36.103) (2020-10-11)
+
+### Bug Fixes
+
+- fix calendar types ([e04a830](https://github.com/zicodeng/ztopia-ui/commit/e04a830cc02b9a662cfc9c6b8d57712a6a259cc5))
+- fix calendar types ([9c73b30](https://github.com/zicodeng/ztopia-ui/commit/9c73b30defb71f4d675ea9d5a35673eee13cc62e))
+
 ## [1.36.102](https://github.com/zicodeng/ztopia-ui/compare/v1.36.101...v1.36.102) (2020-10-11)
 
 ### Bug Fixes
