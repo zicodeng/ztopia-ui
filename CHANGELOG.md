@@ -1,3 +1,13 @@
+# [1.37.0](https://github.com/zicodeng/ztopia-ui/compare/v1.36.102...v1.37.0) (2020-10-11)
+
+### Bug Fixes
+
+- fix doc date-fns ([00145f4](https://github.com/zicodeng/ztopia-ui/commit/00145f42d4fb20cc9ae5296ef9285a4593a38ccb))
+
+### Features
+
+- manually fix package version ([d90d956](https://github.com/zicodeng/ztopia-ui/commit/d90d956bc62907dda3d689dc82f8af7ff36ed7e9))
+
 ## [1.36.102](https://github.com/zicodeng/ztopia-ui/compare/v1.36.101...v1.36.102) (2020-10-11)
 
 ### Bug Fixes
