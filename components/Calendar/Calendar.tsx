@@ -52,11 +52,18 @@ export interface CalendarProps {
 }
 
 export const Calendar = memo<CalendarProps>(
-  ({ isSelectable = false, className, locale = 'en-US', ...restProps }) => (
+  ({
+    isSelectable = false,
+    className,
+    events = [],
+    locale = 'en-US',
+    ...restProps
+  }) => (
     <BaseCalendar
       {...restProps}
       selectable={isSelectable}
       className={classNames(className, 'ztopia-calendar')}
+      events={events}
       localizer={localizer}
       culture={locale}
       messages={
