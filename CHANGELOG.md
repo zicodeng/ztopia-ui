@@ -1,3 +1,9 @@
+## [1.36.100](https://github.com/zicodeng/ztopia-ui/compare/v1.36.99...v1.36.100) (2020-10-11)
+
+### Bug Fixes
+
+- give events default value ([b90867c](https://github.com/zicodeng/ztopia-ui/commit/b90867c8a0efd9b1364099cecaecc1f8420bc589))
+
 ## [1.36.99](https://github.com/zicodeng/ztopia-ui/compare/v1.36.98...v1.36.99) (2020-10-05)
 
 ### Bug Fixes
