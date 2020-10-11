@@ -25,21 +25,6 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
-export interface Event {
-  allDay?: boolean;
-  title?: string;
-  start?: Date;
-  end?: Date;
-  resource?: any;
-}
-
-export interface Slot {
-  start: string | Date;
-  end: string | Date;
-  slots: Date[] | string[];
-  action: 'select' | 'click' | 'doubleClick';
-}
-
 export interface CalendarProps extends BaseCalendarProps {
   /**
    * <@default=`en-US`>
