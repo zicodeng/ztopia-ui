@@ -124,7 +124,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-color: $white;
+
+    &:first-of-type {
+      border-color: $black-dark;
+    }
+
+    &:last-of-type {
+      border-color: $white;
+    }
+  }
+
+  .rbc-timeslot-group {
+    border: 0;
+
+    &:first-of-type {
+      .rbc-time-slot:first-of-type {
+        border: 0;
+      }
+    }
   }
 
   .rbc-current-time-indicator {
