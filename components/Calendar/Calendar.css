@@ -6,6 +6,13 @@
     border-color: $black-dark;
   }
 
+  .rbc-header {
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-xs;
+    border-color: $black-dark;
+  }
+
   .rbc-event {
     padding: $spacing-xs;
     background-color: rgba(75, 137, 218, 0.6);
@@ -16,13 +23,6 @@
 
   .rbc-row {
     min-height: 30px;
-  }
-
-  .rbc-header {
-    align-items: center;
-    justify-content: center;
-    padding: $spacing-xs;
-    border-color: $black-dark;
   }
 
   .rbc-day-bg {
