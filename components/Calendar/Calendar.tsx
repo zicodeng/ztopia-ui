@@ -1,5 +1,9 @@
 import React, { memo } from 'react';
-import { Calendar as BaseCalendar, dateFnsLocalizer } from 'react-big-calendar';
+import {
+  Calendar as BaseCalendar,
+  CalendarProps as BaseCalendarProps,
+  dateFnsLocalizer,
+} from 'react-big-calendar';
 import classNames from 'classnames';
 import { format, getDay, parse, startOfWeek } from 'date-fns';
 import enUS from 'date-fns/locale/en-US';
@@ -21,51 +25,32 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
-export interface Event {
-  allDay?: boolean;
-  title?: string;
-  start?: Date;
-  end?: Date;
-  resource?: any;
-}
-
-export interface Slot {
-  start: string | Date;
-  end: string | Date;
-  slots: Date[] | string[];
-  action: 'select' | 'click' | 'doubleClick';
-}
-
-export interface CalendarProps {
+export interface CalendarProps extends Omit<BaseCalendarProps, 'localizer'> {
   /**
    * <@default=`false`>
    */
   isSelectable?: boolean;
-  className?: string;
-  events?: Event[];
   /**
    * <@default=`en-US`>
    */
   locale?: 'en-US' | 'zh-CN';
-  onSelectSlot?: (slot: Slot) => void;
-  onSelectEvent?: (event: Event, e: React.SyntheticEvent<HTMLElement>) => void;
 }
 
 export const Calendar = memo<CalendarProps>(
   ({
     isSelectable = false,
+    locale = 'en-US',
     className,
     events = [],
-    locale = 'en-US',
     ...restProps
   }) => (
     <BaseCalendar
       {...restProps}
       selectable={isSelectable}
+      culture={locale}
       className={classNames(className, 'ztopia-calendar')}
       events={events}
       localizer={localizer}
-      culture={locale}
       messages={
         locale === 'zh-CN'
           ? {
