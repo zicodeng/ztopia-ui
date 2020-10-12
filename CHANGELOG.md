@@ -1,3 +1,9 @@
+## [1.37.3](https://github.com/zicodeng/ztopia-ui/compare/v1.37.2...v1.37.3) (2020-10-12)
+
+### Bug Fixes
+
+- add translation ([94a5bac](https://github.com/zicodeng/ztopia-ui/commit/94a5bac53abf03cd099f06a7411e17a656984cb8))
+
 ## [1.37.2](https://github.com/zicodeng/ztopia-ui/compare/v1.37.1...v1.37.2) (2020-10-11)
 
 ### Bug Fixes
