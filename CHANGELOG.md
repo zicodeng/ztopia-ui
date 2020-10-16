@@ -1,3 +1,9 @@
+## [1.37.4](https://github.com/zicodeng/ztopia-ui/compare/v1.37.3...v1.37.4) (2020-10-16)
+
+### Bug Fixes
+
+- add isDisabled prop to Select ([17b43ca](https://github.com/zicodeng/ztopia-ui/commit/17b43cab941003bcbe644140e55a864ed40c3fda))
+
 ## [1.37.3](https://github.com/zicodeng/ztopia-ui/compare/v1.37.2...v1.37.3) (2020-10-12)
 
 ### Bug Fixes
