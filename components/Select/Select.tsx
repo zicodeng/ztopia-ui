@@ -35,6 +35,10 @@ export interface SelectProps<OptionType extends OptionTypeBase = SelectOption> {
    */
   isClearable?: boolean;
   /**
+   * <@default=`false`>
+   */
+  isDisabled?: boolean;
+  /**
    * <@default=`200`>
    */
   maxMenuHeight?: number;
@@ -73,6 +77,7 @@ export const Select = memo<SelectProps>(
     isSearchable = false,
     isLoading = false,
     isClearable = true,
+    isDisabled = false,
     maxMenuHeight = 200,
     maxSelectedOptions,
     label,
@@ -113,11 +118,13 @@ export const Select = memo<SelectProps>(
           isSearchable={isSearchable}
           isLoading={isLoading}
           isClearable={isClearable}
+          isDisabled={isDisabled}
           maxMenuHeight={maxMenuHeight}
           placeholder={placeholder}
           className={classNames('ztopia-select__container', {
             'is-multi': isMulti,
             'is-searchable': isSearchable,
+            'is-disabled': isDisabled,
             'has-error': Boolean(error),
           })}
           classNamePrefix="select"

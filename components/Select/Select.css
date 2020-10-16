@@ -176,6 +176,10 @@
       }
     }
 
+    &.is-disabled {
+      opacity: 0.4;
+    }
+
     &.has-error {
       .select {
         &__control {
