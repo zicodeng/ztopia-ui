@@ -1,3 +1,9 @@
+## [1.37.6](https://github.com/zicodeng/ztopia-ui/compare/v1.37.5...v1.37.6) (2020-10-27)
+
+### Bug Fixes
+
+- add imageBlur to ImageCarousel prop ([de3d087](https://github.com/zicodeng/ztopia-ui/commit/de3d087a170ad40aca8ce9c15cb79b2c8cf0e9c4))
+
 ## [1.37.5](https://github.com/zicodeng/ztopia-ui/compare/v1.37.4...v1.37.5) (2020-10-27)
 
 ### Bug Fixes
