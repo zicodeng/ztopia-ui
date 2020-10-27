@@ -25,6 +25,7 @@ export interface ImageProps {
    * <@default=`0`>
    */
   delay?: number;
+  blur?: number;
   src: string;
   alt?: string;
   className?: string;
@@ -58,6 +59,7 @@ export const Image = memo<ImageProps>(
     width = '100%',
     height = 'auto',
     delay = 0,
+    blur = 0,
     src,
     alt,
     className,
@@ -110,6 +112,13 @@ export const Image = memo<ImageProps>(
       return null;
     }, [placeholder]);
 
+    const filterStyle = blur
+      ? {
+          filter: `blur(${blur}px)`,
+          transform: 'scale(1.1)',
+        }
+      : {};
+
     const image = (
       <ProgressiveImage delay={delay} src={src} placeholder="">
         {(src, loading) => {
@@ -118,18 +127,23 @@ export const Image = memo<ImageProps>(
           if (variant === 'background') {
             return (
               <div
+                className={classNames(className, 'ztopia-image')}
                 style={{
                   width,
                   height,
-                  backgroundImage: `url(${src})`,
                 }}
-                className={classNames(
-                  className,
-                  'ztopia-image',
-                  'ztopia-image--background',
-                )}
                 {...restProps}
               >
+                <div
+                  style={{
+                    backgroundImage: `url(${src})`,
+                    ...filterStyle,
+                  }}
+                  className={classNames(
+                    'ztopia-image__img',
+                    'ztopia-image__img--background',
+                  )}
+                />
                 {caption && (
                   <div className="ztopia-image__caption">{caption}</div>
                 )}
@@ -157,11 +171,10 @@ export const Image = memo<ImageProps>(
               {...restProps}
             >
               <img
-                width={width}
-                height={height}
                 src={src}
                 alt={alt}
                 className="ztopia-image__img"
+                style={filterStyle}
               />
               {caption && (
                 <figcaption className="ztopia-image__caption">

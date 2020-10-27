@@ -27,14 +27,16 @@
     }
   }
 
-  &--background {
-    background-position: center center;
-    background-size: cover;
-  }
-
   /* https://stackoverflow.com/questions/11447707/div-container-larger-than-image-inside */
   &__img {
     display: block;
+    width: 100%;
+    height: 100%;
+
+    &--background {
+      background-position: center center;
+      background-size: cover;
+    }
   }
 
   &__placeholder {
