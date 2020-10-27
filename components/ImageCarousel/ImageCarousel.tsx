@@ -25,6 +25,10 @@ export interface ImageCarouselProps {
    * <@default=`500`>
    */
   height?: number;
+  /**
+   * <@default=`0`>
+   */
+  imageBlur?: number;
   className?: string;
   imageMaskStyle?: CSSProperties | null;
   slides: ImageCarouselSlide[];
@@ -35,6 +39,7 @@ export const ImageCarousel = memo<ImageCarouselProps>(
     isAutoPlay = true,
     isInfiniteLoop = true,
     height = 500,
+    imageBlur = 0,
     className,
     imageMaskStyle,
     slides,
@@ -55,6 +60,7 @@ export const ImageCarousel = memo<ImageCarouselProps>(
           key={i}
           delay={500}
           height={height}
+          blur={imageBlur}
           variant="background"
           src={src}
           caption={caption}
