@@ -1,3 +1,10 @@
+## [1.37.5](https://github.com/zicodeng/ztopia-ui/compare/v1.37.4...v1.37.5) (2020-10-27)
+
+### Bug Fixes
+
+- add blur prop to Image ([9877f0b](https://github.com/zicodeng/ztopia-ui/commit/9877f0b9edcd1f7b80e78bb9edd6acd8bd9c3ff1))
+- fix demo image ([2b33d89](https://github.com/zicodeng/ztopia-ui/commit/2b33d891861ceeca78441f3d794b2bf997dd5eef))
+
 ## [1.37.4](https://github.com/zicodeng/ztopia-ui/compare/v1.37.3...v1.37.4) (2020-10-16)
 
 ### Bug Fixes
