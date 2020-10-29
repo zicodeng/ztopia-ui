@@ -3,13 +3,30 @@
   width: 100%;
 }
 
-.ztopia-date-picker {
-  &__calendar {
-    color: $black-dark;
-    border: 1px solid $black-dark;
-    border-radius: 0;
-    box-shadow: $box-shadow-3;
+.ztopia-date-picker__popper {
+  /*================================
+  =            Triangle            =
+  ================================*/
+  &[data-placement^='bottom'],
+  &[data-placement^='top'] {
+    .react-datepicker__triangle {
+      border-bottom-color: $white-light;
+
+      &::before {
+        border-top-color: $black-dark;
+        border-bottom-color: $black-dark;
+      }
+    }
   }
+  /*=====  End of Triangle  ======*/
+}
+
+.ztopia-date-picker {
+  color: $black-dark;
+  font-size: $font-size-s;
+  border: 1px solid $black-dark;
+  border-radius: 0;
+  box-shadow: $box-shadow-3;
 
   &__header {
     position: relative;
@@ -114,166 +131,150 @@
   }
   /*=====  End of Year Select  ======*/
 
-  /*================================
-  =            Triangle            =
-  ================================*/
-  &[data-placement^='bottom'],
-  &[data-placement^='top'] {
-    .react-datepicker__triangle {
-      border-bottom-color: $white-light;
-
-      &::before {
-        border-top-color: $black-dark;
-        border-bottom-color: $black-dark;
-      }
-    }
-  }
-  /*=====  End of Triangle  ======*/
-
-  .react-datepicker {
-    font-size: $font-size-s;
-
-    &__header {
-      padding-top: $spacing-xs;
-      background-color: $white-light;
-      border-bottom-color: $black-dark;
-      border-radius: 0;
-
-      &--time {
-        padding: $spacing-m $spacing-xs;
-      }
-    }
-
-    &__month-container {
-      width: auto;
-    }
-
-    &__month {
-      margin: 0;
-      padding: $spacing-s;
-      background-color: $white-light;
-    }
-
-    &__day {
-      position: relative;
-      width: 35px;
-      height: 35px;
-      margin: 1px;
-      font-weight: normal;
-      border-radius: 50%;
-      transition: $transition-fast;
-
-      &--highlighted {
-        color: $red;
-        background-color: transparent;
-      }
-
-      &--today {
-        color: $green;
-      }
-
-      &--selected {
-        background-color: $black-dark;
-
-        &:not(.react-datepicker__day--highlighted):not(.react-datepicker__day--today) {
-          color: $white-light;
-        }
-      }
-
-      &--disabled {
-        color: $white-dark;
-        cursor: not-allowed;
-      }
-
-      &:not(.react-datepicker__day--selected):not(.react-datepicker__day--disabled):hover {
-        background-color: $white;
-      }
-    }
-
-    &__day-name {
-      width: 35px;
-      margin: 1px;
-    }
-
-    &__time-container {
-      width: 100px;
-      border-color: $black-dark;
-      border-radius: 0;
-
-      &--with-today-button {
-        top: -1px;
-        right: -1px;
-        border: 0;
-        box-shadow: 1px 0 0 0 $black-dark, 0 1px 0 0 $black-dark,
-          1px 0 0 0 $black-dark inset, 0 1px 0 0 $black-dark inset,
-          1px 1px 0 0 $black-dark;
-        transform: translateX(100%);
-
-        &::after {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          box-shadow: $box-shadow-3;
-          content: '';
-          clip-path: polygon(0 0, 150% 0, 150% 150%, 0 150%);
-          pointer-events: none;
-        }
-
-        .react-datepicker__header--time {
-          box-shadow: 0 0 0 0 $black-dark inset, 0 1px 0 0 $black-dark inset;
-        }
-      }
-
-      .react-datepicker__time {
+  &.react-datepicker {
+    .react-datepicker {
+      &__header {
+        padding-top: $spacing-xs;
         background-color: $white-light;
+        border-bottom-color: $black-dark;
+        border-radius: 0;
 
-        .react-datepicker__time-box {
-          width: auto;
+        &--time {
+          padding: $spacing-m $spacing-xs;
+        }
+      }
 
-          ul.react-datepicker__time-list {
-            li.react-datepicker__time-list-item {
-              height: auto;
-              padding: $spacing-s $spacing-m;
-              transition: $transition-fast;
+      &__month-container {
+        width: auto;
+      }
 
-              &--selected {
-                color: $white-light;
-                font-weight: normal;
-                background-color: $black-dark;
-              }
+      &__month {
+        margin: 0;
+        padding: $spacing-s;
+        background-color: $white-light;
+      }
 
-              &--disabled {
-                color: $white-dark;
-                cursor: not-allowed;
-              }
+      &__day {
+        position: relative;
+        width: 35px;
+        height: 35px;
+        margin: 1px;
+        font-weight: normal;
+        border-radius: 50%;
+        transition: $transition-fast;
 
-              &:not(.react-datepicker__time-list-item--selected):not(.react-datepicker__time-list-item--disabled):hover {
-                background-color: $white;
+        &--highlighted {
+          color: $red;
+          background-color: transparent;
+        }
+
+        &--today {
+          color: $green;
+        }
+
+        &--selected {
+          background-color: $black-dark;
+
+          &:not(.react-datepicker__day--highlighted):not(.react-datepicker__day--today) {
+            color: $white-light;
+          }
+        }
+
+        &--disabled {
+          color: $white-dark;
+          cursor: not-allowed;
+        }
+
+        &:not(.react-datepicker__day--selected):not(.react-datepicker__day--disabled):hover {
+          background-color: $white;
+        }
+      }
+
+      &__day-name {
+        width: 35px;
+        margin: 1px;
+      }
+
+      &__time-container {
+        width: 100px;
+        border-color: $black-dark;
+        border-radius: 0;
+
+        &--with-today-button {
+          top: -1px;
+          right: -1px;
+          border: 0;
+          box-shadow: 1px 0 0 0 $black-dark, 0 1px 0 0 $black-dark,
+            1px 0 0 0 $black-dark inset, 0 1px 0 0 $black-dark inset,
+            1px 1px 0 0 $black-dark;
+          transform: translateX(100%);
+
+          &::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: $box-shadow-3;
+            content: '';
+            clip-path: polygon(0 0, 150% 0, 150% 150%, 0 150%);
+            pointer-events: none;
+          }
+
+          .react-datepicker__header--time {
+            box-shadow: 0 0 0 0 $black-dark inset, 0 1px 0 0 $black-dark inset;
+          }
+        }
+
+        .react-datepicker__time {
+          background-color: $white-light;
+
+          .react-datepicker__time-box {
+            width: auto;
+
+            ul.react-datepicker__time-list {
+              li.react-datepicker__time-list-item {
+                height: auto;
+                padding: $spacing-s $spacing-m;
+                transition: $transition-fast;
+
+                &--selected {
+                  color: $white-light;
+                  font-weight: normal;
+                  background-color: $black-dark;
+                }
+
+                &--disabled {
+                  color: $white-dark;
+                  cursor: not-allowed;
+                }
+
+                &:not(.react-datepicker__time-list-item--selected):not(.react-datepicker__time-list-item--disabled):hover {
+                  background-color: $white;
+                }
               }
             }
           }
         }
       }
-    }
 
-    &-time__header {
-      font-size: $font-size-s;
-    }
+      &-time__header {
+        font-size: $font-size-s;
+      }
 
-    &__today-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 30px;
-      padding: 0;
-      font-weight: normal;
-      background-color: $white-light;
-      border-color: $black-dark;
+      &__today-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        padding: 0;
+        font-weight: normal;
+        background-color: $white-light;
+        border-color: $black-dark;
 
-      &:hover {
-        background-color: $white;
+        &:hover {
+          background-color: $white;
+        }
       }
     }
   }

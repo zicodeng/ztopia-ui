@@ -24,6 +24,10 @@ export interface DatePickerProps {
   /**
    * <@default=`false`>
    */
+  isInlineMode?: boolean;
+  /**
+   * <@default=`false`>
+   */
   isYearSelectShown?: boolean;
   /**
    * <@default=`false`>
@@ -112,6 +116,7 @@ const renderCustomHeader = ({
 
 export const DatePicker = memo<DatePickerProps>(
   ({
+    isInlineMode = false,
     isYearSelectShown = false,
     isTimeSelectShown = false,
     timeIntervals = 30,
@@ -147,6 +152,7 @@ export const DatePicker = memo<DatePickerProps>(
     return (
       <BaseDatePicker
         {...restProps}
+        inline={isInlineMode}
         locale={locale}
         fixedHeight={isYearSelectShown || isTimeSelectShown}
         showDisabledMonthNavigation
@@ -160,8 +166,8 @@ export const DatePicker = memo<DatePickerProps>(
         dateFormat={
           isTimeSelectShown ? `${dateFormat} ${timeFormat}` : dateFormat
         }
-        popperClassName="ztopia-date-picker"
-        calendarClassName="ztopia-date-picker__calendar"
+        popperClassName="ztopia-date-picker__popper"
+        calendarClassName="ztopia-date-picker"
         popperModifiers={{
           offset: {
             enabled: isYearSelectShown,
