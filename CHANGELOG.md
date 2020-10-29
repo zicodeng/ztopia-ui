@@ -1,3 +1,10 @@
+## [1.37.9](https://github.com/zicodeng/ztopia-ui/compare/v1.37.8...v1.37.9) (2020-10-29)
+
+### Bug Fixes
+
+- add rect variant to Select ([09ff739](https://github.com/zicodeng/ztopia-ui/commit/09ff739d0fd2d48d885f34c6cc94b03fa4bf40ff))
+- style hotfix ([0991289](https://github.com/zicodeng/ztopia-ui/commit/0991289ab6f8c19145e310a7c0202c18551f3498))
+
 ## [1.37.8](https://github.com/zicodeng/ztopia-ui/compare/v1.37.7...v1.37.8) (2020-10-29)
 
 ### Bug Fixes
