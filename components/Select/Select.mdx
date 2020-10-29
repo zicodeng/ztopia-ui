@@ -5,6 +5,7 @@ route: /components/select
 ---
 
 import { Props, Playground } from 'docz';
+import { Container } from 'docz-theme-ztopia/helpers';
 
 import { Select } from './';
 import { options, SelectDemo } from './SelectDemo.jsx';
@@ -52,6 +53,7 @@ Dependency: [react-select](https://github.com/JedWatson/react-select)
   <SelectDemo>
     {({ value, onChange }) => (
       <Select
+        isMulti
         isSearchable
         label="What are your favorite fruits?"
         value={value}
@@ -93,6 +95,53 @@ Dependency: [react-select](https://github.com/JedWatson/react-select)
       />
     )}
   </SelectDemo>
+</Playground>
+
+### Variant - Material
+
+<Playground>
+  <Container>
+    <>
+      Rect
+      <SelectDemo>
+        {({ value, onChange }) => (
+          <Select
+            isMulti
+            variant="rect"
+            label="What is your favorite fruit?"
+            value={value}
+            options={options}
+            onChange={onChange}
+            style={{
+              flex: 1,
+              paddingLeft: 10,
+            }}
+          />
+        )}
+      </SelectDemo>
+    </>
+  </Container>
+  <Container>
+    <>
+      Material
+      <SelectDemo>
+        {({ value, onChange }) => (
+          <Select
+            isMulti
+            variant="material"
+            label="What is your favorite fruit?"
+            value={value}
+            options={options}
+            onChange={onChange}
+            style={{
+              flex: 1,
+              paddingLeft: 10,
+            }}
+          />
+        )}
+      </SelectDemo>
+    </>
+  </Container>
 </Playground>
 
 ## API

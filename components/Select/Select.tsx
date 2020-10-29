@@ -1,4 +1,4 @@
-import React, { memo, ReactNode, useCallback } from 'react';
+import React, { CSSProperties, memo, ReactNode, useCallback } from 'react';
 import {
   ActionMeta,
   OptionsType,
@@ -54,9 +54,11 @@ export interface SelectProps<OptionType extends OptionTypeBase = SelectOption> {
    */
   placeholder?: string;
   className?: string;
+  variant?: 'material' | 'rect';
   defaultValue?: SelectValue;
   value?: SelectValue;
   options?: OptionsType<OptionType>;
+  style?: CSSProperties;
   styles?: StylesConfig;
   /**
    * <@default=`() => 'No options'`>
@@ -84,7 +86,9 @@ export const Select = memo<SelectProps>(
     error,
     placeholder = 'Select...',
     className,
+    variant = 'rect',
     value,
+    style,
     options,
     renderNoOptionMessage = () => 'No option',
     renderMaxSelectedOptionsReachedMessage,
@@ -107,11 +111,26 @@ export const Select = memo<SelectProps>(
 
     return (
       <div
-        className={classNames(className, 'ztopia-select', {
-          'is-multi': isMulti,
-        })}
+        className={classNames(
+          className,
+          'ztopia-select',
+          `ztopia-select--${variant}`,
+          {
+            'is-multi': isMulti,
+          },
+        )}
+        style={style}
       >
-        {label && <label className="ztopia-select__label">{label}</label>}
+        {label && (
+          <label
+            className={classNames(
+              'ztopia-select__label',
+              `ztopia-select__label--${variant}`,
+            )}
+          >
+            {label}
+          </label>
+        )}
         <WindowedSelect
           {...restProps}
           isMulti={isMulti}
@@ -121,12 +140,16 @@ export const Select = memo<SelectProps>(
           isDisabled={isDisabled}
           maxMenuHeight={maxMenuHeight}
           placeholder={placeholder}
-          className={classNames('ztopia-select__container', {
-            'is-multi': isMulti,
-            'is-searchable': isSearchable,
-            'is-disabled': isDisabled,
-            'has-error': Boolean(error),
-          })}
+          className={classNames(
+            'ztopia-select__container',
+            `ztopia-select__container--${variant}`,
+            {
+              'is-multi': isMulti,
+              'is-searchable': isSearchable,
+              'is-disabled': isDisabled,
+              'has-error': Boolean(error),
+            },
+          )}
           classNamePrefix="select"
           value={value}
           options={isMaxSelectedOptionsReached ? [] : options}

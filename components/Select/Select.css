@@ -2,59 +2,35 @@
   position: relative;
   height: 40px;
 
-  &.is-multi {
+  &.is-multi,
+  &--rect {
     height: auto;
   }
 
   &__label {
     display: block;
     color: $black-dark;
-    font-size: $font-size-xs;
+
+    &--rect {
+      margin-bottom: $spacing-s;
+    }
+
+    &--material {
+      font-size: $font-size-xs;
+    }
   }
 
   &__container {
-    margin-top: -4px;
-
     .select {
       &__control {
         position: relative;
-        height: 30px;
         min-height: 0;
-        background-color: transparent;
-        border: 0;
-        border-bottom: 1px solid $white-dark;
         border-radius: 0;
         box-shadow: none;
         cursor: pointer;
 
-        &::before,
-        &::after {
-          position: absolute;
-          bottom: -1px;
-          width: 0;
-          height: 1px;
-          background-color: $black-dark;
-          transition: $transition-fast;
-          content: '';
-        }
-
-        &::before {
-          left: 50%;
-        }
-
-        &::after {
-          right: 50%;
-        }
-
         &:hover {
           border-color: $white-dark;
-        }
-
-        &--is-focused {
-          &::before,
-          &::after {
-            width: 50%;
-          }
         }
       }
 
@@ -147,6 +123,80 @@
         &:hover {
           color: $color-danger;
           background-color: $red-light;
+        }
+      }
+    }
+
+    &--rect {
+      .select {
+        &__control {
+          height: 38px;
+          padding-left: $spacing-s;
+          background-color: $white-light;
+          border: 1px solid $white-dark;
+
+          &--is-focused {
+            border-color: $black-dark;
+
+            &:hover {
+              border-color: $black-dark;
+            }
+          }
+        }
+      }
+
+      &.is-multi {
+        .select {
+          &__control {
+            padding-left: $spacing-xs;
+          }
+
+          &__placeholder {
+            margin-left: $spacing-xs;
+          }
+
+          &__input {
+            margin-left: $spacing-xxs;
+          }
+        }
+      }
+    }
+
+    &--material {
+      margin-top: -4px;
+
+      .select {
+        &__control {
+          height: 30px;
+          background-color: transparent;
+          border: 0;
+          border-bottom: 1px solid $white-dark;
+
+          &::before,
+          &::after {
+            position: absolute;
+            bottom: -1px;
+            width: 0;
+            height: 1px;
+            background-color: $black-dark;
+            transition: $transition-fast;
+            content: '';
+          }
+
+          &::before {
+            left: 50%;
+          }
+
+          &::after {
+            right: 50%;
+          }
+
+          &--is-focused {
+            &::before,
+            &::after {
+              width: 50%;
+            }
+          }
         }
       }
     }
