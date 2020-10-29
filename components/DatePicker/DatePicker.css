@@ -26,7 +26,10 @@
   font-size: $font-size-s;
   border: 1px solid $black-dark;
   border-radius: 0;
-  box-shadow: $box-shadow-3;
+
+  &--popper {
+    box-shadow: $box-shadow-3;
+  }
 
   &__header {
     position: relative;
