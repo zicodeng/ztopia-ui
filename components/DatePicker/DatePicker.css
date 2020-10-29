@@ -46,6 +46,11 @@
   &__nav {
     position: absolute;
     cursor: pointer;
+    transition: $transition-fast;
+
+    &:hover {
+      color: $black-light;
+    }
 
     &--prev {
       left: $spacing-l;
@@ -164,6 +169,7 @@
         margin: 1px;
         font-weight: normal;
         border-radius: 50%;
+        outline: none;
         transition: $transition-fast;
 
         &--highlighted {
