@@ -1,13 +1,20 @@
 import React, { memo, ReactNode, useCallback, useEffect, useRef } from 'react';
-import BaseDatePicker from 'react-datepicker';
+import BaseDatePicker, { registerLocale } from 'react-datepicker';
 import classNames from 'classnames';
 import { format, getYear, setYear } from 'date-fns';
+import enUS from 'date-fns/locale/en-US';
+import zhCN from 'date-fns/locale/zh-CN';
 
 import { IconChevronLeft, IconChevronRight } from '../Icons';
 import { Input } from '../Input';
 
 import 'react-datepicker/dist/react-datepicker.css';
 import './DatePicker.css';
+
+registerLocale('zh-CN', zhCN);
+registerLocale('en-US', enUS);
+
+type DatePickerLocale = 'zh-CN' | 'en-US';
 
 export interface HighlightDates {
   [className: string]: Date[];
@@ -28,7 +35,7 @@ export interface DatePickerProps {
    * <@default=`30`>
    */
   timeIntervals?: number;
-  todayButton?: 'string';
+  todayButton?: string;
   /**
    * <@default=`'hh:mm aa'`>
    *
@@ -41,6 +48,7 @@ export interface DatePickerProps {
   timeCaption?: string;
   maxTime?: Date;
   minTime?: Date;
+  locale?: DatePickerLocale;
   /**
    * <@default=`'MM/dd/yyyy'`
    *
@@ -62,12 +70,14 @@ const renderCustomHeader = ({
   prevMonthButtonDisabled,
   nextMonthButtonDisabled,
   date,
+  locale,
   increaseMonth,
   decreaseMonth,
 }: {
   prevMonthButtonDisabled: boolean;
   nextMonthButtonDisabled: boolean;
   date: Date;
+  locale: string;
   increaseMonth: () => void;
   decreaseMonth: () => void;
   changeYear: (year: number) => void;
@@ -85,7 +95,7 @@ const renderCustomHeader = ({
       />
     )}
     <span className="ztopia-date-picker__month-title">
-      {format(date, 'MMMM yyyy')}
+      {format(date, 'MMMM yyyy', { locale: locale === 'zh-CN' ? zhCN : enUS })}
     </span>
     {!nextMonthButtonDisabled && (
       <IconChevronRight
@@ -108,6 +118,7 @@ export const DatePicker = memo<DatePickerProps>(
     todayButton,
     timeFormat = 'hh:mm aa',
     dateFormat = 'MM/dd/yyyy',
+    locale = 'en-US',
     value,
     input = <Input />,
     onChange,
@@ -136,6 +147,7 @@ export const DatePicker = memo<DatePickerProps>(
     return (
       <BaseDatePicker
         {...restProps}
+        locale={locale}
         fixedHeight={isYearSelectShown || isTimeSelectShown}
         showDisabledMonthNavigation
         disabledKeyboardNavigation
@@ -144,6 +156,7 @@ export const DatePicker = memo<DatePickerProps>(
         selected={value}
         customInput={input}
         todayButton={todayButton}
+        timeCaption={locale === 'zh-CN' ? '时间' : 'Time'}
         dateFormat={
           isTimeSelectShown ? `${dateFormat} ${timeFormat}` : dateFormat
         }
@@ -159,7 +172,7 @@ export const DatePicker = memo<DatePickerProps>(
         onYearChange={handleChangeYear}
         renderCustomHeader={args => {
           changeYear = args.changeYear;
-          return renderCustomHeader(args);
+          return renderCustomHeader({ ...args, locale });
         }}
         renderDayContents={day => (
           <span className="ztopia-date-picker__day-content">{day}</span>
@@ -169,6 +182,7 @@ export const DatePicker = memo<DatePickerProps>(
           <YearSelect
             hasTodayButton={Boolean(todayButton)}
             value={year}
+            locale={locale}
             onChange={handleSelectYear}
           />
         )}
@@ -180,6 +194,7 @@ export const DatePicker = memo<DatePickerProps>(
 interface YearSelectProps {
   hasTodayButton?: boolean;
   value: number;
+  locale: DatePickerLocale;
   onChange: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void;
 }
 
@@ -187,7 +202,7 @@ const MIN_YEAR = 1900;
 const TOTAL_YEARS = 201;
 
 const YearSelect = memo<YearSelectProps>(
-  ({ hasTodayButton, value, onChange }) => {
+  ({ hasTodayButton, value, locale, onChange }) => {
     const ref = useRef<HTMLUListElement>(null);
 
     // Scroll to the current year option if not in view
@@ -215,7 +230,9 @@ const YearSelect = memo<YearSelectProps>(
           'has-today-button': hasTodayButton,
         })}
       >
-        <div className="ztopia-date-picker__year-caption">Year</div>
+        <div className="ztopia-date-picker__year-caption">
+          {locale === 'zh-CN' ? '年' : 'Year'}
+        </div>
         <ul ref={ref} className="ztopia-date-picker__year-options">
           {Array.from({ length: TOTAL_YEARS }).map((_, i) => {
             const year = MIN_YEAR + i;
