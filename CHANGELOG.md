@@ -1,3 +1,10 @@
+## [1.37.7](https://github.com/zicodeng/ztopia-ui/compare/v1.37.6...v1.37.7) (2020-10-29)
+
+### Bug Fixes
+
+- add DatePicker inline mode and fix styles ([9617f85](https://github.com/zicodeng/ztopia-ui/commit/9617f852f9e97200c4cdaa046e097654d9f60915))
+- support DatePicker locale ([9dd69bb](https://github.com/zicodeng/ztopia-ui/commit/9dd69bb79a74f75fb9648c9d080de9faa6123537))
+
 ## [1.37.6](https://github.com/zicodeng/ztopia-ui/compare/v1.37.5...v1.37.6) (2020-10-27)
 
 ### Bug Fixes
