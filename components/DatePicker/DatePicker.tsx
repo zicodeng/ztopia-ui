@@ -46,6 +46,7 @@ export interface DatePickerProps {
    * <@default=`'Time'`>
    */
   timeCaption?: string;
+  className?: string;
   maxTime?: Date;
   minTime?: Date;
   locale?: DatePickerLocale;
@@ -120,6 +121,7 @@ export const DatePicker = memo<DatePickerProps>(
     isTimeSelectShown = false,
     timeIntervals = 30,
     todayButton,
+    className,
     timeFormat = 'hh:mm aa',
     dateFormat = 'MM/dd/yyyy',
     locale = 'en-US',
@@ -168,6 +170,7 @@ export const DatePicker = memo<DatePickerProps>(
         }
         popperClassName="ztopia-date-picker__popper"
         calendarClassName={classNames(
+          className,
           'ztopia-date-picker',
           `ztopia-date-picker--${mode}`,
         )}
