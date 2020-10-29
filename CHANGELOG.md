@@ -1,3 +1,10 @@
+## [1.37.8](https://github.com/zicodeng/ztopia-ui/compare/v1.37.7...v1.37.8) (2020-10-29)
+
+### Bug Fixes
+
+- add className prop ([4ef92f8](https://github.com/zicodeng/ztopia-ui/commit/4ef92f830ff4d763152c307ac3aaa821ba015017))
+- change DatePicker prop isInlineMode to mode ([f6b1142](https://github.com/zicodeng/ztopia-ui/commit/f6b11420dc44451c801858c6a551e79554716484))
+
 ## [1.37.7](https://github.com/zicodeng/ztopia-ui/compare/v1.37.6...v1.37.7) (2020-10-29)
 
 ### Bug Fixes
