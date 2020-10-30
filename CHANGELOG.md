@@ -1,3 +1,9 @@
+## [1.37.10](https://github.com/zicodeng/ztopia-ui/compare/v1.37.9...v1.37.10) (2020-10-30)
+
+### Bug Fixes
+
+- add element and itemElement props to GridList ([3fc426d](https://github.com/zicodeng/ztopia-ui/commit/3fc426dc2347b3d7c01549711a6662d5530eef52))
+
 ## [1.37.9](https://github.com/zicodeng/ztopia-ui/compare/v1.37.8...v1.37.9) (2020-10-29)
 
 ### Bug Fixes
