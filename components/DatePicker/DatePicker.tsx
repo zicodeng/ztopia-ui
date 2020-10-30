@@ -131,13 +131,6 @@ export const DatePicker = memo<DatePickerProps>(
     onChange,
     ...restProps
   }) => {
-    let changeYear: ((year: number) => void) | null = null;
-    const year = getYear(value || new Date());
-
-    useEffect(() => {
-      if (changeYear) changeYear(year);
-    }, [year]);
-
     const handleSelectYear = useCallback(
       (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
         const selectedYear = parseInt(e.currentTarget.id, 10);
@@ -182,10 +175,7 @@ export const DatePicker = memo<DatePickerProps>(
         }}
         onChange={onChange}
         onYearChange={handleChangeYear}
-        renderCustomHeader={args => {
-          changeYear = args.changeYear;
-          return renderCustomHeader({ ...args, locale });
-        }}
+        renderCustomHeader={args => renderCustomHeader({ ...args, locale })}
         renderDayContents={day => (
           <span className="ztopia-date-picker__day-content">{day}</span>
         )}
@@ -193,7 +183,7 @@ export const DatePicker = memo<DatePickerProps>(
         {isYearSelectShown && (
           <YearSelect
             hasTodayButton={Boolean(todayButton)}
-            value={year}
+            value={getYear(value || new Date())}
             locale={locale}
             onChange={handleSelectYear}
           />

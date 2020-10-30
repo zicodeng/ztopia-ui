@@ -114,7 +114,15 @@ Date or time out of the range will be disabled
     <DatePickerDemo>
       {({ value, onChange }) => (
         <DatePicker
-          highlightDates={[subDays(new Date(), 7), addDays(new Date(), 7)]}
+          highlightDates={[
+            subDays(new Date(), 3),
+            subDays(new Date(), 2),
+            subDays(new Date(), 1),
+            new Date(),
+            addDays(new Date(), 1),
+            addDays(new Date(), 2),
+            addDays(new Date(), 3),
+          ]}
           input={<Input label="Birthday" variant="material" />}
           value={value}
           onChange={onChange}
