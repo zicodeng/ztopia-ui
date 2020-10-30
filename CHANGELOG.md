@@ -1,3 +1,9 @@
+## [1.37.11](https://github.com/zicodeng/ztopia-ui/compare/v1.37.10...v1.37.11) (2020-10-30)
+
+### Bug Fixes
+
+- fix onChange is called on DatePicker mount ([c13e2ae](https://github.com/zicodeng/ztopia-ui/commit/c13e2aefbf5e581a5443448be7f880b393daeaf8))
+
 ## [1.37.10](https://github.com/zicodeng/ztopia-ui/compare/v1.37.9...v1.37.10) (2020-10-30)
 
 ### Bug Fixes
