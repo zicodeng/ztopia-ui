@@ -1,3 +1,9 @@
+## [1.37.12](https://github.com/zicodeng/ztopia-ui/compare/v1.37.11...v1.37.12) (2020-11-02)
+
+### Bug Fixes
+
+- wrap Image children with a styled div ([099fc05](https://github.com/zicodeng/ztopia-ui/commit/099fc056823bb321ac0a69aab41582b2243f1958))
+
 ## [1.37.11](https://github.com/zicodeng/ztopia-ui/compare/v1.37.10...v1.37.11) (2020-10-30)
 
 ### Bug Fixes
