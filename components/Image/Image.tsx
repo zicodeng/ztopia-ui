@@ -148,7 +148,9 @@ export const Image = memo<ImageProps>(
                   <div className="ztopia-image__caption">{caption}</div>
                 )}
                 {mask}
-                {children}
+                {children && (
+                  <div className="ztopia-image__content">{children}</div>
+                )}
               </div>
             );
           }
@@ -182,7 +184,9 @@ export const Image = memo<ImageProps>(
                 </figcaption>
               )}
               {mask}
-              {children}
+              {children && (
+                <div className="ztopia-image__content">{children}</div>
+              )}
             </figure>
           );
         }}

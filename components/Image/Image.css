@@ -51,7 +51,8 @@
     z-index: 1;
   }
 
-  &__mask {
+  &__mask,
+  &__content {
     position: absolute;
     top: 0;
     left: 0;
