@@ -197,6 +197,11 @@
         &:not(.react-datepicker__day--selected):not(.react-datepicker__day--disabled):hover {
           background-color: $white;
         }
+
+        &--outside-month {
+          color: $white-dark;
+          pointer-events: none;
+        }
       }
 
       &__day-name {
