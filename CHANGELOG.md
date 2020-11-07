@@ -1,3 +1,9 @@
+## [1.37.13](https://github.com/zicodeng/ztopia-ui/compare/v1.37.12...v1.37.13) (2020-11-07)
+
+### Bug Fixes
+
+- fix DatePicker outside month style ([e9fea8e](https://github.com/zicodeng/ztopia-ui/commit/e9fea8e8e17ec109be9a0c3baeaa8bf8c79f38cd))
+
 ## [1.37.12](https://github.com/zicodeng/ztopia-ui/compare/v1.37.11...v1.37.12) (2020-11-02)
 
 ### Bug Fixes
