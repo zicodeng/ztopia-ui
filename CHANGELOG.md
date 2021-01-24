@@ -1,3 +1,9 @@
+## [1.37.15](https://github.com/zicodeng/ztopia-ui/compare/v1.37.14...v1.37.15) (2021-01-24)
+
+### Bug Fixes
+
+- add npm config ([04ab022](https://github.com/zicodeng/ztopia-ui/commit/04ab022cd603f847c4e4c9cf76dd49f5aeba2253))
+
 ## [1.37.14](https://github.com/zicodeng/ztopia-ui/compare/v1.37.13...v1.37.14) (2020-11-09)
 
 ### Bug Fixes
