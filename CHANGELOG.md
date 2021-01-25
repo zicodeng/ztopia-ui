@@ -1,3 +1,10 @@
+## [1.37.17](https://github.com/zicodeng/ztopia-ui/compare/v1.37.16...v1.37.17) (2021-01-25)
+
+### Bug Fixes
+
+- fix dep issue ([f2cd4f3](https://github.com/zicodeng/ztopia-ui/commit/f2cd4f3fbd997e49e2b659a1de380ad006b8c7a2))
+- upgrade react version ([d7cfbd2](https://github.com/zicodeng/ztopia-ui/commit/d7cfbd216918ebf7a561b7469d9f207e03f63554))
+
 ## [1.37.16](https://github.com/zicodeng/ztopia-ui/compare/v1.37.15...v1.37.16) (2021-01-25)
 
 ### Bug Fixes
