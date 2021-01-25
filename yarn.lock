@@ -5817,10 +5817,10 @@ docz-core@^1.2.0:
     ws "^7.0.0"
     yargs "^13.2.2"
 
-docz-theme-ztopia@^0.1.3:
-  version "0.1.11"
-  resolved "https://registry.npmjs.org/docz-theme-ztopia/-/docz-theme-ztopia-0.1.11.tgz#47cc55571aa5b623874cd6c29a4b629753bed6eb"
-  integrity sha512-ALXxjJBpRhd7v3w0ViGyD/zwvI+XThLXqURQvxsHzslAkoPZkZSjN6k+czs7D5/dk2qsFV51SV5xnF8LWic4Ag==
+docz-theme-ztopia@^0.1.12:
+  version "0.1.12"
+  resolved "https://registry.npmjs.org/docz-theme-ztopia/-/docz-theme-ztopia-0.1.12.tgz#88df768c0c7acdeb799eab91b7e4ab0e898c57e2"
+  integrity sha512-W2vXX40Idfpsq0kKE4RPDim5UOzcnEPEFH1zg7ll5fWfnhbSFEmRgUSlPVFHKRRo+Px1wa8aDeKzV0mkAldBGg==
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^1.2.19"
     "@fortawesome/free-regular-svg-icons" "^5.9.0"
@@ -5832,7 +5832,6 @@ docz-theme-ztopia@^0.1.3:
     docz "^1.2.0"
     lodash-es "^4.17.14"
     normalize.css "^8.0.1"
-    prettier "^2.2.1"
     prop-types "^15.7.2"
     re-resizable "^5.0.0"
     react-codemirror2 "^6.0.0"
