@@ -1,3 +1,10 @@
+## [1.37.18](https://github.com/zicodeng/ztopia-ui/compare/v1.37.17...v1.37.18) (2021-01-25)
+
+### Bug Fixes
+
+- add resolutions ([bf8243b](https://github.com/zicodeng/ztopia-ui/commit/bf8243bfcc98b4e06bfd6146007881be244f1c2f))
+- upgrade react ([2c235a6](https://github.com/zicodeng/ztopia-ui/commit/2c235a61ee6548c49e639fd13325448f0ce1a755))
+
 ## [1.37.17](https://github.com/zicodeng/ztopia-ui/compare/v1.37.16...v1.37.17) (2021-01-25)
 
 ### Bug Fixes
