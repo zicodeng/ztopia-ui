@@ -1,3 +1,10 @@
+## [1.37.16](https://github.com/zicodeng/ztopia-ui/compare/v1.37.15...v1.37.16) (2021-01-25)
+
+### Bug Fixes
+
+- fix dep issues ([8d4bff6](https://github.com/zicodeng/ztopia-ui/commit/8d4bff6139230d3da99c30cf473ec3c189d700db))
+- upgrade docz-theme-ztopia ([6c50032](https://github.com/zicodeng/ztopia-ui/commit/6c50032691100f30f4452f1400e908081dc87dca))
+
 ## [1.37.15](https://github.com/zicodeng/ztopia-ui/compare/v1.37.14...v1.37.15) (2021-01-24)
 
 ### Bug Fixes
