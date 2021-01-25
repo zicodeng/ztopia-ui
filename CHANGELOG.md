@@ -1,3 +1,9 @@
+## [1.37.19](https://github.com/zicodeng/ztopia-ui/compare/v1.37.18...v1.37.19) (2021-01-25)
+
+### Bug Fixes
+
+- fix dep issues ([6c4ed47](https://github.com/zicodeng/ztopia-ui/commit/6c4ed47fb409c5e935e3b2f5189e87075e379018))
+
 ## [1.37.18](https://github.com/zicodeng/ztopia-ui/compare/v1.37.17...v1.37.18) (2021-01-25)
 
 ### Bug Fixes
