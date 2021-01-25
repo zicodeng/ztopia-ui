@@ -16,6 +16,9 @@
     "type": "git",
     "url": "https://github.com/zicodeng/ztopia-ui.git"
   },
+  "resolutions": {
+    "react-joyride/**/tree-changes/**/react": "^16.14.0"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/zicodeng/ztopia-ui/issues"
