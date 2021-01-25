@@ -5817,10 +5817,10 @@ docz-core@^1.2.0:
     ws "^7.0.0"
     yargs "^13.2.2"
 
-docz-theme-ztopia@^0.1.10:
-  version "0.1.10"
-  resolved "https://registry.npmjs.org/docz-theme-ztopia/-/docz-theme-ztopia-0.1.10.tgz#5cdd92808c2127f9de464c02d4158fb06bf14fac"
-  integrity sha512-RBNQTHyX7af9H9UjRkuCgycRrcRe/jIQ/SodFtY1TFkkVKzuyvaq+q5JO9ppYAczR8YWKDVvrbnrp/8bmj589A==
+docz-theme-ztopia@^0.1.11:
+  version "0.1.11"
+  resolved "https://registry.npmjs.org/docz-theme-ztopia/-/docz-theme-ztopia-0.1.11.tgz#47cc55571aa5b623874cd6c29a4b629753bed6eb"
+  integrity sha512-ALXxjJBpRhd7v3w0ViGyD/zwvI+XThLXqURQvxsHzslAkoPZkZSjN6k+czs7D5/dk2qsFV51SV5xnF8LWic4Ag==
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^1.2.19"
     "@fortawesome/free-regular-svg-icons" "^5.9.0"
@@ -5832,7 +5832,7 @@ docz-theme-ztopia@^0.1.10:
     docz "^1.2.0"
     lodash-es "^4.17.14"
     normalize.css "^8.0.1"
-    prettier "^1.17.1"
+    prettier "^2.2.1"
     prop-types "^15.7.2"
     re-resizable "^5.0.0"
     react-codemirror2 "^6.0.0"
@@ -12458,7 +12458,7 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@^1.17.0, prettier@^1.17.1:
+prettier@^1.17.0:
   version "1.19.1"
   resolved "https://registry.npmjs.org/prettier/-/prettier-1.19.1.tgz#f7d7f5ff8a9cd872a7be4ca142095956a60797cb"
   integrity sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
