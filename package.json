@@ -25,6 +25,7 @@
     "url": "https://github.com/zicodeng/ztopia-ui/issues"
   },
   "scripts": {
+    "cm": "git-cz",
     "start": "docz dev",
     "build:dev": "NODE_ENV=development NODE_OPTIONS=--max_old_space_size=10240 ./node_modules/.bin/rollup -c --watch",
     "build:prod": "yarn prebuild-cache && NODE_ENV=production NODE_OPTIONS=--max_old_space_size=10240 ./node_modules/.bin/rollup -c && yarn postbuild-cache",
@@ -41,9 +42,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
