@@ -220,8 +220,8 @@ export const Popper = memo<PopperProps>(
     if (isVisible !== undefined) props.visible = isVisible;
 
     return (
-      // @ts-ignore
       <Tooltip
+        // @ts-ignore
         overlay={
           isValidElement && isHiddenOnClick
             ? cloneElement(overlay as ReactElement, {
