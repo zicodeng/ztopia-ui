@@ -5,7 +5,8 @@
   "author": "Zico Deng",
   "homepage": "https://github.com/zicodeng/ztopia-ui#readme",
   "resolutions": {
-    "react-joyride/**/tree-changes/**/react": "^16.14.0"
+    "react-joyride/**/tree-changes/**/react": "^16.14.0",
+    "prettier": "^2.2.1"
   },
   "keywords": [
     "react",
