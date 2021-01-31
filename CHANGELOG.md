@@ -1,3 +1,13 @@
+## [1.37.19](https://github.com/zicodeng/ztopia-ui/compare/v1.37.18...v1.37.19) (2021-01-31)
+
+### Bug Fixes
+
+- add inputMode prop to CodeInput ([e5feae4](https://github.com/zicodeng/ztopia-ui/commit/e5feae4dfc623cbc380ffda186677f9d9056acd9))
+- fix dep issues ([6c4ed47](https://github.com/zicodeng/ztopia-ui/commit/6c4ed47fb409c5e935e3b2f5189e87075e379018))
+- fix type error ([f644d63](https://github.com/zicodeng/ztopia-ui/commit/f644d6319ac10eba3047dee3a2b3726c664703d5))
+- fix type error ([1668d7b](https://github.com/zicodeng/ztopia-ui/commit/1668d7b9699b3cb6e40ee3dada6893d2b88cb1dd))
+- lock prettier version ([66b66f3](https://github.com/zicodeng/ztopia-ui/commit/66b66f31c09e8f9d4f12ff5528f6ed28152f494f))
+
 ## [1.37.19](https://github.com/zicodeng/ztopia-ui/compare/v1.37.18...v1.37.19) (2021-01-25)
 
 ### Bug Fixes
