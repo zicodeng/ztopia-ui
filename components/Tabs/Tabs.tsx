@@ -150,7 +150,7 @@ export const Tabs = memo<TabsProps>(
       () =>
         Children.map(children, (child) =>
           isValidElement(child) ? child.props.id : null,
-        ),
+        ) || [],
       [children],
     );
 
