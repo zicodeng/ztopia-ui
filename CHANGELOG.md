@@ -1,3 +1,10 @@
+## [1.39.1](https://github.com/zicodeng/ztopia-ui/compare/v1.39.0...v1.39.1) (2021-01-31)
+
+
+### Bug Fixes
+
+* manually release v1.39.0 ([a6af3c7](https://github.com/zicodeng/ztopia-ui/commit/a6af3c7708f03639898a08fcfbc25aed25e6a76f))
+
 ## [1.37.19](https://github.com/zicodeng/ztopia-ui/compare/v1.37.18...v1.37.19) (2021-01-31)
 
 
