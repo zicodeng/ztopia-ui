@@ -5,7 +5,7 @@ import { Loader, LoaderProps } from './';
 
 import './BarLoader.css';
 
-export const BarLoader = memo<LoaderProps>(props => (
+export const BarLoader = memo<LoaderProps>((props) => (
   <Loader {...props}>
     {({ color, className }) => (
       <div className={classNames(className, 'ztopia-loader--bar')}>

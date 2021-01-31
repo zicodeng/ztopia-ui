@@ -2,7 +2,7 @@ import { memo, useState } from 'react';
 
 export const CodeInputDemo = memo(({ children }) => {
   const [value, setValue] = useState('');
-  const onChange = newValue => {
+  const onChange = (newValue) => {
     console.log('CodeInput', 'onChange', { newValue });
     setValue(newValue);
   };

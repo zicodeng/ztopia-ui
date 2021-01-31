@@ -27,10 +27,10 @@ export default components.map((compName, i) => ({
   treeshake: false,
   input: `./components/${compName}/index.ts`,
   output: { file: `./dist/${compName}/index.js`, format: 'esm' },
-  external: id =>
+  external: (id) =>
     id.startsWith('../') ||
     (!id.startsWith('.') && !id.startsWith('/') && !id.endsWith('css')),
-  onwarn: warning => {
+  onwarn: (warning) => {
     if (warning.code === 'CIRCULAR_DEPENDENCY') return;
     console.warn(`(!) ${warning.message}`);
   },

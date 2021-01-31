@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 import { Icon, IconProps } from './';
 
-export const IconExclamationCircleRegular = memo<IconProps>(props => (
+export const IconExclamationCircleRegular = memo<IconProps>((props) => (
   <Icon {...props}>
     <svg data-icon="exclamation-circle" viewBox="0 0 512 512">
       <path

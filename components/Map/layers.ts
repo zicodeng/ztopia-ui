@@ -37,7 +37,8 @@ export interface LayerProps {
 /*=================================
 =            Arc Layer            =
 =================================*/
-export const createArcLayer = (props: ArcLayerProps) => new ArcLayer(props);
+export const createArcLayer = (props: ArcLayerProps): any =>
+  new ArcLayer(props);
 
 export interface ArcLayerProps extends LayerProps {
   getWidth?: number;
@@ -51,7 +52,8 @@ export interface ArcLayerProps extends LayerProps {
 /*==================================
 =            Icon Layer            =
 ==================================*/
-export const createIconLayer = (props: IconLayerProps) => new IconLayer(props);
+export const createIconLayer = (props: IconLayerProps): any =>
+  new IconLayer(props);
 
 export interface IconLayerProps extends LayerProps {
   sizeScale: number;
@@ -80,7 +82,7 @@ export interface Icon {
 /*=========================================
 =            Scatterplot Layer            =
 =========================================*/
-export const createScatterplotLayer = (props: ScatterplotLayerProps) =>
+export const createScatterplotLayer = (props: ScatterplotLayerProps): any =>
   new ScatterplotLayer(props);
 
 export interface ScatterplotLayerProps extends LayerProps {

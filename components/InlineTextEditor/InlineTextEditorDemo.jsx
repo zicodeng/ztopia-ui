@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import { memo, useState } from 'react';
 import faker from 'faker';
-import { memo } from 'react';
 
 export const DEFAULT_VALUE = `
 <h1>Headings</h1>
@@ -41,7 +40,7 @@ export const DEFAULT_VALUE = `
 
 export const InlineTextEditorDemo = memo(({ children }) => {
   const [editor, setEditor] = useState(null);
-  const onReady = editor => {
+  const onReady = (editor) => {
     setEditor(editor);
   };
   const printEditorContent = () => {

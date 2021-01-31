@@ -33,8 +33,8 @@ export default {
     { name: 'Components', menu: [] },
     { name: 'Pens', menu: [] },
   ],
-  filterComponents: files =>
-    files.filter(file =>
+  filterComponents: (files) =>
+    files.filter((file) =>
       /(components|docs|public|styles).*([^d]\.(t|j)sx?)$/.test(file),
     ),
   modifyBundlerConfig: (config, isDev) => ({
@@ -100,7 +100,7 @@ export default {
           styles: {
             chunks: 'all',
             name: 'styles',
-            test: module => /(\.module)?\.css$/.test(module.type),
+            test: (module) => /(\.module)?\.css$/.test(module.type),
             enforce: true,
           },
         },

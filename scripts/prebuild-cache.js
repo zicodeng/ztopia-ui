@@ -16,7 +16,7 @@ const BUILD_CACHE_PATH = path.resolve(__dirname, '../build-cache.json');
   const diff = [];
 
   // Calculate diff
-  Object.keys(newHashes).forEach(compName => {
+  Object.keys(newHashes).forEach((compName) => {
     const newHash = newHashes[compName];
     const oldHash = oldHashes[compName];
     if (newHash !== oldHash) diff.push(compName);

@@ -22,7 +22,7 @@ export const IconBell = memo<IconBellProps>(
       const el = ref.current;
       if (!el || !isAnimated) return;
 
-      if (prevCount !== undefined && (count && prevCount < count)) {
+      if (prevCount !== undefined && count && prevCount < count) {
         el.classList.remove('is-animated');
         // Triggering reflow
         void el.offsetWidth;

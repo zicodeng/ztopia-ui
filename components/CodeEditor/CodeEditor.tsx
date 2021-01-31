@@ -37,7 +37,7 @@ export const CodeEditor = memo<CodeEditorProps>(
     /**
      * Remove trailing line after editor is mounted
      */
-    const handleEditorDidMount = useCallback(editor => {
+    const handleEditorDidMount = useCallback((editor) => {
       if (!editor) return;
       const lastLine = editor.lastLine();
       const lastLineValue = editor.getLine(lastLine);

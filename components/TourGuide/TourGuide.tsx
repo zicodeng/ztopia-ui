@@ -16,7 +16,7 @@ export interface TourGuideProps {
   steps: Step[];
 }
 
-export const TourGuide = memo<TourGuideProps>(props => (
+export const TourGuide = memo<TourGuideProps>((props) => (
   <Joyride
     disableCloseOnEsc
     disableOverlayClose

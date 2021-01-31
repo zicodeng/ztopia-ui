@@ -2,7 +2,7 @@ import { memo, useState } from 'react';
 
 export const DatePickerDemo = memo(({ children }) => {
   const [value, setValue] = useState(null);
-  const onChange = newValue => {
+  const onChange = (newValue) => {
     console.log('DatePicker', 'onChange', { newValue });
     setValue(newValue);
   };

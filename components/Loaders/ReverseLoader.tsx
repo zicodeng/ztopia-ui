@@ -5,7 +5,7 @@ import { Loader, LoaderProps } from './';
 
 import './ReverseLoader.css';
 
-export const ReverseLoader = memo<LoaderProps>(props => (
+export const ReverseLoader = memo<LoaderProps>((props) => (
   <Loader {...props}>
     {({ color, className }) => (
       <div

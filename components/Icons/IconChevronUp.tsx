@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 import { Icon, IconProps } from './';
 
-export const IconChevronUp = memo<IconProps>(props => (
+export const IconChevronUp = memo<IconProps>((props) => (
   <Icon {...props}>
     <svg data-icon="chevron-up" viewBox="0 0 448 512">
       <path

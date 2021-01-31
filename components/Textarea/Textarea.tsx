@@ -42,4 +42,6 @@ export type TextareaProps = InnerTextareaProps &
     HTMLTextAreaElement
   >;
 
-export const Textarea = (props: TextareaProps) => <InnerTextarea {...props} />;
+export const Textarea = (props: TextareaProps): JSX.Element => (
+  <InnerTextarea {...props} />
+);

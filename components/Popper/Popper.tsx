@@ -119,7 +119,7 @@ export const Popper = memo<PopperProps>(
     const [containerEl, setContainerEl] = useState<HTMLElement | null>(null);
     const [localIsVisible, setLocalIsVisible] = useState(false);
 
-    const handleOverlayClick = useCallback(e => {
+    const handleOverlayClick = useCallback((e) => {
       const elements = document.querySelectorAll(
         `[data-ztopia-popper="${HIDE_ON_CLICK_EXCEPTION}"]`,
       );
@@ -136,7 +136,7 @@ export const Popper = memo<PopperProps>(
       setLocalIsVisible(!localIsVisible);
     }, [localIsVisible]);
 
-    const handleWindowClick = useCallback(e => {
+    const handleWindowClick = useCallback((e) => {
       const childrenEl = childrenRef.current;
       const overlayEl = overlayRef.current;
 

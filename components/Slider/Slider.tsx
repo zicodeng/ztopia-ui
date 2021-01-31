@@ -35,7 +35,7 @@ export interface SliderProps {
   renderHandle?: (props: any) => JSX.Element;
 }
 
-const defaultRenderHandle = props => {
+const defaultRenderHandle = (props) => {
   const { value, dragging, index, ...restProps } = props;
   return (
     <Popper
@@ -51,7 +51,7 @@ const defaultRenderHandle = props => {
   );
 };
 
-export const SliderHandle = memo<HandleProps>(props => <Handle {...props} />);
+export const SliderHandle = memo<HandleProps>((props) => <Handle {...props} />);
 
 export const Slider = memo<SliderProps>(
   ({

@@ -5,7 +5,7 @@ import { Loader, LoaderProps } from './';
 
 import './FadingLoader.css';
 
-export const FadingLoader = memo<LoaderProps>(props => (
+export const FadingLoader = memo<LoaderProps>((props) => (
   <Loader {...props}>
     {({ color, className }) => (
       <div className={classNames(className, 'ztopia-loader--fading')}>

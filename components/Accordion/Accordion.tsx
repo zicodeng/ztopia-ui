@@ -68,7 +68,7 @@ export const Accordion = memo<AccordionProps>(
     return createElement(
       component,
       { className: classNames(className, 'ztopia-accordion') },
-      Children.map(children, child =>
+      Children.map(children, (child) =>
         isValidElement(child)
           ? cloneElement(child, {
               isExpanded: expandedPanelIds.indexOf(child.props.id) !== -1,
@@ -188,7 +188,7 @@ export const AccordionPanelHeader = memo<AccordionPanelHeader>(
         className: classNames(className, 'ztopia-accordion__panel-header', {
           'is-expanded': isExpanded,
         }),
-        onClick: e => onClickPanelHeader!(e, id!),
+        onClick: (e) => onClickPanelHeader!(e, id!),
       },
       <>
         {children}

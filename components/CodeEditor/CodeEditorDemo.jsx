@@ -63,7 +63,7 @@ ReactDOM.render(<TodoApp />, document.getElementById('todos-example'));
 
 export const CodeEditorDemo = memo(({ children }) => {
   const [value, setValue] = useState(TODO_APP);
-  const onChange = newValue => {
+  const onChange = (newValue) => {
     console.log('CodeEditor', 'onChange', { newValue });
     setValue(newValue);
   };

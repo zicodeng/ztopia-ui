@@ -12,7 +12,7 @@ export const ModalDemo = memo(({ children }) => {
   return children({ isOpen, openModal, closeModal });
 });
 
-export const Trigger = props => (
+export const Trigger = (props) => (
   <div
     style={{
       width: 150,

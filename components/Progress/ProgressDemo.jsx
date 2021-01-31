@@ -1,4 +1,4 @@
-import { memo, useState, useEffect } from 'react';
+import { memo, useEffect, useState } from 'react';
 
 export const ProgressDemo = memo(({ children }) => {
   let [percent, setPercent] = useState(0);

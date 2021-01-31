@@ -1,8 +1,8 @@
 import React, { memo, useState } from 'react';
 import uuidv4 from 'uuid/v4';
 
-const sleep = milliseconds =>
-  new Promise(resolve => setTimeout(resolve, milliseconds));
+const sleep = (milliseconds) =>
+  new Promise((resolve) => setTimeout(resolve, milliseconds));
 
 const createFakeItems = () =>
   Array.from({ length: 20 }).map((_, i) => (
@@ -23,7 +23,7 @@ export const InfiniteScrollDemo = memo(({ children }) => {
   const loadMore = async () => {
     console.log('InfiniteScroll', 'loadMore');
     await sleep(5000);
-    setItems(prevItems => [...prevItems, ...createFakeItems()]);
+    setItems((prevItems) => [...prevItems, ...createFakeItems()]);
   };
 
   return children({ items, loadMore });

@@ -175,8 +175,8 @@ export const DatePicker = memo<DatePickerProps>(
         }}
         onChange={onChange}
         onYearChange={handleChangeYear}
-        renderCustomHeader={args => renderCustomHeader({ ...args, locale })}
-        renderDayContents={day => (
+        renderCustomHeader={(args) => renderCustomHeader({ ...args, locale })}
+        renderDayContents={(day) => (
           <span className="ztopia-date-picker__day-content">{day}</span>
         )}
       >

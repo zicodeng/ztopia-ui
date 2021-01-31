@@ -5,7 +5,7 @@ import { Loader, LoaderProps } from './';
 
 import './TwinnerLoader.css';
 
-export const TwinnerLoader = memo<LoaderProps>(props => (
+export const TwinnerLoader = memo<LoaderProps>((props) => (
   <Loader {...props}>
     {({ color, className }) => (
       <div

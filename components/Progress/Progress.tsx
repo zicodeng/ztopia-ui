@@ -41,7 +41,7 @@ export interface ProgressProps {
   style?: CSSProperties;
 }
 
-const calcGradientColor = percent => {
+const calcGradientColor = (percent) => {
   let r = 0;
   let g = 0;
   const b = 0;

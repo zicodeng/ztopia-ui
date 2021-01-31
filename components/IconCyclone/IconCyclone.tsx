@@ -17,7 +17,7 @@ export interface IconCycloneProps {
   icons?: JSX.Element[];
 }
 
-const getRandomNumber = max => Math.floor(Math.random() * max);
+const getRandomNumber = (max) => Math.floor(Math.random() * max);
 
 const keyframer = new CSSKeyframer();
 

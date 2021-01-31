@@ -3,12 +3,12 @@ import { memo, useState } from 'react';
 export const CalendarDemo = memo(({ children }) => {
   const [events, setEvents] = useState([]);
 
-  const onSelectEvent = event => {
+  const onSelectEvent = (event) => {
     console.log('Calender', 'onSelectEvent', { event });
     window.alert(event.title);
   };
 
-  const onSelectSlot = slot => {
+  const onSelectSlot = (slot) => {
     console.log('Calendar', 'onSelectSlot', { slot });
     const title = window.prompt('Event Title');
     if (!title) return;

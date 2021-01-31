@@ -66,7 +66,7 @@ export const Calendar = memo<CalendarProps>(
               date: '日期',
               time: '时间',
               event: '事件',
-              showMore: count => `查看更多(${count}+)`,
+              showMore: (count) => `查看更多(${count}+)`,
             }
           : undefined
       }

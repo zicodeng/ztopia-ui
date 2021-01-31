@@ -1,4 +1,4 @@
-import React, { createElement,memo, useCallback, useState } from 'react';
+import React, { createElement, memo, useCallback, useState } from 'react';
 import LinesEllipsis from 'react-lines-ellipsis';
 import HTMLEllipsis from 'react-lines-ellipsis/lib/html';
 import responsiveHOC from 'react-lines-ellipsis/lib/responsiveHOC';

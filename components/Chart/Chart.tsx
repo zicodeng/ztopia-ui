@@ -98,7 +98,7 @@ export interface ChartProps {
    * <@default=`'#cbd0d8'`>
    */
   color?: string;
-  data: ReadonlyArray<object>;
+  data: any[];
   /**
    * <@default=`{}`>
    */
@@ -155,14 +155,17 @@ export const Chart = memo<ChartProps>(
       () =>
         lines &&
         lines.map(
-          ({
-            stroke = '#131518',
-            fill = '#ffffff',
-            variant = 'monotone',
-            accessor,
-          }) => (
+          (
+            {
+              stroke = '#131518',
+              fill = '#ffffff',
+              variant = 'monotone',
+              accessor,
+            },
+            i,
+          ) => (
             <BaseLine
-              key={accessor}
+              key={i}
               stroke={stroke}
               fill={fill}
               type={variant}
@@ -177,14 +180,17 @@ export const Chart = memo<ChartProps>(
       () =>
         areas &&
         areas.map(
-          ({
-            stroke = '#131518',
-            fill = '#131518',
-            variant = 'monotone',
-            accessor,
-          }) => (
+          (
+            {
+              stroke = '#131518',
+              fill = '#131518',
+              variant = 'monotone',
+              accessor,
+            },
+            i,
+          ) => (
             <BaseArea
-              key={accessor}
+              key={i}
               stroke={stroke}
               fill={fill}
               type={variant}
@@ -199,9 +205,9 @@ export const Chart = memo<ChartProps>(
       () =>
         bars &&
         bars.map(
-          ({ stroke = '#131518', fill = '#131518', accessor, width }) => (
+          ({ stroke = '#131518', fill = '#131518', accessor, width }, i) => (
             <BaseBar
-              key={accessor}
+              key={i}
               stroke={stroke}
               fill={fill}
               dataKey={accessor}
@@ -219,7 +225,7 @@ export const Chart = memo<ChartProps>(
     if (bars && !lines && !areas) Container = BarChart;
 
     return (
-      <Container width={width} height={height} data={data} stroke={color}>
+      <Container width={width} height={height} data={data}>
         <CartesianGrid stroke={color} strokeDasharray="3 3" />
         <Tooltip
           contentStyle={{

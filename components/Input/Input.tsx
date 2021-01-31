@@ -96,7 +96,7 @@ export const Input = memo(
       }, []);
 
       const handleInputFocus = useCallback(
-        e => {
+        (e) => {
           setIsInputContainerFocused(true);
           setIsActive(true);
 
@@ -106,7 +106,7 @@ export const Input = memo(
       );
 
       const handleInputBlur = useCallback(
-        e => {
+        (e) => {
           setIsInputContainerFocused(false);
           setIsActive(isDefaultActive);
 
@@ -116,7 +116,7 @@ export const Input = memo(
       );
 
       const handleWindowClick = useCallback(
-        e => {
+        (e) => {
           if (isDisabled) return;
 
           const inputContainerEl = inputContainerRef.current;

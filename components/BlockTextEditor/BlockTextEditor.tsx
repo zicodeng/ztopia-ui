@@ -128,7 +128,7 @@ export const BlockTextEditor = memo<BlockTextEditorProps>(
     }, [editorState, onReady]);
 
     const handleChange = useCallback(
-      newEditorState => {
+      (newEditorState) => {
         setEditorState(newEditorState);
         if (onChange) {
           const newContent = newEditorState.toHTML();
@@ -145,7 +145,8 @@ export const BlockTextEditor = memo<BlockTextEditorProps>(
         className={classNames(className, 'ztopia-block-text-editor', {
           'is-height-auto':
             !contentStyle ||
-            (!contentStyle.height || contentStyle.height === 'auto'),
+            !contentStyle.height ||
+            contentStyle.height === 'auto',
         })}
         headings={headings}
         controls={toolbarOptions}

@@ -68,4 +68,4 @@ export const InnerIcon = memo<BaseIconProps>(
 
 export type IconProps = BaseIconProps & SVGProps<SVGSVGElement>;
 
-export const Icon = (props: IconProps) => <InnerIcon {...props} />;
+export const Icon = (props: IconProps): JSX.Element => <InnerIcon {...props} />;

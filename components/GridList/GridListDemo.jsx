@@ -3,7 +3,7 @@ import faker from 'faker';
 
 import { Input } from '../Input';
 
-const ITEMS = Array.from({ length: 20 }).map((_, i) => {
+const ITEMS = Array.from({ length: 20 }).map(() => {
   const name = faker.name.findName();
   return (
     <div
@@ -26,17 +26,19 @@ const ITEMS = Array.from({ length: 20 }).map((_, i) => {
 export const GridListDemo = ({ children }) => {
   const [query, setQuery] = useState('');
   const [items, setItems] = useState(ITEMS);
-  const handleChange = e => {
+
+  const handleChange = (e) => {
     const value = e.currentTarget.value;
     setQuery(value);
     setItems(
       value
-        ? ITEMS.filter(item =>
+        ? ITEMS.filter((item) =>
             item.props.children.toLowerCase().includes(value.toLowerCase()),
           )
         : ITEMS,
     );
   };
+
   return (
     <div>
       <Input

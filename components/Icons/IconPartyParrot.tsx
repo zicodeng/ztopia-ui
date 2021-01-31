@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 import { Icon, IconProps } from './';
 
-export const IconPartyParrot = memo<IconProps>(props => (
+export const IconPartyParrot = memo<IconProps>((props) => (
   <Icon {...props}>
     <svg data-icon="party-parrot" viewBox="0 0 128 128">
       <g

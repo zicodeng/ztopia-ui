@@ -98,7 +98,10 @@ export const makeToast = (
   });
 };
 
-export const updateToast = (toastId: ToastId, options: ToastOptions = {}) => {
+export const updateToast = (
+  toastId: ToastId,
+  options: ToastOptions = {},
+): void => {
   const {
     isProgressBarShown = false,
     placement = 'top-right',
@@ -113,6 +116,6 @@ export const updateToast = (toastId: ToastId, options: ToastOptions = {}) => {
   });
 };
 
-export const dismissToast = (toastId: ToastId) => toast.dismiss(toastId);
+export const dismissToast = (toastId: ToastId): void => toast.dismiss(toastId);
 
-export const dismissAllToasts = () => toast.dismiss();
+export const dismissAllToasts = (): void => toast.dismiss();

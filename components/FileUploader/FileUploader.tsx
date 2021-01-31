@@ -97,9 +97,9 @@ export const FileUploader = memo<FileUploaderProps>(
       minSize,
       maxSize,
       accept: allowedFileTypes,
-      onDrop: acceptedFiles => {
+      onDrop: (acceptedFiles) => {
         const previewURLs: string[] = [];
-        const previewFiles = acceptedFiles.map(file => {
+        const previewFiles = acceptedFiles.map((file) => {
           const thumbURL = URL.createObjectURL(file);
           previewURLs.push(thumbURL);
           return Object.assign(file, {
@@ -131,14 +131,14 @@ export const FileUploader = memo<FileUploaderProps>(
     useEffect(
       () => () => {
         // Make sure to revoke the data URIs to avoid memory leaks
-        previewURLs.forEach(url => URL.revokeObjectURL(url));
+        previewURLs.forEach((url) => URL.revokeObjectURL(url));
       },
       [previewURLs],
     );
 
     const handleClickFileRemoveIndicator = useCallback(
       (fileName: string) => {
-        const newPreviewFiles = previewFiles.filter(previewFile => {
+        const newPreviewFiles = previewFiles.filter((previewFile) => {
           const { name, thumbURL } = previewFile;
           if (name === fileName) {
             URL.revokeObjectURL(thumbURL);

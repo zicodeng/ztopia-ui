@@ -55,8 +55,8 @@ export interface DonutProps {
   /**
    * <@default=`true`>
    */
-  labelLine?: boolean | ((sliceInfo: any) => ReactNode | JSX.Element);
-  data: ReadonlyArray<object>;
+  labelLine?: boolean | ((sliceInfo: any) => SVGAElement);
+  data: any[];
 }
 
 const renderLabel = ({ name }) => name;
@@ -87,7 +87,7 @@ export const Donut = memo<DonutProps>(
             borderColor: Array.isArray(color) ? '#131518' : color,
             backgroundColor: '#fff',
           }}
-          formatter={value => `${value}${unit || ''}`}
+          formatter={(value) => `${value}${unit || ''}`}
         />
       )}
       <Pie
@@ -98,7 +98,7 @@ export const Donut = memo<DonutProps>(
         labelLine={labelLine}
         nameKey={nameAccessor}
         dataKey={valueAccessor}
-        fill={Array.isArray(color) ? null : color}
+        fill={Array.isArray(color) ? undefined : color}
         innerRadius={innerRadius}
         outerRadius={outerRadius}
         data={data}

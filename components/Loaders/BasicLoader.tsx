@@ -6,7 +6,7 @@ import { Loader, LoaderProps } from './';
 
 import './BasicLoader.css';
 
-export const BasicLoader = memo<LoaderProps>(props => (
+export const BasicLoader = memo<LoaderProps>((props) => (
   <Loader {...props}>
     {({ color, className }) => {
       const { red, green, blue } = useMemo(() => hexRgb(color), [color]);
