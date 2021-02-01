@@ -1,3 +1,10 @@
+## [1.39.2](https://github.com/zicodeng/ztopia-ui/compare/v1.39.1...v1.39.2) (2021-02-01)
+
+
+### Bug Fixes
+
+* add selector prop ([b7eab9e](https://github.com/zicodeng/ztopia-ui/commit/b7eab9e8504f1f218ada58ad0d4b0ff389e9664b))
+
 ## [1.39.1](https://github.com/zicodeng/ztopia-ui/compare/v1.39.0...v1.39.1) (2021-01-31)
 
 
