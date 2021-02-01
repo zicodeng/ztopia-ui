@@ -41,7 +41,16 @@ export interface InlineTextEditorProps {
    *  <@default=`'false'`>
    */
   isReadonly?: boolean;
+  /**
+   * <@default=`'ztopia-inline-text-editor'`>
+   */
   id?: string;
+  /**
+   * Used when instantiating MediemEditor(selector)
+   *
+   * <@default=`'#ztopia-inline-text-editor'`>
+   */
+  selector?: string;
   /**
    * <@default=`''`>
    */
@@ -55,7 +64,7 @@ export interface InlineTextEditorProps {
    * <@default=`['bold', 'italic', 'underline', 'anchor', 'h1', 'h2', 'quote', 'orderedlist', 'unorderedlist']`>
    */
   toolbarOptions?: ToolbarOption[] | MediumEditor.Button[];
-  onChange?: (newValue: string) => void;
+  onChange?: (e: ChangeEvent<HTMLDivElement>, newValue: string) => void;
   onReady?: (editor: Editor) => void;
 }
 
@@ -63,6 +72,7 @@ export const InlineTextEditor = memo<InlineTextEditorProps>(
   ({
     isReadonly = false,
     id = 'ztopia-inline-text-editor',
+    selector = '#ztopia-inline-text-editor',
     defaultValue = '',
     placeholder = 'Type your text here...',
     className,
@@ -81,7 +91,7 @@ export const InlineTextEditor = memo<InlineTextEditorProps>(
     onReady,
   }) => {
     useEffect(() => {
-      const editor = new MediumEditor(`#${id}`, {
+      const editor = new MediumEditor(selector, {
         targetBlank: true,
         autoLink: true,
         disableEditing: isReadonly,
@@ -103,8 +113,8 @@ export const InlineTextEditor = memo<InlineTextEditorProps>(
 
       editor.subscribe(
         'editableInput',
-        (_e: ChangeEvent<HTMLDivElement>, editable: HTMLElement) => {
-          if (onChange) onChange(editable.innerHTML);
+        (e: ChangeEvent<HTMLDivElement>, editableEl: HTMLElement) => {
+          if (onChange) onChange(e, editableEl.innerHTML);
         },
       );
 

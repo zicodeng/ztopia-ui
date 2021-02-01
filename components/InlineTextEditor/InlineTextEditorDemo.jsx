@@ -40,11 +40,14 @@ export const DEFAULT_VALUE = `
 
 export const InlineTextEditorDemo = memo(({ children }) => {
   const [editor, setEditor] = useState(null);
+
   const onReady = (editor) => {
     setEditor(editor);
   };
+
   const printEditorContent = () => {
     if (editor) console.log(editor.getContent());
   };
+
   return children({ onReady, printEditorContent });
 });
