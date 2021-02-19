@@ -1,3 +1,10 @@
+# [1.40.0](https://github.com/zicodeng/ztopia-ui/compare/v1.39.3...v1.40.0) (2021-02-19)
+
+
+### Features
+
+* implement Zoom component ([e0c0ac4](https://github.com/zicodeng/ztopia-ui/commit/e0c0ac4ae9a981cb4f4fe26f21c77f885754aa7b))
+
 ## [1.39.3](https://github.com/zicodeng/ztopia-ui/compare/v1.39.2...v1.39.3) (2021-02-07)
 
 
