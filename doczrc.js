@@ -56,6 +56,7 @@ export default {
             path.resolve(__dirname, './node_modules/react-toastify'),
             path.resolve(__dirname, './node_modules/react-datepicker'),
             path.resolve(__dirname, './node_modules/react-big-calendar'),
+            path.resolve(__dirname, './node_modules/react-medium-image-zoom'),
             path.resolve(__dirname, './node_modules/mapbox-gl'),
             path.resolve(__dirname, './node_modules/medium-editor'),
             path.resolve(__dirname, './node_modules/braft-editor'),
