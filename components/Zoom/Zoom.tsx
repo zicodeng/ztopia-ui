@@ -1,10 +1,10 @@
-import React, { memo, ReactNode,useEffect, useState } from 'react';
+import React, { memo, ReactNode, useEffect, useState } from 'react';
 import BaseZoom from 'react-medium-image-zoom';
 
 import 'react-medium-image-zoom/dist/styles.css';
 
 export interface ZoomProps {
-  containerId: string;
+  containerId?: string;
   children: ReactNode;
 }
 
@@ -18,5 +18,11 @@ export const Zoom = memo<ZoomProps>(({ containerId, ...restProps }) => {
     }
   }, [containerId]);
 
-  return <BaseZoom portalEl={containerEl || undefined} {...restProps} />;
+  return (
+    <BaseZoom
+      zoomMargin={100}
+      portalEl={containerEl || undefined}
+      {...restProps}
+    />
+  );
 });
