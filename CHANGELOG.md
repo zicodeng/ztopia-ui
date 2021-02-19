@@ -1,3 +1,10 @@
+## [1.40.1](https://github.com/zicodeng/ztopia-ui/compare/v1.40.0...v1.40.1) (2021-02-19)
+
+
+### Bug Fixes
+
+* add zoom margin and fix props ([54f36d0](https://github.com/zicodeng/ztopia-ui/commit/54f36d0d1213cb3fdb987ed54e493bd2c4b057b8))
+
 # [1.40.0](https://github.com/zicodeng/ztopia-ui/compare/v1.39.3...v1.40.0) (2021-02-19)
 
 
