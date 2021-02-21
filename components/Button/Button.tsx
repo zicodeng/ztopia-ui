@@ -30,6 +30,12 @@ export interface ButtonProps {
    * <@default=`false`>
    */
   isLoading?: boolean;
+  /**
+   * If true, button width will become 100%
+   *
+   * <@default=`false`>
+   */
+  isFull?: boolean;
   className?: string;
   /**
    * <@default=`{}`>
@@ -68,6 +74,7 @@ export const Button = memo<ButtonProps>(
     isGhost = false,
     isDisabled = false,
     isLoading = false,
+    isFull = false,
     className,
     style = {},
     children,
@@ -100,6 +107,7 @@ export const Button = memo<ButtonProps>(
       {
         'is-ghost': isGhost,
         'is-loading': isLoading,
+        'is-full': isFull,
       },
     );
 
