@@ -51,7 +51,7 @@
     opacity: 0.6;
   }
 
-  .is-full {
+  &.is-full {
     width: 100%;
   }
 
