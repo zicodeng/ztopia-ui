@@ -1,3 +1,10 @@
+## [1.40.2](https://github.com/zicodeng/ztopia-ui/compare/v1.40.1...v1.40.2) (2021-02-21)
+
+
+### Bug Fixes
+
+* add isFull prop to Button ([0e42e76](https://github.com/zicodeng/ztopia-ui/commit/0e42e7615e3e7f8388b6d2c4f439378d676ec2ce))
+
 ## [1.40.1](https://github.com/zicodeng/ztopia-ui/compare/v1.40.0...v1.40.1) (2021-02-19)
 
 
