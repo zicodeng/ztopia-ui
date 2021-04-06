@@ -1,3 +1,11 @@
+## [1.40.4](https://github.com/zicodeng/ztopia-ui/compare/v1.40.3...v1.40.4) (2021-04-06)
+
+
+### Bug Fixes
+
+* add z-index ([eefacaa](https://github.com/zicodeng/ztopia-ui/commit/eefacaa2fb806f9d977d81ab659f5cbbfcef2ce7))
+* use static id ([a25e128](https://github.com/zicodeng/ztopia-ui/commit/a25e12852d82966d549e51e98e01e32fb5d531ca))
+
 ## [1.40.3](https://github.com/zicodeng/ztopia-ui/compare/v1.40.2...v1.40.3) (2021-02-21)
 
 
