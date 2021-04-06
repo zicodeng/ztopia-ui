@@ -1,5 +1,6 @@
 .ztopia-fab {
   position: absolute;
+  z-index: $z-index-fab;
   background-color: $black-dark;
   border-radius: 50%;
   box-shadow: $box-shadow-2;

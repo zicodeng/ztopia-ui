@@ -76,6 +76,7 @@ const semanticZIndexes = {
   'z-index-popper': zIndexLevels['z-index-level-1'],
   'z-index-modal': zIndexLevels['z-index-level-2'],
   'z-index-drawer': zIndexLevels['z-index-level-3'],
+  'z-index-fab': zIndexLevels['z-index-level-4'],
 };
 
 const borderRadiuses = {
