@@ -1,3 +1,10 @@
+## [1.40.5](https://github.com/zicodeng/ztopia-ui/compare/v1.40.4...v1.40.5) (2021-04-18)
+
+
+### Bug Fixes
+
+* fix text button loading state ([02f65a2](https://github.com/zicodeng/ztopia-ui/commit/02f65a267bed1032792d262e228bdf4e3677d5da))
+
 ## [1.40.4](https://github.com/zicodeng/ztopia-ui/compare/v1.40.3...v1.40.4) (2021-04-06)
 
 
