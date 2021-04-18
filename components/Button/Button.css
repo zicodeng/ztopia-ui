@@ -16,12 +16,6 @@
       background-color: $black-dark;
     }
   }
-
-  &.is-loading {
-    color: transparent;
-    cursor: wait;
-    transition: none;
-  }
 }
 
 %unshaped-button {
@@ -30,7 +24,7 @@
   background-color: transparent;
   border: 0;
 
-  &:not(:disabled):hover {
+  &:not(.is-loading):not(:disabled):hover {
     color: $black-light;
   }
 }
@@ -53,6 +47,12 @@
 
   &.is-full {
     width: 100%;
+  }
+
+  &.is-loading {
+    color: transparent;
+    cursor: wait;
+    transition: none;
   }
 
   /*=============================
