@@ -1,3 +1,10 @@
+## [1.40.9](https://github.com/zicodeng/ztopia-ui/compare/v1.40.8...v1.40.9) (2021-04-30)
+
+
+### Bug Fixes
+
+* omit overlay from FAB popperProps ([51717ff](https://github.com/zicodeng/ztopia-ui/commit/51717ffad9f475b0d77cb578ea76253f39234e07))
+
 ## [1.40.8](https://github.com/zicodeng/ztopia-ui/compare/v1.40.7...v1.40.8) (2021-04-30)
 
 
