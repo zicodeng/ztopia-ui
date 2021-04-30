@@ -18,12 +18,9 @@ export interface FloatingActionButtonProps {
   actions: Action[];
 }
 
-const ID = 'ztopia-fab';
-
 export const FloatingActionButton = memo<FloatingActionButtonProps>(
   ({ offset = 50, className, size = 'medium', actions }) => (
     <div
-      id={ID}
       className={classNames(className, 'ztopia-fab', `ztopia-fab--${size}`)}
       style={{
         right: offset,
@@ -38,12 +35,7 @@ export const FloatingActionButton = memo<FloatingActionButtonProps>(
       >
         {actions.map(({ icon, desc, onClick }, i) => (
           <li key={i} className="ztopia-fab__action" onClick={onClick}>
-            <Popper
-              containerId={ID}
-              offsetX={-5}
-              placement="left"
-              overlay={<span>{desc}</span>}
-            >
+            <Popper offsetX={-5} placement="left" overlay={<span>{desc}</span>}>
               <div
                 className={classNames(
                   'ztopia-fab__action-content',
