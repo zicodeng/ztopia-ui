@@ -1,3 +1,10 @@
+## [1.40.7](https://github.com/zicodeng/ztopia-ui/compare/v1.40.6...v1.40.7) (2021-04-30)
+
+
+### Bug Fixes
+
+* add popperProps to FAB ([b06fee7](https://github.com/zicodeng/ztopia-ui/commit/b06fee712e577e79277110d6ad55afcddee2b1a1))
+
 ## [1.40.6](https://github.com/zicodeng/ztopia-ui/compare/v1.40.5...v1.40.6) (2021-04-30)
 
 
