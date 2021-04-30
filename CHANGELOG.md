@@ -1,3 +1,10 @@
+## [1.40.8](https://github.com/zicodeng/ztopia-ui/compare/v1.40.7...v1.40.8) (2021-04-30)
+
+
+### Bug Fixes
+
+* validate overlay ([8e3a2f2](https://github.com/zicodeng/ztopia-ui/commit/8e3a2f2f5ad079c9c7b590deab40e49a7bcc5cc0))
+
 ## [1.40.7](https://github.com/zicodeng/ztopia-ui/compare/v1.40.6...v1.40.7) (2021-04-30)
 
 
