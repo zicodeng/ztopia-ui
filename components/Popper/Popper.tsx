@@ -223,7 +223,7 @@ export const Popper = memo<PopperProps>(
       <Tooltip
         // @ts-ignore
         overlay={
-          isValidElement && isHiddenOnClick
+          isValidElement(overlay) && isHiddenOnClick
             ? cloneElement(overlay as ReactElement, {
                 ref: overlayRef,
                 onClick: handleOverlayClick,
@@ -232,7 +232,7 @@ export const Popper = memo<PopperProps>(
         }
         {...props}
       >
-        {isValidElement && isHiddenOnClick
+        {isValidElement(children) && isHiddenOnClick
           ? cloneElement(children as ReactElement, {
               ref: childrenRef,
               onClick: handleChildrenClick,
