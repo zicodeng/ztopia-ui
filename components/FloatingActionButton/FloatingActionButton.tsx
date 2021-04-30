@@ -1,7 +1,7 @@
 import React, { memo, ReactNode } from 'react';
 import classNames from 'classnames';
 
-import { Popper } from '../Popper';
+import { Popper, PopperProps } from '../Popper';
 
 import './FloatingActionButton.css';
 
@@ -14,12 +14,13 @@ export interface Action {
 export interface FloatingActionButtonProps {
   offset?: number;
   className?: string;
+  popperProps?: PopperProps;
   size?: 'small' | 'medium' | 'large';
   actions: Action[];
 }
 
 export const FloatingActionButton = memo<FloatingActionButtonProps>(
-  ({ offset = 50, className, size = 'medium', actions }) => (
+  ({ offset = 50, className, popperProps, size = 'medium', actions }) => (
     <div
       className={classNames(className, 'ztopia-fab', `ztopia-fab--${size}`)}
       style={{
@@ -35,7 +36,12 @@ export const FloatingActionButton = memo<FloatingActionButtonProps>(
       >
         {actions.map(({ icon, desc, onClick }, i) => (
           <li key={i} className="ztopia-fab__action" onClick={onClick}>
-            <Popper offsetX={-5} placement="left" overlay={<span>{desc}</span>}>
+            <Popper
+              offsetX={-5}
+              placement="left"
+              overlay={<span>{desc}</span>}
+              {...popperProps}
+            >
               <div
                 className={classNames(
                   'ztopia-fab__action-content',
