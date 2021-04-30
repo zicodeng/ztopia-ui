@@ -1,3 +1,10 @@
+## [1.40.6](https://github.com/zicodeng/ztopia-ui/compare/v1.40.5...v1.40.6) (2021-04-30)
+
+
+### Bug Fixes
+
+* fix FAB tooltip initial position ([8ad47a9](https://github.com/zicodeng/ztopia-ui/commit/8ad47a9b70bd7314146631036024c0cccd993c4c))
+
 ## [1.40.5](https://github.com/zicodeng/ztopia-ui/compare/v1.40.4...v1.40.5) (2021-04-18)
 
 
