@@ -14,7 +14,7 @@ export interface Action {
 export interface FloatingActionButtonProps {
   offset?: number;
   className?: string;
-  popperProps?: PopperProps;
+  popperProps?: Omit<PopperProps, 'overlay'>;
   size?: 'small' | 'medium' | 'large';
   actions: Action[];
 }
