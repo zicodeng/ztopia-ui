@@ -1,3 +1,10 @@
+## [1.40.10](https://github.com/zicodeng/ztopia-ui/compare/v1.40.9...v1.40.10) (2021-05-09)
+
+
+### Bug Fixes
+
+* fix className type ([2f1b8c1](https://github.com/zicodeng/ztopia-ui/commit/2f1b8c14b4f9175fa9490fa70d6de8218275d273))
+
 ## [1.40.9](https://github.com/zicodeng/ztopia-ui/compare/v1.40.8...v1.40.9) (2021-04-30)
 
 
