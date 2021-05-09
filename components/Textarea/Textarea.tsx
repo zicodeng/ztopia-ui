@@ -13,10 +13,7 @@ export interface InnerTextareaProps {
   maxRows?: number;
   label?: string;
   error?: string;
-  /**
-   * <@internal>
-   */
-  className?: Pick<TextareaProps, 'className'>;
+  className?: string;
 }
 
 export const InnerTextarea = memo<InnerTextareaProps>(
