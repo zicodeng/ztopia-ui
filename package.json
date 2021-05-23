@@ -77,7 +77,7 @@
     "hex-rgb": "^4.1.0",
     "lodash-es": "^4.17.15",
     "medium-editor": "^5.23.3",
-    "rc-drawer": "^2.0.9",
+    "rc-drawer": "^4.3.1",
     "rc-progress": "^2.5.2",
     "rc-slider": "^8.6.13",
     "rc-tooltip": "^3.7.3",

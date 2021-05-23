@@ -2,6 +2,7 @@ import React, {
   cloneElement,
   CSSProperties,
   FC,
+  forwardRef,
   isValidElement,
   memo,
   ReactNode,
@@ -70,67 +71,73 @@ export interface ButtonProps {
 }
 
 export const Button = memo<ButtonProps>(
-  ({
-    isGhost = false,
-    isDisabled = false,
-    isLoading = false,
-    isFull = false,
-    className,
-    style = {},
-    children,
-    type = 'button',
-    variant = 'rect',
-    size = 'medium',
-    element = 'button',
-    loader,
-    onClick,
-    ...restProps
-  }) => {
-    const memoizedLoader = useMemo(() => {
-      if (typeof loader === 'object' && isValidElement(loader)) {
-        return cloneElement(loader, { isCentered: true });
-      }
-
-      if (typeof loader === 'function') {
-        const Loader = loader;
-        return <Loader isCentered />;
-      }
-
-      return <BasicLoader isCentered size="small" color="#ffffff" />;
-    }, [loader]);
-
-    const sharedClassNames = classNames(
-      className,
-      'ztopia-button',
-      `ztopia-button--${variant}`,
-      `ztopia-button--${size}`,
+  forwardRef<HTMLButtonElement, ButtonProps>(
+    (
       {
-        'is-ghost': isGhost,
-        'is-loading': isLoading,
-        'is-full': isFull,
+        isGhost = false,
+        isDisabled = false,
+        isLoading = false,
+        isFull = false,
+        className,
+        style = {},
+        children,
+        type = 'button',
+        variant = 'rect',
+        size = 'medium',
+        element = 'button',
+        loader,
+        onClick,
+        ...restProps
       },
-    );
+      ref,
+    ) => {
+      const memoizedLoader = useMemo(() => {
+        if (typeof loader === 'object' && isValidElement(loader)) {
+          return cloneElement(loader, { isCentered: true });
+        }
 
-    if (element === 'span') {
-      return (
-        <span style={style} className={sharedClassNames} {...restProps}>
-          {children}
-        </span>
+        if (typeof loader === 'function') {
+          const Loader = loader;
+          return <Loader isCentered />;
+        }
+
+        return <BasicLoader isCentered size="small" color="#ffffff" />;
+      }, [loader]);
+
+      const sharedClassNames = classNames(
+        className,
+        'ztopia-button',
+        `ztopia-button--${variant}`,
+        `ztopia-button--${size}`,
+        {
+          'is-ghost': isGhost,
+          'is-loading': isLoading,
+          'is-full': isFull,
+        },
       );
-    }
 
-    return (
-      <button
-        disabled={isDisabled}
-        type={type}
-        style={style}
-        className={sharedClassNames}
-        onClick={isLoading ? undefined : onClick}
-        {...restProps}
-      >
-        {children}
-        {isLoading && memoizedLoader}
-      </button>
-    );
-  },
+      if (element === 'span') {
+        return (
+          <span style={style} className={sharedClassNames} {...restProps}>
+            {children}
+          </span>
+        );
+      }
+
+      return (
+        <button
+          ref={ref}
+          disabled={isDisabled}
+          type={type}
+          style={style}
+          className={sharedClassNames}
+          onClick={isLoading ? undefined : onClick}
+          {...restProps}
+        >
+          {children}
+          {isLoading && memoizedLoader}
+        </button>
+      );
+    },
+  ),
 );
