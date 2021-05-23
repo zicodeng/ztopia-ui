@@ -1,3 +1,10 @@
+## [1.40.11](https://github.com/zicodeng/ztopia-ui/compare/v1.40.10...v1.40.11) (2021-05-23)
+
+
+### Bug Fixes
+
+* upgrade rc-drawer and fix console warning ([572729d](https://github.com/zicodeng/ztopia-ui/commit/572729de5e6e35665ca31ea6d30aa278a8f0cd6c))
+
 ## [1.40.10](https://github.com/zicodeng/ztopia-ui/compare/v1.40.9...v1.40.10) (2021-05-09)
 
 
