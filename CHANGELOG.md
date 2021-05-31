@@ -1,3 +1,10 @@
+## [1.40.12](https://github.com/zicodeng/ztopia-ui/compare/v1.40.11...v1.40.12) (2021-05-31)
+
+
+### Bug Fixes
+
+* update close icon ([16a4adf](https://github.com/zicodeng/ztopia-ui/commit/16a4adf13247a005a62ebe18e215a357fd92fb59))
+
 ## [1.40.11](https://github.com/zicodeng/ztopia-ui/compare/v1.40.10...v1.40.11) (2021-05-23)
 
 
