@@ -200,7 +200,7 @@ export const FileUploader = memo<FileUploaderProps>(
                   </div>
                   {isFileRemoveIndicatorShown && (
                     <IconTimes
-                      size="small"
+                      size="large"
                       className="ztopia-file-uploader__file-remove-indicator"
                       onClick={() => handleClickFileRemoveIndicator(name)}
                     />

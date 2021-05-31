@@ -59,6 +59,7 @@
     position: absolute;
     top: $spacing-l;
     right: $spacing-l;
+    width: 24px;
     color: $white-dark;
 
     &:hover {

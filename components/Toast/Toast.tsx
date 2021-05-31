@@ -70,7 +70,8 @@ export const ToastContainer = memo<ToastOptions>(
         isCloseButtonShown &&
         createElement(({ closeToast }) => (
           <IconTimes
-            size="small"
+            isAction
+            size="large"
             className="ztopia-toast__close-indicator"
             onClick={closeToast}
           />
