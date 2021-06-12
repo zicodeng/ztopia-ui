@@ -1,3 +1,10 @@
+## [1.40.14](https://github.com/zicodeng/ztopia-ui/compare/v1.40.13...v1.40.14) (2021-06-12)
+
+
+### Bug Fixes
+
+* add isRequired prop to Input ([972f9dc](https://github.com/zicodeng/ztopia-ui/commit/972f9dc10a81a4654d9d421d82744e0422a506f5))
+
 ## [1.40.13](https://github.com/zicodeng/ztopia-ui/compare/v1.40.12...v1.40.13) (2021-06-01)
 
 
