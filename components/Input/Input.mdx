@@ -78,6 +78,25 @@ import { InputDemo } from './InputDemo';
   </Container>
 </Playground>
 
+### Required
+
+<Playground>
+  <Container>
+    <InputDemo>
+      {({ value, onChange }) => (
+        <Input
+          isRequired
+          type="email"
+          label="Email"
+          value="I am required!"
+          onChange={onChange}
+        />
+      )}
+    </InputDemo>
+  </Container>
+</Playground>
+
+
 ### Prefix & Suffix Icon
 
 <Playground>

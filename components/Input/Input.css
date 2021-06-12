@@ -11,6 +11,14 @@
   &__label {
     display: block;
 
+    &.is-required {
+      &::after {
+        position: absolute;
+        color: $color-danger;
+        content: '*';
+      }
+    }
+
     &--rect,
     &--pill {
       margin-bottom: 2px;
@@ -142,15 +150,6 @@
     border: 0;
     outline: 0;
     appearance: none;
-
-    /* &:focus:not(.is-disabled) {
-      + .ztopia-input__bar {
-        &::before,
-        &::after {
-          width: 50%;
-        }
-      }
-    } */
   }
 
   &__tags {

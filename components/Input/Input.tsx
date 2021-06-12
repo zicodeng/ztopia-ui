@@ -18,7 +18,14 @@ import classNames from 'classnames';
 import './Input.css';
 
 export interface InputProps {
+  /**
+   * <@default=`false`>
+   */
   isDisabled?: boolean;
+  /**
+   * <@default=`false`>
+   */
+  isRequired?: boolean;
   min?: number;
   max?: number;
   /**
@@ -53,7 +60,8 @@ export const Input = memo(
   forwardRef<HTMLInputElement, InputProps>(
     (
       {
-        isDisabled,
+        isRequired = false,
+        isDisabled = false,
         type,
         value,
         defaultValue,
@@ -199,6 +207,7 @@ export const Input = memo(
                 `ztopia-input__label--${variant}`,
                 {
                   'is-active': isActive,
+                  'is-required': isRequired,
                 },
               )}
             >
