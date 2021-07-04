@@ -20,7 +20,8 @@
     + blockquote,
     + ol,
     + ul,
-    + div {
+    + div,
+    + img:not(:first-child) {
       margin-top: $spacing-s;
     }
   }
@@ -86,6 +87,16 @@
     display: block;
     max-width: 100%;
     margin: 0 auto;
+
+    &:not(:first-child) {
+      margin-top: $spacing-xl;
+    }
+  }
+
+  figcaption {
+    margin-top: $spacing-m;
+    color: $white-dark;
+    text-align: center;
   }
 
   a {

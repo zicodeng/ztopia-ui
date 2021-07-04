@@ -36,6 +36,10 @@ export const DEFAULT_VALUE = `
 
 <h1>Link</h1>
 <a href="https://www.google.com">Google.com</a>
+
+<h1>Image & Image Caption</h1>
+<img src="https://cdn.mos.cms.futurecdn.net/yxb4cm8DUWR5GGpXS5nh8S.jpg" />
+<figcaption>Pikachu</figcaption>
 `;
 
 export const InlineTextEditorDemo = memo(({ children }) => {
