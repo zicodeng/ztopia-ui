@@ -1,3 +1,10 @@
+## [1.40.15](https://github.com/zicodeng/ztopia-ui/compare/v1.40.14...v1.40.15) (2021-07-04)
+
+
+### Bug Fixes
+
+* add image caption support ([8fdc0ff](https://github.com/zicodeng/ztopia-ui/commit/8fdc0ff661e55341169e774f4c7fc7aae1081270))
+
 ## [1.40.14](https://github.com/zicodeng/ztopia-ui/compare/v1.40.13...v1.40.14) (2021-06-12)
 
 
