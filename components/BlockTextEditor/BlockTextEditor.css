@@ -309,6 +309,10 @@
       }
     }
 
+    .DraftEditor-root {
+      min-height: 150px;
+    }
+
     /* Placeholder */
     .public-DraftEditorPlaceholder-root {
       font-size: inherit;
