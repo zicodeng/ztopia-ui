@@ -1,3 +1,10 @@
+## [1.40.17](https://github.com/zicodeng/ztopia-ui/compare/v1.40.16...v1.40.17) (2021-07-12)
+
+
+### Bug Fixes
+
+* style hotfix ([b797a85](https://github.com/zicodeng/ztopia-ui/commit/b797a850d42551fc14c86d8894df7d290b05ae2b))
+
 ## [1.40.16](https://github.com/zicodeng/ztopia-ui/compare/v1.40.15...v1.40.16) (2021-07-11)
 
 
