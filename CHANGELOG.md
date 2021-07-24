@@ -1,3 +1,11 @@
+## [1.40.18](https://github.com/zicodeng/ztopia-ui/compare/v1.40.17...v1.40.18) (2021-07-24)
+
+
+### Bug Fixes
+
+* change cursor to pointer when hovering ([ad9698c](https://github.com/zicodeng/ztopia-ui/commit/ad9698c23d089c48e8c0cbeec698e00fbf7aee21))
+* upgrade faker ([9645cc1](https://github.com/zicodeng/ztopia-ui/commit/9645cc1fa0ba8dab9ad7680d11a1e660038e19e5))
+
 ## [1.40.17](https://github.com/zicodeng/ztopia-ui/compare/v1.40.16...v1.40.17) (2021-07-12)
 
 
