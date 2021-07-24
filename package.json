@@ -73,7 +73,7 @@
     "css-keyframer": "^1.0.1",
     "danmu.js": "^0.1.0",
     "date-fns": "^2.16.1",
-    "deck.gl": "^8.0.12",
+    "deck.gl": "^8.4.20",
     "hex-rgb": "^4.1.0",
     "lodash-es": "^4.17.15",
     "medium-editor": "^5.23.3",

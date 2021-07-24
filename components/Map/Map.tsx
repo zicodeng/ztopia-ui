@@ -97,6 +97,9 @@ export const Map = memo<MapProps>(
         viewState={viewState}
         onViewStateChange={handleViewStateChange}
         layers={layers}
+        getCursor={({ isDragging, isHovering }) =>
+          isDragging ? 'grabbing' : isHovering ? 'pointer' : 'grab'
+        }
       >
         <StaticMap
           reuseMap
