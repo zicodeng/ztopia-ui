@@ -1,7 +1,7 @@
 import React, { memo, ReactNode, useCallback, useEffect, useRef } from 'react';
 import BaseDatePicker, { registerLocale } from 'react-datepicker';
 import classNames from 'classnames';
-import { format, getYear, isEqual,setYear } from 'date-fns';
+import { format, getYear, isEqual, setYear } from 'date-fns';
 import enUS from 'date-fns/locale/en-US';
 import zhCN from 'date-fns/locale/zh-CN';
 
@@ -131,16 +131,7 @@ export const DatePicker = memo<DatePickerProps>(
     onChange,
     ...restProps
   }) => {
-    const handleSelectYear = useCallback(
-      (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
-        const selectedYear = parseInt(e.currentTarget.id, 10);
-        const newValue = setYear(value || new Date(), selectedYear);
-        onChange(newValue);
-      },
-      [value],
-    );
-
-    const handleChangeYear = useCallback((date: Date) => {
+    const handleYearChange = useCallback((date: Date) => {
       onChange(date);
     }, []);
 
@@ -150,6 +141,15 @@ export const DatePicker = memo<DatePickerProps>(
         if (value && isEqual(date, value)) onChange(null);
       },
       [value, onChange],
+    );
+
+    const handleYearSelectChange = useCallback(
+      (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+        const selectedYear = parseInt(e.currentTarget.id, 10);
+        const newValue = setYear(value || new Date(), selectedYear);
+        onChange(newValue);
+      },
+      [value],
     );
 
     return (
@@ -182,7 +182,7 @@ export const DatePicker = memo<DatePickerProps>(
           },
         }}
         onChange={onChange}
-        onYearChange={handleChangeYear}
+        onYearChange={handleYearChange}
         onSelect={handleSelect}
         renderCustomHeader={(args) => renderCustomHeader({ ...args, locale })}
         renderDayContents={(day) => (
@@ -194,7 +194,7 @@ export const DatePicker = memo<DatePickerProps>(
             hasTodayButton={Boolean(todayButton)}
             value={getYear(value || new Date())}
             locale={locale}
-            onChange={handleSelectYear}
+            onChange={handleYearSelectChange}
           />
         )}
       </BaseDatePicker>
