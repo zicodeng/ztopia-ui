@@ -1,7 +1,7 @@
 import React, { memo, ReactNode, useCallback, useEffect, useRef } from 'react';
 import BaseDatePicker, { registerLocale } from 'react-datepicker';
 import classNames from 'classnames';
-import { format, getYear, setYear } from 'date-fns';
+import { format, getYear, isEqual,setYear } from 'date-fns';
 import enUS from 'date-fns/locale/en-US';
 import zhCN from 'date-fns/locale/zh-CN';
 
@@ -144,6 +144,14 @@ export const DatePicker = memo<DatePickerProps>(
       onChange(date);
     }, []);
 
+    const handleSelect = useCallback(
+      (date: Date) => {
+        // If the selected day is selected again, clear it
+        if (value && isEqual(date, value)) onChange(null);
+      },
+      [value, onChange],
+    );
+
     return (
       <BaseDatePicker
         {...restProps}
@@ -175,6 +183,7 @@ export const DatePicker = memo<DatePickerProps>(
         }}
         onChange={onChange}
         onYearChange={handleChangeYear}
+        onSelect={handleSelect}
         renderCustomHeader={(args) => renderCustomHeader({ ...args, locale })}
         renderDayContents={(day) => (
           <span className="ztopia-date-picker__day-content">{day}</span>
