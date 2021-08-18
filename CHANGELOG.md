@@ -1,3 +1,11 @@
+## [1.40.19](https://github.com/zicodeng/ztopia-ui/compare/v1.40.18...v1.40.19) (2021-08-18)
+
+
+### Bug Fixes
+
+* clear selected day if it is selected again ([4423692](https://github.com/zicodeng/ztopia-ui/commit/442369250693d6c2249e81d2d6f392126a26707f))
+* rename handlers ([48b6048](https://github.com/zicodeng/ztopia-ui/commit/48b6048c343bd93b70ab165f9123b9a7e0054939))
+
 ## [1.40.18](https://github.com/zicodeng/ztopia-ui/compare/v1.40.17...v1.40.18) (2021-07-24)
 
 
