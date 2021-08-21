@@ -21,29 +21,6 @@
     height: 60px;
   }
 
-  /* Plus icon (+) */
-  &::before,
-  &::after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    background-color: $white-light;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    transition: all 0.4s ease;
-    content: '';
-  }
-
-  &::before {
-    width: 34%;
-    height: 2px;
-  }
-
-  &::after {
-    width: 2px;
-    height: 34%;
-  }
-
   &__actions {
     position: absolute;
     left: -$spacing-s;
@@ -112,6 +89,25 @@
     }
   }
 
+  &::before,
+  &::after,
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: $white-light;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+
+  &::before,
+  &::after {
+    display: none;
+    background-color: $white-light;
+    content: '';
+  }
+
   &:hover {
     &::before,
     &::after {
@@ -138,6 +134,24 @@
         transform: scale(1);
         transition: transform 0.3s ease 0.16s, background-color 0.3s ease;
       }
+    }
+  }
+
+  &.is-default-icon-shown {
+    &::before,
+    &::after {
+      display: block;
+    }
+
+    /* Default icon (+) */
+    &::before {
+      width: 34%;
+      height: 2px;
+    }
+
+    &::after {
+      width: 2px;
+      height: 34%;
     }
   }
 }

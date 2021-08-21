@@ -1,4 +1,4 @@
-import React, { memo, ReactNode } from 'react';
+import React, { cloneElement, memo, ReactElement,ReactNode } from 'react';
 import classNames from 'classnames';
 
 import { Popper, PopperProps } from '../Popper';
@@ -15,14 +15,17 @@ export interface FloatingActionButtonProps {
   offset?: number;
   className?: string;
   popperProps?: Omit<PopperProps, 'overlay'>;
+  icon?: ReactElement;
   size?: 'small' | 'medium' | 'large';
   actions: Action[];
 }
 
 export const FloatingActionButton = memo<FloatingActionButtonProps>(
-  ({ offset = 50, className, popperProps, size = 'medium', actions }) => (
+  ({ offset = 50, className, popperProps, icon, size = 'medium', actions }) => (
     <div
-      className={classNames(className, 'ztopia-fab', `ztopia-fab--${size}`)}
+      className={classNames(className, 'ztopia-fab', `ztopia-fab--${size}`, {
+        'is-default-icon-shown': !icon,
+      })}
       style={{
         right: offset,
         bottom: offset,
@@ -54,6 +57,10 @@ export const FloatingActionButton = memo<FloatingActionButtonProps>(
           </li>
         ))}
       </ul>
+      {icon &&
+        cloneElement(icon, {
+          className: classNames(icon.props.className, 'ztopia-fab__icon'),
+        })}
     </div>
   ),
 );

@@ -76,6 +76,28 @@ import { FloatingActionButton } from './';
   />
 </Playground>
 
+### Custom Icon
+
+<Playground>
+  <FloatingActionButton
+    icon={<i className="fas fa-headset"></i>}
+    actions={[
+      {
+        icon: <i className="fas fa-heart" />,
+        desc: 'Love',
+      },
+      {
+        icon: <i className="fas fa-user" />,
+        desc: 'User',
+      },
+      {
+        icon: <i className="fas fa-home" />,
+        desc: 'Home',
+      },
+    ]}
+  />
+</Playground>
+
 ## API
 
 <Props of={FloatingActionButton} />
