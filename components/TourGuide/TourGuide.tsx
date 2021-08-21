@@ -11,6 +11,10 @@ export interface Step {
 }
 
 export interface TourGuideProps {
+  /**
+   * Setting a number here will turn it into controlled mode
+   */
+  stepIndex?: number;
   locale?: Locale;
   styles?: Styles;
   steps: Step[];
