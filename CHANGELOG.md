@@ -1,3 +1,10 @@
+## [1.40.22](https://github.com/zicodeng/ztopia-ui/compare/v1.40.21...v1.40.22) (2021-08-21)
+
+
+### Bug Fixes
+
+* add callback prop ([753f51b](https://github.com/zicodeng/ztopia-ui/commit/753f51ba568c3c2399ca3efc6e6df36ac0695441))
+
 ## [1.40.21](https://github.com/zicodeng/ztopia-ui/compare/v1.40.20...v1.40.21) (2021-08-21)
 
 
