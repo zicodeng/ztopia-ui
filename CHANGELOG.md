@@ -1,3 +1,10 @@
+## [1.40.20](https://github.com/zicodeng/ztopia-ui/compare/v1.40.19...v1.40.20) (2021-08-21)
+
+
+### Bug Fixes
+
+* add custom icon to FAB ([f8cda1c](https://github.com/zicodeng/ztopia-ui/commit/f8cda1cad3ba27898831cc65e4444fcded8e7e6f))
+
 ## [1.40.19](https://github.com/zicodeng/ztopia-ui/compare/v1.40.18...v1.40.19) (2021-08-18)
 
 
