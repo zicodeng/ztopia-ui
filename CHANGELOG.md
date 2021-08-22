@@ -1,3 +1,10 @@
+## [1.40.24](https://github.com/zicodeng/ztopia-ui/compare/v1.40.23...v1.40.24) (2021-08-22)
+
+
+### Bug Fixes
+
+* fix type error ([a9c608c](https://github.com/zicodeng/ztopia-ui/commit/a9c608c099779d3db4c80be22440cc5871c429bc))
+
 ## [1.40.23](https://github.com/zicodeng/ztopia-ui/compare/v1.40.22...v1.40.23) (2021-08-22)
 
 
