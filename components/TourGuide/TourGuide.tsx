@@ -1,5 +1,5 @@
 import React, { memo, ReactNode } from 'react';
-import Joyride, { CallBackProps, Locale, Styles } from 'react-joyride';
+import Joyride, { Locale, Styles } from 'react-joyride';
 
 export type Placement = 'top' | 'bottom' | 'left' | 'right' | 'auto' | 'center';
 
@@ -36,6 +36,17 @@ export interface Step {
   target: string | HTMLElement;
 }
 
+export interface CallBackProps {
+  action: Action;
+  controlled: boolean;
+  index: number;
+  lifecycle: string;
+  size: number;
+  status: Status;
+  step: Step;
+  type: string;
+}
+
 export interface TourGuideProps {
   /**
    * Setting a number here will turn it into controlled mode
@@ -48,6 +59,7 @@ export interface TourGuideProps {
 }
 
 export const TourGuide = memo<TourGuideProps>((props) => (
+  // @ts-ignore
   <Joyride
     disableCloseOnEsc
     disableOverlayClose
