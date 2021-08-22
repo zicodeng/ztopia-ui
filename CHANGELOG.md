@@ -1,3 +1,10 @@
+## [1.40.23](https://github.com/zicodeng/ztopia-ui/compare/v1.40.22...v1.40.23) (2021-08-22)
+
+
+### Bug Fixes
+
+* export as enum ([01cabd1](https://github.com/zicodeng/ztopia-ui/commit/01cabd1184cae7707fa42ea339310afd97f65598))
+
 ## [1.40.22](https://github.com/zicodeng/ztopia-ui/compare/v1.40.21...v1.40.22) (2021-08-21)
 
 
