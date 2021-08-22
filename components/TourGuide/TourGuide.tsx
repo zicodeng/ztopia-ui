@@ -1,32 +1,32 @@
 import React, { memo, ReactNode } from 'react';
-import Joyride, { CallBackProps,Locale, Styles } from 'react-joyride';
+import Joyride, { CallBackProps, Locale, Styles } from 'react-joyride';
 
 export type Placement = 'top' | 'bottom' | 'left' | 'right' | 'auto' | 'center';
 
-export interface Actions {
-  INIT: 'init';
-  START: 'start';
-  STOP: 'stop';
-  RESET: 'reset';
-  RESTART: 'restart';
-  PREV: 'prev';
-  NEXT: 'next';
-  GO: 'go';
-  INDEX: 'index';
-  CLOSE: 'close';
-  SKIP: 'skip';
-  UPDATE: 'update';
+export enum Action {
+  Init = 'init',
+  Start = 'start',
+  Stop = 'stop',
+  Reset = 'reset',
+  Restart = 'restart',
+  Prev = 'prev',
+  Next = 'next',
+  Go = 'go',
+  Index = 'index',
+  Close = 'close',
+  Skip = 'skip',
+  Update = 'update',
 }
 
-export interface Status {
-  IDLE: 'idle';
-  READY: 'ready';
-  WAITING: 'waiting';
-  RUNNING: 'running';
-  PAUSED: 'paused';
-  SKIPPED: 'skipped';
-  FINISHED: 'finished';
-  ERROR: 'error';
+export enum Status {
+  Idle = 'idle',
+  Ready = 'ready',
+  Waiting = 'waiting',
+  Running = 'running',
+  Paused = 'paused',
+  Skipped = 'skipped',
+  Finished = 'finished',
+  Error = 'error',
 }
 
 export interface Step {
