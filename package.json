@@ -27,9 +27,9 @@
   "scripts": {
     "cm": "git-cz",
     "start": "docz dev",
-    "build:dev": "NODE_ENV=development NODE_OPTIONS=--max_old_space_size=10240 ./node_modules/.bin/rollup -c --watch",
-    "build:prod": "yarn prebuild-cache && NODE_ENV=production NODE_OPTIONS=--max_old_space_size=10240 ./node_modules/.bin/rollup -c && yarn postbuild-cache",
-    "build-docs": "NODE_OPTIONS=--max_old_space_size=10240 docz build && yarn create-200",
+    "build:dev": "NODE_ENV=development NODE_OPTIONS=--max_old_space_size=15360 ./node_modules/.bin/rollup -c --watch",
+    "build:prod": "yarn prebuild-cache && NODE_ENV=production NODE_OPTIONS=--max_old_space_size=15360 ./node_modules/.bin/rollup -c && yarn postbuild-cache",
+    "build-docs": "NODE_OPTIONS=--max_old_space_size=15360 docz build && yarn create-200",
     "prebuild-cache": "node ./scripts/prebuild-cache.js",
     "postbuild-cache": "node ./scripts/postbuild-cache.js",
     "release:ci": "semantic-release",
