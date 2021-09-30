@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { ChangeEvent,memo, useCallback, useState } from 'react';
 import {
   ChromePicker,
   ChromePickerProps,
@@ -39,9 +39,9 @@ export const ColorPicker = memo<ColorPickerProps>(
   }) => {
     const [triggerColor, setTriggerColor] = useState<Color>(color);
     const handleChange = useCallback(
-      (newColor: ColorResult) => {
+      (newColor: ColorResult, e: ChangeEvent<HTMLInputElement>) => {
         setTriggerColor(newColor.rgb);
-        if (onChange) onChange(newColor);
+        if (onChange) onChange(newColor, e);
       },
       [onChange],
     );
