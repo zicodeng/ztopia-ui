@@ -17,7 +17,7 @@ export interface CounterProps {
    */
   isResetEnabled?: boolean;
   start?: number;
-  end?: number;
+  end: number;
   delay?: number;
   duration?: number;
   separator?: string;
