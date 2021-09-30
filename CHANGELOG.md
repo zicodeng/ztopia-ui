@@ -1,224 +1,204 @@
-## [1.40.24](https://github.com/zicodeng/ztopia-ui/compare/v1.40.23...v1.40.24) (2021-08-22)
-
+## [1.40.25](https://github.com/zicodeng/ztopia-ui/compare/v1.40.24...v1.40.25) (2021-09-30)
 
 ### Bug Fixes
 
-* fix type error ([a9c608c](https://github.com/zicodeng/ztopia-ui/commit/a9c608c099779d3db4c80be22440cc5871c429bc))
+- fix type error ([e6e80ea](https://github.com/zicodeng/ztopia-ui/commit/e6e80eaf51edc11cdce4516c19d881f2a61a9154))
+- fix type error ([3e1fd9a](https://github.com/zicodeng/ztopia-ui/commit/3e1fd9a25ad3f81640960177ecdcc25d5d189180))
+- fix type errors ([e1d0761](https://github.com/zicodeng/ztopia-ui/commit/e1d0761a9f4e16dd3817e5c503b2b5dc25a84799))
+- style hotfix ([3cf1fb7](https://github.com/zicodeng/ztopia-ui/commit/3cf1fb783ffec00a9228a874a4fd9f478f222821))
+- style hotfix ([bf5fe2c](https://github.com/zicodeng/ztopia-ui/commit/bf5fe2cf1785dca4ef01040888d3add6a06b8224))
+
+## [1.40.24](https://github.com/zicodeng/ztopia-ui/compare/v1.40.23...v1.40.24) (2021-08-22)
+
+### Bug Fixes
+
+- fix type error ([a9c608c](https://github.com/zicodeng/ztopia-ui/commit/a9c608c099779d3db4c80be22440cc5871c429bc))
 
 ## [1.40.23](https://github.com/zicodeng/ztopia-ui/compare/v1.40.22...v1.40.23) (2021-08-22)
 
-
 ### Bug Fixes
 
-* export as enum ([01cabd1](https://github.com/zicodeng/ztopia-ui/commit/01cabd1184cae7707fa42ea339310afd97f65598))
+- export as enum ([01cabd1](https://github.com/zicodeng/ztopia-ui/commit/01cabd1184cae7707fa42ea339310afd97f65598))
 
 ## [1.40.22](https://github.com/zicodeng/ztopia-ui/compare/v1.40.21...v1.40.22) (2021-08-21)
 
-
 ### Bug Fixes
 
-* add callback prop ([753f51b](https://github.com/zicodeng/ztopia-ui/commit/753f51ba568c3c2399ca3efc6e6df36ac0695441))
+- add callback prop ([753f51b](https://github.com/zicodeng/ztopia-ui/commit/753f51ba568c3c2399ca3efc6e6df36ac0695441))
 
 ## [1.40.21](https://github.com/zicodeng/ztopia-ui/compare/v1.40.20...v1.40.21) (2021-08-21)
 
-
 ### Bug Fixes
 
-* upgrade react-joyride ([4057e12](https://github.com/zicodeng/ztopia-ui/commit/4057e1248dc21b754301da525475eb212c9ed415))
+- upgrade react-joyride ([4057e12](https://github.com/zicodeng/ztopia-ui/commit/4057e1248dc21b754301da525475eb212c9ed415))
 
 ## [1.40.20](https://github.com/zicodeng/ztopia-ui/compare/v1.40.19...v1.40.20) (2021-08-21)
 
-
 ### Bug Fixes
 
-* add custom icon to FAB ([f8cda1c](https://github.com/zicodeng/ztopia-ui/commit/f8cda1cad3ba27898831cc65e4444fcded8e7e6f))
+- add custom icon to FAB ([f8cda1c](https://github.com/zicodeng/ztopia-ui/commit/f8cda1cad3ba27898831cc65e4444fcded8e7e6f))
 
 ## [1.40.19](https://github.com/zicodeng/ztopia-ui/compare/v1.40.18...v1.40.19) (2021-08-18)
 
-
 ### Bug Fixes
 
-* clear selected day if it is selected again ([4423692](https://github.com/zicodeng/ztopia-ui/commit/442369250693d6c2249e81d2d6f392126a26707f))
-* rename handlers ([48b6048](https://github.com/zicodeng/ztopia-ui/commit/48b6048c343bd93b70ab165f9123b9a7e0054939))
+- clear selected day if it is selected again ([4423692](https://github.com/zicodeng/ztopia-ui/commit/442369250693d6c2249e81d2d6f392126a26707f))
+- rename handlers ([48b6048](https://github.com/zicodeng/ztopia-ui/commit/48b6048c343bd93b70ab165f9123b9a7e0054939))
 
 ## [1.40.18](https://github.com/zicodeng/ztopia-ui/compare/v1.40.17...v1.40.18) (2021-07-24)
 
-
 ### Bug Fixes
 
-* change cursor to pointer when hovering ([ad9698c](https://github.com/zicodeng/ztopia-ui/commit/ad9698c23d089c48e8c0cbeec698e00fbf7aee21))
-* upgrade faker ([9645cc1](https://github.com/zicodeng/ztopia-ui/commit/9645cc1fa0ba8dab9ad7680d11a1e660038e19e5))
+- change cursor to pointer when hovering ([ad9698c](https://github.com/zicodeng/ztopia-ui/commit/ad9698c23d089c48e8c0cbeec698e00fbf7aee21))
+- upgrade faker ([9645cc1](https://github.com/zicodeng/ztopia-ui/commit/9645cc1fa0ba8dab9ad7680d11a1e660038e19e5))
 
 ## [1.40.17](https://github.com/zicodeng/ztopia-ui/compare/v1.40.16...v1.40.17) (2021-07-12)
 
-
 ### Bug Fixes
 
-* style hotfix ([b797a85](https://github.com/zicodeng/ztopia-ui/commit/b797a850d42551fc14c86d8894df7d290b05ae2b))
+- style hotfix ([b797a85](https://github.com/zicodeng/ztopia-ui/commit/b797a850d42551fc14c86d8894df7d290b05ae2b))
 
 ## [1.40.16](https://github.com/zicodeng/ztopia-ui/compare/v1.40.15...v1.40.16) (2021-07-11)
 
-
 ### Bug Fixes
 
-* style hotfix ([12db46b](https://github.com/zicodeng/ztopia-ui/commit/12db46b3728ff4150af396a23cbdc7c9e0f65670))
+- style hotfix ([12db46b](https://github.com/zicodeng/ztopia-ui/commit/12db46b3728ff4150af396a23cbdc7c9e0f65670))
 
 ## [1.40.15](https://github.com/zicodeng/ztopia-ui/compare/v1.40.14...v1.40.15) (2021-07-04)
 
-
 ### Bug Fixes
 
-* add image caption support ([8fdc0ff](https://github.com/zicodeng/ztopia-ui/commit/8fdc0ff661e55341169e774f4c7fc7aae1081270))
+- add image caption support ([8fdc0ff](https://github.com/zicodeng/ztopia-ui/commit/8fdc0ff661e55341169e774f4c7fc7aae1081270))
 
 ## [1.40.14](https://github.com/zicodeng/ztopia-ui/compare/v1.40.13...v1.40.14) (2021-06-12)
 
-
 ### Bug Fixes
 
-* add isRequired prop to Input ([972f9dc](https://github.com/zicodeng/ztopia-ui/commit/972f9dc10a81a4654d9d421d82744e0422a506f5))
+- add isRequired prop to Input ([972f9dc](https://github.com/zicodeng/ztopia-ui/commit/972f9dc10a81a4654d9d421d82744e0422a506f5))
 
 ## [1.40.13](https://github.com/zicodeng/ztopia-ui/compare/v1.40.12...v1.40.13) (2021-06-01)
 
-
 ### Bug Fixes
 
-* style hotfix ([4a87633](https://github.com/zicodeng/ztopia-ui/commit/4a87633e49945b06c3001f591875a8b257c6b61d))
+- style hotfix ([4a87633](https://github.com/zicodeng/ztopia-ui/commit/4a87633e49945b06c3001f591875a8b257c6b61d))
 
 ## [1.40.12](https://github.com/zicodeng/ztopia-ui/compare/v1.40.11...v1.40.12) (2021-05-31)
 
-
 ### Bug Fixes
 
-* update close icon ([16a4adf](https://github.com/zicodeng/ztopia-ui/commit/16a4adf13247a005a62ebe18e215a357fd92fb59))
+- update close icon ([16a4adf](https://github.com/zicodeng/ztopia-ui/commit/16a4adf13247a005a62ebe18e215a357fd92fb59))
 
 ## [1.40.11](https://github.com/zicodeng/ztopia-ui/compare/v1.40.10...v1.40.11) (2021-05-23)
 
-
 ### Bug Fixes
 
-* upgrade rc-drawer and fix console warning ([572729d](https://github.com/zicodeng/ztopia-ui/commit/572729de5e6e35665ca31ea6d30aa278a8f0cd6c))
+- upgrade rc-drawer and fix console warning ([572729d](https://github.com/zicodeng/ztopia-ui/commit/572729de5e6e35665ca31ea6d30aa278a8f0cd6c))
 
 ## [1.40.10](https://github.com/zicodeng/ztopia-ui/compare/v1.40.9...v1.40.10) (2021-05-09)
 
-
 ### Bug Fixes
 
-* fix className type ([2f1b8c1](https://github.com/zicodeng/ztopia-ui/commit/2f1b8c14b4f9175fa9490fa70d6de8218275d273))
+- fix className type ([2f1b8c1](https://github.com/zicodeng/ztopia-ui/commit/2f1b8c14b4f9175fa9490fa70d6de8218275d273))
 
 ## [1.40.9](https://github.com/zicodeng/ztopia-ui/compare/v1.40.8...v1.40.9) (2021-04-30)
 
-
 ### Bug Fixes
 
-* omit overlay from FAB popperProps ([51717ff](https://github.com/zicodeng/ztopia-ui/commit/51717ffad9f475b0d77cb578ea76253f39234e07))
+- omit overlay from FAB popperProps ([51717ff](https://github.com/zicodeng/ztopia-ui/commit/51717ffad9f475b0d77cb578ea76253f39234e07))
 
 ## [1.40.8](https://github.com/zicodeng/ztopia-ui/compare/v1.40.7...v1.40.8) (2021-04-30)
 
-
 ### Bug Fixes
 
-* validate overlay ([8e3a2f2](https://github.com/zicodeng/ztopia-ui/commit/8e3a2f2f5ad079c9c7b590deab40e49a7bcc5cc0))
+- validate overlay ([8e3a2f2](https://github.com/zicodeng/ztopia-ui/commit/8e3a2f2f5ad079c9c7b590deab40e49a7bcc5cc0))
 
 ## [1.40.7](https://github.com/zicodeng/ztopia-ui/compare/v1.40.6...v1.40.7) (2021-04-30)
 
-
 ### Bug Fixes
 
-* add popperProps to FAB ([b06fee7](https://github.com/zicodeng/ztopia-ui/commit/b06fee712e577e79277110d6ad55afcddee2b1a1))
+- add popperProps to FAB ([b06fee7](https://github.com/zicodeng/ztopia-ui/commit/b06fee712e577e79277110d6ad55afcddee2b1a1))
 
 ## [1.40.6](https://github.com/zicodeng/ztopia-ui/compare/v1.40.5...v1.40.6) (2021-04-30)
 
-
 ### Bug Fixes
 
-* fix FAB tooltip initial position ([8ad47a9](https://github.com/zicodeng/ztopia-ui/commit/8ad47a9b70bd7314146631036024c0cccd993c4c))
+- fix FAB tooltip initial position ([8ad47a9](https://github.com/zicodeng/ztopia-ui/commit/8ad47a9b70bd7314146631036024c0cccd993c4c))
 
 ## [1.40.5](https://github.com/zicodeng/ztopia-ui/compare/v1.40.4...v1.40.5) (2021-04-18)
 
-
 ### Bug Fixes
 
-* fix text button loading state ([02f65a2](https://github.com/zicodeng/ztopia-ui/commit/02f65a267bed1032792d262e228bdf4e3677d5da))
+- fix text button loading state ([02f65a2](https://github.com/zicodeng/ztopia-ui/commit/02f65a267bed1032792d262e228bdf4e3677d5da))
 
 ## [1.40.4](https://github.com/zicodeng/ztopia-ui/compare/v1.40.3...v1.40.4) (2021-04-06)
 
-
 ### Bug Fixes
 
-* add z-index ([eefacaa](https://github.com/zicodeng/ztopia-ui/commit/eefacaa2fb806f9d977d81ab659f5cbbfcef2ce7))
-* use static id ([a25e128](https://github.com/zicodeng/ztopia-ui/commit/a25e12852d82966d549e51e98e01e32fb5d531ca))
+- add z-index ([eefacaa](https://github.com/zicodeng/ztopia-ui/commit/eefacaa2fb806f9d977d81ab659f5cbbfcef2ce7))
+- use static id ([a25e128](https://github.com/zicodeng/ztopia-ui/commit/a25e12852d82966d549e51e98e01e32fb5d531ca))
 
 ## [1.40.3](https://github.com/zicodeng/ztopia-ui/compare/v1.40.2...v1.40.3) (2021-02-21)
 
-
 ### Bug Fixes
 
-* fix style ([d2a7b4a](https://github.com/zicodeng/ztopia-ui/commit/d2a7b4a7fef6b1a2f4f1e69e5bedc8a4236609ce))
+- fix style ([d2a7b4a](https://github.com/zicodeng/ztopia-ui/commit/d2a7b4a7fef6b1a2f4f1e69e5bedc8a4236609ce))
 
 ## [1.40.2](https://github.com/zicodeng/ztopia-ui/compare/v1.40.1...v1.40.2) (2021-02-21)
 
-
 ### Bug Fixes
 
-* add isFull prop to Button ([0e42e76](https://github.com/zicodeng/ztopia-ui/commit/0e42e7615e3e7f8388b6d2c4f439378d676ec2ce))
+- add isFull prop to Button ([0e42e76](https://github.com/zicodeng/ztopia-ui/commit/0e42e7615e3e7f8388b6d2c4f439378d676ec2ce))
 
 ## [1.40.1](https://github.com/zicodeng/ztopia-ui/compare/v1.40.0...v1.40.1) (2021-02-19)
 
-
 ### Bug Fixes
 
-* add zoom margin and fix props ([54f36d0](https://github.com/zicodeng/ztopia-ui/commit/54f36d0d1213cb3fdb987ed54e493bd2c4b057b8))
+- add zoom margin and fix props ([54f36d0](https://github.com/zicodeng/ztopia-ui/commit/54f36d0d1213cb3fdb987ed54e493bd2c4b057b8))
 
 # [1.40.0](https://github.com/zicodeng/ztopia-ui/compare/v1.39.3...v1.40.0) (2021-02-19)
 
-
 ### Features
 
-* implement Zoom component ([e0c0ac4](https://github.com/zicodeng/ztopia-ui/commit/e0c0ac4ae9a981cb4f4fe26f21c77f885754aa7b))
+- implement Zoom component ([e0c0ac4](https://github.com/zicodeng/ztopia-ui/commit/e0c0ac4ae9a981cb4f4fe26f21c77f885754aa7b))
 
 ## [1.39.3](https://github.com/zicodeng/ztopia-ui/compare/v1.39.2...v1.39.3) (2021-02-07)
 
-
 ### Bug Fixes
 
-* style hotfix ([cd1149f](https://github.com/zicodeng/ztopia-ui/commit/cd1149fce0e842981534825ca8f52642c965a1ee))
+- style hotfix ([cd1149f](https://github.com/zicodeng/ztopia-ui/commit/cd1149fce0e842981534825ca8f52642c965a1ee))
 
 ## [1.39.2](https://github.com/zicodeng/ztopia-ui/compare/v1.39.1...v1.39.2) (2021-02-01)
 
-
 ### Bug Fixes
 
-* add selector prop ([b7eab9e](https://github.com/zicodeng/ztopia-ui/commit/b7eab9e8504f1f218ada58ad0d4b0ff389e9664b))
+- add selector prop ([b7eab9e](https://github.com/zicodeng/ztopia-ui/commit/b7eab9e8504f1f218ada58ad0d4b0ff389e9664b))
 
 ## [1.39.1](https://github.com/zicodeng/ztopia-ui/compare/v1.39.0...v1.39.1) (2021-01-31)
 
-
 ### Bug Fixes
 
-* manually release v1.39.0 ([a6af3c7](https://github.com/zicodeng/ztopia-ui/commit/a6af3c7708f03639898a08fcfbc25aed25e6a76f))
+- manually release v1.39.0 ([a6af3c7](https://github.com/zicodeng/ztopia-ui/commit/a6af3c7708f03639898a08fcfbc25aed25e6a76f))
 
 ## [1.37.19](https://github.com/zicodeng/ztopia-ui/compare/v1.37.18...v1.37.19) (2021-01-31)
 
-
 ### Bug Fixes
 
-* add inputMode prop to CodeInput ([e5feae4](https://github.com/zicodeng/ztopia-ui/commit/e5feae4dfc623cbc380ffda186677f9d9056acd9))
-* fix dep issues ([6c4ed47](https://github.com/zicodeng/ztopia-ui/commit/6c4ed47fb409c5e935e3b2f5189e87075e379018))
-* fix type error ([f644d63](https://github.com/zicodeng/ztopia-ui/commit/f644d6319ac10eba3047dee3a2b3726c664703d5))
-* fix type error ([1668d7b](https://github.com/zicodeng/ztopia-ui/commit/1668d7b9699b3cb6e40ee3dada6893d2b88cb1dd))
-* lock prettier version ([66b66f3](https://github.com/zicodeng/ztopia-ui/commit/66b66f31c09e8f9d4f12ff5528f6ed28152f494f))
-* manually upgrade pkg version ([bcf399c](https://github.com/zicodeng/ztopia-ui/commit/bcf399c2564bbd4d9d78636971ec71819f0ef382))
+- add inputMode prop to CodeInput ([e5feae4](https://github.com/zicodeng/ztopia-ui/commit/e5feae4dfc623cbc380ffda186677f9d9056acd9))
+- fix dep issues ([6c4ed47](https://github.com/zicodeng/ztopia-ui/commit/6c4ed47fb409c5e935e3b2f5189e87075e379018))
+- fix type error ([f644d63](https://github.com/zicodeng/ztopia-ui/commit/f644d6319ac10eba3047dee3a2b3726c664703d5))
+- fix type error ([1668d7b](https://github.com/zicodeng/ztopia-ui/commit/1668d7b9699b3cb6e40ee3dada6893d2b88cb1dd))
+- lock prettier version ([66b66f3](https://github.com/zicodeng/ztopia-ui/commit/66b66f31c09e8f9d4f12ff5528f6ed28152f494f))
+- manually upgrade pkg version ([bcf399c](https://github.com/zicodeng/ztopia-ui/commit/bcf399c2564bbd4d9d78636971ec71819f0ef382))
 
 ## [1.37.19](https://github.com/zicodeng/ztopia-ui/compare/v1.37.18...v1.37.19) (2021-01-31)
 
-
 ### Bug Fixes
 
-* add inputMode prop to CodeInput ([e5feae4](https://github.com/zicodeng/ztopia-ui/commit/e5feae4dfc623cbc380ffda186677f9d9056acd9))
-* fix dep issues ([6c4ed47](https://github.com/zicodeng/ztopia-ui/commit/6c4ed47fb409c5e935e3b2f5189e87075e379018))
-* fix type error ([f644d63](https://github.com/zicodeng/ztopia-ui/commit/f644d6319ac10eba3047dee3a2b3726c664703d5))
-* fix type error ([1668d7b](https://github.com/zicodeng/ztopia-ui/commit/1668d7b9699b3cb6e40ee3dada6893d2b88cb1dd))
-* lock prettier version ([66b66f3](https://github.com/zicodeng/ztopia-ui/commit/66b66f31c09e8f9d4f12ff5528f6ed28152f494f))
+- add inputMode prop to CodeInput ([e5feae4](https://github.com/zicodeng/ztopia-ui/commit/e5feae4dfc623cbc380ffda186677f9d9056acd9))
+- fix dep issues ([6c4ed47](https://github.com/zicodeng/ztopia-ui/commit/6c4ed47fb409c5e935e3b2f5189e87075e379018))
+- fix type error ([f644d63](https://github.com/zicodeng/ztopia-ui/commit/f644d6319ac10eba3047dee3a2b3726c664703d5))
+- fix type error ([1668d7b](https://github.com/zicodeng/ztopia-ui/commit/1668d7b9699b3cb6e40ee3dada6893d2b88cb1dd))
+- lock prettier version ([66b66f3](https://github.com/zicodeng/ztopia-ui/commit/66b66f31c09e8f9d4f12ff5528f6ed28152f494f))
 
 ## [1.37.19](https://github.com/zicodeng/ztopia-ui/compare/v1.37.18...v1.37.19) (2021-01-31)
 
