@@ -20,9 +20,17 @@
     + blockquote,
     + ol,
     + ul,
-    + div,
-    + img:not(:first-child) {
+    + div {
       margin-top: $spacing-s;
+    }
+
+    /* If an image is directly placed under a heading, increase the spacing */
+    + p > img:first-child {
+      margin-top: $spacing-l;
+    }
+
+    + img:not(:first-child) {
+      margin-top: $spacing-l;
     }
   }
 
