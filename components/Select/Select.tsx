@@ -14,7 +14,10 @@ export type SelectOption = { label: ReactNode; value: string };
 
 export type SelectValue = SelectOption | SelectOption[] | null;
 
-export interface SelectProps<OptionType extends OptionTypeBase = SelectOption> {
+export interface SelectProps<
+  OptionType extends OptionTypeBase = SelectOption,
+  IsMulti extends boolean = false
+> {
   /**
    * Enable isMulti selection
    *
@@ -59,7 +62,7 @@ export interface SelectProps<OptionType extends OptionTypeBase = SelectOption> {
   value?: SelectValue;
   options?: OptionsType<OptionType>;
   style?: CSSProperties;
-  styles?: StylesConfig;
+  styles?: StylesConfig<OptionType, IsMulti>;
   /**
    * <@default=`() => 'No options'`>
    */
@@ -70,7 +73,10 @@ export interface SelectProps<OptionType extends OptionTypeBase = SelectOption> {
   renderMaxSelectedOptionsReachedMessage?: (obj: {
     inputValue: string;
   }) => ReactNode;
-  onChange?: (newSelectValue: SelectValue, actionMeta: ActionMeta) => void;
+  onChange?: (
+    newSelectValue: SelectValue,
+    actionMeta: ActionMeta<OptionType>,
+  ) => void;
 }
 
 export const Select = memo<SelectProps>(
