@@ -123,7 +123,6 @@ export const InlineTextEditor = memo<InlineTextEditorProps>(
       editor.subscribe(
         'editableInput',
         (e: ChangeEvent<HTMLDivElement>, editableEl: HTMLElement) => {
-          console.log('HELLO');
           if (onChange) onChange(e, editableEl.innerHTML);
         },
       );
