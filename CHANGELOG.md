@@ -1,3 +1,9 @@
+## [1.40.26](https://github.com/zicodeng/ztopia-ui/compare/v1.40.25...v1.40.26) (2021-10-02)
+
+### Bug Fixes
+
+- remove console ([0f88f1c](https://github.com/zicodeng/ztopia-ui/commit/0f88f1cf8d580c52e3609eac11fccfed646fa0d8))
+
 ## [1.40.25](https://github.com/zicodeng/ztopia-ui/compare/v1.40.24...v1.40.25) (2021-09-30)
 
 ### Bug Fixes
