@@ -1,3 +1,9 @@
+## [1.40.28](https://github.com/zicodeng/ztopia-ui/compare/v1.40.27...v1.40.28) (2021-10-18)
+
+### Bug Fixes
+
+- import libs from esm folder ([8135aa3](https://github.com/zicodeng/ztopia-ui/commit/8135aa37d24fae35e15a57a94f36b93339135685))
+
 ## [1.40.27](https://github.com/zicodeng/ztopia-ui/compare/v1.40.26...v1.40.27) (2021-10-18)
 
 ### Bug Fixes
