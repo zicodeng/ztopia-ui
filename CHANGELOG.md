@@ -1,3 +1,9 @@
+## [1.40.27](https://github.com/zicodeng/ztopia-ui/compare/v1.40.26...v1.40.27) (2021-10-18)
+
+### Bug Fixes
+
+- import libs from dist/es6 folder ([6c8061c](https://github.com/zicodeng/ztopia-ui/commit/6c8061cb576c5ae467b3c9845318d5c28ad252e2))
+
 ## [1.40.26](https://github.com/zicodeng/ztopia-ui/compare/v1.40.25...v1.40.26) (2021-10-02)
 
 ### Bug Fixes
