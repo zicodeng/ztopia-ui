@@ -2,7 +2,7 @@ import {
   ArcLayer,
   IconLayer,
   ScatterplotLayer,
-} from '@deck.gl/layers/dist/es6';
+} from '@deck.gl/layers/dist/esm';
 
 export type RGB = [number, number, number];
 
