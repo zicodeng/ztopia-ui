@@ -1,4 +1,8 @@
-import { ArcLayer, IconLayer, ScatterplotLayer } from '@deck.gl/layers';
+import {
+  ArcLayer,
+  IconLayer,
+  ScatterplotLayer,
+} from '@deck.gl/layers/dist/es6';
 
 export type RGB = [number, number, number];
 
