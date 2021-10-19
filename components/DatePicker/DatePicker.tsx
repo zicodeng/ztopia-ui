@@ -1,5 +1,5 @@
 import React, { memo, ReactNode, useCallback, useEffect, useRef } from 'react';
-import BaseDatePicker, { registerLocale } from 'react-datepicker';
+import BaseDatePicker, { registerLocale } from 'react-datepicker/es';
 import classNames from 'classnames';
 import { format, getYear, isEqual, setYear } from 'date-fns';
 import enUS from 'date-fns/locale/en-US';
