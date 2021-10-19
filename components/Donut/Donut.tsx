@@ -1,5 +1,5 @@
 import React, { memo, ReactNode } from 'react';
-import { Cell, Pie, PieChart, Tooltip } from 'recharts';
+import { Cell, Pie, PieChart, Tooltip } from 'recharts/es6';
 
 export interface DonutProps {
   /**
