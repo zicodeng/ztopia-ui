@@ -1,3 +1,9 @@
+## [1.40.29](https://github.com/zicodeng/ztopia-ui/compare/v1.40.28...v1.40.29) (2021-10-19)
+
+### Bug Fixes
+
+- import react-datepicker from es folder ([54bf49e](https://github.com/zicodeng/ztopia-ui/commit/54bf49e8325ba220a81ddc6310fd16fa7390baac))
+
 ## [1.40.28](https://github.com/zicodeng/ztopia-ui/compare/v1.40.27...v1.40.28) (2021-10-18)
 
 ### Bug Fixes
