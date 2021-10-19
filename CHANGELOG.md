@@ -1,3 +1,10 @@
+## [1.40.30](https://github.com/zicodeng/ztopia-ui/compare/v1.40.29...v1.40.30) (2021-10-19)
+
+### Bug Fixes
+
+- import recharts from es6 folder ([1fc0ac9](https://github.com/zicodeng/ztopia-ui/commit/1fc0ac90a031e4cd90e68746b308519e50863ce1))
+- upgrade react-map-gl ([a4d9a15](https://github.com/zicodeng/ztopia-ui/commit/a4d9a15a3f5e6994d14b842b57b20f18c9a315cd))
+
 ## [1.40.29](https://github.com/zicodeng/ztopia-ui/compare/v1.40.28...v1.40.29) (2021-10-19)
 
 ### Bug Fixes
