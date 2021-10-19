@@ -102,7 +102,7 @@ export const Map = memo<MapProps>(
         }
       >
         <StaticMap
-          reuseMap
+          reuseMaps
           preventStyleDiffing
           width={width}
           height={height}
