@@ -1,3 +1,9 @@
+## [1.40.32](https://github.com/zicodeng/ztopia-ui/compare/v1.40.31...v1.40.32) (2021-10-20)
+
+### Bug Fixes
+
+- upgrade react-joyride ([b33fa33](https://github.com/zicodeng/ztopia-ui/commit/b33fa33b9d92ae2855fd94af11cd87d4608ae3e2))
+
 ## [1.40.31](https://github.com/zicodeng/ztopia-ui/compare/v1.40.30...v1.40.31) (2021-10-20)
 
 ### Bug Fixes
