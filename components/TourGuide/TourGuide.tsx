@@ -1,5 +1,5 @@
 import React, { memo, ReactNode } from 'react';
-import Joyride, { Locale, Styles } from 'react-joyride';
+import Joyride, { Locale, Styles } from 'react-joyride/es';
 
 export type Placement = 'top' | 'bottom' | 'left' | 'right' | 'auto' | 'center';
 
