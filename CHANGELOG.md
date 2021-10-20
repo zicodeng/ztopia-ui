@@ -1,3 +1,9 @@
+## [1.40.31](https://github.com/zicodeng/ztopia-ui/compare/v1.40.30...v1.40.31) (2021-10-20)
+
+### Bug Fixes
+
+- import react-joyride from es folder ([f534af6](https://github.com/zicodeng/ztopia-ui/commit/f534af6abbfff4eaf456390e50a1471c7ae50f6a))
+
 ## [1.40.30](https://github.com/zicodeng/ztopia-ui/compare/v1.40.29...v1.40.30) (2021-10-19)
 
 ### Bug Fixes
