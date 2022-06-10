@@ -171,7 +171,7 @@
     "rollup-plugin-terser": "^5.1.1",
     "rollup-plugin-typescript2": "^0.22.1",
     "rollup-plugin-url": "^2.2.2",
-    "semantic-release": "^17.3.7",
+    "semantic-release": "^19.0.3",
     "signale": "^1.4.0",
     "style-loader": "^0.23.1",
     "stylelint": "^10.1.0",
